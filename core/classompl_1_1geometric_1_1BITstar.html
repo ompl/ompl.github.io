@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ompl::geometric::BITstar Class Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <link href="css/tabs.css" rel="stylesheet">
+  <link href="css/doxygen.css" rel="stylesheet">
+  <link href="css/search.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/ompl.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="search/searchdata.js"></script>
+  <script src="search/search.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
+              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+          <!-- Doxygen API search box -->
+          <div id="searchli">
+            <div id="MSearchBox" class="MSearchBoxInactive">
+              <span class="left">
+                <img id="MSearchSelect" src="search/mag_sel.png"
+                onmouseover="return searchBox.OnSearchSelectShow()"
+                onmouseout="return searchBox.OnSearchSelectHide()"
+                alt=""/>
+                <input type="text" id="MSearchField" value="Search API" accesskey="S"
+                onfocus="searchBox.OnSearchFieldFocus(true)"
+                onblur="searchBox.OnSearchFieldFocus(false)"
+                onkeyup="searchBox.OnSearchFieldChange(event)"/>
+              </span><span class="right">
+                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+              </span>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"
+  onmouseover="return searchBox.OnSearchSelectShow()"
+  onmouseout="return searchBox.OnSearchSelectHide()"
+  onkeydown="return searchBox.OnSearchSelectKey(event)">
+  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow">
+    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
+  </div>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1geometric.html">geometric</a></li><li class="navelem"><a class="el" href="classompl_1_1geometric_1_1BITstar.html">BITstar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classompl_1_1geometric_1_1BITstar-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ompl::geometric::BITstar Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Batch Informed Trees (BIT*)  
+ <a href="classompl_1_1geometric_1_1BITstar.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="BITstar_8h_source.html">ompl/geometric/planners/bitstar/BITstar.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ompl::geometric::BITstar:</div>
+<div class="dyncontent">
+<div class="center"><img src="classompl_1_1geometric_1_1BITstar__inherit__graph.png" border="0" usemap="#ompl_1_1geometric_1_1BITstar_inherit__map" alt="Inheritance graph"/></div>
+<map name="ompl_1_1geometric_1_1BITstar_inherit__map" id="ompl_1_1geometric_1_1BITstar_inherit__map">
+<area shape="rect" id="node2" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. " alt="" coords="19,80,159,107"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1IdGenerator.html">IdGenerator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An ID generator class for vertex IDs.  <a href="classompl_1_1geometric_1_1BITstar_1_1IdGenerator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html">IntegratedQueue</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A queue of edges to be processed that integrates both the expansion of <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html#gVertex">Vertices</a> and the ordering of the resulting edges.  <a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html">Vertex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertex of the underlying graphs in <a class="el" href="classompl_1_1geometric_1_1BITstar.html#gBITstar">BIT*</a>.  <a href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a674ea66b734ec4ba52b22152ec6b1c6d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a674ea66b734ec4ba52b22152ec6b1c6d"></a>
+typedef boost::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a></td></tr>
+<tr class="memdesc:a674ea66b734ec4ba52b22152ec6b1c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex shared pointer. <br /></td></tr>
+<tr class="separator:a674ea66b734ec4ba52b22152ec6b1c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac739c2121e6b63e255e4b271b07e08ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac739c2121e6b63e255e4b271b07e08ee"></a>
+typedef boost::shared_ptr&lt; const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac739c2121e6b63e255e4b271b07e08ee">VertexConstPtr</a></td></tr>
+<tr class="memdesc:ac739c2121e6b63e255e4b271b07e08ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <em>constant</em> vertex shared pointer. <br /></td></tr>
+<tr class="separator:ac739c2121e6b63e255e4b271b07e08ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18bf25f43b9226e5058835a6c4c586d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab18bf25f43b9226e5058835a6c4c586d"></a>
+typedef boost::weak_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ab18bf25f43b9226e5058835a6c4c586d">VertexWeakPtr</a></td></tr>
+<tr class="memdesc:ab18bf25f43b9226e5058835a6c4c586d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex weak pointer. <br /></td></tr>
+<tr class="separator:ab18bf25f43b9226e5058835a6c4c586d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec8ad112e58e454b97505a392c31abca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec8ad112e58e454b97505a392c31abca"></a>
+typedef boost::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html">IntegratedQueue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aec8ad112e58e454b97505a392c31abca">IntegratedQueuePtr</a></td></tr>
+<tr class="memdesc:aec8ad112e58e454b97505a392c31abca"><td class="mdescLeft">&#160;</td><td class="mdescRight">An integrated queue shared pointer. <br /></td></tr>
+<tr class="separator:aec8ad112e58e454b97505a392c31abca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457c97219bbc73817071643412c14118"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a457c97219bbc73817071643412c14118"></a>
+typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a457c97219bbc73817071643412c14118">VertexId</a></td></tr>
+<tr class="memdesc:a457c97219bbc73817071643412c14118"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertex id type. <br /></td></tr>
+<tr class="separator:a457c97219bbc73817071643412c14118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:a761c5b0eeff509479618ae7eefa3de46 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a761c5b0eeff509479618ae7eefa3de46"></a>
+typedef boost::function&lt; std::string()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a761c5b0eeff509479618ae7eefa3de46">PlannerProgressProperty</a></td></tr>
+<tr class="memdesc:a761c5b0eeff509479618ae7eefa3de46 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a function which returns a property about the planner's progress that can be queried by a benchmarking routine. <br /></td></tr>
+<tr class="separator:a761c5b0eeff509479618ae7eefa3de46 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a919f116d094eb88e4c877c44531c2b75"></a>
+typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Planner.html#a761c5b0eeff509479618ae7eefa3de46">PlannerProgressProperty</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a></td></tr>
+<tr class="memdesc:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which maps the name of a progress property to the function to be used for querying that property. <br /></td></tr>
+<tr class="separator:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af6d4e84d731cf2a0961043598864d65b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6d4e84d731cf2a0961043598864d65b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#af6d4e84d731cf2a0961043598864d65b">BITstar</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> &amp;si, const std::string &amp;name=&quot;BITstar&quot;)</td></tr>
+<tr class="memdesc:af6d4e84d731cf2a0961043598864d65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct! <br /></td></tr>
+<tr class="separator:af6d4e84d731cf2a0961043598864d65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a888e73419db8ea777fe1b54b046d34af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a888e73419db8ea777fe1b54b046d34af"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a888e73419db8ea777fe1b54b046d34af">~BITstar</a> ()</td></tr>
+<tr class="memdesc:a888e73419db8ea777fe1b54b046d34af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruct! <br /></td></tr>
+<tr class="separator:a888e73419db8ea777fe1b54b046d34af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abbf41a7443c4a184bc925ca86fd231"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2abbf41a7443c4a184bc925ca86fd231"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a2abbf41a7443c4a184bc925ca86fd231">setup</a> ()</td></tr>
+<tr class="memdesc:a2abbf41a7443c4a184bc925ca86fd231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup. <br /></td></tr>
+<tr class="separator:a2abbf41a7443c4a184bc925ca86fd231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af009cbbfb05b980234a24970559ac6a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af009cbbfb05b980234a24970559ac6a0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#af009cbbfb05b980234a24970559ac6a0">clear</a> ()</td></tr>
+<tr class="memdesc:af009cbbfb05b980234a24970559ac6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear. <br /></td></tr>
+<tr class="separator:af009cbbfb05b980234a24970559ac6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac25333bb8b7b0aaae6b05e6063258c61"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac25333bb8b7b0aaae6b05e6063258c61"></a>
+<a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac25333bb8b7b0aaae6b05e6063258c61">solve</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
+<tr class="memdesc:ac25333bb8b7b0aaae6b05e6063258c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve. <br /></td></tr>
+<tr class="separator:ac25333bb8b7b0aaae6b05e6063258c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38fd50c959b5b5b736755e9a6bb20c87"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38fd50c959b5b5b736755e9a6bb20c87"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a38fd50c959b5b5b736755e9a6bb20c87">getPlannerData</a> (<a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data) const </td></tr>
+<tr class="memdesc:a38fd50c959b5b5b736755e9a6bb20c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get results. <br /></td></tr>
+<tr class="separator:a38fd50c959b5b5b736755e9a6bb20c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38417dd67de2b6cee9d1ee09e501c68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af38417dd67de2b6cee9d1ee09e501c68"></a>
+std::pair&lt; const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *, const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#af38417dd67de2b6cee9d1ee09e501c68">getNextEdgeInQueue</a> ()</td></tr>
+<tr class="memdesc:af38417dd67de2b6cee9d1ee09e501c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next edge to be processed. Causes vertices in the queue to be expanded (if necessary) and therefore effects the run timings of the algorithm, but helpful for some videos and debugging. <br /></td></tr>
+<tr class="separator:af38417dd67de2b6cee9d1ee09e501c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9441e73fbec5789e481fbcee9c76d4b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9441e73fbec5789e481fbcee9c76d4b1"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a9441e73fbec5789e481fbcee9c76d4b1">getNextEdgeValueInQueue</a> ()</td></tr>
+<tr class="memdesc:a9441e73fbec5789e481fbcee9c76d4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the next edge to be processed. Causes vertices in the queue to be expanded (if necessary) and therefore effects the run timings of the algorithm, but helpful for some videos and debugging. <br /></td></tr>
+<tr class="separator:a9441e73fbec5789e481fbcee9c76d4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8214f6cb1e7ed9a3e6a35b3280ebb5d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8214f6cb1e7ed9a3e6a35b3280ebb5d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa8214f6cb1e7ed9a3e6a35b3280ebb5d">getEdgeQueue</a> (std::vector&lt; std::pair&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac739c2121e6b63e255e4b271b07e08ee">VertexConstPtr</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac739c2121e6b63e255e4b271b07e08ee">VertexConstPtr</a> &gt; &gt; *edgesInQueue)</td></tr>
+<tr class="memdesc:aa8214f6cb1e7ed9a3e6a35b3280ebb5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the whole messy set of edges in the queue. Expensive but helpful for some videos. <br /></td></tr>
+<tr class="separator:aa8214f6cb1e7ed9a3e6a35b3280ebb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a0d4f8b65d64799adf1fa6f4677995e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a0d4f8b65d64799adf1fa6f4677995e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1a0d4f8b65d64799adf1fa6f4677995e">getVertexQueue</a> (std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac739c2121e6b63e255e4b271b07e08ee">VertexConstPtr</a> &gt; *verticesInQueue)</td></tr>
+<tr class="memdesc:a1a0d4f8b65d64799adf1fa6f4677995e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the whole set of vertices to be expanded. Expensive but helpful for some videos. <br /></td></tr>
+<tr class="separator:a1a0d4f8b65d64799adf1fa6f4677995e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937a1552a3ecb8d3dd1a44ff6512384d"><td class="memTemplParams" colspan="2"><a class="anchor" id="a937a1552a3ecb8d3dd1a44ff6512384d"></a>
+template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
+<tr class="memitem:a937a1552a3ecb8d3dd1a44ff6512384d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a937a1552a3ecb8d3dd1a44ff6512384d">setNearestNeighbors</a> ()</td></tr>
+<tr class="memdesc:a937a1552a3ecb8d3dd1a44ff6512384d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a different nearest neighbours datastructure. <br /></td></tr>
+<tr class="separator:a937a1552a3ecb8d3dd1a44ff6512384d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d6bfe6fc9972debf35a8798c082ba5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36d6bfe6fc9972debf35a8798c082ba5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a36d6bfe6fc9972debf35a8798c082ba5">setRewireFactor</a> (double rewireFactor)</td></tr>
+<tr class="memdesc:a36d6bfe6fc9972debf35a8798c082ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rewiring scale factor, s, such that r_rrg = s  r_rrg*. <br /></td></tr>
+<tr class="separator:a36d6bfe6fc9972debf35a8798c082ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40f7a96d58f67e75c195302d50f7cbb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae40f7a96d58f67e75c195302d50f7cbb"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae40f7a96d58f67e75c195302d50f7cbb">getRewireFactor</a> () const </td></tr>
+<tr class="memdesc:ae40f7a96d58f67e75c195302d50f7cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rewiring scale factor. <br /></td></tr>
+<tr class="separator:ae40f7a96d58f67e75c195302d50f7cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b513410d75af41e532aabe486f3d962"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b513410d75af41e532aabe486f3d962"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8b513410d75af41e532aabe486f3d962">setSamplesPerBatch</a> (unsigned int n)</td></tr>
+<tr class="memdesc:a8b513410d75af41e532aabe486f3d962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of samplers per batch. <br /></td></tr>
+<tr class="separator:a8b513410d75af41e532aabe486f3d962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a4fccfafecdcae7fd4c9de87a4ac7fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a4fccfafecdcae7fd4c9de87a4ac7fd"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4a4fccfafecdcae7fd4c9de87a4ac7fd">getSamplesPerBatch</a> () const </td></tr>
+<tr class="memdesc:a4a4fccfafecdcae7fd4c9de87a4ac7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of samplers per batch. <br /></td></tr>
+<tr class="separator:a4a4fccfafecdcae7fd4c9de87a4ac7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fee5539e3dd2a66479e8ebf9d7aa062"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fee5539e3dd2a66479e8ebf9d7aa062"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4fee5539e3dd2a66479e8ebf9d7aa062">setKNearest</a> (bool useKNearest)</td></tr>
+<tr class="memdesc:a4fee5539e3dd2a66479e8ebf9d7aa062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable a k-nearest search for instead of an r-disc search. <br /></td></tr>
+<tr class="separator:a4fee5539e3dd2a66479e8ebf9d7aa062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f28f8fabfc987940e48dd3f1db84ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42f28f8fabfc987940e48dd3f1db84ec"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a42f28f8fabfc987940e48dd3f1db84ec">getKNearest</a> () const </td></tr>
+<tr class="memdesc:a42f28f8fabfc987940e48dd3f1db84ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a k-nearest search is being used. <br /></td></tr>
+<tr class="separator:a42f28f8fabfc987940e48dd3f1db84ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4320378044fc34be9d22d40d0bb1bede"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4320378044fc34be9d22d40d0bb1bede"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4320378044fc34be9d22d40d0bb1bede">setUseFailureTracking</a> (bool trackFailures)</td></tr>
+<tr class="memdesc:a4320378044fc34be9d22d40d0bb1bede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable tracking of failed edges. This currently is too expensive to be useful. <br /></td></tr>
+<tr class="separator:a4320378044fc34be9d22d40d0bb1bede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725e3233fa1e5f41b147adba1683ad06"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a725e3233fa1e5f41b147adba1683ad06"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a725e3233fa1e5f41b147adba1683ad06">getUseFailureTracking</a> () const </td></tr>
+<tr class="memdesc:a725e3233fa1e5f41b147adba1683ad06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a failed edge list is in use. <br /></td></tr>
+<tr class="separator:a725e3233fa1e5f41b147adba1683ad06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6ed74080a858a36e2bca01eed93073"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c6ed74080a858a36e2bca01eed93073"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4c6ed74080a858a36e2bca01eed93073">setStrictQueueOrdering</a> (bool beStrict)</td></tr>
+<tr class="memdesc:a4c6ed74080a858a36e2bca01eed93073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable "strict sorting" of the edge queue. Rewirings can change the position in the queue of an edge. When strict sorting is enabled, the effected edges are resorted immediately, while disabling strict sorting delays this resorting until the end of the batch. <br /></td></tr>
+<tr class="separator:a4c6ed74080a858a36e2bca01eed93073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d75a1a791f55614a8f56a342b67d6c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d75a1a791f55614a8f56a342b67d6c6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4d75a1a791f55614a8f56a342b67d6c6">getStrictQueueOrdering</a> () const </td></tr>
+<tr class="memdesc:a4d75a1a791f55614a8f56a342b67d6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether strict queue ordering is in use. <br /></td></tr>
+<tr class="separator:a4d75a1a791f55614a8f56a342b67d6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742fde56a552462b86ec5ae593141c2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a742fde56a552462b86ec5ae593141c2a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a742fde56a552462b86ec5ae593141c2a">setPruning</a> (bool <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a975b0c18fa867de36976c0b6bb90f38d">prune</a>)</td></tr>
+<tr class="memdesc:a742fde56a552462b86ec5ae593141c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable pruning of vertices/samples that CANNOT improve the current solution. When a vertex in the graph is pruned, it's descendents are also pruned (if they also cannot improve the solution) or placed back in the set of free samples (if they could improve the solution). This assures that a uniform density is maintained. <br /></td></tr>
+<tr class="separator:a742fde56a552462b86ec5ae593141c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaeebe13b23c10b351d5ef5ac9e73739"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abaeebe13b23c10b351d5ef5ac9e73739"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#abaeebe13b23c10b351d5ef5ac9e73739">getPruning</a> () const </td></tr>
+<tr class="memdesc:abaeebe13b23c10b351d5ef5ac9e73739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether graph and sample pruning is in use. <br /></td></tr>
+<tr class="separator:abaeebe13b23c10b351d5ef5ac9e73739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a52698a1d43a1858aec85dd21cabb9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7a52698a1d43a1858aec85dd21cabb9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ab7a52698a1d43a1858aec85dd21cabb9">setPruneThresholdFraction</a> (double <a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa5b2634387611fe075f96515ccbadddc">fractionalChange</a>)</td></tr>
+<tr class="memdesc:ab7a52698a1d43a1858aec85dd21cabb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the fractional change in the solution cost necessary for pruning to occur. <br /></td></tr>
+<tr class="separator:ab7a52698a1d43a1858aec85dd21cabb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab1ae41f6fc16955b960f4c1e793849f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab1ae41f6fc16955b960f4c1e793849f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aab1ae41f6fc16955b960f4c1e793849f">getPruneThresholdFraction</a> () const </td></tr>
+<tr class="memdesc:aab1ae41f6fc16955b960f4c1e793849f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the fractional change in the solution cost necessary for pruning to occur. <br /></td></tr>
+<tr class="separator:aab1ae41f6fc16955b960f4c1e793849f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ecec0085a6485ffd5c67857d478e42"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4ecec0085a6485ffd5c67857d478e42"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae4ecec0085a6485ffd5c67857d478e42">setDelayRewiringUntilInitialSolution</a> (bool delayRewiring)</td></tr>
+<tr class="memdesc:ae4ecec0085a6485ffd5c67857d478e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay considering rewiring edges until an initial solution is found. This improves the time required to find an initial solution when doing so requires multiple batches and has no effects on theoretical asymptotic optimality (as the rewiring edges are eventually considered). <br /></td></tr>
+<tr class="separator:ae4ecec0085a6485ffd5c67857d478e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e93a5b3238350cb27f377dea4f199a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9e93a5b3238350cb27f377dea4f199a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa9e93a5b3238350cb27f377dea4f199a">getDelayRewiringUntilInitialSolution</a> () const </td></tr>
+<tr class="memdesc:aa9e93a5b3238350cb27f377dea4f199a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether BIT* is delaying rewiring until a solution is found. <br /></td></tr>
+<tr class="separator:aa9e93a5b3238350cb27f377dea4f199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ddab1a9472e527a010615dbf107d7b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ddab1a9472e527a010615dbf107d7b0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1ddab1a9472e527a010615dbf107d7b0">setStopOnSolnImprovement</a> (bool stopOnChange)</td></tr>
+<tr class="memdesc:a1ddab1a9472e527a010615dbf107d7b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the planner each time a solution improvement is found. Useful for examining the intermediate solutions found by BIT*. <br /></td></tr>
+<tr class="separator:a1ddab1a9472e527a010615dbf107d7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ff4eac2c7544d374f26d6d7f1d561e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58ff4eac2c7544d374f26d6d7f1d561e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a58ff4eac2c7544d374f26d6d7f1d561e">getStopOnSolnImprovement</a> () const </td></tr>
+<tr class="memdesc:a58ff4eac2c7544d374f26d6d7f1d561e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether BIT* stops each time a solution is found. <br /></td></tr>
+<tr class="separator:a58ff4eac2c7544d374f26d6d7f1d561e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:a404c3be95f77983e95a468e3a7032cc9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a404c3be95f77983e95a468e3a7032cc9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a404c3be95f77983e95a468e3a7032cc9">Planner</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;si, const std::string &amp;name)</td></tr>
+<tr class="memdesc:a404c3be95f77983e95a468e3a7032cc9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:a404c3be95f77983e95a468e3a7032cc9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03f24b87575ab8d31b921fea6525a0c5 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03f24b87575ab8d31b921fea6525a0c5"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a03f24b87575ab8d31b921fea6525a0c5">~Planner</a> ()</td></tr>
+<tr class="memdesc:a03f24b87575ab8d31b921fea6525a0c5 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:a03f24b87575ab8d31b921fea6525a0c5 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca68a50629dd31d550632480d001c17 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2ca68a50629dd31d550632480d001c17 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a2ca68a50629dd31d550632480d001c17">as</a> ()</td></tr>
+<tr class="memdesc:a2ca68a50629dd31d550632480d001c17 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast this instance to a desired type.  <a href="#a2ca68a50629dd31d550632480d001c17">More...</a><br /></td></tr>
+<tr class="separator:a2ca68a50629dd31d550632480d001c17 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ebb461363467a0a95ccb1c1e44a7332 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6ebb461363467a0a95ccb1c1e44a7332 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memTemplItemLeft" align="right" valign="top">const T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a6ebb461363467a0a95ccb1c1e44a7332">as</a> () const </td></tr>
+<tr class="memdesc:a6ebb461363467a0a95ccb1c1e44a7332 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast this instance to a desired type.  <a href="#a6ebb461363467a0a95ccb1c1e44a7332">More...</a><br /></td></tr>
+<tr class="separator:a6ebb461363467a0a95ccb1c1e44a7332 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af467d750711d1f426125642e2a387ab9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af467d750711d1f426125642e2a387ab9"></a>
+const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#af467d750711d1f426125642e2a387ab9">getSpaceInformation</a> () const </td></tr>
+<tr class="memdesc:af467d750711d1f426125642e2a387ab9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the space information this planner is using. <br /></td></tr>
+<tr class="separator:af467d750711d1f426125642e2a387ab9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d4a5b067f5a4e817e73d025e4324e80 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d4a5b067f5a4e817e73d025e4324e80"></a>
+const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a5d4a5b067f5a4e817e73d025e4324e80">getProblemDefinition</a> () const </td></tr>
+<tr class="memdesc:a5d4a5b067f5a4e817e73d025e4324e80 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve. <br /></td></tr>
+<tr class="separator:a5d4a5b067f5a4e817e73d025e4324e80 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46e60c79e6e4dbc44788a5faab7e11ee inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46e60c79e6e4dbc44788a5faab7e11ee"></a>
+const <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a46e60c79e6e4dbc44788a5faab7e11ee">getPlannerInputStates</a> () const </td></tr>
+<tr class="memdesc:a46e60c79e6e4dbc44788a5faab7e11ee inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the planner input states. <br /></td></tr>
+<tr class="separator:a46e60c79e6e4dbc44788a5faab7e11ee inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add968ea14f1aa3d3bffc110da3e1d031"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#add968ea14f1aa3d3bffc110da3e1d031">setProblemDefinition</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;pdef)</td></tr>
+<tr class="memdesc:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem definition for the planner. The problem needs to be set before calling <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. Note: If this problem definition replaces a previous one, it may also be necessary to call <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a>. <br /></td></tr>
+<tr class="separator:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46d2a6941a33dbac28e6736949375e2b"></a>
+<a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a46d2a6941a33dbac28e6736949375e2b">solve</a> (const <a class="el" href="namespaceompl_1_1base.html#a9fd3e25e86865682038a538289c9f3f6">PlannerTerminationConditionFn</a> &amp;ptc, double checkInterval)</td></tr>
+<tr class="memdesc:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is only evaluated at a specified interval. <br /></td></tr>
+<tr class="separator:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a61ca64b36881603af880677f6445a7"></a>
+<a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a5a61ca64b36881603af880677f6445a7">solve</a> (double solveTime)</td></tr>
+<tr class="memdesc:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is solely a time limit: the number of seconds the algorithm is allowed to spend planning. <br /></td></tr>
+<tr class="separator:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd7cf22ad75c421e8c454778dbe798e4 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd7cf22ad75c421e8c454778dbe798e4"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#acd7cf22ad75c421e8c454778dbe798e4">getName</a> () const </td></tr>
+<tr class="memdesc:acd7cf22ad75c421e8c454778dbe798e4 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the planner. <br /></td></tr>
+<tr class="separator:acd7cf22ad75c421e8c454778dbe798e4 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99bb12c016b06563aab6bba5cdbed01e inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99bb12c016b06563aab6bba5cdbed01e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a99bb12c016b06563aab6bba5cdbed01e">setName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a99bb12c016b06563aab6bba5cdbed01e inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the planner. <br /></td></tr>
+<tr class="separator:a99bb12c016b06563aab6bba5cdbed01e inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb82ef833b530732e6c258638c53347 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6eb82ef833b530732e6c258638c53347"></a>
+const <a class="el" href="structompl_1_1base_1_1PlannerSpecs.html">PlannerSpecs</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a6eb82ef833b530732e6c258638c53347">getSpecs</a> () const </td></tr>
+<tr class="memdesc:a6eb82ef833b530732e6c258638c53347 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the specifications (capabilities of this planner) <br /></td></tr>
+<tr class="separator:a6eb82ef833b530732e6c258638c53347 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab416900477cf4499139c01f35663dffb inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab416900477cf4499139c01f35663dffb"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ab416900477cf4499139c01f35663dffb">checkValidity</a> ()</td></tr>
+<tr class="memdesc:ab416900477cf4499139c01f35663dffb inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the planner is in a working state (setup has been called, a goal was set, the input states seem to be in order). In case of error, this function throws an exception. <br /></td></tr>
+<tr class="separator:ab416900477cf4499139c01f35663dffb inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287976283c3556a6b331ecd30c10087c inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a287976283c3556a6b331ecd30c10087c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a287976283c3556a6b331ecd30c10087c">isSetup</a> () const </td></tr>
+<tr class="memdesc:a287976283c3556a6b331ecd30c10087c inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">setup()</a> was called for this planner. <br /></td></tr>
+<tr class="separator:a287976283c3556a6b331ecd30c10087c inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dc98f7169ae45aa0e886376f546887a inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9dc98f7169ae45aa0e886376f546887a"></a>
+<a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a9dc98f7169ae45aa0e886376f546887a">params</a> ()</td></tr>
+<tr class="memdesc:a9dc98f7169ae45aa0e886376f546887a inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner. <br /></td></tr>
+<tr class="separator:a9dc98f7169ae45aa0e886376f546887a inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560a93ec86a9e421e7515e7828780e2d inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a560a93ec86a9e421e7515e7828780e2d"></a>
+const <a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a560a93ec86a9e421e7515e7828780e2d">params</a> () const </td></tr>
+<tr class="memdesc:a560a93ec86a9e421e7515e7828780e2d inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner. <br /></td></tr>
+<tr class="separator:a560a93ec86a9e421e7515e7828780e2d inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8be4a36399223d93deedb9c9fa3573b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8be4a36399223d93deedb9c9fa3573b"></a>
+const <a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ac8be4a36399223d93deedb9c9fa3573b">getPlannerProgressProperties</a> () const </td></tr>
+<tr class="memdesc:ac8be4a36399223d93deedb9c9fa3573b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a planner's planner progress property map. <br /></td></tr>
+<tr class="separator:ac8be4a36399223d93deedb9c9fa3573b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e269df8fa9bd55926aed3b7403e685 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1e269df8fa9bd55926aed3b7403e685"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ab1e269df8fa9bd55926aed3b7403e685">printProperties</a> (std::ostream &amp;out) const </td></tr>
+<tr class="memdesc:ab1e269df8fa9bd55926aed3b7403e685 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print properties of the motion planner. <br /></td></tr>
+<tr class="separator:ab1e269df8fa9bd55926aed3b7403e685 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29aec12824480f7b3824a98fc9f5775b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29aec12824480f7b3824a98fc9f5775b"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a29aec12824480f7b3824a98fc9f5775b">printSettings</a> (std::ostream &amp;out) const </td></tr>
+<tr class="memdesc:a29aec12824480f7b3824a98fc9f5775b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print information about the motion planner's settings. <br /></td></tr>
+<tr class="separator:a29aec12824480f7b3824a98fc9f5775b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:ae606dd4b834ca3ac621533ba65b3f19a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae606dd4b834ca3ac621533ba65b3f19a"></a>
+typedef std::pair&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a></td></tr>
+<tr class="memdesc:ae606dd4b834ca3ac621533ba65b3f19a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pair of vertices, i.e., an edge. <br /></td></tr>
+<tr class="separator:ae606dd4b834ca3ac621533ba65b3f19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afddaea7c85f734966724a937818ab10b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afddaea7c85f734966724a937818ab10b"></a>
+typedef boost::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#afddaea7c85f734966724a937818ab10b">VertexPtrNNPtr</a></td></tr>
+<tr class="memdesc:afddaea7c85f734966724a937818ab10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The OMPL::NearestNeighbors structure. <br /></td></tr>
+<tr class="separator:afddaea7c85f734966724a937818ab10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a3a62b1c1a6de7b66fb4200fe60527b35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a62b1c1a6de7b66fb4200fe60527b35"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a3a62b1c1a6de7b66fb4200fe60527b35">estimateMeasures</a> ()</td></tr>
+<tr class="memdesc:a3a62b1c1a6de7b66fb4200fe60527b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">A debug function: Estimate the measure of the free/obstace space via sampling. <br /></td></tr>
+<tr class="separator:a3a62b1c1a6de7b66fb4200fe60527b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58e352b6ad8b40aba2164f848dd7122"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad58e352b6ad8b40aba2164f848dd7122"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ad58e352b6ad8b40aba2164f848dd7122">iterate</a> ()</td></tr>
+<tr class="memdesc:ad58e352b6ad8b40aba2164f848dd7122"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single iteration. <br /></td></tr>
+<tr class="separator:ad58e352b6ad8b40aba2164f848dd7122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a0f47e45999a607436be9185f922df6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a0f47e45999a607436be9185f922df6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a7a0f47e45999a607436be9185f922df6">newBatch</a> ()</td></tr>
+<tr class="memdesc:a7a0f47e45999a607436be9185f922df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize variables for a new batch. <br /></td></tr>
+<tr class="separator:a7a0f47e45999a607436be9185f922df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fff828f6975fd30c0dfe6416a689879"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fff828f6975fd30c0dfe6416a689879"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a3fff828f6975fd30c0dfe6416a689879">updateSamples</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;vertex)</td></tr>
+<tr class="memdesc:a3fff828f6975fd30c0dfe6416a689879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the list of free samples. <br /></td></tr>
+<tr class="separator:a3fff828f6975fd30c0dfe6416a689879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a975b0c18fa867de36976c0b6bb90f38d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a975b0c18fa867de36976c0b6bb90f38d"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a975b0c18fa867de36976c0b6bb90f38d">prune</a> ()</td></tr>
+<tr class="memdesc:a975b0c18fa867de36976c0b6bb90f38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune the problem. Returns true if pruning was done. <br /></td></tr>
+<tr class="separator:a975b0c18fa867de36976c0b6bb90f38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00571593ac7c30d49b8713b6e125eb4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00571593ac7c30d49b8713b6e125eb4a"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a00571593ac7c30d49b8713b6e125eb4a">resort</a> ()</td></tr>
+<tr class="memdesc:a00571593ac7c30d49b8713b6e125eb4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resort the queue. Returns true if any pruning was done. <br /></td></tr>
+<tr class="separator:a00571593ac7c30d49b8713b6e125eb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0f6d681e7cff5e6261f7de808f7dbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea0f6d681e7cff5e6261f7de808f7dbe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aea0f6d681e7cff5e6261f7de808f7dbe">publishSolution</a> ()</td></tr>
+<tr class="memdesc:aea0f6d681e7cff5e6261f7de808f7dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publish the found solution to the ProblemDefinition. <br /></td></tr>
+<tr class="separator:aea0f6d681e7cff5e6261f7de808f7dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8174806baa5a2c4f3b61e40b17db3a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f8174806baa5a2c4f3b61e40b17db3a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8f8174806baa5a2c4f3b61e40b17db3a">pruneSamples</a> ()</td></tr>
+<tr class="memdesc:a8f8174806baa5a2c4f3b61e40b17db3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune all samples with a solution heuristic that is not less than the bestCost_. <br /></td></tr>
+<tr class="separator:a8f8174806baa5a2c4f3b61e40b17db3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff3b16867b7b6b4cc547bd01ae66180"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adff3b16867b7b6b4cc547bd01ae66180"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff3b16867b7b6b4cc547bd01ae66180">checkEdge</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edge)</td></tr>
+<tr class="memdesc:adff3b16867b7b6b4cc547bd01ae66180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks an edge for collision. A wrapper to SpaceInformation-&gt;checkMotion that tracks number of collision checks. <br /></td></tr>
+<tr class="separator:adff3b16867b7b6b4cc547bd01ae66180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb92aeb83fed847fa835b24e685a1e8a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb92aeb83fed847fa835b24e685a1e8a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aeb92aeb83fed847fa835b24e685a1e8a">dropSample</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> oldSample)</td></tr>
+<tr class="memdesc:aeb92aeb83fed847fa835b24e685a1e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actually remove a sample from its NN struct: <br /></td></tr>
+<tr class="separator:aeb92aeb83fed847fa835b24e685a1e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0331485a574ddb254904ebd073e1bfa2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0331485a574ddb254904ebd073e1bfa2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a0331485a574ddb254904ebd073e1bfa2">addEdge</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;newEdge, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;edgeCost, const bool &amp;removeFromFree, const bool &amp;updateDescendants)</td></tr>
+<tr class="memdesc:a0331485a574ddb254904ebd073e1bfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge from the edge queue to the tree. Will add the state to the vertex queue if it's new to the tree or otherwise replace the parent. Updates solution information if the solution improves. <br /></td></tr>
+<tr class="separator:a0331485a574ddb254904ebd073e1bfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25824acd04ef2368c90aa6e6a023fc33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25824acd04ef2368c90aa6e6a023fc33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a25824acd04ef2368c90aa6e6a023fc33">replaceParent</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;newEdge, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;edgeCost, const bool &amp;updateDescendants)</td></tr>
+<tr class="memdesc:a25824acd04ef2368c90aa6e6a023fc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the parent edge with the given new edge and cost. <br /></td></tr>
+<tr class="separator:a25824acd04ef2368c90aa6e6a023fc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5245ef881a9c5f19e9048f3abc5f6fea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5245ef881a9c5f19e9048f3abc5f6fea"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a5245ef881a9c5f19e9048f3abc5f6fea">updateGoalVertex</a> ()</td></tr>
+<tr class="memdesc:a5245ef881a9c5f19e9048f3abc5f6fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The special work that needs to be done to update the goal vertex is the solution has changed. <br /></td></tr>
+<tr class="separator:a5245ef881a9c5f19e9048f3abc5f6fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eda9c6faea2cc1a670426d084c47935"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6eda9c6faea2cc1a670426d084c47935"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a6eda9c6faea2cc1a670426d084c47935">addSample</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;newSample)</td></tr>
+<tr class="memdesc:a6eda9c6faea2cc1a670426d084c47935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a sample. <br /></td></tr>
+<tr class="separator:a6eda9c6faea2cc1a670426d084c47935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6cafa0f512ee2ba813c1a10f3c1ee76"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6cafa0f512ee2ba813c1a10f3c1ee76"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae6cafa0f512ee2ba813c1a10f3c1ee76">addVertex</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;newVertex, const bool &amp;removeFromFree)</td></tr>
+<tr class="memdesc:ae6cafa0f512ee2ba813c1a10f3c1ee76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the graph. <br /></td></tr>
+<tr class="separator:ae6cafa0f512ee2ba813c1a10f3c1ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f07cb5ff54c75e8e11868ff5dca65e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6f07cb5ff54c75e8e11868ff5dca65e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae6f07cb5ff54c75e8e11868ff5dca65e">nearestSamples</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;vertex, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &gt; *neighbourSamples)</td></tr>
+<tr class="memdesc:ae6f07cb5ff54c75e8e11868ff5dca65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nearest samples from the freeStateNN_ using the appropriate "near" definition (i.e., k or r). <br /></td></tr>
+<tr class="separator:ae6f07cb5ff54c75e8e11868ff5dca65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4107f1123b38db71f019428c8402dd63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4107f1123b38db71f019428c8402dd63"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4107f1123b38db71f019428c8402dd63">nearestVertices</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;vertex, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &gt; *neighbourVertices)</td></tr>
+<tr class="memdesc:a4107f1123b38db71f019428c8402dd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nearest samples from the vertexNN_ using the appropriate "near" definition (i.e., k or r). <br /></td></tr>
+<tr class="separator:a4107f1123b38db71f019428c8402dd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e1a8fe716132095029ab2550037ef0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34e1a8fe716132095029ab2550037ef0"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a34e1a8fe716132095029ab2550037ef0">nnDistance</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;a, const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;b) const </td></tr>
+<tr class="memdesc:a34e1a8fe716132095029ab2550037ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The distance function used for nearest neighbours. Calculates the distance directionally from the given state to all the other states (can be used on states either in our out of the graph). <br /></td></tr>
+<tr class="separator:a34e1a8fe716132095029ab2550037ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92e53685d13e8cfb91f5cb1956cca70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab92e53685d13e8cfb91f5cb1956cca70"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ab92e53685d13e8cfb91f5cb1956cca70">lowerBoundHeuristicVertex</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;edgePair) const </td></tr>
+<tr class="memdesc:ab92e53685d13e8cfb91f5cb1956cca70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a heuristic estimate of the cost of a solution constrained to pass through a vertex, independent of the current cost-to-come. I.e., combines the heuristic estimates of the cost-to-come and cost-to-go. <br /></td></tr>
+<tr class="separator:ab92e53685d13e8cfb91f5cb1956cca70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad73a4d83d3dbd113848133d5499c80a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad73a4d83d3dbd113848133d5499c80a"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aad73a4d83d3dbd113848133d5499c80a">currentHeuristicVertex</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;edgePair) const </td></tr>
+<tr class="memdesc:aad73a4d83d3dbd113848133d5499c80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a heuristic estimate of the cost of a solution constrained to pass through a vertex, dependent on the current cost-to-come. I.e., combines the current cost-to-come with a heuristic estimate of the cost-to-go. <br /></td></tr>
+<tr class="separator:aad73a4d83d3dbd113848133d5499c80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac036f0dec8e03d7591871204dc8edc9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac036f0dec8e03d7591871204dc8edc9"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aac036f0dec8e03d7591871204dc8edc9">lowerBoundHeuristicEdge</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edgePair) const </td></tr>
+<tr class="memdesc:aac036f0dec8e03d7591871204dc8edc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a heuristic estimate of the cost of a solution constrained to go through an edge, independent of the cost-to-come of the parent state. I.e., combines the heuristic estimates of the cost-to-come, edge cost, and cost-to-go. <br /></td></tr>
+<tr class="separator:aac036f0dec8e03d7591871204dc8edc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d29b3bb98e072a00732456958ad3984"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d29b3bb98e072a00732456958ad3984"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a9d29b3bb98e072a00732456958ad3984">currentHeuristicEdge</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edgePair) const </td></tr>
+<tr class="memdesc:a9d29b3bb98e072a00732456958ad3984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a heuristic estimate of the cost of a solution constrained to go through an edge, dependent on the cost-to-come of the parent state. I.e., combines the current cost-to-come with heuristic estimates of the edge cost, and cost-to-go. <br /></td></tr>
+<tr class="separator:a9d29b3bb98e072a00732456958ad3984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98ab4c1fb266012a05a0af4fda94619"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab98ab4c1fb266012a05a0af4fda94619"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ab98ab4c1fb266012a05a0af4fda94619">currentHeuristicEdgeTarget</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edgePair) const </td></tr>
+<tr class="memdesc:ab98ab4c1fb266012a05a0af4fda94619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a heuristic estimate of the cost of a path to the <em>target</em> of an edge, dependent on the cost-to-come of the parent state. I.e., combines the current cost-to-come with heuristic estimates of the edge cost. <br /></td></tr>
+<tr class="separator:ab98ab4c1fb266012a05a0af4fda94619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee54bb58220bdcaec5078d09e3c42341"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee54bb58220bdcaec5078d09e3c42341"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aee54bb58220bdcaec5078d09e3c42341">costToComeHeuristic</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;vertex) const </td></tr>
+<tr class="memdesc:aee54bb58220bdcaec5078d09e3c42341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate a heuristic estimate of the cost-to-come for a <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html" title="The vertex of the underlying graphs in BIT*. ">Vertex</a>. <br /></td></tr>
+<tr class="separator:aee54bb58220bdcaec5078d09e3c42341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b5a258f1fb11be7203f01b6fa14b68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80b5a258f1fb11be7203f01b6fa14b68"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a80b5a258f1fb11be7203f01b6fa14b68">edgeCostHeuristic</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edgePair) const </td></tr>
+<tr class="memdesc:a80b5a258f1fb11be7203f01b6fa14b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate a heuristic estimate of the cost an edge between two Vertices. <br /></td></tr>
+<tr class="separator:a80b5a258f1fb11be7203f01b6fa14b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52243491b720d4647fd2a166cf7e202c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52243491b720d4647fd2a166cf7e202c"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a52243491b720d4647fd2a166cf7e202c">costToGoHeuristic</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> &amp;vertex) const </td></tr>
+<tr class="memdesc:a52243491b720d4647fd2a166cf7e202c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate a heuristic estimate of the cost-to-go for a <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html" title="The vertex of the underlying graphs in BIT*. ">Vertex</a>. <br /></td></tr>
+<tr class="separator:a52243491b720d4647fd2a166cf7e202c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d670765389e12fa410760f11eec60d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41d670765389e12fa410760f11eec60d"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a41d670765389e12fa410760f11eec60d">trueEdgeCost</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edgePair) const </td></tr>
+<tr class="memdesc:a41d670765389e12fa410760f11eec60d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The true cost of an edge, including collisions. <br /></td></tr>
+<tr class="separator:a41d670765389e12fa410760f11eec60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae6c51a75f79d6218ad1b748ba82c50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ae6c51a75f79d6218ad1b748ba82c50"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a3ae6c51a75f79d6218ad1b748ba82c50">neighbourhoodCost</a> () const </td></tr>
+<tr class="memdesc:a3ae6c51a75f79d6218ad1b748ba82c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the max req'd cost to define a neighbourhood around a state. I.e., For path-length problems, the cost equivalent of +2*r. <br /></td></tr>
+<tr class="separator:a3ae6c51a75f79d6218ad1b748ba82c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a30d7f2bbb74676b643e9fa23a5b6ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a30d7f2bbb74676b643e9fa23a5b6ab"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4a30d7f2bbb74676b643e9fa23a5b6ab">isCostBetterThan</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b) const </td></tr>
+<tr class="memdesc:a4a30d7f2bbb74676b643e9fa23a5b6ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare whether cost a is better than cost b. Ignores the tolerances used by OptimizationObjective::isCostBetterThan. <br /></td></tr>
+<tr class="separator:a4a30d7f2bbb74676b643e9fa23a5b6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4634a9dc734481198be1583defe94d03"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4634a9dc734481198be1583defe94d03"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4634a9dc734481198be1583defe94d03">isCostWorseThan</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b) const </td></tr>
+<tr class="memdesc:a4634a9dc734481198be1583defe94d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare whether cost a is worse than cost b by checking whether b is better than a. <br /></td></tr>
+<tr class="separator:a4634a9dc734481198be1583defe94d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dcbd88a43681578634d33df4beb7436"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dcbd88a43681578634d33df4beb7436"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4dcbd88a43681578634d33df4beb7436">isCostEquivalentTo</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b) const </td></tr>
+<tr class="memdesc:a4dcbd88a43681578634d33df4beb7436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare whether cost a and cost b are equivalent by checking that neither a or b is better than the other. <br /></td></tr>
+<tr class="separator:a4dcbd88a43681578634d33df4beb7436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2bf244456dc7233365316c6841f9d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a2bf244456dc7233365316c6841f9d7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1a2bf244456dc7233365316c6841f9d7">isCostNotEquivalentTo</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b) const </td></tr>
+<tr class="memdesc:a1a2bf244456dc7233365316c6841f9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare whether cost a and cost b are not equivalent by checking if either a or b is better than the other. <br /></td></tr>
+<tr class="separator:a1a2bf244456dc7233365316c6841f9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5999ecc8eecc51293fa424b256c555f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5999ecc8eecc51293fa424b256c555f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae5999ecc8eecc51293fa424b256c555f">isCostBetterThanOrEquivalentTo</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b) const </td></tr>
+<tr class="memdesc:ae5999ecc8eecc51293fa424b256c555f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare whether cost a is better or equivalent to cost b by checking that b is not better than a. <br /></td></tr>
+<tr class="separator:ae5999ecc8eecc51293fa424b256c555f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cadbe4da5b8b0908154d5d068ba800"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5cadbe4da5b8b0908154d5d068ba800"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ad5cadbe4da5b8b0908154d5d068ba800">isCostWorseThanOrEquivalentTo</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b) const </td></tr>
+<tr class="memdesc:ad5cadbe4da5b8b0908154d5d068ba800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare whether cost a is worse or equivalent to cost b by checking that a is not better than b. <br /></td></tr>
+<tr class="separator:ad5cadbe4da5b8b0908154d5d068ba800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b4a79485e9d7c919dd09754470cfa7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a14b4a79485e9d7c919dd09754470cfa7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a14b4a79485e9d7c919dd09754470cfa7">isFinite</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost) const </td></tr>
+<tr class="memdesc:a14b4a79485e9d7c919dd09754470cfa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the cost is finite or not. By default calls std::isfinite on Cost::value(). <br /></td></tr>
+<tr class="separator:a14b4a79485e9d7c919dd09754470cfa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7834b77eb8366438e3febb72844cc8a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7834b77eb8366438e3febb72844cc8a2"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a7834b77eb8366438e3febb72844cc8a2">betterCost</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b) const </td></tr>
+<tr class="memdesc:a7834b77eb8366438e3febb72844cc8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The better of two costs. <br /></td></tr>
+<tr class="separator:a7834b77eb8366438e3febb72844cc8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dcb138cebae842e26b7360d0588decf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8dcb138cebae842e26b7360d0588decf"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8dcb138cebae842e26b7360d0588decf">combineCosts</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;c) const </td></tr>
+<tr class="memdesc:a8dcb138cebae842e26b7360d0588decf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine 3 costs. <br /></td></tr>
+<tr class="separator:a8dcb138cebae842e26b7360d0588decf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85862cc3042e75ff3135ff32562f3c1c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85862cc3042e75ff3135ff32562f3c1c"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a85862cc3042e75ff3135ff32562f3c1c">combineCosts</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;b, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;c, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;d) const </td></tr>
+<tr class="memdesc:a85862cc3042e75ff3135ff32562f3c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine 4 costs. <br /></td></tr>
+<tr class="separator:a85862cc3042e75ff3135ff32562f3c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5b2634387611fe075f96515ccbadddc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5b2634387611fe075f96515ccbadddc"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa5b2634387611fe075f96515ccbadddc">fractionalChange</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;newCost, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;oldCost) const </td></tr>
+<tr class="memdesc:aa5b2634387611fe075f96515ccbadddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the fractional change of cost "newCost" from "oldCost" relative to "oldCost", i.e., (newCost - oldCost)/oldCost. <br /></td></tr>
+<tr class="separator:aa5b2634387611fe075f96515ccbadddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d5ef1db8de977d3bb5473a98d8bbe6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4d5ef1db8de977d3bb5473a98d8bbe6"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ad4d5ef1db8de977d3bb5473a98d8bbe6">fractionalChange</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;newCost, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;oldCost, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;refCost) const </td></tr>
+<tr class="memdesc:ad4d5ef1db8de977d3bb5473a98d8bbe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the fractional change of cost "newCost" from "oldCost" relative to "refCost", i.e., (newCost - oldCost)/refCost. <br /></td></tr>
+<tr class="separator:ad4d5ef1db8de977d3bb5473a98d8bbe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c7c881f7982dba0e87aa315594ad88f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c7c881f7982dba0e87aa315594ad88f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1c7c881f7982dba0e87aa315594ad88f">initializeNearestTerms</a> ()</td></tr>
+<tr class="memdesc:a1c7c881f7982dba0e87aa315594ad88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the nearest-neighbour terms. <br /></td></tr>
+<tr class="separator:a1c7c881f7982dba0e87aa315594ad88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae81b3c1ed7643694ecb526d4bc28e347"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae81b3c1ed7643694ecb526d4bc28e347"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae81b3c1ed7643694ecb526d4bc28e347">updateNearestTerms</a> ()</td></tr>
+<tr class="memdesc:ae81b3c1ed7643694ecb526d4bc28e347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the appropriate nearest-neighbour terms, r_ and k_. <br /></td></tr>
+<tr class="separator:ae81b3c1ed7643694ecb526d4bc28e347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8289209ecd21ae3605610db20bcbf45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad8289209ecd21ae3605610db20bcbf45"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ad8289209ecd21ae3605610db20bcbf45">calculateR</a> (unsigned int N) const </td></tr>
+<tr class="memdesc:ad8289209ecd21ae3605610db20bcbf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the r for r-disc nearest neighbours, a function of the current graph. <br /></td></tr>
+<tr class="separator:ad8289209ecd21ae3605610db20bcbf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad507f2ebe37c7b2197e60cd6155263d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad507f2ebe37c7b2197e60cd6155263d0"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ad507f2ebe37c7b2197e60cd6155263d0">calculateK</a> (unsigned int N) const </td></tr>
+<tr class="memdesc:ad507f2ebe37c7b2197e60cd6155263d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the k for k-nearest neighours, a function of the current graph. <br /></td></tr>
+<tr class="separator:ad507f2ebe37c7b2197e60cd6155263d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2550840c28ee4a25bef7cba5fbdc594b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2550840c28ee4a25bef7cba5fbdc594b"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a2550840c28ee4a25bef7cba5fbdc594b">minimumRggR</a> () const </td></tr>
+<tr class="memdesc:a2550840c28ee4a25bef7cba5fbdc594b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the lower-bounding radius RGG term for asymptotic almost-sure convergence to the optimal path (i.e., r_rrg* in Karaman and Frazzoli IJRR 11). This is a function of the size of the problem domain. <br /></td></tr>
+<tr class="separator:a2550840c28ee4a25bef7cba5fbdc594b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf6f4f873bcaeaea0d4318aad86bce8b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf6f4f873bcaeaea0d4318aad86bce8b"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#adf6f4f873bcaeaea0d4318aad86bce8b">minimumRggK</a> () const </td></tr>
+<tr class="memdesc:adf6f4f873bcaeaea0d4318aad86bce8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the lower-bounding k-nearest RGG term for asymptotic almost-sure convergence to the optimal path (i.e., k_rrg* in Karaman and Frazzoli IJRR 11). This is a function of the state dimension and is left as a double for later accuracy in calculate k. <br /></td></tr>
+<tr class="separator:adf6f4f873bcaeaea0d4318aad86bce8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b158bb49f8063e290586b39d9a7e9e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82b158bb49f8063e290586b39d9a7e9e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a82b158bb49f8063e290586b39d9a7e9e">goalMessage</a> () const </td></tr>
+<tr class="memdesc:a82b158bb49f8063e290586b39d9a7e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message printed when a goal is found/improved. <br /></td></tr>
+<tr class="separator:a82b158bb49f8063e290586b39d9a7e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ec18cd2accc49bf3d51b61e28ba3ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02ec18cd2accc49bf3d51b61e28ba3ec"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a02ec18cd2accc49bf3d51b61e28ba3ec">endSuccessMessage</a> () const </td></tr>
+<tr class="memdesc:a02ec18cd2accc49bf3d51b61e28ba3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message printed when solve finishes successfully. <br /></td></tr>
+<tr class="separator:a02ec18cd2accc49bf3d51b61e28ba3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb2927a25bf20a5786ed4ef9f6729e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bb2927a25bf20a5786ed4ef9f6729e3"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a6bb2927a25bf20a5786ed4ef9f6729e3">endFailureMessage</a> () const </td></tr>
+<tr class="memdesc:a6bb2927a25bf20a5786ed4ef9f6729e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message printed when solve finishes unsuccessfully. <br /></td></tr>
+<tr class="separator:a6bb2927a25bf20a5786ed4ef9f6729e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696999986d53fc2096cfb20e10fb5094"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a696999986d53fc2096cfb20e10fb5094"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a696999986d53fc2096cfb20e10fb5094">statusMessage</a> (const <a class="el" href="namespaceompl_1_1msg.html#ace832246a7b4bc5a50dde93a7e29a6b9">ompl::msg::LogLevel</a> &amp;msgLevel, const std::string &amp;status) const </td></tr>
+<tr class="memdesc:a696999986d53fc2096cfb20e10fb5094"><td class="mdescLeft">&#160;</td><td class="mdescRight">A debug-level status message for debugging. <br /></td></tr>
+<tr class="separator:a696999986d53fc2096cfb20e10fb5094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf23298fbc6601af0eeba6454b49b8f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf23298fbc6601af0eeba6454b49b8f8"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aaf23298fbc6601af0eeba6454b49b8f8">bestCost</a> () const </td></tr>
+<tr class="memdesc:aaf23298fbc6601af0eeba6454b49b8f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the best exact-solution cost found as the raw data. (bestCost_) <br /></td></tr>
+<tr class="separator:aaf23298fbc6601af0eeba6454b49b8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f6704e62801362259f59c1cde01c2f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4f6704e62801362259f59c1cde01c2f"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa4f6704e62801362259f59c1cde01c2f">bestCostProgressProperty</a> () const </td></tr>
+<tr class="memdesc:aa4f6704e62801362259f59c1cde01c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the best exact-solution cost found as a planner-progress property. (bestCost_) <br /></td></tr>
+<tr class="separator:aa4f6704e62801362259f59c1cde01c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da3b967a3157d9c88495225510a6a05"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0da3b967a3157d9c88495225510a6a05"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a0da3b967a3157d9c88495225510a6a05">bestLengthProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a0da3b967a3157d9c88495225510a6a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the length of the best exact-solution found as a planner-progress property. (bestLength_) <br /></td></tr>
+<tr class="separator:a0da3b967a3157d9c88495225510a6a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f0ee04e46f749e7a97fdf65ff8408c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36f0ee04e46f749e7a97fdf65ff8408c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a36f0ee04e46f749e7a97fdf65ff8408c">currentFreeProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a36f0ee04e46f749e7a97fdf65ff8408c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current number of free samples as a planner-progress property. (size of freeStateNN_) <br /></td></tr>
+<tr class="separator:a36f0ee04e46f749e7a97fdf65ff8408c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d371be189ac1c476801f07b7df681ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d371be189ac1c476801f07b7df681ff"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a7d371be189ac1c476801f07b7df681ff">currentVertexProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a7d371be189ac1c476801f07b7df681ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current number of vertices in the graph as a planner-progress property. (Size of vertexNN_) <br /></td></tr>
+<tr class="separator:a7d371be189ac1c476801f07b7df681ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da6f45ff101ec0f3dcaa7faa28dcca0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6da6f45ff101ec0f3dcaa7faa28dcca0"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a6da6f45ff101ec0f3dcaa7faa28dcca0">vertexQueueSizeProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a6da6f45ff101ec0f3dcaa7faa28dcca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current number of vertices in the expansion queue as a planner-progress property. (The position of the vertex subqueue of intQueue_) <br /></td></tr>
+<tr class="separator:a6da6f45ff101ec0f3dcaa7faa28dcca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9402a36332051c53ce254689ca24739"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9402a36332051c53ce254689ca24739"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ab9402a36332051c53ce254689ca24739">edgeQueueSizeProgressProperty</a> () const </td></tr>
+<tr class="memdesc:ab9402a36332051c53ce254689ca24739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current number of edges in the search queue as a planner-progress property. (The size of the edge subqueue of intQueue_) <br /></td></tr>
+<tr class="separator:ab9402a36332051c53ce254689ca24739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe962cddc0afb1a38b41af2e5ec94424"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe962cddc0afb1a38b41af2e5ec94424"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#afe962cddc0afb1a38b41af2e5ec94424">iterationProgressProperty</a> () const </td></tr>
+<tr class="memdesc:afe962cddc0afb1a38b41af2e5ec94424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of iterations as a planner-progress property. (numIterations_) <br /></td></tr>
+<tr class="separator:afe962cddc0afb1a38b41af2e5ec94424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb79aaf281003825fcbee267fc6aef23"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb79aaf281003825fcbee267fc6aef23"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#afb79aaf281003825fcbee267fc6aef23">numBatches</a> () const </td></tr>
+<tr class="memdesc:afb79aaf281003825fcbee267fc6aef23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of batches processed as the raw data. (numBatches_) <br /></td></tr>
+<tr class="separator:afb79aaf281003825fcbee267fc6aef23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd630990921b28718e313a2cc1c0a8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dd630990921b28718e313a2cc1c0a8e"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1dd630990921b28718e313a2cc1c0a8e">batchesProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a1dd630990921b28718e313a2cc1c0a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of batches processed as a planner-progress property. (numBatches_) <br /></td></tr>
+<tr class="separator:a1dd630990921b28718e313a2cc1c0a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f8ded2f8d68ae0f5b6f463a614b241"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8f8ded2f8d68ae0f5b6f463a614b241"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa8f8ded2f8d68ae0f5b6f463a614b241">pruningProgressProperty</a> () const </td></tr>
+<tr class="memdesc:aa8f8ded2f8d68ae0f5b6f463a614b241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of graph prunings performed as a planner-progress property. (numPrunings_) <br /></td></tr>
+<tr class="separator:aa8f8ded2f8d68ae0f5b6f463a614b241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8151f0e3723a9f0467aedcf84422590b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8151f0e3723a9f0467aedcf84422590b"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8151f0e3723a9f0467aedcf84422590b">totalStatesCreatedProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a8151f0e3723a9f0467aedcf84422590b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <em>total</em> number of states generated as a planner-progress property. (numSamples_) <br /></td></tr>
+<tr class="separator:a8151f0e3723a9f0467aedcf84422590b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9397cedfe47d519b9bb86fc0ad72402a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9397cedfe47d519b9bb86fc0ad72402a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a9397cedfe47d519b9bb86fc0ad72402a">verticesConstructedProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a9397cedfe47d519b9bb86fc0ad72402a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the <em>total</em> number of vertices added to the graph as a planner-progress property. (numVertices_) <br /></td></tr>
+<tr class="separator:a9397cedfe47d519b9bb86fc0ad72402a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fb7ebf5d72b097484343a45e77f0dfe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fb7ebf5d72b097484343a45e77f0dfe"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a7fb7ebf5d72b097484343a45e77f0dfe">statesPrunedProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a7fb7ebf5d72b097484343a45e77f0dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of states pruned from the problem as a planner-progress property. (numFreeStatesPruned_) <br /></td></tr>
+<tr class="separator:a7fb7ebf5d72b097484343a45e77f0dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49de4d1e16390c9e5dfeebbd7a73fdf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49de4d1e16390c9e5dfeebbd7a73fdf6"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a49de4d1e16390c9e5dfeebbd7a73fdf6">verticesDisconnectedProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a49de4d1e16390c9e5dfeebbd7a73fdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of graph vertices that are disconnected and either returned to the set of free samples or deleted completely as a planner-progress property. (numVerticesDisconnected_) <br /></td></tr>
+<tr class="separator:a49de4d1e16390c9e5dfeebbd7a73fdf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338a8a3885f642fa5eeb69c361c230db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a338a8a3885f642fa5eeb69c361c230db"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a338a8a3885f642fa5eeb69c361c230db">rewiringProgressProperty</a> () const </td></tr>
+<tr class="memdesc:a338a8a3885f642fa5eeb69c361c230db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of global-search edges that rewired the graph as a planner-progress property. (numRewirings_) <br /></td></tr>
+<tr class="separator:a338a8a3885f642fa5eeb69c361c230db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41fc06f1ca434decd36433ab864c81f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa41fc06f1ca434decd36433ab864c81f"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa41fc06f1ca434decd36433ab864c81f">stateCollisionCheckProgressProperty</a> () const </td></tr>
+<tr class="memdesc:aa41fc06f1ca434decd36433ab864c81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of state collisions checks (i.e., calls to SpaceInformation::isValid(...)) as a planner-progress property. (numStateCollisionChecks_) <br /></td></tr>
+<tr class="separator:aa41fc06f1ca434decd36433ab864c81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6dbaa31d7f9bf8db6dbd0d4743c1746"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6dbaa31d7f9bf8db6dbd0d4743c1746"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac6dbaa31d7f9bf8db6dbd0d4743c1746">edgeCollisionCheckProgressProperty</a> () const </td></tr>
+<tr class="memdesc:ac6dbaa31d7f9bf8db6dbd0d4743c1746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of edge (or motion) collision checks (i.e., calls to SpaceInformation::checkMotion(...)) as a planner-progress property. (numEdgeCollisionChecks_) <br /></td></tr>
+<tr class="separator:ac6dbaa31d7f9bf8db6dbd0d4743c1746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3f3ca02a51273d7295368d6153ca27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add3f3ca02a51273d7295368d6153ca27"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#add3f3ca02a51273d7295368d6153ca27">nearestNeighbourProgressProperty</a> () const </td></tr>
+<tr class="memdesc:add3f3ca02a51273d7295368d6153ca27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of nearest neighbour calls (i.e., <a class="el" href="classompl_1_1NearestNeighbors.html#ae3d54c8565ec5ff4f97c31b3d60d5091" title="Get the k-nearest neighbors of a point. ">NearestNeighbors&lt;T&gt;::nearestK</a>(...) or <a class="el" href="classompl_1_1NearestNeighbors.html#a473fbd3b00e2eb4aa6b56c767e702e9c" title="Get the nearest neighbors of a point, within a specified radius. ">NearestNeighbors&lt;T&gt;::nearestR</a>(...)) as a planner-progress property. (numNearestNeighbours_) <br /></td></tr>
+<tr class="separator:add3f3ca02a51273d7295368d6153ca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6b4a1345376e3e977772c38d38d5c50c"></a>
+template&lt;typename T , typename PlannerType , typename SetterType , typename GetterType &gt; </td></tr>
+<tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c">declareParam</a> (const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const GetterType &amp;getter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td></tr>
+<tr class="memdesc:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter and getter functions. <br /></td></tr>
+<tr class="separator:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3f9da0d41951502ea4df1184ef5a99a6"></a>
+template&lt;typename T , typename PlannerType , typename SetterType &gt; </td></tr>
+<tr class="memitem:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a3f9da0d41951502ea4df1184ef5a99a6">declareParam</a> (const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td></tr>
+<tr class="memdesc:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter function. <br /></td></tr>
+<tr class="separator:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dc481539fac465497ad158e1bdac91a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a> (const std::string &amp;progressPropertyName, const <a class="el" href="classompl_1_1base_1_1Planner.html#a761c5b0eeff509479618ae7eefa3de46">PlannerProgressProperty</a> &amp;prop)</td></tr>
+<tr class="memdesc:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner progress property called <em>progressPropertyName</em> with a property querying function <em>prop</em> to this planner's progress property map. <br /></td></tr>
+<tr class="separator:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a87becebd227e3f78c51c567846e3ff24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87becebd227e3f78c51c567846e3ff24"></a>
+ompl::base::InformedSamplerPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a87becebd227e3f78c51c567846e3ff24">sampler_</a></td></tr>
+<tr class="memdesc:a87becebd227e3f78c51c567846e3ff24"><td class="mdescLeft">&#160;</td><td class="mdescRight">State sampler. <br /></td></tr>
+<tr class="separator:a87becebd227e3f78c51c567846e3ff24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c391e5296beeaf0e5b3096f3fc0e6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4c391e5296beeaf0e5b3096f3fc0e6e"></a>
+<a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">ompl::base::OptimizationObjectivePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa4c391e5296beeaf0e5b3096f3fc0e6e">opt_</a></td></tr>
+<tr class="memdesc:aa4c391e5296beeaf0e5b3096f3fc0e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimization objective copied from ProblemDefinition. <br /></td></tr>
+<tr class="separator:aa4c391e5296beeaf0e5b3096f3fc0e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24375e7473df57e492cee177294f5287"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24375e7473df57e492cee177294f5287"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a24375e7473df57e492cee177294f5287">startVertex_</a></td></tr>
+<tr class="memdesc:a24375e7473df57e492cee177294f5287"><td class="mdescLeft">&#160;</td><td class="mdescRight">The start of the problem as a vertex. <br /></td></tr>
+<tr class="separator:a24375e7473df57e492cee177294f5287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86566b68d4a2e76f9dc17c77710371cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86566b68d4a2e76f9dc17c77710371cd"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a86566b68d4a2e76f9dc17c77710371cd">goalVertex_</a></td></tr>
+<tr class="memdesc:a86566b68d4a2e76f9dc17c77710371cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The goal of the problem as a vertex. <br /></td></tr>
+<tr class="separator:a86566b68d4a2e76f9dc17c77710371cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada76d1b50f332e1dc7f66f633a718d00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada76d1b50f332e1dc7f66f633a718d00"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#afddaea7c85f734966724a937818ab10b">VertexPtrNNPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ada76d1b50f332e1dc7f66f633a718d00">freeStateNN_</a></td></tr>
+<tr class="memdesc:ada76d1b50f332e1dc7f66f633a718d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unconnected samples as a nearest-neighbours datastructure. Sorted by nnDistance. Size accessible via currentFreeProgressProperty. <br /></td></tr>
+<tr class="separator:ada76d1b50f332e1dc7f66f633a718d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3d25bb85e2bba21b2f6addafc11dec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b3d25bb85e2bba21b2f6addafc11dec"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#afddaea7c85f734966724a937818ab10b">VertexPtrNNPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a9b3d25bb85e2bba21b2f6addafc11dec">vertexNN_</a></td></tr>
+<tr class="memdesc:a9b3d25bb85e2bba21b2f6addafc11dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertices as a nearest-neighbours data structure. Sorted by nnDistance. Size accessible via currentVertexProgressProperty. <br /></td></tr>
+<tr class="separator:a9b3d25bb85e2bba21b2f6addafc11dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5344c924ba17e73c099fe58c69b3ee63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5344c924ba17e73c099fe58c69b3ee63"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#aec8ad112e58e454b97505a392c31abca">IntegratedQueuePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a5344c924ba17e73c099fe58c69b3ee63">intQueue_</a></td></tr>
+<tr class="memdesc:a5344c924ba17e73c099fe58c69b3ee63"><td class="mdescLeft">&#160;</td><td class="mdescRight">The integrated queue of vertices to expand and edges to process ordered on "f-value", i.e., estimated solution cost. Remaining vertex queue "size" and edge queue size are accessible via vertexQueueSizeProgressProperty and edgeQueueSizeProgressProperty, respectively. <br /></td></tr>
+<tr class="separator:a5344c924ba17e73c099fe58c69b3ee63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad896024c13f19a849046aa40983edb90"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad896024c13f19a849046aa40983edb90"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ad896024c13f19a849046aa40983edb90">sampleDensity_</a></td></tr>
+<tr class="memdesc:ad896024c13f19a849046aa40983edb90"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resulting sampling density for a batch. <br /></td></tr>
+<tr class="separator:ad896024c13f19a849046aa40983edb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b81f92f5927c714c5b151b7569cc633"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b81f92f5927c714c5b151b7569cc633"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1b81f92f5927c714c5b151b7569cc633">r_</a></td></tr>
+<tr class="memdesc:a1b81f92f5927c714c5b151b7569cc633"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current r-disc RGG connection radius. <br /></td></tr>
+<tr class="separator:a1b81f92f5927c714c5b151b7569cc633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24504d05af42185f928ce834ead5775"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa24504d05af42185f928ce834ead5775"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa24504d05af42185f928ce834ead5775">k_rgg_</a></td></tr>
+<tr class="memdesc:aa24504d05af42185f928ce834ead5775"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum k-nearest RGG connection term. Only a function of state dimension, so can be calculated once. Left as a double for later accuracy in calculate k. <br /></td></tr>
+<tr class="separator:aa24504d05af42185f928ce834ead5775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b0d6b5e4b737585f6e256a1cfa0178"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93b0d6b5e4b737585f6e256a1cfa0178"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a93b0d6b5e4b737585f6e256a1cfa0178">k_</a></td></tr>
+<tr class="memdesc:a93b0d6b5e4b737585f6e256a1cfa0178"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current k-nearest RGG connection number. <br /></td></tr>
+<tr class="separator:a93b0d6b5e4b737585f6e256a1cfa0178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1110f9c6b25b162b942d57e67a09522"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1110f9c6b25b162b942d57e67a09522"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac1110f9c6b25b162b942d57e67a09522">bestCost_</a></td></tr>
+<tr class="memdesc:ac1110f9c6b25b162b942d57e67a09522"><td class="mdescLeft">&#160;</td><td class="mdescRight">The best cost found to date. This is the maximum total-heuristic cost of samples we'll consider. Accessible via bestCostProgressProperty. <br /></td></tr>
+<tr class="separator:ac1110f9c6b25b162b942d57e67a09522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accda9a3cfe5a61e34d4b46377b3a654f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="accda9a3cfe5a61e34d4b46377b3a654f"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#accda9a3cfe5a61e34d4b46377b3a654f">bestLength_</a></td></tr>
+<tr class="memdesc:accda9a3cfe5a61e34d4b46377b3a654f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of vertices in the best solution found to date. Accessible via bestLengthProgressProperty. <br /></td></tr>
+<tr class="separator:accda9a3cfe5a61e34d4b46377b3a654f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55fc3020c331f0abdafd2b83646e3c4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55fc3020c331f0abdafd2b83646e3c4c"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a55fc3020c331f0abdafd2b83646e3c4c">prunedCost_</a></td></tr>
+<tr class="memdesc:a55fc3020c331f0abdafd2b83646e3c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost to which the graph has been pruned. We will only prune the graph if bestCost_ is less than this value. <br /></td></tr>
+<tr class="separator:a55fc3020c331f0abdafd2b83646e3c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c88d9dd3dcb845fbb1b69a949b79dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8c88d9dd3dcb845fbb1b69a949b79dd"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#af8c88d9dd3dcb845fbb1b69a949b79dd">prunedMeasure_</a></td></tr>
+<tr class="memdesc:af8c88d9dd3dcb845fbb1b69a949b79dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The measure of the problem domain when we pruned the graph. <br /></td></tr>
+<tr class="separator:af8c88d9dd3dcb845fbb1b69a949b79dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2174900a6a611a8f23861b2fa1767f48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2174900a6a611a8f23861b2fa1767f48"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a2174900a6a611a8f23861b2fa1767f48">minCost_</a></td></tr>
+<tr class="memdesc:a2174900a6a611a8f23861b2fa1767f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum possible solution cost. I.e., the heuristic value of the goal. <br /></td></tr>
+<tr class="separator:a2174900a6a611a8f23861b2fa1767f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf90ef50fd56cbfa8eeeab62276e654f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf90ef50fd56cbfa8eeeab62276e654f"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aaf90ef50fd56cbfa8eeeab62276e654f">costSampled_</a></td></tr>
+<tr class="memdesc:aaf90ef50fd56cbfa8eeeab62276e654f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The total-heuristic cost up to which we've sampled. <br /></td></tr>
+<tr class="separator:aaf90ef50fd56cbfa8eeeab62276e654f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5cd0b6d587300cd64f13757801d3a72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5cd0b6d587300cd64f13757801d3a72"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae5cd0b6d587300cd64f13757801d3a72">hasSolution_</a></td></tr>
+<tr class="memdesc:ae5cd0b6d587300cd64f13757801d3a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">If we've found a solution yet. <br /></td></tr>
+<tr class="separator:ae5cd0b6d587300cd64f13757801d3a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fcd2adf4a0cb11e6c2c3e4084fd4ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45fcd2adf4a0cb11e6c2c3e4084fd4ea"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a45fcd2adf4a0cb11e6c2c3e4084fd4ea">stopLoop_</a></td></tr>
+<tr class="memdesc:a45fcd2adf4a0cb11e6c2c3e4084fd4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">A manual stop on the solve loop. <br /></td></tr>
+<tr class="separator:a45fcd2adf4a0cb11e6c2c3e4084fd4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0544ef68c44f3da7b7ebe106a077351a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0544ef68c44f3da7b7ebe106a077351a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a0544ef68c44f3da7b7ebe106a077351a">approximateSoln_</a></td></tr>
+<tr class="memdesc:a0544ef68c44f3da7b7ebe106a077351a"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the solution is approximate. <br /></td></tr>
+<tr class="separator:a0544ef68c44f3da7b7ebe106a077351a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fc5bf430585e347d02c656aab2d381"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21fc5bf430585e347d02c656aab2d381"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a21fc5bf430585e347d02c656aab2d381">approximateDiff_</a></td></tr>
+<tr class="memdesc:a21fc5bf430585e347d02c656aab2d381"><td class="mdescLeft">&#160;</td><td class="mdescRight">The distance of the approximate solution, set to -1.0 for non approximate solutions. <br /></td></tr>
+<tr class="separator:a21fc5bf430585e347d02c656aab2d381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a1104fcbdff7d874c89d4b5254558e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a1104fcbdff7d874c89d4b5254558e5"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a5a1104fcbdff7d874c89d4b5254558e5">numIterations_</a></td></tr>
+<tr class="memdesc:a5a1104fcbdff7d874c89d4b5254558e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of iterations run. Accessible via iterationProgressProperty. <br /></td></tr>
+<tr class="separator:a5a1104fcbdff7d874c89d4b5254558e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bd5ab14e38a4d3259ab8e9d4838aec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3bd5ab14e38a4d3259ab8e9d4838aec"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae3bd5ab14e38a4d3259ab8e9d4838aec">numBatches_</a></td></tr>
+<tr class="memdesc:ae3bd5ab14e38a4d3259ab8e9d4838aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of batches processed. Accessible via batchesProgressProperty. <br /></td></tr>
+<tr class="separator:ae3bd5ab14e38a4d3259ab8e9d4838aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1a6720742e7c5f1a85ca9fb1ab0b97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e1a6720742e7c5f1a85ca9fb1ab0b97"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a0e1a6720742e7c5f1a85ca9fb1ab0b97">numPrunings_</a></td></tr>
+<tr class="memdesc:a0e1a6720742e7c5f1a85ca9fb1ab0b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of times the graph/samples have been pruned. Accessible via pruningProgressProperty. <br /></td></tr>
+<tr class="separator:a0e1a6720742e7c5f1a85ca9fb1ab0b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6334594885aebe466eec0f3c852827"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf6334594885aebe466eec0f3c852827"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aaf6334594885aebe466eec0f3c852827">numSamples_</a></td></tr>
+<tr class="memdesc:aaf6334594885aebe466eec0f3c852827"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of states generated through sampling. Accessible via statesFromSamplingProgressProperty. <br /></td></tr>
+<tr class="separator:aaf6334594885aebe466eec0f3c852827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f671217c3709e8fdbabe9fed9461c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8f671217c3709e8fdbabe9fed9461c5"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ab8f671217c3709e8fdbabe9fed9461c5">numSmoothedVertices_</a></td></tr>
+<tr class="memdesc:ab8f671217c3709e8fdbabe9fed9461c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of vertices generated through smoothing/shortcutting. Accessible via statesFromSmoothingProgressProperty. <br /></td></tr>
+<tr class="separator:ab8f671217c3709e8fdbabe9fed9461c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d0cf6c7f7ccf125a1b1bcd21379181"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81d0cf6c7f7ccf125a1b1bcd21379181"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a81d0cf6c7f7ccf125a1b1bcd21379181">numVertices_</a></td></tr>
+<tr class="memdesc:a81d0cf6c7f7ccf125a1b1bcd21379181"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of vertices ever added to the graph. Will count vertices twice if they spend any time disconnected. Accessible via verticesConstructedProgressProperty. <br /></td></tr>
+<tr class="separator:a81d0cf6c7f7ccf125a1b1bcd21379181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e25211ec527d30d99bd45a4e828421b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e25211ec527d30d99bd45a4e828421b"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1e25211ec527d30d99bd45a4e828421b">numFreeStatesPruned_</a></td></tr>
+<tr class="memdesc:a1e25211ec527d30d99bd45a4e828421b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of free states that have been pruned. Accessible via statesPrunedProgressProperty. <br /></td></tr>
+<tr class="separator:a1e25211ec527d30d99bd45a4e828421b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa9426e5c2f5942513a669a0ccd0f338"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa9426e5c2f5942513a669a0ccd0f338"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aaa9426e5c2f5942513a669a0ccd0f338">numVerticesDisconnected_</a></td></tr>
+<tr class="memdesc:aaa9426e5c2f5942513a669a0ccd0f338"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of graph vertices that get disconnected. These either return to being free samples or are pruned completely. Accessible via verticesDisconnectedProgressProperty. <br /></td></tr>
+<tr class="separator:aaa9426e5c2f5942513a669a0ccd0f338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59447bab82daba5027351b1bc260f3cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59447bab82daba5027351b1bc260f3cd"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a59447bab82daba5027351b1bc260f3cd">numRewirings_</a></td></tr>
+<tr class="memdesc:a59447bab82daba5027351b1bc260f3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of times a state in the graph was rewired. Accessible via rewiringProgressProperty. <br /></td></tr>
+<tr class="separator:a59447bab82daba5027351b1bc260f3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b268903fe3024b4b5a168552abeb9f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91b268903fe3024b4b5a168552abeb9f"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a91b268903fe3024b4b5a168552abeb9f">numStateCollisionChecks_</a></td></tr>
+<tr class="memdesc:a91b268903fe3024b4b5a168552abeb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of state collision checks. Accessible via stateCollisionCheckProgressProperty. <br /></td></tr>
+<tr class="separator:a91b268903fe3024b4b5a168552abeb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d2764a57f7303a2e03a2cd6e58c7fb6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d2764a57f7303a2e03a2cd6e58c7fb6"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a9d2764a57f7303a2e03a2cd6e58c7fb6">numEdgeCollisionChecks_</a></td></tr>
+<tr class="memdesc:a9d2764a57f7303a2e03a2cd6e58c7fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of edge collision checks. Accessible via edgeCollisionCheckProgressProperty. <br /></td></tr>
+<tr class="separator:a9d2764a57f7303a2e03a2cd6e58c7fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6a937bdbed561568d910b4df3c2bc3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c6a937bdbed561568d910b4df3c2bc3"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a9c6a937bdbed561568d910b4df3c2bc3">numNearestNeighbours_</a></td></tr>
+<tr class="memdesc:a9c6a937bdbed561568d910b4df3c2bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of nearest neighbour calls. Accessible via nearestNeighbourProgressProperty. <br /></td></tr>
+<tr class="separator:a9c6a937bdbed561568d910b4df3c2bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84181ecaef9f56797a6bd0b84b9702ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84181ecaef9f56797a6bd0b84b9702ff"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a84181ecaef9f56797a6bd0b84b9702ff">useStrictQueueOrdering_</a></td></tr>
+<tr class="memdesc:a84181ecaef9f56797a6bd0b84b9702ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to use a strict-queue ordering (param) <br /></td></tr>
+<tr class="separator:a84181ecaef9f56797a6bd0b84b9702ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c02309f6fe85744c383409186e0901d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c02309f6fe85744c383409186e0901d"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4c02309f6fe85744c383409186e0901d">rewireFactor_</a></td></tr>
+<tr class="memdesc:a4c02309f6fe85744c383409186e0901d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rewiring factor, s, so that r_rrg = s  r_rrg* &gt; r_rrg* (param) <br /></td></tr>
+<tr class="separator:a4c02309f6fe85744c383409186e0901d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e6fca524a7c3aa567a702744c2d9dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6e6fca524a7c3aa567a702744c2d9dd"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#ab6e6fca524a7c3aa567a702744c2d9dd">samplesPerBatch_</a></td></tr>
+<tr class="memdesc:ab6e6fca524a7c3aa567a702744c2d9dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of samples per batch (param) <br /></td></tr>
+<tr class="separator:ab6e6fca524a7c3aa567a702744c2d9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc425d0e61a766341b8b4233c7a7272"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affc425d0e61a766341b8b4233c7a7272"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#affc425d0e61a766341b8b4233c7a7272">useFailureTracking_</a></td></tr>
+<tr class="memdesc:affc425d0e61a766341b8b4233c7a7272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Track edges that have been checked and failed so they never reenter the queue. (param) <br /></td></tr>
+<tr class="separator:affc425d0e61a766341b8b4233c7a7272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5f1008960a560b29832191db5c0c21c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af5f1008960a560b29832191db5c0c21c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#af5f1008960a560b29832191db5c0c21c">useKNearest_</a></td></tr>
+<tr class="memdesc:af5f1008960a560b29832191db5c0c21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option to use k-nearest search for rewiring (param) <br /></td></tr>
+<tr class="separator:af5f1008960a560b29832191db5c0c21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8347af9e71d584506fbc1a989f63bf59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8347af9e71d584506fbc1a989f63bf59"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8347af9e71d584506fbc1a989f63bf59">usePruning_</a></td></tr>
+<tr class="memdesc:a8347af9e71d584506fbc1a989f63bf59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to use graph pruning (param) <br /></td></tr>
+<tr class="separator:a8347af9e71d584506fbc1a989f63bf59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea70a263d5152e6309052634ea8966f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ea70a263d5152e6309052634ea8966f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a7ea70a263d5152e6309052634ea8966f">pruneFraction_</a></td></tr>
+<tr class="memdesc:a7ea70a263d5152e6309052634ea8966f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fractional decrease in solution cost required to trigger pruning (param) <br /></td></tr>
+<tr class="separator:a7ea70a263d5152e6309052634ea8966f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0c4d7a263628e0332d265db4b6bf62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea0c4d7a263628e0332d265db4b6bf62"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#aea0c4d7a263628e0332d265db4b6bf62">delayRewiring_</a></td></tr>
+<tr class="memdesc:aea0c4d7a263628e0332d265db4b6bf62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to delay rewiring until a solution is found (param) <br /></td></tr>
+<tr class="separator:aea0c4d7a263628e0332d265db4b6bf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4037e21728b03289b30fea824c75ad64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4037e21728b03289b30fea824c75ad64"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar.html#a4037e21728b03289b30fea824c75ad64">stopOnSolnChange_</a></td></tr>
+<tr class="memdesc:a4037e21728b03289b30fea824c75ad64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to stop the planner as soon as the path changes (param) <br /></td></tr>
+<tr class="separator:a4037e21728b03289b30fea824c75ad64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3ceb9471163b6c96f6eeadbcfd3694e"></a>
+<a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a></td></tr>
+<tr class="memdesc:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The space information for which planning is done. <br /></td></tr>
+<tr class="separator:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bbb3dcc3d1604977e319d52c16ef7e5"></a>
+<a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a6bbb3dcc3d1604977e319d52c16ef7e5">pdef_</a></td></tr>
+<tr class="memdesc:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user set problem definition. <br /></td></tr>
+<tr class="separator:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c6ac45d44026aae6df87f3295d67436"></a>
+<a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a1c6ac45d44026aae6df87f3295d67436">pis_</a></td></tr>
+<tr class="memdesc:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class to extract valid input states. <br /></td></tr>
+<tr class="separator:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a806de82eeff9ef9231963a9851524b97"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td></tr>
+<tr class="memdesc:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of this planner. <br /></td></tr>
+<tr class="separator:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4311ea7a0470f0e0f76cb1656d63e365 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4311ea7a0470f0e0f76cb1656d63e365"></a>
+<a class="el" href="structompl_1_1base_1_1PlannerSpecs.html">PlannerSpecs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a4311ea7a0470f0e0f76cb1656d63e365">specs_</a></td></tr>
+<tr class="memdesc:a4311ea7a0470f0e0f76cb1656d63e365 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The specifications of the planner (its capabilities) <br /></td></tr>
+<tr class="separator:a4311ea7a0470f0e0f76cb1656d63e365 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1cecf022e5ebac936c49b96079ba5359"></a>
+<a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a1cecf022e5ebac936c49b96079ba5359">params_</a></td></tr>
+<tr class="memdesc:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map from parameter names to parameter instances for this planner. This field is populated by the <a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c" title="This function declares a parameter for this planner instance, and specifies the setter and getter fun...">declareParam()</a> function. <br /></td></tr>
+<tr class="separator:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab630ca0634156172daf1a2620a01caf4"></a>
+<a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td></tr>
+<tr class="memdesc:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mapping between this planner's progress property names and the functions used for querying those progress properties. <br /></td></tr>
+<tr class="separator:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adba44a4ee27079c5b258a2ebed719eed"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#adba44a4ee27079c5b258a2ebed719eed">setup_</a></td></tr>
+<tr class="memdesc:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">setup()</a> has been called. <br /></td></tr>
+<tr class="separator:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Batch Informed Trees (BIT*) </p>
+<p><a class="anchor" id="gBITstar"></a></p><dl class="section user"><dt>Short description</dt><dd>BIT* (Batch Informed Trees) is an anytime asymptotically optimal sampling-based motion planning algorithm that extends Lifelong Planning A* (LPA*) techniques to continuous planning problems. BIT* accomplishes this by processing batches of samples with a heuristic. In doing so, it strikes a balance between algorithms like RRT* and FMT*.</dd></dl>
+<dl class="section user"><dt>Associated publications:</dt><dd></dd></dl>
+<p>J.D. Gammell, S. S. Srinivasa, T.D. Barfoot, "BIT*: Batch Informed Trees." In Proceedings of the Information-based Grasp and Manipulation Planning Workshop at Robotics: Science and Systems (RSS). Berkeley, CA, USA, 13 July 2014. <a href="http://asrl.utias.utoronto.ca/~tdb/bib/gammell_rss14.pdf">Extended Abstract</a>. <a href="http://asrl.utias.utoronto.ca/~tdb/bib/gammell_rss14_poster.pdf">Poster</a>.</p>
+<p>J D. Gammell, S. S. Srinivasa, T. D. Barfoot, "Batch Informed Trees (BIT*): Sampling-based Optimal Planning via the Heuristically Guided Search of Implicit Random Geometric Graphs," In Proceedings of the IEEE International Conference on Robotics and Automation (ICRA). Seattle, Washington, USA, 26-30 May 2015. <a href="http://arxiv.org/abs/1405.5848">arXiv:1405.5848 [cs.RO]</a>. <a href="http://www.youtube.com/watch?v=MRzSfLpNBmA">Illustration video</a>.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd><ul>
+<li>Make k-nearest correct.</li>
+<li>Extend beyond single goal states to other samplable goals (i.e., goal sets).</li>
+<li>Generalize heuristics to make proper use of the optimization class. </li>
+</ul>
+</dd></dl>
+
+<p>Definition at line <a class="el" href="BITstar_8h_source.html#l00095">95</a> of file <a class="el" href="BITstar_8h_source.html">BITstar.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/geometric/planners/bitstar/<a class="el" href="BITstar_8h_source.html">BITstar.h</a></li>
+<li>ompl/geometric/planners/bitstar/src/<a class="el" href="BITstar_8cpp_source.html">BITstar.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated on Tue Jun 2 2015 19:02:04 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.powertip.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dynsections.js"></script>
+<script src="js/ompl.js"></script>
+</body>
+</html>

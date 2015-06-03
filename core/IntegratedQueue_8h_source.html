@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ompl/geometric/planners/bitstar/datastructures/IntegratedQueue.h Source File</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <link href="css/tabs.css" rel="stylesheet">
+  <link href="css/doxygen.css" rel="stylesheet">
+  <link href="css/search.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/ompl.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="search/searchdata.js"></script>
+  <script src="search/search.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
+              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+          <!-- Doxygen API search box -->
+          <div id="searchli">
+            <div id="MSearchBox" class="MSearchBoxInactive">
+              <span class="left">
+                <img id="MSearchSelect" src="search/mag_sel.png"
+                onmouseover="return searchBox.OnSearchSelectShow()"
+                onmouseout="return searchBox.OnSearchSelectHide()"
+                alt=""/>
+                <input type="text" id="MSearchField" value="Search API" accesskey="S"
+                onfocus="searchBox.OnSearchFieldFocus(true)"
+                onblur="searchBox.OnSearchFieldFocus(false)"
+                onkeyup="searchBox.OnSearchFieldChange(event)"/>
+              </span><span class="right">
+                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+              </span>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"
+  onmouseover="return searchBox.OnSearchSelectShow()"
+  onmouseout="return searchBox.OnSearchSelectHide()"
+  onkeydown="return searchBox.OnSearchSelectKey(event)">
+  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow">
+    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
+  </div>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7ddd700113690eeaea096b2573463168.html">ompl</a></li><li class="navelem"><a class="el" href="dir_0512a794d4930509c35fb9cbf1454831.html">geometric</a></li><li class="navelem"><a class="el" href="dir_44765481f178f9778aa2d346590a211f.html">planners</a></li><li class="navelem"><a class="el" href="dir_d1669b500842859f515d85a9417fe393.html">bitstar</a></li><li class="navelem"><a class="el" href="dir_e2db6f8edced8a9bc56dadbbdb8095ee.html">datastructures</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IntegratedQueue.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Software License Agreement (BSD License)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">*  Copyright (c) 2014, University of Toronto</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*  All rights reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">*  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*  are met:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*     with the distribution.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*   * Neither the name of the University of Toronto nor the names of its</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*     from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">*  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">*  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">*  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">*  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">*  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">*  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">*  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">*  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">*  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">*  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">*********************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Authors: Jonathan Gammell */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef OMPL_GEOMETRIC_PLANNERS_BITSTAR_DATASTRUCTURES_INTEGRATEDQUEUE_</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OMPL_GEOMETRIC_PLANNERS_BITSTAR_DATASTRUCTURES_INTEGRATEDQUEUE_</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//STL/Boost/etc.:</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//std::pair</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//std::vector</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//std::list</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//std::multimap</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//boost::unordered_map (pre-C++11 std::unordered_map)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;boost/unordered_map.hpp&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//For boost::function</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;boost/function.hpp&gt;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//OMPL:</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//The cost class:</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;ompl/base/Cost.h&quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//The optimization objective class:</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;ompl/base/OptimizationObjective.h&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//The nearest neighbours structure</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighbors.h&quot;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//BIT*:</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//I am member class of the BITstar class, so I need to include it&#39;s definition to be aware of the class BITstar. It has a forward declaration to me.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/bitstar/BITstar.h&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//The vertex class:</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/bitstar/datastructures/Vertex.h&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">namespace </span>geometric</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html">   90</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html">BITstar::IntegratedQueue</a></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="comment">//Data typedefs:</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2ab53d402e167fb668d37a5aa784825a">   96</a></span>&#160;<span class="comment"></span>            <span class="keyword">typedef</span> std::pair&lt;VertexPtr, VertexPtr&gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2ab53d402e167fb668d37a5aa784825a">VertexPtrPair</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#add27c92e6ae089e333d603c97ddd02e6">   99</a></span>&#160;            <span class="keyword">typedef</span> std::pair&lt;ompl::base::Cost, ompl::base::Cost&gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#add27c92e6ae089e333d603c97ddd02e6">CostPair</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a48267f598930e9451291becc4bdb2022">  102</a></span>&#160;            <span class="keyword">typedef</span> boost::shared_ptr&lt; NearestNeighbors&lt;VertexPtr&gt; &gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a48267f598930e9451291becc4bdb2022">VertexPtrNNPtr</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="comment">//Function typedefs:</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#abe4b5b2b85997c666efdd1578daf7a04">  108</a></span>&#160;<span class="comment"></span>            <span class="keyword">typedef</span> boost::function&lt;ompl::base::Cost (const VertexPtr&amp;)&gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#abe4b5b2b85997c666efdd1578daf7a04">VertexHeuristicFunc</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a196bc88667621e8c2799edb76f57f8c1">  111</a></span>&#160;            <span class="keyword">typedef</span> boost::function&lt;ompl::base::Cost (const VertexPtrPair&amp;)&gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a196bc88667621e8c2799edb76f57f8c1">EdgeHeuristicFunc</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d">  114</a></span>&#160;            <span class="keyword">typedef</span> boost::function&lt;void (const VertexPtr&amp;, std::vector&lt;VertexPtr&gt;*)&gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d">NeighbourhoodFunc</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="comment">//Public functions:</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"></span>            <span class="comment">//boost::make_shared can only take 9 arguments, so be careful:</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a94a55126eebf982240877147dcff8914">IntegratedQueue</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; startVertex, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; goalVertex, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d">NeighbourhoodFunc</a>&amp; nearSamplesFunc, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d">NeighbourhoodFunc</a>&amp; nearVerticesFunc, <span class="keyword">const</span> VertexHeuristicFunc&amp; <a class="code" href="classompl_1_1geometric_1_1BITstar.html#ab92e53685d13e8cfb91f5cb1956cca70">lowerBoundHeuristicVertex</a>, <span class="keyword">const</span> VertexHeuristicFunc&amp; <a class="code" href="classompl_1_1geometric_1_1BITstar.html#aad73a4d83d3dbd113848133d5499c80a">currentHeuristicVertex</a>, <span class="keyword">const</span> EdgeHeuristicFunc&amp; <a class="code" href="classompl_1_1geometric_1_1BITstar.html#aac036f0dec8e03d7591871204dc8edc9">lowerBoundHeuristicEdge</a>, <span class="keyword">const</span> EdgeHeuristicFunc&amp; <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a9d29b3bb98e072a00732456958ad3984">currentHeuristicEdge</a>, <span class="keyword">const</span> EdgeHeuristicFunc&amp; <a class="code" href="classompl_1_1geometric_1_1BITstar.html#ab98ab4c1fb266012a05a0af4fda94619">currentHeuristicEdgeTarget</a>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html">IntegratedQueue</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#af019eb7f91bcef1817e7b2f94bda7bda">setUseFailureTracking</a>(<span class="keywordtype">bool</span> trackFailures);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a3d85a9b2138a831b0ab04bff90437f8c">getUseFailureTracking</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a909336b8f1c1748d4e52268841a68ae5">setDelayedRewiring</a>(<span class="keywordtype">bool</span> delayRewiring);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a13bc7c32c3ec8e7339f797067a85682e">getDelayedRewiring</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="comment">//Insert and erase</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"></span>            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a689c53e5ab0bf20bc05f0f733dbc1874">insertVertex</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; newVertex);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#adc4d9a979592702d2e794a4fe12355b5">insertEdge</a>(<span class="keyword">const</span> VertexPtrPair&amp; newEdge);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aee88b5f3149a3764e5495e7e7c8f636e">eraseVertex</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; oldVertex, <span class="keywordtype">bool</span> disconnectParent);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="comment">//Access the queue</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment"></span>            <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aceea726309ed615c998cef5f1a578d6c">frontVertex</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            VertexPtrPair <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a1966749f81369d527dc0a0239a578c76">frontEdge</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a42cbab5c9e792a400809f95659876e73">frontVertexValue</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            CostPair <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ae1af1d4bed27a6265a0274c5d45cda9b">frontEdgeValue</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac20674ba2241581ab456aa3b7460fed8">popFrontEdge</a>(VertexPtrPair* bestEdge);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            VertexPtrPair <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac20674ba2241581ab456aa3b7460fed8">popFrontEdge</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="comment">//Queue maintenance</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"></span>            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2c4e919dcffe30b0ba31d9a647e33e24">hasSolution</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a3ab6a00dc8e2c34d7bfbcce2a0c94d60">setThreshold</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; costThreshold);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a1e4a01a31f1f06f016c0f2df4cc59e9a">removeEdgesTo</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; cVertex);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a48b6a66c209f634e2a97937958a18b7a">removeEdgesFrom</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; pVertex);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#af1da1f51322521b2f31000f5ae2d811e">pruneEdgesTo</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; cVertex);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a053757b3ef228f042492990013c39ca2">pruneEdgesFrom</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; pVertex);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a135dd303977d7a0762bc48a03b2bc43f">markVertexUnsorted</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; vertex);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            std::pair&lt;unsigned int, unsigned int&gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ae19517571588464006fd77f49c47c46f">prune</a>(<span class="keyword">const</span> VertexPtrNNPtr&amp; vertexNN, <span class="keyword">const</span> VertexPtrNNPtr&amp; freeStateNN);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            std::pair&lt;unsigned int, unsigned int&gt; <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a8129f066a0f454ffc1d846034e23510a">resort</a>(<span class="keyword">const</span> VertexPtrNNPtr&amp; vertexNN, <span class="keyword">const</span> VertexPtrNNPtr&amp; freeStateNN);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aa186c504678d5ee4a5fd9b4c65306229">finish</a>();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a00893471a0e44c57ab243a3249dc6810">reset</a>();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#af128e2b728f65bd8b2c0c8bed389ee7b">clear</a>();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="comment">//Queue info:</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment"></span>            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2d8e55721ac2464fdc5f69a3472080c6">vertexPruneCondition</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a71827623d6e34af05c37fd725e877229">samplePruneCondition</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a0e72254247a0b554757301946dfdf932">edgePruneCondition</a>(<span class="keyword">const</span> VertexPtrPair&amp; edge) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#adb8ff196d2f081a42aaa0b4546be3d9b">numEdges</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#afa51b7dc8edf02eb9021aaa936233954">numVertices</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a4be70311fb4a8b45d02f544bc0f75405">numEdgesTo</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; cVertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a20ade2f1bdead44b62d8fcc6ea45049c">numEdgesFrom</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; pVertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a6c1ceabd4af6cf2efe2cd4cc49a7af32">isSorted</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ab94884af3f1943aa984754b6ad91adfb">isReset</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a91564e55df815e8b6c7523943712b8ec">isEmpty</a>();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a39bd297de92bcbe702de030cb9090645">isVertexExpanded</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#ac739c2121e6b63e255e4b271b07e08ee">VertexConstPtr</a>&amp; vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a8ea7aa81b9b9a6b128dd1f06b7bd705c">listVertices</a>(std::vector&lt;VertexConstPtr&gt;* vertexQueue);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aec953e955b595c3f053bd52ae1f1d760">listEdges</a>(std::vector&lt;std::pair&lt;VertexConstPtr, VertexConstPtr&gt; &gt;* edgeQueue);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="comment">//Helpful typedefs:</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment"></span>            <span class="keyword">typedef</span> std::multimap&lt;ompl::base::Cost, VertexPtr, boost::function&lt;bool (const ompl::base::Cost&amp;, const ompl::base::Cost&amp;)&gt; &gt; CostToVertexMMap;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keyword">typedef</span> std::multimap&lt;CostPair, VertexPtrPair, boost::function&lt;bool (const CostPair&amp;, const CostPair&amp;)&gt; &gt; CostToVertexPtrPairMMap;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keyword">typedef</span> CostToVertexMMap::iterator VertexQueueIter;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keyword">typedef</span> boost::unordered_map&lt;BITstar::VertexId, VertexQueueIter&gt; VertexIdToVertexQueueIterUMap;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keyword">typedef</span> CostToVertexPtrPairMMap::iterator EdgeQueueIter;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keyword">typedef</span> std::list&lt;EdgeQueueIter&gt; EdgeQueueIterList;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keyword">typedef</span> boost::unordered_map&lt;BITstar::VertexId, EdgeQueueIterList&gt; VertexIdToEdgeQueueIterListUMap;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="comment">//Member variables:</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <a class="code" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">ompl::base::OptimizationObjectivePtr</a>                     opt_;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>                                                startVertex_;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>                                                goalVertex_;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d">NeighbourhoodFunc</a>                                     nearSamplesFunc_;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d">NeighbourhoodFunc</a>                                     nearVerticesFunc_;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            VertexHeuristicFunc                                  lowerBoundHeuristicVertexFunc_;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            VertexHeuristicFunc                                  currentHeuristicVertexFunc_;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            EdgeHeuristicFunc                                    lowerBoundHeuristicEdgeFunc_;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            EdgeHeuristicFunc                                    currentHeuristicEdgeFunc_;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            EdgeHeuristicFunc                                        currentHeuristicEdgeTargetFunc_;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordtype">bool</span>                                                     useFailureTracking_;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordtype">bool</span>                                                     delayRewiring_;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordtype">bool</span>                                                     outgoingLookupTables_;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordtype">bool</span>                                                     incomingLookupTables_;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            CostToVertexMMap                                         vertexQueue_;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            VertexQueueIter                                          vertexToExpand_;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            CostToVertexPtrPairMMap                                  edgeQueue_;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            VertexIdToVertexQueueIterUMap                            vertexIterLookup_;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            VertexIdToEdgeQueueIterListUMap                          outgoingEdges_;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            VertexIdToEdgeQueueIterListUMap                          incomingEdges_;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            std::list&lt;VertexPtr&gt;                                     resortVertices_;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>                                         costThreshold_;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="keywordtype">bool</span>                                                     hasSolution_;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="comment">//High level primitives:</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment"></span>            <span class="keywordtype">void</span> updateQueue();</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordtype">void</span> expandNextVertex();</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <span class="keywordtype">void</span> expandVertex(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; vertex);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordtype">void</span> queueupEdge(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; parent, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; child);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="comment">//Vertex helper functions:</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment"></span>            <span class="keywordtype">void</span> reinsertVertex(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; unorderedVertex);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            std::pair&lt;unsigned int, unsigned int&gt; pruneBranch(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; branchBase, <span class="keyword">const</span> VertexPtrNNPtr&amp; vertexNN, <span class="keyword">const</span> VertexPtrNNPtr&amp; freeStateNN);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <span class="keywordtype">void</span> disconnectParent(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; oldVertex, <span class="keywordtype">bool</span> cascadeCostUpdates);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="keywordtype">void</span> vertexInsertHelper(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; newVertex, <span class="keywordtype">bool</span> expandIfBeforeToken);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">//This is *NOT* by const-reference so that the oldVertex pointer doesn&#39;t go out of scope on me... which was happening if it was being called with an iter-&gt;second where the iter gets deleted in this function...</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> vertexRemoveHelper(<a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a> oldVertex, <span class="keyword">const</span> VertexPtrNNPtr&amp; vertexNN, <span class="keyword">const</span> VertexPtrNNPtr&amp; freeStateNN, <span class="keywordtype">bool</span> removeLookups);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="comment">//Edge helper functions:</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="comment"></span>            <span class="keywordtype">void</span> edgeInsertHelper(<span class="keyword">const</span> VertexPtrPair&amp; newEdge, EdgeQueueIter positionHint);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keywordtype">void</span> edgeRemoveHelper(<span class="keyword">const</span> EdgeQueueIter&amp; oldEdgeIter, <span class="keywordtype">bool</span> rmIncomingLookup, <span class="keywordtype">bool</span> rmOutgoingLookup);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordtype">void</span> rmIncomingLookup(<span class="keyword">const</span> EdgeQueueIter&amp; mmapIterToRm);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <span class="keywordtype">void</span> rmOutgoingLookup(<span class="keyword">const</span> EdgeQueueIter&amp; mmapIterToRm);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keywordtype">void</span> rmEdgeLookupHelper(VertexIdToEdgeQueueIterListUMap&amp; lookup, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a457c97219bbc73817071643412c14118">BITstar::VertexId</a>&amp; idx, <span class="keyword">const</span> EdgeQueueIter&amp; mmapIterToRm);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="comment">//Base-queue basic helper functions:</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="comment"></span>            <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> vertexQueueValue(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">VertexPtr</a>&amp; vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            CostPair edgeQueueValue(<span class="keyword">const</span> VertexPtrPair&amp; edge) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordtype">bool</span> vertexQueueComparison(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; lhs, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordtype">bool</span> edgeQueueComparison(<span class="keyword">const</span> CostPair&amp; lhs, <span class="keyword">const</span> CostPair&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="comment">//Overloads since OptimizationObjective::isCostBetterThan() is broken (it compares to within a very small tolerance...)</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="comment"></span>            <span class="keywordtype">bool</span> isCostBetterThan(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; a, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; b) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="keywordtype">bool</span> isCostWorseThan(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; a, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; b) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            <span class="keywordtype">bool</span> isCostEquivalentTo(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; a, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; b) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <span class="keywordtype">bool</span> isCostNotEquivalentTo(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; a, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; b) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            <span class="keywordtype">bool</span> isCostBetterThanOrEquivalentTo(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; a, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; b) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            <span class="keywordtype">bool</span> isCostWorseThanOrEquivalentTo(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; a, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&amp; b) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        }; <span class="comment">//class: IntegratedQueue</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    } <span class="comment">// geometric</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;} <span class="comment">// ompl</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="preprocessor">#endif //OMPL_GEOMETRIC_PLANNERS_BITSTAR_DATASTRUCTURES_INTEGRATEDQUEUE_</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;</div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a2ab53d402e167fb668d37a5aa784825a"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2ab53d402e167fb668d37a5aa784825a">ompl::geometric::BITstar::IntegratedQueue::VertexPtrPair</a></div><div class="ttdeci">std::pair&lt; VertexPtr, VertexPtr &gt; VertexPtrPair</div><div class="ttdoc">A typedef for a pair of vertices, i.e., an edge. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8h_source.html#l00096">IntegratedQueue.h:96</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_ab92e53685d13e8cfb91f5cb1956cca70"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#ab92e53685d13e8cfb91f5cb1956cca70">ompl::geometric::BITstar::lowerBoundHeuristicVertex</a></div><div class="ttdeci">ompl::base::Cost lowerBoundHeuristicVertex(const VertexPtr &amp;edgePair) const </div><div class="ttdoc">Calculates a heuristic estimate of the cost of a solution constrained to pass through a vertex...</div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8cpp_source.html#l01165">BITstar.cpp:1165</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_af1da1f51322521b2f31000f5ae2d811e"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#af1da1f51322521b2f31000f5ae2d811e">ompl::geometric::BITstar::IntegratedQueue::pruneEdgesTo</a></div><div class="ttdeci">void pruneEdgesTo(const VertexPtr &amp;cVertex)</div><div class="ttdoc">Prune edges in the edge queue that lead to the given vertex using the prune function. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00301">IntegratedQueue.cpp:301</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a8ea7aa81b9b9a6b128dd1f06b7bd705c"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a8ea7aa81b9b9a6b128dd1f06b7bd705c">ompl::geometric::BITstar::IntegratedQueue::listVertices</a></div><div class="ttdeci">void listVertices(std::vector&lt; VertexConstPtr &gt; *vertexQueue)</div><div class="ttdoc">Get a copy of the vertices in the vertex queue that are left to be expanded. This is expensive and is...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00850">IntegratedQueue.cpp:850</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_af128e2b728f65bd8b2c0c8bed389ee7b"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#af128e2b728f65bd8b2c0c8bed389ee7b">ompl::geometric::BITstar::IntegratedQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the queue to the state of construction. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00610">IntegratedQueue.cpp:610</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a909336b8f1c1748d4e52268841a68ae5"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a909336b8f1c1748d4e52268841a68ae5">ompl::geometric::BITstar::IntegratedQueue::setDelayedRewiring</a></div><div class="ttdeci">void setDelayedRewiring(bool delayRewiring)</div><div class="ttdoc">Delay considering rewiring edges until an initial solution is found. This improves the time required ...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l01651">IntegratedQueue.cpp:1651</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a71827623d6e34af05c37fd725e877229"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a71827623d6e34af05c37fd725e877229">ompl::geometric::BITstar::IntegratedQueue::samplePruneCondition</a></div><div class="ttdeci">bool samplePruneCondition(const VertexPtr &amp;vertex) const </div><div class="ttdoc">The condition used to prune disconnected samples from the free set. Compares lowerBoundHeuristicVerte...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00648">IntegratedQueue.cpp:648</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a135dd303977d7a0762bc48a03b2bc43f"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a135dd303977d7a0762bc48a03b2bc43f">ompl::geometric::BITstar::IntegratedQueue::markVertexUnsorted</a></div><div class="ttdeci">void markVertexUnsorted(const VertexPtr &amp;vertex)</div><div class="ttdoc">Mark the queue as requiring resorting. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00408">IntegratedQueue.cpp:408</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a196bc88667621e8c2799edb76f57f8c1"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a196bc88667621e8c2799edb76f57f8c1">ompl::geometric::BITstar::IntegratedQueue::EdgeHeuristicFunc</a></div><div class="ttdeci">boost::function&lt; ompl::base::Cost(const VertexPtrPair &amp;)&gt; EdgeHeuristicFunc</div><div class="ttdoc">A boost::function definition of a heuristic function for an edge. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8h_source.html#l00111">IntegratedQueue.h:111</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_add27c92e6ae089e333d603c97ddd02e6"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#add27c92e6ae089e333d603c97ddd02e6">ompl::geometric::BITstar::IntegratedQueue::CostPair</a></div><div class="ttdeci">std::pair&lt; ompl::base::Cost, ompl::base::Cost &gt; CostPair</div><div class="ttdoc">A typedef for a pair of costs, i.e., the edge sorting key. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8h_source.html#l00099">IntegratedQueue.h:99</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_afa51b7dc8edf02eb9021aaa936233954"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#afa51b7dc8edf02eb9021aaa936233954">ompl::geometric::BITstar::IntegratedQueue::numVertices</a></div><div class="ttdeci">unsigned int numVertices() const </div><div class="ttdoc">Returns the number of vertices left to expand. This has nontrivial cost, as the token must be moved t...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00687">IntegratedQueue.cpp:687</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_abe4b5b2b85997c666efdd1578daf7a04"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#abe4b5b2b85997c666efdd1578daf7a04">ompl::geometric::BITstar::IntegratedQueue::VertexHeuristicFunc</a></div><div class="ttdeci">boost::function&lt; ompl::base::Cost(const VertexPtr &amp;)&gt; VertexHeuristicFunc</div><div class="ttdoc">A boost::function definition of a heuristic function for a vertex. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8h_source.html#l00108">IntegratedQueue.h:108</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a0e72254247a0b554757301946dfdf932"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a0e72254247a0b554757301946dfdf932">ompl::geometric::BITstar::IntegratedQueue::edgePruneCondition</a></div><div class="ttdeci">bool edgePruneCondition(const VertexPtrPair &amp;edge) const </div><div class="ttdoc">The condition used to prune edge (i.e., vertex-pair) out of the queue. Compares lowerBoundHeuristicEd...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00657">IntegratedQueue.cpp:657</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a4be70311fb4a8b45d02f544bc0f75405"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a4be70311fb4a8b45d02f544bc0f75405">ompl::geometric::BITstar::IntegratedQueue::numEdgesTo</a></div><div class="ttdeci">unsigned int numEdgesTo(const VertexPtr &amp;cVertex) const </div><div class="ttdoc">Get the number of edges in the queue pointing to a specific vertex. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00709">IntegratedQueue.cpp:709</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_adb8ff196d2f081a42aaa0b4546be3d9b"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#adb8ff196d2f081a42aaa0b4546be3d9b">ompl::geometric::BITstar::IntegratedQueue::numEdges</a></div><div class="ttdeci">unsigned int numEdges() const </div><div class="ttdoc">Returns the number of edges in the queue. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00680">IntegratedQueue.cpp:680</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a6c1ceabd4af6cf2efe2cd4cc49a7af32"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a6c1ceabd4af6cf2efe2cd4cc49a7af32">ompl::geometric::BITstar::IntegratedQueue::isSorted</a></div><div class="ttdeci">bool isSorted() const </div><div class="ttdoc">Return whether the queue is still sorted. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00791">IntegratedQueue.cpp:791</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a48267f598930e9451291becc4bdb2022"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a48267f598930e9451291becc4bdb2022">ompl::geometric::BITstar::IntegratedQueue::VertexPtrNNPtr</a></div><div class="ttdeci">boost::shared_ptr&lt; NearestNeighbors&lt; VertexPtr &gt; &gt; VertexPtrNNPtr</div><div class="ttdoc">A typedef for the nearest-neighbour struct. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8h_source.html#l00102">IntegratedQueue.h:102</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_aceea726309ed615c998cef5f1a578d6c"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aceea726309ed615c998cef5f1a578d6c">ompl::geometric::BITstar::IntegratedQueue::frontVertex</a></div><div class="ttdeci">VertexPtr frontVertex()</div><div class="ttdoc">Get the best vertex on the queue without incrementing the vertex queue. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00117">IntegratedQueue.cpp:117</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a053757b3ef228f042492990013c39ca2"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a053757b3ef228f042492990013c39ca2">ompl::geometric::BITstar::IntegratedQueue::pruneEdgesFrom</a></div><div class="ttdeci">void pruneEdgesFrom(const VertexPtr &amp;pVertex)</div><div class="ttdoc">Prune edges in the edge queue that leave from the given vertex using the prune function. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00354">IntegratedQueue.cpp:354</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_adc4d9a979592702d2e794a4fe12355b5"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#adc4d9a979592702d2e794a4fe12355b5">ompl::geometric::BITstar::IntegratedQueue::insertEdge</a></div><div class="ttdeci">void insertEdge(const VertexPtrPair &amp;newEdge)</div><div class="ttdoc">Insert an edge into the edge processing queue. Edges are removed from the processing queue...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00095">IntegratedQueue.cpp:95</a></div></div>
+<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00042">Cost.h:42</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a39bd297de92bcbe702de030cb9090645"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a39bd297de92bcbe702de030cb9090645">ompl::geometric::BITstar::IntegratedQueue::isVertexExpanded</a></div><div class="ttdeci">bool isVertexExpanded(const VertexConstPtr &amp;vertex) const </div><div class="ttdoc">Returns whether a given vertex has been expanded or not. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00820">IntegratedQueue.cpp:820</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a1966749f81369d527dc0a0239a578c76"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a1966749f81369d527dc0a0239a578c76">ompl::geometric::BITstar::IntegratedQueue::frontEdge</a></div><div class="ttdeci">VertexPtrPair frontEdge()</div><div class="ttdoc">Get the best edge on the queue, leaving it on the edge queue. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00133">IntegratedQueue.cpp:133</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_ae1af1d4bed27a6265a0274c5d45cda9b"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ae1af1d4bed27a6265a0274c5d45cda9b">ompl::geometric::BITstar::IntegratedQueue::frontEdgeValue</a></div><div class="ttdeci">CostPair frontEdgeValue()</div><div class="ttdoc">Get the value of the best edge on the queue, leaving it on the edge queue. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00165">IntegratedQueue.cpp:165</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a8129f066a0f454ffc1d846034e23510a"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a8129f066a0f454ffc1d846034e23510a">ompl::geometric::BITstar::IntegratedQueue::resort</a></div><div class="ttdeci">std::pair&lt; unsigned int, unsigned int &gt; resort(const VertexPtrNNPtr &amp;vertexNN, const VertexPtrNNPtr &amp;freeStateNN)</div><div class="ttdoc">Resort the queue, only reinserting edges/vertices if their lower-bound heuristic is less then the thr...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00492">IntegratedQueue.cpp:492</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_a674ea66b734ec4ba52b22152ec6b1c6d"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#a674ea66b734ec4ba52b22152ec6b1c6d">ompl::geometric::BITstar::VertexPtr</a></div><div class="ttdeci">boost::shared_ptr&lt; Vertex &gt; VertexPtr</div><div class="ttdoc">A vertex shared pointer. </div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8h_source.html#l00104">BITstar.h:104</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a91564e55df815e8b6c7523943712b8ec"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a91564e55df815e8b6c7523943712b8ec">ompl::geometric::BITstar::IntegratedQueue::isEmpty</a></div><div class="ttdeci">bool isEmpty()</div><div class="ttdoc">Returns true if the queue is empty. In the case where the edge queue is empty but the vertex queue is...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00805">IntegratedQueue.cpp:805</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html">ompl::geometric::BITstar::IntegratedQueue</a></div><div class="ttdoc">A queue of edges to be processed that integrates both the expansion of Vertices and the ordering of t...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8h_source.html#l00090">IntegratedQueue.h:90</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a00893471a0e44c57ab243a3249dc6810"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a00893471a0e44c57ab243a3249dc6810">ompl::geometric::BITstar::IntegratedQueue::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset the queue, clearing all the edge containers and moving the vertex expansion token to the start...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00599">IntegratedQueue.cpp:599</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a3ab6a00dc8e2c34d7bfbcce2a0c94d60"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a3ab6a00dc8e2c34d7bfbcce2a0c94d60">ompl::geometric::BITstar::IntegratedQueue::setThreshold</a></div><div class="ttdeci">void setThreshold(const ompl::base::Cost &amp;costThreshold)</div><div class="ttdoc">Set the threshold of the queue. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00218">IntegratedQueue.cpp:218</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_a9d29b3bb98e072a00732456958ad3984"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#a9d29b3bb98e072a00732456958ad3984">ompl::geometric::BITstar::currentHeuristicEdge</a></div><div class="ttdeci">ompl::base::Cost currentHeuristicEdge(const VertexPtrPair &amp;edgePair) const </div><div class="ttdoc">Calculates a heuristic estimate of the cost of a solution constrained to go through an edge...</div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8cpp_source.html#l01185">BITstar.cpp:1185</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a94a55126eebf982240877147dcff8914"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a94a55126eebf982240877147dcff8914">ompl::geometric::BITstar::IntegratedQueue::IntegratedQueue</a></div><div class="ttdeci">IntegratedQueue(const VertexPtr &amp;startVertex, const VertexPtr &amp;goalVertex, const NeighbourhoodFunc &amp;nearSamplesFunc, const NeighbourhoodFunc &amp;nearVerticesFunc, const VertexHeuristicFunc &amp;lowerBoundHeuristicVertex, const VertexHeuristicFunc &amp;currentHeuristicVertex, const EdgeHeuristicFunc &amp;lowerBoundHeuristicEdge, const EdgeHeuristicFunc &amp;currentHeuristicEdge, const EdgeHeuristicFunc &amp;currentHeuristicEdgeTarget)</div><div class="ttdoc">Construct an integrated queue. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00050">IntegratedQueue.cpp:50</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_af019eb7f91bcef1817e7b2f94bda7bda"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#af019eb7f91bcef1817e7b2f94bda7bda">ompl::geometric::BITstar::IntegratedQueue::setUseFailureTracking</a></div><div class="ttdeci">void setUseFailureTracking(bool trackFailures)</div><div class="ttdoc">Enable tracking of failed edges. This currently is too expensive to be useful. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l01637">IntegratedQueue.cpp:1637</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a20ade2f1bdead44b62d8fcc6ea45049c"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a20ade2f1bdead44b62d8fcc6ea45049c">ompl::geometric::BITstar::IntegratedQueue::numEdgesFrom</a></div><div class="ttdeci">unsigned int numEdgesFrom(const VertexPtr &amp;pVertex) const </div><div class="ttdoc">Get the number of edges in the queue coming from a specific vertex. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00750">IntegratedQueue.cpp:750</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1OptimizationObjectivePtr_html"><div class="ttname"><a href="classompl_1_1base_1_1OptimizationObjectivePtr.html">ompl::base::OptimizationObjectivePtr</a></div><div class="ttdoc">A boost shared pointer wrapper for ompl::base::OptimizationObjective. </div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_ac739c2121e6b63e255e4b271b07e08ee"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#ac739c2121e6b63e255e4b271b07e08ee">ompl::geometric::BITstar::VertexConstPtr</a></div><div class="ttdeci">boost::shared_ptr&lt; const Vertex &gt; VertexConstPtr</div><div class="ttdoc">A constant vertex shared pointer. </div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8h_source.html#l00109">BITstar.h:109</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a48b6a66c209f634e2a97937958a18b7a"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a48b6a66c209f634e2a97937958a18b7a">ompl::geometric::BITstar::IntegratedQueue::removeEdgesFrom</a></div><div class="ttdeci">void removeEdgesFrom(const VertexPtr &amp;pVertex)</div><div class="ttdoc">Erase all edges in the edge queue that leave from the given vertex. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00263">IntegratedQueue.cpp:263</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a2d8e55721ac2464fdc5f69a3472080c6"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2d8e55721ac2464fdc5f69a3472080c6">ompl::geometric::BITstar::IntegratedQueue::vertexPruneCondition</a></div><div class="ttdeci">bool vertexPruneCondition(const VertexPtr &amp;vertex) const </div><div class="ttdoc">The condition used to prune vertices out of the queue. Compares lowerBoundHeuristicVertex to the give...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00638">IntegratedQueue.cpp:638</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a42cbab5c9e792a400809f95659876e73"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a42cbab5c9e792a400809f95659876e73">ompl::geometric::BITstar::IntegratedQueue::frontVertexValue</a></div><div class="ttdeci">ompl::base::Cost frontVertexValue()</div><div class="ttdoc">Get the value of the best vertex on the queue without incrementing the vertex queue. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00149">IntegratedQueue.cpp:149</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_aad73a4d83d3dbd113848133d5499c80a"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#aad73a4d83d3dbd113848133d5499c80a">ompl::geometric::BITstar::currentHeuristicVertex</a></div><div class="ttdeci">ompl::base::Cost currentHeuristicVertex(const VertexPtr &amp;edgePair) const </div><div class="ttdoc">Calculates a heuristic estimate of the cost of a solution constrained to pass through a vertex...</div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8cpp_source.html#l01172">BITstar.cpp:1172</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_ae19517571588464006fd77f49c47c46f"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ae19517571588464006fd77f49c47c46f">ompl::geometric::BITstar::IntegratedQueue::prune</a></div><div class="ttdeci">std::pair&lt; unsigned int, unsigned int &gt; prune(const VertexPtrNNPtr &amp;vertexNN, const VertexPtrNNPtr &amp;freeStateNN)</div><div class="ttdoc">Prune the vertex queue of vertices whose their lower-bound heuristic is greater then the threshold...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00423">IntegratedQueue.cpp:423</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a1e4a01a31f1f06f016c0f2df4cc59e9a"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a1e4a01a31f1f06f016c0f2df4cc59e9a">ompl::geometric::BITstar::IntegratedQueue::removeEdgesTo</a></div><div class="ttdeci">void removeEdgesTo(const VertexPtr &amp;cVertex)</div><div class="ttdoc">Erase all edges in the edge queue that lead to the given vertex. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00225">IntegratedQueue.cpp:225</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_aec953e955b595c3f053bd52ae1f1d760"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aec953e955b595c3f053bd52ae1f1d760">ompl::geometric::BITstar::IntegratedQueue::listEdges</a></div><div class="ttdeci">void listEdges(std::vector&lt; std::pair&lt; VertexConstPtr, VertexConstPtr &gt; &gt; *edgeQueue)</div><div class="ttdoc">Get a copy of the edge queue. This is expensive and is only meant for animations/debugging. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00865">IntegratedQueue.cpp:865</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_aee88b5f3149a3764e5495e7e7c8f636e"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aee88b5f3149a3764e5495e7e7c8f636e">ompl::geometric::BITstar::IntegratedQueue::eraseVertex</a></div><div class="ttdeci">void eraseVertex(const VertexPtr &amp;oldVertex, bool disconnectParent)</div><div class="ttdoc">Erase a vertex from the vertex expansion queue. Will disconnect the vertex from its parent and remove...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00103">IntegratedQueue.cpp:103</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a689c53e5ab0bf20bc05f0f733dbc1874"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a689c53e5ab0bf20bc05f0f733dbc1874">ompl::geometric::BITstar::IntegratedQueue::insertVertex</a></div><div class="ttdeci">void insertVertex(const VertexPtr &amp;newVertex)</div><div class="ttdoc">Insert a vertex into the vertex expansion queue. Vertices remain in the vertex queue until pruned or ...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00087">IntegratedQueue.cpp:87</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_ac5601f640a9dbcf52f9f4470bd3afb3d"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d">ompl::geometric::BITstar::IntegratedQueue::NeighbourhoodFunc</a></div><div class="ttdeci">boost::function&lt; void(const VertexPtr &amp;, std::vector&lt; VertexPtr &gt; *)&gt; NeighbourhoodFunc</div><div class="ttdoc">A boost::function definition for the neighbourhood of a vertex . </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8h_source.html#l00114">IntegratedQueue.h:114</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a13bc7c32c3ec8e7339f797067a85682e"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a13bc7c32c3ec8e7339f797067a85682e">ompl::geometric::BITstar::IntegratedQueue::getDelayedRewiring</a></div><div class="ttdeci">bool getDelayedRewiring() const </div><div class="ttdoc">Get whether BIT* is delaying rewiring until a solution is found. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l01658">IntegratedQueue.cpp:1658</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a3d85a9b2138a831b0ab04bff90437f8c"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a3d85a9b2138a831b0ab04bff90437f8c">ompl::geometric::BITstar::IntegratedQueue::getUseFailureTracking</a></div><div class="ttdeci">bool getUseFailureTracking() const </div><div class="ttdoc">Get whether a failed edge list is in use. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l01644">IntegratedQueue.cpp:1644</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_ab94884af3f1943aa984754b6ad91adfb"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ab94884af3f1943aa984754b6ad91adfb">ompl::geometric::BITstar::IntegratedQueue::isReset</a></div><div class="ttdeci">bool isReset() const </div><div class="ttdoc">Returns true if the queue is reset. This means that no edges have been expanded and the vertex expans...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00798">IntegratedQueue.cpp:798</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1Cost_html"><div class="ttname"><a href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a></div><div class="ttdoc">Definition of a cost value. Can represent the cost of a motion or the cost of a state. </div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00047">Cost.h:47</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_ac20674ba2241581ab456aa3b7460fed8"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac20674ba2241581ab456aa3b7460fed8">ompl::geometric::BITstar::IntegratedQueue::popFrontEdge</a></div><div class="ttdeci">VertexPtrPair popFrontEdge()</div><div class="ttdoc">Pop the best edge off the queue, removing it from the edge queue in the process. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00200">IntegratedQueue.cpp:200</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_a2c4e919dcffe30b0ba31d9a647e33e24"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2c4e919dcffe30b0ba31d9a647e33e24">ompl::geometric::BITstar::IntegratedQueue::hasSolution</a></div><div class="ttdeci">void hasSolution()</div><div class="ttdoc">Mark that a solution has been found. </div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00211">IntegratedQueue.cpp:211</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_aac036f0dec8e03d7591871204dc8edc9"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#aac036f0dec8e03d7591871204dc8edc9">ompl::geometric::BITstar::lowerBoundHeuristicEdge</a></div><div class="ttdeci">ompl::base::Cost lowerBoundHeuristicEdge(const VertexPtrPair &amp;edgePair) const </div><div class="ttdoc">Calculates a heuristic estimate of the cost of a solution constrained to go through an edge...</div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8cpp_source.html#l01178">BITstar.cpp:1178</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_a457c97219bbc73817071643412c14118"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#a457c97219bbc73817071643412c14118">ompl::geometric::BITstar::VertexId</a></div><div class="ttdeci">unsigned int VertexId</div><div class="ttdoc">The vertex id type. </div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8h_source.html#l00115">BITstar.h:115</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html_ab98ab4c1fb266012a05a0af4fda94619"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html#ab98ab4c1fb266012a05a0af4fda94619">ompl::geometric::BITstar::currentHeuristicEdgeTarget</a></div><div class="ttdeci">ompl::base::Cost currentHeuristicEdgeTarget(const VertexPtrPair &amp;edgePair) const </div><div class="ttdoc">Calculates a heuristic estimate of the cost of a path to the target of an edge, dependent on the cost...</div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8cpp_source.html#l01192">BITstar.cpp:1192</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue_html_aa186c504678d5ee4a5fd9b4c65306229"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#aa186c504678d5ee4a5fd9b4c65306229">ompl::geometric::BITstar::IntegratedQueue::finish</a></div><div class="ttdeci">void finish()</div><div class="ttdoc">Finish the queue, clearing all the edge containers and moving the vertex expansion token to the end...</div><div class="ttdef"><b>Definition:</b> <a href="IntegratedQueue_8cpp_source.html#l00582">IntegratedQueue.cpp:582</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated on Tue Jun 2 2015 19:02:02 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.powertip.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dynsections.js"></script>
+<script src="js/ompl.js"></script>
+</body>
+</html>

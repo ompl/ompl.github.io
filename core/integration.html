@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Integration of OMPL in Other Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <link href="css/tabs.css" rel="stylesheet">
+  <link href="css/doxygen.css" rel="stylesheet">
+  <link href="css/search.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/ompl.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="search/searchdata.js"></script>
+  <script src="search/search.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
+              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+          <!-- Doxygen API search box -->
+          <div id="searchli">
+            <div id="MSearchBox" class="MSearchBoxInactive">
+              <span class="left">
+                <img id="MSearchSelect" src="search/mag_sel.png"
+                onmouseover="return searchBox.OnSearchSelectShow()"
+                onmouseout="return searchBox.OnSearchSelectHide()"
+                alt=""/>
+                <input type="text" id="MSearchField" value="Search API" accesskey="S"
+                onfocus="searchBox.OnSearchFieldFocus(true)"
+                onblur="searchBox.OnSearchFieldFocus(false)"
+                onkeyup="searchBox.OnSearchFieldChange(event)"/>
+              </span><span class="right">
+                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+              </span>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"
+  onmouseover="return searchBox.OnSearchSelectShow()"
+  onmouseout="return searchBox.OnSearchSelectHide()"
+  onkeydown="return searchBox.OnSearchSelectKey(event)">
+  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow">
+    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
+  </div>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Integration of OMPL in Other Systems </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>OMPL provides a high level of abstraction to make it easier to integrate it into larger robot software systems. By design, the core OMPL library does not include any code for representing geometry and kinematics. However, to solve motion planning problems, we <em>do</em> need to pick a particular representation for robots and the environment. Below we have listed a number of projects that have done this in very different ways.</p>
+<p> 
+<div class="btn-group">
+  <a class="btn btn-default" href="#integration_moveit">MoveIt!</a>
+  <a class="btn btn-default" href="#integration_openrave">OpenRAVE</a>
+  <a class="btn btn-default" href="#integration_morse">MORSE</a>
+  <a class="btn btn-default" href="#integration_sims">SIMS</a>
+  <a class="btn btn-default" href="#integration_omplapp">OMPL.app</a>
+</div>
+</p>
+<h1><a class="anchor" id="integration_moveit"></a>
+MoveIt!</h1>
+<div class="row"> <div class="col-lg-7 col-md-6 col-sm-5"> <a href="http://moveit.ros.org">MoveIt!</a> provides motion planning functionality in <a href="http://www.ros.org">ROS</a>. Robots are described by <a href="http://wiki.ros.org/urdf">URDF files</a>, which describe the robot's geometry, kinematics, and additional robot information. MoveIt! can load such files, create appropriate state spaces for user-defined joint groups (e.g., “left arm,” “right leg,” “upper body,” “whole body,” etc.), and call OMPL planners to find feasible paths. There is support for inverse kinematics, which makes is possible to, e.g, include end-effector constraints. The paths produced by OMPL are translated by MoveIt! into dynamically feasible trajectories. The MoveIt! setup wizard will automatically discover self-collisions in a pre-processing phase. The environment can either be provided in the form of collection of geometric objects (triangles, spheres, cylinders, etc.), a point cloud (obtained from a RGBD sensor), or a combination of both. The adjacent video is a montage of MoveIt!'s capabilities in 2013. </div> <div class="col-lg-5 col-md-6 col-sm-7"> <div class="embed-responsive embed-responsive-16by9">  <iframe src="http://www.youtube.com/embed/dblCGZzeUqs"></iframe> </div> </div> </div><h1><a class="anchor" id="integration_openrave"></a>
+OpenRAVE</h1>
+<div class="row"> <div class="col-lg-7 col-md-6 col-sm-5"> <a href="http://openrave.org">OpenRAVE</a> is a lightweight simulation and planning environment. It does not explicitly support OMPL, but it has a plugin architecture that makes it possible to add new planning algorithms. <a href="http://mkoval.org">Michael Koval</a> has written a <a href="https://github.com/personalrobotics/or_ompl">plugin called or_ompl</a> which allows you to use any of the OMPL planners with OpenRAVE. It also exposes OMPL's path simplification routines to OpenRAVE. The adjacent video outlines several key features of the plugin. </div> <div class="col-lg-5 col-md-6 col-sm-7"> <div class="embed-responsive embed-responsive-16by9">  <iframe src="http://www.youtube.com/embed/6qRRbvNzHG8"></iframe> </div> </div> </div><h1><a class="anchor" id="integration_morse"></a>
+MORSE</h1>
+<div class="row"> <div class="col-lg-7 col-md-6 col-sm-5"> <a href="https://www.openrobots.org/wiki/morse">The Modular OpenRobots Simulation Engine (MORSE)</a> is a generic simulator for academic robotics. It is implemented as an extension for Blender, a 3D modeling program. Blender includes a game engine which uses the Bullet physics simulator under the hood. MORSE includes many simulated sensors, actuators, and robot models. Caleb Voss, as part of a Google Summer of Code project, developed <a href="http://ompl.kavrakilab.org/morse.html">a plugin for Blender/MORSE</a> that adds planning functionality. The adjacent video shows an example of what can be produced with this plugin. </div> <div class="col-lg-5 col-md-6 col-sm-7"> <div class="embed-responsive embed-responsive-16by9">  <iframe src="http://player.vimeo.com/video/71580831?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=0&amp;loop=1"></iframe> </div> </div> </div><h1><a class="anchor" id="integration_sims"></a>
+SIMS</h1>
+<div class="row"> <div class="col-lg-7 col-md-6 col-sm-5"> The Kavraki lab has applied motion planning algorithms to the problem of characterizing protein flexibility and conformational changes. A better understanding of protein structure and flexibility is critical to understanding their function. Proteins can be modeled as long kinematic chains. Instead of collisions, state validity is determined by molecular energy. We have developed a conformational sampling framework called <a href="http://www.kavrakilab.org/bioinformatics/tracing_conformational_changes">the Structured Intuitive Move Selector (SIMS)</a>. It uses <a href="http://www.rosettacommons.org">Rosetta</a> for modeling protein structures and computing their biophysical feasibility. The SIMS software is still very much under development, but will be released at some point in the near future. </div> <div class="col-lg-5 col-md-6 col-sm-7"> <div class="image">
+<img src="http://www.kavrakilab.org/sites/default/files/groel_path.png"  width="100%"/>
+</div>
+ </div> </div><h1><a class="anchor" id="integration_omplapp"></a>
+OMPL.app</h1>
+<div class="row"> <div class="col-lg-7 col-md-6 col-sm-5"> OMPL.app consist of two components: a library and a GUI. The library provides bindings to the <a href="http://gamma.cs.unc.edu/FCL">FCL</a> and <a href="http://gamma.cs.unc.edu/SSV">PQP</a> collision checking libraries. By default FCL's discrete collision checking is used, but its continuous collision checking or PQP's discrete collision checking can also be specified. The library relies on the <a href="http://assimp.sf.net">Assimp</a> library to import a large variety of mesh formats that can be used to represent the robot and its environment. The python-based GUI can be used for planning motions for rigid bodies and a few vehicle types (first-order and second-order cars, a blimp, and a quadrotor). The OMPL.app distribution also contains <code>ompl_benchmark</code>, a simple tool that demonstrates some of OMPL's <a href="benchmark.html">benchmarking</a> capabilities. </div> <div class="col-lg-5 col-md-6 col-sm-7"> <div class="embed-responsive embed-responsive-4by3">  <iframe src="http://player.vimeo.com/video/58686592?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=0&amp;loop=1"></iframe> </div> </div> </div> </div></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.powertip.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dynsections.js"></script>
+<script src="js/ompl.js"></script>
+</body>
+</html>
