@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Extended support to optimal planners&#58; CForest + tree pruning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+
+<link href="file:///tmp/foo/css/tabs.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/doxygen.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/search.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/bootstrap.min.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/ompl.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/syntax.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="file:///tmp/foo/search/searchdata.js"></script>
+<script src="file:///tmp/foo/search/search.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="file:///tmp/foo/index.html">OMPL</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="file:///tmp/foo/download.html">Download</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+            <li><a href="file:///tmp/foo/installation.html">Installation</a></li>
+            <li><a href="file:///tmp/foo/tutorials.html">Tutorials</a></li>
+            <li><a href="file:///tmp/foo/group__demos.html">Demos</a></li>
+            <li><a href="file:///tmp/foo/gui.html">OMPL.app GUI</a></li>
+            <li><a href="file:///tmp/foo/python.html">Python Bindings</a></li>
+            <li><a href="file:///tmp/foo/planners.html">Available Planners</a></li>
+            <li><a href="file:///tmp/foo/benchmark.html">Benchmarking Planners</a></li>
+            <li><a href="file:///tmp/foo/spaces.html">Available State Spaces</a></li>
+            <li><a href="file:///tmp/foo/optimalPlanning.html">Optimal Planning</a></li>
+            <li><a href="file:///tmp/foo/FAQ.html">FAQ</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">External links</li>
+            <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+            <li><a href="http://plannerarena.org">Planner Arena</a></li>
+            <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+            <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+            <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+            <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+          </ul>
+        </li>
+        <li><a href="file:///tmp/foo/gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="file:///tmp/foo/api_overview.html">API Overview</a></li>
+            <li><a href="file:///tmp/foo/annotated.html">Classes</a></li>
+            <li><a href="file:///tmp/foo/files.html">Files</a></li>
+            <li><a href="file:///tmp/foo/styleGuide.html">Style Guide</a></li>
+            <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
+            <li><a href="file:///tmp/foo/teamcity.html">TeamCity Build Server</a></li>
+          </ul>
+        </li>
+        <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="file:///tmp/foo/mailingLists.html">Mailing Lists</a></li>
+            <li><a href="file:///tmp/foo/developers.html">Developers</a></li>
+            <li><a href="file:///tmp/foo/thirdparty.html">Contributions</a></li>
+            <li><a href="file:///tmp/foo/contrib.html">Submit Contribution</a></li>
+            <li><a href="file:///tmp/foo/education.html">Education</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="file:///tmp/foo/license.html">License</a></li>
+            <li><a href="file:///tmp/foo/citations.html">Citations</a></li>
+            <li><a href="file:///tmp/foo/acknowledgements.html">Acknowledgments</a></li>
+            <li><a href="file:///tmp/foo/contact.html">Contact Us</a></li>
+          </ul>
+        </li>
+        <li><a href="file:///tmp/foo/blog.html">Blog</a></li>
+
+        <!-- Doxygen API search box -->
+        <div id="searchli">
+          <div id="MSearchBox" class="MSearchBoxInactive">
+            <span class="left">
+              <img id="MSearchSelect" src="search/mag_sel.png"
+              onmouseover="return searchBox.OnSearchSelectShow()"
+              onmouseout="return searchBox.OnSearchSelectHide()"
+              alt=""/>
+              <input type="text" id="MSearchField" value="Search API" accesskey="S"
+              onfocus="searchBox.OnSearchFieldFocus(true)"
+              onblur="searchBox.OnSearchFieldFocus(false)"
+              onkeyup="searchBox.OnSearchFieldChange(event)"/>
+            </span><span class="right">
+              <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+            </span>
+          </div>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+onmouseover="return searchBox.OnSearchSelectShow()"
+onmouseout="return searchBox.OnSearchSelectHide()"
+onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+  <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
+</div>
+
+
+    
+
+    <div class="container">
+      <div class="row">
+        <div class="page-header defaultfullwidth">
+          <h1>Extended support to optimal planners&#58; CForest + tree pruning</h1>
+          <h4><a href="http://www.javiervgomez.com">Javier V Gomez</a>
+        </div>
+
+        <div class="defaultfullwidth">
+          <p>The OMPL has extended its capabilities regarding optimal planning by implementing the CForest parallelization framework and the RRTstar (RRT*) tree pruning option. Both of them work under the same assumptions:
+- The configuration space obeys the triangle inequality.
+- There exists an admissible heuristic (for the optimization objective!).</p>
+
+<p>We are looking forward you to use these new features and hear your feedback!</p>
+
+<h2 id="rrtstar-tree-prunning">RRTstar tree prunning</h2>
+
+<p>Pruning was implemented as a tool for the CForest parallelization framework. However, as it is a useful tool (that other RRT* versions also use) we decided to implement it as an independent feature.</p>
+
+<p>Every time RRT* finds a new, better solution, it is possible to discard those nodes of the tree that surely will not lead to a better solution. Moreover, it is also possible to immediately discard those samples that will not be useful, thus saving tons of time.</p>
+
+<p>Therefore, the search tree will focus on those zones in which the solution can be only improved. This implies a speedup in the convergence rate since the probability of sampling states close to the optimal path is increased.</p>
+
+<h3 id="how-to-use-it">How to use it?</h3>
+
+<p>To use this feature just use the RRTstar planner as always and add a call to its setPrune() method with a true argument.</p>
+
+<h3 id="results">Results</h3>
+
+<p>These two images correspond to benchmarks carried out in the alpha 1.5 puzzle and with the kinematic chain problem using 10 links, respectively.</p>
+
+<p><img src="file:///tmp/foo/files/alpha_rrt_prune.png" alt="RRTstar vs pruned RRTstar in alpha 1.5 puzzle" width="80%" /><br />
+<strong>RRT* vs pruned RRT* in alpha 1.5 puzzle</strong></p>
+
+<p><img src="file:///tmp/foo/files/kinematic_rrt_prune.png" alt="RRTstar vs pruned RRTstar in a 10-links kinematic chain" width="80%" /><br />
+<strong>RRT* vs pruned RRT* in a 10-links kinematic chain</strong></p>
+
+<p>We highly recommend to benchmark whether the prune utility is interesting for the problem you aim to solve. We never found standard RRT* to outperform pruned RRT*, however for some specific (usually easy to solve) problems the gain is too little. For the general case, the convergence towards the optimal path is greatly improved.</p>
+
+<h2 id="cforest-parallelization-framework">CForest parallelization framework</h2>
+
+<p>Now, let’s move to the next level. What if instead of one single random tree we grow many of them in parallel?  Probability of finding a better solution increases. But now, going a bit further, what if we allow the trees to communicate each other, so they share the best paths found so far? Then, we would be thinking in the <a href="http://www.mit.edu/~ottemw/html_stuff/pdf_files/otte_ieeetro2013.pdf" target="_blank">CForest parallelization framework</a>.</p>
+
+<p>This very simple, yet powerful idea is already implemented in OMPL! CForest expands many trees in different threads (running underlying planner instances of regular planning algorithms, such RRT*). Every time a new, better solution is found by one of the trees, it is shared to all other trees. Also, trees are pruned according to the new shared path.</p>
+
+<h3 id="how-to-use-it-1">How to use it?</h3>
+
+<p>CForest has been included as a new geometric planner, in order to make it easier for the user. Create it as any other planner. By default, it will expand as many trees as available cores in your machine. However, you can configure it to any number of threads and also you can decide if you want to prune the trees.</p>
+
+<p>New demos have been included into OMPL that show how to use and configure it.</p>
+
+<p>Currently, RRT* is the only underlying planner for the CForest available in OMPL. However, any incremental, optimal planning algorithm could be intergrated into CForest. Check the code documentation to learn how.</p>
+
+<h3 id="results-1">Results</h3>
+
+<p>CForest implies a huge performance improvement in most of the problems. The convergence towards a path with optimal cost is much faster, as the following images show, running CForest with 4, 8 and 16 trees (in independent CPUs):</p>
+
+<p><img src="file:///tmp/foo/files/alpha_prune.png" alt="CForest vs RRT* in alpha 1.5 puzzle" width="80%" /><br />
+<strong>CForest vs RRT* in alpha 1.5 puzzle</strong></p>
+
+<p><img src="file:///tmp/foo/files/circle_prune.png" alt="CForest vs RRT* in the circles grid benchmark" width="80%" /><br />
+<strong>CForest vs RRT* in the circles grid benchmark</strong></p>
+
+<p><img src="file:///tmp/foo/files/kinematic_prune.png" alt="CForest vs RRT* in a 10-links kinematic chain" width="80%" /><br />
+<strong>CForest vs RRT* in a 10-links kinematic chain</strong></p>
+
+<h3 id="only-1-cpu-available">Only 1 cpu available?</h3>
+
+<p>Do not worry! Take a look at the following picture. There, CForest expanding 2, 4 and 8 threads in a single core is being compared to standard RRT* and pruned RRT* pruned in the alpha 1.5 puzzle. Even this way, we are getting an important speedup! This is what CForest authors called <em>sequential CForest.</em> In this case, we built it implicitly as each tree is running in a separate thread, but all threads are running in the same CPU.</p>
+
+<p>Be careful, if you increment the number of threads too much, it could happen that CForest introduces too much overhead and it can result in a performance worsening.</p>
+
+<p><img src="file:///tmp/foo/files/alpha_1thread.png" alt="Single core CForest vs RRT* in a alpha 1.5 puzzle" width="80%" /><br />
+<strong>Single core CForest vs RRT* in a alpha 1.5 puzzle</strong></p>
+
+<h3 id="important-notes">Important Notes</h3>
+
+<p>CForest is designed for single-query, shortest path planning problems. This does not restrict it to path length optimization. Optimizing path execution time or energy consumed can be treated as shortest path length.</p>
+
+<p>If you want to push CForest to its limits, please read carefully the API documentation and the <a href="http://ompl.kavrakilab.org/optimalPlanning.html" target="_blank">optimal planning section</a>. There are many differences with the paper version that you could take into account. We aimed to keep the code as simple as possible.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated on October 21, 2014 by&#160;<a href="http://jekyllrb.com">Jekyll</a></span>
+  </p></div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="file:///tmp/foo/js/jquery.js"></script>
+<script src="file:///tmp/foo/js/jquery.powertip.min.js"></script>
+<script src="file:///tmp/foo/js/bootstrap.min.js"></script>
+<script src="file:///tmp/foo/js/dynsections.js"></script>
+<script src="file:///tmp/foo/js/ompl.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>OMPL Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+
+<link href="file:///tmp/foo/css/tabs.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/doxygen.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/search.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/bootstrap.min.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/ompl.css" rel="stylesheet">
+<link href="file:///tmp/foo/css/syntax.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="file:///tmp/foo/search/searchdata.js"></script>
+<script src="file:///tmp/foo/search/search.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="file:///tmp/foo/index.html">OMPL</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="file:///tmp/foo/download.html">Download</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+            <li><a href="file:///tmp/foo/installation.html">Installation</a></li>
+            <li><a href="file:///tmp/foo/tutorials.html">Tutorials</a></li>
+            <li><a href="file:///tmp/foo/group__demos.html">Demos</a></li>
+            <li><a href="file:///tmp/foo/gui.html">OMPL.app GUI</a></li>
+            <li><a href="file:///tmp/foo/python.html">Python Bindings</a></li>
+            <li><a href="file:///tmp/foo/planners.html">Available Planners</a></li>
+            <li><a href="file:///tmp/foo/benchmark.html">Benchmarking Planners</a></li>
+            <li><a href="file:///tmp/foo/spaces.html">Available State Spaces</a></li>
+            <li><a href="file:///tmp/foo/optimalPlanning.html">Optimal Planning</a></li>
+            <li><a href="file:///tmp/foo/FAQ.html">FAQ</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">External links</li>
+            <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+            <li><a href="http://plannerarena.org">Planner Arena</a></li>
+            <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+            <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+            <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+            <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+          </ul>
+        </li>
+        <li><a href="file:///tmp/foo/gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="file:///tmp/foo/api_overview.html">API Overview</a></li>
+            <li><a href="file:///tmp/foo/annotated.html">Classes</a></li>
+            <li><a href="file:///tmp/foo/files.html">Files</a></li>
+            <li><a href="file:///tmp/foo/styleGuide.html">Style Guide</a></li>
+            <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
+            <li><a href="file:///tmp/foo/teamcity.html">TeamCity Build Server</a></li>
+          </ul>
+        </li>
+        <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="file:///tmp/foo/mailingLists.html">Mailing Lists</a></li>
+            <li><a href="file:///tmp/foo/developers.html">Developers</a></li>
+            <li><a href="file:///tmp/foo/thirdparty.html">Contributions</a></li>
+            <li><a href="file:///tmp/foo/contrib.html">Submit Contribution</a></li>
+            <li><a href="file:///tmp/foo/education.html">Education</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="file:///tmp/foo/license.html">License</a></li>
+            <li><a href="file:///tmp/foo/citations.html">Citations</a></li>
+            <li><a href="file:///tmp/foo/acknowledgements.html">Acknowledgments</a></li>
+            <li><a href="file:///tmp/foo/contact.html">Contact Us</a></li>
+          </ul>
+        </li>
+        <li><a href="file:///tmp/foo/blog.html">Blog</a></li>
+
+        <!-- Doxygen API search box -->
+        <div id="searchli">
+          <div id="MSearchBox" class="MSearchBoxInactive">
+            <span class="left">
+              <img id="MSearchSelect" src="search/mag_sel.png"
+              onmouseover="return searchBox.OnSearchSelectShow()"
+              onmouseout="return searchBox.OnSearchSelectHide()"
+              alt=""/>
+              <input type="text" id="MSearchField" value="Search API" accesskey="S"
+              onfocus="searchBox.OnSearchFieldFocus(true)"
+              onblur="searchBox.OnSearchFieldFocus(false)"
+              onkeyup="searchBox.OnSearchFieldChange(event)"/>
+            </span><span class="right">
+              <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+            </span>
+          </div>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+onmouseover="return searchBox.OnSearchSelectShow()"
+onmouseout="return searchBox.OnSearchSelectHide()"
+onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+  <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
+</div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="page-header defaultfullwidth">
+          <h1>OMPL Blog</h1>
+        </div>
+
+        <div class="defaultfullwidth">
+          <div class="row">
+<div class="col-md-3">
+<ul>
+  
+  <li><a href="file:///tmp/foo/2014/10/29/or_ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a></li>
+  
+  <li><a href="file:///tmp/foo/2014/10/21/extended-support-to-optimal-planners-cforest-tree-pruning.html">Extended support to optimal planners&#58; CForest + tree pruning</a></li>
+  
+  <li><a href="file:///tmp/foo/2014/10/21/bringing-belief-space-planning-to-ompl.html">Bringing Belief Space Planning to OMPL</a></li>
+  
+  <li><a href="file:///tmp/foo/2014/06/26/icra-2014-roundup.html">ICRA 2014 Roundup</a></li>
+  
+  <li><a href="file:///tmp/foo/2013/10/11/combining-ompl-and-morse.html">Combining OMPL and MORSE</a></li>
+  
+  <li><a href="file:///tmp/foo/2013/10/03/extending-ompl-support-for-optimal-path-planning-2.html">Extending OMPL support for optimal path planning</a></li>
+  
+  <li><a href="file:///tmp/foo/2013/05/27/moveit-release.html">MoveIt! Release</a></li>
+  
+  <li><a href="file:///tmp/foo/2013/04/09/ompl-google-summer-of-code.html">OMPL Google Summer of Code</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/12/05/ompl-wins-the-2012-oss-world-challenge-grand-prize.html">OMPL wins the 2012 OSS World Challenge Grand Prize</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/09/07/easier-integration-with-the-moveit-wizard-and-advancements-in-ompl.html">Easier integration with the MoveIt wizard and advancements in OMPL</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/06/13/icra-2012-roscon-update.html">ICRA 2012 / ROSCON update</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/05/20/ompl-development-activity.html">OMPL development activity</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/04/27/planning-using-the-vortex-physics-engine.html">Planning using the Vortex physics engine</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/03/28/from-differential-equations-to-planning-in-one-function.html">From differential equations to planning in one function</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/03/18/geometric-planning-for-car-like-vehicles.html">Geometric planning for car-like vehicles</a></li>
+  
+  <li><a href="file:///tmp/foo/2012/03/15/welcome.html">Welcome!</a></li>
+  
+</ul>
+</div>
+
+<div class="col-md-9">
+  
+  <h2>
+    <a href="file:///tmp/foo/2014/10/29/or_ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a>
+    <small>29 Oct 2014</small>
+  </h2>
+
+  <p><strong>A guest post from <a href="http://mkoval.org">Michael Koval</a> at CMU:</strong></p>
+
+<p>The Personal Robotics Lab at CMU is excited to announce or_ompl, an OpenRAVE planner plugin that provides bindings for OMPL. This short video outlines several key features of the plugin:</p>
+
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://www.youtube.com/embed/6qRRbvNzHG8?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p>In summary, or_ompl enables you to:</p>
+
+<ul>
+  <li>Plan in OpenRAVE using the full suite of OMPL geometric motion planners</li>
+  <li>Call OMPL’s optimal motion planners, like BIT*, PRM*, and RRT*, in an anytime fashion</li>
+  <li>Shortcut trajectories using OMPL’s geometric path simplifier</li>
+  <li>Easily expose new OMPL motion planners to OpenRAVE</li>
+</ul>
+
+<p>The source code is BSD licensed and available on Github:</p>
+
+<p><a href="https://github.com/personalrobotics/or_ompl">https://github.com/personalrobotics/or_ompl</a></p>
+
+<p>See the README for installation and usage instructions. Please do not hesitate to open an issue or pull request on Github if you have any issues.</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2014/10/21/extended-support-to-optimal-planners-cforest-tree-pruning.html">Extended support to optimal planners&#58; CForest + tree pruning</a>
+    <small>21 Oct 2014</small>
+  </h2>
+
+  <p>The OMPL has extended its capabilities regarding optimal planning by implementing the CForest parallelization framework and the RRTstar (RRT*) tree pruning option. Both of them work under the same assumptions:
+- The configuration space obeys the triangle inequality.
+- There exists an admissible heuristic (for the optimization objective!).</p>
+
+<p>We are looking forward you to use these new features and hear your feedback!</p>
+
+<h2 id="rrtstar-tree-prunning">RRTstar tree prunning</h2>
+
+<p>Pruning was implemented as a tool for the CForest parallelization framework. However, as it is a useful tool (that other RRT* versions also use) we decided to implement it as an independent feature.</p>
+
+<p>Every time RRT* finds a new, better solution, it is possible to discard those nodes of the tree that surely will not lead to a better solution. Moreover, it is also possible to immediately discard those samples that will not be useful, thus saving tons of time.</p>
+
+<p>Therefore, the search tree will focus on those zones in which the solution can be only improved. This implies a speedup in the convergence rate since the probability of sampling states close to the optimal path is increased.</p>
+
+<h3 id="how-to-use-it">How to use it?</h3>
+
+<p>To use this feature just use the RRTstar planner as always and add a call to its setPrune() method with a true argument.</p>
+
+<h3 id="results">Results</h3>
+
+<p>These two images correspond to benchmarks carried out in the alpha 1.5 puzzle and with the kinematic chain problem using 10 links, respectively.</p>
+
+<p><img src="file:///tmp/foo/files/alpha_rrt_prune.png" alt="RRTstar vs pruned RRTstar in alpha 1.5 puzzle" width="80%" /><br />
+<strong>RRT* vs pruned RRT* in alpha 1.5 puzzle</strong></p>
+
+<p><img src="file:///tmp/foo/files/kinematic_rrt_prune.png" alt="RRTstar vs pruned RRTstar in a 10-links kinematic chain" width="80%" /><br />
+<strong>RRT* vs pruned RRT* in a 10-links kinematic chain</strong></p>
+
+<p>We highly recommend to benchmark whether the prune utility is interesting for the problem you aim to solve. We never found standard RRT* to outperform pruned RRT*, however for some specific (usually easy to solve) problems the gain is too little. For the general case, the convergence towards the optimal path is greatly improved.</p>
+
+<h2 id="cforest-parallelization-framework">CForest parallelization framework</h2>
+
+<p>Now, let’s move to the next level. What if instead of one single random tree we grow many of them in parallel?  Probability of finding a better solution increases. But now, going a bit further, what if we allow the trees to communicate each other, so they share the best paths found so far? Then, we would be thinking in the <a href="http://www.mit.edu/~ottemw/html_stuff/pdf_files/otte_ieeetro2013.pdf" target="_blank">CForest parallelization framework</a>.</p>
+
+<p>This very simple, yet powerful idea is already implemented in OMPL! CForest expands many trees in different threads (running underlying planner instances of regular planning algorithms, such RRT*). Every time a new, better solution is found by one of the trees, it is shared to all other trees. Also, trees are pruned according to the new shared path.</p>
+
+<h3 id="how-to-use-it-1">How to use it?</h3>
+
+<p>CForest has been included as a new geometric planner, in order to make it easier for the user. Create it as any other planner. By default, it will expand as many trees as available cores in your machine. However, you can configure it to any number of threads and also you can decide if you want to prune the trees.</p>
+
+<p>New demos have been included into OMPL that show how to use and configure it.</p>
+
+<p>Currently, RRT* is the only underlying planner for the CForest available in OMPL. However, any incremental, optimal planning algorithm could be intergrated into CForest. Check the code documentation to learn how.</p>
+
+<h3 id="results-1">Results</h3>
+
+<p>CForest implies a huge performance improvement in most of the problems. The convergence towards a path with optimal cost is much faster, as the following images show, running CForest with 4, 8 and 16 trees (in independent CPUs):</p>
+
+<p><img src="file:///tmp/foo/files/alpha_prune.png" alt="CForest vs RRT* in alpha 1.5 puzzle" width="80%" /><br />
+<strong>CForest vs RRT* in alpha 1.5 puzzle</strong></p>
+
+<p><img src="file:///tmp/foo/files/circle_prune.png" alt="CForest vs RRT* in the circles grid benchmark" width="80%" /><br />
+<strong>CForest vs RRT* in the circles grid benchmark</strong></p>
+
+<p><img src="file:///tmp/foo/files/kinematic_prune.png" alt="CForest vs RRT* in a 10-links kinematic chain" width="80%" /><br />
+<strong>CForest vs RRT* in a 10-links kinematic chain</strong></p>
+
+<h3 id="only-1-cpu-available">Only 1 cpu available?</h3>
+
+<p>Do not worry! Take a look at the following picture. There, CForest expanding 2, 4 and 8 threads in a single core is being compared to standard RRT* and pruned RRT* pruned in the alpha 1.5 puzzle. Even this way, we are getting an important speedup! This is what CForest authors called <em>sequential CForest.</em> In this case, we built it implicitly as each tree is running in a separate thread, but all threads are running in the same CPU.</p>
+
+<p>Be careful, if you increment the number of threads too much, it could happen that CForest introduces too much overhead and it can result in a performance worsening.</p>
+
+<p><img src="file:///tmp/foo/files/alpha_1thread.png" alt="Single core CForest vs RRT* in a alpha 1.5 puzzle" width="80%" /><br />
+<strong>Single core CForest vs RRT* in a alpha 1.5 puzzle</strong></p>
+
+<h3 id="important-notes">Important Notes</h3>
+
+<p>CForest is designed for single-query, shortest path planning problems. This does not restrict it to path length optimization. Optimizing path execution time or energy consumed can be treated as shortest path length.</p>
+
+<p>If you want to push CForest to its limits, please read carefully the API documentation and the <a href="http://ompl.kavrakilab.org/optimalPlanning.html" target="_blank">optimal planning section</a>. There are many differences with the paper version that you could take into account. We aimed to keep the code as simple as possible.</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2014/10/21/bringing-belief-space-planning-to-ompl.html">Bringing Belief Space Planning to OMPL</a>
+    <small>21 Oct 2014</small>
+  </h2>
+
+  <p><strong>Editor’s note: this is a guest post by Saurav Agarwal from Texas A&amp;M.</strong></p>
+
+<p>Sampling based deterministic motion planning has shown great success in the past. However, as we progress towards more realistic modeling and planning for robotic systems, we need to account for uncertainties in our systems. Uncertainties mainly arise from:</p>
+
+<ol>
+  <li>Sensing or measurement noise (also called observation noise) i.e. sensors do not give perfect measurements, instead the measurements are corrupted by some noises</li>
+  <li>Motion uncertainty (also called process noise) i.e. the robot’s actuators make some errors in following the control commands</li>
+  <li>Modelling uncertainties i.e. our physical models of the system and environment usually have approximations/errors.</li>
+</ol>
+
+<p>Thus, all these uncertainties call for a new class of motion planners, planners that can reason about the uncertainty in the system and then make smart (optimal) decisions.</p>
+
+<p>In the absence of the exact state of the system due to sensing uncertainty, the robot forms a probability distribution over all possible states (referred to as a belief) and the planning and decision making has to happen based on the available belief of the system. However, motion planning in the belief space is a challenging problem due to the computational intractability of its exact solution (it can be classified as a Partially Observable Markov Decision Process). This problem becomes even more challenging in changing environments as the robot needs to reason not only about its own state but about external disturbances such as moving people and unforeseen obstacles (furniture, doors etc.).</p>
+
+<p>Research conducted at Texas A&amp;M University and recently joint work with MIT has resulted in an innovative solution called FIRM (Feedback-based Information Roadmaps) that is able to transform the intractable POMDP problem to a graph based structure in belief space. FIRM essentially constructs a roadmap graph in belief space and is able to generate feedback policies and give guarantees on the minimum success probability for a planning task. FIRM generates a policy that is able to guide the robot through paths that minimize the localization uncertainty and collision probabilities. Thus, FIRM provides motion plans that are able to deal with uncertainties in our systems. Further, FIRM is also capable of dynamic replanning in real-time to deal with unforeseen changes in the environment and robot’s state (kidnapping).</p>
+
+<p>We have successfully applied this method in simulation and on real physical robots and demonstrated its robustness in realistic scenarios. Here is a video that shows FIRM running on an IRobot Create that is tasked with visiting multiple goal locations sequentially in an everyday office environment. The goal points are not predefined and submitted by user online. Notice that there are people walking, doors are opened and closed randomly and the robot is kidnapped to unknown locations. Our robot is able to handle all these challenges and accomplish its mission!</p>
+
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://www.youtube.com/embed/6cKzcfVDes8?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p>We presented our work at ICRA 2014, Hong Kong and you can find all related papers here: <a href="http://www.mit.edu/~aliagha/Web/publications.htm">http://www.mit.edu/~aliagha/Web/publications.htm</a></p>
+
+<p>Further, we are now linking FIRM with OMPL. You can currently download a working simulation of the FIRM graph construction and plan execution from <a href="https://github.com/sauravag/FIRM-OMPL">https://github.com/sauravag/FIRM-OMPL</a></p>
+
+<p>The code is provided as a Code::Blocks project, feel free to play with it and give us your feedback!</p>
+
+<p>Saurav Agarwal<br />
+Ph.D. Candidate<br />
+Aerospace Engineering<br />
+Texas A&amp;M University<br />
+Research Web: <a href="http://edplab.org/" target="_blank">http://edplab.org</a><br />
+Personal: <a href="http://sauravag.com/" target="_blank">http://sauravag.com</a></p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2014/06/26/icra-2014-roundup.html">ICRA 2014 Roundup</a>
+    <small>26 Jun 2014</small>
+  </h2>
+
+  <p>A couple weeks ago the IEEE International Conference on Robotics and Automation took place in Hong Kong. There were many papers that used OMPL one way or another. Here is an overview of some of them:</p>
+
+<ol>
+  <li>
+    <p><strong>Asymptotically near-optimal RRT for fast, high-quality, motion planning</strong><br />
+Oren Salzman and Dan Halperin<br />
+Blavatnik School of Computer Science, Tel-Aviv University, Israel<br />
+This paper describes Lower Bound Tree-RRT (LBT-RRT), a single-query sampling-based algorithm that is asymptotically near-optimal. By varying the approximation factor one can get behavior that ranges from regular RRT to RRT*. An implementation of this algorithm has been contributed by the authors.</p>
+  </li>
+  <li>
+    <p><strong>Fast Stochastic Motion Planning with Optimality Guarantees using Local Policy Reconfiguration</strong><br />
+Ryan Luna, Morteza Lahijanian, Mark Moll, and Lydia E. Kavraki<br />
+Department of Computer Science, Rice University<br />
+This paper presents a framework for fast reconfiguration of local control policies for a stochastic system to satisfy a high-level task specification. It uses Bounded Markov Decision Processes at the high-level. Some follow-up work will be presented at AAAI 2014 and at WAFR 2014. See http://www.kavrakilab.org/biblio.</p>
+  </li>
+  <li>
+    <p><strong>Improving Efficiency of Intricate Manipulation Planning through Mapping of Grasp Feasibility Zones</strong><br />
+Mihai Pomârlan [1] and Ioan A. Sucan [2]<br />
+1 Universitatea Politehnica Timisoara, facultatea ETC<br />
+2 Willow Garage (now at Google[X])<br />
+This paper is on pre-computing (off-line) a ranking of grasping poses for each configuration in a roadmap constructed for the object to be manipulated. This allows choosing more likely grasping poses when manipulating known objects and leads to faster computation of manipulation plans. The paper uses the LazyPRM and RRTConnect implementations from OMPL.</p>
+  </li>
+  <li>
+    <p><strong>AUV Mission Control via Temporal Planning</strong><br />
+Michael Cashmore [1], Maria Fox [1], Tom Larkworthy [2], Derek Long [1], and Daniele Magazzeni [1]<br />
+1 King’s College London, UK<br />
+2 Heriot-Watt University, Edinburgh, UK<br />
+This paper combines high-level temporal planning with low-level motion planning. As the title suggests, they apply this to AUVs and have some nice experimental results.</p>
+  </li>
+  <li>
+    <p><strong>SMT-Based Synthesis of Integrated Task and Motion Plans from Plan Outlines</strong><br />
+Srinivas Nedunuri, Sailesh Prabhu, Mark Moll, Swarat Chaudhuri and Lydia E. Kavraki<br />
+Department of Computer Science, Rice University<br />
+In this paper the authors propose an integrated task and motion planning framework called ROBOSYNTH that translates high-level task specifications in the form of plan outlines to detailed low-level plans. In a plan outline there are “holes” that ROBOSYNTH will fill in. It can, e.g., determine a low-level path for picking up an object subject to user constraints or a feasible order in which dishes could be loaded in the dishwasher. This is done by combining an SMT solver with OMPL.</p>
+  </li>
+  <li>
+    <p><strong>A Sampling-Based Strategy Planner for Nondeterministic Hybrid Systems</strong><br />
+Morteza Lahijanian, Lydia E. Kavraki, and Moshe Y. Vardi<br />
+Department of Computer Science, Rice University<br />
+This paper presents a strategy planner for hybrid systems with nondeterministic discrete transitions. Examples of such systems include a car-like robot with faulty transmission (gearbox) causing nondeterministic switching between gears.</p>
+  </li>
+  <li>
+    <p><strong>Motion Planning for Robotic Manipulators with Independent Wrist Joints</strong><br />
+Kalin Gochev [1], Venkatraman Narayanan [2], Benjamin Cohen [1], Alla Safonova [1] Maxim Likhachev [2]<br />
+1 Department of Computer and Information Science, University of Pennsylvania<br />
+2 Robotics Institute, Carnegie Mellon University<br />
+This paper proposes to decompose high-dimensional planning problems into lower-dimensional subproblems and solve them with deterministic heuristic search methods. The approach is compared to OMPL and is shown to have some advantages to some planner in OMPL on some metrics. It discusses trade-offs in path quality, speed, and completeness.</p>
+  </li>
+  <li>
+    <p><strong>Gaussian Process Kernels for Rotations and 6D Rigid Body Motions</strong><br />
+Muriel Lang, Oliver Dunkley and Sandra Hirche<br />
+Technische Universität München<br />
+This paper extends Gaussian Processes to quaternions and dual quaternions, which is useful for learning the dynamics of rotational or rigid body motion, respectively. The approach is shown to be superior to using Euler angles. OMPL is used to generate trajectories on which the approach is tested.</p>
+  </li>
+  <li>
+    <p><strong>Interactive-rate Motion Planning for Concentric Tube Robots</strong><br />
+Luis G. Torres, Cenk Baykal, and Ron Alterovitz<br />
+Department of Computer Science, University of North Carolina<br />
+The authors are interested in planning minimally invasive surgery using concentric tube robots. The approach combines a precomputed roadmap with an iterative IK solver to obtain interactive-rate planning times.</p>
+  </li>
+  <li>
+    <p><strong>Poisson-RRT</strong><br />
+Chonhyon Park and Jia Pan and Dinesh Manocha<br />
+Department of Computer Science, University of North Carolina<br />
+<a href="http://gamma.cs.unc.edu/PoissonRRT/" target="_blank">[project page]</a><br />
+The authors present an RRT-based motion planning algorithm that uses the maximal Poisson-disk sampling scheme. The approach exploits the free-disk property of the maximal Poisson-disk samples to generate nodes and perform tree expansion. The authors demonstrate that the approach can be parallelized on CPUs as well as GPUs.</p>
+  </li>
+</ol>
+
+<p>If you use OMPL in your work, please let us know! We are always interested to how and where it is used.</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2013/10/11/combining-ompl-and-morse.html">Combining OMPL and MORSE</a>
+    <small>11 Oct 2013</small>
+  </h2>
+
+  <p>The <a href="http://www.openrobots.org/wiki/morse/">Modular OpenRobots Simulation Engine</a> (MORSE) is an environment that allows the user or other code to direct a robot in a physics simulation. The program is built on the 3D modeling software, <a href="http://www.blender.org/">Blender</a>, which can be used to design and animate simulation scenarios. We saw an opportunity to enhance both the functionality of MORSE and the user accessibility of OMPL by combining the two of them, thus enabling the modeling, solving, and animating of a planning problem from the same interface.</p>
+
+<p>A user of OMPL may wish to work with a problem where the motion of one or more robots and its environment are governed by the physics of the system and input controls to the robot(s). For example, suppose the user has a car-like robot, for which a desired velocity and turning speed can be specified, in an environment where the robot and other objects can collide and be pushed around. Previously, to plan a path in a problem like this, one could build a model of the environment through the use of primitive geometric objects and joints in the Open Dynamics Engine (ODE), and then invoke the OMPL interface for ODE to find a solution. Encoding such a model is tedious work and error-prone, as the user must visualize what all the vertex coordinates and joint relationships are describing. After OMPL provides a path, the user may wish to animate it, which requires supplying a rendering engine to draw the objects.</p>
+
+<p>There is a more natural method of modeling a path planning problem that is less time-consuming and easily scalable to larger, more complicated systems. By introducing MORSE and the Blender modeling environment to OMPL, we have made utilizing the library more accessible and desirable to those who would rather not spend so much time and effort upfront on the modeling of their problems. MORSE is designed to facilitate the simulation of robot motion in dynamic environments using Blender’s physics engine and renderer. Entirely encapsulated in the MORSE/Blender workflow is the ability to construct environments and introduce robots from the MORSE library, complete with physical attributes like mass, friction, and joints with other objects, and then to simulate the system based on control inputs. We have designed an interface for OMPL to supply these inputs, thereby directing the simulation in order to solve a path planning problem.</p>
+
+<p>This interface is in the form of a Blender add-on that supplies a number of useful functions, allowing the entire process to take place in the same workspace, without any tedious coding. First, in defining the problem, there are functions to link MORSE robots into the environment, set up bounds on the control inputs, and define goal positions for objects in the environment. The user then presses a button to start planning, after which the solution path is saved to disk in a concise format. Saved paths may be played back for review; at this time, frame-by-frame animation data is generated in the Blender file format. Finally, the user can dress up the scene in this file, tweak the results, and use the full extent of Blender’s rendering capabilities to create a high-quality animation of the solution. Refer to the <a title="usage tutorial" href="http://ompl.kavrakilab.org/morse.html" target="_blank">usage tutorial</a> for a detailed description of how to utilize our Blender add-on.</p>
+
+<p>Our method allows the planning for these systems to take place on a prototype of the scene with simple models, since we can substitute and add fancier models for the rendering after the solution is saved. Here are some demonstration videos of the end result of this process:</p>
+
+<p>This first video illustrates a problem in which the goal is defined by the location of an object other than the robot. The green box must be pushed onto the red ‘X’. In order to reach the box, OMPL must discover how to drive the car off the ramp quickly enough to make it to the other side.</p>
+
+<div class="embed-responsive embed-responsive-16by9"><iframe src="https://player.vimeo.com/video/71580831?loop=1&amp;color=ffffff&amp;byline=0&amp;portrait=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p>The second video shows a simple puzzle involving two robots that must coordinate movements in a specific order so they can swap places, since the red ball is impeding any attempts to merely drive straight for the goal. The blue robot must first push the ball past the intersection to get it out of the way before the two robots may exchange places.</p>
+
+<div class="embed-responsive embed-responsive-16by9"><iframe src="https://player.vimeo.com/video/72710651?loop=1&amp;color=ffffff&amp;byline=0&amp;portrait=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p>We hope you enjoy!</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2013/10/03/extending-ompl-support-for-optimal-path-planning-2.html">Extending OMPL support for optimal path planning</a>
+    <small>03 Oct 2013</small>
+  </h2>
+
+  <p>In some motion planning problems, you might not want just any valid path between your start and goal. You might be interested in the shortest path, or perhaps the path that steers farthest away from obstacles. In these cases you’re looking for an optimal path: a path that satisfies your constraints (connects start and goal states without collisions) and also optimizes some path quality metric. Path length and path clearance are two examples of path quality metrics, or <em>optimization objectives</em>.</p>
+
+<p>As part of the 2013 Google Summer of Code, I have worked with Ioan Şucan and Mark Moll to extend OMPL’s support for optimal motion planning. Over the summer we made the following extensions to OMPL:</p>
+
+<h3 id="generalized-optimization-objectives">Generalized Optimization Objectives</h3>
+
+<p>We refined and extended the interface for defining optimization objectives for planning in OMPL. Users can define their own objectives by implementing the <code>ompl::base::OptimizationObjective</code> interface. OMPL also includes predefined implementations of the following optimization objectives:
+- path length
+- minimum path clearance
+- general state cost integrals
+- mechanical work</p>
+
+<p>We also include functionality to easily combine optimization objectives using the <code>ompl::base::MultiOptimizationObjective</code> class.</p>
+
+<h3 id="extending-optimizing-planner-support-for-generalized-optimization-objectives">Extending Optimizing Planner Support for Generalized Optimization Objectives</h3>
+
+<p>Motion planners that attempt to optimize path quality objectives are known as <em>optimizing planners</em>. OMPL comes with some optimizing planners, but before this summer they only supported the optimization of path length. We extended the following optimizing planners in OMPL to support generalized optimization objectives:
+- PRM*
+- RRT*
+- TRRT</p>
+
+<p>Check out the results of running RRT* on a motion planning problem using different optimization objectives:</p>
+
+<h4 id="minimizing-path-length">Minimizing path length:</h4>
+<p><img src="file:///tmp/foo/files/path-length.gif" alt="Minimizing path length" width="80%" /></p>
+
+<h4 id="maximizing-minimum-path-clearance-from-obstacle">Maximizing minimum path clearance from obstacle:</h4>
+<p><img src="file:///tmp/foo//files/clearance.gif" alt="Maximizing minimum path clearance from obstacle" width="80%" /></p>
+
+<h4 id="balancing-clearance-and-path-length">Balancing clearance and path length:</h4>
+<p><img src="file:///tmp/foo//files/balanced.gif" alt="Balancing clearance and path length" width="80%" /></p>
+
+<h3 id="more-detailed-planner-benchmarks">More Detailed Planner Benchmarks</h3>
+
+<p>OMPL offers a powerful framework for benchmarking motion planning algorithms. Before the summer, the framework could only collect individual properties of a planner at the end of each planning run, such as execution time, number of configuration samples taken, or solution path length. Now, the benchmarking framework can collect data about how properties of a planner change over time in a planning run. This is very useful for benchmarking optimizing planners so we can analyze how the solution path quality improves over the planner’s execution. Planners can be implemented to specify any number of properties to “report” during execution, and during benchmarking we collect the reported data in a separate thread in such a way that doesn’t interfere with planner timing.</p>
+
+<p>We then extended OMPL’s benchmark analysis script to output plots that chart the average values of these “planner progress properties” over time. Here’s a plot (automatically generated by our script) charting path length versus time for the RRT* planner on an example planning problem:</p>
+
+<p><img src="file:///tmp/foo/files/path_length_vs_time.png" alt="Minimizing path length" width="80%" /></p>
+
+<p><strong>Want to learn more?</strong></p>
+
+<p>Check out <a title="Optimal Planning Overview" href="http://ompl.kavrakilab.org/optimalPlanning.html" target="_blank">our optimal planning overview</a> for a deeper introduction to the optimal planning framework, as well as the optimal planning tutorials in the <a title="OMPL Tutorials" href="http://ompl.kavrakilab.org/tutorials.html" target="_blank">tutorials</a> page.</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2013/05/27/moveit-release.html">MoveIt! Release</a>
+    <small>27 May 2013</small>
+  </h2>
+
+  <p>(Reposted from the <a href="http://www.willowgarage.com/blog/2013/05/06/moveit">Willow Garage blog</a>)</p>
+
+<div class="embed-responsive embed-responsive-16by9"><iframe src="https://www.youtube.com/embed/vAeEEoxVhAo?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p><img src="http://moveit.ros.org/wordpress/wp-content/uploads/2014/01/moveit-title-small.png" alt="moveit logo" /></p>
+
+<p><strong>UPDATE: the <a href="http://people.willowgarage.com/sachinc/talks/ROSCON_2013/">slides</a> and <a href="https://vimeo.com/66567049">video</a> of the MoveIt! presentation at <a href="http://roscon.ros.org/2013">ROSCON 2013</a> have now been posted</strong></p>
+
+<p>Willow Garage is proud to announce the initial release of MoveIt! : new software targeted at allowing you to build advanced applications integrating motion planning, kinematics, collision checking with grasping, manipulation, navigation, perception, and control. MoveIt! is robot agnostic software that can be quickly set up with your robot if a URDF representation of the robot is available. The MoveIt! Setup Assistant lets you configure MoveIt! for any robot, allowing you to visualize and interact with the robot model.</p>
+
+<p>MoveIt! can incorporate both actual sensor data and simulated models to build an environment representation. Sensor information (3D) can be automatically integrated realtime in the representation of the world that MoveIt! maintains. CAD models can also be imported in the same world representation if desired. Collision-free motion planning, execution and monitoring are core capabilities that MoveIt! provides for any robot. MoveIt! updates its representation of the environment on the fly, enabling reactive motion planning and execution, which is essential for applications in human-robot collaborative environments.</p>
+
+<p>MoveIt! interfaces with controllers through a standard ROS interface, allowing for ease of inter-operability, i.e. the ability to use the same higher-level software with a variety of robots without needing to change code. MoveIt! is architected to be flexible, using a plugin architecture to allow users to integrate their own custom components while still providing out-of-the-box functionality using default implementations. Furthermore, the ROS communication and configuration layer of MoveIt! is separated from core computational components such as motion planning or collision checking, the latter components being provided separately as C++ libraries.</p>
+
+<p>Workspace analysis tools allow robot designers to test out the capabilities of their robot designs before building the hardware, using environment and object specific task specifications to quantify the workspace characteristics of different designs. This reduces costly mistakes and iterations in the design stage. We are actively working on completing the pick and place capabilities in MoveIt!, integrating with object recognition, perception, and grasping to allow manipulators to execute generalized pick and place actions.</p>
+
+<p><strong>Get MoveIt!</strong></p>
+
+<p>More Information about MoveIt!, including instructions on how to get and use it, can be found on the <a target="_blank" title="http://moveit.ros.org" href="http://moveit.ros.org">MoveIt! website</a>. MoveIt! is currently an alpha release.</p>
+
+<p><strong>Catch the MoveIt! team at ICRA 2013 and ROSCON:</strong></p>
+
+<ul>
+  <li><i>ICRA Booth Demo</i>: The Willow Garage Booth will have a MoveIt! demo as part of the exhibit. The booth is open on Tuesday, Wednesday and Thursday (May 7-9, 2013).</li>
+  <li><i>ICRA Workshop Talk</i>: Sachin Chitta is giving a talk on “MoveIt!: Software for Rapid Development of New Robotics Applications” at the ICRA Industrial Mobile Assistance Robots Workshop on Monday, May 6, 2013.</li>
+  <li><i>ICRA Tutorial</i>: MoveIt! will be presented at a tutorial on Friday May 10, 2013: <a href="http://moveit.ros.org/wiki/index.php/Tutorials/ICRA2013">Motion Planning for Mobile Manipulation: State-of-the-art Methods and Tools</a>, organized by Sachin Chitta, Ioan Sucan, Mark Moll, Lydia Kavraki and Maxim Likhachev.</li>
+  <li><i>ROSCON Keynote Talk</i>: Sachin Chitta, Ioan Sucan and Acorn Pooley will be at ROSCON presenting MoveIt! at 9:30 AM on Saturday May 10, 2013.</li>
+</ul>
+
+<p><strong>Acknowledgements</strong></p>
+
+<p>Willow Garage gratefully acknowledges the contributions of the following people to MoveIt! and associated packages that MoveIt! uses and depends on:</p>
+
+<ul>
+  <li>Lydia Kavraki, Mark Moll, and associated members of the <a target="_blank" title="http://www.kavrakilab.org" href="http://www.kavrakilab.org">Kavraki Lab</a> (Rice University) for developing OMPL - a suite of randomized planners that MoveIt! uses extensively.</li>
+  <li>Dinesh Manocha and Jia Pan of <a target="_blank" title="http://unc.edu" href="http://unc.edu">UNC Chapel Hill</a> for developing FCL - a package of collision checking algorithm used extensively by MoveIt!</li>
+  <li>Maxim Likhachev (<a target="_blank" title="http://www.ri.cmu.edu" href="http://www.ri.cmu.edu">CMU</a>), Ben Cohen (<a target="_blank" title="https://www.grasp.upenn.edu" href="https://www.grasp.upenn.edu">Penn</a>) and Mike Phillips (<a target="_blank" title="http://www.ri.cmu.edu" href="/">CMU</a>) for developing <a target="_blank" title="http://www.ros.org/wiki/sbpl" href="http://www.ros.org/wiki/sbpl">SBPL</a>, a search-based planning library integrated with MoveIt!</li>
+  <li>Armin Hornung, Kai Wurm, Maren Bennewitz, Cyril Stachniss, and Wolfram Burgard for developing <a title="http://www.ros.org/wiki/octomap" href="http://www.ros.org/wiki/octomap">Octomap</a> - software for 3D occupancy mapping used by MoveIt!</li>
+  <li>Mrinal Kalakrishnan, Peter Pastor and Stefan Schaal at <a target="_blank" title="http://robotics.usc.edu" href="http://robotics.usc.edu">USC</a> for developing <a target="_blank" title="http://www.ros.org/wiki/Papers/ICRA2011_Kalakrishnan" href="http://www.ros.org/wiki/Papers/ICRA2011_Kalakrishnan">STOMP</a>, the distance field components in MoveIt! and the implementation of the <a target="_blank" title="http://www.ros.org/wiki/chomp_motion_planner" href="http://www.ros.org/wiki/chomp_motion_planner">CHOMP</a> algorithm in Arm Navigation</li>
+  <li>Dave Coleman from the <a target="_blank" title="http://www.colorado.edu" href="http://www.colorado.edu">University of Colorado, Boulder</a> for developing the MoveIt! Setup Assistant and adding documentation to the MoveIt! website.</li>
+</ul>
+
+<p>MoveIt! evolved from the Arm Navigation and Grasping Pipeline components of ROS and we gratefully acknowledge the seminal contributions of all developers and researchers to those packages, especially Edward Gil Jones, Matei Ciocarlie, Kaijen Hsiao, Adam Leeper, and Ken Anderson.</p>
+
+<p>We also acknowledge the contributions of the Willow Garage interns who have worked on MoveIt!, Arm Navigation and associated components, members of the ROS and PR2 communities who have used, provided feedback and provided contributions to MoveIt! and Arm Navigation and members of the ROS community for developing the infrastructure that MoveIt! builds on.</p>
+
+<p>We also acknowledge the contributions of the ROS-Industrial consortium led by the Southwest Research Institute for supporting and building up infrastructure for applying MoveIt! and Arm Navigation to industrial robots and environments. Similarly, we acknowledge the contributions of <a target="_blank" title="http://www.ipa.fraunhofer.de/index.php?L=2" href="http://www.ipa.fraunhofer.de/index.php?L=2">Fraunhofer IPA</a> to MoveIt! and support for the ROS-Industrial effort in Europe.</p>
+
+<p>For more information visit <a target="_blank" title="moveit.ros.org" href="/moveit.ros.org">moveit.ros.org</a></p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2013/04/09/ompl-google-summer-of-code.html">OMPL Google Summer of Code</a>
+    <small>09 Apr 2013</small>
+  </h2>
+
+  <p>We have been accepted as a mentoring organization for the <a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2013">Google Summer of Code 2013</a>.</p>
+
+<ul>
+  <li>Check the <a href="http://www.google-melange.com/">Google SoC website</a> for general information about the Google Summer of Code.</li>
+  <li>You will find additional information on their page on <a href="http://code.google.com/p/google-summer-of-code/wiki/AdviceforStudents">Advice for Students</a>.</li>
+  <li>Please consult the official <a href="http://www.google-melange.com/gsoc/events/google/gsoc2013">timeline</a> when you prepare your proposal.
+.</li>
+</ul>
+
+<p>We have put together a <a href="http://www.kavrakilab.org/GSoC2013.html">list of ideas</a>, but we are open to other suggestions. Even if you have no interest in participating in the Google Summer of Code, let us know what you would like to see added to OMPL.</p>
+
+<p>Please email Mark Moll, mmoll (AT) rice.edu, if interested.</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/12/05/ompl-wins-the-2012-oss-world-challenge-grand-prize.html">OMPL wins the 2012 OSS World Challenge Grand Prize</a>
+    <small>05 Dec 2012</small>
+  </h2>
+
+  <p>Recently, the <a href="http://ompl.kavrakilab.org">Open Motion Planning Library (OMPL)</a> won the Grand Prize in the Open Source Software World Challenge. This is a yearly competition organized by the South Korean government and is intended to promote open source software and expand various exchanges among open source software developers all over the world. Last year’s winner was the Point Cloud Library, so we are in good company! This year, 55 teams from 23 countries participated in the international division. The second and third prize winners were:
+- Stan, a package for obtaining Bayesian inference using the No-U-Turn sampler, a variant of Hamiltonian Monte Carlo, from Columbia University.
+- DDT, a system for testing closed-source binary device drivers from the Dependable Systems Lab at EPFL, Switzerland.
+.</p>
+
+<p>Besides the international category, there were also several categories at the national level, ranging from elementary school level (!), to college level. Web development and mobile apps seemed to be of particular interest. Several high-ranking government officials were in attendance, gave speeches, and handed out awards. Mark Moll attended the award ceremony and gave a talk about OMPL.</p>
+
+<p><img src="file:///tmp/foo//files/OSS-Award.jpg" alt="Reeds-Shepp path" width="85%" /></p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/09/07/easier-integration-with-the-moveit-wizard-and-advancements-in-ompl.html">Easier integration with the MoveIt wizard and advancements in OMPL</a>
+    <small>07 Sep 2012</small>
+  </h2>
+
+  <p>Watch what Dave Coleman has been doing with MoveIt! and OMPL during his internship at Willow Garage this summer:</p>
+
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://www.youtube.com/embed/RcGvi4Svd4k?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p>Click <a href="http://www.willowgarage.com/blog/2012/09/06/easier-integration-moveit-wizard-and-advancements-ompl">here</a> for more information.</p>
+
+<p>We expect that his implementation of T-RRT will be integrated with the OMPL distribution soon.</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/06/13/icra-2012-roscon-update.html">ICRA 2012 / ROSCON update</a>
+    <small>13 Jun 2012</small>
+  </h2>
+
+  <p>It was good meeting many of the OMPL users at ICRA 2012 and ROSCON a couple weeks ago. There were a number of ICRA talks that featured OMPL, directly or indirectly, that I’d like to point out:</p>
+
+<h4 id="towards-small-asymptotically-near-optimal-roadmaps-by-james-d-marble-and-kostas-e-bekris"><em>Towards Small Asymptotically Near-Optimal Roadmaps,</em> by James D. Marble and Kostas E. Bekris</h4>
+
+<p>This work shows how to construct provably near-optimal roadmaps that are a fraction of the size of roadmaps constructed with kPRM* (an algorithm in OMPL that converges to optimal roadmaps). A small roadmap makes retrieval of paths much faster. With a bit of smoothing added, near-optimal paths get even closer to optimal. We expect that the algorithm described in this paper will become part of OMPL in the near future.</p>
+
+<h4 id="real-time-footstep-planning-for-humanoid-robots-among-3d-obstacles-using-a-hybrid-bounding-box-by-nicolas-perrin-olivier-stasse-florent-lamiraux--young-j-kim-and-dinesh-manocha"><em>Real-time footstep planning for humanoid robots among 3D obstacles using a hybrid bounding box,</em> by Nicolas Perrin, Olivier Stasse, Florent Lamiraux , Young J. Kim and Dinesh Manocha</h4>
+
+<p>This paper describes a footstep planning algorithm that does not simply reduce the problem to a 2D problem (as is often done), but allows the robot to step over obstacles if necessary. Although we didn’t design OMPL specifically for this application, the authors mention that OMPL provides exactly the interface they needed. Neat!</p>
+
+<h4 id="a-robot-path-planning-framework-that-learns-from-experience-by-dmitry-berenson-pieter-abbeel-and-ken-goldberg"><em>A Robot Path Planning Framework that Learns from Experience,</em> by Dmitry Berenson, Pieter Abbeel, and Ken Goldberg</h4>
+
+<p>This paper describes an algorithm that does the following two things in parallel when given a motion planning query as input: (1) plan from scratch, and (2) deform/extend a path for a similar motion planning query that was solved previously to satisfy the current query. Whichever finishes first terminates the other process. New paths are added to a path library, so that over time very little planning from scratch will have to be done. The initial implementation might have been done in OpenRAVE (I think), but has since been implemented using OMPL and ROS. See the <a href="http://sourceforge.net/p/lightningros/wiki/Home/">Lightning Planning Framework for ROS</a>.</p>
+
+<h4 id="fcl-a-general-purpose-library-for-proximity-and-collision-queries-by-jia-pan-sachin-chitta-and-dinesh-manocha"><em>FCL: A General Purpose Library for Proximity and Collision Queries,</em> by Jia Pan, Sachin Chitta, and Dinesh Manocha</h4>
+
+<p>This is only indirectly related to OMPL. OMPL.app can use FCL for collision checking, and FCL is already used in ROS together with OMPL. There is a lot more that can be done with FCL in the context of motion planning. The proximity to obstacles could be exploited to create a more intelligent configuration sampler.</p>
+
+<p>If you use OMPL in your work, please let me know.</p>
+
+<p>At ROSCON, Sachin Chitta and Ioan Sucan gave a talk about MoveIt!, the new motion planning stack in ROS. It provides a common interface to motion planning libraries in ROS (including OMPL). It will eventually replace the arm navigation stack. Watch the whole talk:</p>
+
+<div class="embed-responsive embed-responsive-16by9"><iframe src="https://www.youtube.com/embed/r1zbuLc8RhI?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/05/20/ompl-development-activity.html">OMPL development activity</a>
+    <small>20 May 2012</small>
+  </h2>
+
+  <div class="embed-responsive embed-responsive-4by3"><iframe src="https://player.vimeo.com/video/63626528?loop=1&amp;color=ffffff&amp;byline=0&amp;portrait=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p>(Movie generated with <a href="http://code.google.com/p/gource">gource</a>.)</p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/04/27/planning-using-the-vortex-physics-engine.html">Planning using the Vortex physics engine</a>
+    <small>27 Apr 2012</small>
+  </h2>
+
+  <p>OMPL can be used to plan for complex systems that can be simulated by a physics engine. From a planning perspective, the physics engine is a black box that acts like a <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1StatePropagator.html">state propagator</a>. OMPL includes support for the <a href="http://ode.org">Open Dynamics Engine (OpenDE)</a>, but support for other physics engines can be added using the OpenDE bindings as a starting point.
+To show that this can indeed be done, I have developed bindings for <a href="http://www.vxsim.com/">Vortex</a>. <a href="http://www.vxsim.com/">Vortex</a> is a commercial physics simulator. It contains incredibly detailed models for vehicles (transmission, gears, suspension, etc.) and surface interactions. It also has snazzy OpenSceneGraphics built in. The bindings mirror the structure of the OpenDE bindings. To use these bindings, the user has to implement some derived classes. The derived VortexEnvironment class needs to define the simulated environment and how controls map forces, torques or velocities in the simulation. The derived state space is responsible for defining a distance between states. Interestingly, the VortexStateSpace represents states completely opaquely: the dimensionality is unknown and the internal structure is unknown. There is just a distance function and a user-defined projection to a low-dimensional embedding. This is sufficient for planners like KPIECE, SBL, and EST (but not RRT, which needs to be able to sample uniformly random states). I have attached a patch for OMPL 0.10.2 that adds vortex support. You can also download and extract the tar file which adds the Vortex-related files and overwrites a few files to add Vortex support.</p>
+
+<p>Below is a simple demo program (included in the patch and tar file) that illustrates very basic usage of the Vortex support. In this demo the objective is to push a box from a starting position to a desired goal region. Once a solution is found, it uses the Vortex graphics capabilities to play back the path.</p>
+
+<iframe src="file:///tmp/foo/files/VortexRigidBodyPlanning_8cpp_source.html" width="100%" height="480px" scrolling="yes">
+</iframe>
+
+<p>The inputs do not need to correspond to forces or torques. They can also be inputs to a controller. For example, if you want to plan for a VxVehicle, you could have function that maps OMPL controls to the simulator like so:</p>
+
+<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">virtual</span> <span class="kt">void</span> <span class="n">applyControl</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">*</span><span class="n">control</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">throttle</span> <span class="o">=</span> <span class="n">control</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">steering</span><span class="o">=</span><span class="n">control</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">throttle</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">getEngine</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">setInputThrottle</span><span class="p">(</span><span class="n">throttle</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">setBrakeInput</span><span class="p">(</span><span class="n">throttle</span><span class="p">,</span><span class="n">throttle</span><span class="p">);</span>
+    <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">setSteeringInput</span><span class="p">(</span><span class="n">steering</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The attached code has only been lightly tested, but if you find it useful or end up extending it, please let us know.</p>
+
+<h2 id="download">Download:</h2>
+
+<p><a href="file:///tmp/foofiles/patch-vortex.diff.gz">[patch-vortex.diff]</a>
+<a href="file:///tmp/foofiles/vortex.tar.gz">[vortex.tar]</a></p>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/03/28/from-differential-equations-to-planning-in-one-function.html">From differential equations to planning in one function</a>
+    <small>28 Mar 2012</small>
+  </h2>
+
+  <p>When planning for a physical robot, the motion of the system is constrained due to those pesky “laws of physics.”  If you drive your car to the grocery store, you cannot directly control the position of the car or even how fast it moves down the street.  <em>Terrifying!</em>  You can only control the rate at which the velocity changes (acceleration) and the direction the car is steering toward.  Furthermore, the acceleration of our cars is bounded; we cannot stop immediately or achieve a particular speed instantly.  This makes the car a second-order system.  We can directly control the acceleration, but the velocity and position are the result of the changes in acceleration and steering angle over time.  The same scenario applies to physical robots: a typical system cannot be explicitly controlled.  Instead, we apply a series of inputs (like pressing the gas or the brake in a car) to control motors and other actuators to execute a motion plan.  Mathematically we can describe the motion of a robot as a set of ordinary differential equations which depend on an input control and time.  The exact state of a robot can then be computed by integrating the equations given the control input and duration to apply that input.</p>
+
+<p>OMPL’s <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1StatePropagator.html">StatePropagator</a> concept can be used to incorporate integration of the differential equations for the system, but the user is tasked with implementing the ODE, integrating the equations and updating the state for the system, as in the <a href="http://ompl.kavrakilab.org/RigidBodyPlanningWithIntegrationAndControls_8cpp_source.html">rigid body planning with integration and controls</a> demo.  This task is simplified in OMPL v0.10 with the addition of the <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1ODESolver.html">ODESolver</a> class, which takes care of numerical integration and state updates.  All the user has to do is provide the ODE definition in <strong>a single function</strong>:</p>
+
+<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="n">ODE</span><span class="p">(</span><span class="k">const</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">,</span> <span class="k">const</span> <span class="n">Control</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">qdot</span><span class="p">)</span>
+    <span class="cm">/* Insert code here */</span>
+<span class="p">}</span></code></pre></div>
+
+<p>This method takes the input state q and a control c, and computes the change in the value of q, storing the differential into <code>qdot</code>.  The <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1ODESolver.html">ODESolver</a> wraps around the open-source <a href="http://odeint.org">ODEInt library</a>, which provides methods for high-order numerical integration.  Gone are the days of worrying about the numerical instability and potential large error of quick and dirty Euler integration.  A StatePropagator object can be extracted from the ODESolver class which encapsulates the entire integration and update process.</p>
+
+<p>A <a href="http://ompl.kavrakilab.org/odeint.html">tutorial</a> has been created to show how to use OMPL’s ODESolver class in further detail. A new demo is also bundled in OMPL v0.10, <a href="http://ompl.kavrakilab.org/RigidBodyPlanningWithODESolverAndControls_8cpp_source.html">rigid body planning with ODESolver and controls</a>, which shows a comparison with the “old” way of doing things and how the ODESolver simplifies this process.  The ODEInt library is bundled with OMPL, so there is no extra dependency to install, and by using the ODESolver class you’ll be planning for your system in no time!  Below are plots of actual paths computed using the ODESolver for an inverted pendulum and a second-order car:</p>
+
+<p><img src="file:///tmp/foo/files/Pendulum.png" alt="pendulum path" width="35%" />
+<img src="file:///tmp/foo/files/Car.png" alt="car path" width="60%" /></p>
+
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/03/18/geometric-planning-for-car-like-vehicles.html">Geometric planning for car-like vehicles</a>
+    <small>18 Mar 2012</small>
+  </h2>
+
+  <p>For several vehicle models it is possible to compute the optimal (i.e., shortest) path between a start and end state. The two most commonly studied vehicle models are the Dubins car and the Reeds-Shepp car. Both are first-order models. The Dubins car’s controls are: go straight, turn left, and turn right. The Reeds-Shepp car has the same controls, but can also execute them in reverse. The optimal paths for these vehicles can be computed analytically and consist of 3 to 5 circle and straight-line segments. In OMPL we could model cars with a system of differential equations and use a control-based planner. For the Dubins and Reeds-Shepp cars, however, we simply use a geometric planner and plan in SE(2). Rather than straight-line interpolation between states, we’d like to use the appropriate optimal path in our local planner. This is done by creating two new state spaces, <code>ompl::base::DubinsStateSpace</code> and <code>ompl::base::ReedsSheppStateSpace</code>, that override the distance and interpolate member functions. The distance is redefined to be the length of the optimal path connecting two states.</p>
+
+<p>There is a demo program (demo_GeometricCarPlanning) that shows how to solve planning problems in this state space. Imagine a long corridor with the start and goal states of a Reeds-Shepp car at each end point, facing the wall. Normally, for a control based planner this could be a very challenging problem. With the Reeds-Shepp state space this is very easy and we get paths that looks like this:</p>
+
+<p><img src="file:///tmp/foo//files/rspath.png" alt="Reeds-Shepp path" width="75%" /></p>
+
+<p>(Note the extra zig-zag at the end; the paths are only optimal between sampled states, not globally optimal.)</p>
+
+<p>The distance function is not a metric for Dubins cars, since it is not symmetric. With an optional flag you can create a DubinsStateSpace where distance is symmetrized (which essentially allows the car to instantaneously change direction when it reaches a sampled state). This is still not a metric, since it doesn’t satisfy the triangle inequality.</p>
+
+<p>The computation of optimal paths is not optimized at all. For both Dubins and Reeds-Shepp cars all candidate solutions are computed and the shortest one is returned. There exist classification schemes that depending on the relative distance and orientation between two states can eliminate many of the candidate solutions. It may also be possible to use some form of memoization. The implementation of Dubins and Reeds-Shepp vehicles may be usable for other vehicle models. If someone wants to contribute code for the generalized solutions from Furtuna and Balkcom’s paper on <a href="http://dx.doi.org/10.1177/0278364910365093">Generalizing Dubins Curves: Minimum-time Sequences of Body-fixed Rotations and Translations in the Plane</a>, that’d be much appreciated.</p>
+
+<p>Finally, just because we can, we made some videos of the distances between a car at (0,0) and heading along the X-axis and all other possible poses. Each frame shows the distances for a particular heading at the endpoint. Black correspond to small distances and white corresponds to large distances.</p>
+
+<div class="col-sm-offset-1" style="width: 80%">
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://player.vimeo.com/video/38638355?loop=1&amp;color=ffffff&amp;byline=0&amp;portrait=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://player.vimeo.com/video/38638401?loop=1&amp;color=ffffff&amp;byline=0&amp;portrait=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://player.vimeo.com/video/38638429?loop=1&amp;color=ffffff&amp;byline=0&amp;portrait=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+</div>
+
+  
+  <h2>
+    <a href="file:///tmp/foo/2012/03/15/welcome.html">Welcome!</a>
+    <small>15 Mar 2012</small>
+  </h2>
+
+  <p>Welcome to the OMPL Blog. Here, we’ll occasionally post messages about new and upcoming features in the Open Motion Planning Library. Not all these features will be prominently featured on the front page, so they might be easy to miss. In the near future, you can expect posts about: motion planning for Dubins and Reeds-Shepp cars, using the built-in numerical integration to plan for systems described by ordinary differential equations, and path optimization.</p>
+
+  
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated on  by&#160;<a href="http://jekyllrb.com">Jekyll</a></span>
+  </p></div>
+</footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="file:///tmp/foo/js/jquery.js"></script>
+<script src="file:///tmp/foo/js/jquery.powertip.min.js"></script>
+<script src="file:///tmp/foo/js/bootstrap.min.js"></script>
+<script src="file:///tmp/foo/js/dynsections.js"></script>
+<script src="file:///tmp/foo/js/ompl.js"></script>
+
+  </body>
+</html>
