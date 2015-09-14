@@ -155,7 +155,7 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
 
 <p>The inputs do not need to correspond to forces or torques. They can also be inputs to a controller. For example, if you want to plan for a VxVehicle, you could have function that maps OMPL controls to the simulator like so:</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">virtual</span> <span class="kt">void</span> <span class="n">applyControl</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">*</span><span class="n">control</span><span class="p">)</span> <span class="k">const</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">virtual</span> <span class="kt">void</span> <span class="n">applyControl</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">*</span><span class="n">control</span><span class="p">)</span> <span class="k">const</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">throttle</span> <span class="o">=</span> <span class="n">control</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">steering</span><span class="o">=</span><span class="n">control</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">throttle</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
@@ -163,7 +163,7 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
     <span class="k">else</span>
         <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">setBrakeInput</span><span class="p">(</span><span class="n">throttle</span><span class="p">,</span><span class="n">throttle</span><span class="p">);</span>
     <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">setSteeringInput</span><span class="p">(</span><span class="n">steering</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The attached code has only been lightly tested, but if you find it useful or end up extending it, please let us know.</p>
 

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>From differential equations to planning in one function</title>
+<title>Report on the First MoveIt! Community Meeting</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
 
@@ -140,26 +140,22 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
     <div class="container">
       <div class="row">
         <div class="page-header defaultfullwidth">
-          <h1>From differential equations to planning in one function</h1>
-          <h4><a href="http://ryanluna.com">Ryan Luna</a>
+          <h1>Report on the First MoveIt! Community Meeting</h1>
+          <h4><a href="http://sachinchitta.org">Sachin Chitta</a>
         </div>
 
         <div class="defaultfullwidth">
-          <p>When planning for a physical robot, the motion of the system is constrained due to those pesky “laws of physics.”  If you drive your car to the grocery store, you cannot directly control the position of the car or even how fast it moves down the street.  <em>Terrifying!</em>  You can only control the rate at which the velocity changes (acceleration) and the direction the car is steering toward.  Furthermore, the acceleration of our cars is bounded; we cannot stop immediately or achieve a particular speed instantly.  This makes the car a second-order system.  We can directly control the acceleration, but the velocity and position are the result of the changes in acceleration and steering angle over time.  The same scenario applies to physical robots: a typical system cannot be explicitly controlled.  Instead, we apply a series of inputs (like pressing the gas or the brake in a car) to control motors and other actuators to execute a motion plan.  Mathematically we can describe the motion of a robot as a set of ordinary differential equations which depend on an input control and time.  The exact state of a robot can then be computed by integrating the equations given the control input and duration to apply that input.</p>
+          <p>(<strong>Editor’s note:</strong> Reposted from <a href="http://www.sachinchitta.org/blog.html">Sachin Chitta’s blog</a>)</p>
 
-<p>OMPL’s <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1StatePropagator.html">StatePropagator</a> concept can be used to incorporate integration of the differential equations for the system, but the user is tasked with implementing the ODE, integrating the equations and updating the state for the system, as in the <a href="http://ompl.kavrakilab.org/RigidBodyPlanningWithIntegrationAndControls_8cpp_source.html">rigid body planning with integration and controls</a> demo.  This task is simplified in OMPL v0.10 with the addition of the <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1ODESolver.html">ODESolver</a> class, which takes care of numerical integration and state updates.  All the user has to do is provide the ODE definition in <strong>a single function</strong>:</p>
+<p>Thank you for coming to the MoveIt! Community Meeting and thanks to the  presenters for making this a huge success. There were more than 240  people registered and more than 150 who attended from all over the  world. I apologize to those running Ubuntu who had issues joining us  (using Chrome was the suggested solution for the future).</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="n">ODE</span><span class="p">(</span><span class="k">const</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">,</span> <span class="k">const</span> <span class="n">Control</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">qdot</span><span class="p">)</span>
-    <span class="cm">/* Insert code here */</span>
-<span class="p">}</span></code></pre></figure>
+<p>MoveIt! now has a twitter account for updates: @moveitrobot</p>
 
-<p>This method takes the input state q and a control c, and computes the change in the value of q, storing the differential into <code>qdot</code>.  The <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1ODESolver.html">ODESolver</a> wraps around the open-source <a href="http://odeint.org">ODEInt library</a>, which provides methods for high-order numerical integration.  Gone are the days of worrying about the numerical instability and potential large error of quick and dirty Euler integration.  A StatePropagator object can be extracted from the ODESolver class which encapsulates the entire integration and update process.</p>
+<h2 id="meeting-video">Meeting Video</h2>
 
-<p>A <a href="http://ompl.kavrakilab.org/odeint.html">tutorial</a> has been created to show how to use OMPL’s ODESolver class in further detail. A new demo is also bundled in OMPL v0.10, <a href="http://ompl.kavrakilab.org/RigidBodyPlanningWithODESolverAndControls_8cpp_source.html">rigid body planning with ODESolver and controls</a>, which shows a comparison with the “old” way of doing things and how the ODESolver simplifies this process.  The ODEInt library is bundled with OMPL, so there is no extra dependency to install, and by using the ODESolver class you’ll be planning for your system in no time!  Below are plots of actual paths computed using the ODESolver for an inverted pendulum and a second-order car:</p>
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://www.youtube.com/embed/D5rs9uLrveg?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
 
-<p><img src="http://ompl.github.io/files/Pendulum.png" alt="pendulum path" width="35%" />
-<img src="http://ompl.github.io/files/Car.png" alt="car path" width="60%" /></p>
-
+<p>The slides from the meeting are posted <a href="http://www.sachinchitta.org/blog/report-on-the-first-moveit-community-meeting">here</a>.</p>
 
         </div>
       </div>
@@ -170,7 +166,7 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on March 28, 2012 by&#160;<a href="http://jekyllrb.com">Jekyll</a></span>
+    <span class="gray">Generated on September 14, 2015 by&#160;<a href="http://jekyllrb.com">Jekyll</a></span>
   </p></div>
 </footer>
 

@@ -146,6 +146,8 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 <div class="col-md-3">
 <ul>
   
+  <li><a href="http://ompl.github.io/2015/09/14/moveit-community-meeting.html">Report on the First MoveIt! Community Meeting</a></li>
+  
   <li><a href="http://ompl.github.io/2014/10/29/or_ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a></li>
   
   <li><a href="http://ompl.github.io/2014/10/21/extended-support-to-optimal-planners-cforest-tree-pruning.html">Extended support to optimal planners&#58; CForest + tree pruning</a></li>
@@ -182,6 +184,24 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 </div>
 
 <div class="col-md-9">
+  
+  <h2>
+    <a href="http://ompl.github.io/2015/09/14/moveit-community-meeting.html">Report on the First MoveIt! Community Meeting</a>
+    <small>14 Sep 2015</small>
+  </h2>
+
+  <p>(<strong>Editor’s note:</strong> Reposted from <a href="http://www.sachinchitta.org/blog.html">Sachin’s blog</a>)</p>
+
+<p>Thank you for coming to the MoveIt! Community Meeting and thanks to the  presenters for making this a huge success. There were more than 240  people registered and more than 150 who attended from all over the  world. I apologize to those running Ubuntu who had issues joining us  (using Chrome was the suggested solution for the future).</p>
+
+<p>MoveIt! now has a twitter account for updates: @moveitrobot</p>
+
+<h2 id="meeting-video">Meeting Video</h2>
+
+<div class="embed-responsive embed-responsive-4by3"><iframe src="https://www.youtube.com/embed/D5rs9uLrveg?rel=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
+
+<p>The slides from the meeting are posted <a href="http://www.sachinchitta.org/blog/report-on-the-first-moveit-community-meeting">here</a>.</p>
+
   
   <h2>
     <a href="http://ompl.github.io/2014/10/29/or_ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a>
@@ -639,7 +659,7 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
 
 <p>The inputs do not need to correspond to forces or torques. They can also be inputs to a controller. For example, if you want to plan for a VxVehicle, you could have function that maps OMPL controls to the simulator like so:</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">virtual</span> <span class="kt">void</span> <span class="n">applyControl</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">*</span><span class="n">control</span><span class="p">)</span> <span class="k">const</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">virtual</span> <span class="kt">void</span> <span class="n">applyControl</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">*</span><span class="n">control</span><span class="p">)</span> <span class="k">const</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">throttle</span> <span class="o">=</span> <span class="n">control</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">steering</span><span class="o">=</span><span class="n">control</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">throttle</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
@@ -647,7 +667,7 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
     <span class="k">else</span>
         <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">setBrakeInput</span><span class="p">(</span><span class="n">throttle</span><span class="p">,</span><span class="n">throttle</span><span class="p">);</span>
     <span class="n">vehicle</span><span class="o">-&gt;</span><span class="n">setSteeringInput</span><span class="p">(</span><span class="n">steering</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The attached code has only been lightly tested, but if you find it useful or end up extending it, please let us know.</p>
 
@@ -666,9 +686,9 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
 
 <p>OMPL’s <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1StatePropagator.html">StatePropagator</a> concept can be used to incorporate integration of the differential equations for the system, but the user is tasked with implementing the ODE, integrating the equations and updating the state for the system, as in the <a href="http://ompl.kavrakilab.org/RigidBodyPlanningWithIntegrationAndControls_8cpp_source.html">rigid body planning with integration and controls</a> demo.  This task is simplified in OMPL v0.10 with the addition of the <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1ODESolver.html">ODESolver</a> class, which takes care of numerical integration and state updates.  All the user has to do is provide the ODE definition in <strong>a single function</strong>:</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="n">ODE</span><span class="p">(</span><span class="k">const</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">,</span> <span class="k">const</span> <span class="n">Control</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">qdot</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="n">ODE</span><span class="p">(</span><span class="k">const</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">,</span> <span class="k">const</span> <span class="n">Control</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">qdot</span><span class="p">)</span>
     <span class="cm">/* Insert code here */</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>This method takes the input state q and a control c, and computes the change in the value of q, storing the differential into <code>qdot</code>.  The <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1ODESolver.html">ODESolver</a> wraps around the open-source <a href="http://odeint.org">ODEInt library</a>, which provides methods for high-order numerical integration.  Gone are the days of worrying about the numerical instability and potential large error of quick and dirty Euler integration.  A StatePropagator object can be extracted from the ODESolver class which encapsulates the entire integration and update process.</p>
 
