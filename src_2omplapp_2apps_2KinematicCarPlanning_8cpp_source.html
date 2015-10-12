@@ -67,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -169,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/math/constants/constants.hpp&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;ompl::app::KinematicCarPlanning::KinematicCarPlanning()</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    : AppBase&lt;CONTROL&gt;(constructControlSpace(), Motion_2D), timeStep_(1e-2), lengthInv_(1.), odeSolver(new control::ODEBasicSolver&lt;&gt;(si_, boost::bind(&amp;<a class="code" href="namespaceKinematicCarPlanning.html">KinematicCarPlanning</a>::ode, this, _1, _2, _3)))</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    : AppBase&lt;CONTROL&gt;(constructControlSpace(), Motion_2D), timeStep_(1e-2), lengthInv_(1.), odeSolver(new control::ODEBasicSolver&lt;&gt;(si_, <a class="code" href="namespaceboost.html">boost</a>::bind(&amp;<a class="code" href="namespaceKinematicCarPlanning.html">KinematicCarPlanning</a>::ode, this, _1, _2, _3)))</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    name_ = std::string(<span class="stringliteral">&quot;Kinematic car&quot;</span>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    setDefaultControlBounds();</div>
@@ -178,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;ompl::app::KinematicCarPlanning::KinematicCarPlanning(<span class="keyword">const</span> control::ControlSpacePtr &amp;controlSpace)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    : AppBase&lt;CONTROL&gt;(controlSpace, Motion_2D), timeStep_(1e-2), lengthInv_(1.), odeSolver(new control::ODEBasicSolver&lt;&gt;(si_, boost::bind(&amp;<a class="code" href="namespaceKinematicCarPlanning.html">KinematicCarPlanning</a>::ode, this, _1, _2, _3)))</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    : AppBase&lt;CONTROL&gt;(controlSpace, Motion_2D), timeStep_(1e-2), lengthInv_(1.), odeSolver(new control::ODEBasicSolver&lt;&gt;(si_, <a class="code" href="namespaceboost.html">boost</a>::bind(&amp;<a class="code" href="namespaceKinematicCarPlanning.html">KinematicCarPlanning</a>::ode, this, _1, _2, _3)))</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    setDefaultControlBounds();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
@@ -227,6 +238,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        -&gt;as&lt;base::SO2StateSpace::StateType&gt;(1);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    SO2-&gt;enforceBounds(so2);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="ttc" id="namespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="SPARSdb_8cpp_source.html#l00075">SPARSdb.cpp:75</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1ScopedState_html"><div class="ttname"><a href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState</a></div><div class="ttdoc">Definition of a scoped state. </div><div class="ttdef"><b>Definition:</b> <a href="ScopedState_8h_source.html#l00056">ScopedState.h:56</a></div></div>
 <div class="ttc" id="classompl_1_1control_1_1ODESolver_html_af77f9398111ae9d61e4e3b1a80d531f1"><div class="ttname"><a href="classompl_1_1control_1_1ODESolver.html#af77f9398111ae9d61e4e3b1a80d531f1">ompl::control::ODESolver::getStatePropagator</a></div><div class="ttdeci">static StatePropagatorPtr getStatePropagator(ODESolverPtr solver, const PostPropagationEvent &amp;postEvent=NULL)</div><div class="ttdoc">Retrieve a StatePropagator object that solves a system of ordinary differential equations defined by ...</div><div class="ttdef"><b>Definition:</b> <a href="ODESolver_8h_source.html#l00129">ODESolver.h:129</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1CompoundStateSpace_html_af12997f7c56f7263fb78be7444b838e5"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#af12997f7c56f7263fb78be7444b838e5">ompl::base::CompoundStateSpace::StateType</a></div><div class="ttdeci">CompoundState StateType</div><div class="ttdoc">Define the type of state allocated by this state space. </div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00549">StateSpace.h:549</a></div></div>
@@ -242,7 +254,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:05:20 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

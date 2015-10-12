@@ -67,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -274,7 +285,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Create the nearest neighbor function the first time setup is run</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (!nearestNeighbors_)</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        nearestNeighbors_.reset(tools::SelfConfig::getDefaultNearestNeighbors&lt;Motion*&gt;(si_-&gt;getStateSpace()));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        nearestNeighbors_.reset(tools::SelfConfig::getDefaultNearestNeighbors&lt;Motion*&gt;(<span class="keyword">this</span>));</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// Set the distance function</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    nearestNeighbors_-&gt;setDistanceFunction(boost::bind(&amp;<a class="code" href="classompl_1_1geometric_1_1TRRT.html#aace4cb9b2319d9de00ae7e831692a028">TRRT::distanceFunction</a>, <span class="keyword">this</span>, _1, _2));</div>
@@ -641,7 +652,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1geometric_1_1TRRT_html_ab4bf42dd232334ab7b0eaddbc9ae78d8"><div class="ttname"><a href="classompl_1_1geometric_1_1TRRT.html#ab4bf42dd232334ab7b0eaddbc9ae78d8">ompl::geometric::TRRT::minExpansionControl</a></div><div class="ttdeci">bool minExpansionControl(double randMotionDistance)</div><div class="ttdoc">Use ratio to prefer frontier nodes to nonfrontier ones. </div><div class="ttdef"><b>Definition:</b> <a href="TRRT_8cpp_source.html#l00414">TRRT.cpp:414</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1TRRT_html_a54b75fca0c41d89db8d3475f8a546096"><div class="ttname"><a href="classompl_1_1geometric_1_1TRRT.html#a54b75fca0c41d89db8d3475f8a546096">ompl::geometric::TRRT::setInitTemperature</a></div><div class="ttdeci">void setInitTemperature(double initTemperature)</div><div class="ttdoc">Set the initial temperature at the beginning of the algorithm. Should be high to allow for initial ex...</div><div class="ttdef"><b>Definition:</b> <a href="TRRT_8h_source.html#l00165">TRRT.h:165</a></div></div>
 <div class="ttc" id="classompl_1_1tools_1_1SelfConfig_html_a65bff53ea4bc6f158342a856175ab9a6"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a65bff53ea4bc6f158342a856175ab9a6">ompl::tools::SelfConfig::configurePlannerRange</a></div><div class="ttdeci">void configurePlannerRange(double &amp;range)</div><div class="ttdoc">Compute what a good length for motion segments is. </div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00232">SelfConfig.cpp:232</a></div></div>
-<div class="ttc" id="classompl_1_1tools_1_1SelfConfig_html"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html">ompl::tools::SelfConfig</a></div><div class="ttdoc">This class contains methods that automatically configure various parameters for motion planning...</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8h_source.html#l00058">SelfConfig.h:58</a></div></div>
+<div class="ttc" id="classompl_1_1tools_1_1SelfConfig_html"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html">ompl::tools::SelfConfig</a></div><div class="ttdoc">This class contains methods that automatically configure various parameters for motion planning...</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8h_source.html#l00059">SelfConfig.h:59</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1PathGeometric_html"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html">ompl::geometric::PathGeometric</a></div><div class="ttdoc">Definition of a geometric path. </div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00060">PathGeometric.h:60</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1TRRT_html_a0afc6e754e4bcb83b29d292312c54eea"><div class="ttname"><a href="classompl_1_1geometric_1_1TRRT.html#a0afc6e754e4bcb83b29d292312c54eea">ompl::geometric::TRRT::freeMemory</a></div><div class="ttdeci">void freeMemory()</div><div class="ttdoc">Free the memory allocated by this planner. </div><div class="ttdef"><b>Definition:</b> <a href="TRRT_8cpp_source.html#l00134">TRRT.cpp:134</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1TRRT_html_aec0140776240aaed71d592699ffc6758"><div class="ttname"><a href="classompl_1_1geometric_1_1TRRT.html#aec0140776240aaed71d592699ffc6758">ompl::geometric::TRRT::frontierNodeRatio_</a></div><div class="ttdeci">double frontierNodeRatio_</div><div class="ttdoc">Target ratio of non-frontier nodes to frontier nodes. rho. </div><div class="ttdef"><b>Definition:</b> <a href="TRRT_8h_source.html#l00322">TRRT.h:322</a></div></div>
@@ -659,7 +670,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:05:20 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

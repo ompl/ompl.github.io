@@ -67,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -162,13 +173,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1><a class="anchor" id="benchmark_config"></a>
 Create a benchmark configuration file</h1>
 <p>OMPL.app contains a command line program called <code>ompl_benchmark</code>, that can read a text based configuration file using an ini style format with key/value pairs. This is the same format that can be read and saved with the OMPL.app GUI. The GUI ignores the settings related to benchmarking. However, it is often convenient to create an initial configuration with the GUI and add the benchmark settings with a text editor. Currently the base functionality of the <code>ompl_benchmark</code> program only applies to geometric planning in SE(2) and SE(3), but can be extended by the user to other spaces.</p>
-<p>There are a number of <em>required</em> parameters necessary to define the problem. These exist under the “<b>[problem]</b>” heading:</p><ul>
+<p>There are a number of <em>required</em> parameters necessary to define the problem. These exist under the “**[problem]**” heading:</p>
+<ul>
 <li><b>name</b>: An identifying name for the problem to be solved.</li>
 <li><b>robot</b>: The path to a mesh file describing the geometry of the robot.</li>
 <li><b>start.[x|y|z|theta], start.axis.[x|y|z]</b>: Values describing the start state of the robot. In 2D, the orientation is specified with just <b>start.theta</b>, while in 3D the axis-angle orientation is used.</li>
 <li><b>goal.[x|y|z|theta], goal.axis.[x|y|z]</b>: Values describing the goal state of the robot.</li>
 </ul>
-<p>The following parameters are <em>optional</em> under the “<b>[problem]</b>” heading:</p><ul>
+<p>The following parameters are <em>optional</em> under the “**[problem]**” heading:</p>
+<ul>
 <li><b>world</b>: The path to a mesh file describing the geometry of the environment. If unspecified, it is assumed that the robot operates in an empty workspace.</li>
 <li><b>objective</b>: Some planners in OMPL can optimize paths as a function of various optimization objective. The <b>objective</b> parameter can be set to <code>length</code>, <code>max_min_clearance</code>, or <code>mechanical_work</code>, to minimize path length, maximize minimum clearance along the path, or mechanical work of the path, respectively. If unspecified, it is assumed the objective is <code>length</code>.</li>
 <li><b>objective.threshold</b>: If an objective is specified, you can optionally also specify the <b>objective.threshold</b>, which causes optimizing planners to terminate once they find a path with cost better than the specified threshold (a real-valued number). If unspecified, the best possible value is chosen for a threshold (e.g., for path length that would be 0), so that optimizing planners will try to find the shortest possible path.</li>
@@ -176,13 +189,15 @@ Create a benchmark configuration file</h1>
 <li><b>sampler</b>: This parameter specified the sampler to be used by the planner. The following samplers are available: <code>uniform</code>, <code>gaussian</code>, <code>obstacle_based</code>, <code>max_clearance</code>. If unspecified, the uniform sampler is used.</li>
 <li><b>volume.[min|max].[x|y|z]</b>: It is sometimes necessary to specify the bounds of the workspace. Without any specification, OMPL.app assumes a tight bounding box around the environment (if specified) and the start and goal states, but depending on the environment this may not be a good assumption.</li>
 </ul>
-<p>Parameters relating to benchmarking must be declared under the “<b>[benchmark]</b>” heading:</p><ul>
-<li><b>time_limit</b>: The amount of time (seconds) for each plan computation</li>
-<li><b>mem_limit</b>: The maximum amount of memory (MB) for each planner</li>
-<li><b>run_count</b>: The number of times to repeat the experiment for each planner</li>
+<p>Parameters relating to benchmarking must be declared under the “**[benchmark]**” heading:</p>
+<ul>
+<li><b>time_limit</b>: The amount of time (seconds) for each plan computation.</li>
+<li><b>mem_limit</b>: The maximum amount of memory (MB) for each planner. Memory measurements are not very accurate, so it is recommended to set this to a very large value.</li>
+<li><b>run_count</b>: The number of times to repeat the experiment for each planner.</li>
+<li><b>output</b>: Output directory where the benchmark log file will be saved. This parameter is optional; by default the log file is saved in the same directory as the configuration file.</li>
 <li><b>save_paths</b>: This <em>optional</em> parameter can be set to <code>none</code>, <code>all</code>, or <code>shortest</code> to save <em>no</em> solution paths (the default value), <em>all</em> solution paths (including approximate solutions), or the <em>shortest</em> exact solution for each planner, respectively. These paths can then be “played back” in the <a href="gui.html#gui_paths">OMPL.app GUI</a>.</li>
 </ul>
-<p>The last required element to specify are the planners to benchmark. These are specified under the “<b>[planner]</b>” heading. The following planners are valid for geometric benchmarking: kpiece, <code>bkpiece</code>, <code>lbkpiece</code>, <code>est</code>, <code>sbl</code>, <code>prm</code>, <code>lazyprm</code>, <code>lazyprmstar</code>, <code>rrt</code>, <code>rrtconnect</code>, <code>lazyrrt</code>, <code>rrtstar</code>, <code>lbtrrt</code>, <code>trrt</code>, <code>spars</code>, <code>spars2</code>, <code>stride</code>, <code>pdst</code>, <code>fmt</code>, and <code>aps</code>. The following planners are valid for kinodynamic planning (i.e., when the <code>control</code> parameter is set): <code>kpiece</code>, <code>rrt</code>, <code>est</code>, <code>pdst</code>, <code>sycloprrt</code>, and <code>syclopest</code>.</p>
+<p>The last required element to specify are the planners to benchmark. These are specified under the “**[planner]**” heading. The following planners are valid for geometric benchmarking: <code>kpiece</code>, <code>bkpiece</code>, <code>lbkpiece</code>, <code>est</code>, <code>sbl</code>, <code>prm</code>, <code>lazyprm</code>, <code>lazyprmstar</code>, <code>rrt</code>, <code>rrtconnect</code>, <code>lazyrrt</code>, <code>rrtstar</code>, <code>lbtrrt</code>, <code>trrt</code>, <code>spars</code>, <code>spars2</code>, <code>stride</code>, <code>pdst</code>, <code>fmt</code>, and <code>aps</code>. The following planners are valid for kinodynamic planning (i.e., when the <code>control</code> parameter is set): <code>kpiece</code>, <code>rrt</code>, <code>est</code>, <code>pdst</code>, <code>sycloprrt</code>, and <code>syclopest</code>.</p>
 <p>An example of a minimal SE(2) configuration comparing the rrt and est planners is given below: </p><pre class="fragment">[problem]
 name=my_benchmark_problem
 robot=my_robot_mesh.dae
@@ -418,7 +433,8 @@ The benchmark logfile format</h1>
 </div><!-- fragment --><p> Here, <code>EOL</code> denotes a newline character, <code>int</code> denotes an integer, <code>float</code> denotes a floating point number, <code>num</code> denotes an integer or float value and undefined symbols correspond to strings without whitespace characters. The exception is <code>property_name</code> which is a string that <em>can</em> have whitespace characters. It is also assumed that if the log file says there is data for <em>k</em> planners that that really is the case (likewise for the number of run measurements and the optional progress measurements).</p>
 <h1><a class="anchor" id="benchmark_database"></a>
 The benchmark database schema</h1>
-<p>The ompl_benchmark_statistics.py script can produce a series of plots from a database of benchmark results, but in many cases you may want to produce your own custom plots. For this it useful to understand the schema used for the database. There are five tables in a benchmark database:</p><ul>
+<p>The ompl_benchmark_statistics.py script can produce a series of plots from a database of benchmark results, but in many cases you may want to produce your own custom plots. For this it useful to understand the schema used for the database. There are five tables in a benchmark database:</p>
+<ul>
 <li><b>experiments</b>. This table contains the following information:<ul>
 <li><em>id:</em> an ID used in the <code>runs</code> table to denote that a run was part of a given experiment.</li>
 <li><em>name:</em> name of the experiment.</li>
@@ -440,7 +456,7 @@ The benchmark database schema</h1>
 <li><em>settings:</em> a string containing a “print-out” of all the settings of the planner.</li>
 </ul>
 </li>
-<li><b>enums:</b> This table contains description of enumerate types that are measured during benchmarking. By default there is only one such such type defined: <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve() ">ompl::base::PlannerStatus</a>. The table contains the following information:<ul>
+<li><b>enums</b>: This table contains description of enumerate types that are measured during benchmarking. By default there is only one such such type defined: <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve() ">ompl::base::PlannerStatus</a>. The table contains the following information:<ul>
 <li><em>name:</em> name of the enumerate type (e.g., “status”).</li>
 <li><em>value:</em> numerical value used in the runs</li>
 <li><em>description:</em> text description of each value (e.g. “Exact solution,” “Approximate solution,” “Timeout,” etc.)</li>
@@ -463,7 +479,8 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
 </ul>
 </li>
 </ul>
-<p>Using SQL queries one can easily select a subset of the data or compute <a href="http://en.wikipedia.org/wiki/Join_(SQL)">joins</a> of tables. Consider the following snippet of R code: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;library(&quot;ggplot2&quot;)</div>
+<p>Using SQL queries one can easily select a subset of the data or compute <a href="http://en.wikipedia.org/wiki/Join_(SQL)">joins</a> of tables. Consider the following snippet of R code:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;library(&quot;ggplot2&quot;)</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;library(&quot;RSQLite&quot;)</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;con &lt;- dbConnect(dbDriver(&quot;SQLite&quot;), &quot;benchmark.db&quot;)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
@@ -478,7 +495,7 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;dev.off()</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;dbDisconnect(con)</div>
-</div><!-- fragment --><p> For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:  
+</div><!-- fragment --><p>For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:  
 <div class="row">
 <div class="col-md-6 col-sm-6">
   <img src="images/R_time.png" width="100%"><br>
@@ -498,7 +515,7 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:05:20 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

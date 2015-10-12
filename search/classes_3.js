@@ -18,6 +18,7 @@ var searchData=
   ['dubinspath',['DubinsPath',['../classompl_1_1base_1_1DubinsStateSpace_1_1DubinsPath.html',1,'ompl::base::DubinsStateSpace']]],
   ['dubinsstatespace',['DubinsStateSpace',['../classompl_1_1base_1_1DubinsStateSpace.html',1,'ompl::base']]],
   ['dynamiccarplanning',['DynamicCarPlanning',['../classompl_1_1app_1_1DynamicCarPlanning.html',1,'ompl::app']]],
+  ['dynamicsssp',['DynamicSSSP',['../classompl_1_1DynamicSSSP.html',1,'ompl']]],
   ['dynamictimewarp',['DynamicTimeWarp',['../classompl_1_1tools_1_1DynamicTimeWarp.html',1,'ompl::tools']]],
   ['dynamictimewarpptr',['DynamicTimeWarpPtr',['../classompl_1_1geometric_1_1DynamicTimeWarpPtr.html',1,'ompl::geometric']]]
 ];

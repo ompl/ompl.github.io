@@ -67,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -199,7 +210,7 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <tr class="separator:af7078bbdb57dd6059dd80fdf6fc36e8b inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a780c272c0b856e54ca6ac30dbc529592 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a780c272c0b856e54ca6ac30dbc529592"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1OptimizationObjective.html#a780c272c0b856e54ca6ac30dbc529592">isSatisfied</a> (<a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> c) const </td></tr>
-<tr class="memdesc:a780c272c0b856e54ca6ac30dbc529592 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that our objective is satisfied already and we can stop planning. <br /></td></tr>
+<tr class="memdesc:a780c272c0b856e54ca6ac30dbc529592 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the the given cost <em>c</em> satisfies the specified cost objective, meaning we may stop planning. <br /></td></tr>
 <tr class="separator:a780c272c0b856e54ca6ac30dbc529592 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a7f94f2a30787935dc5087261b5fb09 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a7f94f2a30787935dc5087261b5fb09"></a>
 <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1OptimizationObjective.html#a7a7f94f2a30787935dc5087261b5fb09">getCostThreshold</a> () const </td></tr>
@@ -211,7 +222,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a1f133b98a94cb5b20c4b1a3a998aa7e9 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ba0ff250adc0cb8cb0863d0f4d23b5 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6ba0ff250adc0cb8cb0863d0f4d23b5"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1OptimizationObjective.html#ad6ba0ff250adc0cb8cb0863d0f4d23b5">isCostBetterThan</a> (<a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> c1, <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> c2) const </td></tr>
-<tr class="memdesc:ad6ba0ff250adc0cb8cb0863d0f4d23b5 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the the cost <em>c1</em> is considered better than the cost <em>c2</em>. By default, this returns true only if c1 is less by at least some threshold amount, for numerical robustness. <br /></td></tr>
+<tr class="memdesc:ad6ba0ff250adc0cb8cb0863d0f4d23b5 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the the cost <em>c1</em> is considered better than the cost <em>c2</em>. By default, this returns true if if c1 is less than c2. <br /></td></tr>
 <tr class="separator:ad6ba0ff250adc0cb8cb0863d0f4d23b5 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55663cf8d9dd5df55f025159ca287f31 inherit pub_methods_classompl_1_1base_1_1OptimizationObjective"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55663cf8d9dd5df55f025159ca287f31"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1OptimizationObjective.html#a55663cf8d9dd5df55f025159ca287f31">isCostEquivalentTo</a> (<a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> c1, <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> c2) const </td></tr>
@@ -321,7 +332,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:05:21 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

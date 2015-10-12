@@ -67,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -181,8 +192,12 @@ typedef boost::function&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab68fe20aad707ae747ca129a0d7adb0b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab68fe20aad707ae747ca129a0d7adb0b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#ab68fe20aad707ae747ca129a0d7adb0b">InformedStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;probDefn, unsigned int maxNumberCalls, const <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#af7ce8b5bf9a270b6e3751e29666fbe58">GetCurrentCostFunc</a> &amp;costFunc)</td></tr>
-<tr class="memdesc:ab68fe20aad707ae747ca129a0d7adb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution. Requires a function pointer to a method to query the cost of the current solution. <br /></td></tr>
+<tr class="memdesc:ab68fe20aad707ae747ca129a0d7adb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution using the default informed sampler for the current optimization objective. Requires a function pointer to a method to query the cost of the current solution. <br /></td></tr>
 <tr class="separator:ab68fe20aad707ae747ca129a0d7adb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a95df17c2960e732191cbdaa3fab87"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30a95df17c2960e732191cbdaa3fab87"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#a30a95df17c2960e732191cbdaa3fab87">InformedStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;probDefn, const <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#af7ce8b5bf9a270b6e3751e29666fbe58">GetCurrentCostFunc</a> &amp;costFunc, const InformedSamplerPtr &amp;infSampler)</td></tr>
+<tr class="memdesc:a30a95df17c2960e732191cbdaa3fab87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution using the provided informed sampler. Requires a function pointer to a method to query the cost of the current solution. <br /></td></tr>
+<tr class="separator:a30a95df17c2960e732191cbdaa3fab87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41e49caf12b8a74af8e0ef675381bcd8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41e49caf12b8a74af8e0ef675381bcd8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#a41e49caf12b8a74af8e0ef675381bcd8">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr)</td></tr>
 <tr class="memdesc:a41e49caf12b8a74af8e0ef675381bcd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are less than the current best cost (as defined by the pointer passed at construction). By default just calls sampleUniform(State*, Cost) with cost given by the member variable. <br /></td></tr>
@@ -228,7 +243,7 @@ const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:05:21 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

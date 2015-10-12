@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reedsshepppathsegmenttype',['ReedsSheppPathSegmentType',['../classompl_1_1base_1_1ReedsSheppStateSpace.html#a2b3e89dd4d89098fc1cfc2e38c27827d',1,'ompl::base::ReedsSheppStateSpace']]]
+  ['motionmodel',['MotionModel',['../namespaceompl_1_1app.html#a4eb5e3e5778337b61b7d3066eb2b9639',1,'ompl::app']]]
 ];
