@@ -42,7 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -180,7 +180,7 @@ Inheritance diagram for ompl::geometric::RRTstar:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1geometric_1_1RRTstar__inherit__graph.png" border="0" usemap="#ompl_1_1geometric_1_1RRTstar_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1geometric_1_1RRTstar_inherit__map" id="ompl_1_1geometric_1_1RRTstar_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. " alt="" coords="22,80,162,107"/></map>
+<area shape="rect" id="node4" href="classompl_1_1geometric_1_1InformedRRTstar.html" title="Informed RRT*. " alt="" coords="5,229,183,271"/><area shape="rect" id="node2" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. " alt="" coords="24,80,164,107"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -189,8 +189,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of a motion.  <a href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structompl_1_1geometric_1_1RRTstar_1_1PruneScratchSpace.html">PruneScratchSpace</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -210,6 +208,10 @@ virtual <a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::Plan
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab584d649926413df4ccbca6e5d4b79e4">clear</a> ()</td></tr>
 <tr class="memdesc:ab584d649926413df4ccbca6e5d4b79e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to <a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a5d1ba1288c3929c6c758ac4544adc42a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will ignore all previous work. <br /></td></tr>
 <tr class="separator:ab584d649926413df4ccbca6e5d4b79e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7547b2ac7557354cb71e02d567ed4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb7547b2ac7557354cb71e02d567ed4e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb7547b2ac7557354cb71e02d567ed4e">setup</a> ()</td></tr>
+<tr class="memdesc:afb7547b2ac7557354cb71e02d567ed4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform extra configuration steps, if needed. This call will also issue a call to <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4" title="Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...">ompl::base::SpaceInformation::setup()</a> if needed. This must be called before solving. <br /></td></tr>
+<tr class="separator:afb7547b2ac7557354cb71e02d567ed4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ffc63f0014372c460a63c549be44bbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2ffc63f0014372c460a63c549be44bbb">setGoalBias</a> (double goalBias)</td></tr>
 <tr class="memdesc:a2ffc63f0014372c460a63c549be44bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the goal bias.  <a href="#a2ffc63f0014372c460a63c549be44bbb">More...</a><br /></td></tr>
 <tr class="separator:a2ffc63f0014372c460a63c549be44bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,6 +226,14 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#af12862b8a8165d890f2a7237c49e48eb">getRange</a> () const </td></tr>
 <tr class="memdesc:af12862b8a8165d890f2a7237c49e48eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the range the planner is using. <br /></td></tr>
 <tr class="separator:af12862b8a8165d890f2a7237c49e48eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47948a2021dbfdbd0cdf4b18cf8d718c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47948a2021dbfdbd0cdf4b18cf8d718c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a47948a2021dbfdbd0cdf4b18cf8d718c">setRewireFactor</a> (double rewireFactor)</td></tr>
+<tr class="memdesc:a47948a2021dbfdbd0cdf4b18cf8d718c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rewiring scale factor, s, such that r_rrg = s  r_rrg* (or k_rrg = s  k_rrg*) <br /></td></tr>
+<tr class="separator:a47948a2021dbfdbd0cdf4b18cf8d718c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ad256be7f237cc3a8ba6b6d229fe45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25ad256be7f237cc3a8ba6b6d229fe45"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a25ad256be7f237cc3a8ba6b6d229fe45">getRewireFactor</a> () const </td></tr>
+<tr class="memdesc:a25ad256be7f237cc3a8ba6b6d229fe45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rewiring scale factor, s, such that r_rrg = s  r_rrg* &gt; r_rrg* (or k_rrg = s  k_rrg* &gt; k_rrg*) <br /></td></tr>
+<tr class="separator:a25ad256be7f237cc3a8ba6b6d229fe45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a797b5c16997b3e19bdca5adf31dd8f5d"><td class="memTemplParams" colspan="2"><a class="anchor" id="a797b5c16997b3e19bdca5adf31dd8f5d"></a>
 template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
 <tr class="memitem:a797b5c16997b3e19bdca5adf31dd8f5d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a797b5c16997b3e19bdca5adf31dd8f5d">setNearestNeighbors</a> ()</td></tr>
@@ -231,38 +241,98 @@ template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
 <tr class="separator:a797b5c16997b3e19bdca5adf31dd8f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67848bffdda2ddcfbac59b358907e1b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67848bffdda2ddcfbac59b358907e1b9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a67848bffdda2ddcfbac59b358907e1b9">setDelayCC</a> (bool delayCC)</td></tr>
-<tr class="memdesc:a67848bffdda2ddcfbac59b358907e1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option that delays collision checking procedures. When it is enabled, all neighbors are sorted by cost. The planner then goes through this list, starting with the lowest cost, checking for collisions in order to find a parent. The planner stops iterating through the list when a collision free parent is found. This prevents the planner from collsion checking each neighbor, reducing computation time in scenarios where collision checking procedures are expensive. <br /></td></tr>
+<tr class="memdesc:a67848bffdda2ddcfbac59b358907e1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option that delays collision checking procedures. When it is enabled, all neighbors are sorted by cost. The planner then goes through this list, starting with the lowest cost, checking for collisions in order to find a parent. The planner stops iterating through the list when a collision free parent is found. This prevents the planner from collision checking each neighbor, reducing computation time in scenarios where collision checking procedures are expensive. <br /></td></tr>
 <tr class="separator:a67848bffdda2ddcfbac59b358907e1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1007fe6ab00b4278f8de8d0a2f6c9bb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1007fe6ab00b4278f8de8d0a2f6c9bb8"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a1007fe6ab00b4278f8de8d0a2f6c9bb8">getDelayCC</a> () const </td></tr>
 <tr class="memdesc:a1007fe6ab00b4278f8de8d0a2f6c9bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the delayed collision checking option. <br /></td></tr>
 <tr class="separator:a1007fe6ab00b4278f8de8d0a2f6c9bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17e4778d1b4a4f7f0dbc519761113ecc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17e4778d1b4a4f7f0dbc519761113ecc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a17e4778d1b4a4f7f0dbc519761113ecc">setPrune</a> (const bool prune)</td></tr>
-<tr class="memdesc:a17e4778d1b4a4f7f0dbc519761113ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether the tree is pruned during the search. <br /></td></tr>
-<tr class="separator:a17e4778d1b4a4f7f0dbc519761113ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54efe80993185f582425c4cb301dc187"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54efe80993185f582425c4cb301dc187"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a54efe80993185f582425c4cb301dc187">getPrune</a> () const </td></tr>
-<tr class="memdesc:a54efe80993185f582425c4cb301dc187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the pruning option. <br /></td></tr>
-<tr class="separator:a54efe80993185f582425c4cb301dc187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a254bb1d53279548564afae212ef7e08e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a254bb1d53279548564afae212ef7e08e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a254bb1d53279548564afae212ef7e08e">setPruneStatesImprovementThreshold</a> (const double pp)</td></tr>
-<tr class="memdesc:a254bb1d53279548564afae212ef7e08e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the percentage threshold (between 0 and 1) for pruning the tree. If the new tree has removed at least this percentage of states, the tree will be finally pruned. <br /></td></tr>
-<tr class="separator:a254bb1d53279548564afae212ef7e08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc742fdb93f1757cdd53f296ab07469"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affc742fdb93f1757cdd53f296ab07469"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#affc742fdb93f1757cdd53f296ab07469">getPruneStatesImprovementThreshold</a> () const </td></tr>
-<tr class="memdesc:affc742fdb93f1757cdd53f296ab07469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current prune states percentage threshold parameter. <br /></td></tr>
-<tr class="separator:affc742fdb93f1757cdd53f296ab07469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb7547b2ac7557354cb71e02d567ed4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb7547b2ac7557354cb71e02d567ed4e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb7547b2ac7557354cb71e02d567ed4e">setup</a> ()</td></tr>
-<tr class="memdesc:afb7547b2ac7557354cb71e02d567ed4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform extra configuration steps, if needed. This call will also issue a call to <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4" title="Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...">ompl::base::SpaceInformation::setup()</a> if needed. This must be called before solving. <br /></td></tr>
-<tr class="separator:afb7547b2ac7557354cb71e02d567ed4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e814d5126640ef9747ed73380ff5d6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e814d5126640ef9747ed73380ff5d6c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getIterationCount</b> () const </td></tr>
-<tr class="separator:a3e814d5126640ef9747ed73380ff5d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba547b6867e06d743e43249826beea3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba547b6867e06d743e43249826beea3c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getBestCost</b> () const </td></tr>
-<tr class="separator:aba547b6867e06d743e43249826beea3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a6c0ed7b1c6a13b9094e488809517f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7a6c0ed7b1c6a13b9094e488809517f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ae7a6c0ed7b1c6a13b9094e488809517f">setTreePruning</a> (const bool prune)</td></tr>
+<tr class="memdesc:ae7a6c0ed7b1c6a13b9094e488809517f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether the tree is pruned during the search. This pruning removes a vertex if and only if it <em>and</em> all its descendents passes the pruning condition. The pruning condition is whether the lower-bounding estimate of a solution constrained to pass the the <em>vertex</em> is greater than the current solution. Considering the descendents of a vertex prevents removing a descendent that may actually be capable of later providing a better solution once its incoming path passes through a different vertex (e.g., a change in homotopy class). <br /></td></tr>
+<tr class="separator:ae7a6c0ed7b1c6a13b9094e488809517f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d5c2f5ba616cd994f080d9ec8b43fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33d5c2f5ba616cd994f080d9ec8b43fd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a33d5c2f5ba616cd994f080d9ec8b43fd">getTreePruning</a> () const </td></tr>
+<tr class="memdesc:a33d5c2f5ba616cd994f080d9ec8b43fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the pruning option. <br /></td></tr>
+<tr class="separator:a33d5c2f5ba616cd994f080d9ec8b43fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129f4fbfd1074228f1cd64b622b050d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a129f4fbfd1074228f1cd64b622b050d7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a129f4fbfd1074228f1cd64b622b050d7">setPruneThreshold</a> (const double pp)</td></tr>
+<tr class="memdesc:a129f4fbfd1074228f1cd64b622b050d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the fractional change in solution cost necessary for pruning to occur, i.e., prune if the new solution is at least X% better than the old solution. (e.g., 0.0 will prune after every new solution, while 1.0 will never prune.) <br /></td></tr>
+<tr class="separator:a129f4fbfd1074228f1cd64b622b050d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692c2caac8ff03b9e814fde7ea63d138"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a692c2caac8ff03b9e814fde7ea63d138"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a692c2caac8ff03b9e814fde7ea63d138">getPruneThreshold</a> () const </td></tr>
+<tr class="memdesc:a692c2caac8ff03b9e814fde7ea63d138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current prune states percentage threshold parameter. <br /></td></tr>
+<tr class="separator:a692c2caac8ff03b9e814fde7ea63d138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bfb692a5e18a77e72260802a5ccacc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3bfb692a5e18a77e72260802a5ccacc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#aa3bfb692a5e18a77e72260802a5ccacc">setPrunedMeasure</a> (bool informedMeasure)</td></tr>
+<tr class="memdesc:aa3bfb692a5e18a77e72260802a5ccacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the measure of the pruned subproblem instead of the measure of the entire problem domain (if such an expression exists and a solution is present). Currently the only method to calculate this measure in closed-form is through a informed sampler, so this option also requires that. <br /></td></tr>
+<tr class="separator:aa3bfb692a5e18a77e72260802a5ccacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2656ef3abb5609b947663664cf28cc3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2656ef3abb5609b947663664cf28cc3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ae2656ef3abb5609b947663664cf28cc3">getPrunedMeasure</a> () const </td></tr>
+<tr class="memdesc:ae2656ef3abb5609b947663664cf28cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of using the pruned measure. <br /></td></tr>
+<tr class="separator:ae2656ef3abb5609b947663664cf28cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ca16e4dfbc8cd2fbe5992250324404"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81ca16e4dfbc8cd2fbe5992250324404"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a81ca16e4dfbc8cd2fbe5992250324404">setInformedSampling</a> (bool informedSampling)</td></tr>
+<tr class="memdesc:a81ca16e4dfbc8cd2fbe5992250324404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use direct sampling of the heuristic for the generation of random samples (e.g., x_rand). If a direct sampling method is not defined for the objective, rejection sampling will be used by default. <br /></td></tr>
+<tr class="separator:a81ca16e4dfbc8cd2fbe5992250324404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7dbb23c99c8312c91fe993920b9ce4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a7dbb23c99c8312c91fe993920b9ce4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a0a7dbb23c99c8312c91fe993920b9ce4">getInformedSampling</a> () const </td></tr>
+<tr class="memdesc:a0a7dbb23c99c8312c91fe993920b9ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state direct heuristic sampling. <br /></td></tr>
+<tr class="separator:a0a7dbb23c99c8312c91fe993920b9ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab633a4b6132757444ad79d760880b517"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab633a4b6132757444ad79d760880b517"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab633a4b6132757444ad79d760880b517">setSampleRejection</a> (const bool reject)</td></tr>
+<tr class="memdesc:ab633a4b6132757444ad79d760880b517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether heuristic rejection is used on samples (e.g., x_rand) <br /></td></tr>
+<tr class="separator:ab633a4b6132757444ad79d760880b517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a476e3c20ad32fb1158bd54425087bffa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a476e3c20ad32fb1158bd54425087bffa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a476e3c20ad32fb1158bd54425087bffa">getSampleRejection</a> () const </td></tr>
+<tr class="memdesc:a476e3c20ad32fb1158bd54425087bffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the sample rejection option. <br /></td></tr>
+<tr class="separator:a476e3c20ad32fb1158bd54425087bffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3ea03a2640fb1931d5accd146e12c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add3ea03a2640fb1931d5accd146e12c9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#add3ea03a2640fb1931d5accd146e12c9">setNewStateRejection</a> (const bool reject)</td></tr>
+<tr class="memdesc:add3ea03a2640fb1931d5accd146e12c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether heuristic rejection is used on new states before connection (e.g., x_new = steer(x_nearest, x_rand)) <br /></td></tr>
+<tr class="separator:add3ea03a2640fb1931d5accd146e12c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b2cdf84f396fea0bf383e794bb5805"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9b2cdf84f396fea0bf383e794bb5805"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ad9b2cdf84f396fea0bf383e794bb5805">getNewStateRejection</a> () const </td></tr>
+<tr class="memdesc:ad9b2cdf84f396fea0bf383e794bb5805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the new-state rejection option. <br /></td></tr>
+<tr class="separator:ad9b2cdf84f396fea0bf383e794bb5805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de444eb0d3d1831353267cc94e08506"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7de444eb0d3d1831353267cc94e08506"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a7de444eb0d3d1831353267cc94e08506">setAdmissibleCostToCome</a> (const bool admissible)</td></tr>
+<tr class="memdesc:a7de444eb0d3d1831353267cc94e08506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether pruning and new-state rejection uses an admissible cost-to-come estimate or not. <br /></td></tr>
+<tr class="separator:a7de444eb0d3d1831353267cc94e08506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4cb83357161dca61ee7e129c51c396"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c4cb83357161dca61ee7e129c51c396"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9c4cb83357161dca61ee7e129c51c396">getAdmissibleCostToCome</a> () const </td></tr>
+<tr class="memdesc:a9c4cb83357161dca61ee7e129c51c396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the admissibility of the pruning and new-state rejection heuristic. <br /></td></tr>
+<tr class="separator:a9c4cb83357161dca61ee7e129c51c396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a8cb24a300de2df01a3dcdd9a9a7a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6a8cb24a300de2df01a3dcdd9a9a7a5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ae6a8cb24a300de2df01a3dcdd9a9a7a5">setFocusSearch</a> (const bool focus)</td></tr>
+<tr class="memdesc:ae6a8cb24a300de2df01a3dcdd9a9a7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <em>meta</em> parameter to focusing the search to improving the current solution. This is the parameter set by CFOREST. For RRT*, search focusing consists of pruning the existing search and limiting future search. Specifically, this is accomplished by turning on informed sampling, tree pruning and new-state rejection. This flag individually sets the options described above. <br /></td></tr>
+<tr class="separator:ae6a8cb24a300de2df01a3dcdd9a9a7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8ba23824c24f3957a1813910f0ef70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf8ba23824c24f3957a1813910f0ef70"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#abf8ba23824c24f3957a1813910f0ef70">getFocusSearch</a> () const </td></tr>
+<tr class="memdesc:abf8ba23824c24f3957a1813910f0ef70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of search focusing. <br /></td></tr>
+<tr class="separator:abf8ba23824c24f3957a1813910f0ef70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e2a9ce790c719cd22354ea2b264b24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5e2a9ce790c719cd22354ea2b264b24"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#aa5e2a9ce790c719cd22354ea2b264b24">setKNearest</a> (bool useKNearest)</td></tr>
+<tr class="memdesc:aa5e2a9ce790c719cd22354ea2b264b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a k-nearest search for rewiring instead of a r-disc search. <br /></td></tr>
+<tr class="separator:aa5e2a9ce790c719cd22354ea2b264b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a507b4103c9e7a53e407b0eeabcfe3cf7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a507b4103c9e7a53e407b0eeabcfe3cf7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a507b4103c9e7a53e407b0eeabcfe3cf7">getKNearest</a> () const </td></tr>
+<tr class="memdesc:a507b4103c9e7a53e407b0eeabcfe3cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of using a k-nearest search for rewiring. <br /></td></tr>
+<tr class="separator:a507b4103c9e7a53e407b0eeabcfe3cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21c04eaffbe4ebe337350f8ab7e7318"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad21c04eaffbe4ebe337350f8ab7e7318"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ad21c04eaffbe4ebe337350f8ab7e7318">setNumSamplingAttempts</a> (unsigned int numAttempts)</td></tr>
+<tr class="memdesc:ad21c04eaffbe4ebe337350f8ab7e7318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of attempts to make while performing rejection or informed sampling. <br /></td></tr>
+<tr class="separator:ad21c04eaffbe4ebe337350f8ab7e7318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90668aa7316d5020a960dbac21deb134"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90668aa7316d5020a960dbac21deb134"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a90668aa7316d5020a960dbac21deb134">getNumSamplingAttempts</a> () const </td></tr>
+<tr class="memdesc:a90668aa7316d5020a960dbac21deb134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of attempts to make while performing rejection or informed sampling. <br /></td></tr>
+<tr class="separator:a90668aa7316d5020a960dbac21deb134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ce261af5768df40a15931d3f2522d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9ce261af5768df40a15931d3f2522d4"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>numIterations</b> () const </td></tr>
+<tr class="separator:ac9ce261af5768df40a15931d3f2522d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be54ea7768f600aeb7bc9c8bf75ee89"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2be54ea7768f600aeb7bc9c8bf75ee89"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bestCost</b> () const </td></tr>
+<tr class="separator:a2be54ea7768f600aeb7bc9c8bf75ee89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
 <tr class="memitem:a404c3be95f77983e95a468e3a7032cc9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a404c3be95f77983e95a468e3a7032cc9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a404c3be95f77983e95a468e3a7032cc9">Planner</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;si, const std::string &amp;name)</td></tr>
@@ -347,6 +417,14 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa8180ea327090c82278680c2505aa433"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8180ea327090c82278680c2505aa433"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#aa8180ea327090c82278680c2505aa433">allocSampler</a> ()</td></tr>
+<tr class="memdesc:aa8180ea327090c82278680c2505aa433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the samplers. <br /></td></tr>
+<tr class="separator:aa8180ea327090c82278680c2505aa433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98378d793112b21395a5b52e3f53e490"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98378d793112b21395a5b52e3f53e490"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a98378d793112b21395a5b52e3f53e490">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *statePtr)</td></tr>
+<tr class="memdesc:a98378d793112b21395a5b52e3f53e490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a sample. <br /></td></tr>
+<tr class="separator:a98378d793112b21395a5b52e3f53e490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2046b5ca17c6030dac16cad855621a7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2046b5ca17c6030dac16cad855621a7d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2046b5ca17c6030dac16cad855621a7d">freeMemory</a> ()</td></tr>
 <tr class="memdesc:a2046b5ca17c6030dac16cad855621a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by this planner. <br /></td></tr>
@@ -355,6 +433,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a31a4b56088352e6e2d12300e2c4bc3bf">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *a, const <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *b) const </td></tr>
 <tr class="memdesc:a31a4b56088352e6e2d12300e2c4bc3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distance between motions (actually distance between contained states) <br /></td></tr>
 <tr class="separator:a31a4b56088352e6e2d12300e2c4bc3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad32b78f55a2e739c74012b9c96715f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad32b78f55a2e739c74012b9c96715f1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#aad32b78f55a2e739c74012b9c96715f1">getNeighbors</a> (<a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *motion, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> * &gt; &amp;nbh) const </td></tr>
+<tr class="memdesc:aad32b78f55a2e739c74012b9c96715f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the neighbours of a given motion, using either k-nearest of radius as appropriate. <br /></td></tr>
+<tr class="separator:aad32b78f55a2e739c74012b9c96715f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c90cd3eabefa41bfeb4bfa81619dcd8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c90cd3eabefa41bfeb4bfa81619dcd8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a7c90cd3eabefa41bfeb4bfa81619dcd8">removeFromParent</a> (<a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *m)</td></tr>
 <tr class="memdesc:a7c90cd3eabefa41bfeb4bfa81619dcd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given motion from the parent's child list. <br /></td></tr>
@@ -363,18 +445,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a6564971aba61a74bf620b2ffb439db09">updateChildCosts</a> (<a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *m)</td></tr>
 <tr class="memdesc:a6564971aba61a74bf620b2ffb439db09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the cost of the children of this node if the cost up to this node has changed. <br /></td></tr>
 <tr class="separator:a6564971aba61a74bf620b2ffb439db09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cb40d4151aa975aceca627c4044a7be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6cb40d4151aa975aceca627c4044a7be"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a6cb40d4151aa975aceca627c4044a7be">pruneTree</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> pruneTreeCost)</td></tr>
-<tr class="memdesc:a6cb40d4151aa975aceca627c4044a7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prunes all those states which estimated total cost is higher than pruneTreeCost. Returns the number of motions pruned. Depends on the parameter set by <a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a254bb1d53279548564afae212ef7e08e" title="Set the percentage threshold (between 0 and 1) for pruning the tree. If the new tree has removed at l...">setPruneStatesImprovementThreshold()</a> <br /></td></tr>
-<tr class="separator:a6cb40d4151aa975aceca627c4044a7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b2395170e0329cf9bc10210faead6f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b2395170e0329cf9bc10210faead6f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4b2395170e0329cf9bc10210faead6f2">deleteBranch</a> (<a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *motion)</td></tr>
-<tr class="memdesc:a4b2395170e0329cf9bc10210faead6f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes (frees memory) the motion and its children motions. <br /></td></tr>
-<tr class="separator:a4b2395170e0329cf9bc10210faead6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a21fbf5b28d8eafe1d55e583ddf4489"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a21fbf5b28d8eafe1d55e583ddf4489"></a>
-<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4a21fbf5b28d8eafe1d55e583ddf4489">costToGo</a> (const <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *motion, const bool shortest=true) const </td></tr>
-<tr class="memdesc:a4a21fbf5b28d8eafe1d55e583ddf4489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Cost To Go heuristically as the cost to come from start to motion plus the cost to go from motion to goal. If <em>shortest</em> is true, the estimated cost to come start-motion is given. Otherwise, this cost to come is the current motion cost. <br /></td></tr>
-<tr class="separator:a4a21fbf5b28d8eafe1d55e583ddf4489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde43e06e2d50fedfc2f42062a23dce1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afde43e06e2d50fedfc2f42062a23dce1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afde43e06e2d50fedfc2f42062a23dce1">pruneTree</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;pruneTreeCost)</td></tr>
+<tr class="memdesc:afde43e06e2d50fedfc2f42062a23dce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prunes all those states which estimated total cost is higher than pruneTreeCost. Returns the number of motions pruned. Depends on the parameter set by setPruneStatesImprovementThreshold() <br /></td></tr>
+<tr class="separator:afde43e06e2d50fedfc2f42062a23dce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ce0c6d2c70b48c8b39cbd2a540defb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24ce0c6d2c70b48c8b39cbd2a540defb"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a24ce0c6d2c70b48c8b39cbd2a540defb">solutionHeuristic</a> (const <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *motion) const </td></tr>
+<tr class="memdesc:a24ce0c6d2c70b48c8b39cbd2a540defb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the solution cost heuristically as the cost to come from start to the motion plus the cost to go from the motion to the goal. If the parameter <em>use_admissible_heuristic</em> (<em><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a7de444eb0d3d1831353267cc94e08506" title="Controls whether pruning and new-state rejection uses an admissible cost-to-come estimate or not...">setAdmissibleCostToCome()</a></em>) is true, a heuristic estimate of the cost to come is used; otherwise, the current cost to come to the motion is used (which may overestimate the cost through the motion). <br /></td></tr>
+<tr class="separator:a24ce0c6d2c70b48c8b39cbd2a540defb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9331edc37ced21d90248936e3346b19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9331edc37ced21d90248936e3346b19"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab9331edc37ced21d90248936e3346b19">addChildrenToList</a> (std::queue&lt; <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *, std::deque&lt; <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> * &gt; &gt; *motionList, <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *motion)</td></tr>
+<tr class="memdesc:ab9331edc37ced21d90248936e3346b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the children of a vertex to the given list. <br /></td></tr>
+<tr class="separator:ab9331edc37ced21d90248936e3346b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc39886c07f4ea670961a9b0addebd38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc39886c07f4ea670961a9b0addebd38"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afc39886c07f4ea670961a9b0addebd38">keepCondition</a> (const <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *motion, const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;threshold) const </td></tr>
+<tr class="memdesc:afc39886c07f4ea670961a9b0addebd38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the given motion passes the specified cost threshold, meaning it will be <em>kept</em> during pruning. <br /></td></tr>
+<tr class="separator:afc39886c07f4ea670961a9b0addebd38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a290bc15f4f774f138c78d58732ac2ed7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a290bc15f4f774f138c78d58732ac2ed7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a290bc15f4f774f138c78d58732ac2ed7">calculateRewiringLowerBounds</a> ()</td></tr>
+<tr class="memdesc:a290bc15f4f774f138c78d58732ac2ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the k_RRG* and r_RRG* terms. <br /></td></tr>
+<tr class="separator:a290bc15f4f774f138c78d58732ac2ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2395fae67e25de11410c9e23ff7a2f48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2395fae67e25de11410c9e23ff7a2f48"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>numIterationsProperty</b> () const </td></tr>
+<tr class="separator:a2395fae67e25de11410c9e23ff7a2f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc802115fb9944d30655a585ee842f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dc802115fb9944d30655a585ee842f1"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>bestCostProperty</b> () const </td></tr>
+<tr class="separator:a2dc802115fb9944d30655a585ee842f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
 <tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6b4a1345376e3e977772c38d38d5c50c"></a>
 template&lt;typename T , typename PlannerType , typename SetterType , typename GetterType &gt; </td></tr>
@@ -397,6 +493,10 @@ Protected Attributes</h2></td></tr>
 <a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">base::StateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a217157cf8281f4da5f68f62c9423235c">sampler_</a></td></tr>
 <tr class="memdesc:a217157cf8281f4da5f68f62c9423235c"><td class="mdescLeft">&#160;</td><td class="mdescRight">State sampler. <br /></td></tr>
 <tr class="separator:a217157cf8281f4da5f68f62c9423235c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ce83eeaab6c6f08295aee9173338f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19ce83eeaab6c6f08295aee9173338f3"></a>
+base::InformedSamplerPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a19ce83eeaab6c6f08295aee9173338f3">infSampler_</a></td></tr>
+<tr class="memdesc:a19ce83eeaab6c6f08295aee9173338f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">An informed sampler. <br /></td></tr>
+<tr class="separator:a19ce83eeaab6c6f08295aee9173338f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69ae88bb055b2bfdb920ca198325ba6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69ae88bb055b2bfdb920ca198325ba6e"></a>
 boost::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a69ae88bb055b2bfdb920ca198325ba6e">nn_</a></td></tr>
 <tr class="memdesc:a69ae88bb055b2bfdb920ca198325ba6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nearest-neighbors datastructure containing the tree of motions. <br /></td></tr>
@@ -413,6 +513,22 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <a class="el" href="classompl_1_1RNG.html">RNG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#abceef0ae95921f2f58278864e1fe425a">rng_</a></td></tr>
 <tr class="memdesc:abceef0ae95921f2f58278864e1fe425a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The random number generator. <br /></td></tr>
 <tr class="separator:abceef0ae95921f2f58278864e1fe425a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2eab7fa3855a1ea9767ef9940c4bb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb2eab7fa3855a1ea9767ef9940c4bb7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#aeb2eab7fa3855a1ea9767ef9940c4bb7">useKNearest_</a></td></tr>
+<tr class="memdesc:aeb2eab7fa3855a1ea9767ef9940c4bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option to use k-nearest search for rewiring. <br /></td></tr>
+<tr class="separator:aeb2eab7fa3855a1ea9767ef9940c4bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e2598442b2a24f816eed7a106313ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54e2598442b2a24f816eed7a106313ac"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a54e2598442b2a24f816eed7a106313ac">rewireFactor_</a></td></tr>
+<tr class="memdesc:a54e2598442b2a24f816eed7a106313ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rewiring factor, s, so that r_rrg = s  r_rrg* &gt; r_rrg* (or k_rrg = s  k_rrg* &gt; k_rrg*) <br /></td></tr>
+<tr class="separator:a54e2598442b2a24f816eed7a106313ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad915a94be433a1d4df709d6778328576"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad915a94be433a1d4df709d6778328576"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ad915a94be433a1d4df709d6778328576">k_rrg_</a></td></tr>
+<tr class="memdesc:ad915a94be433a1d4df709d6778328576"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant for k-nearest rewiring calculations. <br /></td></tr>
+<tr class="separator:ad915a94be433a1d4df709d6778328576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7242bfebcfd2446a1aa9bc250e9ee4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7242bfebcfd2446a1aa9bc250e9ee4a"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#af7242bfebcfd2446a1aa9bc250e9ee4a">r_rrg_</a></td></tr>
+<tr class="memdesc:af7242bfebcfd2446a1aa9bc250e9ee4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant for r-disc rewiring calculations. <br /></td></tr>
+<tr class="separator:af7242bfebcfd2446a1aa9bc250e9ee4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cb1f7e0fbf61224324231de92d320cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cb1f7e0fbf61224324231de92d320cd"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a7cb1f7e0fbf61224324231de92d320cd">delayCC_</a></td></tr>
 <tr class="memdesc:a7cb1f7e0fbf61224324231de92d320cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option to delay and reduce collision checking within iterations. <br /></td></tr>
@@ -429,29 +545,58 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab4b4535ae0a3d01551fec707d0eea655">goalMotions_</a></td></tr>
 <tr class="memdesc:ab4b4535ae0a3d01551fec707d0eea655"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of states in the tree that satisfy the goal condition. <br /></td></tr>
 <tr class="separator:ab4b4535ae0a3d01551fec707d0eea655"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c21a1f2b16e171c75a83f0c3cc288ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c21a1f2b16e171c75a83f0c3cc288ce"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4c21a1f2b16e171c75a83f0c3cc288ce">prune_</a></td></tr>
-<tr class="memdesc:a4c21a1f2b16e171c75a83f0c3cc288ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this value is set to true, tree pruning will be enabled. <br /></td></tr>
-<tr class="separator:a4c21a1f2b16e171c75a83f0c3cc288ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9644808d3ed570bf6cd07b5e53bbeca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9644808d3ed570bf6cd07b5e53bbeca"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ac9644808d3ed570bf6cd07b5e53bbeca">pruneStatesThreshold_</a></td></tr>
-<tr class="memdesc:ac9644808d3ed570bf6cd07b5e53bbeca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tree is only pruned is the percentage of states to prune is above this threshold (between 0 and 1). <br /></td></tr>
-<tr class="separator:ac9644808d3ed570bf6cd07b5e53bbeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accce07da6a4b596a5b0013b339b2ea0e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="accce07da6a4b596a5b0013b339b2ea0e"></a>
-struct <a class="el" href="structompl_1_1geometric_1_1RRTstar_1_1PruneScratchSpace.html">ompl::geometric::RRTstar::PruneScratchSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pruneScratchSpace_</b></td></tr>
-<tr class="separator:accce07da6a4b596a5b0013b339b2ea0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cd0c81982f15b989646cddffe9f8e19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5cd0c81982f15b989646cddffe9f8e19"></a>
-<a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a5cd0c81982f15b989646cddffe9f8e19">startMotion_</a></td></tr>
-<tr class="memdesc:a5cd0c81982f15b989646cddffe9f8e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html" title="Representation of a motion. ">Motion</a> containing the last added initial start state. <br /></td></tr>
-<tr class="separator:a5cd0c81982f15b989646cddffe9f8e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb8a6117217d2525b34bd0f00c1e9675"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb8a6117217d2525b34bd0f00c1e9675"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb8a6117217d2525b34bd0f00c1e9675">iterations_</a></td></tr>
-<tr class="memdesc:afb8a6117217d2525b34bd0f00c1e9675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations the algorithm performed. <br /></td></tr>
-<tr class="separator:afb8a6117217d2525b34bd0f00c1e9675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75595f5071448f5b881284bad2a4464e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75595f5071448f5b881284bad2a4464e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a75595f5071448f5b881284bad2a4464e">useTreePruning_</a></td></tr>
+<tr class="memdesc:a75595f5071448f5b881284bad2a4464e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status of the tree pruning option. <br /></td></tr>
+<tr class="separator:a75595f5071448f5b881284bad2a4464e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f72ce957f0faab2807c0464a388cfc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f72ce957f0faab2807c0464a388cfc1"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4f72ce957f0faab2807c0464a388cfc1">pruneThreshold_</a></td></tr>
+<tr class="memdesc:a4f72ce957f0faab2807c0464a388cfc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tree is pruned when the change in solution cost is greater than this fraction. <br /></td></tr>
+<tr class="separator:a4f72ce957f0faab2807c0464a388cfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2c9609386aa92723ecca8f2d2cdf3b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2c9609386aa92723ecca8f2d2cdf3b1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ac2c9609386aa92723ecca8f2d2cdf3b1">usePrunedMeasure_</a></td></tr>
+<tr class="memdesc:ac2c9609386aa92723ecca8f2d2cdf3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option to use the informed measure. <br /></td></tr>
+<tr class="separator:ac2c9609386aa92723ecca8f2d2cdf3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed8134d7be9844f5fb0629c46d7f314"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ed8134d7be9844f5fb0629c46d7f314"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a8ed8134d7be9844f5fb0629c46d7f314">useInformedSampling_</a></td></tr>
+<tr class="memdesc:a8ed8134d7be9844f5fb0629c46d7f314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option to use informed sampling. <br /></td></tr>
+<tr class="separator:a8ed8134d7be9844f5fb0629c46d7f314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036418995f08919149010d74409830a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a036418995f08919149010d74409830a9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a036418995f08919149010d74409830a9">useRejectionSampling_</a></td></tr>
+<tr class="memdesc:a036418995f08919149010d74409830a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status of the sample rejection parameter. <br /></td></tr>
+<tr class="separator:a036418995f08919149010d74409830a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7743608a9b100d5952dba8229a96c600"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7743608a9b100d5952dba8229a96c600"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a7743608a9b100d5952dba8229a96c600">useNewStateRejection_</a></td></tr>
+<tr class="memdesc:a7743608a9b100d5952dba8229a96c600"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status of the new-state rejection parameter. <br /></td></tr>
+<tr class="separator:a7743608a9b100d5952dba8229a96c600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087d9305553e568032e5cb3b08f8e4bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a087d9305553e568032e5cb3b08f8e4bd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a087d9305553e568032e5cb3b08f8e4bd">useAdmissibleCostToCome_</a></td></tr>
+<tr class="memdesc:a087d9305553e568032e5cb3b08f8e4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The admissibility of the new-state rejection heuristic. <br /></td></tr>
+<tr class="separator:a087d9305553e568032e5cb3b08f8e4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5aeeff6bd5341e8b36efbb89c8ffe9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a5aeeff6bd5341e8b36efbb89c8ffe9"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2a5aeeff6bd5341e8b36efbb89c8ffe9">numSampleAttempts_</a></td></tr>
+<tr class="memdesc:a2a5aeeff6bd5341e8b36efbb89c8ffe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of attempts to make at informed sampling. <br /></td></tr>
+<tr class="separator:a2a5aeeff6bd5341e8b36efbb89c8ffe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45562c40eb688c73c1e3b5574fc5855d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45562c40eb688c73c1e3b5574fc5855d"></a>
+std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html">Motion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a45562c40eb688c73c1e3b5574fc5855d">startMotions_</a></td></tr>
+<tr class="memdesc:a45562c40eb688c73c1e3b5574fc5855d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the start states as Motions. <br /></td></tr>
+<tr class="separator:a45562c40eb688c73c1e3b5574fc5855d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4056a3fb20f8076902fa194c1f711632"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4056a3fb20f8076902fa194c1f711632"></a>
 <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4056a3fb20f8076902fa194c1f711632">bestCost_</a></td></tr>
 <tr class="memdesc:a4056a3fb20f8076902fa194c1f711632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Best cost found so far by algorithm. <br /></td></tr>
 <tr class="separator:a4056a3fb20f8076902fa194c1f711632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b4f37fae45b57c04c5fbeae10b4c13"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77b4f37fae45b57c04c5fbeae10b4c13"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a77b4f37fae45b57c04c5fbeae10b4c13">prunedCost_</a></td></tr>
+<tr class="memdesc:a77b4f37fae45b57c04c5fbeae10b4c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost at which the graph was last pruned. <br /></td></tr>
+<tr class="separator:a77b4f37fae45b57c04c5fbeae10b4c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913ab1d8a770041a49918dce168112f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a913ab1d8a770041a49918dce168112f5"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a913ab1d8a770041a49918dce168112f5">prunedMeasure_</a></td></tr>
+<tr class="memdesc:a913ab1d8a770041a49918dce168112f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The measure of the problem when we pruned it (if this isn't in use, it will be set to si_-&gt;getSpaceMeasure()) <br /></td></tr>
+<tr class="separator:a913ab1d8a770041a49918dce168112f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8a6117217d2525b34bd0f00c1e9675"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb8a6117217d2525b34bd0f00c1e9675"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb8a6117217d2525b34bd0f00c1e9675">iterations_</a></td></tr>
+<tr class="memdesc:afb8a6117217d2525b34bd0f00c1e9675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations the algorithm performed. <br /></td></tr>
+<tr class="separator:afb8a6117217d2525b34bd0f00c1e9675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
 <tr class="memitem:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3ceb9471163b6c96f6eeadbcfd3694e"></a>
 <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a></td></tr>
@@ -503,7 +648,7 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
 <p><a class="anchor" id="gRRTstar"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#gRRTstar">RRT*</a> (optimal <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees. ">RRT</a>) is an asymptotically-optimal incremental sampling-based motion planning algorithm. <a class="el" href="classompl_1_1geometric_1_1RRTstar.html#gRRTstar">RRT*</a> algorithm is guaranteed to converge to an optimal solution, while its running time is guaranteed to be a constant factor of the running time of the <a class="el" href="classompl_1_1geometric_1_1RRT.html#gRRT">RRT</a>. The notion of optimality is with respect to the distance function defined on the state space we are operating on. See ompl::base::Goal::setMaximumPathLength() for how to set the maximally allowed path length to reach the goal. If a solution path that is shorter than ompl::base::Goal::getMaximumPathLength() is found, the algorithm terminates before the elapsed time. </dd></dl>
 <dl class="section user"><dt>External documentation</dt><dd>S. Karaman and E. Frazzoli, Sampling-based Algorithms for Optimal <a class="el" href="classompl_1_1geometric_1_1RRTstar_1_1Motion.html" title="Representation of a motion. ">Motion</a> Planning, International Journal of Robotics Research, Vol 30, No 7, 2011. <a href="http://arxiv.org/abs/1105.1186">http://arxiv.org/abs/1105.1186</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00076">76</a> of file <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html">RRTstar.h</a>.</p>
+<p>Definition at line <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00079">79</a> of file <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html">RRTstar.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a2ffc63f0014372c460a63c549be44bbb"></a>
 <div class="memitem">
@@ -530,7 +675,7 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
 <p>Set the goal bias. </p>
 <p>In the process of randomly selecting states in the state space to attempt to go towards, the algorithm may in fact choose the actual goal state, if it knows it, with some probability. This probability is a real number between 0.0 and 1.0; its value should usually be around 0.05 and should not be too large. It is probably a good idea to use the default value. </p>
 
-<p>Definition at line <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00099">99</a> of file <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html">RRTstar.h</a>.</p>
+<p>Definition at line <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00104">104</a> of file <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html">RRTstar.h</a>.</p>
 
 </div>
 </div>
@@ -559,7 +704,7 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
 <p>Set the range the planner is supposed to use. </p>
 <p>This parameter greatly influences the runtime of the algorithm. It represents the maximum length of a motion to be added in the tree of motions. </p>
 
-<p>Definition at line <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00115">115</a> of file <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html">RRTstar.h</a>.</p>
+<p>Definition at line <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00120">120</a> of file <a class="el" href="geometric_2planners_2rrt_2RRTstar_8h_source.html">RRTstar.h</a>.</p>
 
 </div>
 </div>

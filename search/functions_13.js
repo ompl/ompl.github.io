@@ -23,6 +23,7 @@ var searchData=
   ['updaterange',['updateRange',['../classompl_1_1NearestNeighborsGNAT_1_1Node.html#afc24a1f4b39957f6e7742b684deb741b',1,'ompl::NearestNeighborsGNAT::Node::updateRange()'],['../classompl_1_1NearestNeighborsGNATNoThreadSafety_1_1Node.html#aba1ab1794c0b2f6e301736c1ff5ae00e',1,'ompl::NearestNeighborsGNATNoThreadSafety::Node::updateRange()']]],
   ['updaterepresentatives',['updateRepresentatives',['../classompl_1_1geometric_1_1SPARS.html#a4b95826123a856037f7d0ee74c943630',1,'ompl::geometric::SPARS']]],
   ['updatesamples',['updateSamples',['../classompl_1_1geometric_1_1BITstar.html#a3fff828f6975fd30c0dfe6416a689879',1,'ompl::geometric::BITstar']]],
+  ['updatestartandgoalstates',['updateStartAndGoalStates',['../classompl_1_1geometric_1_1BITstar.html#a5888b6eff3d95088e5c4a41c35af1b02',1,'ompl::geometric::BITstar']]],
   ['updateweight',['updateWeight',['../classompl_1_1control_1_1LTLPlanner.html#a89deb77d1b529104ab7b4ea5e44c616d',1,'ompl::control::LTLPlanner']]],
   ['use',['use',['../classompl_1_1base_1_1PlannerInputStates.html#acdbad81c386b7533a4990ea9020b632d',1,'ompl::base::PlannerInputStates::use(const ProblemDefinitionPtr &amp;pdef)'],['../classompl_1_1base_1_1PlannerInputStates.html#aa96f1be538c75a8fcd2c487a5deb65dd',1,'ompl::base::PlannerInputStates::use(const ProblemDefinition *pdef)']]],
   ['useoutputhandler',['useOutputHandler',['../namespaceompl_1_1msg.html#a66fd8fd39855d4166ff40164fe4d9d6b',1,'ompl::msg']]],

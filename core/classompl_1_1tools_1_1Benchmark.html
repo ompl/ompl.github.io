@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -207,6 +219,18 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a85887f3c709f330558df3f9c2217d177">Benchmark</a> (<a class="el" href="classompl_1_1control_1_1SimpleSetup.html">control::SimpleSetup</a> &amp;setup, const std::string &amp;name=std::string())</td></tr>
 <tr class="memdesc:a85887f3c709f330558df3f9c2217d177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor needs the SimpleSetup instance needed for planning. Optionally, the experiment name (<em>name</em>) can be specified. <br /></td></tr>
 <tr class="separator:a85887f3c709f330558df3f9c2217d177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab48f173edc785ee005301642b1afb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afab48f173edc785ee005301642b1afb1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#afab48f173edc785ee005301642b1afb1">addExperimentParameter</a> (const std::string &amp;name, const std::string &amp;type, const std::string &amp;value)</td></tr>
+<tr class="memdesc:afab48f173edc785ee005301642b1afb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an optional parameter's information to the benchmark output. Useful for aggregating results over different benchmark instances, e.g., parameter sweep. <em>type</em> is typically "BOOLEAN", "INTEGER", or "REAL". <br /></td></tr>
+<tr class="separator:afab48f173edc785ee005301642b1afb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd054efce49d0b6b37093f0ec9e50b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cd054efce49d0b6b37093f0ec9e50b0"></a>
+const std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a8cd054efce49d0b6b37093f0ec9e50b0">getExperimentParameters</a> () const </td></tr>
+<tr class="memdesc:a8cd054efce49d0b6b37093f0ec9e50b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all optional benchmark parameters. The map key is 'name type'. <br /></td></tr>
+<tr class="separator:a8cd054efce49d0b6b37093f0ec9e50b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaa63c8bffd1e9e34e63c951aa36d08c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afaa63c8bffd1e9e34e63c951aa36d08c"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#afaa63c8bffd1e9e34e63c951aa36d08c">numExperimentParameters</a> () const </td></tr>
+<tr class="memdesc:afaa63c8bffd1e9e34e63c951aa36d08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of optional benchmark parameters. <br /></td></tr>
+<tr class="separator:afaa63c8bffd1e9e34e63c951aa36d08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cd270d95be4b130654bb6f3b978badf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5cd270d95be4b130654bb6f3b978badf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a5cd270d95be4b130654bb6f3b978badf">setExperimentName</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a5cd270d95be4b130654bb6f3b978badf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the experiment. <br /></td></tr>
@@ -334,7 +358,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The values returned for memory consumption may be misleading. Memory allocators often free memory in a lazy fashion, so the returned values for memory consumption indicate the increase in memory usage for each run. Since not all the memory for the previous run was freed, the increase in usage may be close to 0. To get correct averages for memory usage, use <em>req.runCount</em> = 1 and run the process multiple times. </dd></dl>
 
-<p>Definition at line <a class="el" href="Benchmark_8cpp_source.html#l00387">387</a> of file <a class="el" href="Benchmark_8cpp_source.html">Benchmark.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Benchmark_8cpp_source.html#l00392">392</a> of file <a class="el" href="Benchmark_8cpp_source.html">Benchmark.cpp</a>.</p>
 
 </div>
 </div>
@@ -349,7 +373,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:05 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

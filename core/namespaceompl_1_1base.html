@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -472,6 +484,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SubspaceStateSampler.html">SubspaceStateSampler</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sampler that samples only within a subspace of the space.  <a href="classompl_1_1base_1_1SubspaceStateSampler.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ThunderRetrieveRepairPtr.html">ThunderRetrieveRepairPtr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A boost shared pointer wrapper for ompl::base::ThunderRetrieveRepair.  <a href="classompl_1_1base_1_1ThunderRetrieveRepairPtr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1TimeStateSampler.html">TimeStateSampler</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state. ">State</a> space sampler for time.  <a href="classompl_1_1base_1_1TimeStateSampler.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -587,7 +602,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr class="separator:a5708f022c6261accef3b9c0fb4d96f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a009050ed9b663bc4d6d4dbbee94c40b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a009050ed9b663bc4d6d4dbbee94c40b8"></a>
 <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1base.html#a009050ed9b663bc4d6d4dbbee94c40b8">goalRegionCostToGo</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1Goal.html">Goal</a> *goal)</td></tr>
-<tr class="memdesc:a009050ed9b663bc4d6d4dbbee94c40b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">For use when goal region's distanceGoal() is equivalent to the cost-to-go of a state under the optimization objective. This function assumes that all states within the goal region's threshold have a cost-to-go of exactly zero. Note: <em>goal</em> is assumed to be of type <a class="el" href="classompl_1_1base_1_1GoalRegion.html" title="Definition of a goal region. ">ompl::base::GoalRegion</a>. <br /></td></tr>
+<tr class="memdesc:a009050ed9b663bc4d6d4dbbee94c40b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">For use when the cost-to-go of a state under the optimization objective is equivalent to the goal region's distanceGoal() . This function assumes that all states within the goal region's threshold have a cost-to-go of exactly zero. Note: <em>goal</em> is assumed to be of type <a class="el" href="classompl_1_1base_1_1GoalRegion.html" title="Definition of a goal region. ">ompl::base::GoalRegion</a>. <br /></td></tr>
 <tr class="separator:a009050ed9b663bc4d6d4dbbee94c40b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac52d1250b648cdc3ae2ae59591f52f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ac52d1250b648cdc3ae2ae59591f52f"></a>
 <a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">OptimizationObjectivePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1base.html#a5ac52d1250b648cdc3ae2ae59591f52f">operator+</a> (const <a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">OptimizationObjectivePtr</a> &amp;a, const <a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">OptimizationObjectivePtr</a> &amp;b)</td></tr>
@@ -625,6 +640,10 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">PlannerTerminationCondition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1base.html#ae26e5f143063be389fba4906d438a381">timedPlannerTerminationCondition</a> (double duration)</td></tr>
 <tr class="memdesc:ae26e5f143063be389fba4906d438a381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a termination condition that will become true <em>duration</em> seconds in the future (wall-time) <br /></td></tr>
 <tr class="separator:ae26e5f143063be389fba4906d438a381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8344c024db04a8e51f226bf26825d372"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8344c024db04a8e51f226bf26825d372"></a>
+<a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">PlannerTerminationCondition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1base.html#a8344c024db04a8e51f226bf26825d372">timedPlannerTerminationCondition</a> (<a class="el" href="namespaceompl_1_1time.html#a4c9f24d26cae91eb6598630f6a22e1b9">time::duration</a> duration)</td></tr>
+<tr class="memdesc:a8344c024db04a8e51f226bf26825d372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a termination condition that will become true <em>duration</em> in the future (wall-time) <br /></td></tr>
+<tr class="separator:a8344c024db04a8e51f226bf26825d372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b50516a130c05ecc0e420dd64d6a81e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b50516a130c05ecc0e420dd64d6a81e"></a>
 <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">PlannerTerminationCondition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1base.html#a4b50516a130c05ecc0e420dd64d6a81e">timedPlannerTerminationCondition</a> (double duration, double interval)</td></tr>
 <tr class="memdesc:a4b50516a130c05ecc0e420dd64d6a81e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a termination condition that will become true <em>duration</em> seconds in the future (wall-time), but is checked in a separate thread, every <em>interval</em> seconds; <em>interval</em> must be less than <em>duration</em>. <br /></td></tr>
@@ -783,7 +802,7 @@ template&lt;class T , class Y &gt; </td></tr>
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

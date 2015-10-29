@@ -22,6 +22,8 @@ var searchData=
   ['_7epropositionaldecomposition',['~PropositionalDecomposition',['../classompl_1_1control_1_1PropositionalDecomposition.html#a3c29d4fd46849b2238f12d52d3d484ef',1,'ompl::control::PropositionalDecomposition']]],
   ['_7escopedstate',['~ScopedState',['../classompl_1_1base_1_1ScopedState.html#a12a01012a255416cefd52ceda1ae452a',1,'ompl::base::ScopedState']]],
   ['_7espars',['~SPARS',['../classompl_1_1geometric_1_1SPARS.html#abdd0ee2d927e4d5c2513e7c4046183fd',1,'ompl::geometric::SPARS']]],
+  ['_7esparsdb',['~SPARSdb',['../classompl_1_1geometric_1_1SPARSdb.html#a4b6bb23b6d9c286edfb246c6fe42b889',1,'ompl::geometric::SPARSdb']]],
   ['_7esparstwo',['~SPARStwo',['../classompl_1_1geometric_1_1SPARStwo.html#aeb71539484ecad27ff509f9ea37fbb7b',1,'ompl::geometric::SPARStwo']]],
+  ['_7ethunderdb',['~ThunderDB',['../classompl_1_1tools_1_1ThunderDB.html#a0e0bc6e9b2b04a7d2a7cb65e12e30a21',1,'ompl::tools::ThunderDB']]],
   ['_7evertex',['~Vertex',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a2ea0eb96d9a4127dde59e836283fd856',1,'ompl::geometric::BITstar::Vertex']]]
 ];

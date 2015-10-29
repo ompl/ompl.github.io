@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ode',['ODE',['../classompl_1_1control_1_1ODESolver.html#a82cda13c470cff3c531eecde6db366b2',1,'ompl::control::ODESolver']]],
-  ['oeiterator',['OEIterator',['../classompl_1_1base_1_1PlannerData_1_1Graph.html#a679c4587c491317c6a0d0a88612057eb',1,'ompl::base::PlannerData::Graph']]]
+  ['neighbourhoodfunc',['NeighbourhoodFunc',['../classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ac5601f640a9dbcf52f9f4470bd3afb3d',1,'ompl::geometric::BITstar::IntegratedQueue']]],
+  ['newstatecallbackfn',['NewStateCallbackFn',['../classompl_1_1base_1_1GoalLazySamples.html#a4a56d7f9c81212bb59ec14719e544907',1,'ompl::base::GoalLazySamples']]]
 ];

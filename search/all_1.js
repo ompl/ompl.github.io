@@ -12,6 +12,7 @@ var searchData=
   ['bestcostprogressproperty',['bestCostProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#aa4f6704e62801362259f59c1cde01c2f',1,'ompl::geometric::BITstar']]],
   ['bestlength_5f',['bestLength_',['../classompl_1_1geometric_1_1BITstar.html#accda9a3cfe5a61e34d4b46377b3a654f',1,'ompl::geometric::BITstar']]],
   ['bestlengthprogressproperty',['bestLengthProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#a0da3b967a3157d9c88495225510a6a05',1,'ompl::geometric::BITstar']]],
+  ['bestpathfromgoaltostart',['bestPathFromGoalToStart',['../classompl_1_1geometric_1_1BITstar.html#af97f7f69de37bc8d4348c9473873feb7',1,'ompl::geometric::BITstar']]],
   ['bettercost',['betterCost',['../classompl_1_1base_1_1OptimizationObjective.html#abc9d5e0ff5fa6ca87a47a07638f164e4',1,'ompl::base::OptimizationObjective']]],
   ['binaryheap',['BinaryHeap',['../classompl_1_1BinaryHeap.html',1,'ompl']]],
   ['binaryheap_3c_20cellx_20_2a_2c_20lessthanexternalcell_20_3e',['BinaryHeap&lt; CellX *, LessThanExternalCell &gt;',['../classompl_1_1BinaryHeap.html',1,'ompl']]],

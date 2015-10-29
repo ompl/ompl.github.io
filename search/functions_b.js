@@ -6,6 +6,7 @@ var searchData=
   ['markold',['markOld',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a455e1b7546a5d0603557d30b9e2615fc',1,'ompl::geometric::BITstar::Vertex']]],
   ['markpruned',['markPruned',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a169e5d64d04eb8f46a30080e0c0d319a',1,'ompl::geometric::BITstar::Vertex']]],
   ['markstartstate',['markStartState',['../classompl_1_1base_1_1PlannerData.html#a48ebd34b6da9efd9ec7647155f9173c9',1,'ompl::base::PlannerData']]],
+  ['markunpruned',['markUnpruned',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a789938595253a13e87e3b193db162e0d',1,'ompl::geometric::BITstar::Vertex']]],
   ['markvertexunsorted',['markVertexUnsorted',['../classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a135dd303977d7a0762bc48a03b2bc43f',1,'ompl::geometric::BITstar::IntegratedQueue']]],
   ['matchpaths',['matchPaths',['../classompl_1_1geometric_1_1PathHybridization.html#acb3a473737667cc029a7c362685b85e8',1,'ompl::geometric::PathHybridization']]],
   ['maxhybridizationpaths',['maxHybridizationPaths',['../classompl_1_1geometric_1_1AnytimePathShortening.html#ae42a311d8e59a5daaef7fad1b1b0f3c4',1,'ompl::geometric::AnytimePathShortening']]],

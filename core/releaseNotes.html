@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -148,7 +160,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Release Notes </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>OMPL 1.0.0 (October 26, 2014)</h1>
+<div class="textblock"><h1>OMPL.app 1.1.0 (October 28, 2015)</h1>
+<ul>
+<li>Added several new and updated planners:<ul>
+<li><a class="el" href="classompl_1_1geometric_1_1LightningPtr.html#Lightning">Lightning</a>: the Lightning Framework is a experienced-based motion planner that recalls from a database of previously generated paths the most similar one to the current planning problem and attempts to repair it, while at the same time planning from scratch in a different thread.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1ThunderPtr.html#Thunder">Thunder</a>: the Thunder Framework is essentially an improved version of Lightning. It stores previously generated paths in a combined roadmap, thereby offering more opportunities for reuse of partial paths. The roadmap is sparse while still guaranteeing asymptotic near-optimality. This is done by borrowing ideas from the SPARS algorithm.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1InformedRRTstar.html#gInformedRRTstar">Informed RRT*</a>: a variant of RRT* that uses heuristics to bound the search for optimal solutions.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1BITstar.html#gBITstar">Batch Informed Trees (BIT*)</a>: an anytime asymptotically optimal algorithm that uses heuristics to order and bound the search for optimal solutions.</li>
+<li>An updated version of the Lower-Bound Tree Rapidly-expanding Random Tree (LBT-RRT) and a lazy version, LazyLBTRRT. These algorithms use Lifelong Planning A* and Dynamic Single-Source Shortest Path over graphs as subroutines, but these subroutines might be more generally useful in other algorithms as well.</li>
+<li>An updated version of <a class="el" href="classompl_1_1geometric_1_1TRRT.html#gTRRT">TRRT</a> as well as a bidirectional version of TRRT (<a class="el" href="classompl_1_1geometric_1_1BiTRRT.html#gBiTRRT">BiTRRT</a>)</li>
+<li>An updated version of <a class="el" href="classompl_1_1geometric_1_1FMT.html#gFMT">FMT*</a> that, among other things, caches collision checks.</li>
+</ul>
+</li>
+<li><a href="http://omplapp.kavrakilab.org">New web-based based version of OMPL.app!</a> The web app has all the functionality of the standalone GUI. In addition, it allows you to interactively construct benchmark jobs that can be submitted to a benchmark server. We have a public version of the web app and benchmarking server running at <a href="http://omplapp.kavrakilab.org,">http://omplapp.kavrakilab.org,</a> but the web app and benchmark server can also be run locally.</li>
+<li>There are two new concepts, <a class="el" href="classompl_1_1base_1_1InformedSampler.html" title="An abstract class for the concept of using information about the state space and the current solution...">ompl::base::InformedSampler</a> and <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html" title="A wrapper class that allows an InformedSampler to be used as a StateSampler. ">ompl::base::InformedStateSampler</a>, that capture the idea of using information about the state space and the current solution cost to limit future search to a planning subproblem that contains all possibly better solutions. The <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html" title="An informed sampler for problems seeking to minimize path length. ">ompl::base::PathLengthDirectInfSampler</a> is derived from InformedStateSampler and can be used to limit sampling to only those states that can lead to a shorter path than the best-found solution so far. This sampler is used in <a class="el" href="namespaceompl_1_1geometric.html" title="This namespace contains code that is specific to planning under geometric constraints. ">ompl::geometric</a>:InformedRRTstar and <a class="el" href="classompl_1_1geometric_1_1BITstar.html" title="Batch Informed Trees (BIT*) ">ompl::geometric::BITstar</a>.</li>
+<li>The <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html" title="This class contains routines that attempt to simplify geometric paths. ">ompl::geometric::PathSimplifier</a> can now also optimize a path with respect to a (sampleable) goal. This means, for example, that a solution path is no longer “stuck” with an awkward inverse kinematics solution for a goal.</li>
+<li>Added a <code>plannerarena</code> script to simplify running <a href="http://plannerarena.org">Planner Arena</a> locally.</li>
+<li>Added a new planner termination conditions that allow one to terminate after a fixed number of iterations.</li>
+<li>The GNAT data structure for nearest neighbor queries has been updated and should be faster in general. There is now also non-threadsafe version of the GNAT data structure that is automatically selected for single-threaded planners. This version should be even faster.</li>
+<li>Added an option to turn off the path simplification in benchmarking.</li>
+<li>Added support for parametrized benchmarks. Planner Arena can show performance across values for a given parameter.</li>
+<li>Made it easier to get repeatable runs of an algorithm by enabling the user to set the seed of the <em>local</em> random number generators (i.e., not just the global seed).</li>
+<li>The <a href="http://ompl.kavrakilab.org/blog.html">OMPL blog</a> is now <a href="http://www.jekyllrb.com">Jekyll</a>-based and hosted as a <a href="https://github.com/ompl/blog">repository on GitHub</a>. If you have a project that uses OMPL, you can send us a pull request (please check with us first whether it would be appropriate for the blog before you write content).</li>
+</ul>
+<h1>OMPL 1.0.0 (October 26, 2014)</h1>
 <ul>
 <li>Added many new planners:<ul>
 <li><a class="el" href="classompl_1_1control_1_1LTLPlanner.html#cLTLPlanner">Linear Temporal Logical Planner (LTLPlanner)</a>: a planner that finds solutions for kinodynamic motion planning problems where the goal is specified by a Linear Temporal Logic (LTL) specification.</li>
@@ -356,7 +391,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

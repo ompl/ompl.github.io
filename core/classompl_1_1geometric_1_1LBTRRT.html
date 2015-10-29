@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -151,9 +163,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classompl_1_1geometric_1_1LBTRRT-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ompl::geometric::LBTRRT Class Reference</div>  </div>
@@ -174,7 +186,11 @@ Inheritance diagram for ompl::geometric::LBTRRT:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structompl_1_1geometric_1_1LBTRRT_1_1CostCompare.html">CostCompare</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structompl_1_1geometric_1_1LBTRRT_1_1IsLessThan.html">IsLessThan</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">comparator - metric is the cost to reach state via a specific state  <a href="structompl_1_1geometric_1_1LBTRRT_1_1IsLessThan.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structompl_1_1geometric_1_1LBTRRT_1_1IsLessThanLB.html">IsLessThanLB</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">comparator - metric is the lower bound cost  <a href="structompl_1_1geometric_1_1LBTRRT_1_1IsLessThanLB.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of a motion.  <a href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html#details">More...</a><br /></td></tr>
@@ -317,32 +333,33 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:a29aec12824480f7b3824a98fc9f5775b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print information about the motion planner's settings. <br /></td></tr>
 <tr class="separator:a29aec12824480f7b3824a98fc9f5775b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:ab3ae300e4a82d1eca3c0e87d9c9b36ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3ae300e4a82d1eca3c0e87d9c9b36ed"></a>
+typedef std::set&lt; <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *, <a class="el" href="structompl_1_1geometric_1_1LBTRRT_1_1IsLessThanLB.html">IsLessThanLB</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Lb_queue</b></td></tr>
+<tr class="separator:ab3ae300e4a82d1eca3c0e87d9c9b36ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21d3af378e3ad4e1e5938c2e402a854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad21d3af378e3ad4e1e5938c2e402a854"></a>
+typedef Lb_queue::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>Lb_queue_iter</b></td></tr>
+<tr class="separator:ad21d3af378e3ad4e1e5938c2e402a854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a3a2843af4c7efa0a5422290bcbaba4a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a2843af4c7efa0a5422290bcbaba4a2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a3a2843af4c7efa0a5422290bcbaba4a2">attemptNodeUpdate</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *potentialParent, <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *child)</td></tr>
-<tr class="memdesc:a3a2843af4c7efa0a5422290bcbaba4a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">attempt to rewire the trees <br /></td></tr>
-<tr class="separator:a3a2843af4c7efa0a5422290bcbaba4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0447ca9e092ed902732d2845a5d2a72e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0447ca9e092ed902732d2845a5d2a72e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a0447ca9e092ed902732d2845a5d2a72e">updateChildCostsLb</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *m)</td></tr>
-<tr class="memdesc:a0447ca9e092ed902732d2845a5d2a72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">update the child cost of the lower bound tree <br /></td></tr>
-<tr class="separator:a0447ca9e092ed902732d2845a5d2a72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc190afe3e1c92d899109f412c75160d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc190afe3e1c92d899109f412c75160d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#adc190afe3e1c92d899109f412c75160d">updateChildCostsApx</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *m)</td></tr>
-<tr class="memdesc:adc190afe3e1c92d899109f412c75160d"><td class="mdescLeft">&#160;</td><td class="mdescRight">update the child cost of the approximation tree <br /></td></tr>
-<tr class="separator:adc190afe3e1c92d899109f412c75160d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6fed2d80bb3a81d0ac58d39301f286a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6fed2d80bb3a81d0ac58d39301f286a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#aa6fed2d80bb3a81d0ac58d39301f286a">removeFromParentLb</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *m)</td></tr>
-<tr class="memdesc:aa6fed2d80bb3a81d0ac58d39301f286a"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove motion from its parent in the lower bound tree <br /></td></tr>
-<tr class="separator:aa6fed2d80bb3a81d0ac58d39301f286a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa399272399c733321a7c048ca8bfca2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa399272399c733321a7c048ca8bfca2c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#aa399272399c733321a7c048ca8bfca2c">considerEdge</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *parent, <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *child, double c)</td></tr>
+<tr class="memdesc:aa399272399c733321a7c048ca8bfca2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">consider an edge for addition to the roadmap <br /></td></tr>
+<tr class="separator:aa399272399c733321a7c048ca8bfca2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3438d940f59bff76794d27563910babb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3438d940f59bff76794d27563910babb"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a3438d940f59bff76794d27563910babb">lazilyUpdateApxParent</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *child, <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *parent)</td></tr>
+<tr class="memdesc:a3438d940f59bff76794d27563910babb"><td class="mdescLeft">&#160;</td><td class="mdescRight">lazily update the parent in the approximation tree without updating costs to cildren <br /></td></tr>
+<tr class="separator:a3438d940f59bff76794d27563910babb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4fb1d4c9dae12d171d6bd84e85becf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd4fb1d4c9dae12d171d6bd84e85becf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#abd4fb1d4c9dae12d171d6bd84e85becf">updateChildCostsApx</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *m, double delta)</td></tr>
+<tr class="memdesc:abd4fb1d4c9dae12d171d6bd84e85becf"><td class="mdescLeft">&#160;</td><td class="mdescRight">update the child cost of the approximation tree <br /></td></tr>
+<tr class="separator:abd4fb1d4c9dae12d171d6bd84e85becf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e14a3b94b1cc882fbac85ef16fa5dd5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e14a3b94b1cc882fbac85ef16fa5dd5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a0e14a3b94b1cc882fbac85ef16fa5dd5">removeFromParentApx</a> (<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *m)</td></tr>
 <tr class="memdesc:a0e14a3b94b1cc882fbac85ef16fa5dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove motion from its parent in the approximation tree <br /></td></tr>
 <tr class="separator:a0e14a3b94b1cc882fbac85ef16fa5dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbbcd4003d590219441285fd3f66f33c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbbcd4003d590219441285fd3f66f33c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#acbbcd4003d590219441285fd3f66f33c">removeFromParent</a> (const <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *m, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> * &gt; &amp;vec)</td></tr>
-<tr class="memdesc:acbbcd4003d590219441285fd3f66f33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove motion from a vector <br /></td></tr>
-<tr class="separator:acbbcd4003d590219441285fd3f66f33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a806c3990afa5a5d03cfd7079099666c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a806c3990afa5a5d03cfd7079099666c7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a806c3990afa5a5d03cfd7079099666c7">freeMemory</a> ()</td></tr>
 <tr class="memdesc:a806c3990afa5a5d03cfd7079099666c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by this planner. <br /></td></tr>
@@ -351,9 +368,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a61acf06dc2223bb46fab80a459e04e6e">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *a, const <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *b) const </td></tr>
 <tr class="memdesc:a61acf06dc2223bb46fab80a459e04e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distance between motions (actually distance between contained states) <br /></td></tr>
 <tr class="separator:a61acf06dc2223bb46fab80a459e04e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39f9a10871a94a0858d1f211dbbc5eea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39f9a10871a94a0858d1f211dbbc5eea"></a>
-<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><b>costFunction</b> (const <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *a, const <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *b) const </td></tr>
-<tr class="separator:a39f9a10871a94a0858d1f211dbbc5eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2a0602d86673eeb5c53792f5ba56a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb2a0602d86673eeb5c53792f5ba56a4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#acb2a0602d86673eeb5c53792f5ba56a4">checkMotion</a> (const <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *a, const <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *b)</td></tr>
+<tr class="memdesc:acb2a0602d86673eeb5c53792f5ba56a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">local planner <br /></td></tr>
+<tr class="separator:acb2a0602d86673eeb5c53792f5ba56a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ab287545c888b365152409325c4a34"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67ab287545c888b365152409325c4a34"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a67ab287545c888b365152409325c4a34">checkMotion</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *a, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *b)</td></tr>
+<tr class="memdesc:a67ab287545c888b365152409325c4a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">local planner <br /></td></tr>
+<tr class="separator:a67ab287545c888b365152409325c4a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5470b0c0d9ab1ca44ff5ece305df32ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5470b0c0d9ab1ca44ff5ece305df32ca"></a>
+<a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a5470b0c0d9ab1ca44ff5ece305df32ca">getMotion</a> (std::size_t i)</td></tr>
+<tr class="memdesc:a5470b0c0d9ab1ca44ff5ece305df32ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">get motion from id <br /></td></tr>
+<tr class="separator:a5470b0c0d9ab1ca44ff5ece305df32ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
 <tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6b4a1345376e3e977772c38d38d5c50c"></a>
 template&lt;typename T , typename PlannerType , typename SetterType , typename GetterType &gt; </td></tr>
@@ -380,6 +406,14 @@ Protected Attributes</h2></td></tr>
 boost::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a5e2b797fcdd6c0e16951efb896eb30d3">nn_</a></td></tr>
 <tr class="memdesc:a5e2b797fcdd6c0e16951efb896eb30d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nearest-neighbors datastructure containing the tree of motions. <br /></td></tr>
 <tr class="separator:a5e2b797fcdd6c0e16951efb896eb30d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11c52c90fde376912ba02a48e8e42b04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11c52c90fde376912ba02a48e8e42b04"></a>
+<a class="el" href="classompl_1_1DynamicSSSP.html">DynamicSSSP</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a11c52c90fde376912ba02a48e8e42b04">lowerBoundGraph_</a></td></tr>
+<tr class="memdesc:a11c52c90fde376912ba02a48e8e42b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">A graph of motions Glb. <br /></td></tr>
+<tr class="separator:a11c52c90fde376912ba02a48e8e42b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd13c3e6d762edb0eeb0d305d63553f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd13c3e6d762edb0eeb0d305d63553f4"></a>
+std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#acd13c3e6d762edb0eeb0d305d63553f4">idToMotionMap_</a></td></tr>
+<tr class="memdesc:acd13c3e6d762edb0eeb0d305d63553f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">mapping between a motion id and the motion <br /></td></tr>
+<tr class="separator:acd13c3e6d762edb0eeb0d305d63553f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59d5d9da393631ec5b159fbf1334b7d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59d5d9da393631ec5b159fbf1334b7d4"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a59d5d9da393631ec5b159fbf1334b7d4">goalBias_</a></td></tr>
 <tr class="memdesc:a59d5d9da393631ec5b159fbf1334b7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fraction of time the goal is picked as the state to expand towards (if such a state is available) <br /></td></tr>
@@ -396,26 +430,18 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <a class="el" href="classompl_1_1RNG.html">RNG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a72884b4660a347e352fac9f54b21cb6f">rng_</a></td></tr>
 <tr class="memdesc:a72884b4660a347e352fac9f54b21cb6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The random number generator. <br /></td></tr>
 <tr class="separator:a72884b4660a347e352fac9f54b21cb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92d9eb164819003c1d9983aa3264fdd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92d9eb164819003c1d9983aa3264fdd2"></a>
-<a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">base::OptimizationObjectivePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a92d9eb164819003c1d9983aa3264fdd2">opt_</a></td></tr>
-<tr class="memdesc:a92d9eb164819003c1d9983aa3264fdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objective we're optimizing. <br /></td></tr>
-<tr class="separator:a92d9eb164819003c1d9983aa3264fdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a1df1e9042d885b7092440b31962e2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55a1df1e9042d885b7092440b31962e2"></a>
 <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a55a1df1e9042d885b7092440b31962e2">lastGoalMotion_</a></td></tr>
 <tr class="memdesc:a55a1df1e9042d885b7092440b31962e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The most recent goal motion. Used for PlannerData computation. <br /></td></tr>
 <tr class="separator:a55a1df1e9042d885b7092440b31962e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9402da0c8d429b4059801d4d9c45d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a9402da0c8d429b4059801d4d9c45d9"></a>
-std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LBTRRT_1_1Motion.html">Motion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a9a9402da0c8d429b4059801d4d9c45d9">goalMotions_</a></td></tr>
-<tr class="memdesc:a9a9402da0c8d429b4059801d4d9c45d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of states in the tree that satisfy the goal condition. <br /></td></tr>
-<tr class="separator:a9a9402da0c8d429b4059801d4d9c45d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f8d3c3a0528a8f1ed20f759a6ccaeaf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f8d3c3a0528a8f1ed20f759a6ccaeaf"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a1f8d3c3a0528a8f1ed20f759a6ccaeaf">iterations_</a></td></tr>
 <tr class="memdesc:a1f8d3c3a0528a8f1ed20f759a6ccaeaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations the algorithm performed. <br /></td></tr>
 <tr class="separator:a1f8d3c3a0528a8f1ed20f759a6ccaeaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abffa4f15edc04d4217a2a29b60413344"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abffa4f15edc04d4217a2a29b60413344"></a>
-<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#abffa4f15edc04d4217a2a29b60413344">bestCost_</a></td></tr>
-<tr class="memdesc:abffa4f15edc04d4217a2a29b60413344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Best cost found so far by algorithm. <br /></td></tr>
-<tr class="separator:abffa4f15edc04d4217a2a29b60413344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ba7cc4cbdf98f46856f150e4db7252"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87ba7cc4cbdf98f46856f150e4db7252"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a87ba7cc4cbdf98f46856f150e4db7252">bestCost_</a></td></tr>
+<tr class="memdesc:a87ba7cc4cbdf98f46856f150e4db7252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Best cost found so far by algorithm. <br /></td></tr>
+<tr class="separator:a87ba7cc4cbdf98f46856f150e4db7252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
 <tr class="memitem:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3ceb9471163b6c96f6eeadbcfd3694e"></a>
 <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a></td></tr>
@@ -450,13 +476,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">setup()</a> has been called. <br /></td></tr>
 <tr class="separator:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
-Static Protected Attributes</h2></td></tr>
-<tr class="memitem:a35cd8a51c20721c71a44a55d860756df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35cd8a51c20721c71a44a55d860756df"></a>
-static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#a35cd8a51c20721c71a44a55d860756df">kRRG</a> = 5.5</td></tr>
-<tr class="memdesc:a35cd8a51c20721c71a44a55d860756df"><td class="mdescLeft">&#160;</td><td class="mdescRight">kRRG = 2e~5.5 is a valid choice for all problem instances <br /></td></tr>
-<tr class="separator:a35cd8a51c20721c71a44a55d860756df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
@@ -471,10 +490,10 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Lower Bound Tree Rapidly-exploring Random Trees. </p>
-<p><a class="anchor" id="gLBTRRT"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#gLBTRRT">LBTRRT</a> (Lower Bound Tree <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees. ">RRT</a>) is a near asymptotically-optimal incremental sampling-based motion planning algorithm. <a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#gLBTRRT">LBTRRT</a> algorithm is guaranteed to converge to a solution that is within a constant factor of the optimal solution. The notion of optimality is with respect to the distance function defined on the state space we are operating on.</dd></dl>
+<p><a class="anchor" id="gLBTRRT"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#gLBTRRT">LBTRRT</a> (Lower Bound Tree <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees. ">RRT</a>) is a near asymptotically-optimal incremental sampling-based motion planning algorithm. <a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#gLBTRRT">LBTRRT</a> algorithm is guaranteed to converge to a solution that is within a constant factor of the optimal solution. The notion of optimality is with respect to the distance function defined on the state space we are operating on. See ompl::base::Goal::setMaximumPathLength() for how to set the maximally allowed path length to reach the goal. If a solution path that is shorter than ompl::base::Goal::getMaximumPathLength() is found, the algorithm terminates before the elapsed time.</dd></dl>
 <dl class="section user"><dt>External documentation</dt><dd>O. Salzman and D. Halperin, Sampling-based Asymptotically near-optimal <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees. ">RRT</a> for fast, high-quality, motion planning, 2013. <a href="http://arxiv.org/abs/1308.0189">[PDF]</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="LBTRRT_8h_source.html#l00068">68</a> of file <a class="el" href="LBTRRT_8h_source.html">LBTRRT.h</a>.</p>
+<p>Definition at line <a class="el" href="LBTRRT_8h_source.html#l00073">73</a> of file <a class="el" href="LBTRRT_8h_source.html">LBTRRT.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ab9750d0634408d023e6a749270b4df4f"></a>
 <div class="memitem">
@@ -501,7 +520,7 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
 <p>Set the goal bias. </p>
 <p>In the process of randomly selecting states in the state space to attempt to go towards, the algorithm may in fact choose the actual goal state, if it knows it, with some probability. This probability is a real number between 0.0 and 1.0; its value should usually be around 0.05 and should not be too large. It is probably a good idea to use the default value. </p>
 
-<p>Definition at line <a class="el" href="LBTRRT_8h_source.html#l00092">92</a> of file <a class="el" href="LBTRRT_8h_source.html">LBTRRT.h</a>.</p>
+<p>Definition at line <a class="el" href="LBTRRT_8h_source.html#l00097">97</a> of file <a class="el" href="LBTRRT_8h_source.html">LBTRRT.h</a>.</p>
 
 </div>
 </div>
@@ -530,7 +549,7 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
 <p>Set the range the planner is supposed to use. </p>
 <p>This parameter greatly influences the runtime of the algorithm. It represents the maximum length of a motion to be added in the tree of motions. </p>
 
-<p>Definition at line <a class="el" href="LBTRRT_8h_source.html#l00108">108</a> of file <a class="el" href="LBTRRT_8h_source.html">LBTRRT.h</a>.</p>
+<p>Definition at line <a class="el" href="LBTRRT_8h_source.html#l00113">113</a> of file <a class="el" href="LBTRRT_8h_source.html">LBTRRT.h</a>.</p>
 
 </div>
 </div>
@@ -545,7 +564,7 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:05 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

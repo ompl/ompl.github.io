@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -237,51 +249,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (states_.empty())</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;There are no goals to sample&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    si_-&gt;copyState(st, states_[samplePosition_]);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    samplePosition_ = (samplePosition_ + 1) % states_.size();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#af762ea1e00c3f7c84130c832aee0b698">   90</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#af762ea1e00c3f7c84130c832aee0b698">ompl::base::GoalStates::maxSampleCount</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> states_.size();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Roll over the samplePosition_ if it points past the number of states.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    samplePosition_ = samplePosition_ % states_.size();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Get the next state.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    si_-&gt;copyState(st, states_[samplePosition_]);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Increment the counter. Do NOT roll over incase a new state is added before sampleGoal is called again.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    samplePosition_++;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">ompl::base::GoalStates::addState</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *st)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    states_.push_back(si_-&gt;cloneState(st));</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#af762ea1e00c3f7c84130c832aee0b698">   95</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#af762ea1e00c3f7c84130c832aee0b698">ompl::base::GoalStates::maxSampleCount</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> states_.size();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#af43dd0177bdc390dc3d98aab04003238">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">ompl::base::GoalStates::addState</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1ScopedState.html">ScopedState&lt;&gt;</a> &amp;st)</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">  100</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">ompl::base::GoalStates::addState</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *st)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    addState(st.<a class="code" href="classompl_1_1base_1_1ScopedState.html#a055e6b97092ffbc0f5e485f661db0e49">get</a>());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    states_.push_back(si_-&gt;cloneState(st));</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#a794f4cbd776d0f841e250e9bb9a69181">  105</a></span>&#160;<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a>* <a class="code" href="classompl_1_1base_1_1GoalStates.html#a794f4cbd776d0f841e250e9bb9a69181">ompl::base::GoalStates::getState</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (index &gt;= states_.size())</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Index &quot;</span> + boost::lexical_cast&lt;std::string&gt;(index) + <span class="stringliteral">&quot; out of range. Only &quot;</span> +</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        boost::lexical_cast&lt;std::string&gt;(states_.size()) + <span class="stringliteral">&quot; states are available&quot;</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> states_[index];</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#a02f4b135242e65fd8fd3f59a12df578f">  113</a></span>&#160;std::size_t <a class="code" href="classompl_1_1base_1_1GoalStates.html#a02f4b135242e65fd8fd3f59a12df578f">ompl::base::GoalStates::getStateCount</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> states_.size();</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#af43dd0177bdc390dc3d98aab04003238">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">ompl::base::GoalStates::addState</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1ScopedState.html">ScopedState&lt;&gt;</a> &amp;st)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    addState(st.<a class="code" href="classompl_1_1base_1_1ScopedState.html#a055e6b97092ffbc0f5e485f661db0e49">get</a>());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#a794f4cbd776d0f841e250e9bb9a69181">  110</a></span>&#160;<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a>* <a class="code" href="classompl_1_1base_1_1GoalStates.html#a794f4cbd776d0f841e250e9bb9a69181">ompl::base::GoalStates::getState</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (index &gt;= states_.size())</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Index &quot;</span> + boost::lexical_cast&lt;std::string&gt;(index) + <span class="stringliteral">&quot; out of range. Only &quot;</span> +</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        boost::lexical_cast&lt;std::string&gt;(states_.size()) + <span class="stringliteral">&quot; states are available&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> states_[index];</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#afda151a724a562d2d893d6bcc35ac1c4">  118</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#afda151a724a562d2d893d6bcc35ac1c4">ompl::base::GoalStates::hasStates</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#a02f4b135242e65fd8fd3f59a12df578f">  118</a></span>&#160;std::size_t <a class="code" href="classompl_1_1base_1_1GoalStates.html#a02f4b135242e65fd8fd3f59a12df578f">ompl::base::GoalStates::getStateCount</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> !states_.empty();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> states_.size();</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
-<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a02f4b135242e65fd8fd3f59a12df578f"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a02f4b135242e65fd8fd3f59a12df578f">ompl::base::GoalStates::getStateCount</a></div><div class="ttdeci">virtual std::size_t getStateCount() const </div><div class="ttdoc">Return the number of valid goal states. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00113">GoalStates.cpp:113</a></div></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1GoalStates.html#afda151a724a562d2d893d6bcc35ac1c4">  123</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1GoalStates.html#afda151a724a562d2d893d6bcc35ac1c4">ompl::base::GoalStates::hasStates</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> !states_.empty();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a02f4b135242e65fd8fd3f59a12df578f"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a02f4b135242e65fd8fd3f59a12df578f">ompl::base::GoalStates::getStateCount</a></div><div class="ttdeci">virtual std::size_t getStateCount() const </div><div class="ttdoc">Return the number of valid goal states. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00118">GoalStates.cpp:118</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1ScopedState_html"><div class="ttname"><a href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState</a></div><div class="ttdoc">Definition of a scoped state. </div><div class="ttdef"><b>Definition:</b> <a href="ScopedState_8h_source.html#l00056">ScopedState.h:56</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_afda151a724a562d2d893d6bcc35ac1c4"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#afda151a724a562d2d893d6bcc35ac1c4">ompl::base::GoalStates::hasStates</a></div><div class="ttdeci">virtual bool hasStates() const </div><div class="ttdoc">Check if there are any states in this goal region. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00118">GoalStates.cpp:118</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_afda151a724a562d2d893d6bcc35ac1c4"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#afda151a724a562d2d893d6bcc35ac1c4">ompl::base::GoalStates::hasStates</a></div><div class="ttdeci">virtual bool hasStates() const </div><div class="ttdoc">Check if there are any states in this goal region. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00123">GoalStates.cpp:123</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a7f630ce514a5b222e9c27232d3de6a10"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a7f630ce514a5b222e9c27232d3de6a10">ompl::base::GoalStates::distanceGoal</a></div><div class="ttdeci">virtual double distanceGoal(const State *st) const </div><div class="ttdoc">Compute the distance to the goal (heuristic). This function is the one used in computing the distance...</div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00060">GoalStates.cpp:60</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a868450f0d56ec4ad679680acb947f3da"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a868450f0d56ec4ad679680acb947f3da">ompl::base::GoalStates::clear</a></div><div class="ttdeci">virtual void clear()</div><div class="ttdoc">Clear all goal states. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00048">GoalStates.cpp:48</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a0186d82ecb85de07b3f256c7643bfce8"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a0186d82ecb85de07b3f256c7643bfce8">ompl::base::GoalStates::print</a></div><div class="ttdeci">virtual void print(std::ostream &amp;out=std::cout) const </div><div class="ttdoc">Print information about the goal data structure to a stream. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00072">GoalStates.cpp:72</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_af762ea1e00c3f7c84130c832aee0b698"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#af762ea1e00c3f7c84130c832aee0b698">ompl::base::GoalStates::maxSampleCount</a></div><div class="ttdeci">virtual unsigned int maxSampleCount() const </div><div class="ttdoc">Return the maximum number of samples that can be asked for before repeating. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00090">GoalStates.cpp:90</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a794f4cbd776d0f841e250e9bb9a69181"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a794f4cbd776d0f841e250e9bb9a69181">ompl::base::GoalStates::getState</a></div><div class="ttdeci">virtual const State * getState(unsigned int index) const </div><div class="ttdoc">Return a pointer to the indexth state in the state list. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00105">GoalStates.cpp:105</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a6cf378a86fd25680dfaa5b2446598d55"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">ompl::base::GoalStates::addState</a></div><div class="ttdeci">virtual void addState(const State *st)</div><div class="ttdoc">Add a goal state. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00095">GoalStates.cpp:95</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_af762ea1e00c3f7c84130c832aee0b698"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#af762ea1e00c3f7c84130c832aee0b698">ompl::base::GoalStates::maxSampleCount</a></div><div class="ttdeci">virtual unsigned int maxSampleCount() const </div><div class="ttdoc">Return the maximum number of samples that can be asked for before repeating. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00095">GoalStates.cpp:95</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a794f4cbd776d0f841e250e9bb9a69181"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a794f4cbd776d0f841e250e9bb9a69181">ompl::base::GoalStates::getState</a></div><div class="ttdeci">virtual const State * getState(unsigned int index) const </div><div class="ttdoc">Return a pointer to the indexth state in the state list. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00110">GoalStates.cpp:110</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a6cf378a86fd25680dfaa5b2446598d55"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a6cf378a86fd25680dfaa5b2446598d55">ompl::base::GoalStates::addState</a></div><div class="ttdeci">virtual void addState(const State *st)</div><div class="ttdoc">Add a goal state. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00100">GoalStates.cpp:100</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1ScopedState_html_a055e6b97092ffbc0f5e485f661db0e49"><div class="ttname"><a href="classompl_1_1base_1_1ScopedState.html#a055e6b97092ffbc0f5e485f661db0e49">ompl::base::ScopedState::get</a></div><div class="ttdeci">StateType * get()</div><div class="ttdoc">Returns a pointer to the contained state. </div><div class="ttdef"><b>Definition:</b> <a href="ScopedState_8h_source.html#l00396">ScopedState.h:396</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1GoalStates_html_a0acc6095d25d837940f21e76bb9793ea"><div class="ttname"><a href="classompl_1_1base_1_1GoalStates.html#a0acc6095d25d837940f21e76bb9793ea">ompl::base::GoalStates::sampleGoal</a></div><div class="ttdeci">virtual void sampleGoal(State *st) const </div><div class="ttdoc">Sample a state in the goal region. </div><div class="ttdef"><b>Definition:</b> <a href="GoalStates_8cpp_source.html#l00082">GoalStates.cpp:82</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state. </div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00050">State.h:50</a></div></div>
@@ -293,7 +310,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:01 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

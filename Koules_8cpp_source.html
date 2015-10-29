@@ -42,7 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -267,76 +267,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">const</span> std::string&amp; plannerName, <span class="keyword">const</span> std::string&amp; outputFile)</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// Create a benchmark class</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a> b(ks, <span class="stringliteral">&quot;Koules experiment&quot;</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// Add the planner to evaluate</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    b.addPlanner(ks.getConfiguredPlannerInstance(plannerName));</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// Start benchmark</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    b.benchmark(request);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// Save the results</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    b.saveResultsToFile(outputFile.c_str());</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Output saved in %s&quot;</span>, outputFile.c_str());</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numKoules, numRuns;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">double</span> maxTime, kouleVel;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        std::string plannerName, outputFile;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        po::options_description desc(<span class="stringliteral">&quot;Options&quot;</span>);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        desc.add_options()</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            (<span class="stringliteral">&quot;help&quot;</span>, <span class="stringliteral">&quot;show help message&quot;</span>)</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            (<span class="stringliteral">&quot;plan&quot;</span>, <span class="stringliteral">&quot;solve the game of koules&quot;</span>)</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            (<span class="stringliteral">&quot;benchmark&quot;</span>, <span class="stringliteral">&quot;benchmark the game of koules&quot;</span>)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            (<span class="stringliteral">&quot;numkoules&quot;</span>, po::value&lt;unsigned int&gt;(&amp;numKoules)-&gt;default_value(3),</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="stringliteral">&quot;start from &lt;numkoules&gt; koules&quot;</span>)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            (<span class="stringliteral">&quot;maxtime&quot;</span>, po::value&lt;double&gt;(&amp;maxTime)-&gt;default_value(10.),</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="stringliteral">&quot;time limit in seconds&quot;</span>)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            (<span class="stringliteral">&quot;output&quot;</span>, po::value&lt;std::string&gt;(&amp;outputFile), <span class="stringliteral">&quot;output file name&quot;</span>)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            (<span class="stringliteral">&quot;numruns&quot;</span>, po::value&lt;unsigned int&gt;(&amp;numRuns)-&gt;default_value(10),</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="stringliteral">&quot;number of runs for each planner in benchmarking mode&quot;</span>)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            (<span class="stringliteral">&quot;planner&quot;</span>, po::value&lt;std::string&gt;(&amp;plannerName)-&gt;default_value(<span class="stringliteral">&quot;kpiece&quot;</span>),</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="stringliteral">&quot;planning algorithm to use (pdst, kpiece, rrt, or est)&quot;</span>)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            (<span class="stringliteral">&quot;velocity&quot;</span>, po::value&lt;double&gt;(&amp;kouleVel)-&gt;default_value(0.),</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="stringliteral">&quot;initial velocity of each koule&quot;</span>)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        ;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        po::variables_map vm;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        po::store(po::parse_command_line(argc, argv, desc,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            po::command_line_style::unix_style ^ po::command_line_style::allow_short), vm);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        po::notify(vm);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        KoulesSetup ks(numKoules, plannerName, kouleVel);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;help&quot;</span>) || argc == 1)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Solve the games of Koules.\nSelect one of these two options:\n&quot;</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot;\&quot;--plan\&quot;, or \&quot;--benchmark\&quot;\n\n&quot;</span> &lt;&lt; desc &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (outputFile.size() == 0)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            std::string prefix(vm.count(<span class="stringliteral">&quot;plan&quot;</span>) ? <span class="stringliteral">&quot;koules_&quot;</span> : <span class="stringliteral">&quot;koulesBenchmark_&quot;</span>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            outputFile = boost::str(boost::format(<span class="stringliteral">&quot;%1%%2%_%3%_%4%.dat&quot;</span>)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                % prefix % numKoules % plannerName % maxTime);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;plan&quot;</span>))</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            plan(ks, maxTime, outputFile);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;benchmark&quot;</span>))</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            benchmark(ks, ot::Benchmark::Request(maxTime, 10000.0, numRuns),</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                plannerName, outputFile);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">catch</span>(std::exception&amp; e) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">catch</span>(...) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!\n&quot;</span>;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a> b(ks, <span class="stringliteral">&quot;Koules&quot;</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    b.addExperimentParameter(<span class="stringliteral">&quot;num_koules&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, boost::lexical_cast&lt;std::string&gt;(</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        (ks.getStateSpace()-&gt;getDimension() - 5) / 4));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// Add the planner to evaluate</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    b.addPlanner(ks.getConfiguredPlannerInstance(plannerName));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// Start benchmark</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    b.benchmark(request);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// Save the results</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    b.saveResultsToFile(outputFile.c_str());</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Output saved in %s&quot;</span>, outputFile.c_str());</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numKoules, numRuns;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordtype">double</span> maxTime, kouleVel;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        std::string plannerName, outputFile;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        po::options_description desc(<span class="stringliteral">&quot;Options&quot;</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        desc.add_options()</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            (<span class="stringliteral">&quot;help&quot;</span>, <span class="stringliteral">&quot;show help message&quot;</span>)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            (<span class="stringliteral">&quot;plan&quot;</span>, <span class="stringliteral">&quot;solve the game of koules&quot;</span>)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            (<span class="stringliteral">&quot;benchmark&quot;</span>, <span class="stringliteral">&quot;benchmark the game of koules&quot;</span>)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            (<span class="stringliteral">&quot;numkoules&quot;</span>, po::value&lt;unsigned int&gt;(&amp;numKoules)-&gt;default_value(3),</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="stringliteral">&quot;start from &lt;numkoules&gt; koules&quot;</span>)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            (<span class="stringliteral">&quot;maxtime&quot;</span>, po::value&lt;double&gt;(&amp;maxTime)-&gt;default_value(10.),</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="stringliteral">&quot;time limit in seconds&quot;</span>)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            (<span class="stringliteral">&quot;output&quot;</span>, po::value&lt;std::string&gt;(&amp;outputFile), <span class="stringliteral">&quot;output file name&quot;</span>)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            (<span class="stringliteral">&quot;numruns&quot;</span>, po::value&lt;unsigned int&gt;(&amp;numRuns)-&gt;default_value(10),</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="stringliteral">&quot;number of runs for each planner in benchmarking mode&quot;</span>)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            (<span class="stringliteral">&quot;planner&quot;</span>, po::value&lt;std::string&gt;(&amp;plannerName)-&gt;default_value(<span class="stringliteral">&quot;kpiece&quot;</span>),</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="stringliteral">&quot;planning algorithm to use (pdst, kpiece, rrt, or est)&quot;</span>)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            (<span class="stringliteral">&quot;velocity&quot;</span>, po::value&lt;double&gt;(&amp;kouleVel)-&gt;default_value(0.),</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="stringliteral">&quot;initial velocity of each koule&quot;</span>)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        ;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        po::variables_map vm;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        po::store(po::parse_command_line(argc, argv, desc,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            po::command_line_style::unix_style ^ po::command_line_style::allow_short), vm);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        po::notify(vm);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        KoulesSetup ks(numKoules, plannerName, kouleVel);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;help&quot;</span>) || argc == 1)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Solve the games of Koules.\nSelect one of these two options:\n&quot;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot;\&quot;--plan\&quot;, or \&quot;--benchmark\&quot;\n\n&quot;</span> &lt;&lt; desc &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (outputFile.size() == 0)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            std::string prefix(vm.count(<span class="stringliteral">&quot;plan&quot;</span>) ? <span class="stringliteral">&quot;koules_&quot;</span> : <span class="stringliteral">&quot;koulesBenchmark_&quot;</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            outputFile = boost::str(boost::format(<span class="stringliteral">&quot;%1%%2%_%3%_%4%.dat&quot;</span>)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                % prefix % numKoules % plannerName % maxTime);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;plan&quot;</span>))</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            plan(ks, maxTime, outputFile);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;benchmark&quot;</span>))</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            benchmark(ks, ot::Benchmark::Request(maxTime, 10000.0, numRuns),</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                plannerName, outputFile);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">catch</span>(std::exception&amp; e) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">catch</span>(...) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!\n&quot;</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
 <div class="ttc" id="classompl_1_1base_1_1PlannerData_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html">ompl::base::PlannerData</a></div><div class="ttdoc">Object containing planner generated vertex and edge data. It is assumed that all vertices are unique...</div><div class="ttdef"><b>Definition:</b> <a href="base_2PlannerData_8h_source.html#l00164">PlannerData.h:164</a></div></div>
 <div class="ttc" id="namespaceompl_1_1control_html"><div class="ttname"><a href="namespaceompl_1_1control.html">ompl::control</a></div><div class="ttdoc">This namespace contains sampling based planning routines used by planning under differential constrai...</div><div class="ttdef"><b>Definition:</b> <a href="Control_8h_source.html#l00044">Control.h:44</a></div></div>
 <div class="ttc" id="classompl_1_1control_1_1PathControl_html"><div class="ttname"><a href="classompl_1_1control_1_1PathControl.html">ompl::control::PathControl</a></div><div class="ttdoc">Definition of a control path. </div><div class="ttdef"><b>Definition:</b> <a href="PathControl_8h_source.html#l00060">PathControl.h:60</a></div></div>

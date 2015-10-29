@@ -6,6 +6,7 @@ var searchData=
   ['bestcost',['bestCost',['../classompl_1_1geometric_1_1BITstar.html#aaf23298fbc6601af0eeba6454b49b8f8',1,'ompl::geometric::BITstar']]],
   ['bestcostprogressproperty',['bestCostProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#aa4f6704e62801362259f59c1cde01c2f',1,'ompl::geometric::BITstar']]],
   ['bestlengthprogressproperty',['bestLengthProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#a0da3b967a3157d9c88495225510a6a05',1,'ompl::geometric::BITstar']]],
+  ['bestpathfromgoaltostart',['bestPathFromGoalToStart',['../classompl_1_1geometric_1_1BITstar.html#af97f7f69de37bc8d4348c9473873feb7',1,'ompl::geometric::BITstar']]],
   ['bettercost',['betterCost',['../classompl_1_1base_1_1OptimizationObjective.html#abc9d5e0ff5fa6ca87a47a07638f164e4',1,'ompl::base::OptimizationObjective']]],
   ['bitrrt',['BiTRRT',['../classompl_1_1geometric_1_1BiTRRT.html#a2f3d18a363976e7345cbc28577018766',1,'ompl::geometric::BiTRRT']]],
   ['bitstar',['BITstar',['../classompl_1_1geometric_1_1BITstar.html#af6d4e84d731cf2a0961043598864d65b',1,'ompl::geometric::BITstar']]],

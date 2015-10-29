@@ -42,7 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">How to Benchmark Planners </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>OMPL contains a ompl::Benchmark class that facilitates solving a motion planning problem repeatedly with different planners, different samplers, or even differently configured versions of the same planning algorithm. Below, we will describe how you can use this class.</p>
+<div class="textblock"><p>OMPL contains a ompl::Benchmark class that facilitates solving a motion planning problem repeatedly with different parameters, different planners, different samplers, or even differently configured versions of the same planning algorithm. Below, we will describe how you can use this class.</p>
 <ul>
 <li><a class="el" href="benchmark.html#benchmark_config">Create a benchmark configuration file</a></li>
 <li><a class="el" href="benchmark.html#benchmark_code">Writing benchmarking code</a></li>
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For interactive visualization of benchmark databases, please see <a href="http://plannerarena.org">plannerarena.org</a>.</p>
 <h1><a class="anchor" id="benchmark_config"></a>
 Create a benchmark configuration file</h1>
-<p>OMPL.app contains a command line program called <code>ompl_benchmark</code>, that can read a text based configuration file using an ini style format with key/value pairs. This is the same format that can be read and saved with the OMPL.app GUI. The GUI ignores the settings related to benchmarking. However, it is often convenient to create an initial configuration with the GUI and add the benchmark settings with a text editor. Currently the base functionality of the <code>ompl_benchmark</code> program only applies to geometric planning in SE(2) and SE(3), but can be extended by the user to other spaces.</p>
+<p>OMPL.app contains a command line program called <code>ompl_benchmark</code>, that can read a text based configuration file using an ini style format with key/value pairs. This is the same format that can be read and saved with the OMPL.app GUI. The GUI ignores the settings related to benchmarking. However, it is often convenient to create an initial configuration with the GUI and add the benchmark settings with a text editor. Currently the base functionality of the <code>ompl_benchmark</code> program only applies to geometric planning in SE(2) and SE(3) and kinodynamic planning for certain systems, but the program can be extended by the user to other types of planning problems.</p>
 <p>There are a number of <em>required</em> parameters necessary to define the problem. These exist under the “**[problem]**” heading:</p>
 <ul>
 <li><b>name</b>: An identifying name for the problem to be solved.</li>
@@ -245,6 +245,7 @@ Writing benchmarking code</h1>
 <ul>
 <li>Configure the benchmark problem using <a class="el" href="classompl_1_1geometric_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a geometric problem. ">ompl::geometric::SimpleSetup</a> or <a class="el" href="classompl_1_1control_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a control problem. ">ompl::control::SimpleSetup</a></li>
 <li>Create a ompl::Benchmark object that takes the problem as input</li>
+<li>Optionally, specify some parameters for the benchmark object using ompl::Benchmark::addExperimentParameter, which is useful when aggregating benchmark results over parametrized benchmarks.</li>
 <li>Add one or more planners to the benchmark</li>
 <li>Optionally add events to be called before and/or after the execution of a planner</li>
 <li>Run the benchmark problem a specified number of times, subject to specified time and memory limits</li>
@@ -271,6 +272,10 @@ Writing benchmarking code</h1>
 </div><!-- fragment --><p>Benchmarking code starts here:</p>
 <div class="fragment"><div class="line"><span class="comment">// First we create a benchmark class:</span></div>
 <div class="line"><a class="code" href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a> b(ss, <span class="stringliteral">&quot;my experiment&quot;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Optionally, specify some benchmark parameters (doesn&#39;t change how the benchmark is run)</span></div>
+<div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_dofs&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>)</div>
+<div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_obstacles&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>)</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// We add the planners to evaluate.</span></div>
 <div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::KPIECE1(ss.getSpaceInformation())));</div>
@@ -327,7 +332,7 @@ Writing benchmarking code</h1>
 </div><!-- fragment --><h1><a class="anchor" id="benchmark_log"></a>
 Processing the benchmarking log file</h1>
 <p>Once the C++ code computing the results has been executed, a log file is generated. This contains information about the settings of the planners, the parameters of the problem tested on, etc. To visualize this information, we provide a script that parses the log files: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py logfile.log -d mydatabase.db
-</pre><p>This will generate a SQLite database containing the parsed data. If no database name is specified, the named is assumed to be benchmark.db Once this database is generated, we can construct plots: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -p boxplot.pdf
+</pre><p>This will generate a SQLite database containing the parsed data. If no database name is specified, the named is assumed to be benchmark.db. Once this database is generated, we can visualize the results. The recommended way is to upload the database to <a href="http://plannerarena.org">Planner Arena</a> and navigate through the different plots. Planner Arena can also be run locally with the <code>plannerarena</code> script (requires R to be installed). Alternatively, you can also produce some basic plots with <code>ompl_benchmark_statistics.py</code> like so: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -p boxplot.pdf
 </pre><p>This will generate a series of plots, one for each of the attributes described below, showing the results for each planner. <a href="#benchmark_sample_results">Below</a> we have included some sample benchmark results.</p>
 <p>If you would like to process the data in different ways, you can generate a dump file that you can load in a MySQL database: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -m mydump.sql
 </pre><p>For more details on how to use the benchmark script, see: </p><pre class="fragment">scripts/ompl_benchmark_statistics.py --help
@@ -433,7 +438,11 @@ The benchmark logfile format</h1>
 </div><!-- fragment --><p> Here, <code>EOL</code> denotes a newline character, <code>int</code> denotes an integer, <code>float</code> denotes a floating point number, <code>num</code> denotes an integer or float value and undefined symbols correspond to strings without whitespace characters. The exception is <code>property_name</code> which is a string that <em>can</em> have whitespace characters. It is also assumed that if the log file says there is data for <em>k</em> planners that that really is the case (likewise for the number of run measurements and the optional progress measurements).</p>
 <h1><a class="anchor" id="benchmark_database"></a>
 The benchmark database schema</h1>
-<p>The ompl_benchmark_statistics.py script can produce a series of plots from a database of benchmark results, but in many cases you may want to produce your own custom plots. For this it useful to understand the schema used for the database. There are five tables in a benchmark database:</p>
+<div class="col-sm-4 pull-right"> <div class="image">
+<img src="images/benchmarkdb_schema.png"  width="100%"/>
+</div>
+<p> <br />
+ <b>The benchmark database schema</b> </div><p> The ompl_benchmark_statistics.py script can produce a series of plots from a database of benchmark results, but in many cases you may want to produce your own custom plots. For this it useful to understand the schema used for the database. There are five tables in a benchmark database:</p>
 <ul>
 <li><b>experiments</b>. This table contains the following information:<ul>
 <li><em>id:</em> an ID used in the <code>runs</code> table to denote that a run was part of a given experiment.</li>

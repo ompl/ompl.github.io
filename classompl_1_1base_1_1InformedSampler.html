@@ -42,7 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -189,11 +189,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a120c9a7334392ccf1c8afa5fe6c49966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d32eb1cc581d4e3b23c2d09d94f4f84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d32eb1cc581d4e3b23c2d09d94f4f84"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedSampler.html#a2d32eb1cc581d4e3b23c2d09d94f4f84">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost)=0</td></tr>
-<tr class="memdesc:a2d32eb1cc581d4e3b23c2d09d94f4f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are less than the provided cost. Returns false if such a state was not found. <br /></td></tr>
+<tr class="memdesc:a2d32eb1cc581d4e3b23c2d09d94f4f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are less than the provided cost, i.e. in the interval [0, maxCost). Returns false if such a state was not found in the specified number of iterations. <br /></td></tr>
 <tr class="separator:a2d32eb1cc581d4e3b23c2d09d94f4f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396b50e8d31a47f5d28bc9552aa33246"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a396b50e8d31a47f5d28bc9552aa33246"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedSampler.html#a396b50e8d31a47f5d28bc9552aa33246">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;minCost, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost)=0</td></tr>
-<tr class="memdesc:a396b50e8d31a47f5d28bc9552aa33246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are between the provided costs. Returns false if such a state was not found. <br /></td></tr>
+<tr class="memdesc:a396b50e8d31a47f5d28bc9552aa33246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are between the provided costs, [minCost, maxCost). Returns false if such a state was not found in the specified number of iterations. <br /></td></tr>
 <tr class="separator:a396b50e8d31a47f5d28bc9552aa33246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a800a1bcbba0d51b2a53fcdbd828a2975"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a800a1bcbba0d51b2a53fcdbd828a2975"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedSampler.html#a800a1bcbba0d51b2a53fcdbd828a2975">hasInformedMeasure</a> () const =0</td></tr>
@@ -207,9 +207,8 @@ virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedSampler.html#a0dfabeb135a0ac17f5a958fa371cfa4c">getInformedMeasure</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;minCost, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost) const </td></tr>
 <tr class="memdesc:a0dfabeb135a0ac17f5a958fa371cfa4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The measure of the subset of the state space defined by the current solution cost that is being searched. Does not consider problem boundaries but returns the measure of the entire space if no solution has been found or if a closed form expression for the measure does not exist. By default calls the 1-argument overloaded version with the min and max costs and subtracts the differences; however, there may be more efficient ways to do this for some cost functions. <br /></td></tr>
 <tr class="separator:a0dfabeb135a0ac17f5a958fa371cfa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac85941a5f3fc3aae095d86d7024a95b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac85941a5f3fc3aae095d86d7024a95b0"></a>
-virtual <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedSampler.html#ac85941a5f3fc3aae095d86d7024a95b0">heuristicSolnCost</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr) const </td></tr>
-<tr class="memdesc:ac85941a5f3fc3aae095d86d7024a95b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function to calculate the heuristic estimate of the solution cost for a given state using the optimization objective stored in the problem definition. <br /></td></tr>
+<tr class="memitem:ac85941a5f3fc3aae095d86d7024a95b0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1InformedSampler.html#ac85941a5f3fc3aae095d86d7024a95b0">heuristicSolnCost</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr) const </td></tr>
+<tr class="memdesc:ac85941a5f3fc3aae095d86d7024a95b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function to calculate the heuristic estimate of the solution cost for a given state using the optimization objective stored in the problem definition.  <a href="#ac85941a5f3fc3aae095d86d7024a95b0">More...</a><br /></td></tr>
 <tr class="separator:ac85941a5f3fc3aae095d86d7024a95b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -235,7 +234,39 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="textblock"><p>An abstract class for the concept of using information about the state space and the current solution cost to limit future search to a planning subproblem that contains all possibly better solutions. </p>
 
 <p>Definition at line <a class="el" href="InformedStateSampler_8h_source.html#l00063">63</a> of file <a class="el" href="InformedStateSampler_8h_source.html">InformedStateSampler.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac85941a5f3fc3aae095d86d7024a95b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> ompl::base::InformedSampler::heuristicSolnCost </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td>
+          <td class="paramname"><em>statePtr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A helper function to calculate the heuristic estimate of the solution cost for a given state using the optimization objective stored in the problem definition. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>With the future invention of a heuristic class, this should move. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#aea49ebe7cfa1ec3eb605eb874f10e283">ompl::base::PathLengthDirectInfSampler</a>.</p>
+
+<p>Definition at line <a class="el" href="InformedStateSampler_8cpp_source.html#l00079">79</a> of file <a class="el" href="InformedStateSampler_8cpp_source.html">InformedStateSampler.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>ompl/base/samplers/<a class="el" href="InformedStateSampler_8h_source.html">InformedStateSampler.h</a></li>
 <li>ompl/base/samplers/src/<a class="el" href="InformedStateSampler_8cpp_source.html">InformedStateSampler.cpp</a></li>
 </ul>

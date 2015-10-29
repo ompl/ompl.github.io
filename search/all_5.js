@@ -24,6 +24,7 @@ var searchData=
   ['fixinvalidinputstates',['fixInvalidInputStates',['../classompl_1_1base_1_1ProblemDefinition.html#a74aa8792df6065a84f1b602db53d108c',1,'ompl::base::ProblemDefinition']]],
   ['flanndistance',['FLANNDistance',['../classompl_1_1FLANNDistance.html',1,'ompl']]],
   ['fmt',['FMT',['../classompl_1_1geometric_1_1FMT.html',1,'ompl::geometric']]],
+  ['focussearch_5f',['focusSearch_',['../classompl_1_1geometric_1_1CForest.html#ae523000e355ae5144669a57084efb1ba',1,'ompl::geometric::CForest']]],
   ['formula',['formula',['../classompl_1_1control_1_1World.html#ac9eed0fd5b4737d49176483839440697',1,'ompl::control::World']]],
   ['foundgoalexception',['foundGoalException',['../classompl_1_1geometric_1_1SPARSdb_1_1foundGoalException.html',1,'ompl::geometric::SPARSdb']]],
   ['fracexternal',['fracExternal',['../classompl_1_1GridB.html#ac7afdbf67ca787a6cb135b10a0227521',1,'ompl::GridB']]],

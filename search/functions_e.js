@@ -66,11 +66,12 @@ var searchData=
   ['propositionaldecomposition',['PropositionalDecomposition',['../classompl_1_1control_1_1PropositionalDecomposition.html#afa093aaa37411f45a03da31c751ea841',1,'ompl::control::PropositionalDecomposition']]],
   ['propositionaltriangulardecomposition',['PropositionalTriangularDecomposition',['../classompl_1_1control_1_1PropositionalTriangularDecomposition.html#a9feaa5b7c2db2428b79e4ff3a80a0691',1,'ompl::control::PropositionalTriangularDecomposition']]],
   ['props',['props',['../classompl_1_1control_1_1World.html#adad5e22f925abef296f99b797f2f9d41',1,'ompl::control::World']]],
-  ['prune',['prune',['../classompl_1_1geometric_1_1BITstar.html#a975b0c18fa867de36976c0b6bb90f38d',1,'ompl::geometric::BITstar::prune()'],['../classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#ae19517571588464006fd77f49c47c46f',1,'ompl::geometric::BITstar::IntegratedQueue::prune()']]],
+  ['prune',['prune',['../classompl_1_1geometric_1_1BITstar.html#a975b0c18fa867de36976c0b6bb90f38d',1,'ompl::geometric::BITstar::prune()'],['../classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a45262f567069b27013bc9636f671cc86',1,'ompl::geometric::BITstar::IntegratedQueue::prune()']]],
   ['pruneedgesfrom',['pruneEdgesFrom',['../classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a053757b3ef228f042492990013c39ca2',1,'ompl::geometric::BITstar::IntegratedQueue']]],
   ['pruneedgesto',['pruneEdgesTo',['../classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#af1da1f51322521b2f31000f5ae2d811e',1,'ompl::geometric::BITstar::IntegratedQueue']]],
   ['prunesamples',['pruneSamples',['../classompl_1_1geometric_1_1BITstar.html#a8f8174806baa5a2c4f3b61e40b17db3a',1,'ompl::geometric::BITstar']]],
-  ['prunetree',['pruneTree',['../classompl_1_1geometric_1_1RRTstar.html#a6cb40d4151aa975aceca627c4044a7be',1,'ompl::geometric::RRTstar']]],
+  ['prunestartsgoals',['pruneStartsGoals',['../classompl_1_1geometric_1_1BITstar.html#aee9b70d508afdffd9e39c817ab9dc9c9',1,'ompl::geometric::BITstar']]],
+  ['prunetree',['pruneTree',['../classompl_1_1geometric_1_1RRTstar.html#afde43e06e2d50fedfc2f42062a23dce1',1,'ompl::geometric::RRTstar']]],
   ['pruningprogressproperty',['pruningProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#aa8f8ded2f8d68ae0f5b6f463a614b241',1,'ompl::geometric::BITstar']]],
   ['publishsolution',['publishSolution',['../classompl_1_1geometric_1_1BITstar.html#aea0f6d681e7cff5e6261f7de808f7dbe',1,'ompl::geometric::BITstar']]]
 ];

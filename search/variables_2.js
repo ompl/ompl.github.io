@@ -55,5 +55,6 @@ var searchData=
   ['csa_5f',['csa_',['../classompl_1_1control_1_1ControlSpace.html#aafc829af78b3a32e549bd6ed8f0bc8b0',1,'ompl::control::ControlSpace']]],
   ['csetup_5f',['csetup_',['../classompl_1_1tools_1_1Benchmark.html#a74f68df4ca4750779c5a2d5ef202c27e',1,'ompl::tools::Benchmark']]],
   ['ctype_5f',['ctype_',['../classompl_1_1app_1_1RigidBodyGeometry.html#a43993f7cee3e77cbc34f966b2709dfb1',1,'ompl::app::RigidBodyGeometry']]],
+  ['curgoalvertex_5f',['curGoalVertex_',['../classompl_1_1geometric_1_1BITstar.html#ad3f06825ca0aa9e57837969e501dbf06',1,'ompl::geometric::BITstar']]],
   ['currentset_5f',['currentSet_',['../classompl_1_1geometric_1_1FMT_1_1Motion.html#aeb5bf2d1c873379ca41c28464153102c',1,'ompl::geometric::FMT::Motion']]]
 ];

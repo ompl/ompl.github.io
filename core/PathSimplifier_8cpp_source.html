@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -695,7 +707,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            <span class="keywordtype">double</span> candidateCost = costToCome + costToGo;</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            <span class="comment">// Make sure we improve before attempting validation</span></div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            <span class="keywordflow">if</span> (candidateCost &lt; dists.back() &amp;&amp; si_-&gt;checkMotion(state, tempGoal))</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            <span class="keywordflow">if</span> (dists.back() - candidateCost &gt; std::numeric_limits&lt;float&gt;::epsilon() &amp;&amp; si_-&gt;checkMotion(state, tempGoal))</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            {</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                <span class="comment">// insert the new states</span></div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                <span class="keywordflow">if</span> (startIndex == endIndex)</div>
@@ -735,7 +747,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                <span class="comment">// fix the helper variables</span></div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                dists.resize(states.size(), 0.0);</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = startIndex; j &lt; dists.size() ; ++j)</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = std::max(1u, startIndex); j &lt; dists.size() ; ++j)</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                    dists[j] = dists[j-1] + si_-&gt;distance(states[j-1], states[j]);</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                betterGoal = <span class="keyword">true</span>;</div>
@@ -754,7 +766,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1geometric_1_1PathSimplifier_html_a9834b1fda038c543ec4c8b1dcffa601b"><div class="ttname"><a href="classompl_1_1geometric_1_1PathSimplifier.html#a9834b1fda038c543ec4c8b1dcffa601b">ompl::geometric::PathSimplifier::simplify</a></div><div class="ttdeci">void simplify(PathGeometric &amp;path, double maxTime)</div><div class="ttdoc">Run simplification algorithms on the path for at most maxTime seconds. </div><div class="ttdef"><b>Definition:</b> <a href="PathSimplifier_8cpp_source.html#l00405">PathSimplifier.cpp:405</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateSpacePtr_html"><div class="ttname"><a href="classompl_1_1base_1_1StateSpacePtr.html">ompl::base::StateSpacePtr</a></div><div class="ttdoc">A boost shared pointer wrapper for ompl::base::StateSpace. </div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1PathSimplifier_html_a7dc99833c0ee64ddd5ab8e9a73c0fdc0"><div class="ttname"><a href="classompl_1_1geometric_1_1PathSimplifier.html#a7dc99833c0ee64ddd5ab8e9a73c0fdc0">ompl::geometric::PathSimplifier::simplifyMax</a></div><div class="ttdeci">void simplifyMax(PathGeometric &amp;path)</div><div class="ttdoc">Given a path, attempt to remove vertices from it while keeping the path valid. Then, try to smooth the path. This function applies the same set of default operations to the path, except in non-metric spaces, with the intention of simplifying it. In non-metric spaces, some operations are skipped because they do not work correctly when the triangle inequality may not hold. </div><div class="ttdef"><b>Definition:</b> <a href="PathSimplifier_8cpp_source.html#l00399">PathSimplifier.cpp:399</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00065">PlannerTerminationCondition.h:65</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00066">PlannerTerminationCondition.h:66</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1PathGeometric_html_aa9eb3ea81cc3ab442aae67d311bc4156"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#aa9eb3ea81cc3ab442aae67d311bc4156">ompl::geometric::PathGeometric::append</a></div><div class="ttdeci">void append(const base::State *state)</div><div class="ttdoc">Append state to the end of this path. The memory for state is copied. </div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8cpp_source.html#l00432">PathGeometric.cpp:432</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1PathSimplifier_html_ae183eeb80fd80b52649d038e13bf0cfb"><div class="ttname"><a href="classompl_1_1geometric_1_1PathSimplifier.html#ae183eeb80fd80b52649d038e13bf0cfb">ompl::geometric::PathSimplifier::gsr_</a></div><div class="ttdeci">boost::shared_ptr&lt; base::GoalSampleableRegion &gt; gsr_</div><div class="ttdoc">The goal object for the path simplifier. Used for end-of-path improvements. </div><div class="ttdef"><b>Definition:</b> <a href="PathSimplifier_8h_source.html#l00261">PathSimplifier.h:261</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1PathGeometric_html_acea7c8dc9b28e6bb81ec62d4c0b4730b"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">ompl::geometric::PathGeometric::getState</a></div><div class="ttdeci">base::State * getState(unsigned int index)</div><div class="ttdoc">Get the state located at index along the path. </div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00225">PathGeometric.h:225</a></div></div>
@@ -777,7 +789,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1geometric_1_1PathGeometric_html"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html">ompl::geometric::PathGeometric</a></div><div class="ttdoc">Definition of a geometric path. </div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00060">PathGeometric.h:60</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1PathSimplifier_html_a2761f8b4e41e01db0b4ecf11ee16d5bd"><div class="ttname"><a href="classompl_1_1geometric_1_1PathSimplifier.html#a2761f8b4e41e01db0b4ecf11ee16d5bd">ompl::geometric::PathSimplifier::collapseCloseVertices</a></div><div class="ttdeci">bool collapseCloseVertices(PathGeometric &amp;path, unsigned int maxSteps=0, unsigned int maxEmptySteps=0)</div><div class="ttdoc">Given a path, attempt to remove vertices from it while keeping the path valid. This is an iterative p...</div><div class="ttdef"><b>Definition:</b> <a href="PathSimplifier_8cpp_source.html#l00339">PathSimplifier.cpp:339</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1PathSimplifier_html_aa4ecd0970d2061c457f57b7665fd6f6b"><div class="ttname"><a href="classompl_1_1geometric_1_1PathSimplifier.html#aa4ecd0970d2061c457f57b7665fd6f6b">ompl::geometric::PathSimplifier::smoothBSpline</a></div><div class="ttdeci">void smoothBSpline(PathGeometric &amp;path, unsigned int maxSteps=5, double minChange=std::numeric_limits&lt; double &gt;::epsilon())</div><div class="ttdoc">Given a path, attempt to smooth it (the validity of the path is maintained). </div><div class="ttdef"><b>Definition:</b> <a href="PathSimplifier_8cpp_source.html#l00066">PathSimplifier.cpp:66</a></div></div>
-<div class="ttc" id="namespaceompl_1_1magic_html_a22100e2fff9398fce45cfc11e21451f4"><div class="ttname"><a href="namespaceompl_1_1magic.html#a22100e2fff9398fce45cfc11e21451f4">ompl::magic::MAX_VALID_SAMPLE_ATTEMPTS</a></div><div class="ttdeci">static const unsigned int MAX_VALID_SAMPLE_ATTEMPTS</div><div class="ttdoc">When multiple attempts are needed to generate valid samples, this value defines the default number of...</div><div class="ttdef"><b>Definition:</b> <a href="MagicConstants_8h_source.html#l00098">MagicConstants.h:98</a></div></div>
+<div class="ttc" id="namespaceompl_1_1magic_html_a22100e2fff9398fce45cfc11e21451f4"><div class="ttname"><a href="namespaceompl_1_1magic.html#a22100e2fff9398fce45cfc11e21451f4">ompl::magic::MAX_VALID_SAMPLE_ATTEMPTS</a></div><div class="ttdeci">static const unsigned int MAX_VALID_SAMPLE_ATTEMPTS</div><div class="ttdoc">When multiple attempts are needed to generate valid samples, this value defines the default number of...</div><div class="ttdef"><b>Definition:</b> <a href="MagicConstants_8h_source.html#l00093">MagicConstants.h:93</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div>
 <footer class="footer">
@@ -785,7 +797,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:02 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

@@ -26,6 +26,7 @@ var searchData=
   ['numbatches_5f',['numBatches_',['../classompl_1_1geometric_1_1BITstar.html#ae3bd5ab14e38a4d3259ab8e9d4838aec',1,'ompl::geometric::BITstar']]],
   ['numcontrolsamples_5f',['numControlSamples_',['../classompl_1_1control_1_1SimpleDirectedControlSampler.html#a01d78153fbc4db8a17dcca0fd493bd3f',1,'ompl::control::SimpleDirectedControlSampler']]],
   ['numedgecollisionchecks_5f',['numEdgeCollisionChecks_',['../classompl_1_1geometric_1_1BITstar.html#a9d2764a57f7303a2e03a2cd6e58c7fb6',1,'ompl::geometric::BITstar']]],
+  ['numedgesprocessed_5f',['numEdgesProcessed_',['../classompl_1_1geometric_1_1BITstar.html#ae3ce4815f967854133d2b360a4e25061',1,'ompl::geometric::BITstar']]],
   ['numfreestatespruned_5f',['numFreeStatesPruned_',['../classompl_1_1geometric_1_1BITstar.html#a1e25211ec527d30d99bd45a4e828421b',1,'ompl::geometric::BITstar']]],
   ['numfreevolsamples_5f',['numFreeVolSamples_',['../classompl_1_1control_1_1Syclop.html#aea90b6750343b06ee23906f13cf95bc2',1,'ompl::control::Syclop']]],
   ['numiterations_5f',['numIterations_',['../classompl_1_1geometric_1_1BITstar.html#a5a1104fcbdff7d874c89d4b5254558e5',1,'ompl::geometric::BITstar']]],
@@ -37,13 +38,14 @@ var searchData=
   ['numprunings_5f',['numPrunings_',['../classompl_1_1geometric_1_1BITstar.html#a0e1a6720742e7c5f1a85ca9fb1ab0b97',1,'ompl::geometric::BITstar']]],
   ['numregionexpansions_5f',['numRegionExpansions_',['../classompl_1_1control_1_1Syclop.html#abd499bf21f57c342b539b10c65aaaad1',1,'ompl::control::Syclop']]],
   ['numrewirings_5f',['numRewirings_',['../classompl_1_1geometric_1_1BITstar.html#a59447bab82daba5027351b1bc260f3cd',1,'ompl::geometric::BITstar']]],
+  ['numsampleattempts_5f',['numSampleAttempts_',['../classompl_1_1geometric_1_1RRTstar.html#a2a5aeeff6bd5341e8b36efbb89c8ffe9',1,'ompl::geometric::RRTstar']]],
   ['numsamples_5f',['numSamples_',['../classompl_1_1geometric_1_1BITstar.html#aaf6334594885aebe466eec0f3c852827',1,'ompl::geometric::BITstar::numSamples_()'],['../classompl_1_1geometric_1_1FMT.html#a4cf51874570d8086f93d84cdcf5afa38',1,'ompl::geometric::FMT::numSamples_()']]],
   ['numselections',['numSelections',['../classompl_1_1control_1_1Syclop_1_1Region.html#aab314ecd96233f7287ffec1c66c96e43',1,'ompl::control::Syclop::Region::numSelections()'],['../classompl_1_1control_1_1Syclop_1_1Adjacency.html#acbda37c9d6a5f141649ca39491dce1ab',1,'ompl::control::Syclop::Adjacency::numSelections()']]],
-  ['numsmoothedvertices_5f',['numSmoothedVertices_',['../classompl_1_1geometric_1_1BITstar.html#ab8f671217c3709e8fdbabe9fed9461c5',1,'ompl::geometric::BITstar']]],
   ['numstatecollisionchecks_5f',['numStateCollisionChecks_',['../classompl_1_1geometric_1_1BITstar.html#a91b268903fe3024b4b5a168552abeb9f',1,'ompl::geometric::BITstar']]],
   ['numstatesshared_5f',['numStatesShared_',['../classompl_1_1geometric_1_1CForest.html#aff4bc36cb2c7cbf006a59c4a809a192b',1,'ompl::geometric::CForest']]],
   ['numthreads_5f',['numThreads_',['../classompl_1_1geometric_1_1CForest.html#a0c4118c49564c89c7e42c556115cb9b2',1,'ompl::geometric::CForest']]],
   ['numtreeselections_5f',['numTreeSelections_',['../classompl_1_1control_1_1Syclop.html#a7b94f7e024b811555a11da15efaf15a8',1,'ompl::control::Syclop']]],
+  ['numuniformstates_5f',['numUniformStates_',['../classompl_1_1geometric_1_1BITstar.html#a6901fa8c5161e9c6018b7bfda585b6a3',1,'ompl::geometric::BITstar']]],
   ['numvertices_5f',['numVertices_',['../classompl_1_1geometric_1_1BITstar.html#a81d0cf6c7f7ccf125a1b1bcd21379181',1,'ompl::geometric::BITstar']]],
   ['numverticesdisconnected_5f',['numVerticesDisconnected_',['../classompl_1_1geometric_1_1BITstar.html#aaa9426e5c2f5942513a669a0ccd0f338',1,'ompl::geometric::BITstar']]]
 ];

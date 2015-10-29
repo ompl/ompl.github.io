@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -151,23 +163,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><dl class="reflist">
 <dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="classompl_1_1base_1_1GoalLazySamples.html">ompl::base::GoalLazySamples</a>  </dt>
 <dd>The Python bindings for <a class="el" href="classompl_1_1base_1_1GoalLazySamples.html" title="Definition of a goal region that can be sampled, but the sampling process can be slow. This class allows sampling the happen in a separate thread, and the number of goals may increase, as the planner is running, in a thread-safe manner. ">GoalLazySamples</a> class are still broken. The OMPL C++ code creates a new thread from which you should be able to call a python <a class="el" href="classompl_1_1base_1_1Goal.html" title="Abstract definition of goals. ">Goal</a> sampling function. Acquiring the right threads and locks and messing around with the Python Global Interpreter Lock (GIL) is very tricky. See ompl/py-bindings/generate_bindings.py for an initial attempt to make this work.  </dd>
-<dt><a class="anchor" id="_todo000002"></a>Class <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html">ompl::base::PathLengthDirectInfSampler</a>  </dt>
-<dd><ul>
-<li>Handle other types of goals?  </li>
-</ul>
-</dd>
-<dt><a class="anchor" id="_todo000003"></a>Member <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#a2791d1c63972989ba99b9c6c4d7448e1">ompl::base::PathLengthDirectInfSampler::PathLengthDirectInfSampler</a>  (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html" title="A boost shared pointer wrapper for ompl::base::ProblemDefinition. ">ProblemDefinitionPtr</a> probDefn, unsigned int maxNumberCalls)</dt>
-<dd>We don't check for the cost-to-go heuristic in the optimization objective, as this direct sampling is for Euclidean distance.  </dd>
-<dt><a class="anchor" id="_todo000004"></a>Class <a class="el" href="classompl_1_1control_1_1LTLPlanner.html">ompl::control::LTLPlanner</a>  </dt>
+<dt><a class="anchor" id="_todo000004"></a>Member <a class="el" href="classompl_1_1base_1_1InformedSampler.html#ac85941a5f3fc3aae095d86d7024a95b0">ompl::base::InformedSampler::heuristicSolnCost</a>  (const <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state. ">State</a> *statePtr) const </dt>
+<dd>With the future invention of a heuristic class, this should move.  </dd>
+<dt><a class="anchor" id="_todo000002"></a>Member <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#aea49ebe7cfa1ec3eb605eb874f10e283">ompl::base::PathLengthDirectInfSampler::heuristicSolnCost</a>  (const <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state. ">State</a> *statePtr) const </dt>
+<dd>Use a heuristic function for the full solution cost defined in <a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives. ">OptimizationObjective</a> or some new Heuristic class once said function is defined.  </dd>
+<dt><a class="anchor" id="_todo000005"></a>Class <a class="el" href="classompl_1_1control_1_1LTLPlanner.html">ompl::control::LTLPlanner</a>  </dt>
 <dd>cite papers  </dd>
-<dt><a class="anchor" id="_todo000005"></a>Class <a class="el" href="classompl_1_1geometric_1_1BITstar.html">ompl::geometric::BITstar</a>  </dt>
+<dt><a class="anchor" id="_todo000006"></a>Class <a class="el" href="classompl_1_1geometric_1_1BITstar.html">ompl::geometric::BITstar</a>  </dt>
 <dd><ul>
-<li>Make k-nearest correct.</li>
-<li>Extend beyond single goal states to other samplable goals (i.e., goal sets).</li>
-<li>Generalize heuristics to make proper use of the optimization class.  </li>
+<li>Implement approximate solution support.</li>
+<li>Make the k-nearest variant correct. Right now the search considers the k-nearest samples <em>and</em> the k-nearest vertices. It should find the combined k-nearest "samples &amp; vertices".  </li>
 </ul>
 </dd>
-<dt><a class="anchor" id="_todo000006"></a>Member <a class="el" href="classompl_1_1geometric_1_1FMT.html#a16c1fb13fd113c89f9ac8fe19e4dcdba">ompl::geometric::FMT::solve</a>  (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html" title="Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...">base::PlannerTerminationCondition</a> &amp;ptc)</dt>
+<dt><a class="anchor" id="_todo000007"></a>Member <a class="el" href="classompl_1_1geometric_1_1FMT.html#a16c1fb13fd113c89f9ac8fe19e4dcdba">ompl::geometric::FMT::solve</a>  (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html" title="Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...">base::PlannerTerminationCondition</a> &amp;ptc)</dt>
 <dd>Create a PRM-like connection strategy </dd>
 </dl>
 </div></div><!-- contents -->
@@ -177,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

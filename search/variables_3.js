@@ -33,6 +33,7 @@ var searchData=
   ['distancetol_5f',['distanceTol_',['../classompl_1_1app_1_1PQPStateValidityChecker.html#ad859d550c37265ff5eeb2d2381e65f83',1,'ompl::app::PQPStateValidityChecker']]],
   ['distfun_5f',['distFun_',['../classompl_1_1GreedyKCenters.html#a4c617a02bb7489b3d1e32261f099f113',1,'ompl::GreedyKCenters::distFun_()'],['../classompl_1_1NearestNeighbors.html#a6f15f3b591fb69b91ca35e504723b54f',1,'ompl::NearestNeighbors::distFun_()']]],
   ['disttopivot_5f',['distToPivot_',['../classompl_1_1NearestNeighborsGNATNoThreadSafety_1_1Node.html#a439f168fc524940ac08e1ed1a14e885c',1,'ompl::NearestNeighborsGNATNoThreadSafety::Node']]],
+  ['dropsamplesonprune_5f',['dropSamplesOnPrune_',['../classompl_1_1geometric_1_1BITstar.html#ad9a55401eb7f8e2acebba721d6527c2b',1,'ompl::geometric::BITstar']]],
   ['dstart_5f',['dStart_',['../classompl_1_1geometric_1_1BKPIECE1.html#aa70b018d82b7bf967b7ed5ade3c51a81',1,'ompl::geometric::BKPIECE1::dStart_()'],['../classompl_1_1geometric_1_1LBKPIECE1.html#aeced0b4215221d09d1469b378b96c971',1,'ompl::geometric::LBKPIECE1::dStart_()']]],
   ['dtw_5f',['dtw_',['../classompl_1_1tools_1_1Lightning.html#afe2a5c7f41d978e90a66d81a20920a6c',1,'ompl::tools::Lightning']]],
   ['dualthreadscratchenabled_5f',['dualThreadScratchEnabled_',['../classompl_1_1tools_1_1Thunder.html#aa5c1c232d2da8da84b764de55be25b41',1,'ompl::tools::Thunder']]],

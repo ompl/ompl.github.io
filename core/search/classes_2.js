@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['candidatesolution',['CandidateSolution',['../structompl_1_1geometric_1_1SPARSdb_1_1CandidateSolution.html',1,'ompl::geometric::SPARSdb']]],
   ['cell',['Cell',['../structompl_1_1control_1_1PDST_1_1Cell.html',1,'ompl::control::PDST']]],
   ['cell',['Cell',['../structompl_1_1geometric_1_1PDST_1_1Cell.html',1,'ompl::geometric::PDST']]],
   ['cell',['Cell',['../structompl_1_1Grid_1_1Cell.html',1,'ompl::Grid']]],
@@ -25,9 +26,11 @@ var searchData=
   ['controlsamplerptr',['ControlSamplerPtr',['../classompl_1_1control_1_1ControlSamplerPtr.html',1,'ompl::control']]],
   ['controlspace',['ControlSpace',['../classompl_1_1control_1_1ControlSpace.html',1,'ompl::control']]],
   ['controlspaceptr',['ControlSpacePtr',['../classompl_1_1control_1_1ControlSpacePtr.html',1,'ompl::control']]],
-  ['controltype',['ControlType',['../classompl_1_1control_1_1DiscreteControlSpace_1_1ControlType.html',1,'ompl::control::DiscreteControlSpace']]],
   ['controltype',['ControlType',['../classompl_1_1control_1_1RealVectorControlSpace_1_1ControlType.html',1,'ompl::control::RealVectorControlSpace']]],
+  ['controltype',['ControlType',['../classompl_1_1control_1_1DiscreteControlSpace_1_1ControlType.html',1,'ompl::control::DiscreteControlSpace']]],
   ['cost',['Cost',['../classompl_1_1base_1_1Cost.html',1,'ompl::base']]],
-  ['costcompare',['CostCompare',['../structompl_1_1geometric_1_1LBTRRT_1_1CostCompare.html',1,'ompl::geometric::LBTRRT']]],
-  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1RRTstar_1_1CostIndexCompare.html',1,'ompl::geometric::RRTstar']]]
+  ['costestimatorapx',['CostEstimatorApx',['../classompl_1_1geometric_1_1LazyLBTRRT_1_1CostEstimatorApx.html',1,'ompl::geometric::LazyLBTRRT']]],
+  ['costestimatorlb',['CostEstimatorLb',['../classompl_1_1geometric_1_1LazyLBTRRT_1_1CostEstimatorLb.html',1,'ompl::geometric::LazyLBTRRT']]],
+  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1RRTstar_1_1CostIndexCompare.html',1,'ompl::geometric::RRTstar']]],
+  ['customvisitor',['CustomVisitor',['../classompl_1_1geometric_1_1SPARSdb_1_1CustomVisitor.html',1,'ompl::geometric::SPARSdb']]]
 ];

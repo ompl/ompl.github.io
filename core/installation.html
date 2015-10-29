@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -165,7 +177,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </p>
 <h1><a class="anchor" id="install_linux"></a>
 Installation on Linux</h1>
-<p>Below are installation instructions for Ubuntu Linux. Similar steps can be taken for other distributions, but package names may not be identical.</p>
 <h2><a class="anchor" id="install_linux_ubuntu"></a>
 Ubuntu Linux</h2>
 <h3>Installation from repositories</h3>
@@ -176,10 +187,7 @@ wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get install ros-`rosversion -d`-ompl
 </pre><h3>Installation from source</h3>
 <ul>
-<li><p class="startli">Install Boost and CMake </p><pre class="fragment">sudo apt-get install libboost-all-dev cmake
-</pre><p class="startli">Some versions of Linux offer multiple versions of Boost. It is strongly advised to install only one version.</p>
-</li>
-<li>To be able to generate documentation, generate Python bindings, build the ODE extension, the following packages are also needed: <pre class="fragment">sudo apt-get install doxygen graphviz python-dev libode-dev
+<li>Install Boost, CMake, and optional dependencies <pre class="fragment">sudo apt-get install libboost-all-dev cmake doxygen graphviz python-dev libeigen3-dev libode-dev
 </pre></li>
 <li>Create a build directory and run cmake: <pre class="fragment">cd ompl
 mkdir -p build/Release
@@ -204,49 +212,28 @@ make -j 4 update_bindings
 <li>When sourcing this workspace, be sure to source devel_isolated/setup.bash.</li>
 </ul>
 <h2>Fedora Linux</h2>
-<p>Thanks to Rich Mattes, OMPL core is available as a package for Fedora: </p><pre class="fragment">yum install ompl
-</pre><p>This package may not be the latest version, though. The source installation instructions for Fedora Linux are mostly the same as for Ubuntu Linux, although the packages have slightly different names. On Fedora 18, you can install the dependencies like so: </p><pre class="fragment">  sudo yum install boost-devel cmake python-devel
-</pre><p>The optional dependencies can be installed like so: </p><pre class="fragment">  sudo yum install doxygen graphviz ode-devel
-</pre><p>The build steps are the same as for Ubuntu Linux: </p><pre class="fragment">  cd omplapp
-  mkdir -p build/Release
-  cd build/Release
-  cmake ../..
-  make installpyplusplus &amp;&amp; cmake . # download &amp; install Py++
-  make -j 4 update_bindings
-  make -j 4
-</pre><h2>Debian Linux</h2>
+<p>Thanks to Rich Mattes, OMPL core is available as a package for Fedora: </p><pre class="fragment">sudo yum install ompl
+</pre><p>This package may not be the latest version, though. The source installation instructions for Fedora Linux are mostly the same as for Ubuntu Linux, although the packages have slightly different names. On Fedora, you can install the dependencies like so: </p><pre class="fragment">sudo yum install boost-devel cmake python-devel eigen3 ode-devel doxygen graphviz
+</pre><p>The build steps are the same as for Ubuntu Linux.</p>
+<h2>Debian Linux</h2>
 <p>Thanks to Leopold Palomo-Avellaneda, OMPL core is available as a collection of packages for Debian: </p><pre class="fragment">  apt-get install libompl-dev ompl-demos
 </pre><h1><a class="anchor" id="install_osx"></a>
 Installation on Mac OS X</h1>
-<p>It is easiest to install the OMPL through <a href="http://www.macports.org">MacPorts</a>, a package manager for OS X. However, if you feel adventurous, it is possible to install OMPL's dependencies with <a href="#install_homebrew">HomeBrew</a> and compile OMPL yourself.</p>
+<p>It is easiest to install OMPL through <a href="http://www.macports.org">MacPorts</a>, a package manager for OS X. However, if you feel adventurous, it is possible to install OMPL's dependencies with <a href="#install_homebrew">HomeBrew</a> and compile OMPL yourself.</p>
 <h2><a class="anchor" id="install_macports"></a>
 MacPorts</h2>
 <ul>
 <li>Install <a href="http://www.macports.org">MacPorts</a>.</li>
-<li><p class="startli">If you do not need to modify or see the source code of OMPL, then the easiest way to install OMPL is with the MacPorts <code>port</code> command: </p><pre class="fragment">sudo port sync
-sudo port install ompl
-</pre><p class="startli">This is it. You are done. It will take quite a while, though, to download, build, and install OMPL and all its dependencies. It is recommended to let this running overnight. Demo programs can be found in <code>/opt/local/share/ompl</code>.</p>
+<li><p class="startli">If you do not need to modify or see the source code of OMPL, then the easiest way to install OMPL is with the MacPorts <code>port</code> command: </p><pre class="fragment">sudo port sync \; install ompl
+</pre><p class="startli">This is it. You are done. Demo programs can be found in <code>/opt/local/share/ompl</code>.</p>
 </li>
-<li>If you downloaded the source distribution of OMPL, then you need to install the dependencies Boost, and CMake. Optionally, you can also install the Open Dynamics Engine, Py++, and the Python libraries and headers. If you have MacPorts installed, type the following: <pre class="fragment">sudo port sync
-sudo port install boost cmake ode py27-pyplusplus
+<li>If you downloaded the source distribution of OMPL, then you need to install the dependencies Boost, CMake, and optional dependencies. If you have MacPorts installed, type the following: <pre class="fragment">sudo port sync
+sudo port install boost cmake ode py27-pyplusplus eigen3 graphviz doxygen
 </pre></li>
 <li><p class="startli">It is <b>very</b> important that you use the same installed version of Python for all dependencies and OMPL. If you are using MacPorts, then you <b>must</b> use the MacPorts version of python 2.7 (most likely installed in <code>/opt/local/bin</code>). To make this version the default python version, make sure <code>/opt/local/bin</code> appears before <code>/usr/bin</code> in your PATH. You can add a line like this to your <code>${HOME}/.bash_profile</code>: </p><pre class="fragment">export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 </pre><p class="startli">Next, execute the following command: </p><pre class="fragment">sudo port select python python27
-</pre><p class="startli">You can check if the MacPorts-installed python 2.7 is the default one by typing the following command: </p><pre class="fragment">ls -l `which python`
 </pre></li>
-<li>To be able to generate documentation, Doxygen is also needed: <pre class="fragment">sudo port install doxygen
-</pre></li>
-<li>Create a build directory and run cmake: <pre class="fragment">cd ompl
-mkdir -p build/Release
-cd build/Release
-cmake ../..
-</pre></li>
-<li>If you want Python bindings, type the following command: <pre class="fragment">make -j 4 update_bindings
-</pre></li>
-<li>Compile OMPL by typing <code>make -j 4</code>.</li>
-<li>Optionally, run the test programs by typing <code>make test</code>.</li>
-<li>Optionally, generate documentation by typing <code>make doc</code>.</li>
-<li>If you need to install the library, you can type <code>sudo make install</code>. The install location is specified by <code>CMAKE_INSTALL_PREFIX</code>. If you install in a non-standard location, you have to set the environment variable PYTHONPATH to the directory where the OMPL python module is installed (e.g., $HOME/lib/python2.7/site-packages).</li>
+<li>The build steps are the same as for Ubuntu Linux.</li>
 </ul>
 <h2><a class="anchor" id="install_homebrew"></a>
 Homebrew</h2>
@@ -254,41 +241,27 @@ Homebrew</h2>
 <ul>
 <li>Install <a href="http://mxcl.github.com/homebrew">Homebrew</a>.</li>
 <li>Run <code>brew doctor</code> to make sure that everything is ready to go. If not, follow its instructions until it is ready.</li>
-<li>Type the following commands: <pre class="fragment">brew install boost cmake assimp ode
+<li>Type the following commands: <pre class="fragment">brew install boost cmake assimp ode eigen doxygen graphviz
 </pre></li>
-<li>To be able to generate documentation, Doxygen and Graphviz are also needed: <pre class="fragment">brew install doxygen graphviz
-</pre></li>
-<li>Create a build directory and run cmake: <pre class="fragment">cd ompl
-mkdir -p build/Release
-cd build/Release
-cmake ../..
-</pre></li>
-<li>If you want Python bindings, type the following commands: <pre class="fragment">make installpyplusplus
-cmake .
-make update_bindings
-</pre></li>
-<li>Compile OMPL by typing <code>make</code>.</li>
-<li>Optionally, run the test programs by typing <code>make test</code>.</li>
-<li>Optionally, generate documentation by typing <code>make doc</code>.</li>
-<li>If you need to install the library, you can type <code>sudo make install</code>. The install location is specified by <code>CMAKE_INSTALL_PREFIX</code>. If you install in a non-standard location, you have to set the environment variable PYTHONPATH to the directory where the OMPL python module is installed (e.g., $HOME/lib/python2.7/site-packages).</li>
+<li>The build steps are the same as for Ubuntu Linux.</li>
 </ul>
 <h1><a class="anchor" id="install_windows"></a>
 Installation on Windows</h1>
-<dl class="section note"><dt>Note</dt><dd>It is possible to run OMPL natively on Windows, although it must be stressed that <b>extensive testing on Windows is not performed</b> at this time, and running OMPL on Windows is considered experimental. It is <em>much</em> easier to install <a href="http://www.virtualbox.org">VirtualBox</a>, create an Ubuntu virtual machine, and follow the Ubuntu installation directions above.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is possible to run OMPL natively on Windows, although it must be stressed that <b>extensive testing on Windows is not performed</b> at this time, and running OMPL on Windows is considered <em>highly</em> experimental. It is <em>much</em> easier to install <a href="http://www.virtualbox.org">VirtualBox</a>, create an Ubuntu virtual machine, and follow the Ubuntu installation directions above.</dd></dl>
 <p>For best performance, the <a href="http://www.mingw.org">MinGW</a> compiler is recommended. Visual Studio can also be used to build the core OMPL library, but currently it is not possible to generate the python bindings for OMPL with this compiler. However, if the bindings are generated with MinGW, the bindings can be compiled by Visual Studio with some minor tweaks to the code (not recommended, unless you are an experienced Windows developer).</p>
 <h2>Required Dependencies</h2>
 <ul>
-<li><a href="http://www.cmake.org">CMake</a></li>
-<li><a href="http://www.mingw.org">MinGW</a> (recommended) or Visual Studio compiler</li>
+<li><a href="http://www.cmake.org">CMake</a>, version 2.8.7 or higher,</li>
+<li><a href="http://www.mingw.org">MinGW</a> (recommended) or Visual Studio compiler, and</li>
 <li><p class="startli"><a href="http://www.boost.org">Boost</a>, version 1.48 or greater.</p>
-<p class="startli">It is recommended to make a complete Boost compilation from source. If using Visual Studio, this process can be automated using the <a href="http://www.boostpro.com/download">BoostPro</a> installer. Once complete, set the environment variables <code>BOOST_ROOT</code> and <code>BOOST_LIBRARYDIR</code> to the locations where Boost and its libraries are installed. The default locations are <code>C:\Boost</code> and <code>C:\Boost\lib</code>. Ensure that <code>BOOST_LIBRARYDIR</code> is also in the system PATH so that any necessary Boost dlls are loaded properly at runtime.</p>
+<p class="startli">It is recommended to make a complete Boost compilation from source. If using Visual Studio, this process can be automated using the <a href="http://www.boostpro.com/download">BoostPro</a> installer. Once complete, set the environment variables <code>BOOST_ROOT</code> and <code>BOOST_LIBRARYDIR</code> to the locations where Boost and its libraries are installed. The default locations are <code>C:\\Boost</code> and <code>C:\\Boost\\lib</code>. Ensure that <code>BOOST_LIBRARYDIR</code> is also in the system PATH so that any necessary Boost dlls are loaded properly at runtime.</p>
 </li>
 </ul>
 <h2>Optional Dependencies (for Python bindings)</h2>
 <ul>
 <li>A <b>32-bit</b> version of <a href="http://www.python.org">Python</a> 2.7. Ensure that this is installed <b>before building Boost</b> so that Boost.Python is properly compiled.</li>
 <li>Ensure that Python is added to the system <code>PATH</code>.</li>
-<li>Py++: To generate the Python bindings, Py++ and its dependencies must be installed. A batch file has been included to automate this process (analogous to the Linux/Mac installation) that can be executed via cmake. Instructions can be found <a href="installPyPlusPlus.html">here</a>. Note that this process assumes the MinGW compiler, and installs gccxml to <code>C:\gccxml</code>. You will need to be in a shell with administrator privileges to execute this batch file. Once installed, it is recommended that you open a new shell to realize the new environment settings.</li>
+<li>Py++: To generate the Python bindings, Py++ and its dependencies must be installed. A batch file has been included to automate this process (analogous to the Linux/Mac installation) that can be executed via cmake. Instructions can be found <a href="installPyPlusPlus.html">here</a>. Note that this process assumes the MinGW compiler, and installs gccxml to <code>C:\\gccxml</code>. You will need to be in a shell with administrator privileges to execute this batch file. Once installed, it is recommended that you open a new shell to realize the new environment settings.</li>
 </ul>
 <h2>Build</h2>
 <ul>
@@ -300,7 +273,7 @@ cd Release
 cmake -G "GENERATOR" ../.. [-DCMAKE_INSTALL_PREFIX=/path/to/install]
 </pre></li>
 </ul>
-<p>The CMAKE_INSTALL_PREFIX variable is set to <code>C:\Program Files (x86)\ompl</code> by default.</p>
+<p>The CMAKE_INSTALL_PREFIX variable is set to <code>C:\\Program Files (x86)\\ompl</code> by default.</p>
 <h3>MinGW</h3>
 <ul>
 <li>The CMake generator for MinGW is <code>"MinGW Makefiles"</code></li>
@@ -316,7 +289,7 @@ cmake -G "GENERATOR" ../.. [-DCMAKE_INSTALL_PREFIX=/path/to/install]
 <ul>
 <li>The CMake generator for Visual Studio depends on the version of Visual Studio to generate a solution for. The generator for VS 2010 is <code>"Visual Studio 10"</code>, and the generator for VS 2008 is <code>"Visual Studio 9 2008"</code>. Consult the CMake documentation for other generators.</li>
 <li>Open ompl.sln and build the solution. A static library will be created (ompl.lib) to link your code against, as well as several demo programs.</li>
-<li>You can install OMPL by building the "INSTALL" project inside of the solution. Note that this will attempt to copy files to <code>C:\Program Files (x86)\ompl</code> (the default). The installation will fail unless Visual Studio is opened with administrator privileges, or a non-system install prefix is specified when cmake is run. </li>
+<li>You can install OMPL by building the "INSTALL" project inside of the solution. Note that this will attempt to copy files to <code>C:\\Program Files (x86)\\ompl</code> (the default). The installation will fail unless Visual Studio is opened with administrator privileges, or a non-system install prefix is specified when cmake is run. </li>
 </ul>
 </div></div><!-- contents -->
 </div>
@@ -325,7 +298,7 @@ cmake -G "GENERATOR" ../.. [-DCMAKE_INSTALL_PREFIX=/path/to/install]
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

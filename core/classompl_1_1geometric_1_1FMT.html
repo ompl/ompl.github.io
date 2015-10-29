@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -219,7 +231,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a28ac7acb4109f75428483ba3abeba1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa83e373538a982c432ac02ec432e1f01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa83e373538a982c432ac02ec432e1f01"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#aa83e373538a982c432ac02ec432e1f01">setRadiusMultiplier</a> (const double radiusMultiplier)</td></tr>
-<tr class="memdesc:aa83e373538a982c432ac02ec432e1f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">The planner searches for neighbors of a node within a cost r, where r is the value described for FMT* in Section 4 of [L. Janson, A. Clark, and M. Pavone, "Fast Marching Trees: a Fast Marching Sampling-Based Method for Optimal <a class="el" href="classompl_1_1geometric_1_1FMT_1_1Motion.html" title="Representation of a motion. ">Motion</a> Planning in Many Dimensions," International Symposium on Robotics Research, 2013. <a href="http://arxiv.org/pdf/1306.3532v3.pdf">http://arxiv.org/pdf/1306.3532v3.pdf</a>] For guaranteed asymptotic convergence, the user should choose a constant multiplier for the search radius that is greater than one. The default value is 1.1. In general, a radius multiplier between 0.9 and 5 appears to perform the best. <br /></td></tr>
+<tr class="memdesc:aa83e373538a982c432ac02ec432e1f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">The planner searches for neighbors of a node within a cost r, where r is the value described for FMT* in Section 4 of <a href="http://arxiv.org/pdf/1306.3532.pdf">L. Janson, E. Schmerling, A. Clark, M. Pavone. Fast marching tree: a fast marching sampling-based method for optimal motion planning in many dimensions. The International Journal of Robotics Research, 34(7):883-921, 2015</a>. For guaranteed asymptotic convergence, the user should choose a constant multiplier for the search radius that is greater than one. The default value is 1.1. In general, a radius multiplier between 0.9 and 5 appears to perform the best. <br /></td></tr>
 <tr class="separator:aa83e373538a982c432ac02ec432e1f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcc08aef047b155f404d943b3bfe047"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dcc08aef047b155f404d943b3bfe047"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#a2dcc08aef047b155f404d943b3bfe047">getRadiusMultiplier</a> () const </td></tr>
@@ -360,9 +372,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#a7125eb3d06ef10fa71b50732ba8a5881">calculateUnitBallVolume</a> (const unsigned int dimension) const </td></tr>
 <tr class="memdesc:a7125eb3d06ef10fa71b50732ba8a5881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the volume of the unit ball in a given dimension. <br /></td></tr>
 <tr class="separator:a7125eb3d06ef10fa71b50732ba8a5881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5ad6be63140371f4e7b98fdd185a182"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#ab5ad6be63140371f4e7b98fdd185a182">calculateRadius</a> (unsigned int dimension, unsigned int n) const </td></tr>
-<tr class="memdesc:ab5ad6be63140371f4e7b98fdd185a182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the radius to use for nearest neighbor searches, using the bound given in [L. Janson, A. Clark, and M. Pavone, "Fast Marching Trees: a Fast Marching Sampling-Based
-Method for Optimal Motion Planning in Many Dimensions," International Journal on Robotics Research,.  <a href="#ab5ad6be63140371f4e7b98fdd185a182">More...</a><br /></td></tr>
+<tr class="memitem:ab5ad6be63140371f4e7b98fdd185a182"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5ad6be63140371f4e7b98fdd185a182"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#ab5ad6be63140371f4e7b98fdd185a182">calculateRadius</a> (unsigned int dimension, unsigned int n) const </td></tr>
+<tr class="memdesc:ab5ad6be63140371f4e7b98fdd185a182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the radius to use for nearest neighbor searches, using the bound given in <a href="http://arxiv.org/pdf/1306.3532.pdf">L. Janson, E. Schmerling, A. Clark, M. Pavone. Fast marching tree: a fast marching sampling-based method for optimal motion planning in many dimensions. The International Journal of Robotics Research, 34(7):883-921, 2015</a>. The radius depends on the radiusMultiplier parameter, the volume of the free configuration space, the volume of the unit ball in the current dimension, and the number of nodes in the graph. <br /></td></tr>
 <tr class="separator:ab5ad6be63140371f4e7b98fdd185a182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a257fcb8c64559bc2514493878e25675a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a257fcb8c64559bc2514493878e25675a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#a257fcb8c64559bc2514493878e25675a">saveNeighborhood</a> (<a class="el" href="classompl_1_1geometric_1_1FMT_1_1Motion.html">Motion</a> *m)</td></tr>
@@ -436,7 +448,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a8dd5fe05d2383b43f96318afc8eb0be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46d97fd804d843808f96973d8428665a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46d97fd804d843808f96973d8428665a"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#a46d97fd804d843808f96973d8428665a">radiusMultiplier_</a></td></tr>
-<tr class="memdesc:a46d97fd804d843808f96973d8428665a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This planner uses a nearest neighbor search radius proportional to the lower bound for optimality derived for FMT* in Section 4 of [L. Janson, A. Clark, and M. Pavone, "Fast Marching Trees: a Fast Marching Sampling-Based Method for Optimal <a class="el" href="classompl_1_1geometric_1_1FMT_1_1Motion.html" title="Representation of a motion. ">Motion</a> Planning in Many Dimensions," International Journal on Robotics Research, 2013. <a href="http://arxiv.org/pdf/1306.3532v3.pdf">http://arxiv.org/pdf/1306.3532v3.pdf</a>]. The radius multiplier is the multiplier for the lower bound. For guaranteed asymptotic convergence, the user should choose a multiplier for the search radius that is greater than one. The default value is 1.1. In general, a radius between 0.9 and 5 appears to perform the best. <br /></td></tr>
+<tr class="memdesc:a46d97fd804d843808f96973d8428665a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This planner uses a nearest neighbor search radius proportional to the lower bound for optimality derived for FMT* in Section 4 of <a href="http://arxiv.org/pdf/1306.3532.pdf">L. Janson, E. Schmerling, A. Clark, M. Pavone. Fast marching tree: a fast marching sampling-based method for optimal motion planning in many dimensions. The International Journal of Robotics Research, 34(7):883-921, 2015</a>. The radius multiplier is the multiplier for the lower bound. For guaranteed asymptotic convergence, the user should choose a multiplier for the search radius that is greater than one. The default value is 1.1. In general, a radius between 0.9 and 5 appears to perform the best. <br /></td></tr>
 <tr class="separator:a46d97fd804d843808f96973d8428665a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad28dc9e3c595bf2064da24bff9ce456a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad28dc9e3c595bf2064da24bff9ce456a"></a>
 boost::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1FMT_1_1Motion.html">Motion</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1FMT.html#ad28dc9e3c595bf2064da24bff9ce456a">nn_</a></td></tr>
@@ -508,53 +520,11 @@ typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Plann
 <div class="textblock"><p>Asymptotically Optimal Fast Marching Tree algorithm developed by L. Janson and M. Pavone. </p>
 <p><a class="anchor" id="gFMT"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1FMT.html#gFMT">FMT*</a> is an asymptotically-optimal sampling-based motion planning algorithm, which is guaranteed to converge to a shortest path solution. The algorithm is specifically aimed at solving complex motion planning problems in high-dimensional configuration spaces. The <a class="el" href="classompl_1_1geometric_1_1FMT.html#gFMT">FMT*</a> algorithm essentially performs a lazy dynamic programming recursion on a set of probabilistically-drawn samples to grow a tree of paths, which moves steadily outward in cost-to-come space.</dd></dl>
 <dl class="section user"><dt>Deviation from the paper</dt><dd>The implementation includes a cache in the collision checking since the original algorithm could check the same collision more than once. It increases the memory requirements to O(n logn), but as samples tend to infinity this bound tend to O(n).</dd></dl>
-<dl class="section user"><dt>External documentation</dt><dd>L. Janson, A. Clark, and M. Pavone, Fast Marching Trees: a Fast Marching Sampling-Based Method for Optimal <a class="el" href="classompl_1_1geometric_1_1FMT_1_1Motion.html" title="Representation of a motion. ">Motion</a> Planning in Many Dimensions, International Journal on Robotics Research, 2014. Submitted. <a href="http://arxiv.org/pdf/1306.3532v3.pdf">http://arxiv.org/pdf/1306.3532v3.pdf</a><br />
- <a href="http://web.stanford.edu/~pavone/papers/Janson.Pavone.IJRR14.pdf">[PDF]</a> </dd></dl>
+<dl class="section user"><dt>External documentation</dt><dd>L. Janson, E. Schmerling, A. Clark, M. Pavone. Fast marching tree: a fast marching sampling-based method for optimal motion planning in many dimensions. The International Journal of Robotics Research, 34(7):883-921, 2015. DOI: <a href="http://dx.doi.org/10.1177/0278364915577958">10.1177/0278364915577958</a><br />
+ <a href="http://arxiv.org/pdf/1306.3532.pdf">[PDF]</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="FMT_8h_source.html#l00085">85</a> of file <a class="el" href="FMT_8h_source.html">FMT.h</a>.</p>
+<p>Definition at line <a class="el" href="FMT_8h_source.html#l00083">83</a> of file <a class="el" href="FMT_8h_source.html">FMT.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab5ad6be63140371f4e7b98fdd185a182"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double ompl::geometric::FMT::calculateRadius </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>dimension</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Calculate the radius to use for nearest neighbor searches, using the bound given in [L. Janson, A. Clark, and M. Pavone, "Fast Marching Trees: a Fast Marching Sampling-Based
-Method for Optimal Motion Planning in Many Dimensions," International Journal on Robotics Research,. </p>
-<ol type="1">
-<li><a href="http://arxiv.org/pdf/1306.3532v3.pdf">http://arxiv.org/pdf/1306.3532v3.pdf</a>]. The radius depends on the radiusMultiplier parameter, the volume of the free configuration space, the volume of the unit ball in the current dimension, and the number of nodes in the graph </li>
-</ol>
-
-<p>Definition at line <a class="el" href="FMT_8cpp_source.html#l00193">193</a> of file <a class="el" href="FMT_8cpp_source.html">FMT.cpp</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a16c1fb13fd113c89f9ac8fe19e4dcdba"></a>
 <div class="memitem">
 <div class="memproto">
@@ -578,11 +548,11 @@ Method for Optimal Motion Planning in Many Dimensions," International Journal on
 </div><div class="memdoc">
 
 <p>Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="classompl_1_1geometric_1_1FMT.html#aad1abe78084898384748b807310bf918" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. If this option is used, it is assumed the problem definition is not changed (unpredictable results otherwise). The only change in the problem definition that is accounted for is the addition of starting or goal states (but not changing previously added start/goal states). The function terminates if the call to <em>ptc</em> returns true. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Create a PRM-like connection strategy </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Create a PRM-like connection strategy </dd></dl>
 
 <p>Implements <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a">ompl::base::Planner</a>.</p>
 
-<p>Definition at line <a class="el" href="FMT_8cpp_source.html#l00264">264</a> of file <a class="el" href="FMT_8cpp_source.html">FMT.cpp</a>.</p>
+<p>Definition at line <a class="el" href="FMT_8cpp_source.html#l00270">270</a> of file <a class="el" href="FMT_8cpp_source.html">FMT.cpp</a>.</p>
 
 </div>
 </div>
@@ -597,7 +567,7 @@ Method for Optimal Motion Planning in Many Dimensions," International Journal on
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:04 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

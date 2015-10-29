@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -169,6 +181,10 @@ Public Types</h2></td></tr>
 typedef boost::function&lt; double(const _T &amp;, const _T &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1GreedyKCenters.html#a4614072ac6bd8833b0a5362727291534">DistanceFunction</a></td></tr>
 <tr class="memdesc:a4614072ac6bd8833b0a5362727291534"><td class="mdescLeft">&#160;</td><td class="mdescRight">The definition of a distance function. <br /></td></tr>
 <tr class="separator:a4614072ac6bd8833b0a5362727291534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4082081ba758973acf1d1e7e4d25d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b4082081ba758973acf1d1e7e4d25d6"></a>
+typedef boost::numeric::ublas::matrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1GreedyKCenters.html#a3b4082081ba758973acf1d1e7e4d25d6">Matrix</a></td></tr>
+<tr class="memdesc:a3b4082081ba758973acf1d1e7e4d25d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matrix type for storing distances between points and centers. <br /></td></tr>
+<tr class="separator:a3b4082081ba758973acf1d1e7e4d25d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -180,9 +196,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 const <a class="el" href="classompl_1_1GreedyKCenters.html#a4614072ac6bd8833b0a5362727291534">DistanceFunction</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1GreedyKCenters.html#a32dc0196b4cabe4ba01241c37bb7c533">getDistanceFunction</a> () const </td></tr>
 <tr class="memdesc:a32dc0196b4cabe4ba01241c37bb7c533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance function used. <br /></td></tr>
 <tr class="separator:a32dc0196b4cabe4ba01241c37bb7c533"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e1aa026ec5c4833183846fd95ea2b57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1GreedyKCenters.html#a1e1aa026ec5c4833183846fd95ea2b57">kcenters</a> (const std::vector&lt; _T &gt; &amp;data, unsigned int k, std::vector&lt; unsigned int &gt; &amp;centers, std::vector&lt; std::vector&lt; double &gt; &gt; &amp;dists)</td></tr>
-<tr class="memdesc:a1e1aa026ec5c4833183846fd95ea2b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greedy algorithm for selecting k centers.  <a href="#a1e1aa026ec5c4833183846fd95ea2b57">More...</a><br /></td></tr>
-<tr class="separator:a1e1aa026ec5c4833183846fd95ea2b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e0e7c79e810f3b3827dd8a5a8eeb01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1GreedyKCenters.html#ad8e0e7c79e810f3b3827dd8a5a8eeb01">kcenters</a> (const std::vector&lt; _T &gt; &amp;data, unsigned int k, std::vector&lt; unsigned int &gt; &amp;centers, <a class="el" href="classompl_1_1GreedyKCenters.html#a3b4082081ba758973acf1d1e7e4d25d6">Matrix</a> &amp;dists)</td></tr>
+<tr class="memdesc:ad8e0e7c79e810f3b3827dd8a5a8eeb01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greedy algorithm for selecting k centers.  <a href="#ad8e0e7c79e810f3b3827dd8a5a8eeb01">More...</a><br /></td></tr>
+<tr class="separator:ad8e0e7c79e810f3b3827dd8a5a8eeb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -199,9 +215,9 @@ class ompl::GreedyKCenters&lt; _T &gt;</h3>
 
 <p>An instance of this class can be used to greedily select a given number of representatives from a set of data points that are all far apart from each other. </p>
 
-<p>Definition at line <a class="el" href="GreedyKCenters_8h_source.html#l00048">48</a> of file <a class="el" href="GreedyKCenters_8h_source.html">GreedyKCenters.h</a>.</p>
+<p>Definition at line <a class="el" href="GreedyKCenters_8h_source.html#l00049">49</a> of file <a class="el" href="GreedyKCenters_8h_source.html">GreedyKCenters.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a1e1aa026ec5c4833183846fd95ea2b57"></a>
+<a class="anchor" id="ad8e0e7c79e810f3b3827dd8a5a8eeb01"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -231,7 +247,7 @@ template&lt;typename _T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt; &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1GreedyKCenters.html#a3b4082081ba758973acf1d1e7e4d25d6">Matrix</a> &amp;&#160;</td>
           <td class="paramname"><em>dists</em>&#160;</td>
         </tr>
         <tr>
@@ -253,12 +269,12 @@ template&lt;typename _T&gt; </div>
     <tr><td class="paramname">data</td><td>a vector of data points </td></tr>
     <tr><td class="paramname">k</td><td>the desired number of centers </td></tr>
     <tr><td class="paramname">centers</td><td>a vector of length k containing the indices into data of the k centers </td></tr>
-    <tr><td class="paramname">dists</td><td>a 2-dimensional array such that dists[i][j] is the distance between data[i] and data[center[j]] </td></tr>
+    <tr><td class="paramname">dists</td><td>a matrix such that dists(i,j) is the distance between data[i] and data[center[j]] </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="GreedyKCenters_8h_source.html#l00082">82</a> of file <a class="el" href="GreedyKCenters_8h_source.html">GreedyKCenters.h</a>.</p>
+<p>Definition at line <a class="el" href="GreedyKCenters_8h_source.html#l00085">85</a> of file <a class="el" href="GreedyKCenters_8h_source.html">GreedyKCenters.h</a>.</p>
 
 </div>
 </div>
@@ -284,7 +300,7 @@ template&lt;typename _T&gt; </div>
 </div><div class="memdoc">
 <p>Random number generator used to select first center </p>
 
-<p>Definition at line <a class="el" href="GreedyKCenters_8h_source.html#l00126">126</a> of file <a class="el" href="GreedyKCenters_8h_source.html">GreedyKCenters.h</a>.</p>
+<p>Definition at line <a class="el" href="GreedyKCenters_8h_source.html#l00130">130</a> of file <a class="el" href="GreedyKCenters_8h_source.html">GreedyKCenters.h</a>.</p>
 
 </div>
 </div>
@@ -298,7 +314,7 @@ template&lt;typename _T&gt; </div>
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

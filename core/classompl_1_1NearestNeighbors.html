@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -167,7 +179,7 @@ Inheritance diagram for ompl::NearestNeighbors&lt; _T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1NearestNeighbors__inherit__graph.png" border="0" usemap="#ompl_1_1NearestNeighbors_3_01__T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1NearestNeighbors_3_01__T_01_4_inherit__map" id="ompl_1_1NearestNeighbors_3_01__T_01_4_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1NearestNeighborsFLANN.html" title="Wrapper class for nearest neighbor data structures in the FLANN library. " alt="" coords="219,37,428,79"/><area shape="rect" id="node5" href="classompl_1_1NearestNeighborsGNAT.html" title="Geometric Near&#45;neighbor Access Tree (GNAT), a data structure for nearest neighbor search..." alt="" coords="222,103,425,144"/><area shape="rect" id="node6" href="classompl_1_1NearestNeighborsLinear.html" title="A nearest neighbors datastructure that uses linear search. " alt="" coords="222,168,425,209"/><area shape="rect" id="node3" href="classompl_1_1NearestNeighborsFLANNHierarchicalClustering.html" title="ompl::NearestNeighborsFLANNHierarchical\lClustering\&lt; _T, _Dist \&gt;" alt="" coords="476,5,756,47"/><area shape="rect" id="node4" href="classompl_1_1NearestNeighborsFLANNLinear.html" title="ompl::NearestNeighborsFLANNLinear\l\&lt; _T, _Dist \&gt;" alt="" coords="493,71,739,112"/><area shape="rect" id="node7" href="classompl_1_1NearestNeighborsSqrtApprox.html" title="A nearest neighbors datastructure that uses linear search. The linear search is done over sqrt(n) ele..." alt="" coords="521,168,711,209"/></map>
+<area shape="rect" id="node2" href="classompl_1_1NearestNeighborsFLANN.html" title="Wrapper class for nearest neighbor data structures in the FLANN library. " alt="" coords="224,37,433,79"/><area shape="rect" id="node5" href="classompl_1_1NearestNeighborsGNAT.html" title="Geometric Near&#45;neighbor Access Tree (GNAT), a data structure for nearest neighbor search..." alt="" coords="227,103,430,144"/><area shape="rect" id="node6" href="classompl_1_1NearestNeighborsGNATNoThreadSafety.html" title="Geometric Near&#45;neighbor Access Tree (GNAT), a data structure for nearest neighbor search..." alt="" coords="219,168,439,209"/><area shape="rect" id="node7" href="classompl_1_1NearestNeighborsLinear.html" title="A nearest neighbors datastructure that uses linear search. " alt="" coords="227,233,430,275"/><area shape="rect" id="node3" href="classompl_1_1NearestNeighborsFLANNHierarchicalClustering.html" title="ompl::NearestNeighborsFLANNHierarchical\lClustering\&lt; _T, _Dist \&gt;" alt="" coords="487,5,767,47"/><area shape="rect" id="node4" href="classompl_1_1NearestNeighborsFLANNLinear.html" title="ompl::NearestNeighborsFLANNLinear\l\&lt; _T, _Dist \&gt;" alt="" coords="503,71,750,112"/><area shape="rect" id="node8" href="classompl_1_1NearestNeighborsSqrtApprox.html" title="A nearest neighbors datastructure that uses linear search. The linear search is done over sqrt(n) ele..." alt="" coords="531,233,722,275"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -284,7 +296,7 @@ template&lt;typename _T&gt; </div>
 <p>Get the k-nearest neighbors of a point. </p>
 <p>All the nearest neighbor structures currently return the neighbors in sorted order, but this is not required. </p>
 
-<p>Implemented in <a class="el" href="classompl_1_1NearestNeighborsGNAT.html#ad6875308bed42c183ab98480ded8d30c">ompl::NearestNeighborsGNAT&lt; _T &gt;</a>, <a class="el" href="classompl_1_1NearestNeighborsFLANN.html#ac1e20184db04a2ceb23006001e5aab8d">ompl::NearestNeighborsFLANN&lt; _T, _Dist &gt;</a>, and <a class="el" href="classompl_1_1NearestNeighborsLinear.html#ae26a7842faa8f914277155185ff82bbf">ompl::NearestNeighborsLinear&lt; _T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classompl_1_1NearestNeighborsGNAT.html#ad6875308bed42c183ab98480ded8d30c">ompl::NearestNeighborsGNAT&lt; _T &gt;</a>, <a class="el" href="classompl_1_1NearestNeighborsGNATNoThreadSafety.html#a3b0acadc838a635700d959e47c1e9d09">ompl::NearestNeighborsGNATNoThreadSafety&lt; _T &gt;</a>, <a class="el" href="classompl_1_1NearestNeighborsFLANN.html#ac1e20184db04a2ceb23006001e5aab8d">ompl::NearestNeighborsFLANN&lt; _T, _Dist &gt;</a>, and <a class="el" href="classompl_1_1NearestNeighborsLinear.html#ae26a7842faa8f914277155185ff82bbf">ompl::NearestNeighborsLinear&lt; _T &gt;</a>.</p>
 
 </div>
 </div>
@@ -331,7 +343,7 @@ template&lt;typename _T&gt; </div>
 <p>Get the nearest neighbors of a point, within a specified radius. </p>
 <p>All the nearest neighbor structures currently return the neighbors in sorted order, but this is not required. </p>
 
-<p>Implemented in <a class="el" href="classompl_1_1NearestNeighborsGNAT.html#a206cf7958c9d6a9187675ea534c3fe87">ompl::NearestNeighborsGNAT&lt; _T &gt;</a>, <a class="el" href="classompl_1_1NearestNeighborsFLANN.html#a426f6a5c45afdff06f4091012155b791">ompl::NearestNeighborsFLANN&lt; _T, _Dist &gt;</a>, and <a class="el" href="classompl_1_1NearestNeighborsLinear.html#a833519244d353b76a0c2e878e8234607">ompl::NearestNeighborsLinear&lt; _T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classompl_1_1NearestNeighborsGNAT.html#a206cf7958c9d6a9187675ea534c3fe87">ompl::NearestNeighborsGNAT&lt; _T &gt;</a>, <a class="el" href="classompl_1_1NearestNeighborsGNATNoThreadSafety.html#aa85802358b9578e3e9dd0e0407ce6f14">ompl::NearestNeighborsGNATNoThreadSafety&lt; _T &gt;</a>, <a class="el" href="classompl_1_1NearestNeighborsFLANN.html#a426f6a5c45afdff06f4091012155b791">ompl::NearestNeighborsFLANN&lt; _T, _Dist &gt;</a>, and <a class="el" href="classompl_1_1NearestNeighborsLinear.html#a833519244d353b76a0c2e878e8234607">ompl::NearestNeighborsLinear&lt; _T &gt;</a>.</p>
 
 </div>
 </div>
@@ -345,7 +357,7 @@ template&lt;typename _T&gt; </div>
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -174,24 +186,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2791d1c63972989ba99b9c6c4d7448e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution using a direct ellipsoidal method.  <a href="#a2791d1c63972989ba99b9c6c4d7448e1">More...</a><br /></td></tr>
 <tr class="separator:a2791d1c63972989ba99b9c6c4d7448e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8133918bcdc3436ef538b76e5bfd15fd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8133918bcdc3436ef538b76e5bfd15fd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#a8133918bcdc3436ef538b76e5bfd15fd">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost)</td></tr>
-<tr class="memdesc:a8133918bcdc3436ef538b76e5bfd15fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are less than the provided cost. <br /></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#a8133918bcdc3436ef538b76e5bfd15fd">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost)</td></tr>
+<tr class="memdesc:a8133918bcdc3436ef538b76e5bfd15fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are less than the provided cost, i.e. in the interval [0, maxCost). Returns false if such a state was not found in the specified number of iterations. <br /></td></tr>
 <tr class="separator:a8133918bcdc3436ef538b76e5bfd15fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc91e6fd0776f638523641eb4ed43f17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc91e6fd0776f638523641eb4ed43f17"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#afc91e6fd0776f638523641eb4ed43f17">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;minCost, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost)</td></tr>
-<tr class="memdesc:afc91e6fd0776f638523641eb4ed43f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are between the provided costs. <br /></td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#afc91e6fd0776f638523641eb4ed43f17">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;minCost, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost)</td></tr>
+<tr class="memdesc:afc91e6fd0776f638523641eb4ed43f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample uniformly in the subset of the state space whose heuristic solution estimates are between the provided costs, [minCost, maxCost). Returns false if such a state was not found in the specified number of iterations. <br /></td></tr>
 <tr class="separator:afc91e6fd0776f638523641eb4ed43f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f8eaa2c47eda91cdb4f05d831b9034a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f8eaa2c47eda91cdb4f05d831b9034a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#a7f8eaa2c47eda91cdb4f05d831b9034a">hasInformedMeasure</a> () const </td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#a7f8eaa2c47eda91cdb4f05d831b9034a">hasInformedMeasure</a> () const </td></tr>
 <tr class="memdesc:a7f8eaa2c47eda91cdb4f05d831b9034a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the sampler can provide a measure of the informed subset. <br /></td></tr>
 <tr class="separator:a7f8eaa2c47eda91cdb4f05d831b9034a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f5c581e90956e0d92b89dee1452e1b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f5c581e90956e0d92b89dee1452e1b3"></a>
 virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#a3f5c581e90956e0d92b89dee1452e1b3">getInformedMeasure</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;currentCost) const </td></tr>
-<tr class="memdesc:a3f5c581e90956e0d92b89dee1452e1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The measure of the subset of the state space defined by the current solution cost that is being searched. Does not consider problem boundaries but returns the measure of the entire space if no solution has been found. <br /></td></tr>
+<tr class="memdesc:a3f5c581e90956e0d92b89dee1452e1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The measure of the subset of the state space defined by the current solution cost that is being searched. Does not consider problem boundaries but returns the measure of the entire space if no solution has been found. In the case of multiple goals, this measure assume each individual subset is independent, therefore the resulting measure will be an overestimate if any of the subsets overlap. <br /></td></tr>
 <tr class="separator:a3f5c581e90956e0d92b89dee1452e1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea49ebe7cfa1ec3eb605eb874f10e283"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea49ebe7cfa1ec3eb605eb874f10e283"></a>
-virtual <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#aea49ebe7cfa1ec3eb605eb874f10e283">heuristicSolnCost</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr) const </td></tr>
-<tr class="memdesc:aea49ebe7cfa1ec3eb605eb874f10e283"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function to calculate the heuristic estimate of the solution cost for the informed subset of a given state. <br /></td></tr>
+<tr class="memitem:aea49ebe7cfa1ec3eb605eb874f10e283"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#aea49ebe7cfa1ec3eb605eb874f10e283">heuristicSolnCost</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr) const </td></tr>
+<tr class="memdesc:aea49ebe7cfa1ec3eb605eb874f10e283"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function to calculate the heuristic estimate of the solution cost for the informed subset of a given state.  <a href="#aea49ebe7cfa1ec3eb605eb874f10e283">More...</a><br /></td></tr>
 <tr class="separator:aea49ebe7cfa1ec3eb605eb874f10e283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classompl_1_1base_1_1InformedSampler"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1InformedSampler')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1InformedSampler.html">ompl::base::InformedSampler</a></td></tr>
 <tr class="memitem:a120c9a7334392ccf1c8afa5fe6c49966 inherit pub_methods_classompl_1_1base_1_1InformedSampler"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a120c9a7334392ccf1c8afa5fe6c49966"></a>
@@ -225,14 +236,14 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An informed sampler for problems seeking to minimize path length. </p>
-<p>It focuses the search to the subset of a problem that can improve a current solution, which is a prolate hyperspheroid (PHS) (a special type of an hyperellipsoid) and can be sampled directly. Doing so considers all homotopy classes that can provide a better solution while guaranteeing a non-zero probability of improving a solution regardless of the size of the planning domain, the number of state dimensions, and how close the current solution is to the theoretical minimum. Currently only implemented for problems with a single goal in R^n (i.e., <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm. ">RealVectorStateSpace</a>), SE(2) (i.e., <a class="el" href="classompl_1_1base_1_1SE2StateSpace.html" title="A state space representing SE(2) ">SE2StateSpace</a>), and SE(3) (i.e., <a class="el" href="classompl_1_1base_1_1SE3StateSpace.html" title="A state space representing SE(3) ">SE3StateSpace</a>). Until an initial solution is found, this sampler simply passes-through to a uniform distribution over the entire state space. </p><dl class="section user"><dt>J D. Gammell, S. S. Srinivasa, T. D. Barfoot, "Informed RRT*: Optimal Sampling-based
-Path Planning Focused via Direct Sampling of an Admissible Ellipsoidal Heuristic."</dt><dd>IROS 2014. DOI: <a href="http://dx.doi.org/10.1109/IROS.2014.6942976">10.1109/IROS.2014.6942976</a>. <a href="http://www.youtube.com/watch?v=d7dX5MvDYTc">Illustration video</a>. <a href="http://www.youtube.com/watch?v=nsl-5MZfwu4">Short description video</a>.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd><ul>
-<li>Handle other types of goals? </li>
-</ul>
-</dd></dl>
+<p><a class="anchor" id="gPathLengthDirectInfSampler"></a> <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html" title="An informed sampler for problems seeking to minimize path length. ">PathLengthDirectInfSampler</a> is a method to generate uniform samples in the subset of a problem that could provide a shorter path from start to goal. This subset is a prolate hyperspheroid (PHS), a special type of an hyperellipsoid) and can be sampled directly.</p>
+<p>Informed sampling is a method to focus search which continuing to consider all homotopy classes that can provide a better solution. Directly sampling the informed subset guarantees a non-zero probability of improving a solution regardless of the size of the planning domain, the number of state dimensions, and how close the current solution is to the theoretical minimum.</p>
+<p>Currently only implemented for problems in R^n (i.e., <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm. ">RealVectorStateSpace</a>), SE(2) (i.e., <a class="el" href="classompl_1_1base_1_1SE2StateSpace.html" title="A state space representing SE(2) ">SE2StateSpace</a>), and SE(3) (i.e., <a class="el" href="classompl_1_1base_1_1SE3StateSpace.html" title="A state space representing SE(3) ">SE3StateSpace</a>). Until an initial solution is found, this sampler simply passes-through to a uniform distribution over the entire state space.</p>
+<dl class="section user"><dt>Associated publication:</dt><dd></dd></dl>
+<p>J D. Gammell, S. S. Srinivasa, T. D. Barfoot, "Informed RRT*: Optimal Sampling-based
+Path Planning Focused via Direct Sampling of an Admissible Ellipsoidal Heuristic." In Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). Chicago, IL, USA, 14-18 Sept. 2014. DOI: <a href="http://dx.doi.org/10.1109/IROS.2014.6942976">10.1109/IROS.2014.6942976</a>. <a href="http://www.youtube.com/watch?v=d7dX5MvDYTc">Illustration video</a>. <a href="http://www.youtube.com/watch?v=nsl-5MZfwu4">Short description video</a>. </p>
 
-<p>Definition at line <a class="el" href="PathLengthDirectInfSampler_8h_source.html#l00064">64</a> of file <a class="el" href="PathLengthDirectInfSampler_8h_source.html">PathLengthDirectInfSampler.h</a>.</p>
+<p>Definition at line <a class="el" href="PathLengthDirectInfSampler_8h_source.html#l00080">80</a> of file <a class="el" href="PathLengthDirectInfSampler_8h_source.html">PathLengthDirectInfSampler.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2791d1c63972989ba99b9c6c4d7448e1"></a>
 <div class="memitem">
@@ -259,9 +270,41 @@ Path Planning Focused via Direct Sampling of an Admissible Ellipsoidal Heuristic
 </div><div class="memdoc">
 
 <p>Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution using a direct ellipsoidal method. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>We don't check for the cost-to-go heuristic in the optimization objective, as this direct sampling is for Euclidean distance. </dd></dl>
+<p>Note: We don't check that there is a cost-to-go heuristic set in the optimization objective, as this direct sampling is only for Euclidean distance. </p>
 
-<p>Definition at line <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html#l00052">52</a> of file <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html">PathLengthDirectInfSampler.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html#l00058">58</a> of file <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html">PathLengthDirectInfSampler.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aea49ebe7cfa1ec3eb605eb874f10e283"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> ompl::base::PathLengthDirectInfSampler::heuristicSolnCost </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td>
+          <td class="paramname"><em>statePtr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A helper function to calculate the heuristic estimate of the solution cost for the informed subset of a given state. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Use a heuristic function for the full solution cost defined in <a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives. ">OptimizationObjective</a> or some new Heuristic class once said function is defined. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1InformedSampler.html#ac85941a5f3fc3aae095d86d7024a95b0">ompl::base::InformedSampler</a>.</p>
+
+<p>Definition at line <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html#l00319">319</a> of file <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html">PathLengthDirectInfSampler.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +319,7 @@ Path Planning Focused via Direct Sampling of an Admissible Ellipsoidal Heuristic
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

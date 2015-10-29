@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -148,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">How to Benchmark Planners </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>OMPL contains a ompl::Benchmark class that facilitates solving a motion planning problem repeatedly with different planners, different samplers, or even differently configured versions of the same planning algorithm. Below, we will describe how you can use this class.</p>
+<div class="textblock"><p>OMPL contains a ompl::Benchmark class that facilitates solving a motion planning problem repeatedly with different parameters, different planners, different samplers, or even differently configured versions of the same planning algorithm. Below, we will describe how you can use this class.</p>
 <ul>
 <li><a class="el" href="benchmark.html#benchmark_code">Writing benchmarking code</a></li>
 <li><a class="el" href="benchmark.html#benchmark_log">Processing the benchmarking log file</a></li>
@@ -164,6 +176,7 @@ Writing benchmarking code</h1>
 <ul>
 <li>Configure the benchmark problem using <a class="el" href="classompl_1_1geometric_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a geometric problem. ">ompl::geometric::SimpleSetup</a> or <a class="el" href="classompl_1_1control_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a control problem. ">ompl::control::SimpleSetup</a></li>
 <li>Create a ompl::Benchmark object that takes the problem as input</li>
+<li>Optionally, specify some parameters for the benchmark object using ompl::Benchmark::addExperimentParameter, which is useful when aggregating benchmark results over parametrized benchmarks.</li>
 <li>Add one or more planners to the benchmark</li>
 <li>Optionally add events to be called before and/or after the execution of a planner</li>
 <li>Run the benchmark problem a specified number of times, subject to specified time and memory limits</li>
@@ -190,6 +203,10 @@ Writing benchmarking code</h1>
 </div><!-- fragment --><p>Benchmarking code starts here:</p>
 <div class="fragment"><div class="line"><span class="comment">// First we create a benchmark class:</span></div>
 <div class="line"><a class="code" href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a> b(ss, <span class="stringliteral">&quot;my experiment&quot;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Optionally, specify some benchmark parameters (doesn&#39;t change how the benchmark is run)</span></div>
+<div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_dofs&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>)</div>
+<div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_obstacles&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>)</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// We add the planners to evaluate.</span></div>
 <div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::KPIECE1(ss.getSpaceInformation())));</div>
@@ -246,7 +263,7 @@ Writing benchmarking code</h1>
 </div><!-- fragment --><h1><a class="anchor" id="benchmark_log"></a>
 Processing the benchmarking log file</h1>
 <p>Once the C++ code computing the results has been executed, a log file is generated. This contains information about the settings of the planners, the parameters of the problem tested on, etc. To visualize this information, we provide a script that parses the log files: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py logfile.log -d mydatabase.db
-</pre><p>This will generate a SQLite database containing the parsed data. If no database name is specified, the named is assumed to be benchmark.db Once this database is generated, we can construct plots: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -p boxplot.pdf
+</pre><p>This will generate a SQLite database containing the parsed data. If no database name is specified, the named is assumed to be benchmark.db. Once this database is generated, we can visualize the results. The recommended way is to upload the database to <a href="http://plannerarena.org">Planner Arena</a> and navigate through the different plots. Planner Arena can also be run locally with the <code>plannerarena</code> script (requires R to be installed). Alternatively, you can also produce some basic plots with <code>ompl_benchmark_statistics.py</code> like so: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -p boxplot.pdf
 </pre><p>This will generate a series of plots, one for each of the attributes described below, showing the results for each planner. <a href="#benchmark_sample_results">Below</a> we have included some sample benchmark results.</p>
 <p>If you would like to process the data in different ways, you can generate a dump file that you can load in a MySQL database: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -m mydump.sql
 </pre><p>For more details on how to use the benchmark script, see: </p><pre class="fragment">scripts/ompl_benchmark_statistics.py --help
@@ -352,7 +369,12 @@ The benchmark logfile format</h1>
 </div><!-- fragment --><p> Here, <code>EOL</code> denotes a newline character, <code>int</code> denotes an integer, <code>float</code> denotes a floating point number, <code>num</code> denotes an integer or float value and undefined symbols correspond to strings without whitespace characters. The exception is <code>property_name</code> which is a string that <em>can</em> have whitespace characters. It is also assumed that if the log file says there is data for <em>k</em> planners that that really is the case (likewise for the number of run measurements and the optional progress measurements).</p>
 <h1><a class="anchor" id="benchmark_database"></a>
 The benchmark database schema</h1>
-<p>The ompl_benchmark_statistics.py script can produce a series of plots from a database of benchmark results, but in many cases you may want to produce your own custom plots. For this it useful to understand the schema used for the database. There are five tables in a benchmark database:</p><ul>
+<div class="col-sm-4 pull-right"> <div class="image">
+<img src="images/benchmarkdb_schema.png"  width="100%"/>
+</div>
+<p> <br />
+ <b>The benchmark database schema</b> </div><p> The ompl_benchmark_statistics.py script can produce a series of plots from a database of benchmark results, but in many cases you may want to produce your own custom plots. For this it useful to understand the schema used for the database. There are five tables in a benchmark database:</p>
+<ul>
 <li><b>experiments</b>. This table contains the following information:<ul>
 <li><em>id:</em> an ID used in the <code>runs</code> table to denote that a run was part of a given experiment.</li>
 <li><em>name:</em> name of the experiment.</li>
@@ -374,7 +396,7 @@ The benchmark database schema</h1>
 <li><em>settings:</em> a string containing a “print-out” of all the settings of the planner.</li>
 </ul>
 </li>
-<li><b>enums:</b> This table contains description of enumerate types that are measured during benchmarking. By default there is only one such such type defined: <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve() ">ompl::base::PlannerStatus</a>. The table contains the following information:<ul>
+<li><b>enums</b>: This table contains description of enumerate types that are measured during benchmarking. By default there is only one such such type defined: <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve() ">ompl::base::PlannerStatus</a>. The table contains the following information:<ul>
 <li><em>name:</em> name of the enumerate type (e.g., “status”).</li>
 <li><em>value:</em> numerical value used in the runs</li>
 <li><em>description:</em> text description of each value (e.g. “Exact solution,” “Approximate solution,” “Timeout,” etc.)</li>
@@ -397,7 +419,8 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
 </ul>
 </li>
 </ul>
-<p>Using SQL queries one can easily select a subset of the data or compute <a href="http://en.wikipedia.org/wiki/Join_(SQL)">joins</a> of tables. Consider the following snippet of R code: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;library(&quot;ggplot2&quot;)</div>
+<p>Using SQL queries one can easily select a subset of the data or compute <a href="http://en.wikipedia.org/wiki/Join_(SQL)">joins</a> of tables. Consider the following snippet of R code:</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;library(&quot;ggplot2&quot;)</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;library(&quot;RSQLite&quot;)</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;con &lt;- dbConnect(dbDriver(&quot;SQLite&quot;), &quot;benchmark.db&quot;)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
@@ -412,7 +435,7 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;dev.off()</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;dbDisconnect(con)</div>
-</div><!-- fragment --><p> For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:  
+</div><!-- fragment --><p>For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:  
 <div class="row">
 <div class="col-md-6 col-sm-6">
   <img src="images/R_time.png" width="100%"><br>
@@ -432,7 +455,7 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:03 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

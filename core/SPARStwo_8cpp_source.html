@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -211,12 +223,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    denseDeltaFraction_(.001),</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    maxFailures_(5000),</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    nearSamplePoints_((2*si_-&gt;getStateDimension())),</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    stateProperty_(boost::get(<a class="code" href="structompl_1_1geometric_1_1SPARStwo_1_1vertex__state__t.html">vertex_state_t</a>(), g_)),</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    weightProperty_(boost::get(boost::edge_weight, g_)),</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    colorProperty_(boost::get(<a class="code" href="structompl_1_1geometric_1_1SPARStwo_1_1vertex__color__t.html">vertex_color_t</a>(), g_)),</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    interfaceDataProperty_(boost::get(<a class="code" href="structompl_1_1geometric_1_1SPARStwo_1_1vertex__interface__data__t.html">vertex_interface_data_t</a>(), g_)),</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    disjointSets_(boost::get(boost::vertex_rank, g_),</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                  boost::get(boost::vertex_predecessor, g_)),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    stateProperty_(<a class="code" href="namespaceboost.html">boost</a>::get(<a class="code" href="structompl_1_1geometric_1_1SPARStwo_1_1vertex__state__t.html">vertex_state_t</a>(), g_)),</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    weightProperty_(<a class="code" href="namespaceboost.html">boost</a>::get(<a class="code" href="namespaceboost.html">boost</a>::edge_weight, g_)),</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    colorProperty_(<a class="code" href="namespaceboost.html">boost</a>::get(<a class="code" href="structompl_1_1geometric_1_1SPARStwo_1_1vertex__color__t.html">vertex_color_t</a>(), g_)),</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    interfaceDataProperty_(<a class="code" href="namespaceboost.html">boost</a>::get(<a class="code" href="structompl_1_1geometric_1_1SPARStwo_1_1vertex__interface__data__t.html">vertex_interface_data_t</a>(), g_)),</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    disjointSets_(<a class="code" href="namespaceboost.html">boost</a>::get(<a class="code" href="namespaceboost.html">boost</a>::vertex_rank, g_),</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                  <a class="code" href="namespaceboost.html">boost</a>::get(<a class="code" href="namespaceboost.html">boost</a>::vertex_predecessor, g_)),</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    addedSolution_(false),</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    consecutiveFailures_(0),</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    sparseDelta_(0.),</div>
@@ -251,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Planner::setup();</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (!nn_)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        nn_.reset(tools::SelfConfig::getDefaultNearestNeighbors&lt;Vertex&gt;(si_-&gt;getStateSpace()));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        nn_.reset(tools::SelfConfig::getDefaultNearestNeighbors&lt;Vertex&gt;(<span class="keyword">this</span>));</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    nn_-&gt;setDistanceFunction(boost::bind(&amp;<a class="code" href="classompl_1_1geometric_1_1SPARStwo.html#a620389bf2e44e9f751cb0f01ce905e6d">SPARStwo::distanceFunction</a>, <span class="keyword">this</span>, _1, _2));</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">double</span> maxExt = si_-&gt;getMaximumExtent();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    sparseDelta_ = sparseDeltaFraction_ * maxExt;</div>
@@ -1045,6 +1057,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespaceompl_1_1base_html_a743743b4754208eb83ecb3ab20e4df4c"><div class="ttname"><a href="namespaceompl_1_1base.html#a743743b4754208eb83ecb3ab20e4df4c">ompl::base::plannerOrTerminationCondition</a></div><div class="ttdeci">PlannerTerminationCondition plannerOrTerminationCondition(const PlannerTerminationCondition &amp;c1, const PlannerTerminationCondition &amp;c2)</div><div class="ttdoc">Combine two termination conditions into one. If either termination condition returns true...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8cpp_source.html#l00213">PlannerTerminationCondition.cpp:213</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1SPARStwo_html_a13168568bcdf17e628c0adb08b4ac6f9"><div class="ttname"><a href="classompl_1_1geometric_1_1SPARStwo.html#a13168568bcdf17e628c0adb08b4ac6f9">ompl::geometric::SPARStwo::clear</a></div><div class="ttdeci">virtual void clear()</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition:</b> <a href="SPARStwo_8cpp_source.html#l00142">SPARStwo.cpp:142</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1SPARStwo_html_a57bfc6740dcbd03cba8a3dc96cb89961"><div class="ttname"><a href="classompl_1_1geometric_1_1SPARStwo.html#a57bfc6740dcbd03cba8a3dc96cb89961">ompl::geometric::SPARStwo::haveSolution</a></div><div class="ttdeci">bool haveSolution(const std::vector&lt; Vertex &gt; &amp;start, const std::vector&lt; Vertex &gt; &amp;goal, base::PathPtr &amp;solution)</div><div class="ttdoc">Check if there exists a solution, i.e., there exists a pair of milestones such that the first is in s...</div><div class="ttdef"><b>Definition:</b> <a href="SPARStwo_8cpp_source.html#l00174">SPARStwo.cpp:174</a></div></div>
+<div class="ttc" id="namespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdef"><b>Definition:</b> <a href="SPARSdb_8cpp_source.html#l00075">SPARSdb.cpp:75</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1ProblemDefinitionPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a></div><div class="ttdoc">A boost shared pointer wrapper for ompl::base::ProblemDefinition. </div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1SPARStwo_html_a620389bf2e44e9f751cb0f01ce905e6d"><div class="ttname"><a href="classompl_1_1geometric_1_1SPARStwo.html#a620389bf2e44e9f751cb0f01ce905e6d">ompl::geometric::SPARStwo::distanceFunction</a></div><div class="ttdeci">double distanceFunction(const Vertex a, const Vertex b) const </div><div class="ttdoc">Compute distance between two milestones (this is simply distance between the states of the milestones...</div><div class="ttdef"><b>Definition:</b> <a href="SPARStwo_8h_source.html#l00447">SPARStwo.h:447</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1SPARStwo_html_a1ce421639b3276212439a5cc1d0f8bd0"><div class="ttname"><a href="classompl_1_1geometric_1_1SPARStwo.html#a1ce421639b3276212439a5cc1d0f8bd0">ompl::geometric::SPARStwo::setDenseDeltaFraction</a></div><div class="ttdeci">void setDenseDeltaFraction(double d)</div><div class="ttdoc">Sets interface support tolerance as a fraction of max. extent. </div><div class="ttdef"><b>Definition:</b> <a href="SPARStwo_8h_source.html#l00260">SPARStwo.h:260</a></div></div>
@@ -1058,7 +1071,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1geometric_1_1SPARStwo_html_a08ebf31474c192801c581745476f1dbb"><div class="ttname"><a href="classompl_1_1geometric_1_1SPARStwo.html#a08ebf31474c192801c581745476f1dbb">ompl::geometric::SPARStwo::distanceCheck</a></div><div class="ttdeci">void distanceCheck(Vertex rep, const base::State *q, Vertex r, const base::State *s, Vertex rp)</div><div class="ttdoc">Performs distance checking for the candidate new state, q against the current information. </div><div class="ttdef"><b>Definition:</b> <a href="SPARStwo_8cpp_source.html#l00702">SPARStwo.cpp:702</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1Goal_html"><div class="ttname"><a href="classompl_1_1base_1_1Goal.html">ompl::base::Goal</a></div><div class="ttdoc">Abstract definition of goals. </div><div class="ttdef"><b>Definition:</b> <a href="Goal_8h_source.html#l00063">Goal.h:63</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1SPARStwo_html_aa212ec1cd1e496ce802cb892b242e079"><div class="ttname"><a href="classompl_1_1geometric_1_1SPARStwo.html#aa212ec1cd1e496ce802cb892b242e079">ompl::geometric::SPARStwo::SPARStwo</a></div><div class="ttdeci">SPARStwo(const base::SpaceInformationPtr &amp;si)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> <a href="SPARStwo_8cpp_source.html#l00053">SPARStwo.cpp:53</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00065">PlannerTerminationCondition.h:65</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00066">PlannerTerminationCondition.h:66</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1SPARStwo_html_ad5ea6eea62d2f38686875f8867fabc7b"><div class="ttname"><a href="classompl_1_1geometric_1_1SPARStwo.html#ad5ea6eea62d2f38686875f8867fabc7b">ompl::geometric::SPARStwo::findGraphRepresentative</a></div><div class="ttdeci">Vertex findGraphRepresentative(base::State *st)</div><div class="ttdoc">Finds the representative of the input state, st. </div><div class="ttdef"><b>Definition:</b> <a href="SPARStwo_8cpp_source.html#l00587">SPARStwo.cpp:587</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdoc">STL namespace. </div></div>
 <div class="ttc" id="classompl_1_1base_1_1PlannerData_html_ac61c5ab5cfd6a66a58e03b1731c1e454"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#ac61c5ab5cfd6a66a58e03b1731c1e454">ompl::base::PlannerData::addVertex</a></div><div class="ttdeci">unsigned int addVertex(const PlannerDataVertex &amp;st)</div><div class="ttdoc">Adds the given vertex to the graph data. The vertex index is returned. Duplicates are not added...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00404">PlannerData.cpp:404</a></div></div>
@@ -1150,7 +1163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:02 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

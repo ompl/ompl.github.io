@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="benchmark.html">Benchmarking</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -66,8 +67,19 @@
               <li><a href="annotated.html">Classes</a></li>
               <li><a href="files.html">Files</a></li>
               <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-              <li><a href="teamcity.html">TeamCity Build Server</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
           <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -205,196 +217,254 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">from</span> ompl <span class="keyword">import</span> geometric <span class="keyword">as</span> og</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">from</span> math <span class="keyword">import</span> sqrt</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">from</span> sys <span class="keyword">import</span> argv</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">## @cond IGNORE</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"># Our &quot;collision checker&quot;. For this demo, our robot&#39;s state space</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"># lies in [0,1]x[0,1], with a circular obstacle of radius 0.25</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"># centered at (0.5,0.5). Any states lying in this circular region are</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"># considered &quot;in collision&quot;.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">class </span>ValidityChecker(<a class="code" href="classompl_1_1base_1_1StateValidityChecker.html">ob.StateValidityChecker</a>):</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">def </span>__init__(self, si):</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        super(ValidityChecker, self).__init__(si)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment"># Returns whether the given state&#39;s position overlaps the</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment"># circular obstacle</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">def </span>isValid(self, state):</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> self.clearance(state) &gt; 0.0</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment"># Returns the distance from the given state&#39;s position to the</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment"># boundary of the circular obstacle.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">def </span>clearance(self, state):</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment"># Extract the robot&#39;s (x,y) position from its state</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        x = state[0]</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        y = state[1]</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment"># Distance formula between two points, offset by the circle&#39;s</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment"># radius</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> sqrt((x-0.5)*(x-0.5) + (y-0.5)*(y-0.5)) - 0.25</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">import</span> argparse</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">## @cond IGNORE</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"># Our &quot;collision checker&quot;. For this demo, our robot&#39;s state space</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"># lies in [0,1]x[0,1], with a circular obstacle of radius 0.25</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"># centered at (0.5,0.5). Any states lying in this circular region are</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"># considered &quot;in collision&quot;.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">class </span>ValidityChecker(<a class="code" href="classompl_1_1base_1_1StateValidityChecker.html">ob.StateValidityChecker</a>):</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">def </span>__init__(self, si):</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        super(ValidityChecker, self).__init__(si)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment"># Returns whether the given state&#39;s position overlaps the</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment"># circular obstacle</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">def </span>isValid(self, state):</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> self.clearance(state) &gt; 0.0</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment"># Returns the distance from the given state&#39;s position to the</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment"># boundary of the circular obstacle.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">def </span>clearance(self, state):</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment"># Extract the robot&#39;s (x,y) position from its state</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        x = state[0]</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        y = state[1]</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment"># Distance formula between two points, offset by the circle&#39;s</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment"># radius</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> sqrt((x-0.5)*(x-0.5) + (y-0.5)*(y-0.5)) - 0.25</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">## Returns a structure representing the optimization objective to use</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">#  for optimal motion planning. This method returns an objective</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">#  which attempts to minimize the length in configuration space of</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">#  computed paths.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">def </span>getPathLengthObjective(si):</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">## Returns an optimization objective which attempts to minimize path</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">#  length that is satisfied when a path of length shorter than 1.51</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">#  is found.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">def </span>getThresholdPathLengthObj(si):</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    obj = <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    obj.setCostThreshold(<a class="code" href="classompl_1_1base_1_1Cost.html">ob.Cost</a>(1.51))</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> obj</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">## Defines an optimization objective which attempts to steer the</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">#  robot away from obstacles. To formulate this objective as a</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">#  minimization of path cost, we can define the cost of a path as a</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">#  summation of the costs of each of the states along the path, where</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">#  each state cost is a function of that state&#39;s clearance from</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">#  obstacles.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">#  The class StateCostIntegralObjective represents objectives as</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">#  summations of state costs, just like we require. All we need to do</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">#  then is inherit from that base class and define our specific state</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">#  cost function by overriding the stateCost() method.</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">class </span>ClearanceObjective(<a class="code" href="classompl_1_1base_1_1StateCostIntegralObjective.html">ob.StateCostIntegralObjective</a>):</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">def </span>__init__(self, si):</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        super(ClearanceObjective, self).__init__(si, <span class="keyword">True</span>)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        self.si_ = si</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment"># Our requirement is to maximize path clearance from obstacles,</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment"># but we want to represent the objective as a path cost</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment"># minimization. Therefore, we set each state&#39;s cost to be the</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment"># reciprocal of its clearance, so that as state clearance</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment"># increases, the state cost decreases.</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">def </span>stateCost(self, s):</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ob.Cost</a>(1 / self.si_.getStateValidityChecker().clearance(s))</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">## Return an optimization objective which attempts to steer the robot</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">#  away from obstacles.</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">def </span>getClearanceObjective(si):</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> ClearanceObjective(si)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">## Create an optimization objective which attempts to optimize both</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">#  path length and clearance. We do this by defining our individual</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">#  objectives, then adding them to a MultiOptimizationObjective</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">#  object. This results in an optimization objective where path cost</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">#  is equivalent to adding up each of the individual objectives&#39; path</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">#  costs.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">#  When adding objectives, we can also optionally specify each</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">#  objective&#39;s weighting factor to signify how important it is in</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">#  optimal planning. If no weight is specified, the weight defaults to</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">#  1.0.</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">def </span>getBalancedObjective1(si):</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    lengthObj = <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    clearObj = ClearanceObjective(si)</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    opt = <a class="code" href="classompl_1_1base_1_1MultiOptimizationObjective.html">ob.MultiOptimizationObjective</a>(si)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    opt.addObjective(lengthObj, 5.0)</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    opt.addObjective(clearObj, 1.0)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> opt</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">## Create an optimization objective equivalent to the one returned by</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">#  getBalancedObjective1(), but use an alternate syntax.</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">#  THIS DOESN&#39;T WORK YET. THE OPERATORS SOMEHOW AREN&#39;T EXPORTED BY Py++.</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"># def getBalancedObjective2(si):</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">#     lengthObj = ob.PathLengthOptimizationObjective(si)</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">#     clearObj = ClearanceObjective(si)</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">#     return 5.0*lengthObj + clearObj</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">## Returns a structure representing the optimization objective to use</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">#  for optimal motion planning. This method returns an objective</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">#  which attempts to minimize the length in configuration space of</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">#  computed paths.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">def </span>getPathLengthObjective(si):</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">## Returns an optimization objective which attempts to minimize path</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">#  length that is satisfied when a path of length shorter than 1.51</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">#  is found.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">def </span>getThresholdPathLengthObj(si):</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    obj = <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    obj.setCostThreshold(<a class="code" href="classompl_1_1base_1_1Cost.html">ob.Cost</a>(1.51))</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> obj</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">## Defines an optimization objective which attempts to steer the</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">#  robot away from obstacles. To formulate this objective as a</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">#  minimization of path cost, we can define the cost of a path as a</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">#  summation of the costs of each of the states along the path, where</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">#  each state cost is a function of that state&#39;s clearance from</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">#  obstacles.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">#  The class StateCostIntegralObjective represents objectives as</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">#  summations of state costs, just like we require. All we need to do</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">#  then is inherit from that base class and define our specific state</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">#  cost function by overriding the stateCost() method.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">class </span>ClearanceObjective(<a class="code" href="classompl_1_1base_1_1StateCostIntegralObjective.html">ob.StateCostIntegralObjective</a>):</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">def </span>__init__(self, si):</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        super(ClearanceObjective, self).__init__(si, <span class="keyword">True</span>)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        self.si_ = si</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment"># Our requirement is to maximize path clearance from obstacles,</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment"># but we want to represent the objective as a path cost</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment"># minimization. Therefore, we set each state&#39;s cost to be the</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment"># reciprocal of its clearance, so that as state clearance</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment"># increases, the state cost decreases.</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">def </span>stateCost(self, s):</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ob.Cost</a>(1 / self.si_.getStateValidityChecker().clearance(s))</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">## Return an optimization objective which attempts to steer the robot</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">#  away from obstacles.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">def </span>getClearanceObjective(si):</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> ClearanceObjective(si)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">## Create an optimization objective which attempts to optimize both</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">#  path length and clearance. We do this by defining our individual</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">#  objectives, then adding them to a MultiOptimizationObjective</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">#  object. This results in an optimization objective where path cost</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">#  is equivalent to adding up each of the individual objectives&#39; path</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">#  costs.</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">#  When adding objectives, we can also optionally specify each</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">#  objective&#39;s weighting factor to signify how important it is in</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">#  optimal planning. If no weight is specified, the weight defaults to</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">#  1.0.</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">def </span>getBalancedObjective1(si):</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    lengthObj = <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    clearObj = ClearanceObjective(si)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    opt = <a class="code" href="classompl_1_1base_1_1MultiOptimizationObjective.html">ob.MultiOptimizationObjective</a>(si)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    opt.addObjective(lengthObj, 5.0)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    opt.addObjective(clearObj, 1.0)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> opt</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">## Create an optimization objective equivalent to the one returned by</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">#  getBalancedObjective1(), but use an alternate syntax.</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">#  THIS DOESN&#39;T WORK YET. THE OPERATORS SOMEHOW AREN&#39;T EXPORTED BY Py++.</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"># def getBalancedObjective2(si):</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">#     lengthObj = ob.PathLengthOptimizationObjective(si)</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">#     clearObj = ClearanceObjective(si)</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">#     return 5.0*lengthObj + clearObj</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">## Create an optimization objective for minimizing path length, and</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">#  specify a cost-to-go heuristic suitable for this optimal planning</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">#  problem.</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">def </span>getPathLengthObjWithCostToGo(si):</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    obj = <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    obj.setCostToGoHeuristic(<a class="code" href="namespaceompl_1_1base.html#a8f113aa9c3d10539fca0d99d7a9e69e9">ob.CostToGoHeuristic</a>(ob.goalRegionCostToGo))</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> obj</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">def </span>plan(fname = None):</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment"># Construct the robot state space in which we&#39;re planning. We&#39;re</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment"># planning in [0,1]x[0,1], a subset of R^2.</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    space = <a class="code" href="classompl_1_1base_1_1RealVectorStateSpace.html">ob.RealVectorStateSpace</a>(2)</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment"># Set the bounds of space to be in [0,1].</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    space.setBounds(0.0, 1.0)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment"># Construct a space information instance for this state space</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    si = <a class="code" href="classompl_1_1base_1_1SpaceInformation.html">ob.SpaceInformation</a>(space)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment"># Set the object used to check which states in the space are valid</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    validityChecker = ValidityChecker(si)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    si.setStateValidityChecker(validityChecker)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    si.setup()</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">## Create an optimization objective for minimizing path length, and</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">#  specify a cost-to-go heuristic suitable for this optimal planning</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">#  problem.</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">def </span>getPathLengthObjWithCostToGo(si):</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    obj = <a class="code" href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ob.PathLengthOptimizationObjective</a>(si)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    obj.setCostToGoHeuristic(<a class="code" href="namespaceompl_1_1base.html#a8f113aa9c3d10539fca0d99d7a9e69e9">ob.CostToGoHeuristic</a>(ob.goalRegionCostToGo))</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> obj</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"># Keep these in alphabetical order and all lower case</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">def </span>allocatePlanner(si, plannerType):</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> plannerType.lower() == <span class="stringliteral">&quot;bitstar&quot;</span>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classompl_1_1geometric_1_1BITstar.html">og.BITstar</a>(si)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">elif</span> plannerType.lower() == <span class="stringliteral">&quot;fmtstar&quot;</span>:</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classompl_1_1geometric_1_1FMT.html">og.FMT</a>(si)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">elif</span> plannerType.lower() == <span class="stringliteral">&quot;informedrrtstar&quot;</span>:</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classompl_1_1geometric_1_1InformedRRTstar.html">og.InformedRRTstar</a>(si)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">elif</span> plannerType.lower() == <span class="stringliteral">&quot;prmstar&quot;</span>:</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classompl_1_1geometric_1_1PRMstar.html">og.PRMstar</a>(si)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">elif</span> plannerType.lower() == <span class="stringliteral">&quot;rrtstar&quot;</span>:</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classompl_1_1geometric_1_1RRTstar.html">og.RRTstar</a>(si)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;Planner-type is not implemented in allocation function.&quot;</span>);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment"># Set our robot&#39;s starting state to be the bottom-left corner of</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment"># the environment, or (0,0).</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    start = <a class="code" href="classompl_1_1base_1_1State.html">ob.State</a>(space)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    start[0] = 0.0</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    start[1] = 0.0</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment"># Set our robot&#39;s goal state to be the top-right corner of the</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment"># environment, or (1,1).</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    goal = <a class="code" href="classompl_1_1base_1_1State.html">ob.State</a>(space)</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    goal[0] = 1.0</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    goal[1] = 1.0</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment"># Create a problem instance</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    pdef = <a class="code" href="classompl_1_1base_1_1ProblemDefinition.html">ob.ProblemDefinition</a>(si)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"># Keep these in alphabetical order and all lower case</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">def </span>allocateObjective(si, objectiveType):</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> objectiveType.lower() == <span class="stringliteral">&quot;pathclearance&quot;</span>:</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">return</span> getClearanceObjective(si)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">elif</span> objectiveType.lower() == <span class="stringliteral">&quot;pathlength&quot;</span>:</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">return</span> getPathLengthObjective(si)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">elif</span> objectiveType.lower() == <span class="stringliteral">&quot;thresholdpathlength&quot;</span>:</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span> getThresholdPathLengthObj(si)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">elif</span> objectiveType.lower() == <span class="stringliteral">&quot;weightedlengthandclearancecombo&quot;</span>:</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> getBalancedObjective1(si)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;Optimization-objective is not implemented in allocation function.&quot;</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment"># Set the start and goal states</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    pdef.setStartAndGoalStates(start, goal)</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment"># Since we want to find an optimal plan, we need to define what</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment"># is optimal with an OptimizationObjective structure. Un-comment</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment"># exactly one of the following 6 lines to see some examples of</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment"># optimization objectives.</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    pdef.setOptimizationObjective(getPathLengthObjective(si))</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment"># pdef.setOptimizationObjective(getThresholdPathLengthObj(si))</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment"># pdef.setOptimizationObjective(getClearanceObjective(si))</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment"># pdef.setOptimizationObjective(getBalancedObjective1(si))</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment"># pdef.setOptimizationObjective(getBalancedObjective2(si))</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment"># pdef.setOptimizationObjective(getPathLengthObjWithCostToGo(si))</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment"># Construct our optimal planner using the RRTstar algorithm.</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    optimizingPlanner = <a class="code" href="classompl_1_1geometric_1_1RRTstar.html">og.RRTstar</a>(si)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment"># Set the problem instance for our planner to solve</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    optimizingPlanner.setProblemDefinition(pdef)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    optimizingPlanner.setup()</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment"># attempt to solve the planning problem within one second of</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment"># planning time</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    solved = optimizingPlanner.solve(10.0)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">if</span> solved:</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment"># Output the length of the path found</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        print(<span class="stringliteral">&quot;Found solution of path length %g&quot;</span> % pdef.getSolutionPath().length())</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment"># If a filename was specified, output the path as a matrix to</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="comment"># that file for visualization</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">if</span> fname:</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            with open(fname,<span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> outFile:</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                outFile.write(pdef.getSolutionPath().printAsMatrix())</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        print(<span class="stringliteral">&quot;No solution found.&quot;</span>)</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    fname = <span class="keywordtype">None</span> <span class="keywordflow">if</span> len(argv)&lt;2 <span class="keywordflow">else</span> argv[1]</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    plan(fname)</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">## @endcond</span></div>
-<div class="ttc" id="classompl_1_1geometric_1_1RRTstar_html"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></div><div class="ttdoc">Optimal Rapidly-exploring Random Trees. </div><div class="ttdef"><b>Definition:</b> <a href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00076">RRTstar.h:76</a></div></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">def </span>plan(runTime, plannerType, objectiveType, fname):</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment"># Construct the robot state space in which we&#39;re planning. We&#39;re</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment"># planning in [0,1]x[0,1], a subset of R^2.</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    space = <a class="code" href="classompl_1_1base_1_1RealVectorStateSpace.html">ob.RealVectorStateSpace</a>(2)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment"># Set the bounds of space to be in [0,1].</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    space.setBounds(0.0, 1.0)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment"># Construct a space information instance for this state space</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    si = <a class="code" href="classompl_1_1base_1_1SpaceInformation.html">ob.SpaceInformation</a>(space)</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment"># Set the object used to check which states in the space are valid</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    validityChecker = ValidityChecker(si)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    si.setStateValidityChecker(validityChecker)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    si.setup()</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment"># Set our robot&#39;s starting state to be the bottom-left corner of</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment"># the environment, or (0,0).</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    start = <a class="code" href="classompl_1_1base_1_1State.html">ob.State</a>(space)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    start[0] = 0.0</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    start[1] = 0.0</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment"># Set our robot&#39;s goal state to be the top-right corner of the</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment"># environment, or (1,1).</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    goal = <a class="code" href="classompl_1_1base_1_1State.html">ob.State</a>(space)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    goal[0] = 1.0</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    goal[1] = 1.0</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment"># Create a problem instance</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    pdef = <a class="code" href="classompl_1_1base_1_1ProblemDefinition.html">ob.ProblemDefinition</a>(si)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment"># Set the start and goal states</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    pdef.setStartAndGoalStates(start, goal)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment"># Create the optimization objective specified by our command-line argument.</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment"># This helper function is simply a switch statement.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    pdef.setOptimizationObjective(allocateObjective(si, objectiveType))</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment"># Construct the optimal planner specified by our command line argument.</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment"># This helper function is simply a switch statement.</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    optimizingPlanner = allocatePlanner(si, plannerType)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment"># Set the problem instance for our planner to solve</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    optimizingPlanner.setProblemDefinition(pdef)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    optimizingPlanner.setup()</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment"># attempt to solve the planning problem in the given runtime</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    solved = optimizingPlanner.solve(runTime)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> solved:</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="comment"># Output the length of the path found</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        print(<span class="stringliteral">&quot;{0} found solution of path length {1:.4f} with an optimization objective value of {2:.4f}&quot;</span>.format(optimizingPlanner.getName(), pdef.getSolutionPath().length(), pdef.getSolutionPath().cost(pdef.getOptimizationObjective()).value()))</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment"># If a filename was specified, output the path as a matrix to</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment"># that file for visualization</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">if</span> fname:</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            with open(fname,<span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> outFile:</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                outFile.write(pdef.getSolutionPath().printAsMatrix())</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        print(<span class="stringliteral">&quot;No solution found.&quot;</span>)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment"># Create an argument parser</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    parser = argparse.ArgumentParser(description=<span class="stringliteral">&#39;Optimal motion planning demo program.&#39;</span>)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment"># Add a filename argument</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    parser.add_argument(<span class="stringliteral">&#39;-t&#39;</span>, <span class="stringliteral">&#39;--runtime&#39;</span>, type=float, default=1.0, help=<span class="stringliteral">&#39;(Optional) Specify the runtime in seconds. Defaults to 1 and must be greater than 0.&#39;</span>)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    parser.add_argument(<span class="stringliteral">&#39;-p&#39;</span>, <span class="stringliteral">&#39;--planner&#39;</span>, default=<span class="stringliteral">&#39;RRTstar&#39;</span>, choices=[<span class="stringliteral">&#39;BITstar&#39;</span>, <span class="stringliteral">&#39;FMTstar&#39;</span>, <span class="stringliteral">&#39;InformedRRTstar&#39;</span>, <span class="stringliteral">&#39;PRMstar&#39;</span>, <span class="stringliteral">&#39;RRTstar&#39;</span>], help=<span class="stringliteral">&#39;(Optional) Specify the optimal planner to use, defaults to RRTstar if not given.&#39;</span>) <span class="comment"># Alphabetical order</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    parser.add_argument(<span class="stringliteral">&#39;-o&#39;</span>, <span class="stringliteral">&#39;--objective&#39;</span>, default=<span class="stringliteral">&#39;PathLength&#39;</span>, choices=[<span class="stringliteral">&#39;PathClearance&#39;</span>, <span class="stringliteral">&#39;PathLength&#39;</span>, <span class="stringliteral">&#39;ThresholdPathLength&#39;</span>, <span class="stringliteral">&#39;WeightedLengthAndClearanceCombo&#39;</span>], help=<span class="stringliteral">&#39;(Optional) Specify the optimization objective, defaults to PathLength if not given.&#39;</span>) <span class="comment"># Alphabetical order</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    parser.add_argument(<span class="stringliteral">&#39;-f&#39;</span>, <span class="stringliteral">&#39;--file&#39;</span>,  default=<span class="keywordtype">None</span>, help=<span class="stringliteral">&#39;(Optional) Specify an output path for the found solution path.&#39;</span>)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    parser.add_argument(<span class="stringliteral">&#39;-i&#39;</span>, <span class="stringliteral">&#39;--info&#39;</span>, type=int, default=0, choices=[0, 1, 2], help=<span class="stringliteral">&#39;(Optional) Set the OMPL log level. 0 for WARN, 1 for INFO, 2 for DEBUG. Defaults to WARN.&#39;</span>)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment"># Parse the arguments</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    args = parser.parse_args()</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment"># Check that time is positive</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> args.runtime &lt;= 0:</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">raise</span> argparse.ArgumentTypeError(<span class="stringliteral">&quot;argument -t/--runtime: invalid choice: %r (choose a positive number greater than 0)&quot;</span>%(args.runtime,))</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment"># Set the log level</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span> args.info == 0:</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        ou.setLogLevel(ou.LOG_WARN)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">elif</span> args.info == 1:</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        ou.setLogLevel(ou.LOG_INFO)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">elif</span> args.info == 2:</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        ou.setLogLevel(ou.LOG_DEBUG)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;Invalid log-level integer.&quot;</span>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment"># Solve the planning problem</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    plan(args.runtime, args.planner, args.objective, args.file)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">## @endcond</span></div>
+<div class="ttc" id="classompl_1_1geometric_1_1RRTstar_html"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></div><div class="ttdoc">Optimal Rapidly-exploring Random Trees. </div><div class="ttdef"><b>Definition:</b> <a href="geometric_2planners_2rrt_2RRTstar_8h_source.html#l00079">RRTstar.h:79</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1InformedRRTstar_html"><div class="ttname"><a href="classompl_1_1geometric_1_1InformedRRTstar.html">ompl::geometric::InformedRRTstar</a></div><div class="ttdoc">Informed RRT*. </div><div class="ttdef"><b>Definition:</b> <a href="InformedRRTstar_8h_source.html#l00068">InformedRRTstar.h:68</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1MultiOptimizationObjective_html"><div class="ttname"><a href="classompl_1_1base_1_1MultiOptimizationObjective.html">ompl::base::MultiOptimizationObjective</a></div><div class="ttdoc">This class allows for the definition of multiobjective optimal planning problems. Objectives are adde...</div><div class="ttdef"><b>Definition:</b> <a href="OptimizationObjective_8h_source.html#l00177">OptimizationObjective.h:177</a></div></div>
 <div class="ttc" id="namespaceompl_1_1base_html_a8f113aa9c3d10539fca0d99d7a9e69e9"><div class="ttname"><a href="namespaceompl_1_1base.html#a8f113aa9c3d10539fca0d99d7a9e69e9">ompl::base::CostToGoHeuristic</a></div><div class="ttdeci">boost::function&lt; Cost(const State *, const Goal *)&gt; CostToGoHeuristic</div><div class="ttdoc">The definition of a function which returns an admissible estimate of the optimal path cost from a giv...</div><div class="ttdef"><b>Definition:</b> <a href="OptimizationObjective_8h_source.html#l00054">OptimizationObjective.h:54</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1PRMstar_html"><div class="ttname"><a href="classompl_1_1geometric_1_1PRMstar.html">ompl::geometric::PRMstar</a></div><div class="ttdoc">PRM* planner. </div><div class="ttdef"><b>Definition:</b> <a href="PRMstar_8h_source.html#l00067">PRMstar.h:67</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1FMT_html"><div class="ttname"><a href="classompl_1_1geometric_1_1FMT.html">ompl::geometric::FMT</a></div><div class="ttdoc">Asymptotically Optimal Fast Marching Tree algorithm developed by L. Janson and M. Pavone...</div><div class="ttdef"><b>Definition:</b> <a href="FMT_8h_source.html#l00083">FMT.h:83</a></div></div>
+<div class="ttc" id="group__logging_html_ga05ad3ae88188e7f248748785afd2b882"><div class="ttname"><a href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a></div><div class="ttdeci">#define OMPL_ERROR(fmt,...)</div><div class="ttdoc">Log a formatted error string. </div><div class="ttdef"><b>Definition:</b> <a href="Console_8h_source.html#l00064">Console.h:64</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateCostIntegralObjective_html"><div class="ttname"><a href="classompl_1_1base_1_1StateCostIntegralObjective.html">ompl::base::StateCostIntegralObjective</a></div><div class="ttdoc">Defines optimization objectives where path cost can be represented as a path integral over a cost fun...</div><div class="ttdef"><b>Definition:</b> <a href="StateCostIntegralObjective_8h_source.html#l00051">StateCostIntegralObjective.h:51</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateValidityChecker_html"><div class="ttname"><a href="classompl_1_1base_1_1StateValidityChecker.html">ompl::base::StateValidityChecker</a></div><div class="ttdoc">Abstract definition for a class checking the validity of states. The implementation of this class mus...</div><div class="ttdef"><b>Definition:</b> <a href="StateValidityChecker_8h_source.html#l00093">StateValidityChecker.h:93</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BITstar_html"><div class="ttname"><a href="classompl_1_1geometric_1_1BITstar.html">ompl::geometric::BITstar</a></div><div class="ttdoc">Batch Informed Trees (BIT*) </div><div class="ttdef"><b>Definition:</b> <a href="BITstar_8h_source.html#l00103">BITstar.h:103</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1RealVectorStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorStateSpace.html">ompl::base::RealVectorStateSpace</a></div><div class="ttdoc">A state space representing Rn. The distance function is the L2 norm. </div><div class="ttdef"><b>Definition:</b> <a href="RealVectorStateSpace_8h_source.html#l00075">RealVectorStateSpace.h:75</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1SpaceInformation_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformation.html">ompl::base::SpaceInformation</a></div><div class="ttdoc">The base class for space information. This contains all the information about the space planning is d...</div><div class="ttdef"><b>Definition:</b> <a href="base_2SpaceInformation_8h_source.html#l00086">SpaceInformation.h:86</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1PathLengthOptimizationObjective_html"><div class="ttname"><a href="classompl_1_1base_1_1PathLengthOptimizationObjective.html">ompl::base::PathLengthOptimizationObjective</a></div><div class="ttdoc">An optimization objective which corresponds to optimizing path length. </div><div class="ttdef"><b>Definition:</b> <a href="PathLengthOptimizationObjective_8h_source.html#l00047">PathLengthOptimizationObjective.h:47</a></div></div>
@@ -408,7 +478,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on Tue Jun 2 2015 19:02:00 by&#160;<a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.9.1</span>
   </p></div>
 </footer>
 <script>

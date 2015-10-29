@@ -26,7 +26,7 @@ var searchData=
   ['thunderretrieverepair',['ThunderRetrieveRepair',['../classompl_1_1geometric_1_1ThunderRetrieveRepair.html',1,'ompl::geometric']]],
   ['thunderretrieverepairptr',['ThunderRetrieveRepairPtr',['../classompl_1_1base_1_1ThunderRetrieveRepairPtr.html',1,'ompl::base']]],
   ['timebetweenupdates',['timeBetweenUpdates',['../structompl_1_1tools_1_1Benchmark_1_1Request.html#a7f308d71127840e12c6fedfe2668d652',1,'ompl::tools::Benchmark::Request']]],
-  ['timedplannerterminationcondition',['timedPlannerTerminationCondition',['../namespaceompl_1_1base.html#ae26e5f143063be389fba4906d438a381',1,'ompl::base::timedPlannerTerminationCondition(double duration)'],['../namespaceompl_1_1base.html#a4b50516a130c05ecc0e420dd64d6a81e',1,'ompl::base::timedPlannerTerminationCondition(double duration, double interval)']]],
+  ['timedplannerterminationcondition',['timedPlannerTerminationCondition',['../namespaceompl_1_1base.html#ae26e5f143063be389fba4906d438a381',1,'ompl::base::timedPlannerTerminationCondition(double duration)'],['../namespaceompl_1_1base.html#a8344c024db04a8e51f226bf26825d372',1,'ompl::base::timedPlannerTerminationCondition(time::duration duration)'],['../namespaceompl_1_1base.html#a4b50516a130c05ecc0e420dd64d6a81e',1,'ompl::base::timedPlannerTerminationCondition(double duration, double interval)']]],
   ['timeout',['TIMEOUT',['../structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a620a03eebe49aa307140d6a4763278fd',1,'ompl::base::PlannerStatus']]],
   ['timestatesampler',['TimeStateSampler',['../classompl_1_1base_1_1TimeStateSampler.html#aa9f1631dc3d71d96493070ecd90a8fc8',1,'ompl::base::TimeStateSampler']]],
   ['timestatesampler',['TimeStateSampler',['../classompl_1_1base_1_1TimeStateSampler.html',1,'ompl::base']]],

@@ -17,12 +17,11 @@ var searchData=
   ['pdf_3c_20int_20_3e',['PDF&lt; int &gt;',['../classompl_1_1PDF.html',1,'ompl']]],
   ['pdf_3c_20ompl_3a_3acontrol_3a_3altlplanner_3a_3amotion_20_2a_20_3e',['PDF&lt; ompl::control::LTLPlanner::Motion * &gt;',['../classompl_1_1PDF.html',1,'ompl']]],
   ['pdf_3c_20ompl_3a_3acontrol_3a_3aproductgraph_3a_3astate_20_2a_20_3e',['PDF&lt; ompl::control::ProductGraph::State * &gt;',['../classompl_1_1PDF.html',1,'ompl']]],
-  ['pdst',['PDST',['../classompl_1_1control_1_1PDST.html',1,'ompl::control']]],
   ['pdst',['PDST',['../classompl_1_1geometric_1_1PDST.html',1,'ompl::geometric']]],
+  ['pdst',['PDST',['../classompl_1_1control_1_1PDST.html',1,'ompl::control']]],
   ['pendingremovemotion',['PendingRemoveMotion',['../structompl_1_1geometric_1_1pSBL_1_1PendingRemoveMotion.html',1,'ompl::geometric::pSBL']]],
   ['permutation',['Permutation',['../classompl_1_1Permutation.html',1,'ompl']]],
   ['plane2denvironment',['Plane2DEnvironment',['../classPoint2DPlanning_1_1Plane2DEnvironment.html',1,'Point2DPlanning']]],
-  ['plane2denvironment',['Plane2DEnvironment',['../classLightning_1_1Plane2DEnvironment.html',1,'Lightning']]],
   ['planner',['Planner',['../classompl_1_1base_1_1Planner.html',1,'ompl::base']]],
   ['plannerdata',['PlannerData',['../classompl_1_1base_1_1PlannerData.html',1,'ompl::base']]],
   ['plannerdata',['PlannerData',['../classompl_1_1control_1_1PlannerData.html',1,'ompl::control']]],
@@ -62,6 +61,5 @@ var searchData=
   ['propositionaldecompositionptr',['PropositionalDecompositionPtr',['../classompl_1_1control_1_1PropositionalDecompositionPtr.html',1,'ompl::control']]],
   ['propositionaltriangulardecomposition',['PropositionalTriangularDecomposition',['../classompl_1_1control_1_1PropositionalTriangularDecomposition.html',1,'ompl::control']]],
   ['prrt',['pRRT',['../classompl_1_1geometric_1_1pRRT.html',1,'ompl::geometric']]],
-  ['prunescratchspace',['PruneScratchSpace',['../structompl_1_1geometric_1_1RRTstar_1_1PruneScratchSpace.html',1,'ompl::geometric::RRTstar']]],
   ['psbl',['pSBL',['../classompl_1_1geometric_1_1pSBL.html',1,'ompl::geometric']]]
 ];
