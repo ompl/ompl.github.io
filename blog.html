@@ -49,6 +49,7 @@
             <li><a href="http://ompl.github.io/tutorials.html">Tutorials</a></li>
             <li><a href="http://ompl.github.io/group__demos.html">Demos</a></li>
             <li><a href="http://ompl.github.io/gui.html">OMPL.app GUI</a></li>
+            <li><a href="http://ompl.github.io/webapp.html">OMPL web app</a></li>
             <li><a href="http://ompl.github.io/python.html">Python Bindings</a></li>
             <li><a href="http://ompl.github.io/planners.html">Available Planners</a></li>
             <li><a href="http://ompl.github.io/benchmark.html">Benchmarking Planners</a></li>
@@ -73,8 +74,19 @@
             <li><a href="http://ompl.github.io/annotated.html">Classes</a></li>
             <li><a href="http://ompl.github.io/files.html">Files</a></li>
             <li><a href="http://ompl.github.io/styleGuide.html">Style Guide</a></li>
-            <li><a href="https://bitbucket.org/ompl/ompl/src">Browse Repository</a></li>
-            <li><a href="http://ompl.github.io/teamcity.html">TeamCity Build Server</a></li>
+            <li><a href="http://ompl.github.io/integration.html">Use OMPL within Other Systems</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Repositories</li>
+            <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+            <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+            <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+            <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Continuous Integration</li>
+            <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+            <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+            <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+            <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
           </ul>
         </li>
         <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
@@ -146,9 +158,11 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 <div class="col-md-3">
 <ul>
   
+  <li><a href="http://ompl.github.io/2015/11/16/ompl-1-1.html">OMPL 1.1 Released!</a></li>
+  
   <li><a href="http://ompl.github.io/2015/09/14/moveit-community-meeting.html">Report on the First MoveIt! Community Meeting</a></li>
   
-  <li><a href="http://ompl.github.io/2014/10/29/or_ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a></li>
+  <li><a href="http://ompl.github.io/2014/10/29/or-ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a></li>
   
   <li><a href="http://ompl.github.io/2014/10/21/extended-support-to-optimal-planners-cforest-tree-pruning.html">Extended support to optimal planners&#58; CForest + tree pruning</a></li>
   
@@ -186,11 +200,43 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 <div class="col-md-9">
   
   <h2>
+    <a href="http://ompl.github.io/2015/11/16/ompl-1-1.html">OMPL 1.1 Released!</a>
+    <small>16 Nov 2015</small>
+  </h2>
+
+  <p>Recently, we released a new version of OMPL, version 1.1. We have added a ton of new planning algorithms and other features, while keeping the API more or less the same. In other words, there is no reason not upgrade right now! Below is detailed set of release notes:</p>
+
+<ul>
+  <li>Added several new and updated planners:
+    <ul>
+      <li><a href="http://ompl.kavrakilab.org/classompl_1_1tools_1_1Lightning.html">Lightning</a>: the Lightning Framework is a experienced-based motion planner that recalls from a database of previously generated paths the most similar one to the current planning problem and attempts to repair it, while at the same time planning from scratch in a different thread.</li>
+      <li><a href="http://ompl.kavrakilab.org/classompl_1_1tools_1_1Thunder.html">Thunder</a>: the Thunder Framework is essentially an improved version of Lightning. It stores previously generated paths in a combined roadmap, thereby offering more opportunities for reuse of partial paths. The roadmap is sparse while still guaranteeing asymptotic near-optimality. This is done by borrowing ideas from the SPARS algorithm.</li>
+      <li>[Informed RRT<em>](http://ompl.kavrakilab.org/classompl_1_1geometric_1_1InformedRRTstar.html): a variant of RRT</em> that uses heuristics to bound the search for optimal solutions.</li>
+      <li><a href="http://ompl.kavrakilab.org/classompl_1_1geometric_1_1BITstar.html">Batch Informed Trees (BIT*)</a>: an anytime asymptotically optimal algorithm that uses heuristics to order and bound the search for optimal solutions.</li>
+      <li>An updated version of the Lower-Bound Tree Rapidly-expanding Random Tree (LBT-RRT) and a lazy version, LazyLBTRRT. These algorithms use Lifelong Planning A* and Dynamic Single-Source Shortest Path over graphs as subroutines, but these subroutines might be more generally useful in other algorithms as well.</li>
+      <li>An updated version of <a href="http://ompl.kavrakilab.org/classompl_1_1geometric_1_1TRRT.html">TRRT</a> as well as a bidirectional version of TRRT (<a href="http://ompl.kavrakilab.org/classompl_1_1geometric_1_1BiTRRT.html">BiTRRT</a>)</li>
+      <li>An updated version of <a href="http://ompl.kavrakilab.org/classompl_1_1geometric_1_1FMT.html">FMT*</a> that, among other things, caches collision checks.</li>
+    </ul>
+  </li>
+  <li><a href="http://omplapp.kavrakilab.org">New web-based based version of OMPL.app!</a> The web app has all the functionality of the standalone GUI. In addition, it allows you to interactively construct benchmark jobs that can be submitted to a benchmark server. We have a public version of the web app and benchmarking server running at <a href="http://omplapp.kavrakilab.org">http://omplapp.kavrakilab.org</a>, but the web app and benchmark server can also be run locally.</li>
+  <li>There are two new concepts, ompl::base::InformedSampler and ompl::base::InformedStateSampler, that capture the idea of using information about the state space and the current solution cost to limit future search to a planning subproblem that contains all possibly better solutions. The ompl::base::PathLengthDirectInfSampler is derived from InformedStateSampler and can be used to limit sampling to only those states that can lead to a shorter path than the best-found solution so far. This sampler is used in ompl::geometric:InformedRRTstar and ompl::geometric::BITstar.</li>
+  <li>The ompl::geometric::PathSimplifier can now also optimize a path with respect to a (sampleable) goal. This means, for example, that a solution path is no longer “stuck” with an awkward inverse kinematics solution for a goal.</li>
+  <li>Added a <code>plannerarena</code> script to simplify running <a href="http://plannerarena.org">Planner Arena</a> locally.</li>
+  <li>Added a new planner termination conditions that allow one to terminate after a fixed number of iterations.</li>
+  <li>The GNAT data structure for nearest neighbor queries has been updated and should be faster in general. There is now also non-threadsafe version of the GNAT data structure that is automatically selected for single-threaded planners. This version should be even faster.</li>
+  <li>Added an option to turn off the path simplification in benchmarking.</li>
+  <li>Added support for parametrized benchmarks. Planner Arena can show performance across values for a given parameter.</li>
+  <li>Made it easier to get repeatable runs of an algorithm by enabling the user to set the seed of the <em>local</em> random number generators (i.e., not just the global seed).</li>
+  <li>The <a href="http://ompl.kavrakilab.org/blog.html">OMPL blog</a> is now <a href="http://www.jekyllrb.com">Jekyll</a>-based and hosted as a <a href="https://github.com/ompl/blog">repository on GitHub</a>. If you have a project that uses OMPL, you can send us a pull request (please check with us first whether it would be appropriate for the blog before you write content).</li>
+</ul>
+
+  
+  <h2>
     <a href="http://ompl.github.io/2015/09/14/moveit-community-meeting.html">Report on the First MoveIt! Community Meeting</a>
     <small>14 Sep 2015</small>
   </h2>
 
-  <p>(<strong>Editor’s note:</strong> Reposted from <a href="http://www.sachinchitta.org/blog.html">Sachin’s blog</a>)</p>
+  <p>(<strong>Editor’s note:</strong> Reposted from <a href="http://www.sachinchitta.org/blog.html">Sachin Chitta’s blog</a>)</p>
 
 <p>Thank you for coming to the MoveIt! Community Meeting and thanks to the  presenters for making this a huge success. There were more than 240  people registered and more than 150 who attended from all over the  world. I apologize to those running Ubuntu who had issues joining us  (using Chrome was the suggested solution for the future).</p>
 
@@ -204,7 +250,7 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 
   
   <h2>
-    <a href="http://ompl.github.io/2014/10/29/or_ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a>
+    <a href="http://ompl.github.io/2014/10/29/or-ompl-openrave-bindings-for-ompl.html">or_ompl &mdash; OpenRAVE bindings for OMPL</a>
     <small>29 Oct 2014</small>
   </h2>
 
