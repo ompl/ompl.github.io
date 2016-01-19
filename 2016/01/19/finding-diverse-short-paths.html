@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>OMPL wins the 2012 OSS World Challenge Grand Prize</title>
+<title>Finding Diverse Short Paths</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
 
@@ -152,19 +152,18 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
     <div class="container">
       <div class="row">
         <div class="page-header defaultfullwidth">
-          <h1>OMPL wins the 2012 OSS World Challenge Grand Prize</h1>
-          <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a>
+          <h1>Finding Diverse Short Paths</h1>
+          <h4><a href="">Caleb Voss</a>
         </div>
 
         <div class="defaultfullwidth">
-          <p>Recently, the <a href="http://ompl.kavrakilab.org">Open Motion Planning Library (OMPL)</a> won the Grand Prize in the Open Source Software World Challenge. This is a yearly competition organized by the South Korean government and is intended to promote open source software and expand various exchanges among open source software developers all over the world. Last year’s winner was the Point Cloud Library, so we are in good company! This year, 55 teams from 23 countries participated in the international division. The second and third prize winners were:
-- Stan, a package for obtaining Bayesian inference using the No-U-Turn sampler, a variant of Hamiltonian Monte Carlo, from Columbia University.
-- DDT, a system for testing closed-source binary device drivers from the Dependable Systems Lab at EPFL, Switzerland.
-.</p>
+          <p>[Cross-posted from Caleb Voss’ web site; see the original article titled “Randomizing Graph Searches for Robustness” <a href="http://calebvoss.com/research/">here</a>]</p>
 
-<p>Besides the international category, there were also several categories at the national level, ranging from elementary school level (!), to college level. Web development and mobile apps seemed to be of particular interest. Several high-ranking government officials were in attendance, gave speeches, and handed out awards. Mark Moll attended the award ceremony and gave a talk about OMPL.</p>
+<p>Finding the shortest path through a weighted graph is a well-understood task. With a cost heuristic, A* is the way to go. But what if the graph is not reliable? A broken edge or an incorrect weight can make the apparent shortest path a poor choice. The client wants options. So how can we find paths other than the shortest one? And what criteria can we use to evaluate the set of proposed alternatives?</p>
 
-<p><img src="http://ompl.kavrakilab.org//files/OSS-Award.jpg" alt="Reeds-Shepp path" width="85%" /></p>
+<p>It is still good for alternatives to be short. We could try the second shortest path, but in a moderately dense graph, it is likely to share almost all its edges with the original. The <em>n</em>th shortest, for large <em>n</em>, is probably better, but systematically checking all these options is expensive. Instead, consider an algorithm that encourages random deviations from known paths: it says, “What if <em>this</em> area of the graph, along the shortest path, is broken? Then what would the shortest path be? Now what about <em>that</em> area? Or both?” and so on, iteratively building a set of increasingly diverse alternatives. Intuitively, this heuristic simulates random breaking of the graph to build an arsenal that we hope will stand up against any specific issue with the actual graph.</p>
+
+<p>This is the core of the contribution in <a href="http://calebvoss.com/publications/">my 2015 ICRA paper</a>, together with applications for robotic motion planning and an analysis of the efficiency and quality of this approach. Also have a look at <a href="code repository">my code repository</a> for this research.</p>
 
         </div>
       </div>
@@ -175,7 +174,7 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated on December 05, 2012 by&#160;<a href="http://jekyllrb.com">Jekyll</a></span>
+    <span class="gray">Generated on January 19, 2016 by&#160;<a href="http://jekyllrb.com">Jekyll</a></span>
   </p></div>
 </footer>
 
