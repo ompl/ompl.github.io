@@ -14,6 +14,8 @@ var searchData=
   ['vertexcomponentproperty_5f',['vertexComponentProperty_',['../classompl_1_1geometric_1_1LazyPRM.html#a62769ed475cd1e37ff07ec407a0c6474',1,'ompl::geometric::LazyPRM']]],
   ['vertexnn_5f',['vertexNN_',['../classompl_1_1geometric_1_1BITstar.html#a9b3d25bb85e2bba21b2f6addafc11dec',1,'ompl::geometric::BITstar']]],
   ['vertexvalidityproperty_5f',['vertexValidityProperty_',['../classompl_1_1geometric_1_1LazyPRM.html#a37d00831d96da1a1be102bddefbea94e',1,'ompl::geometric::LazyPRM']]],
+  ['vf_5f',['vf_',['../classompl_1_1base_1_1VFMechanicalWorkOptimizationObjective.html#a7e1d58a1ddffd21e0d74de11ae3e1164',1,'ompl::base::VFMechanicalWorkOptimizationObjective::vf_()'],['../classompl_1_1base_1_1VFUpstreamCriterionOptimizationObjective.html#ad90fdf828c7080c1104308933600e941',1,'ompl::base::VFUpstreamCriterionOptimizationObjective::vf_()']]],
+  ['vfrrt_5fmean_5fnorm_5fsamples',['VFRRT_MEAN_NORM_SAMPLES',['../namespaceompl_1_1magic.html#a4cac6a9cef27adb1c435430d84bfca65',1,'ompl::magic']]],
   ['volume',['volume',['../classompl_1_1control_1_1Syclop_1_1Region.html#a028b8d9aa311613785241e33f5fffb1d',1,'ompl::control::Syclop::Region']]],
   ['volume_5f',['volume_',['../structompl_1_1control_1_1PDST_1_1Cell.html#a02a7ffd3a1fcd9650faff5651d7d9112',1,'ompl::control::PDST::Cell::volume_()'],['../structompl_1_1geometric_1_1PDST_1_1Cell.html#ae3e603e66c90b7605255a0097abc1ac1',1,'ompl::geometric::PDST::Cell::volume_()']]],
   ['vssa_5f',['vssa_',['../classompl_1_1base_1_1SpaceInformation.html#ad20bb9ec674edd4d4dbb2d13b2d89abd',1,'ompl::base::SpaceInformation']]]

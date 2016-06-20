@@ -8,10 +8,13 @@ var searchData=
   ['bestlengthprogressproperty',['bestLengthProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#a0da3b967a3157d9c88495225510a6a05',1,'ompl::geometric::BITstar']]],
   ['bestpathfromgoaltostart',['bestPathFromGoalToStart',['../classompl_1_1geometric_1_1BITstar.html#af97f7f69de37bc8d4348c9473873feb7',1,'ompl::geometric::BITstar']]],
   ['bettercost',['betterCost',['../classompl_1_1base_1_1OptimizationObjective.html#abc9d5e0ff5fa6ca87a47a07638f164e4',1,'ompl::base::OptimizationObjective']]],
+  ['biasedsampling',['biasedSampling',['../classompl_1_1geometric_1_1VFRRT.html#a2965b9a1de187f46bdc3e7c38fdc605d',1,'ompl::geometric::VFRRT']]],
+  ['bidirmotion',['BiDirMotion',['../classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a8f2dee8cae047443418c01b30c88a775',1,'ompl::geometric::BFMT::BiDirMotion']]],
+  ['biest',['BiEST',['../classompl_1_1geometric_1_1BiEST.html#a72d99dedaa6f82f033f7131e703acaab',1,'ompl::geometric::BiEST']]],
   ['bitrrt',['BiTRRT',['../classompl_1_1geometric_1_1BiTRRT.html#a2f3d18a363976e7345cbc28577018766',1,'ompl::geometric::BiTRRT']]],
   ['bitstar',['BITstar',['../classompl_1_1geometric_1_1BITstar.html#af6d4e84d731cf2a0961043598864d65b',1,'ompl::geometric::BITstar']]],
   ['bkpiece1',['BKPIECE1',['../classompl_1_1geometric_1_1BKPIECE1.html#a1e61534ba2f912016e00d94cfc5449e5',1,'ompl::geometric::BKPIECE1']]],
   ['buildavail',['buildAvail',['../classompl_1_1control_1_1LTLPlanner.html#aa960ed258c58c90915021a8cf50e1fbd',1,'ompl::control::LTLPlanner']]],
   ['buildfrom',['buildFrom',['../classompl_1_1BinaryHeap.html#ac8d1b64b5b7d50cd09380bfa14bbc45d',1,'ompl::BinaryHeap']]],
-  ['buildgraph',['buildGraph',['../classompl_1_1control_1_1ProductGraph.html#a572faae388b07865a22835b3c15d34f0',1,'ompl::control::ProductGraph']]]
+  ['buildgraph',['buildGraph',['../classompl_1_1control_1_1ProductGraph.html#ad4576a35e3089da64262abdc550a064c',1,'ompl::control::ProductGraph']]]
 ];

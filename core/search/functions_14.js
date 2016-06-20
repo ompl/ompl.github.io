@@ -9,5 +9,8 @@ var searchData=
   ['vertexprunecondition',['vertexPruneCondition',['../classompl_1_1geometric_1_1BITstar_1_1IntegratedQueue.html#a2d8e55721ac2464fdc5f69a3472080c6',1,'ompl::geometric::BITstar::IntegratedQueue']]],
   ['vertexqueuesizeprogressproperty',['vertexQueueSizeProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#a6da6f45ff101ec0f3dcaa7faa28dcca0',1,'ompl::geometric::BITstar']]],
   ['verticesconstructedprogressproperty',['verticesConstructedProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#a9397cedfe47d519b9bb86fc0ad72402a',1,'ompl::geometric::BITstar']]],
-  ['verticesdisconnectedprogressproperty',['verticesDisconnectedProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#a49de4d1e16390c9e5dfeebbd7a73fdf6',1,'ompl::geometric::BITstar']]]
+  ['verticesdisconnectedprogressproperty',['verticesDisconnectedProgressProperty',['../classompl_1_1geometric_1_1BITstar.html#a49de4d1e16390c9e5dfeebbd7a73fdf6',1,'ompl::geometric::BITstar']]],
+  ['vfmechanicalworkoptimizationobjective',['VFMechanicalWorkOptimizationObjective',['../classompl_1_1base_1_1VFMechanicalWorkOptimizationObjective.html#a041d5321ecdcfae5652f241978e5cf69',1,'ompl::base::VFMechanicalWorkOptimizationObjective']]],
+  ['vfrrt',['VFRRT',['../classompl_1_1geometric_1_1VFRRT.html#acc49c243efa3f36ffaccaef7af423215',1,'ompl::geometric::VFRRT']]],
+  ['vfupstreamcriterionoptimizationobjective',['VFUpstreamCriterionOptimizationObjective',['../classompl_1_1base_1_1VFUpstreamCriterionOptimizationObjective.html#af5b793b0d228344b97e52d8c93936bd8',1,'ompl::base::VFUpstreamCriterionOptimizationObjective']]]
 ];

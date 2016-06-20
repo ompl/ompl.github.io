@@ -26,5 +26,6 @@ var searchData=
   ['_7esparsdb',['~SPARSdb',['../classompl_1_1geometric_1_1SPARSdb.html#a4b6bb23b6d9c286edfb246c6fe42b889',1,'ompl::geometric::SPARSdb']]],
   ['_7esparstwo',['~SPARStwo',['../classompl_1_1geometric_1_1SPARStwo.html#aeb71539484ecad27ff509f9ea37fbb7b',1,'ompl::geometric::SPARStwo']]],
   ['_7ethunderdb',['~ThunderDB',['../classompl_1_1tools_1_1ThunderDB.html#a0e0bc6e9b2b04a7d2a7cb65e12e30a21',1,'ompl::tools::ThunderDB']]],
-  ['_7evertex',['~Vertex',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a2ea0eb96d9a4127dde59e836283fd856',1,'ompl::geometric::BITstar::Vertex']]]
+  ['_7evertex',['~Vertex',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a2ea0eb96d9a4127dde59e836283fd856',1,'ompl::geometric::BITstar::Vertex']]],
+  ['_7evfrrt',['~VFRRT',['../classompl_1_1geometric_1_1VFRRT.html#a1426756c6981685f9a2609aa1a40226d',1,'ompl::geometric::VFRRT']]]
 ];

@@ -1,10 +1,10 @@
 var searchData=
 [
   ['candidatesolution',['CandidateSolution',['../structompl_1_1geometric_1_1SPARSdb_1_1CandidateSolution.html',1,'ompl::geometric::SPARSdb']]],
-  ['cell',['Cell',['../structompl_1_1control_1_1PDST_1_1Cell.html',1,'ompl::control::PDST']]],
-  ['cell',['Cell',['../structompl_1_1geometric_1_1PDST_1_1Cell.html',1,'ompl::geometric::PDST']]],
   ['cell',['Cell',['../structompl_1_1Grid_1_1Cell.html',1,'ompl::Grid']]],
   ['cell',['Cell',['../structompl_1_1GridN_1_1Cell.html',1,'ompl::GridN']]],
+  ['cell',['Cell',['../structompl_1_1control_1_1PDST_1_1Cell.html',1,'ompl::control::PDST']]],
+  ['cell',['Cell',['../structompl_1_1geometric_1_1PDST_1_1Cell.html',1,'ompl::geometric::PDST']]],
   ['celldata',['CellData',['../structompl_1_1control_1_1KPIECE1_1_1CellData.html',1,'ompl::control::KPIECE1']]],
   ['celldata',['CellData',['../structompl_1_1geometric_1_1Discretization_1_1CellData.html',1,'ompl::geometric::Discretization']]],
   ['cforest',['CForest',['../classompl_1_1geometric_1_1CForest.html',1,'ompl::geometric']]],
@@ -32,5 +32,7 @@ var searchData=
   ['costestimatorapx',['CostEstimatorApx',['../classompl_1_1geometric_1_1LazyLBTRRT_1_1CostEstimatorApx.html',1,'ompl::geometric::LazyLBTRRT']]],
   ['costestimatorlb',['CostEstimatorLb',['../classompl_1_1geometric_1_1LazyLBTRRT_1_1CostEstimatorLb.html',1,'ompl::geometric::LazyLBTRRT']]],
   ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1RRTstar_1_1CostIndexCompare.html',1,'ompl::geometric::RRTstar']]],
+  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1BFMT_1_1CostIndexCompare.html',1,'ompl::geometric::BFMT']]],
+  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1FMT_1_1CostIndexCompare.html',1,'ompl::geometric::FMT']]],
   ['customvisitor',['CustomVisitor',['../classompl_1_1geometric_1_1SPARSdb_1_1CustomVisitor.html',1,'ompl::geometric::SPARSdb']]]
 ];

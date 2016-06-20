@@ -1,7 +1,12 @@
 var searchData=
 [
   ['benchmark',['Benchmark',['../classompl_1_1tools_1_1Benchmark.html',1,'ompl::tools']]],
+  ['bfmt',['BFMT',['../classompl_1_1geometric_1_1BFMT.html',1,'ompl::geometric']]],
+  ['bidirmotion',['BiDirMotion',['../classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html',1,'ompl::geometric::BFMT']]],
+  ['bidirmotioncompare',['BiDirMotionCompare',['../structompl_1_1geometric_1_1BFMT_1_1BiDirMotionCompare.html',1,'ompl::geometric::BFMT']]],
+  ['biest',['BiEST',['../classompl_1_1geometric_1_1BiEST.html',1,'ompl::geometric']]],
   ['binaryheap',['BinaryHeap',['../classompl_1_1BinaryHeap.html',1,'ompl']]],
+  ['binaryheap_3c_20bidirmotion_20_2a_2c_20bidirmotioncompare_20_3e',['BinaryHeap&lt; BiDirMotion *, BiDirMotionCompare &gt;',['../classompl_1_1BinaryHeap.html',1,'ompl']]],
   ['binaryheap_3c_20cellx_20_2a_2c_20lessthanexternalcell_20_3e',['BinaryHeap&lt; CellX *, LessThanExternalCell &gt;',['../classompl_1_1BinaryHeap.html',1,'ompl']]],
   ['binaryheap_3c_20cellx_20_2a_2c_20lessthaninternalcell_20_3e',['BinaryHeap&lt; CellX *, LessThanInternalCell &gt;',['../classompl_1_1BinaryHeap.html',1,'ompl']]],
   ['binaryheap_3c_20motion_20_2a_2c_20motioncompare_20_3e',['BinaryHeap&lt; Motion *, MotionCompare &gt;',['../classompl_1_1BinaryHeap.html',1,'ompl']]],

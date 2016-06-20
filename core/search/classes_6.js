@@ -15,7 +15,7 @@ var searchData=
   ['grid',['Grid',['../classompl_1_1Grid.html',1,'ompl']]],
   ['grid_3c_20celldata_20_2a_20_3e',['Grid&lt; CellData * &gt;',['../classompl_1_1Grid.html',1,'ompl']]],
   ['grid_3c_20ompl_3a_3acontrol_3a_3aest_3a_3amotioninfo_20_3e',['Grid&lt; ompl::control::EST::MotionInfo &gt;',['../classompl_1_1Grid.html',1,'ompl']]],
-  ['grid_3c_20ompl_3a_3ageometric_3a_3aest_3a_3amotioninfo_20_3e',['Grid&lt; ompl::geometric::EST::MotionInfo &gt;',['../classompl_1_1Grid.html',1,'ompl']]],
+  ['grid_3c_20ompl_3a_3ageometric_3a_3aprojest_3a_3amotioninfo_20_3e',['Grid&lt; ompl::geometric::ProjEST::MotionInfo &gt;',['../classompl_1_1Grid.html',1,'ompl']]],
   ['grid_3c_20ompl_3a_3ageometric_3a_3apsbl_3a_3amotioninfo_20_3e',['Grid&lt; ompl::geometric::pSBL::MotionInfo &gt;',['../classompl_1_1Grid.html',1,'ompl']]],
   ['grid_3c_20ompl_3a_3ageometric_3a_3asbl_3a_3amotioninfo_20_3e',['Grid&lt; ompl::geometric::SBL::MotionInfo &gt;',['../classompl_1_1Grid.html',1,'ompl']]],
   ['gridb',['GridB',['../classompl_1_1GridB.html',1,'ompl']]],
