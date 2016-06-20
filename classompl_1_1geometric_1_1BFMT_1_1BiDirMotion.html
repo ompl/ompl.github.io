@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ompl::geometric::BFMT::BiDirMotion Class Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <link href="css/tabs.css" rel="stylesheet">
+  <link href="css/doxygen.css" rel="stylesheet">
+  <link href="css/search.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/ompl.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="search/searchdata.js"></script>
+  <script src="search/search.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+          <!-- Doxygen API search box -->
+          <div id="searchli">
+            <div id="MSearchBox" class="MSearchBoxInactive">
+              <span class="left">
+                <img id="MSearchSelect" src="search/mag_sel.png"
+                onmouseover="return searchBox.OnSearchSelectShow()"
+                onmouseout="return searchBox.OnSearchSelectHide()"
+                alt=""/>
+                <input type="text" id="MSearchField" value="Search API" accesskey="S"
+                onfocus="searchBox.OnSearchFieldFocus(true)"
+                onblur="searchBox.OnSearchFieldFocus(false)"
+                onkeyup="searchBox.OnSearchFieldChange(event)"/>
+              </span><span class="right">
+                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+              </span>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"
+  onmouseover="return searchBox.OnSearchSelectShow()"
+  onmouseout="return searchBox.OnSearchSelectHide()"
+  onkeydown="return searchBox.OnSearchSelectKey(event)">
+  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow">
+    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
+  </div>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1geometric.html">geometric</a></li><li class="navelem"><a class="el" href="classompl_1_1geometric_1_1BFMT.html">BFMT</a></li><li class="navelem"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ompl::geometric::BFMT::BiDirMotion Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Representation of a bidirectional motion.  
+ <a href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="BFMT_8h_source.html">ompl/geometric/planners/fmt/BFMT.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a4b79e375f9520c7507036d3c948cedd3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b79e375f9520c7507036d3c948cedd3"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a4b79e375f9520c7507036d3c948cedd3">SetType</a> { <b>SET_CLOSED</b>, 
+<b>SET_OPEN</b>, 
+<b>SET_UNVISITED</b>
+ }<tr class="memdesc:a4b79e375f9520c7507036d3c948cedd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The FMT* planner begins with all nodes included in set Unvisited "Waiting for optimal connection". As nodes are connected to the tree, they are transferred into set Open "Horizon of explored tree." Once a node in Open is no longer close enough to the frontier to connect to any more nodes in Unvisited, it is removed from Open. These three SetTypes are flags indicating which set the node belongs to; Open, Unvisited, or Closed (neither) <br /></td></tr>
+<tr class="separator:a4b79e375f9520c7507036d3c948cedd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+<tr class="memitem:a2dc1704ac83e288a403246332ea44601"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dc1704ac83e288a403246332ea44601"></a>
+typedef std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>BiDirMotionPtrs</b></td></tr>
+<tr class="separator:a2dc1704ac83e288a403246332ea44601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aaf9eebeec71f5feba6793bbe5149d7aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf9eebeec71f5feba6793bbe5149d7aa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>BiDirMotion</b> (<a class="el" href="classompl_1_1geometric_1_1BFMT.html#ae4c3b14dbf4ab6dcf32d7c3bcf8a6dbf">TreeType</a> *tree)</td></tr>
+<tr class="separator:aaf9eebeec71f5feba6793bbe5149d7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f2dee8cae047443418c01b30c88a775"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f2dee8cae047443418c01b30c88a775"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a8f2dee8cae047443418c01b30c88a775">BiDirMotion</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> &amp;si, <a class="el" href="classompl_1_1geometric_1_1BFMT.html#ae4c3b14dbf4ab6dcf32d7c3bcf8a6dbf">TreeType</a> *tree)</td></tr>
+<tr class="memdesc:a8f2dee8cae047443418c01b30c88a775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that allocates memory for the state. <br /></td></tr>
+<tr class="separator:a8f2dee8cae047443418c01b30c88a775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea56324aeed65032a6e98a972112060"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ea56324aeed65032a6e98a972112060"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a9ea56324aeed65032a6e98a972112060">getCost</a> (void) const </td></tr>
+<tr class="memdesc:a9ea56324aeed65032a6e98a972112060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the state associated with the motion. <br /></td></tr>
+<tr class="separator:a9ea56324aeed65032a6e98a972112060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a399c36d375b4adcdc4bad158797351f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a399c36d375b4adcdc4bad158797351f1"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a399c36d375b4adcdc4bad158797351f1">getOtherCost</a> (void) const </td></tr>
+<tr class="memdesc:a399c36d375b4adcdc4bad158797351f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get cost of this motion in the inactive tree. <br /></td></tr>
+<tr class="separator:a399c36d375b4adcdc4bad158797351f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55bfe2c89a2a5f948810c283ec2e06c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55bfe2c89a2a5f948810c283ec2e06c3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a55bfe2c89a2a5f948810c283ec2e06c3">setCost</a> (<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> cost)</td></tr>
+<tr class="memdesc:a55bfe2c89a2a5f948810c283ec2e06c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cost of the motion. <br /></td></tr>
+<tr class="separator:a55bfe2c89a2a5f948810c283ec2e06c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35eb963e631cda60704959d0a3bf289"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad35eb963e631cda60704959d0a3bf289"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#ad35eb963e631cda60704959d0a3bf289">setParent</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *parent)</td></tr>
+<tr class="memdesc:ad35eb963e631cda60704959d0a3bf289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parent of the motion. <br /></td></tr>
+<tr class="separator:ad35eb963e631cda60704959d0a3bf289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80dbc687316fa2e56428a0d7b24167ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80dbc687316fa2e56428a0d7b24167ee"></a>
+<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a80dbc687316fa2e56428a0d7b24167ee">getParent</a> (void) const </td></tr>
+<tr class="memdesc:a80dbc687316fa2e56428a0d7b24167ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent of the motion. <br /></td></tr>
+<tr class="separator:a80dbc687316fa2e56428a0d7b24167ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62877fb8d6f0f7441d45899908843b84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62877fb8d6f0f7441d45899908843b84"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a62877fb8d6f0f7441d45899908843b84">setChildren</a> (BiDirMotionPtrs children)</td></tr>
+<tr class="memdesc:a62877fb8d6f0f7441d45899908843b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the children of the motion. <br /></td></tr>
+<tr class="separator:a62877fb8d6f0f7441d45899908843b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc1b38653d2c5d00c08e064581a2527"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cc1b38653d2c5d00c08e064581a2527"></a>
+BiDirMotionPtrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a4cc1b38653d2c5d00c08e064581a2527">getChildren</a> (void) const </td></tr>
+<tr class="memdesc:a4cc1b38653d2c5d00c08e064581a2527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the children of the motion. <br /></td></tr>
+<tr class="separator:a4cc1b38653d2c5d00c08e064581a2527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9d60c80413cde10004e924f2210a68a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9d60c80413cde10004e924f2210a68a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#ad9d60c80413cde10004e924f2210a68a">setCurrentSet</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a4b79e375f9520c7507036d3c948cedd3">SetType</a> set)</td></tr>
+<tr class="memdesc:ad9d60c80413cde10004e924f2210a68a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current set of the motion. <br /></td></tr>
+<tr class="separator:ad9d60c80413cde10004e924f2210a68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed86fbe5fada7416ebe000c15fbba329"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed86fbe5fada7416ebe000c15fbba329"></a>
+<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a4b79e375f9520c7507036d3c948cedd3">SetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#aed86fbe5fada7416ebe000c15fbba329">getCurrentSet</a> (void) const </td></tr>
+<tr class="memdesc:aed86fbe5fada7416ebe000c15fbba329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fet the current set of the motion. <br /></td></tr>
+<tr class="separator:aed86fbe5fada7416ebe000c15fbba329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f9906fe32b7ff526291aba5ae7e047"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88f9906fe32b7ff526291aba5ae7e047"></a>
+<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a4b79e375f9520c7507036d3c948cedd3">SetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a88f9906fe32b7ff526291aba5ae7e047">getOtherSet</a> (void) const </td></tr>
+<tr class="memdesc:a88f9906fe32b7ff526291aba5ae7e047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get set of this motion in the inactive tree. <br /></td></tr>
+<tr class="separator:a88f9906fe32b7ff526291aba5ae7e047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af84ae47907df5cea1e46f36a72503de2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af84ae47907df5cea1e46f36a72503de2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#af84ae47907df5cea1e46f36a72503de2">setTreeType</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT.html#ae4c3b14dbf4ab6dcf32d7c3bcf8a6dbf">TreeType</a> *treePtr)</td></tr>
+<tr class="memdesc:af84ae47907df5cea1e46f36a72503de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set tree identifier for this motion. <br /></td></tr>
+<tr class="separator:af84ae47907df5cea1e46f36a72503de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77b6985d504520cbb236309e685ba7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae77b6985d504520cbb236309e685ba7a"></a>
+<a class="el" href="classompl_1_1geometric_1_1BFMT.html#ae4c3b14dbf4ab6dcf32d7c3bcf8a6dbf">TreeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#ae77b6985d504520cbb236309e685ba7a">getTreeType</a> (void) const </td></tr>
+<tr class="memdesc:ae77b6985d504520cbb236309e685ba7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get tree identifier for this motion. <br /></td></tr>
+<tr class="separator:ae77b6985d504520cbb236309e685ba7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac67e11672316769546e2d504fa63b37c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac67e11672316769546e2d504fa63b37c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#ac67e11672316769546e2d504fa63b37c">setState</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
+<tr class="memdesc:ac67e11672316769546e2d504fa63b37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the state associated with the motion. <br /></td></tr>
+<tr class="separator:ac67e11672316769546e2d504fa63b37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d484ceaacaaaa241319d2154f745bd4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d484ceaacaaaa241319d2154f745bd4"></a>
+<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a3d484ceaacaaaa241319d2154f745bd4">getState</a> () const </td></tr>
+<tr class="memdesc:a3d484ceaacaaaa241319d2154f745bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state associated with the motion. <br /></td></tr>
+<tr class="separator:a3d484ceaacaaaa241319d2154f745bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321da3cf04df15cc6f76bd21fd2cb9f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a321da3cf04df15cc6f76bd21fd2cb9f7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a321da3cf04df15cc6f76bd21fd2cb9f7">alreadyCC</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *m)</td></tr>
+<tr class="memdesc:a321da3cf04df15cc6f76bd21fd2cb9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the connection to m has been already tested and failed because of a collision. <br /></td></tr>
+<tr class="separator:a321da3cf04df15cc6f76bd21fd2cb9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3c3e761fe74aa4ab2645216046cdd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb3c3e761fe74aa4ab2645216046cdd2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#acb3c3e761fe74aa4ab2645216046cdd2">addCC</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *m)</td></tr>
+<tr class="memdesc:acb3c3e761fe74aa4ab2645216046cdd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caches a failed collision check to m. <br /></td></tr>
+<tr class="separator:acb3c3e761fe74aa4ab2645216046cdd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49778c1492842c921a8bd61dc291557a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49778c1492842c921a8bd61dc291557a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a49778c1492842c921a8bd61dc291557a">setHeuristicCost</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> h)</td></tr>
+<tr class="memdesc:a49778c1492842c921a8bd61dc291557a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cost to go heuristic cost. <br /></td></tr>
+<tr class="separator:a49778c1492842c921a8bd61dc291557a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71536aeb0782fecf7aff37a93d7d0591"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71536aeb0782fecf7aff37a93d7d0591"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a71536aeb0782fecf7aff37a93d7d0591">getHeuristicCost</a> () const </td></tr>
+<tr class="memdesc:a71536aeb0782fecf7aff37a93d7d0591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cost to go heuristic cost. <br /></td></tr>
+<tr class="separator:a71536aeb0782fecf7aff37a93d7d0591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a78a1560c309f9fd07be8fcc01dbffb88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78a1560c309f9fd07be8fcc01dbffb88"></a>
+<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a78a1560c309f9fd07be8fcc01dbffb88">state_</a></td></tr>
+<tr class="memdesc:a78a1560c309f9fd07be8fcc01dbffb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state contained by the motion. <br /></td></tr>
+<tr class="separator:a78a1560c309f9fd07be8fcc01dbffb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6054dbe606f63ad3161f9d438deac205"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6054dbe606f63ad3161f9d438deac205"></a>
+<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a6054dbe606f63ad3161f9d438deac205">parent_</a> [2]</td></tr>
+<tr class="memdesc:a6054dbe606f63ad3161f9d438deac205"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parent motion in the exploration tree. <br /></td></tr>
+<tr class="separator:a6054dbe606f63ad3161f9d438deac205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e2a43e9e8b89ce6bc79e6fd695b1993"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e2a43e9e8b89ce6bc79e6fd695b1993"></a>
+BiDirMotionPtrs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a8e2a43e9e8b89ce6bc79e6fd695b1993">children_</a> [2]</td></tr>
+<tr class="memdesc:a8e2a43e9e8b89ce6bc79e6fd695b1993"><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of motions descending from the current motion. <br /></td></tr>
+<tr class="separator:a8e2a43e9e8b89ce6bc79e6fd695b1993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05948bc009ecf7aa580a0e880a35951"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad05948bc009ecf7aa580a0e880a35951"></a>
+<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a4b79e375f9520c7507036d3c948cedd3">SetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#ad05948bc009ecf7aa580a0e880a35951">currentSet_</a> [2]</td></tr>
+<tr class="memdesc:ad05948bc009ecf7aa580a0e880a35951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current set in which the motion is included. <br /></td></tr>
+<tr class="separator:ad05948bc009ecf7aa580a0e880a35951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4568fa681d357a679b1cfe137a925d7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4568fa681d357a679b1cfe137a925d7d"></a>
+<a class="el" href="classompl_1_1geometric_1_1BFMT.html#ae4c3b14dbf4ab6dcf32d7c3bcf8a6dbf">TreeType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a4568fa681d357a679b1cfe137a925d7d">tree_</a></td></tr>
+<tr class="memdesc:a4568fa681d357a679b1cfe137a925d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree identifier. <br /></td></tr>
+<tr class="separator:a4568fa681d357a679b1cfe137a925d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7192d0242567b1ba8093445e2598d9b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7192d0242567b1ba8093445e2598d9b4"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#a7192d0242567b1ba8093445e2598d9b4">cost_</a> [2]</td></tr>
+<tr class="memdesc:a7192d0242567b1ba8093445e2598d9b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost of this motion. <br /></td></tr>
+<tr class="separator:a7192d0242567b1ba8093445e2598d9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd9c9a270e55274efa49b8aec36d25c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbd9c9a270e55274efa49b8aec36d25c"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#adbd9c9a270e55274efa49b8aec36d25c">hcost_</a> [2]</td></tr>
+<tr class="memdesc:adbd9c9a270e55274efa49b8aec36d25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum cost to go of this motion (heuristically computed) <br /></td></tr>
+<tr class="separator:adbd9c9a270e55274efa49b8aec36d25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af74a4b71b033c5e300772c6849097cf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af74a4b71b033c5e300772c6849097cf8"></a>
+std::set&lt; <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html#af74a4b71b033c5e300772c6849097cf8">collChecksDone_</a></td></tr>
+<tr class="memdesc:af74a4b71b033c5e300772c6849097cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the connections attempted FROM this node. <br /></td></tr>
+<tr class="separator:af74a4b71b033c5e300772c6849097cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Representation of a bidirectional motion. </p>
+
+<p>Definition at line <a class="el" href="BFMT_8h_source.html#l00257">257</a> of file <a class="el" href="BFMT_8h_source.html">BFMT.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>ompl/geometric/planners/fmt/<a class="el" href="BFMT_8h_source.html">BFMT.h</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.10</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.powertip.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dynsections.js"></script>
+<script src="js/ompl.js"></script>
+</body>
+</html>
