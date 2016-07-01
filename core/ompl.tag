@@ -39841,12 +39841,6 @@
     <name>md_doc_markdown_installation</name>
     <title>Installation</title>
     <filename>md_doc_markdown_installation</filename>
-    <docanchor file="md_doc_markdown_installation" title="Installation on Linux">install_linux</docanchor>
-    <docanchor file="md_doc_markdown_installation" title="Ubuntu Linux">install_linux_ubuntu</docanchor>
-    <docanchor file="md_doc_markdown_installation" title="Installation on Mac OS X">install_osx</docanchor>
-    <docanchor file="md_doc_markdown_installation" title="MacPorts">install_macports</docanchor>
-    <docanchor file="md_doc_markdown_installation" title="Homebrew">install_homebrew</docanchor>
-    <docanchor file="md_doc_markdown_installation" title="Installation on Windows">install_windows</docanchor>
   </compound>
   <compound kind="page">
     <name>md_doc_markdown_installPyPlusPlus</name>
