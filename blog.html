@@ -208,7 +208,7 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
     <small>10 Mar 2016</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>I am very pleased to announce that <a href="http://coppeliarobotics.com">V-REP</a> has recently added support for OMPL. OMPL is now the <a href="http://www.coppeliarobotics.com/helpFiles/en/pathAndMotionPlanningModules.htm">recommended way</a> to perform motion planning in V-REP.</p>
 
@@ -232,7 +232,7 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 
 <p>It is still good for alternatives to be short. We could try the second shortest path, but in a moderately dense graph, it is likely to share almost all its edges with the original. The <em>n</em>th shortest, for large <em>n</em>, is probably better, but systematically checking all these options is expensive. Instead, consider an algorithm that encourages random deviations from known paths: it says, “What if <em>this</em> area of the graph, along the shortest path, is broken? Then what would the shortest path be? Now what about <em>that</em> area? Or both?” and so on, iteratively building a set of increasingly diverse alternatives. Intuitively, this heuristic simulates random breaking of the graph to build an arsenal that we hope will stand up against any specific issue with the actual graph.</p>
 
-<p>This is the core of the contribution in <a href="http://calebvoss.com/publications/">my 2015 ICRA paper</a>, together with applications for robotic motion planning and an analysis of the efficiency and quality of this approach. Also have a look at <a href="code repository">my code repository</a> for this research.</p>
+<p>This is the core of the contribution in <a href="http://calebvoss.com/publications/">my 2015 ICRA paper</a>, together with applications for robotic motion planning and an analysis of the efficiency and quality of this approach. Also have a look at <a href="https://bitbucket.org/caleb_voss/diverse_short_paths">my code repository</a> for this research.</p>
 
   
   <h2>
@@ -240,7 +240,7 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
     <small>16 Nov 2015</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>Recently, we released a new version of OMPL, version 1.1. We have added a ton of new planning algorithms and other features, while keeping the API more or less the same. In other words, there is no reason not upgrade right now! Below is detailed set of release notes:</p>
 
@@ -325,9 +325,11 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
   
   <h4><a href="http://www.javiervgomez.com">Javier V Gomez</a></h4>
 
-  <p>The OMPL has extended its capabilities regarding optimal planning by implementing the CForest parallelization framework and the RRTstar (RRT*) tree pruning option. Both of them work under the same assumptions:
-- The configuration space obeys the triangle inequality.
-- There exists an admissible heuristic (for the optimization objective!).</p>
+  <p>The OMPL has extended its capabilities regarding optimal planning by implementing the CForest parallelization framework and the RRTstar (RRT*) tree pruning option. Both of them work under the same assumptions:</p>
+<ul>
+  <li>The configuration space obeys the triangle inequality.</li>
+  <li>There exists an admissible heuristic (for the optimization objective!).</li>
+</ul>
 
 <p>We are looking forward you to use these new features and hear your feedback!</p>
 
@@ -444,7 +446,7 @@ Personal: <a href="http://sauravag.com/" target="_blank">http://sauravag.com</a
     <small>26 Jun 2014</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>A couple weeks ago the IEEE International Conference on Robotics and Automation took place in Hong Kong. There were many papers that used OMPL one way or another. Here is an overview of some of them:</p>
 
@@ -559,20 +561,24 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
 
 <h3 id="generalized-optimization-objectives">Generalized Optimization Objectives</h3>
 
-<p>We refined and extended the interface for defining optimization objectives for planning in OMPL. Users can define their own objectives by implementing the <code class="highlighter-rouge">ompl::base::OptimizationObjective</code> interface. OMPL also includes predefined implementations of the following optimization objectives:
-- path length
-- minimum path clearance
-- general state cost integrals
-- mechanical work</p>
+<p>We refined and extended the interface for defining optimization objectives for planning in OMPL. Users can define their own objectives by implementing the <code class="highlighter-rouge">ompl::base::OptimizationObjective</code> interface. OMPL also includes predefined implementations of the following optimization objectives:</p>
+<ul>
+  <li>path length</li>
+  <li>minimum path clearance</li>
+  <li>general state cost integrals</li>
+  <li>mechanical work</li>
+</ul>
 
 <p>We also include functionality to easily combine optimization objectives using the <code class="highlighter-rouge">ompl::base::MultiOptimizationObjective</code> class.</p>
 
 <h3 id="extending-optimizing-planner-support-for-generalized-optimization-objectives">Extending Optimizing Planner Support for Generalized Optimization Objectives</h3>
 
-<p>Motion planners that attempt to optimize path quality objectives are known as <em>optimizing planners</em>. OMPL comes with some optimizing planners, but before this summer they only supported the optimization of path length. We extended the following optimizing planners in OMPL to support generalized optimization objectives:
-- PRM*
-- RRT*
-- TRRT</p>
+<p>Motion planners that attempt to optimize path quality objectives are known as <em>optimizing planners</em>. OMPL comes with some optimizing planners, but before this summer they only supported the optimization of path length. We extended the following optimizing planners in OMPL to support generalized optimization objectives:</p>
+<ul>
+  <li>PRM*</li>
+  <li>RRT*</li>
+  <li>TRRT</li>
+</ul>
 
 <p>Check out the results of running RRT* on a motion planning problem using different optimization objectives:</p>
 
@@ -603,7 +609,7 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
     <small>27 May 2013</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>(Reposted from the <a href="http://www.willowgarage.com/blog/2013/05/06/moveit">Willow Garage blog</a>)</p>
 
@@ -661,7 +667,7 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
     <small>09 Apr 2013</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>We have been accepted as a mentoring organization for the <a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2013">Google Summer of Code 2013</a>.</p>
 
@@ -682,12 +688,14 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
     <small>05 Dec 2012</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
-  <p>Recently, the <a href="http://ompl.kavrakilab.org">Open Motion Planning Library (OMPL)</a> won the Grand Prize in the Open Source Software World Challenge. This is a yearly competition organized by the South Korean government and is intended to promote open source software and expand various exchanges among open source software developers all over the world. Last year’s winner was the Point Cloud Library, so we are in good company! This year, 55 teams from 23 countries participated in the international division. The second and third prize winners were:
-- Stan, a package for obtaining Bayesian inference using the No-U-Turn sampler, a variant of Hamiltonian Monte Carlo, from Columbia University.
-- DDT, a system for testing closed-source binary device drivers from the Dependable Systems Lab at EPFL, Switzerland.
-.</p>
+  <p>Recently, the <a href="http://ompl.kavrakilab.org">Open Motion Planning Library (OMPL)</a> won the Grand Prize in the Open Source Software World Challenge. This is a yearly competition organized by the South Korean government and is intended to promote open source software and expand various exchanges among open source software developers all over the world. Last year’s winner was the Point Cloud Library, so we are in good company! This year, 55 teams from 23 countries participated in the international division. The second and third prize winners were:</p>
+<ul>
+  <li>Stan, a package for obtaining Bayesian inference using the No-U-Turn sampler, a variant of Hamiltonian Monte Carlo, from Columbia University.</li>
+  <li>DDT, a system for testing closed-source binary device drivers from the Dependable Systems Lab at EPFL, Switzerland.
+.</li>
+</ul>
 
 <p>Besides the international category, there were also several categories at the national level, ranging from elementary school level (!), to college level. Web development and mobile apps seemed to be of particular interest. Several high-ranking government officials were in attendance, gave speeches, and handed out awards. Mark Moll attended the award ceremony and gave a talk about OMPL.</p>
 
@@ -699,7 +707,7 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
     <small>07 Sep 2012</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>Watch what Dave Coleman has been doing with MoveIt! and OMPL during his internship at Willow Garage this summer:</p>
 
@@ -715,7 +723,7 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
     <small>13 Jun 2012</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>It was good meeting many of the OMPL users at ICRA 2012 and ROSCON a couple weeks ago. There were a number of ICRA talks that featured OMPL, directly or indirectly, that I’d like to point out:</p>
 
@@ -747,7 +755,7 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
     <small>20 May 2012</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <div class="embed-responsive embed-responsive-4by3"><iframe src="https://player.vimeo.com/video/63626528?loop=1&amp;color=ffffff&amp;byline=0&amp;portrait=0" class="embed-responsive-item" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div>
 
@@ -759,7 +767,7 @@ The authors present an RRT-based motion planning algorithm that uses the maximal
     <small>27 Apr 2012</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>OMPL can be used to plan for complex systems that can be simulated by a physics engine. From a planning perspective, the physics engine is a black box that acts like a <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1StatePropagator.html">state propagator</a>. OMPL includes support for the <a href="http://ode.org">Open Dynamics Engine (OpenDE)</a>, but support for other physics engines can be added using the OpenDE bindings as a starting point.
 To show that this can indeed be done, I have developed bindings for <a href="http://www.vxsim.com/">Vortex</a>. <a href="http://www.vxsim.com/">Vortex</a> is a commercial physics simulator. It contains incredibly detailed models for vehicles (transmission, gears, suspension, etc.) and surface interactions. It also has snazzy OpenSceneGraphics built in. The bindings mirror the structure of the OpenDE bindings. To use these bindings, the user has to implement some derived classes. The derived VortexEnvironment class needs to define the simulated environment and how controls map forces, torques or velocities in the simulation. The derived state space is responsible for defining a distance between states. Interestingly, the VortexStateSpace represents states completely opaquely: the dimensionality is unknown and the internal structure is unknown. There is just a distance function and a user-defined projection to a low-dimensional embedding. This is sufficient for planners like KPIECE, SBL, and EST (but not RRT, which needs to be able to sample uniformly random states). I have attached a patch for OMPL 0.10.2 that adds vortex support. You can also download and extract the tar file which adds the Vortex-related files and overwrites a few files to add Vortex support.</p>
@@ -818,7 +826,7 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
     <small>18 Mar 2012</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>For several vehicle models it is possible to compute the optimal (i.e., shortest) path between a start and end state. The two most commonly studied vehicle models are the Dubins car and the Reeds-Shepp car. Both are first-order models. The Dubins car’s controls are: go straight, turn left, and turn right. The Reeds-Shepp car has the same controls, but can also execute them in reverse. The optimal paths for these vehicles can be computed analytically and consist of 3 to 5 circle and straight-line segments. In OMPL we could model cars with a system of differential equations and use a control-based planner. For the Dubins and Reeds-Shepp cars, however, we simply use a geometric planner and plan in SE(2). Rather than straight-line interpolation between states, we’d like to use the appropriate optimal path in our local planner. This is done by creating two new state spaces, <code class="highlighter-rouge">ompl::base::DubinsStateSpace</code> and <code class="highlighter-rouge">ompl::base::ReedsSheppStateSpace</code>, that override the distance and interpolate member functions. The distance is redefined to be the length of the optimal path connecting two states.</p>
 
@@ -846,7 +854,7 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
     <small>15 Mar 2012</small>
   </h2>
   
-  <h4><a href="http://www.cs.rice.edu/~mmoll">Mark Moll</a></h4>
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
 
   <p>Welcome to the OMPL Blog. Here, we’ll occasionally post messages about new and upcoming features in the Open Motion Planning Library. Not all these features will be prominently featured on the front page, so they might be easy to miss. In the near future, you can expect posts about: motion planning for Dubins and Reeds-Shepp cars, using the built-in numerical integration to plan for systems described by ordinary differential equations, and path optimization.</p>
 
