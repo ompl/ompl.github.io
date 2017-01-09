@@ -158,6 +158,8 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 <div class="col-md-3">
 <ul>
   
+  <li><a href="http://ompl.kavrakilab.org/2017/01/09/wafr-2016-roundup.html">WAFR 2017 Roundup</a></li>
+  
   <li><a href="http://ompl.kavrakilab.org/2016/03/10/vrep-supports-ompl.html">V-REP Now Supports OMPL</a></li>
   
   <li><a href="http://ompl.kavrakilab.org/2016/01/19/finding-diverse-short-paths.html">Finding Diverse Short Paths</a></li>
@@ -202,6 +204,49 @@ onkeydown="return searchBox.OnSearchSelectKey(event)">
 </div>
 
 <div class="col-md-9">
+  
+  <h2>
+    <a href="http://ompl.kavrakilab.org/2017/01/09/wafr-2016-roundup.html">WAFR 2017 Roundup</a>
+    <small>09 Jan 2017</small>
+  </h2>
+  
+  <h4><a href="http://mmoll.rice.edu">Mark Moll</a></h4>
+
+  <p>A couple weeks ago the Workshop on the Algorithmic Foundations of Robotics (WAFR) took place in San Francisco, CA. As always, WAFR was excellent. It was good to see many friends and colleagues again. There were many excellent papers, but I will focus here on some of the papers that used OMPL one way or another.</p>
+
+<ol>
+  <li>
+    <p><strong>Collision detection or nearest-neighbor search? On the computational bottleneck in sampling-based motion planning</strong><br />
+Michal Kleinbort, Oren Salzman, and Dan Halperin<br />
+Blavatnik School of Computer Science, Tel-Aviv University, Israel<br />
+Kleinbart et al. show that the computational bottleneck in asymptotically optimal planning algorithms is, in the limit, created by nearest-neighbor calculations. They also show that computing all near-neighbors within a ball of a given radius can provide speedups compared to computing <em>k</em> nearest neighbors.</p>
+  </li>
+  <li>
+    <p><strong>Efficient Nearest-Neighbor Search for Dynamical Systems with Nonholonomic Constraints</strong><br />
+Valerio Varricchio, Brian Paden, Dmitry Yershov, and Emilio Frazzoli<br />
+Massachusetts Institute of Technology<br />
+Varricchio et al. also analyze nearest-neighbor search, but here the focus is on dynamical systems with nonholonomic constraints. The authors focus specifically on kd-trees and propose a new way to build and query such trees for nonholonomic systems. The proposed approach is evaluated using a Reeds-Shepp system and outperforms regular kd-trees, hierarchical clustering (as implemented in FLANN), and Geometric Near-neighbor Access Trees (as implemented in OMPL).</p>
+  </li>
+  <li>
+    <p><strong>Matrix Completion as a Post-Processing Technique for Probabilistic Roadmaps</strong><br />
+Joel M. Esposito and John N. Wright<br />
+United States Naval Academy, Annapolis, MD and Columbia University, New York, NY<br />
+Esposito and Wright observe that the existence of many edges in a probabilistic roadmap can be predicted using only a small subset of the edges in the roadmap. This is done using matrix completion techniques. If valid and invalid edges can be predicted accurately, then many collision checks can be avoided. How to best leverage this insight into accelerating motion planning algorithms is the topic of further research.</p>
+  </li>
+  <li>
+    <p><strong>Resolution-Exact Planner for Thick Non-Crossing 2-Link Robots</strong><br />
+Chee K. Yap, Zhongdi Luo, and Ching-Hsiang Hsu<br />
+Department of Computer Science, Courant Institute, NYU<br />
+Yap et al. present a new type of motion planning algorithm that is not based on sampling or heuristic search, but is based on subdivision instead. Initial results are presented for a 2-link robot in the plane. The algorithm is compared with a number of sampling-based planning algorithms in OMPL and performs really well in comparison. Generalizing the algorithm to higher-dimensional systems is non-trivial and is the subject of future work.</p>
+  </li>
+  <li>
+    <p><strong>Motion Planning for Reconfigurable Mobile Robots Using Hierarchical Fast Marching Trees</strong><br />
+William Reid, Robert Fitch, Ali Haydar Göktogan and Salah Sukkarieh<br />
+Australian Centre for Field Robotics, The University of Sydney and the Centre for Autonomous Systems, University of Technology Sydney, Australia<br />
+Reid et al. present a hierarchical variant of <a href="http://ompl.kavrakilab.org/classompl_1_1geometric_1_1FMT.html">FMT*</a>, an asymptotically optimal planning algorithm. They use a path in a subspace of a high-dimensional state space to guide the exploration in the full state space while preserving optimality and completeness guarantees. The algorithm was developed for a reconfigurable mobile robot, specifically, a four-legged rover with wheels as feet. The idea may extend to other asymptotically optimal algorithms. Using this hierarchical approach the authors show a significantly improved convergence to energy-optimal paths for their rover.</p>
+  </li>
+</ol>
+
   
   <h2>
     <a href="http://ompl.kavrakilab.org/2016/03/10/vrep-supports-ompl.html">V-REP Now Supports OMPL</a>
