@@ -74,8 +74,8 @@ install_ompl()
     else
         OMPL="omplapp"
     fi
-    wget -O - https://bitbucket.org/ompl/ompl/downloads/$OMPL-1.2.1-Source.tar.gz | tar zxf -
-    cd $OMPL-1.2.1-Source
+    wget -O - https://bitbucket.org/ompl/ompl/downloads/$OMPL-1.3.0-Source.tar.gz | tar zxf -
+    cd $OMPL-1.3.0-Source
     mkdir -p build/Release
     cd build/Release
     cmake ../..
@@ -106,6 +106,14 @@ case $i in
     ;;
 esac
 done
+
+
+if [ ! -z $PYTHON && ! -z $TRUSTY && `uname -m`=="i386" ]; then
+    echo "There is no pre-built binary of CastXML available for 32-bit Ubuntu 14.04"
+    echo "To generate the Python bindings, you first need to compile CastXML from source."
+    echo "Alternatively, you could change your OS to either a newer version of Ubuntu or 64-bit Ubuntu 14.04."
+    exit 1
+fi
 
 install_common_dependencies
 if [ ! -z $PYTHON ]; then

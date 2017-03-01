@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ompl::geometric::BITstar::ImplicitGraph Class Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <link href="css/tabs.css" rel="stylesheet">
+  <link href="css/doxygen.css" rel="stylesheet">
+  <link href="css/search.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/ompl.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="search/searchdata.js"></script>
+  <script src="search/search.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+          <!-- Doxygen API search box -->
+          <div id="searchli">
+            <div id="MSearchBox" class="MSearchBoxInactive">
+              <span class="left">
+                <img id="MSearchSelect" src="search/mag_sel.png"
+                onmouseover="return searchBox.OnSearchSelectShow()"
+                onmouseout="return searchBox.OnSearchSelectHide()"
+                alt=""/>
+                <input type="text" id="MSearchField" value="Search API" accesskey="S"
+                onfocus="searchBox.OnSearchFieldFocus(true)"
+                onblur="searchBox.OnSearchFieldFocus(false)"
+                onkeyup="searchBox.OnSearchFieldChange(event)"/>
+              </span><span class="right">
+                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+              </span>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"
+  onmouseover="return searchBox.OnSearchSelectShow()"
+  onmouseout="return searchBox.OnSearchSelectHide()"
+  onkeydown="return searchBox.OnSearchSelectKey(event)">
+  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow">
+    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
+  </div>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1geometric.html">geometric</a></li><li class="navelem"><a class="el" href="classompl_1_1geometric_1_1BITstar.html">BITstar</a></li><li class="navelem"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html">ImplicitGraph</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ompl::geometric::BITstar::ImplicitGraph Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>A conceptual representation of samples as an edge-implicit random geometric graph.  
+ <a href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ImplicitGraph_8h_source.html">ompl/geometric/planners/bitstar/datastructures/ImplicitGraph.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae0300a64779d063a3db9c1752a1145f8"><td class="memItemLeft" align="right" valign="top"><a id="ae0300a64779d063a3db9c1752a1145f8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ae0300a64779d063a3db9c1752a1145f8">ImplicitGraph</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1972ba4a3a68f77ffa2c3319a69dce49">NameFunc</a> nameFunc)</td></tr>
+<tr class="memdesc:ae0300a64779d063a3db9c1752a1145f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an implicit graph. <br /></td></tr>
+<tr class="separator:ae0300a64779d063a3db9c1752a1145f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d6bb1d8f59740872e0fb1a1124ace5"><td class="memItemLeft" align="right" valign="top"><a id="a63d6bb1d8f59740872e0fb1a1124ace5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a63d6bb1d8f59740872e0fb1a1124ace5">setup</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;si, const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> &amp;pdef, const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a7f00cb9addc9d74b7189aec381f038fa">CostHelperPtr</a> &amp;costHelper, const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a5a3eb7712e427445aecf215e4e7f95fa">SearchQueuePtr</a> &amp;searchQueue, const <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a> *plannerPtr, <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> &amp;pis)</td></tr>
+<tr class="memdesc:a63d6bb1d8f59740872e0fb1a1124ace5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html" title="A conceptual representation of samples as an edge-implicit random geometric graph. ">ImplicitGraph</a>, must be called before use. Does not take a copy of the PlannerInputStates, but checks it for starts/goals. <br /></td></tr>
+<tr class="separator:a63d6bb1d8f59740872e0fb1a1124ace5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131fbf7c6940f668b1b90269048dc5e9"><td class="memItemLeft" align="right" valign="top"><a id="a131fbf7c6940f668b1b90269048dc5e9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a131fbf7c6940f668b1b90269048dc5e9">clear</a> ()</td></tr>
+<tr class="memdesc:a131fbf7c6940f668b1b90269048dc5e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the graph to the state of construction. <br /></td></tr>
+<tr class="separator:a131fbf7c6940f668b1b90269048dc5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46074e6a6f225fd1596cf5df29c5c10e"><td class="memItemLeft" align="right" valign="top"><a id="a46074e6a6f225fd1596cf5df29c5c10e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a46074e6a6f225fd1596cf5df29c5c10e">hasAGoal</a> () const</td></tr>
+<tr class="memdesc:a46074e6a6f225fd1596cf5df29c5c10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the graph contains a goal or not. <br /></td></tr>
+<tr class="separator:a46074e6a6f225fd1596cf5df29c5c10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e05d68d7c67f33b55b9b3a30024508"><td class="memItemLeft" align="right" valign="top"><a id="a44e05d68d7c67f33b55b9b3a30024508"></a>
+VertexPtrVector::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a44e05d68d7c67f33b55b9b3a30024508">startVerticesBeginConst</a> () const</td></tr>
+<tr class="memdesc:a44e05d68d7c67f33b55b9b3a30024508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const-iterator to the front of the start-vertex vector. <br /></td></tr>
+<tr class="separator:a44e05d68d7c67f33b55b9b3a30024508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3192ccb278d9e5b86f790c708f0ec5"><td class="memItemLeft" align="right" valign="top"><a id="aae3192ccb278d9e5b86f790c708f0ec5"></a>
+VertexPtrVector::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#aae3192ccb278d9e5b86f790c708f0ec5">startVerticesEndConst</a> () const</td></tr>
+<tr class="memdesc:aae3192ccb278d9e5b86f790c708f0ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const-iterator to the end of the start-vertex vector. <br /></td></tr>
+<tr class="separator:aae3192ccb278d9e5b86f790c708f0ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60d9cc83616fbefa8888b625015821e"><td class="memItemLeft" align="right" valign="top"><a id="aa60d9cc83616fbefa8888b625015821e"></a>
+VertexPtrVector::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#aa60d9cc83616fbefa8888b625015821e">goalVerticesBeginConst</a> () const</td></tr>
+<tr class="memdesc:aa60d9cc83616fbefa8888b625015821e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const-iterator to the front of the goal-vertex vector. <br /></td></tr>
+<tr class="separator:aa60d9cc83616fbefa8888b625015821e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0876737708c6003e5c9587c3d6116f9"><td class="memItemLeft" align="right" valign="top"><a id="af0876737708c6003e5c9587c3d6116f9"></a>
+VertexPtrVector::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#af0876737708c6003e5c9587c3d6116f9">goalVerticesEndConst</a> () const</td></tr>
+<tr class="memdesc:af0876737708c6003e5c9587c3d6116f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const-iterator to the end of the goal-vertex vector. <br /></td></tr>
+<tr class="separator:af0876737708c6003e5c9587c3d6116f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83be6b9a2d27eefc72bcc3b83ae6d75f"><td class="memItemLeft" align="right" valign="top"><a id="a83be6b9a2d27eefc72bcc3b83ae6d75f"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a83be6b9a2d27eefc72bcc3b83ae6d75f">minCost</a> () const</td></tr>
+<tr class="memdesc:a83be6b9a2d27eefc72bcc3b83ae6d75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the minimum cost solution possible for this problem. <br /></td></tr>
+<tr class="separator:a83be6b9a2d27eefc72bcc3b83ae6d75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f48910d8abfcf844aadf25a0399b5a"><td class="memItemLeft" align="right" valign="top"><a id="a37f48910d8abfcf844aadf25a0399b5a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a37f48910d8abfcf844aadf25a0399b5a">hasInformedMeasure</a> () const</td></tr>
+<tr class="memdesc:a37f48910d8abfcf844aadf25a0399b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether the underlying state sampler can provide an informed measure. <br /></td></tr>
+<tr class="separator:a37f48910d8abfcf844aadf25a0399b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212630ab596b0b376c8e58b7b09b52f5"><td class="memItemLeft" align="right" valign="top"><a id="a212630ab596b0b376c8e58b7b09b52f5"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a212630ab596b0b376c8e58b7b09b52f5">getInformedMeasure</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost) const</td></tr>
+<tr class="memdesc:a212630ab596b0b376c8e58b7b09b52f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the underlying state sampler for the informed measure of the problem. <br /></td></tr>
+<tr class="separator:a212630ab596b0b376c8e58b7b09b52f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818cc69141d235fafba96f739bcba011"><td class="memItemLeft" align="right" valign="top"><a id="a818cc69141d235fafba96f739bcba011"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a818cc69141d235fafba96f739bcba011">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae2c8c06f2c54b1bf182dc62dce515ff0">VertexConstPtr</a> &amp;a, const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae2c8c06f2c54b1bf182dc62dce515ff0">VertexConstPtr</a> &amp;b) const</td></tr>
+<tr class="memdesc:a818cc69141d235fafba96f739bcba011"><td class="mdescLeft">&#160;</td><td class="mdescRight">The distance function. Calculates the distance directionally from the given state to all the other states (can be used on states either in our out of the graph). <br /></td></tr>
+<tr class="separator:a818cc69141d235fafba96f739bcba011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20da13a2f166cc1c0662e0e05084dda9"><td class="memItemLeft" align="right" valign="top"><a id="a20da13a2f166cc1c0662e0e05084dda9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a20da13a2f166cc1c0662e0e05084dda9">nearestSamples</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;vertex, <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1330c5b8a068a54fccf22b51ac105a2f">VertexPtrVector</a> *neighbourSamples)</td></tr>
+<tr class="memdesc:a20da13a2f166cc1c0662e0e05084dda9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nearest unconnected samples using the appropriate "near" definition (i.e., k or r). <br /></td></tr>
+<tr class="separator:a20da13a2f166cc1c0662e0e05084dda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac290acafb390befb2ef1a7bec439f994"><td class="memItemLeft" align="right" valign="top"><a id="ac290acafb390befb2ef1a7bec439f994"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ac290acafb390befb2ef1a7bec439f994">nearestVertices</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;vertex, <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1330c5b8a068a54fccf22b51ac105a2f">VertexPtrVector</a> *neighbourVertices)</td></tr>
+<tr class="memdesc:ac290acafb390befb2ef1a7bec439f994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the nearest samples from the vertexNN_ using the appropriate "near" definition (i.e., k or r). <br /></td></tr>
+<tr class="separator:ac290acafb390befb2ef1a7bec439f994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773c3c291205b290893f0e5ca9e21d54"><td class="memItemLeft" align="right" valign="top"><a id="a773c3c291205b290893f0e5ca9e21d54"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a773c3c291205b290893f0e5ca9e21d54">getGraphAsPlannerData</a> (<a class="el" href="classompl_1_1base_1_1PlannerData.html">ompl::base::PlannerData</a> &amp;data) const</td></tr>
+<tr class="memdesc:a773c3c291205b290893f0e5ca9e21d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the graph to the given PlannerData struct. <br /></td></tr>
+<tr class="separator:a773c3c291205b290893f0e5ca9e21d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3921b2e4eb248ba63e8deb2fe880b6de"><td class="memItemLeft" align="right" valign="top"><a id="a3921b2e4eb248ba63e8deb2fe880b6de"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae2c8c06f2c54b1bf182dc62dce515ff0">VertexConstPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a3921b2e4eb248ba63e8deb2fe880b6de">closestVertexToGoal</a> () const</td></tr>
+<tr class="memdesc:a3921b2e4eb248ba63e8deb2fe880b6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">IF BEING TRACKED, returns the closest vertex in the tree to the goal. <br /></td></tr>
+<tr class="separator:a3921b2e4eb248ba63e8deb2fe880b6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a656c1b485fd0f5a73f51ff92e745d7be"><td class="memItemLeft" align="right" valign="top"><a id="a656c1b485fd0f5a73f51ff92e745d7be"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a656c1b485fd0f5a73f51ff92e745d7be">smallestDistanceToGoal</a> () const</td></tr>
+<tr class="memdesc:a656c1b485fd0f5a73f51ff92e745d7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">IF BEING TRACKED, returns the how close vertices in the tree are to the goal. <br /></td></tr>
+<tr class="separator:a656c1b485fd0f5a73f51ff92e745d7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c15f7c61fff5e091f0259925ea7d2c"><td class="memItemLeft" align="right" valign="top"><a id="a36c15f7c61fff5e091f0259925ea7d2c"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a36c15f7c61fff5e091f0259925ea7d2c">getConnectivityK</a> () const</td></tr>
+<tr class="memdesc:a36c15f7c61fff5e091f0259925ea7d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the k of this k-nearest RGG. <br /></td></tr>
+<tr class="separator:a36c15f7c61fff5e091f0259925ea7d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58dda8d6fbf02bbe2f884a4c78fa4f28"><td class="memItemLeft" align="right" valign="top"><a id="a58dda8d6fbf02bbe2f884a4c78fa4f28"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a58dda8d6fbf02bbe2f884a4c78fa4f28">getConnectivityR</a> () const</td></tr>
+<tr class="memdesc:a58dda8d6fbf02bbe2f884a4c78fa4f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the radius of this r-disc RGG. <br /></td></tr>
+<tr class="separator:a58dda8d6fbf02bbe2f884a4c78fa4f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97c8060b25fc19cac38107ae13d6e33"><td class="memItemLeft" align="right" valign="top"><a id="ac97c8060b25fc19cac38107ae13d6e33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ac97c8060b25fc19cac38107ae13d6e33">hasSolution</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;solnCost)</td></tr>
+<tr class="memdesc:ac97c8060b25fc19cac38107ae13d6e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark that a solution has been found and that the graph should be limited to the given heuristic value. <br /></td></tr>
+<tr class="separator:ac97c8060b25fc19cac38107ae13d6e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae274427299a7fb5b40d3633adb8c3f0f"><td class="memItemLeft" align="right" valign="top"><a id="ae274427299a7fb5b40d3633adb8c3f0f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ae274427299a7fb5b40d3633adb8c3f0f">updateStartAndGoalStates</a> (<a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> &amp;pis, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
+<tr class="memdesc:ae274427299a7fb5b40d3633adb8c3f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds any new goals or starts that have appeared in the problem definition to the vector of vertices and the queue. Creates a new informed sampler if necessary. <br /></td></tr>
+<tr class="separator:ae274427299a7fb5b40d3633adb8c3f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7c5f309bccfc1ca452cd65feb781b1"><td class="memItemLeft" align="right" valign="top"><a id="a0b7c5f309bccfc1ca452cd65feb781b1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a0b7c5f309bccfc1ca452cd65feb781b1">addNewSamples</a> (const unsigned int &amp;numSamples)</td></tr>
+<tr class="memdesc:a0b7c5f309bccfc1ca452cd65feb781b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the resolution of the graph-based approximation of the continuous search domain by adding a batch of new samples. <br /></td></tr>
+<tr class="separator:a0b7c5f309bccfc1ca452cd65feb781b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52b0587ca4de60f74428ac658ed02b3"><td class="memItemLeft" align="right" valign="top"><a id="ac52b0587ca4de60f74428ac658ed02b3"></a>
+std::pair&lt; unsigned int, unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ac52b0587ca4de60f74428ac658ed02b3">prune</a> (double prunedMeasure)</td></tr>
+<tr class="memdesc:ac52b0587ca4de60f74428ac658ed02b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune the samples to the subproblem of the given measure. Pruning is performed by using the prune conditions of the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html" title="A queue of edges to be processed that integrates both the expansion of Vertices and the ordering of t...">SearchQueue</a>. Returns the number of vertices disconnected and the number of samples removed. <br /></td></tr>
+<tr class="separator:ac52b0587ca4de60f74428ac658ed02b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04db46665953783eef161ec985d29fe6"><td class="memItemLeft" align="right" valign="top"><a id="a04db46665953783eef161ec985d29fe6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a04db46665953783eef161ec985d29fe6">addSample</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;newSample)</td></tr>
+<tr class="memdesc:a04db46665953783eef161ec985d29fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an unconnected sample. <br /></td></tr>
+<tr class="separator:a04db46665953783eef161ec985d29fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada296d39c8722d30ad4fa308a318b93"><td class="memItemLeft" align="right" valign="top"><a id="aada296d39c8722d30ad4fa308a318b93"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#aada296d39c8722d30ad4fa308a318b93">removeSample</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;oldSample)</td></tr>
+<tr class="memdesc:aada296d39c8722d30ad4fa308a318b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an unconnected sample. <br /></td></tr>
+<tr class="separator:aada296d39c8722d30ad4fa308a318b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f2774eba2cd3a953026726c92b9fc3"><td class="memItemLeft" align="right" valign="top"><a id="a53f2774eba2cd3a953026726c92b9fc3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a53f2774eba2cd3a953026726c92b9fc3">addVertex</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;newVertex, bool removeFromFree)</td></tr>
+<tr class="memdesc:a53f2774eba2cd3a953026726c92b9fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the tree, optionally moving it from the set of unconnected samples. <br /></td></tr>
+<tr class="separator:a53f2774eba2cd3a953026726c92b9fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e52cfcb4eed65c70850641e48c4114"><td class="memItemLeft" align="right" valign="top"><a id="ab3e52cfcb4eed65c70850641e48c4114"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ab3e52cfcb4eed65c70850641e48c4114">removeVertex</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;oldVertex, bool moveToFree)</td></tr>
+<tr class="memdesc:ab3e52cfcb4eed65c70850641e48c4114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a vertex from the tree, can optionally be allowed to move it to the set of unconnected samples if may still be useful. <br /></td></tr>
+<tr class="separator:ab3e52cfcb4eed65c70850641e48c4114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bae302cadff1eec3c7f01316e413359"><td class="memItemLeft" align="right" valign="top"><a id="a8bae302cadff1eec3c7f01316e413359"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a8bae302cadff1eec3c7f01316e413359">setRewireFactor</a> (double rewireFactor)</td></tr>
+<tr class="memdesc:a8bae302cadff1eec3c7f01316e413359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rewiring scale factor, s, such that r_rrg = s  r_rrg*. <br /></td></tr>
+<tr class="separator:a8bae302cadff1eec3c7f01316e413359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad843e38fb5eaf877f8a93dba8af3dd50"><td class="memItemLeft" align="right" valign="top"><a id="ad843e38fb5eaf877f8a93dba8af3dd50"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ad843e38fb5eaf877f8a93dba8af3dd50">getRewireFactor</a> () const</td></tr>
+<tr class="memdesc:ad843e38fb5eaf877f8a93dba8af3dd50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rewiring scale factor. <br /></td></tr>
+<tr class="separator:ad843e38fb5eaf877f8a93dba8af3dd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad16e8dfd69bd7c55287b8ac26e4a7cf9"><td class="memItemLeft" align="right" valign="top"><a id="ad16e8dfd69bd7c55287b8ac26e4a7cf9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ad16e8dfd69bd7c55287b8ac26e4a7cf9">setUseKNearest</a> (bool useKNearest)</td></tr>
+<tr class="memdesc:ad16e8dfd69bd7c55287b8ac26e4a7cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable a k-nearest search for instead of an r-disc search. <br /></td></tr>
+<tr class="separator:ad16e8dfd69bd7c55287b8ac26e4a7cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768bff7a91e6b6249ae86a400e9d3bf6"><td class="memItemLeft" align="right" valign="top"><a id="a768bff7a91e6b6249ae86a400e9d3bf6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a768bff7a91e6b6249ae86a400e9d3bf6">getUseKNearest</a> () const</td></tr>
+<tr class="memdesc:a768bff7a91e6b6249ae86a400e9d3bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a k-nearest search is being used. <br /></td></tr>
+<tr class="separator:a768bff7a91e6b6249ae86a400e9d3bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9255f486a1f99c851fc78b3a6287eb37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a9255f486a1f99c851fc78b3a6287eb37">setJustInTimeSampling</a> (bool useJit)</td></tr>
+<tr class="separator:a9255f486a1f99c851fc78b3a6287eb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b776b8e0d8172917d63f8987052b28"><td class="memItemLeft" align="right" valign="top"><a id="a56b776b8e0d8172917d63f8987052b28"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a56b776b8e0d8172917d63f8987052b28">getJustInTimeSampling</a> () const</td></tr>
+<tr class="memdesc:a56b776b8e0d8172917d63f8987052b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether we're using just-in-time sampling. <br /></td></tr>
+<tr class="separator:a56b776b8e0d8172917d63f8987052b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7704a9619a5b464c88baf2549494879"><td class="memItemLeft" align="right" valign="top"><a id="af7704a9619a5b464c88baf2549494879"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#af7704a9619a5b464c88baf2549494879">setDropSamplesOnPrune</a> (bool dropSamples)</td></tr>
+<tr class="memdesc:af7704a9619a5b464c88baf2549494879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether unconnected samples are dropped on pruning. <br /></td></tr>
+<tr class="separator:af7704a9619a5b464c88baf2549494879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f120585a62c192e6b0d2c7a640b1f9"><td class="memItemLeft" align="right" valign="top"><a id="aa1f120585a62c192e6b0d2c7a640b1f9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#aa1f120585a62c192e6b0d2c7a640b1f9">getDropSamplesOnPrune</a> () const</td></tr>
+<tr class="memdesc:aa1f120585a62c192e6b0d2c7a640b1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether unconnected samples are dropped on pruning. <br /></td></tr>
+<tr class="separator:aa1f120585a62c192e6b0d2c7a640b1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954aee049fbfd2ff3141c4aa20703298"><td class="memItemLeft" align="right" valign="top"><a id="a954aee049fbfd2ff3141c4aa20703298"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a954aee049fbfd2ff3141c4aa20703298">setTrackApproximateSolutions</a> (bool findApproximate)</td></tr>
+<tr class="memdesc:a954aee049fbfd2ff3141c4aa20703298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether to track approximate solutions during the search. <br /></td></tr>
+<tr class="separator:a954aee049fbfd2ff3141c4aa20703298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa2dab97bab8e1004d9a76161aae4928"><td class="memItemLeft" align="right" valign="top"><a id="aaa2dab97bab8e1004d9a76161aae4928"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#aaa2dab97bab8e1004d9a76161aae4928">getTrackApproximateSolutions</a> () const</td></tr>
+<tr class="memdesc:aaa2dab97bab8e1004d9a76161aae4928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether approximate solutions are tracked during the search. <br /></td></tr>
+<tr class="separator:aaa2dab97bab8e1004d9a76161aae4928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66efcf1d72216b475c758750ba014e9f"><td class="memTemplParams" colspan="2"><a id="a66efcf1d72216b475c758750ba014e9f"></a>
+template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
+<tr class="memitem:a66efcf1d72216b475c758750ba014e9f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a66efcf1d72216b475c758750ba014e9f">setNearestNeighbors</a> ()</td></tr>
+<tr class="memdesc:a66efcf1d72216b475c758750ba014e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a different nearest neighbours datastructure. <br /></td></tr>
+<tr class="separator:a66efcf1d72216b475c758750ba014e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53a2478037876c1e13031b74f54185a4"><td class="memItemLeft" align="right" valign="top"><a id="a53a2478037876c1e13031b74f54185a4"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a53a2478037876c1e13031b74f54185a4">numFreeSamples</a> () const</td></tr>
+<tr class="memdesc:a53a2478037876c1e13031b74f54185a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of free samples (size of freeStateNN_). <br /></td></tr>
+<tr class="separator:a53a2478037876c1e13031b74f54185a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f82e678cd1c577e09a7c031e48f7a0f"><td class="memItemLeft" align="right" valign="top"><a id="a4f82e678cd1c577e09a7c031e48f7a0f"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a4f82e678cd1c577e09a7c031e48f7a0f">numConnectedVertices</a> () const</td></tr>
+<tr class="memdesc:a4f82e678cd1c577e09a7c031e48f7a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of vertices in the tree (Size of vertexNN_). <br /></td></tr>
+<tr class="separator:a4f82e678cd1c577e09a7c031e48f7a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28aad353d00ac3098ff308da6e956701"><td class="memItemLeft" align="right" valign="top"><a id="a28aad353d00ac3098ff308da6e956701"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a28aad353d00ac3098ff308da6e956701">numStatesGenerated</a> () const</td></tr>
+<tr class="memdesc:a28aad353d00ac3098ff308da6e956701"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <em>total</em> number of states generated (numSamples_). <br /></td></tr>
+<tr class="separator:a28aad353d00ac3098ff308da6e956701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04bc0deec4e02f66ad6ea82b47e4657c"><td class="memItemLeft" align="right" valign="top"><a id="a04bc0deec4e02f66ad6ea82b47e4657c"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a04bc0deec4e02f66ad6ea82b47e4657c">numVerticesConnected</a> () const</td></tr>
+<tr class="memdesc:a04bc0deec4e02f66ad6ea82b47e4657c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <em>total</em> number of vertices added to the graph (numVertices_). <br /></td></tr>
+<tr class="separator:a04bc0deec4e02f66ad6ea82b47e4657c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac717d91935890eed3ac85ccfb5eab2b1"><td class="memItemLeft" align="right" valign="top"><a id="ac717d91935890eed3ac85ccfb5eab2b1"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#ac717d91935890eed3ac85ccfb5eab2b1">numFreeStatesPruned</a> () const</td></tr>
+<tr class="memdesc:ac717d91935890eed3ac85ccfb5eab2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of states pruned (numFreeStatesPruned_). <br /></td></tr>
+<tr class="separator:ac717d91935890eed3ac85ccfb5eab2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa35abf18696b5ab809606889be722e"><td class="memItemLeft" align="right" valign="top"><a id="a8fa35abf18696b5ab809606889be722e"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a8fa35abf18696b5ab809606889be722e">numVerticesDisconnected</a> () const</td></tr>
+<tr class="memdesc:a8fa35abf18696b5ab809606889be722e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of tree vertices disconnected (numVerticesDisconnected_). <br /></td></tr>
+<tr class="separator:a8fa35abf18696b5ab809606889be722e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b8cbe24b6b282752f22d4c06108aba1"><td class="memItemLeft" align="right" valign="top"><a id="a8b8cbe24b6b282752f22d4c06108aba1"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a8b8cbe24b6b282752f22d4c06108aba1">numNearestLookups</a> () const</td></tr>
+<tr class="memdesc:a8b8cbe24b6b282752f22d4c06108aba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of nearest neighbour calls (numNearestNeighbours_). <br /></td></tr>
+<tr class="separator:a8b8cbe24b6b282752f22d4c06108aba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d6bab0dd0192f45f942018c3ab2e7db"><td class="memItemLeft" align="right" valign="top"><a id="a4d6bab0dd0192f45f942018c3ab2e7db"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html#a4d6bab0dd0192f45f942018c3ab2e7db">numStateCollisionChecks</a> () const</td></tr>
+<tr class="memdesc:a4d6bab0dd0192f45f942018c3ab2e7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of state collision checks (numStateCollisionChecks_). <br /></td></tr>
+<tr class="separator:a4d6bab0dd0192f45f942018c3ab2e7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A conceptual representation of samples as an edge-implicit random geometric graph. </p>
+<p><a class="anchor" id="ImplicitGraph"></a></p><dl class="section user"><dt>Short Description</dt><dd>An edge-implicit representation of a random geometric graph. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ImplicitGraph_8h_source.html#l00064">64</a> of file <a class="el" href="ImplicitGraph_8h_source.html">ImplicitGraph.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9255f486a1f99c851fc78b3a6287eb37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9255f486a1f99c851fc78b3a6287eb37">&#9670;&nbsp;</a></span>setJustInTimeSampling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::BITstar::ImplicitGraph::setJustInTimeSampling </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useJit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enable sampling "just-in-time", i.e., only when necessary for a nearest-neighbour search. </p>
+
+<p class="definition">Definition at line <a class="el" href="ImplicitGraph_8cpp_source.html#l01415">1415</a> of file <a class="el" href="ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/geometric/planners/bitstar/datastructures/<a class="el" href="ImplicitGraph_8h_source.html">ImplicitGraph.h</a></li>
+<li>ompl/geometric/planners/bitstar/datastructures/src/<a class="el" href="ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.13</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.powertip.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dynsections.js"></script>
+<script src="js/ompl.js"></script>
+</body>
+</html>

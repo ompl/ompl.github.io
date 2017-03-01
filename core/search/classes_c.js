@@ -8,6 +8,5 @@ var searchData=
   ['nearestneighborsgnatnothreadsafety',['NearestNeighborsGNATNoThreadSafety',['../classompl_1_1NearestNeighborsGNATNoThreadSafety.html',1,'ompl']]],
   ['nearestneighborslinear',['NearestNeighborsLinear',['../classompl_1_1NearestNeighborsLinear.html',1,'ompl']]],
   ['nearestneighborssqrtapprox',['NearestNeighborsSqrtApprox',['../classompl_1_1NearestNeighborsSqrtApprox.html',1,'ompl']]],
-  ['node',['Node',['../classompl_1_1NearestNeighborsGNAT_1_1Node.html',1,'ompl::NearestNeighborsGNAT']]],
-  ['node',['Node',['../classompl_1_1NearestNeighborsGNATNoThreadSafety_1_1Node.html',1,'ompl::NearestNeighborsGNATNoThreadSafety']]]
+  ['node',['Node',['../classompl_1_1NearestNeighborsGNAT_1_1Node.html',1,'ompl::NearestNeighborsGNAT&lt; _T &gt;::Node'],['../classompl_1_1NearestNeighborsGNATNoThreadSafety_1_1Node.html',1,'ompl::NearestNeighborsGNATNoThreadSafety&lt; _T &gt;::Node']]]
 ];

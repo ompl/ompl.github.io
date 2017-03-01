@@ -16,8 +16,9 @@ var searchData=
   ['rejectioninfsampler',['RejectionInfSampler',['../classompl_1_1base_1_1RejectionInfSampler.html',1,'ompl::base']]],
   ['request',['Request',['../structompl_1_1tools_1_1Benchmark_1_1Request.html',1,'ompl::tools::Benchmark']]],
   ['rng',['RNG',['../classompl_1_1RNG.html',1,'ompl']]],
-  ['rrt',['RRT',['../classompl_1_1geometric_1_1RRT.html',1,'ompl::geometric']]],
-  ['rrt',['RRT',['../classompl_1_1control_1_1RRT.html',1,'ompl::control']]],
+  ['rrt',['RRT',['../classompl_1_1control_1_1RRT.html',1,'ompl::control::RRT'],['../classompl_1_1geometric_1_1RRT.html',1,'ompl::geometric::RRT']]],
   ['rrtconnect',['RRTConnect',['../classompl_1_1geometric_1_1RRTConnect.html',1,'ompl::geometric']]],
-  ['rrtstar',['RRTstar',['../classompl_1_1geometric_1_1RRTstar.html',1,'ompl::geometric']]]
+  ['rrtsharp',['RRTsharp',['../classompl_1_1geometric_1_1RRTsharp.html',1,'ompl::geometric']]],
+  ['rrtstar',['RRTstar',['../classompl_1_1geometric_1_1RRTstar.html',1,'ompl::geometric']]],
+  ['rrtxstatic',['RRTXstatic',['../classompl_1_1geometric_1_1RRTXstatic.html',1,'ompl::geometric']]]
 ];

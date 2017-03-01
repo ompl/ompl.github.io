@@ -1,12 +1,8 @@
 var searchData=
 [
   ['candidatesolution',['CandidateSolution',['../structompl_1_1geometric_1_1SPARSdb_1_1CandidateSolution.html',1,'ompl::geometric::SPARSdb']]],
-  ['cell',['Cell',['../structompl_1_1Grid_1_1Cell.html',1,'ompl::Grid']]],
-  ['cell',['Cell',['../structompl_1_1GridN_1_1Cell.html',1,'ompl::GridN']]],
-  ['cell',['Cell',['../structompl_1_1control_1_1PDST_1_1Cell.html',1,'ompl::control::PDST']]],
-  ['cell',['Cell',['../structompl_1_1geometric_1_1PDST_1_1Cell.html',1,'ompl::geometric::PDST']]],
-  ['celldata',['CellData',['../structompl_1_1control_1_1KPIECE1_1_1CellData.html',1,'ompl::control::KPIECE1']]],
-  ['celldata',['CellData',['../structompl_1_1geometric_1_1Discretization_1_1CellData.html',1,'ompl::geometric::Discretization']]],
+  ['cell',['Cell',['../structompl_1_1control_1_1PDST_1_1Cell.html',1,'ompl::control::PDST::Cell'],['../structompl_1_1geometric_1_1PDST_1_1Cell.html',1,'ompl::geometric::PDST::Cell'],['../structompl_1_1Grid_1_1Cell.html',1,'ompl::Grid&lt; _T &gt;::Cell'],['../structompl_1_1GridN_1_1Cell.html',1,'ompl::GridN&lt; _T &gt;::Cell']]],
+  ['celldata',['CellData',['../structompl_1_1control_1_1KPIECE1_1_1CellData.html',1,'ompl::control::KPIECE1::CellData'],['../structompl_1_1geometric_1_1Discretization_1_1CellData.html',1,'ompl::geometric::Discretization&lt; Motion &gt;::CellData']]],
   ['cforest',['CForest',['../classompl_1_1geometric_1_1CForest.html',1,'ompl::geometric']]],
   ['cforeststatesampler',['CForestStateSampler',['../classompl_1_1base_1_1CForestStateSampler.html',1,'ompl::base']]],
   ['cforeststatespacewrapper',['CForestStateSpaceWrapper',['../classompl_1_1base_1_1CForestStateSpaceWrapper.html',1,'ompl::base']]],
@@ -26,13 +22,11 @@ var searchData=
   ['controlsamplerptr',['ControlSamplerPtr',['../classompl_1_1control_1_1ControlSamplerPtr.html',1,'ompl::control']]],
   ['controlspace',['ControlSpace',['../classompl_1_1control_1_1ControlSpace.html',1,'ompl::control']]],
   ['controlspaceptr',['ControlSpacePtr',['../classompl_1_1control_1_1ControlSpacePtr.html',1,'ompl::control']]],
-  ['controltype',['ControlType',['../classompl_1_1control_1_1RealVectorControlSpace_1_1ControlType.html',1,'ompl::control::RealVectorControlSpace']]],
-  ['controltype',['ControlType',['../classompl_1_1control_1_1DiscreteControlSpace_1_1ControlType.html',1,'ompl::control::DiscreteControlSpace']]],
+  ['controltype',['ControlType',['../classompl_1_1control_1_1DiscreteControlSpace_1_1ControlType.html',1,'ompl::control::DiscreteControlSpace::ControlType'],['../classompl_1_1control_1_1RealVectorControlSpace_1_1ControlType.html',1,'ompl::control::RealVectorControlSpace::ControlType']]],
   ['cost',['Cost',['../classompl_1_1base_1_1Cost.html',1,'ompl::base']]],
   ['costestimatorapx',['CostEstimatorApx',['../classompl_1_1geometric_1_1LazyLBTRRT_1_1CostEstimatorApx.html',1,'ompl::geometric::LazyLBTRRT']]],
   ['costestimatorlb',['CostEstimatorLb',['../classompl_1_1geometric_1_1LazyLBTRRT_1_1CostEstimatorLb.html',1,'ompl::geometric::LazyLBTRRT']]],
-  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1RRTstar_1_1CostIndexCompare.html',1,'ompl::geometric::RRTstar']]],
-  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1BFMT_1_1CostIndexCompare.html',1,'ompl::geometric::BFMT']]],
-  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1FMT_1_1CostIndexCompare.html',1,'ompl::geometric::FMT']]],
+  ['costhelper',['CostHelper',['../classompl_1_1geometric_1_1BITstar_1_1CostHelper.html',1,'ompl::geometric::BITstar']]],
+  ['costindexcompare',['CostIndexCompare',['../structompl_1_1geometric_1_1BFMT_1_1CostIndexCompare.html',1,'ompl::geometric::BFMT::CostIndexCompare'],['../structompl_1_1geometric_1_1FMT_1_1CostIndexCompare.html',1,'ompl::geometric::FMT::CostIndexCompare'],['../structompl_1_1geometric_1_1RRTstar_1_1CostIndexCompare.html',1,'ompl::geometric::RRTstar::CostIndexCompare']]],
   ['customvisitor',['CustomVisitor',['../classompl_1_1geometric_1_1SPARSdb_1_1CustomVisitor.html',1,'ompl::geometric::SPARSdb']]]
 ];

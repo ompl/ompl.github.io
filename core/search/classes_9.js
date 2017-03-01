@@ -8,8 +8,7 @@ var searchData=
   ['koulesprojection',['KoulesProjection',['../classKoulesProjection.html',1,'']]],
   ['koulessimulator',['KoulesSimulator',['../classKoulesSimulator.html',1,'']]],
   ['koulesstatepropagator',['KoulesStatePropagator',['../classKoulesStatePropagator.html',1,'']]],
-  ['kpiece1',['KPIECE1',['../classompl_1_1control_1_1KPIECE1.html',1,'ompl::control']]],
-  ['kpiece1',['KPIECE1',['../classompl_1_1geometric_1_1KPIECE1.html',1,'ompl::geometric']]],
+  ['kpiece1',['KPIECE1',['../classompl_1_1control_1_1KPIECE1.html',1,'ompl::control::KPIECE1'],['../classompl_1_1geometric_1_1KPIECE1.html',1,'ompl::geometric::KPIECE1']]],
   ['kstarstrategy',['KStarStrategy',['../classompl_1_1geometric_1_1KStarStrategy.html',1,'ompl::geometric']]],
   ['kstrategy',['KStrategy',['../classompl_1_1geometric_1_1KStrategy.html',1,'ompl::geometric']]]
 ];
