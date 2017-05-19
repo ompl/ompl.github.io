@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -439,10 +440,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a5974cee2ec7da46265b6d204a10055fb">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *a, const <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *b) const</td></tr>
 <tr class="memdesc:a5974cee2ec7da46265b6d204a10055fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance between two motions as the cost between their contained states. Note that for computationally intensive cost functions, the cost between motions should be stored to avoid duplicate calculations. <br /></td></tr>
 <tr class="separator:a5974cee2ec7da46265b6d204a10055fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2e108ab7c478e4bcd486b55929d2ca9"><td class="memItemLeft" align="right" valign="top"><a id="ad2e108ab7c478e4bcd486b55929d2ca9"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#ad2e108ab7c478e4bcd486b55929d2ca9">calculateUnitBallVolume</a> (const unsigned int dimension) const</td></tr>
-<tr class="memdesc:ad2e108ab7c478e4bcd486b55929d2ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the volume of the unit ball in a given dimension. <br /></td></tr>
-<tr class="separator:ad2e108ab7c478e4bcd486b55929d2ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a830e4b62830ebd25708953de52b5abc0"><td class="memItemLeft" align="right" valign="top"><a id="a830e4b62830ebd25708953de52b5abc0"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a830e4b62830ebd25708953de52b5abc0">calculateUnitBallVolume</a> (unsigned int dimension) const</td></tr>
+<tr class="memdesc:a830e4b62830ebd25708953de52b5abc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the volume of the unit ball in a given dimension. <br /></td></tr>
+<tr class="separator:a830e4b62830ebd25708953de52b5abc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a503a4265e428841344e620cf976b3b1f"><td class="memItemLeft" align="right" valign="top"><a id="a503a4265e428841344e620cf976b3b1f"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a503a4265e428841344e620cf976b3b1f">calculateRadius</a> (unsigned int dimension, unsigned int n) const</td></tr>
 <tr class="memdesc:a503a4265e428841344e620cf976b3b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the radius to use for nearest neighbor searches, using the bound given in [L. Janson, E. Schmerling, A. Clark, M. Pavone. Fast marching tree: a fast marching sampling-based method for optimal motion planning in many dimensions. The International Journal of Robotics Research, 34(7):883-921, 2015](<a href="http://arxiv.org/pdf/1306.3532.pdf">http://arxiv.org/pdf/1306.3532.pdf</a>). The radius depends on the radiusMultiplier parameter, the volume of the free configuration space, the volume of the unit ball in the current dimension, and the number of nodes in the graph. <br /></td></tr>
@@ -467,9 +468,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a59a090351c3271964c2b2cc37b14ea56">expandTreeFromNode</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&amp;z, <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&amp;connection_point)</td></tr>
 <tr class="memdesc:a59a090351c3271964c2b2cc37b14ea56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete one iteration of the main loop of the BFMT* algorithm: Find K nearest nodes in set Unvisited (or within a radius r) of the node z. Attempt to connect them to their optimal cost-to-come parent in set Open. Remove all newly connected nodes fromUnvisited and insert them into Open. Remove motion z from Open, and update z to be the current lowest cost-to-come node in Open. <br /></td></tr>
 <tr class="separator:a59a090351c3271964c2b2cc37b14ea56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a176f9b0de007f4075f5595732ffab013"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a176f9b0de007f4075f5595732ffab013">plan</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *x_init, <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *x_goal, <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&amp;z, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
-<tr class="memdesc:a176f9b0de007f4075f5595732ffab013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the actual planning algorithm, swapping and expanding the trees.  <a href="#a176f9b0de007f4075f5595732ffab013">More...</a><br /></td></tr>
-<tr class="separator:a176f9b0de007f4075f5595732ffab013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f040102281e7a67bb2e322e79d8212f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a1f040102281e7a67bb2e322e79d8212f">plan</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *x_init, <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *x_goal, <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&amp;connection_point, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
+<tr class="memdesc:a1f040102281e7a67bb2e322e79d8212f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the actual planning algorithm, swapping and expanding the trees.  <a href="#a1f040102281e7a67bb2e322e79d8212f">More...</a><br /></td></tr>
+<tr class="separator:a1f040102281e7a67bb2e322e79d8212f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a308deda6599cfbca27cd273f8cc90dbb"><td class="memItemLeft" align="right" valign="top"><a id="a308deda6599cfbca27cd273f8cc90dbb"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a308deda6599cfbca27cd273f8cc90dbb">termination</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&amp;z, <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&amp;connection_point, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
 <tr class="memdesc:a308deda6599cfbca27cd273f8cc90dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the termination condition is met. <br /></td></tr>
@@ -482,10 +483,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a2510965e21e83dc60adfbec5bd0775ec">tracePath</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *z, BiDirMotionPtrs &amp;path)</td></tr>
 <tr class="memdesc:a2510965e21e83dc60adfbec5bd0775ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trace the path along a tree towards the root (forward or reverse) <br /></td></tr>
 <tr class="separator:a2510965e21e83dc60adfbec5bd0775ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab821656aa03fad21ff2892811f4e9e36"><td class="memItemLeft" align="right" valign="top"><a id="ab821656aa03fad21ff2892811f4e9e36"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#ab821656aa03fad21ff2892811f4e9e36">updateNeighborhood</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *m, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&gt; nbh)</td></tr>
-<tr class="memdesc:ab821656aa03fad21ff2892811f4e9e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a motion m, updates the stored neighborhoods of all its neighbors by by inserting m (maintaining the cost-based sorting) <br /></td></tr>
-<tr class="separator:ab821656aa03fad21ff2892811f4e9e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6d7c679e6a00219531eb6af0a266bc"><td class="memItemLeft" align="right" valign="top"><a id="acb6d7c679e6a00219531eb6af0a266bc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#acb6d7c679e6a00219531eb6af0a266bc">updateNeighborhood</a> (<a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *m, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&gt; nbh)</td></tr>
+<tr class="memdesc:acb6d7c679e6a00219531eb6af0a266bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a motion m, updates the stored neighborhoods of all its neighbors by by inserting m (maintaining the cost-based sorting) <br /></td></tr>
+<tr class="separator:acb6d7c679e6a00219531eb6af0a266bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b3c080a4a25462e8ff1684b614b5fd9"><td class="memItemLeft" align="right" valign="top"><a id="a1b3c080a4a25462e8ff1684b614b5fd9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a1b3c080a4a25462e8ff1684b614b5fd9">insertNewSampleInOpen</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
 <tr class="memdesc:a1b3c080a4a25462e8ff1684b614b5fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended <a class="el" href="classompl_1_1geometric_1_1FMT.html" title="Asymptotically Optimal Fast Marching Tree algorithm developed by L. Janson and M. Pavone...">FMT</a> strategy: inserts a new motion in open if the heap is empty. <br /></td></tr>
@@ -509,11 +510,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ac25b1403b690567107e6e6870ee7435e"><td class="memItemLeft" align="right" valign="top"><a id="ac25b1403b690567107e6e6870ee7435e"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#ac25b1403b690567107e6e6870ee7435e">numSamples_</a></td></tr>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#ac25b1403b690567107e6e6870ee7435e">numSamples_</a> {1000u}</td></tr>
 <tr class="memdesc:ac25b1403b690567107e6e6870ee7435e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of samples to use when planning. <br /></td></tr>
 <tr class="separator:ac25b1403b690567107e6e6870ee7435e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0de0258ec1069c55644eec3a0dea42ee"><td class="memItemLeft" align="right" valign="top"><a id="a0de0258ec1069c55644eec3a0dea42ee"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a0de0258ec1069c55644eec3a0dea42ee">radiusMultiplier_</a></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a0de0258ec1069c55644eec3a0dea42ee">radiusMultiplier_</a> {1.}</td></tr>
 <tr class="memdesc:a0de0258ec1069c55644eec3a0dea42ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">This planner uses a nearest neighbor search radius proportional to the lower bound for optimality derived for FMT* in Section 4 of [L. Janson, E. Schmerling, A. Clark, M. Pavone. Fast marching tree: a fast marching sampling-based method for optimal motion planning in many dimensions. The International Journal of Robotics Research, 34(7):883-921, 2015](<a href="http://arxiv.org/pdf/1306.3532.pdf">http://arxiv.org/pdf/1306.3532.pdf</a>). The radius multiplier is the multiplier for the lower bound. For guaranteed asymptotic convergence, the user should choose a multiplier for the search radius that is greater than one. The default value is 1.1. In general, a radius between 0.9 and 5 appears to perform the best. <br /></td></tr>
 <tr class="separator:a0de0258ec1069c55644eec3a0dea42ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd190f9f795e606b77d722503bc86728"><td class="memItemLeft" align="right" valign="top"><a id="acd190f9f795e606b77d722503bc86728"></a>
@@ -521,35 +522,35 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memdesc:acd190f9f795e606b77d722503bc86728"><td class="mdescLeft">&#160;</td><td class="mdescRight">The volume of numSathe free configuration space, computed as an upper bound with 95% confidence. <br /></td></tr>
 <tr class="separator:acd190f9f795e606b77d722503bc86728"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32227abebf3610b2d3fb87ce56375ed5"><td class="memItemLeft" align="right" valign="top"><a id="a32227abebf3610b2d3fb87ce56375ed5"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a32227abebf3610b2d3fb87ce56375ed5">collisionChecks_</a></td></tr>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a32227abebf3610b2d3fb87ce56375ed5">collisionChecks_</a> {0u}</td></tr>
 <tr class="memdesc:a32227abebf3610b2d3fb87ce56375ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of collision checks performed by the algorithm. <br /></td></tr>
 <tr class="separator:a32227abebf3610b2d3fb87ce56375ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af42d0e59d9e05e036b08e35d0a2516ab"><td class="memItemLeft" align="right" valign="top"><a id="af42d0e59d9e05e036b08e35d0a2516ab"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#af42d0e59d9e05e036b08e35d0a2516ab">nearestK_</a></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#af42d0e59d9e05e036b08e35d0a2516ab">nearestK_</a> {true}</td></tr>
 <tr class="memdesc:af42d0e59d9e05e036b08e35d0a2516ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to activate the K nearest neighbors strategy. <br /></td></tr>
 <tr class="separator:af42d0e59d9e05e036b08e35d0a2516ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bc79090281d3796e323f09ff6acacd6"><td class="memItemLeft" align="right" valign="top"><a id="a0bc79090281d3796e323f09ff6acacd6"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a0bc79090281d3796e323f09ff6acacd6">NNr_</a></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a0bc79090281d3796e323f09ff6acacd6">NNr_</a> {0.}</td></tr>
 <tr class="memdesc:a0bc79090281d3796e323f09ff6acacd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radius employed in the nearestR strategy. <br /></td></tr>
 <tr class="separator:a0bc79090281d3796e323f09ff6acacd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3905c36f37e31dd4b460b46c912ed9c"><td class="memItemLeft" align="right" valign="top"><a id="ab3905c36f37e31dd4b460b46c912ed9c"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#ab3905c36f37e31dd4b460b46c912ed9c">NNk_</a></td></tr>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#ab3905c36f37e31dd4b460b46c912ed9c">NNk_</a> {0}</td></tr>
 <tr class="memdesc:ab3905c36f37e31dd4b460b46c912ed9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">K used in the nearestK strategy. <br /></td></tr>
 <tr class="separator:ab3905c36f37e31dd4b460b46c912ed9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2876a95dee7cffdf325afc150e5c86b7"><td class="memItemLeft" align="right" valign="top"><a id="a2876a95dee7cffdf325afc150e5c86b7"></a>
-<a class="el" href="classompl_1_1geometric_1_1BFMT.html#ae4c3b14dbf4ab6dcf32d7c3bcf8a6dbf">TreeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a2876a95dee7cffdf325afc150e5c86b7">tree_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1BFMT.html#ae4c3b14dbf4ab6dcf32d7c3bcf8a6dbf">TreeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a2876a95dee7cffdf325afc150e5c86b7">tree_</a> {FWD}</td></tr>
 <tr class="memdesc:a2876a95dee7cffdf325afc150e5c86b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active tree. <br /></td></tr>
 <tr class="separator:a2876a95dee7cffdf325afc150e5c86b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61bb6e43d342cd4002302a6903bec65d"><td class="memItemLeft" align="right" valign="top"><a id="a61bb6e43d342cd4002302a6903bec65d"></a>
-<a class="el" href="classompl_1_1geometric_1_1BFMT.html#aa9128ab0ba686fa4e9902922ccbbd105">ExploreType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a61bb6e43d342cd4002302a6903bec65d">exploration_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1BFMT.html#aa9128ab0ba686fa4e9902922ccbbd105">ExploreType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a61bb6e43d342cd4002302a6903bec65d">exploration_</a> {SWAP_EVERY_TIME}</td></tr>
 <tr class="memdesc:a61bb6e43d342cd4002302a6903bec65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exploration strategy used. <br /></td></tr>
 <tr class="separator:a61bb6e43d342cd4002302a6903bec65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a067b643ed36e9a38f8bc3132833659ae"><td class="memItemLeft" align="right" valign="top"><a id="a067b643ed36e9a38f8bc3132833659ae"></a>
-<a class="el" href="classompl_1_1geometric_1_1BFMT.html#a729ebe5c13f83a50f6f13a4e220180a5">TerminateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a067b643ed36e9a38f8bc3132833659ae">termination_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1BFMT.html#a729ebe5c13f83a50f6f13a4e220180a5">TerminateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a067b643ed36e9a38f8bc3132833659ae">termination_</a> {OPTIMALITY}</td></tr>
 <tr class="memdesc:a067b643ed36e9a38f8bc3132833659ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Termination strategy used. <br /></td></tr>
 <tr class="separator:a067b643ed36e9a38f8bc3132833659ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb4970d51d647def2798811418c3f127"><td class="memItemLeft" align="right" valign="top"><a id="adb4970d51d647def2798811418c3f127"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#adb4970d51d647def2798811418c3f127">precomputeNN_</a></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#adb4970d51d647def2798811418c3f127">precomputeNN_</a> {false}</td></tr>
 <tr class="memdesc:adb4970d51d647def2798811418c3f127"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true all the nearest neighbors maps are precomputed before solving. <br /></td></tr>
 <tr class="separator:adb4970d51d647def2798811418c3f127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53baa3015adf75a1cac8a85a47d45ee7"><td class="memItemLeft" align="right" valign="top"><a id="a53baa3015adf75a1cac8a85a47d45ee7"></a>
@@ -577,7 +578,7 @@ std::map&lt; <a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.h
 <tr class="memdesc:aa59cb574b0b461cc87ccf2b280a76527"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost objective function. <br /></td></tr>
 <tr class="separator:aa59cb574b0b461cc87ccf2b280a76527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79677f70203ef35875bfe58e54ad53f9"><td class="memItemLeft" align="right" valign="top"><a id="a79677f70203ef35875bfe58e54ad53f9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a79677f70203ef35875bfe58e54ad53f9">heuristics_</a></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#a79677f70203ef35875bfe58e54ad53f9">heuristics_</a> {true}</td></tr>
 <tr class="memdesc:a79677f70203ef35875bfe58e54ad53f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to activate the cost to go heuristics. <br /></td></tr>
 <tr class="separator:a79677f70203ef35875bfe58e54ad53f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a231e5c8671498fd67f02689efade0700"><td class="memItemLeft" align="right" valign="top"><a id="a231e5c8671498fd67f02689efade0700"></a>
@@ -585,11 +586,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a231e5c8671498fd67f02689efade0700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Goal state caching to accelerate cost to go heuristic computation. <br /></td></tr>
 <tr class="separator:a231e5c8671498fd67f02689efade0700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec9e4c41ad2ed46632f6ab7c41b2af14"><td class="memItemLeft" align="right" valign="top"><a id="aec9e4c41ad2ed46632f6ab7c41b2af14"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#aec9e4c41ad2ed46632f6ab7c41b2af14">cacheCC_</a></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#aec9e4c41ad2ed46632f6ab7c41b2af14">cacheCC_</a> {true}</td></tr>
 <tr class="memdesc:aec9e4c41ad2ed46632f6ab7c41b2af14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to activate the collision check caching. <br /></td></tr>
 <tr class="separator:aec9e4c41ad2ed46632f6ab7c41b2af14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af54d73530433a9ef7b8517efb97ff0e6"><td class="memItemLeft" align="right" valign="top"><a id="af54d73530433a9ef7b8517efb97ff0e6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#af54d73530433a9ef7b8517efb97ff0e6">extendedFMT_</a></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BFMT.html#af54d73530433a9ef7b8517efb97ff0e6">extendedFMT_</a> {true}</td></tr>
 <tr class="memdesc:af54d73530433a9ef7b8517efb97ff0e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new samples if the tree was not able to find a solution. <br /></td></tr>
 <tr class="separator:af54d73530433a9ef7b8517efb97ff0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
@@ -634,8 +635,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p class="definition">Definition at line <a class="el" href="BFMT_8h_source.html#l00082">82</a> of file <a class="el" href="BFMT_8h_source.html">BFMT.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a176f9b0de007f4075f5595732ffab013"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a176f9b0de007f4075f5595732ffab013">&#9670;&nbsp;</a></span>plan()</h2>
+<a id="a1f040102281e7a67bb2e322e79d8212f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f040102281e7a67bb2e322e79d8212f">&#9670;&nbsp;</a></span>plan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -659,7 +660,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html">BiDirMotion</a> *&amp;&#160;</td>
-          <td class="paramname"><em>z</em>, </td>
+          <td class="paramname"><em>connection_point</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -683,7 +684,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Executes the actual planning algorithm, swapping and expanding the trees. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>This precomputation is useful only if the same planner is used many times. otherwise is probably a waste of time. Do a real precomputation before calling <a class="el" href="classompl_1_1geometric_1_1BFMT.html#ac1c8420833341090cfd0086dea1db890" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BFMT_8cpp_source.html#l00583">583</a> of file <a class="el" href="BFMT_8cpp_source.html">BFMT.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BFMT_8cpp_source.html#l00568">568</a> of file <a class="el" href="BFMT_8cpp_source.html">BFMT.cpp</a>.</p>
 
 </div>
 </div>

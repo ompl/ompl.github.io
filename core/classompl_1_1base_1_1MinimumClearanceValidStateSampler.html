@@ -42,6 +42,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -191,9 +192,9 @@ Public Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1MinimumClearanceValidStateSampler.html#afb7386ac9a1cf89a943e75244f0dfba0">sample</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state) override</td></tr>
 <tr class="memdesc:afb7386ac9a1cf89a943e75244f0dfba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state. Return false in case of failure. <br /></td></tr>
 <tr class="separator:afb7386ac9a1cf89a943e75244f0dfba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fba4ce7ff65615cc0df4fa564199c8e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1MinimumClearanceValidStateSampler.html#a5fba4ce7ff65615cc0df4fa564199c8e">sampleNear</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *near, const double distance) override</td></tr>
-<tr class="memdesc:a5fba4ce7ff65615cc0df4fa564199c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state near another, within specified distance. Return false, in case of failure.  <a href="#a5fba4ce7ff65615cc0df4fa564199c8e">More...</a><br /></td></tr>
-<tr class="separator:a5fba4ce7ff65615cc0df4fa564199c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef4c422539e0c592c7305279ed23924"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1MinimumClearanceValidStateSampler.html#aaef4c422539e0c592c7305279ed23924">sampleNear</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *near, double distance) override</td></tr>
+<tr class="memdesc:aaef4c422539e0c592c7305279ed23924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state near another, within specified distance. Return false, in case of failure.  <a href="#aaef4c422539e0c592c7305279ed23924">More...</a><br /></td></tr>
+<tr class="separator:aaef4c422539e0c592c7305279ed23924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2fee6ea081b9da8adba8308681d6cd"><td class="memItemLeft" align="right" valign="top"><a id="a7e2fee6ea081b9da8adba8308681d6cd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1MinimumClearanceValidStateSampler.html#a7e2fee6ea081b9da8adba8308681d6cd">setMinimumObstacleClearance</a> (double clearance)</td></tr>
 <tr class="memdesc:a7e2fee6ea081b9da8adba8308681d6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum required distance of sample from nearest obstacle to be considered valid. <br /></td></tr>
@@ -271,8 +272,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p class="definition">Definition at line <a class="el" href="MinimumClearanceValidStateSampler_8h_source.html#l00055">55</a> of file <a class="el" href="MinimumClearanceValidStateSampler_8h_source.html">MinimumClearanceValidStateSampler.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5fba4ce7ff65615cc0df4fa564199c8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fba4ce7ff65615cc0df4fa564199c8e">&#9670;&nbsp;</a></span>sampleNear()</h2>
+<a id="aaef4c422539e0c592c7305279ed23924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaef4c422539e0c592c7305279ed23924">&#9670;&nbsp;</a></span>sampleNear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +296,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>distance</em>&#160;</td>
         </tr>
         <tr>
@@ -314,7 +315,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>Sample a state near another, within specified distance. Return false, in case of failure. </p>
 <dl class="section note"><dt>Note</dt><dd>The memory for <em>near</em> must be disjoint from the memory for <em>state</em> </dd></dl>
 
-<p>Implements <a class="el" href="classompl_1_1base_1_1ValidStateSampler.html#a86a022797e62aa7953d5381f0109c6a2">ompl::base::ValidStateSampler</a>.</p>
+<p>Implements <a class="el" href="classompl_1_1base_1_1ValidStateSampler.html#a95d713277bb999148843e736a6925601">ompl::base::ValidStateSampler</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="MinimumClearanceValidStateSampler_8cpp_source.html#l00080">80</a> of file <a class="el" href="MinimumClearanceValidStateSampler_8cpp_source.html">MinimumClearanceValidStateSampler.cpp</a>.</p>
 

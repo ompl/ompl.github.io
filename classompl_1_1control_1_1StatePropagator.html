@@ -195,12 +195,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1control_1_1StatePropagator.html#a983b7f976166c2369c76c2332f585eb9">StatePropagator</a> (const <a class="el" href="classompl_1_1control_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;si)</td></tr>
 <tr class="memdesc:a983b7f976166c2369c76c2332f585eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:a983b7f976166c2369c76c2332f585eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f3bedb55a1980d3d2c06ae0a39d8246"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1control_1_1StatePropagator.html#a5f3bedb55a1980d3d2c06ae0a39d8246">propagate</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state, const <a class="el" href="classompl_1_1control_1_1Control.html">Control</a> *control, const double duration, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *result) const =0</td></tr>
-<tr class="memdesc:a5f3bedb55a1980d3d2c06ae0a39d8246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagate from a state, given a control, for some specified amount of time (the amount of time can also be negative, if <a class="el" href="classompl_1_1control_1_1StatePropagator.html#ad624aaa0ca5b9254fa4c9e0ac0da8aa3" title="Some systems can only propagate forward in time (i.e., the duration argument for the propagate() func...">canPropagateBackward()</a> returns true)  <a href="#a5f3bedb55a1980d3d2c06ae0a39d8246">More...</a><br /></td></tr>
-<tr class="separator:a5f3bedb55a1980d3d2c06ae0a39d8246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bf54becfce458e1e8abfa4a37ae8dff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1control_1_1StatePropagator.html#a4bf54becfce458e1e8abfa4a37ae8dff">propagate</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state, const <a class="el" href="classompl_1_1control_1_1Control.html">Control</a> *control, double duration, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *result) const =0</td></tr>
+<tr class="memdesc:a4bf54becfce458e1e8abfa4a37ae8dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagate from a state, given a control, for some specified amount of time (the amount of time can also be negative, if <a class="el" href="classompl_1_1control_1_1StatePropagator.html#ad624aaa0ca5b9254fa4c9e0ac0da8aa3" title="Some systems can only propagate forward in time (i.e., the duration argument for the propagate() func...">canPropagateBackward()</a> returns true)  <a href="#a4bf54becfce458e1e8abfa4a37ae8dff">More...</a><br /></td></tr>
+<tr class="separator:a4bf54becfce458e1e8abfa4a37ae8dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad624aaa0ca5b9254fa4c9e0ac0da8aa3"><td class="memItemLeft" align="right" valign="top"><a id="ad624aaa0ca5b9254fa4c9e0ac0da8aa3"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1control_1_1StatePropagator.html#ad624aaa0ca5b9254fa4c9e0ac0da8aa3">canPropagateBackward</a> () const</td></tr>
-<tr class="memdesc:ad624aaa0ca5b9254fa4c9e0ac0da8aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some systems can only propagate forward in time (i.e., the <em>duration</em> argument for the <a class="el" href="classompl_1_1control_1_1StatePropagator.html#a5f3bedb55a1980d3d2c06ae0a39d8246" title="Propagate from a state, given a control, for some specified amount of time (the amount of time can al...">propagate()</a> function is always positive). If this is the case, this function should return false. Planners that need backward propagation (negative durations) will call this function to check. If backward propagation is possible, this function should return true (this is the default). <br /></td></tr>
+<tr class="memdesc:ad624aaa0ca5b9254fa4c9e0ac0da8aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some systems can only propagate forward in time (i.e., the <em>duration</em> argument for the <a class="el" href="classompl_1_1control_1_1StatePropagator.html#a4bf54becfce458e1e8abfa4a37ae8dff" title="Propagate from a state, given a control, for some specified amount of time (the amount of time can al...">propagate()</a> function is always positive). If this is the case, this function should return false. Planners that need backward propagation (negative durations) will call this function to check. If backward propagation is possible, this function should return true (this is the default). <br /></td></tr>
 <tr class="separator:ad624aaa0ca5b9254fa4c9e0ac0da8aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc52d20ab1da84b020aa3dbe5579769e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1control_1_1StatePropagator.html#acc52d20ab1da84b020aa3dbe5579769e">steer</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, <a class="el" href="classompl_1_1control_1_1Control.html">Control</a> *, double &amp;) const</td></tr>
 <tr class="memdesc:acc52d20ab1da84b020aa3dbe5579769e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the control that can take the system from state <em>from</em> to state <em>to</em>. Store that control in <em>result</em>; the duration for which the control should be applied is stored in <em>duration</em>; return true if the computation was successful; return false otherwise;.  <a href="#acc52d20ab1da84b020aa3dbe5579769e">More...</a><br /></td></tr>
@@ -222,8 +222,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="StatePropagator_8h_source.html#l00061">61</a> of file <a class="el" href="StatePropagator_8h_source.html">StatePropagator.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5f3bedb55a1980d3d2c06ae0a39d8246"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f3bedb55a1980d3d2c06ae0a39d8246">&#9670;&nbsp;</a></span>propagate()</h2>
+<a id="a4bf54becfce458e1e8abfa4a37ae8dff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bf54becfce458e1e8abfa4a37ae8dff">&#9670;&nbsp;</a></span>propagate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +246,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>duration</em>, </td>
         </tr>
         <tr>
@@ -278,11 +278,11 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>This function is <b>not used for integration</b> internally. If integrating a system of differential equations is needed, this should be implemented inside the <a class="el" href="classompl_1_1control_1_1StatePropagator.html#a5f3bedb55a1980d3d2c06ae0a39d8246" title="Propagate from a state, given a control, for some specified amount of time (the amount of time can al...">propagate()</a> function.</dd>
+<dl class="section note"><dt>Note</dt><dd>This function is <b>not used for integration</b> internally. If integrating a system of differential equations is needed, this should be implemented inside the <a class="el" href="classompl_1_1control_1_1StatePropagator.html#a4bf54becfce458e1e8abfa4a37ae8dff" title="Propagate from a state, given a control, for some specified amount of time (the amount of time can al...">propagate()</a> function.</dd>
 <dd>
 The pointer to the starting state and the result state may be the same. </dd></dl>
 
-<p>Implemented in <a class="el" href="classompl_1_1control_1_1OpenDEStatePropagator.html#ad989572d0404bd2c0a4250702b372470">ompl::control::OpenDEStatePropagator</a>, <a class="el" href="classompl_1_1control_1_1MorseStatePropagator.html#a249b0a9373b2a2a421ee8a8a15dd9a86">ompl::control::MorseStatePropagator</a>, and <a class="el" href="classKoulesStatePropagator.html#aa426afe4b93169bc17f17b0d72766437">KoulesStatePropagator</a>.</p>
+<p>Implemented in <a class="el" href="classompl_1_1control_1_1OpenDEStatePropagator.html#a45a5561fca024c24a00d6494bffe2fb2">ompl::control::OpenDEStatePropagator</a>, <a class="el" href="classompl_1_1control_1_1MorseStatePropagator.html#a249b0a9373b2a2a421ee8a8a15dd9a86">ompl::control::MorseStatePropagator</a>, and <a class="el" href="classKoulesStatePropagator.html#aa426afe4b93169bc17f17b0d72766437">KoulesStatePropagator</a>.</p>
 
 </div>
 </div>
