@@ -35,6 +35,5 @@ var searchData=
   ['buildavail',['buildAvail',['../classompl_1_1control_1_1LTLPlanner.html#a622b64d5891bfdf7546e9813e29823e7',1,'ompl::control::LTLPlanner']]],
   ['buildfrom',['buildFrom',['../classompl_1_1BinaryHeap.html#ac8d1b64b5b7d50cd09380bfa14bbc45d',1,'ompl::BinaryHeap']]],
   ['buildgraph',['buildGraph',['../classompl_1_1control_1_1ProductGraph.html#ad4576a35e3089da64262abdc550a064c',1,'ompl::control::ProductGraph']]],
-  ['bvtype',['BVType',['../classompl_1_1app_1_1FCLMethodWrapper.html#a64fa78b05f6ebdae98f322583544224b',1,'ompl::app::FCLMethodWrapper']]],
   ['build_20options',['Build Options',['../md_ompl_doc_markdown_buildOptions.html',1,'']]]
 ];

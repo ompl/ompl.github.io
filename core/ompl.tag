@@ -3026,6 +3026,25 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>KoulesDecomposition</name>
+    <filename>classKoulesDecomposition.html</filename>
+    <base>ompl::control::GridDecomposition</base>
+    <member kind="function">
+      <type>void</type>
+      <name>project</name>
+      <anchorfile>classKoulesDecomposition.html</anchorfile>
+      <anchor>a84b94311cb72dae2b58441aae90f72bc</anchor>
+      <arglist>(const ompl::base::State *s, std::vector&lt; double &gt; &amp;coord) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleFullState</name>
+      <anchorfile>classKoulesDecomposition.html</anchorfile>
+      <anchor>adeaabcd59f348ecb490ac8d986337407</anchor>
+      <arglist>(const ompl::base::StateSamplerPtr &amp;sampler, const std::vector&lt; double &gt; &amp;coord, ompl::base::State *s) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>KoulesDirectedControlSampler</name>
     <filename>classKoulesDirectedControlSampler.html</filename>
     <base>ompl::control::DirectedControlSampler</base>
@@ -5774,15 +5793,15 @@
       <type>bool</type>
       <name>isSatisfied</name>
       <anchorfile>classompl_1_1base_1_1MorseGoal.html</anchorfile>
-      <anchor>a4919d1d3301e072d4929d5e58f17d3bb</anchor>
-      <arglist>(const State *state) const</arglist>
+      <anchor>a1c3968073847fa47951cda70a5816148</anchor>
+      <arglist>(const State *state) const override</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>isSatisfied</name>
       <anchorfile>classompl_1_1base_1_1MorseGoal.html</anchorfile>
-      <anchor>a8ac2e6bd9a07da14a5eea909f1bfa7c7</anchor>
-      <arglist>(const State *state, double *distance) const</arglist>
+      <anchor>a0729b7e54c5727df2c23827cf5183d57</anchor>
+      <arglist>(const State *state, double *distance) const override</arglist>
     </member>
     <member kind="function" virtualness="pure">
       <type>virtual bool</type>
@@ -5814,29 +5833,29 @@
       <type>void</type>
       <name>setup</name>
       <anchorfile>classompl_1_1base_1_1MorseProjection.html</anchorfile>
-      <anchor>aabf2fd3969ac45b2ff87ae1782c4427a</anchor>
-      <arglist>()</arglist>
+      <anchor>add36bfce2e06168e1e11bc3924ce0991</anchor>
+      <arglist>() override</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual unsigned int</type>
+    <member kind="function">
+      <type>unsigned int</type>
       <name>getDimension</name>
       <anchorfile>classompl_1_1base_1_1MorseProjection.html</anchorfile>
-      <anchor>a7e1b5683155cebc82f13c19586e11d7d</anchor>
-      <arglist>() const</arglist>
+      <anchor>a34c7764e81582c2b86b095011a6c6bb8</anchor>
+      <arglist>() const override</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
+    <member kind="function">
+      <type>void</type>
       <name>defaultCellSizes</name>
       <anchorfile>classompl_1_1base_1_1MorseProjection.html</anchorfile>
-      <anchor>aa2bf1665bd3f31fe62b3d7edca77c681</anchor>
-      <arglist>()</arglist>
+      <anchor>a1daeacbf5f43ef9dd24275478ee0b98e</anchor>
+      <arglist>() override</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
+    <member kind="function">
+      <type>void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1MorseProjection.html</anchorfile>
-      <anchor>a6522b2cf31f911d14304e9d94640e071</anchor>
-      <arglist>(const State *state, EuclideanProjection &amp;projection) const</arglist>
+      <anchor>a177286db7c36f71a4d3b4ec0b0178f5e</anchor>
+      <arglist>(const State *state, EuclideanProjection &amp;projection) const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>MorseStateSpace *</type>
@@ -5918,50 +5937,50 @@
       <type>bool</type>
       <name>satisfiesBounds</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>a5c3abf3e9ba5e8e13236c6832f3bc5aa</anchor>
-      <arglist>(const State *state) const</arglist>
+      <anchor>a3fc7c45c61fbe8ba66b7ed7072777abe</anchor>
+      <arglist>(const State *state) const override</arglist>
     </member>
     <member kind="function">
       <type>State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>ace89e5e95a3364d4e89d50388840feb0</anchor>
-      <arglist>() const</arglist>
+      <anchor>ad934101231e1004f1282f586f0db5d7c</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>freeState</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>ad5a5deaa06d0577d076dba43fa2c6074</anchor>
-      <arglist>(State *state) const</arglist>
+      <anchor>ac7838e434a022c30b89cdf9f01c1fa5c</anchor>
+      <arglist>(State *state) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>copyState</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>a64561ebcf9b40c4275145816ceef60bb</anchor>
-      <arglist>(State *destination, const State *source) const</arglist>
+      <anchor>a9c2a404246a047be96083cc1fbae5a36</anchor>
+      <arglist>(State *destination, const State *source) const override</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>interpolate</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>ad24bdad419cf1b54566af67c5d826662</anchor>
-      <arglist>(const State *from, const State *to, const double t, State *state) const</arglist>
+      <anchor>ab1b7ee4d60feab29504f47b7a8453dd1</anchor>
+      <arglist>(const State *from, const State *to, double t, State *state) const override</arglist>
     </member>
     <member kind="function">
       <type>StateSamplerPtr</type>
       <name>allocDefaultStateSampler</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>affbf602e9fe7e2c7330d51742b0cdbbc</anchor>
-      <arglist>() const</arglist>
+      <anchor>a054830e41f73b83a987fbb961547d156</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>StateSamplerPtr</type>
       <name>allocStateSampler</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>a472c5e0b20ed77a21d68bd0d8a4f9523</anchor>
-      <arglist>() const</arglist>
+      <anchor>a44859bcb2ee75142b3e268fd1f972aef</anchor>
+      <arglist>() const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>MorseEnvironmentPtr</type>
@@ -5987,12 +6006,12 @@
       <anchor>a3a66849ce975b0e8338df263148fc5d6</anchor>
       <arglist>(const SpaceInformationPtr &amp;si)</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
+    <member kind="function">
+      <type>bool</type>
       <name>isValid</name>
       <anchorfile>classompl_1_1base_1_1MorseStateValidityChecker.html</anchorfile>
-      <anchor>abc133451d42806567a343f8a474e78b7</anchor>
-      <arglist>(const State *state) const</arglist>
+      <anchor>a2640b1be3bfa2f417e28dcd553fc175c</anchor>
+      <arglist>(const State *state) const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>MorseStateSpace *</type>
@@ -6006,20 +6025,6 @@
     <name>ompl::base::MorseTerminationCondition</name>
     <filename>classompl_1_1base_1_1MorseTerminationCondition.html</filename>
     <base>ompl::base::PlannerTerminationCondition</base>
-    <member kind="function">
-      <type>bool</type>
-      <name>eval</name>
-      <anchorfile>classompl_1_1base_1_1MorseTerminationCondition.html</anchorfile>
-      <anchor>ac1ae0924d01f1bf532017543a41aff80</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="variable">
-      <type>const MorseEnvironmentPtr</type>
-      <name>env_</name>
-      <anchorfile>classompl_1_1base_1_1MorseTerminationCondition.html</anchorfile>
-      <anchor>aeb5e682071fd260279f2ccb6d3e40f85</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>ompl::base::MotionValidator</name>
@@ -16572,8 +16577,8 @@
       <type>void</type>
       <name>setup</name>
       <anchorfile>classompl_1_1control_1_1MorseSimpleSetup.html</anchorfile>
-      <anchor>a15483451b4c9815bd93c44e724865349</anchor>
-      <arglist>()</arglist>
+      <anchor>a9bf9007e10dbd37d94bf45b85f6a6708</anchor>
+      <arglist>() override</arglist>
     </member>
     <member kind="function">
       <type>base::PlannerStatus</type>
@@ -16643,19 +16648,19 @@
       <anchor>a10080637eecaf9bfe0f0f7c57bcdf7d0</anchor>
       <arglist>() const</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
+    <member kind="function">
+      <type>bool</type>
       <name>canPropagateBackward</name>
       <anchorfile>classompl_1_1control_1_1MorseStatePropagator.html</anchorfile>
-      <anchor>a2a498fce77b12a0915de8ef829a37b0e</anchor>
-      <arglist>() const</arglist>
+      <anchor>a771eabbe87da511beeaf1ec9711e5449</anchor>
+      <arglist>() const override</arglist>
     </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
+    <member kind="function">
+      <type>void</type>
       <name>propagate</name>
       <anchorfile>classompl_1_1control_1_1MorseStatePropagator.html</anchorfile>
-      <anchor>a249b0a9373b2a2a421ee8a8a15dd9a86</anchor>
-      <arglist>(const base::State *state, const Control *control, const double duration, base::State *result) const</arglist>
+      <anchor>abaabc2221847eee8ddfbb3a45d5a9a28</anchor>
+      <arglist>(const base::State *state, const Control *control, double duration, base::State *result) const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>base::MorseEnvironmentPtr</type>
@@ -40690,6 +40695,7 @@
     <docanchor file="md_doc_markdown_integration" title="MORSE">integration_morse</docanchor>
     <docanchor file="md_doc_markdown_integration" title="The Kautham Project">integration_kautham</docanchor>
     <docanchor file="md_doc_markdown_integration" title="VEROSIM">integration_verosim</docanchor>
+    <docanchor file="md_doc_markdown_integration" title="AIKIDO">integration_aikido</docanchor>
     <docanchor file="md_doc_markdown_integration" title="Robotics Library">integration_rl</docanchor>
     <docanchor file="md_doc_markdown_integration" title="SIMS">integration_sims</docanchor>
     <docanchor file="md_doc_markdown_integration" title="OMPL.app">integration_omplapp</docanchor>

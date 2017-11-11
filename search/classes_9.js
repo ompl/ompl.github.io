@@ -4,6 +4,7 @@ var searchData=
   ['kinematiccarplanning',['KinematicCarPlanning',['../classompl_1_1app_1_1KinematicCarPlanning.html',1,'ompl::app']]],
   ['koulescontrolsampler',['KoulesControlSampler',['../classKoulesControlSampler.html',1,'']]],
   ['koulescontrolspace',['KoulesControlSpace',['../classKoulesControlSpace.html',1,'']]],
+  ['koulesdecomposition',['KoulesDecomposition',['../classKoulesDecomposition.html',1,'']]],
   ['koulesdirectedcontrolsampler',['KoulesDirectedControlSampler',['../classKoulesDirectedControlSampler.html',1,'']]],
   ['koulesgoal',['KoulesGoal',['../classKoulesGoal.html',1,'']]],
   ['koulesprojection',['KoulesProjection',['../classKoulesProjection.html',1,'']]],

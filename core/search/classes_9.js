@@ -3,6 +3,7 @@ var searchData=
   ['kboundedstrategy',['KBoundedStrategy',['../classompl_1_1geometric_1_1KBoundedStrategy.html',1,'ompl::geometric']]],
   ['koulescontrolsampler',['KoulesControlSampler',['../classKoulesControlSampler.html',1,'']]],
   ['koulescontrolspace',['KoulesControlSpace',['../classKoulesControlSpace.html',1,'']]],
+  ['koulesdecomposition',['KoulesDecomposition',['../classKoulesDecomposition.html',1,'']]],
   ['koulesdirectedcontrolsampler',['KoulesDirectedControlSampler',['../classKoulesDirectedControlSampler.html',1,'']]],
   ['koulesgoal',['KoulesGoal',['../classKoulesGoal.html',1,'']]],
   ['koulesprojection',['KoulesProjection',['../classKoulesProjection.html',1,'']]],
