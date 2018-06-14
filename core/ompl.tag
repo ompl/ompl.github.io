@@ -35627,7 +35627,7 @@
   <compound kind="class">
     <name>ompl::NearestNeighborsGNAT</name>
     <filename>classompl_1_1NearestNeighborsGNAT.html</filename>
-    <templarg>_T</templarg>
+    <templarg></templarg>
     <base>ompl::NearestNeighbors</base>
     <class kind="class">ompl::NearestNeighborsGNAT::Node</class>
     <member kind="function">
@@ -40786,7 +40786,7 @@
     <docanchor file="md_doc_markdown_python" title="Important differences between C++ and Python">cpp_py_diffs</docanchor>
     <docanchor file="md_doc_markdown_python" title="Differences between the C++ and Python API&apos;s">py_api_diffs</docanchor>
     <docanchor file="md_doc_markdown_python" title="A simple example">py_example</docanchor>
-    <docanchor file="md_doc_markdown_python" title="Creating boost::function objects from Python functions">pyfunction_to_stdfunction</docanchor>
+    <docanchor file="md_doc_markdown_python" title="Creating std::function objects from Python functions">pyfunction_to_stdfunction</docanchor>
     <docanchor file="md_doc_markdown_python" title="(Re)generating the Python bindings">updating_python_bindings</docanchor>
     <docanchor file="md_doc_markdown_python" title="Code generation">binding_code_generation</docanchor>
     <docanchor file="md_doc_markdown_python" title="Compiling the Python modules">compile_bindings</docanchor>
