@@ -82,7 +82,7 @@ install_ompl()
     cd $OMPL-1.3.3-Source
     mkdir -p build/Release
     cd build/Release
-    cmake ../..
+    cmake ../.. -DPYTHON_EXEC=/usr/bin/python${PYTHONV} -DASSIMP_INCLUDE_DIRS=/usr/include
     if [ ! -z $1 ]; then
         make update_bindings
     fi
