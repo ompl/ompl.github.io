@@ -5,6 +5,7 @@ var searchData=
   ['nearestneighborsflannhierarchicalclustering',['NearestNeighborsFLANNHierarchicalClustering',['../classompl_1_1NearestNeighborsFLANNHierarchicalClustering.html',1,'ompl']]],
   ['nearestneighborsflannlinear',['NearestNeighborsFLANNLinear',['../classompl_1_1NearestNeighborsFLANNLinear.html',1,'ompl']]],
   ['nearestneighborsgnat',['NearestNeighborsGNAT',['../classompl_1_1NearestNeighborsGNAT.html',1,'ompl']]],
+  ['nearestneighborsgnat_3c_20nnelement_20_3e',['NearestNeighborsGNAT&lt; NNElement &gt;',['../classompl_1_1NearestNeighborsGNAT.html',1,'ompl']]],
   ['nearestneighborsgnatnothreadsafety',['NearestNeighborsGNATNoThreadSafety',['../classompl_1_1NearestNeighborsGNATNoThreadSafety.html',1,'ompl']]],
   ['nearestneighborslinear',['NearestNeighborsLinear',['../classompl_1_1NearestNeighborsLinear.html',1,'ompl']]],
   ['nearestneighborssqrtapprox',['NearestNeighborsSqrtApprox',['../classompl_1_1NearestNeighborsSqrtApprox.html',1,'ompl']]],

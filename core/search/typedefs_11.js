@@ -16,6 +16,9 @@ var searchData=
   ['vertexptrpair',['VertexPtrPair',['../classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a',1,'ompl::geometric::BITstar']]],
   ['vertexptrpairvector',['VertexPtrPairVector',['../classompl_1_1geometric_1_1BITstar.html#afe1b225bb892b36f14f49041d7af2ba0',1,'ompl::geometric::BITstar']]],
   ['vertexptrvector',['VertexPtrVector',['../classompl_1_1geometric_1_1BITstar.html#a1330c5b8a068a54fccf22b51ac105a2f',1,'ompl::geometric::BITstar']]],
+  ['vertexqueueasmmap',['VertexQueueAsMMap',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a04e29d7351ec486e926a310be6debe0a',1,'ompl::geometric::BITstar::SearchQueue']]],
+  ['vertexqueueiter',['VertexQueueIter',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#abba99e13beb1397eb26c41444fb47a40',1,'ompl::geometric::BITstar::SearchQueue']]],
+  ['vertexqueuesortfunc',['VertexQueueSortFunc',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ad3f6081faba117e82e2e8a4af05673e3',1,'ompl::geometric::BITstar::SearchQueue']]],
   ['vertexweakptr',['VertexWeakPtr',['../classompl_1_1geometric_1_1BITstar.html#a69da813a0975ab62f230b963d92fb630',1,'ompl::geometric::BITstar']]],
   ['viterator',['VIterator',['../classompl_1_1base_1_1PlannerData_1_1Graph.html#ab6765d0a47482465da6ff2db1e2c0292',1,'ompl::base::PlannerData::Graph']]]
 ];

@@ -5,21 +5,33 @@
   <title>ompl/control/planners/syclop/src/SyclopEST.cpp Source File</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -48,6 +60,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -103,37 +116,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -179,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1control_1_1SpaceInformation_html_a6f99bd26e289fb1cc89d99ff0b234910"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#a6f99bd26e289fb1cc89d99ff0b234910">ompl::control::SpaceInformation::allocControlSampler</a></div><div class="ttdeci">ControlSamplerPtr allocControlSampler() const</div><div class="ttdoc">Allocate a control sampler. </div><div class="ttdef"><b>Definition:</b> <a href="control_2SpaceInformation_8h_source.html#l00149">SpaceInformation.h:149</a></div></div>
 <div class="ttc" id="classompl_1_1control_1_1Syclop_1_1Motion_html"><div class="ttname"><a href="classompl_1_1control_1_1Syclop_1_1Motion.html">ompl::control::Syclop::Motion</a></div><div class="ttdoc">Representation of a motion. </div><div class="ttdef"><b>Definition:</b> <a href="Syclop_8h_source.html#l00257">Syclop.h:257</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1PlannerDataVertex_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerDataVertex.html">ompl::base::PlannerDataVertex</a></div><div class="ttdoc">Base class for a vertex in the PlannerData structure. All derived classes must implement the clone an...</div><div class="ttdef"><b>Definition:</b> <a href="base_2PlannerData_8h_source.html#l00058">PlannerData.h:58</a></div></div>
-<div class="ttc" id="classompl_1_1control_1_1Syclop_html_a0e7a1b98e2344668c99d7afba94154db"><div class="ttname"><a href="classompl_1_1control_1_1Syclop.html#a0e7a1b98e2344668c99d7afba94154db">ompl::control::Syclop::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition:</b> <a href="Syclop_8cpp_source.html#l00048">Syclop.cpp:48</a></div></div>
+<div class="ttc" id="classompl_1_1control_1_1Syclop_html_a0e7a1b98e2344668c99d7afba94154db"><div class="ttname"><a href="classompl_1_1control_1_1Syclop.html#a0e7a1b98e2344668c99d7afba94154db">ompl::control::Syclop::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition:</b> <a href="Syclop_8cpp_source.html#l00049">Syclop.cpp:49</a></div></div>
 <div class="ttc" id="classompl_1_1control_1_1SyclopEST_html_acf9aceab93355c104641fb29c31235d8"><div class="ttname"><a href="classompl_1_1control_1_1SyclopEST.html#acf9aceab93355c104641fb29c31235d8">ompl::control::SyclopEST::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition:</b> <a href="SyclopEST_8cpp_source.html#l00048">SyclopEST.cpp:48</a></div></div>
 <div class="ttc" id="classompl_1_1control_1_1Syclop_1_1Region_html_a06343cd4e7bf85758f66c73cb639d37e"><div class="ttname"><a href="classompl_1_1control_1_1Syclop_1_1Region.html#a06343cd4e7bf85758f66c73cb639d37e">ompl::control::Syclop::Region::motions</a></div><div class="ttdeci">std::vector&lt; Motion * &gt; motions</div><div class="ttdoc">The tree motions contained in this region. </div><div class="ttdef"><b>Definition:</b> <a href="Syclop_8h_source.html#l00305">Syclop.h:305</a></div></div>
 <div class="ttc" id="classompl_1_1control_1_1SyclopEST_html_a747796199659bbb54b733df59fce5943"><div class="ttname"><a href="classompl_1_1control_1_1SyclopEST.html#a747796199659bbb54b733df59fce5943">ompl::control::SyclopEST::lastGoalMotion_</a></div><div class="ttdeci">Motion * lastGoalMotion_</div><div class="ttdoc">The most recent goal motion. Used for PlannerData computation. </div><div class="ttdef"><b>Definition:</b> <a href="SyclopEST_8h_source.html#l00080">SyclopEST.h:80</a></div></div>
@@ -187,7 +187,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1control_1_1SyclopEST_html_a900830f46d15b74f478f810b6279170b"><div class="ttname"><a href="classompl_1_1control_1_1SyclopEST.html#a900830f46d15b74f478f810b6279170b">ompl::control::SyclopEST::selectAndExtend</a></div><div class="ttdeci">void selectAndExtend(Region &amp;region, std::vector&lt; Motion *&gt; &amp;newMotions) override</div><div class="ttdoc">Select a Motion from the given Region, and extend the tree from the Motion. Add any new motions creat...</div><div class="ttdef"><b>Definition:</b> <a href="SyclopEST_8cpp_source.html#l00089">SyclopEST.cpp:89</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1PlannerData_html_a2eea84456784452486aa0065af391f47"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#a2eea84456784452486aa0065af391f47">ompl::base::PlannerData::addStartVertex</a></div><div class="ttdeci">unsigned int addStartVertex(const PlannerDataVertex &amp;v)</div><div class="ttdoc">Adds the given vertex to the graph data, and marks it as a start vertex. The vertex index is returned...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00413">PlannerData.cpp:413</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state. </div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00049">State.h:49</a></div></div>
-<div class="ttc" id="classompl_1_1control_1_1Syclop_html_a6460e8f08fbd5d160426f16ce93c962a"><div class="ttname"><a href="classompl_1_1control_1_1Syclop.html#a6460e8f08fbd5d160426f16ce93c962a">ompl::control::Syclop::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition:</b> <a href="Syclop_8cpp_source.html#l00063">Syclop.cpp:63</a></div></div>
+<div class="ttc" id="classompl_1_1control_1_1Syclop_html_a6460e8f08fbd5d160426f16ce93c962a"><div class="ttname"><a href="classompl_1_1control_1_1Syclop.html#a6460e8f08fbd5d160426f16ce93c962a">ompl::control::Syclop::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition:</b> <a href="Syclop_8cpp_source.html#l00064">Syclop.cpp:64</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1PlannerData_html_ac361b543229e46d4dfb6d954a814fc0e"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#ac361b543229e46d4dfb6d954a814fc0e">ompl::base::PlannerData::hasControls</a></div><div class="ttdeci">virtual bool hasControls() const</div><div class="ttdoc">Indicate whether any information about controls (ompl::control::Control) is stored in this instance...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00784">PlannerData.cpp:784</a></div></div>
 <div class="ttc" id="classompl_1_1control_1_1SyclopEST_html_acde7dc0c68c31f1f6255c5957029e353"><div class="ttname"><a href="classompl_1_1control_1_1SyclopEST.html#acde7dc0c68c31f1f6255c5957029e353">ompl::control::SyclopEST::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition:</b> <a href="SyclopEST_8cpp_source.html#l00040">SyclopEST.cpp:40</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1Planner_html_aa3ceb9471163b6c96f6eeadbcfd3694e"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">ompl::base::Planner::si_</a></div><div class="ttdeci">SpaceInformationPtr si_</div><div class="ttdoc">The space information for which planning is done. </div><div class="ttdef"><b>Definition:</b> <a href="Planner_8h_source.html#l00406">Planner.h:406</a></div></div>
@@ -209,10 +209,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

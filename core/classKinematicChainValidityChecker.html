@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KinematicChainValidityChecker Class Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="classKinematicChainValidityChecker-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">KinematicChainValidityChecker Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Inheritance diagram for KinematicChainValidityChecker:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKinematicChainValidityChecker__inherit__graph.png" border="0" usemap="#KinematicChainValidityChecker_inherit__map" alt="Inheritance graph"/></div>
+<map name="KinematicChainValidityChecker_inherit__map" id="KinematicChainValidityChecker_inherit__map">
+<area shape="rect" id="node2" href="classompl_1_1base_1_1StateValidityChecker.html" title="Abstract definition for a class checking the validity of states. The implementation of this class mus..." alt="" coords="20,5,152,47"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a5d400b4301abd732fa52e385d565c2cc"><td class="memItemLeft" align="right" valign="top"><a id="a5d400b4301abd732fa52e385d565c2cc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>KinematicChainValidityChecker</b> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;si)</td></tr>
+<tr class="separator:a5d400b4301abd732fa52e385d565c2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b295b867c0a98b661e1350d3569f58"><td class="memItemLeft" align="right" valign="top"><a id="a24b295b867c0a98b661e1350d3569f58"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKinematicChainValidityChecker.html#a24b295b867c0a98b661e1350d3569f58">isValid</a> (const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state) const override</td></tr>
+<tr class="memdesc:a24b295b867c0a98b661e1350d3569f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the state <em>state</em> is valid. Usually, this means at least collision checking. If it is possible that <a class="el" href="classompl_1_1base_1_1StateSpace.html#ae64df33ebaaddb1cd64c555be90d099d" title="Computes the state that lies at time t in [0, 1] on the segment that connects from state to to state...">ompl::base::StateSpace::interpolate()</a> or ompl::control::ControlSpace::propagate() return states that are outside of bounds, this function should also make a call to <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a5a83eda50d1099f27115c9eaef3e72b9" title="Check if a state is inside the bounding box. ">ompl::base::SpaceInformation::satisfiesBounds()</a>. <br /></td></tr>
+<tr class="separator:a24b295b867c0a98b661e1350d3569f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1base_1_1StateValidityChecker"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1StateValidityChecker')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1StateValidityChecker.html">ompl::base::StateValidityChecker</a></td></tr>
+<tr class="memitem:aa195ab177c3a7fe27641377e46354f1f inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="aa195ab177c3a7fe27641377e46354f1f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#aa195ab177c3a7fe27641377e46354f1f">StateValidityChecker</a> (<a class="el" href="classompl_1_1base_1_1SpaceInformation.html">SpaceInformation</a> *si)</td></tr>
+<tr class="memdesc:aa195ab177c3a7fe27641377e46354f1f inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:aa195ab177c3a7fe27641377e46354f1f inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc97f8f1402e69a317cef0abd8385de inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="a0fc97f8f1402e69a317cef0abd8385de"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#a0fc97f8f1402e69a317cef0abd8385de">StateValidityChecker</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;si)</td></tr>
+<tr class="memdesc:a0fc97f8f1402e69a317cef0abd8385de inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:a0fc97f8f1402e69a317cef0abd8385de inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac60c795bc7dfad2d90a6962271abac inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="a5ac60c795bc7dfad2d90a6962271abac"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#a5ac60c795bc7dfad2d90a6962271abac">isValid</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, double &amp;dist) const</td></tr>
+<tr class="memdesc:a5ac60c795bc7dfad2d90a6962271abac inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the state <em>state</em> is valid. In addition, set <em>dist</em> to the distance to the nearest invalid state. <br /></td></tr>
+<tr class="separator:a5ac60c795bc7dfad2d90a6962271abac inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affaa42c73a10c007270d643a5ad8d361 inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="affaa42c73a10c007270d643a5ad8d361"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#affaa42c73a10c007270d643a5ad8d361">isValid</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, double &amp;dist, <a class="el" href="classompl_1_1base_1_1State.html">State</a> *validState, bool &amp;validStateAvailable) const</td></tr>
+<tr class="memdesc:affaa42c73a10c007270d643a5ad8d361 inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the state <em>state</em> is valid. In addition, set <em>dist</em> to the distance to the nearest invalid state (using <a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#a3b81207d576bb32e44057d15e1c895ab" title="Report the distance to the nearest invalid state when starting from state. If the distance is negativ...">clearance()</a>). If a direction that moves <em>state</em> away from being invalid is available, a valid state in that direction is also set (<em>validState</em>). <em>validStateAvailable</em> is set to true if <em>validState</em> is updated. <br /></td></tr>
+<tr class="separator:affaa42c73a10c007270d643a5ad8d361 inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b81207d576bb32e44057d15e1c895ab inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="a3b81207d576bb32e44057d15e1c895ab"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#a3b81207d576bb32e44057d15e1c895ab">clearance</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *) const</td></tr>
+<tr class="memdesc:a3b81207d576bb32e44057d15e1c895ab inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the distance to the nearest invalid state when starting from <em>state</em>. If the distance is negative, the value of clearance is the penetration depth. <br /></td></tr>
+<tr class="separator:a3b81207d576bb32e44057d15e1c895ab inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c74c8310d297aa6750b42db7e1681c inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="ae9c74c8310d297aa6750b42db7e1681c"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#ae9c74c8310d297aa6750b42db7e1681c">clearance</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, <a class="el" href="classompl_1_1base_1_1State.html">State</a> *, bool &amp;validStateAvailable) const</td></tr>
+<tr class="memdesc:ae9c74c8310d297aa6750b42db7e1681c inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the distance to the nearest invalid state when starting from <em>state</em>, and if possible, also specify a valid state <em>validState</em> in the direction that moves away from the colliding state. The <em>validStateAvailable</em> flag is set to true if <em>validState</em> is updated. <br /></td></tr>
+<tr class="separator:ae9c74c8310d297aa6750b42db7e1681c inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6607382750b389f7d40ebcd2ef417f inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="abc6607382750b389f7d40ebcd2ef417f"></a>
+const <a class="el" href="structompl_1_1base_1_1StateValidityCheckerSpecs.html">StateValidityCheckerSpecs</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#abc6607382750b389f7d40ebcd2ef417f">getSpecs</a> () const</td></tr>
+<tr class="memdesc:abc6607382750b389f7d40ebcd2ef417f inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the specifications (capabilities of this state validity checker) <br /></td></tr>
+<tr class="separator:abc6607382750b389f7d40ebcd2ef417f inherit pub_methods_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aeec9d5cc048f9bd2144535cfb663326f"><td class="memItemLeft" align="right" valign="top"><a id="aeec9d5cc048f9bd2144535cfb663326f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidImpl</b> (const <a class="el" href="classKinematicChainSpace.html">KinematicChainSpace</a> *space, const <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace_1_1StateType.html">KinematicChainSpace::StateType</a> *s) const</td></tr>
+<tr class="separator:aeec9d5cc048f9bd2144535cfb663326f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda15bb4dc28c95c943f2f3b6427d376"><td class="memItemLeft" align="right" valign="top"><a id="aeda15bb4dc28c95c943f2f3b6427d376"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>selfIntersectionTest</b> (const Environment &amp;env) const</td></tr>
+<tr class="separator:aeda15bb4dc28c95c943f2f3b6427d376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db19a9b1753582fff2aec1b011e37d5"><td class="memItemLeft" align="right" valign="top"><a id="a0db19a9b1753582fff2aec1b011e37d5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>environmentIntersectionTest</b> (const Environment &amp;env0, const Environment &amp;env1) const</td></tr>
+<tr class="separator:a0db19a9b1753582fff2aec1b011e37d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22c0e4698516a9e1dda9086f2096bb3"><td class="memItemLeft" align="right" valign="top"><a id="ae22c0e4698516a9e1dda9086f2096bb3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersectionTest</b> (const <a class="el" href="structSegment.html">Segment</a> &amp;s0, const <a class="el" href="structSegment.html">Segment</a> &amp;s1) const</td></tr>
+<tr class="separator:ae22c0e4698516a9e1dda9086f2096bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classompl_1_1base_1_1StateValidityChecker"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1StateValidityChecker')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1StateValidityChecker.html">ompl::base::StateValidityChecker</a></td></tr>
+<tr class="memitem:af2c66e45895871b67a253db783df6982 inherit pro_attribs_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="af2c66e45895871b67a253db783df6982"></a>
+<a class="el" href="classompl_1_1base_1_1SpaceInformation.html">SpaceInformation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#af2c66e45895871b67a253db783df6982">si_</a></td></tr>
+<tr class="memdesc:af2c66e45895871b67a253db783df6982 inherit pro_attribs_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance of space information this state validity checker operates on. <br /></td></tr>
+<tr class="separator:af2c66e45895871b67a253db783df6982 inherit pro_attribs_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2433d86dcb77c0dc67e99f6fa8d1e01 inherit pro_attribs_classompl_1_1base_1_1StateValidityChecker"><td class="memItemLeft" align="right" valign="top"><a id="aa2433d86dcb77c0dc67e99f6fa8d1e01"></a>
+<a class="el" href="structompl_1_1base_1_1StateValidityCheckerSpecs.html">StateValidityCheckerSpecs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#aa2433d86dcb77c0dc67e99f6fa8d1e01">specs_</a></td></tr>
+<tr class="memdesc:aa2433d86dcb77c0dc67e99f6fa8d1e01 inherit pro_attribs_classompl_1_1base_1_1StateValidityChecker"><td class="mdescLeft">&#160;</td><td class="mdescRight">The specifications of the state validity checker (its capabilities) <br /></td></tr>
+<tr class="separator:aa2433d86dcb77c0dc67e99f6fa8d1e01 inherit pro_attribs_classompl_1_1base_1_1StateValidityChecker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="KinematicChain_8h_source.html#l00195">195</a> of file <a class="el" href="KinematicChain_8h_source.html">KinematicChain.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>demos/<a class="el" href="KinematicChain_8h_source.html">KinematicChain.h</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ompl::base::AtlasChart Class Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1base.html">base</a></li><li class="navelem"><a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classompl_1_1base_1_1AtlasChart-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ompl::base::AtlasChart Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Tangent space and bounding polytope approximating some patch of the manifold.  
+ <a href="classompl_1_1base_1_1AtlasChart.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="AtlasChart_8h_source.html">ompl/base/spaces/constraint/AtlasChart.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af8879ee4efd4f4e18a65e33d80f25605"><td class="memItemLeft" align="right" valign="top"><a id="af8879ee4efd4f4e18a65e33d80f25605"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AtlasChart</b> (const <a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> &amp;)=delete</td></tr>
+<tr class="separator:af8879ee4efd4f4e18a65e33d80f25605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d71b257787c76bbf7a8e0eb72129f69"><td class="memItemLeft" align="right" valign="top"><a id="a3d71b257787c76bbf7a8e0eb72129f69"></a>
+<a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> &amp;)=delete</td></tr>
+<tr class="separator:a3d71b257787c76bbf7a8e0eb72129f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6ce37aa4aad64612026ee371a3bc04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a5a6ce37aa4aad64612026ee371a3bc04">AtlasChart</a> (const <a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html">AtlasStateSpace</a> *atlas, const <a class="el" href="classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html">AtlasStateSpace::StateType</a> *state)</td></tr>
+<tr class="memdesc:a5a6ce37aa4aad64612026ee371a3bc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tangent space chart for <em>atlas</em> with center at ambient space point <em>xorigin</em>.  <a href="#a5a6ce37aa4aad64612026ee371a3bc04">More...</a><br /></td></tr>
+<tr class="separator:a5a6ce37aa4aad64612026ee371a3bc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a788555d0c062181c6a3b104bd8c4d585"><td class="memItemLeft" align="right" valign="top"><a id="a788555d0c062181c6a3b104bd8c4d585"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a788555d0c062181c6a3b104bd8c4d585">~AtlasChart</a> ()</td></tr>
+<tr class="memdesc:a788555d0c062181c6a3b104bd8c4d585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:a788555d0c062181c6a3b104bd8c4d585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c95639fbf7570db68cd26c17780b3ca"><td class="memItemLeft" align="right" valign="top"><a id="a1c95639fbf7570db68cd26c17780b3ca"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a1c95639fbf7570db68cd26c17780b3ca">clear</a> ()</td></tr>
+<tr class="memdesc:a1c95639fbf7570db68cd26c17780b3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget all acquired information such as the halfspace boundary. <br /></td></tr>
+<tr class="separator:a1c95639fbf7570db68cd26c17780b3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26315247f05ea09d897fd32c267006b3"><td class="memItemLeft" align="right" valign="top"><a id="a26315247f05ea09d897fd32c267006b3"></a>
+const <a class="el" href="classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html">AtlasStateSpace::StateType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a26315247f05ea09d897fd32c267006b3">getOrigin</a> () const</td></tr>
+<tr class="memdesc:a26315247f05ea09d897fd32c267006b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns phi(0), the center of the chart in ambient space. <br /></td></tr>
+<tr class="separator:a26315247f05ea09d897fd32c267006b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360ea5537ebd63327fabd9eabf33998e"><td class="memItemLeft" align="right" valign="top"><a id="a360ea5537ebd63327fabd9eabf33998e"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a360ea5537ebd63327fabd9eabf33998e">getAmbientDimension</a> () const</td></tr>
+<tr class="memdesc:a360ea5537ebd63327fabd9eabf33998e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the ambient space. <br /></td></tr>
+<tr class="separator:a360ea5537ebd63327fabd9eabf33998e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718fa00e632dc9fb272c974c1fafaac7"><td class="memItemLeft" align="right" valign="top"><a id="a718fa00e632dc9fb272c974c1fafaac7"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a718fa00e632dc9fb272c974c1fafaac7">getManifoldDimension</a> () const</td></tr>
+<tr class="memdesc:a718fa00e632dc9fb272c974c1fafaac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the dimension of the manifold. <br /></td></tr>
+<tr class="separator:a718fa00e632dc9fb272c974c1fafaac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a07a6b5b871980e26c0bfda1b4ceb1"><td class="memItemLeft" align="right" valign="top"><a id="af3a07a6b5b871980e26c0bfda1b4ceb1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#af3a07a6b5b871980e26c0bfda1b4ceb1">phi</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;u, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</td></tr>
+<tr class="memdesc:af3a07a6b5b871980e26c0bfda1b4ceb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrite a chart point <em>u</em> in ambient space coordinates and store the result in <em>out</em>, which should be allocated to size n_. <br /></td></tr>
+<tr class="separator:af3a07a6b5b871980e26c0bfda1b4ceb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a593871dafb4eded9ba4152375636f6b1"><td class="memItemLeft" align="right" valign="top"><a id="a593871dafb4eded9ba4152375636f6b1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a593871dafb4eded9ba4152375636f6b1">psi</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;u, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</td></tr>
+<tr class="memdesc:a593871dafb4eded9ba4152375636f6b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential mapping. Project chart point <em>u</em> onto the manifold and store the result in <em>out</em>, which should be allocated to size n_. <br /></td></tr>
+<tr class="separator:a593871dafb4eded9ba4152375636f6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad85f550b77dadee97c78cf4fdf90b03f"><td class="memItemLeft" align="right" valign="top"><a id="ad85f550b77dadee97c78cf4fdf90b03f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#ad85f550b77dadee97c78cf4fdf90b03f">psiInverse</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</td></tr>
+<tr class="memdesc:ad85f550b77dadee97c78cf4fdf90b03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic mapping. Project ambient point <em>x</em> onto the chart and store the result in <em>out</em>, which should be allocated to size k_. <br /></td></tr>
+<tr class="separator:ad85f550b77dadee97c78cf4fdf90b03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05629a40e81a141f70084c186d0e8b1e"><td class="memItemLeft" align="right" valign="top"><a id="a05629a40e81a141f70084c186d0e8b1e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a05629a40e81a141f70084c186d0e8b1e">inPolytope</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;u, const Halfspace *ignore1=nullptr, const Halfspace *ignore2=nullptr) const</td></tr>
+<tr class="memdesc:a05629a40e81a141f70084c186d0e8b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a point <em>u</em> on the chart lies within its polytope boundary. Can ignore up to 2 of the halfspaces if specified in <em>ignore1</em> and <em>ignore2</em>. <br /></td></tr>
+<tr class="separator:a05629a40e81a141f70084c186d0e8b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87c309b951f651df5b9f999c289a6d46"><td class="memItemLeft" align="right" valign="top"><a id="a87c309b951f651df5b9f999c289a6d46"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a87c309b951f651df5b9f999c289a6d46">borderCheck</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;v) const</td></tr>
+<tr class="memdesc:a87c309b951f651df5b9f999c289a6d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if chart point <em>v</em> lies very close to any part of the boundary. Wherever it does, expand the neighboring chart's boundary to include. <br /></td></tr>
+<tr class="separator:a87c309b951f651df5b9f999c289a6d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b404d3158c034b027be68d5f9ba903"><td class="memItemLeft" align="right" valign="top"><a id="af8b404d3158c034b027be68d5f9ba903"></a>
+const <a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#af8b404d3158c034b027be68d5f9ba903">owningNeighbor</a> (const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</td></tr>
+<tr class="memdesc:af8b404d3158c034b027be68d5f9ba903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find an owner for ambient point  from among the neighbors of this chart. Returns nullptr if none found. <br /></td></tr>
+<tr class="separator:af8b404d3158c034b027be68d5f9ba903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95f3c07160e1628ccf0dee0cc33179dd"><td class="memItemLeft" align="right" valign="top"><a id="a95f3c07160e1628ccf0dee0cc33179dd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a95f3c07160e1628ccf0dee0cc33179dd">toPolygon</a> (std::vector&lt; Eigen::VectorXd &gt; &amp;vertices) const</td></tr>
+<tr class="memdesc:a95f3c07160e1628ccf0dee0cc33179dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">For manifolds of dimension 2, return in order in <em>vertices</em> the polygon boundary of this chart, including an approximation of the circular boundary where the polygon exceeds radius <em>rho_</em>. Returns true if a circular portion is included. <br /></td></tr>
+<tr class="separator:a95f3c07160e1628ccf0dee0cc33179dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6089735240c86623dcd42b3cdad973e"><td class="memItemLeft" align="right" valign="top"><a id="ac6089735240c86623dcd42b3cdad973e"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#ac6089735240c86623dcd42b3cdad973e">getNeighborCount</a> () const</td></tr>
+<tr class="memdesc:ac6089735240c86623dcd42b3cdad973e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of charts this chart shares a halfspace boundary with. <br /></td></tr>
+<tr class="separator:ac6089735240c86623dcd42b3cdad973e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1363834e31fd5c979046ace59608630f"><td class="memItemLeft" align="right" valign="top"><a id="a1363834e31fd5c979046ace59608630f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a1363834e31fd5c979046ace59608630f">estimateIsFrontier</a> () const</td></tr>
+<tr class="memdesc:a1363834e31fd5c979046ace59608630f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use sampling to make a quick estimate as to whether this chart's polytope boundary is completely defined by its halfspaces. <br /></td></tr>
+<tr class="separator:a1363834e31fd5c979046ace59608630f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac7362faa11728b8b8777ec89bfea64a3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#ac7362faa11728b8b8777ec89bfea64a3">generateHalfspace</a> (<a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> *c1, <a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> *c2)</td></tr>
+<tr class="memdesc:ac7362faa11728b8b8777ec89bfea64a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create two complementary halfspaces dividing the space between charts <em>c1</em> and <em>c2</em>, and add them to the charts' polytopes boundaries.  <a href="#ac7362faa11728b8b8777ec89bfea64a3">More...</a><br /></td></tr>
+<tr class="separator:ac7362faa11728b8b8777ec89bfea64a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a1b8ec45dee3a4db7ca6b6f41e31e341a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a1b8ec45dee3a4db7ca6b6f41e31e341a">addBoundary</a> (Halfspace *halfspace)</td></tr>
+<tr class="memdesc:a1b8ec45dee3a4db7ca6b6f41e31e341a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Introduce a new <em>halfspace</em> to the chart's bounding polytope. This chart assumes responsibility for deleting <em>halfspace</em>.  <a href="#a1b8ec45dee3a4db7ca6b6f41e31e341a">More...</a><br /></td></tr>
+<tr class="separator:a1b8ec45dee3a4db7ca6b6f41e31e341a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aa47b5b21a44f6df48a3fc582a71c8e0b"><td class="memItemLeft" align="right" valign="top"><a id="aa47b5b21a44f6df48a3fc582a71c8e0b"></a>
+const <a class="el" href="classompl_1_1base_1_1Constraint.html">Constraint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#aa47b5b21a44f6df48a3fc582a71c8e0b">constraint_</a></td></tr>
+<tr class="memdesc:aa47b5b21a44f6df48a3fc582a71c8e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constraint function that defines the manifold. <br /></td></tr>
+<tr class="separator:aa47b5b21a44f6df48a3fc582a71c8e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092fb3f7591e4ddb2048d60fb20159c9"><td class="memItemLeft" align="right" valign="top"><a id="a092fb3f7591e4ddb2048d60fb20159c9"></a>
+std::vector&lt; Halfspace * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1AtlasChart.html#a092fb3f7591e4ddb2048d60fb20159c9">polytope_</a></td></tr>
+<tr class="memdesc:a092fb3f7591e4ddb2048d60fb20159c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of halfspaces defining the polytope boundary. <br /></td></tr>
+<tr class="separator:a092fb3f7591e4ddb2048d60fb20159c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Tangent space and bounding polytope approximating some patch of the manifold. </p>
+
+<p class="definition">Definition at line <a class="el" href="AtlasChart_8h_source.html#l00052">52</a> of file <a class="el" href="AtlasChart_8h_source.html">AtlasChart.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5a6ce37aa4aad64612026ee371a3bc04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6ce37aa4aad64612026ee371a3bc04">&#9670;&nbsp;</a></span>AtlasChart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::base::AtlasChart::AtlasChart </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html">AtlasStateSpace</a> *&#160;</td>
+          <td class="paramname"><em>atlas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html">AtlasStateSpace::StateType</a> *&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a tangent space chart for <em>atlas</em> with center at ambient space point <em>xorigin</em>. </p>
+<p><a class="el" href="classompl_1_1base_1_1AtlasChart.html" title="Tangent space and bounding polytope approximating some patch of the manifold. ">AtlasChart</a>.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classompl_1_1Exception.html" title="The exception type for ompl. ">ompl::Exception</a></td><td>when manifold seems degenerate here.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Public </p>
+
+<p class="definition">Definition at line <a class="el" href="AtlasChart_8cpp_source.html#l00152">152</a> of file <a class="el" href="AtlasChart_8cpp_source.html">AtlasChart.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1b8ec45dee3a4db7ca6b6f41e31e341a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b8ec45dee3a4db7ca6b6f41e31e341a">&#9670;&nbsp;</a></span>addBoundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::base::AtlasChart::addBoundary </td>
+          <td>(</td>
+          <td class="paramtype">Halfspace *&#160;</td>
+          <td class="paramname"><em>halfspace</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Introduce a new <em>halfspace</em> to the chart's bounding polytope. This chart assumes responsibility for deleting <em>halfspace</em>. </p>
+<p>Protected. </p>
+
+<p class="definition">Definition at line <a class="el" href="AtlasChart_8cpp_source.html#l00387">387</a> of file <a class="el" href="AtlasChart_8cpp_source.html">AtlasChart.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac7362faa11728b8b8777ec89bfea64a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7362faa11728b8b8777ec89bfea64a3">&#9670;&nbsp;</a></span>generateHalfspace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::base::AtlasChart::generateHalfspace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> *&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1AtlasChart.html">AtlasChart</a> *&#160;</td>
+          <td class="paramname"><em>c2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create two complementary halfspaces dividing the space between charts <em>c1</em> and <em>c2</em>, and add them to the charts' polytopes boundaries. </p>
+<p>Public Static.</p>
+<dl class="section note"><dt>Note</dt><dd>Charts must be different charts from the same atlas. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="AtlasChart_8cpp_source.html#l00369">369</a> of file <a class="el" href="AtlasChart_8cpp_source.html">AtlasChart.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/base/spaces/constraint/<a class="el" href="AtlasChart_8h_source.html">AtlasChart.h</a></li>
+<li>ompl/base/spaces/constraint/src/<a class="el" href="AtlasChart_8cpp_source.html">AtlasChart.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -17,6 +17,7 @@ var searchData=
   ['gquadrotorplanning',['GQuadrotorPlanning',['../classompl_1_1app_1_1GQuadrotorPlanning.html',1,'ompl::app']]],
   ['graph',['Graph',['../classompl_1_1base_1_1PlannerData_1_1Graph.html',1,'ompl::base::PlannerData']]],
   ['greedykcenters',['GreedyKCenters',['../classompl_1_1GreedyKCenters.html',1,'ompl']]],
+  ['greedykcenters_3c_20nnelement_20_3e',['GreedyKCenters&lt; NNElement &gt;',['../classompl_1_1GreedyKCenters.html',1,'ompl']]],
   ['grid',['Grid',['../classompl_1_1Grid.html',1,'ompl']]],
   ['grid_3c_20celldata_20_2a_20_3e',['Grid&lt; CellData * &gt;',['../classompl_1_1Grid.html',1,'ompl']]],
   ['grid_3c_20celldata_20_2a_3e',['Grid&lt; CellData *&gt;',['../classompl_1_1Grid.html',1,'ompl']]],

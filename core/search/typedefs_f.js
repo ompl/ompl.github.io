@@ -4,7 +4,6 @@ var searchData=
   ['samplerptr',['SamplerPtr',['../classompl_1_1base_1_1StateSamplerArray.html#a0869da074058c67fb600d355c0d8a9c4',1,'ompl::base::StateSamplerArray']]],
   ['scopedstateptr',['ScopedStatePtr',['../namespaceompl_1_1base.html#a0ac8aab470d9f1b1ce41376f9eeebf8f',1,'ompl::base']]],
   ['scopedstatetype',['ScopedStateType',['../classompl_1_1base_1_1TypedSpaceInformation.html#a9ddeb55dc86ed9f767bf9c50c2648456',1,'ompl::base::TypedSpaceInformation']]],
-  ['searchqueueptr',['SearchQueuePtr',['../classompl_1_1geometric_1_1BITstar.html#a5a3eb7712e427445aecf215e4e7f95fa',1,'ompl::geometric::BITstar']]],
   ['setterfn',['SetterFn',['../classompl_1_1base_1_1SpecificParam.html#a2d44f9d40d6f4705c346809927aa05bf',1,'ompl::base::SpecificParam']]],
   ['spaceptr',['SpacePtr',['../classompl_1_1base_1_1TypedSpaceInformation.html#a549e276b9a6e68e9d66cafd132f96aa7',1,'ompl::base::TypedSpaceInformation']]],
   ['spacetype',['SpaceType',['../classompl_1_1base_1_1TypedSpaceInformation.html#ad7e706625125e4a02ee0f6cfae132c7d',1,'ompl::base::TypedSpaceInformation']]],

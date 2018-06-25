@@ -5,21 +5,33 @@
   <title>ompl/util/Console.h File Reference</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -47,6 +59,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -102,37 +115,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -184,55 +184,55 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Console_8h__dep__incl.png" border="0" usemap="#ompl_2util_2Console_8hdep" alt=""/></div>
 <map name="ompl_2util_2Console_8hdep" id="ompl_2util_2Console_8hdep">
-<area shape="rect" id="node2" href="GenericParam_8h_source.html" title="ompl/base/GenericParam.h" alt="" coords="1427,95,1571,121"/>
-<area shape="rect" id="node3" href="Planner_8h_source.html" title="ompl/base/Planner.h" alt="" coords="403,572,516,599"/>
-<area shape="rect" id="node5" href="control_2SimpleSetup_8h_source.html" title="ompl/control/SimpleSetup.h" alt="" coords="203,654,347,681"/>
-<area shape="rect" id="node6" href="geometric_2SimpleSetup_8h_source.html" title="ompl/geometric/SimpleSetup.h" alt="" coords="639,654,797,681"/>
-<area shape="rect" id="node8" href="ImplicitGraph_8cpp_source.html" title="ompl/geometric/planners\l/bitstar/datastructures\l/src/ImplicitGraph.cpp" alt="" coords="5,736,137,792"/>
-<area shape="rect" id="node9" href="ThunderRetrieveRepair_8cpp_source.html" title="ompl/geometric/planners\l/experience/src/ThunderRetrieve\lRepair.cpp" alt="" coords="189,736,356,792"/>
-<area shape="rect" id="node12" href="SelfConfig_8cpp_source.html" title="ompl/tools/config/src\l/SelfConfig.cpp" alt="" coords="512,743,625,785"/>
-<area shape="rect" id="node13" href="Lightning_8h_source.html" title="ompl/tools/lightning\l/Lightning.h" alt="" coords="664,743,772,785"/>
-<area shape="rect" id="node14" href="SPARSdb_8cpp_source.html" title="ompl/tools/thunder\l/src/SPARSdb.cpp" alt="" coords="1535,743,1640,785"/>
-<area shape="rect" id="node15" href="ThunderDB_8cpp_source.html" title="ompl/tools/thunder\l/src/ThunderDB.cpp" alt="" coords="2241,743,2352,785"/>
-<area shape="rect" id="node16" href="Thunder_8h_source.html" title="ompl/tools/thunder\l/Thunder.h" alt="" coords="1102,647,1206,688"/>
-<area shape="rect" id="node17" href="Thunder_8cpp_source.html" title="ompl/tools/thunder\l/src/Thunder.cpp" alt="" coords="1963,743,2067,785"/>
-<area shape="rect" id="node18" href="ProjectionEvaluator_8h_source.html" title="ompl/base/ProjectionEvaluator.h" alt="" coords="1697,184,1862,211"/>
-<area shape="rect" id="node19" href="StateSpace_8h_source.html" title="ompl/base/StateSpace.h" alt="" coords="1714,259,1845,285"/>
-<area shape="rect" id="node20" href="base_2SpaceInformation_8h_source.html" title="ompl/base/SpaceInformation.h" alt="" coords="838,333,995,360"/>
-<area shape="rect" id="node21" href="Goal_8h_source.html" title="ompl/base/Goal.h" alt="" coords="1244,408,1344,435"/>
-<area shape="rect" id="node23" href="GeneticSearch_8h_source.html" title="ompl/geometric/GeneticSearch.h" alt="" coords="1658,572,1826,599"/>
-<area shape="rect" id="node24" href="ProblemDefinition_8h_source.html" title="ompl/base/ProblemDefinition.h" alt="" coords="492,490,651,517"/>
-<area shape="rect" id="node29" href="PathSimplifier_8h_source.html" title="ompl/geometric/PathSimplifier.h" alt="" coords="698,572,861,599"/>
-<area shape="rect" id="node30" href="OptimalPlanning_8cpp_source.html" title="demos/OptimalPlanning.cpp" alt="" coords="1486,408,1633,435"/>
-<area shape="rect" id="node31" href="ControlSpace_8h_source.html" title="ompl/control/ControlSpace.h" alt="" coords="1816,333,1964,360"/>
-<area shape="rect" id="node34" href="base_2PlannerDataStorage_8h_source.html" title="ompl/base/PlannerDataStorage.h" alt="" coords="2293,259,2463,285"/>
-<area shape="rect" id="node35" href="ODESolver_8h_source.html" title="ompl/control/ODESolver.h" alt="" coords="2344,95,2481,121"/>
-<area shape="rect" id="node36" href="LTLPlanner_8cpp_source.html" title="ompl/control/planners\l/ltl/src/LTLPlanner.cpp" alt="" coords="2505,87,2627,129"/>
-<area shape="rect" id="node37" href="ProductGraph_8cpp_source.html" title="ompl/control/planners\l/ltl/src/ProductGraph.cpp" alt="" coords="2651,87,2783,129"/>
-<area shape="rect" id="node38" href="World_8cpp_source.html" title="ompl/control/planners\l/ltl/src/World.cpp" alt="" coords="2807,87,2925,129"/>
-<area shape="rect" id="node39" href="Decomposition_8h_source.html" title="ompl/control/planners\l/syclop/Decomposition.h" alt="" coords="2949,87,3079,129"/>
-<area shape="rect" id="node40" href="PathControl_8cpp_source.html" title="ompl/control/src/PathControl.cpp" alt="" coords="3104,95,3271,121"/>
-<area shape="rect" id="node41" href="MorseSimpleSetup_8cpp_source.html" title="ompl/extensions/morse\l/src/MorseSimpleSetup.cpp" alt="" coords="3295,87,3439,129"/>
-<area shape="rect" id="node42" href="OpenDEControlSpace_8cpp_source.html" title="ompl/extensions/opende\l/src/OpenDEControlSpace.cpp" alt="" coords="3464,87,3623,129"/>
-<area shape="rect" id="node43" href="OpenDEStatePropagator_8cpp_source.html" title="ompl/extensions/opende\l/src/OpenDEStatePropagator.cpp" alt="" coords="3647,87,3818,129"/>
-<area shape="rect" id="node44" href="OpenDEStateSpace_8cpp_source.html" title="ompl/extensions/opende\l/src/OpenDEStateSpace.cpp" alt="" coords="3842,87,3991,129"/>
-<area shape="rect" id="node45" href="SearchQueue_8cpp_source.html" title="ompl/geometric/planners\l/bitstar/datastructures\l/src/SearchQueue.cpp" alt="" coords="4016,80,4148,136"/>
-<area shape="rect" id="node46" href="BITstar_8cpp_source.html" title="ompl/geometric/planners\l/bitstar/src/BITstar.cpp" alt="" coords="4172,87,4304,129"/>
-<area shape="rect" id="node47" href="MachineSpecs_8cpp_source.html" title="ompl/tools/benchmark\l/src/MachineSpecs.cpp" alt="" coords="4329,87,4454,129"/>
-<area shape="rect" id="node48" href="Console_8cpp_source.html" title="ompl/util/src/Console.cpp" alt="" coords="4478,95,4611,121"/>
-<area shape="rect" id="node49" href="ProlateHyperspheroid_8cpp_source.html" title="ompl/util/src/ProlateHyperspheroid.cpp" alt="" coords="4636,95,4829,121"/>
-<area shape="rect" id="node50" href="RandomNumbers_8cpp_source.html" title="ompl/util/src/RandomNumbers.cpp" alt="" coords="4854,95,5030,121"/>
-<area shape="rect" id="node32" href="GenericParam_8cpp_source.html" title="ompl/base/src/GenericParam.cpp" alt="" coords="1291,184,1462,211"/>
-<area shape="rect" id="node33" href="ValidStateSampler_8h_source.html" title="ompl/base/ValidStateSampler.h" alt="" coords="1117,259,1279,285"/>
-<area shape="rect" id="node4" href="Planner_8cpp_source.html" title="ompl/base/src/Planner.cpp" alt="" coords="372,654,512,681"/>
-<area shape="rect" id="node7" href="SelfConfig_8h_source.html" title="ompl/tools/config/SelfConfig.h" alt="" coords="923,654,1078,681"/>
-<area shape="rect" id="node10" href="RRTstar_8cpp_source.html" title="ompl/geometric/planners\l/rrt/src/RRTstar.cpp" alt="" coords="969,743,1101,785"/>
-<area shape="rect" id="node11" href="RRTXstatic_8cpp_source.html" title="ompl/geometric/planners\l/rrt/src/RRTXstatic.cpp" alt="" coords="1193,743,1325,785"/>
-<area shape="rect" id="node27" href="MorseGoal_8h_source.html" title="ompl/extensions/morse\l/MorseGoal.h" alt="" coords="1030,483,1155,524"/>
-<area shape="rect" id="node22" href="GoalRegion_8h_source.html" title="ompl/base/goals/GoalRegion.h" alt="" coords="1663,490,1821,517"/>
-<area shape="rect" id="node25" href="InformedStateSampler_8cpp_source.html" title="ompl/base/samplers\l/src/InformedStateSampler.cpp" alt="" coords="1846,483,2006,524"/>
-<area shape="rect" id="node26" href="Goal_8cpp_source.html" title="ompl/base/src/Goal.cpp" alt="" coords="1332,490,1459,517"/>
-<area shape="rect" id="node28" href="KoulesDirectedControlSampler_8h_source.html" title="demos/Koules/KoulesDirected\lControlSampler.h" alt="" coords="1483,483,1639,524"/>
+<area shape="rect" id="node2" href="ConstrainedSpaceInformation_8h_source.html" title="ompl/base/ConstrainedSpace\lInformation.h" alt="" coords="357,408,510,449"/>
+<area shape="rect" id="node4" href="GenericParam_8h_source.html" title="ompl/base/GenericParam.h" alt="" coords="847,95,991,121"/>
+<area shape="rect" id="node5" href="Planner_8h_source.html" title="ompl/base/Planner.h" alt="" coords="787,587,901,613"/>
+<area shape="rect" id="node6" href="control_2SimpleSetup_8h_source.html" title="ompl/control/SimpleSetup.h" alt="" coords="772,669,916,695"/>
+<area shape="rect" id="node7" href="geometric_2SimpleSetup_8h_source.html" title="ompl/geometric/SimpleSetup.h" alt="" coords="473,669,631,695"/>
+<area shape="rect" id="node9" href="ImplicitGraph_8cpp_source.html" title="ompl/geometric/planners\l/bitstar/datastructures\l/src/ImplicitGraph.cpp" alt="" coords="1554,751,1686,807"/>
+<area shape="rect" id="node10" href="ThunderRetrieveRepair_8cpp_source.html" title="ompl/geometric/planners\l/experience/src/ThunderRetrieve\lRepair.cpp" alt="" coords="1753,751,1919,807"/>
+<area shape="rect" id="node13" href="SelfConfig_8cpp_source.html" title="ompl/tools/config/src\l/SelfConfig.cpp" alt="" coords="1965,758,2078,799"/>
+<area shape="rect" id="node14" href="Lightning_8h_source.html" title="ompl/tools/lightning\l/Lightning.h" alt="" coords="643,758,751,799"/>
+<area shape="rect" id="node15" href="SPARSdb_8cpp_source.html" title="ompl/tools/thunder\l/src/SPARSdb.cpp" alt="" coords="2113,758,2218,799"/>
+<area shape="rect" id="node16" href="ThunderDB_8cpp_source.html" title="ompl/tools/thunder\l/src/ThunderDB.cpp" alt="" coords="2247,758,2358,799"/>
+<area shape="rect" id="node17" href="Thunder_8h_source.html" title="ompl/tools/thunder\l/Thunder.h" alt="" coords="207,661,311,703"/>
+<area shape="rect" id="node18" href="Thunder_8cpp_source.html" title="ompl/tools/thunder\l/src/Thunder.cpp" alt="" coords="80,758,184,799"/>
+<area shape="rect" id="node19" href="ProjectionEvaluator_8h_source.html" title="ompl/base/ProjectionEvaluator.h" alt="" coords="921,184,1087,211"/>
+<area shape="rect" id="node20" href="StateSpace_8h_source.html" title="ompl/base/StateSpace.h" alt="" coords="765,259,896,285"/>
+<area shape="rect" id="node21" href="base_2SpaceInformation_8h_source.html" title="ompl/base/SpaceInformation.h" alt="" coords="849,333,1007,360"/>
+<area shape="rect" id="node22" href="Goal_8h_source.html" title="ompl/base/Goal.h" alt="" coords="1306,415,1406,442"/>
+<area shape="rect" id="node24" href="GeneticSearch_8h_source.html" title="ompl/geometric/GeneticSearch.h" alt="" coords="1545,587,1713,613"/>
+<area shape="rect" id="node25" href="ProblemDefinition_8h_source.html" title="ompl/base/ProblemDefinition.h" alt="" coords="605,505,763,531"/>
+<area shape="rect" id="node29" href="PathSimplifier_8h_source.html" title="ompl/geometric/PathSimplifier.h" alt="" coords="296,587,459,613"/>
+<area shape="rect" id="node30" href="OptimalPlanning_8cpp_source.html" title="demos/OptimalPlanning.cpp" alt="" coords="1561,415,1708,442"/>
+<area shape="rect" id="node31" href="ControlSpace_8h_source.html" title="ompl/control/ControlSpace.h" alt="" coords="626,333,774,360"/>
+<area shape="rect" id="node34" href="base_2PlannerDataStorage_8h_source.html" title="ompl/base/PlannerDataStorage.h" alt="" coords="2218,184,2387,211"/>
+<area shape="rect" id="node35" href="ODESolver_8h_source.html" title="ompl/control/ODESolver.h" alt="" coords="2319,95,2457,121"/>
+<area shape="rect" id="node36" href="LTLPlanner_8cpp_source.html" title="ompl/control/planners\l/ltl/src/LTLPlanner.cpp" alt="" coords="2481,87,2602,129"/>
+<area shape="rect" id="node37" href="ProductGraph_8cpp_source.html" title="ompl/control/planners\l/ltl/src/ProductGraph.cpp" alt="" coords="2626,87,2758,129"/>
+<area shape="rect" id="node38" href="World_8cpp_source.html" title="ompl/control/planners\l/ltl/src/World.cpp" alt="" coords="2783,87,2900,129"/>
+<area shape="rect" id="node39" href="Decomposition_8h_source.html" title="ompl/control/planners\l/syclop/Decomposition.h" alt="" coords="2924,87,3055,129"/>
+<area shape="rect" id="node40" href="PathControl_8cpp_source.html" title="ompl/control/src/PathControl.cpp" alt="" coords="3079,95,3246,121"/>
+<area shape="rect" id="node41" href="MorseSimpleSetup_8cpp_source.html" title="ompl/extensions/morse\l/src/MorseSimpleSetup.cpp" alt="" coords="3271,87,3415,129"/>
+<area shape="rect" id="node42" href="OpenDEControlSpace_8cpp_source.html" title="ompl/extensions/opende\l/src/OpenDEControlSpace.cpp" alt="" coords="3439,87,3598,129"/>
+<area shape="rect" id="node43" href="OpenDEStatePropagator_8cpp_source.html" title="ompl/extensions/opende\l/src/OpenDEStatePropagator.cpp" alt="" coords="3623,87,3793,129"/>
+<area shape="rect" id="node44" href="OpenDEStateSpace_8cpp_source.html" title="ompl/extensions/opende\l/src/OpenDEStateSpace.cpp" alt="" coords="3817,87,3967,129"/>
+<area shape="rect" id="node45" href="SearchQueue_8cpp_source.html" title="ompl/geometric/planners\l/bitstar/datastructures\l/src/SearchQueue.cpp" alt="" coords="3991,80,4123,136"/>
+<area shape="rect" id="node46" href="BITstar_8cpp_source.html" title="ompl/geometric/planners\l/bitstar/src/BITstar.cpp" alt="" coords="4147,87,4279,129"/>
+<area shape="rect" id="node47" href="MachineSpecs_8cpp_source.html" title="ompl/tools/benchmark\l/src/MachineSpecs.cpp" alt="" coords="4304,87,4429,129"/>
+<area shape="rect" id="node48" href="Console_8cpp_source.html" title="ompl/util/src/Console.cpp" alt="" coords="4453,95,4587,121"/>
+<area shape="rect" id="node49" href="ProlateHyperspheroid_8cpp_source.html" title="ompl/util/src/ProlateHyperspheroid.cpp" alt="" coords="4611,95,4805,121"/>
+<area shape="rect" id="node50" href="RandomNumbers_8cpp_source.html" title="ompl/util/src/RandomNumbers.cpp" alt="" coords="4829,95,5005,121"/>
+<area shape="rect" id="node3" href="ConstrainedPlanningCommon_8h_source.html" title="demos/constraint/Constrained\lPlanningCommon.h" alt="" coords="448,758,603,799"/>
+<area shape="rect" id="node32" href="GenericParam_8cpp_source.html" title="ompl/base/src/GenericParam.cpp" alt="" coords="676,184,847,211"/>
+<area shape="rect" id="node33" href="ValidStateSampler_8h_source.html" title="ompl/base/ValidStateSampler.h" alt="" coords="956,259,1119,285"/>
+<area shape="rect" id="node8" href="SelfConfig_8h_source.html" title="ompl/tools/config/SelfConfig.h" alt="" coords="1431,669,1585,695"/>
+<area shape="rect" id="node11" href="RRTstar_8cpp_source.html" title="ompl/geometric/planners\l/rrt/src/RRTstar.cpp" alt="" coords="1395,758,1527,799"/>
+<area shape="rect" id="node12" href="RRTXstatic_8cpp_source.html" title="ompl/geometric/planners\l/rrt/src/RRTXstatic.cpp" alt="" coords="1191,758,1323,799"/>
+<area shape="rect" id="node28" href="MorseGoal_8h_source.html" title="ompl/extensions/morse\l/MorseGoal.h" alt="" coords="1092,497,1217,539"/>
+<area shape="rect" id="node23" href="GoalRegion_8h_source.html" title="ompl/base/goals/GoalRegion.h" alt="" coords="1546,505,1705,531"/>
+<area shape="rect" id="node26" href="InformedStateSampler_8cpp_source.html" title="ompl/base/samplers\l/src/InformedStateSampler.cpp" alt="" coords="1729,497,1889,539"/>
+<area shape="rect" id="node27" href="Goal_8cpp_source.html" title="ompl/base/src/Goal.cpp" alt="" coords="1343,505,1470,531"/>
 </map>
 </div>
 </div>
@@ -345,10 +345,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

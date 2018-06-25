@@ -1,6 +1,9 @@
 var searchData=
 [
   ['kboundedstrategy',['KBoundedStrategy',['../classompl_1_1geometric_1_1KBoundedStrategy.html',1,'ompl::geometric']]],
+  ['kinematicchainprojector',['KinematicChainProjector',['../classKinematicChainProjector.html',1,'']]],
+  ['kinematicchainspace',['KinematicChainSpace',['../classKinematicChainSpace.html',1,'']]],
+  ['kinematicchainvaliditychecker',['KinematicChainValidityChecker',['../classKinematicChainValidityChecker.html',1,'']]],
   ['koulescontrolsampler',['KoulesControlSampler',['../classKoulesControlSampler.html',1,'']]],
   ['koulescontrolspace',['KoulesControlSpace',['../classKoulesControlSpace.html',1,'']]],
   ['koulesdecomposition',['KoulesDecomposition',['../classKoulesDecomposition.html',1,'']]],

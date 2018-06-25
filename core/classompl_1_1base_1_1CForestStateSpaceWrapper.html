@@ -5,21 +5,33 @@
   <title>ompl::base::CForestStateSpaceWrapper Class Reference</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -47,6 +59,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -102,37 +115,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -386,20 +386,20 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 const <a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a4305a944c0a18976e23f0954aef93b4c">params</a> () const</td></tr>
 <tr class="memdesc:a4305a944c0a18976e23f0954aef93b4c inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this space. <br /></td></tr>
 <tr class="separator:a4305a944c0a18976e23f0954aef93b4c inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9babd71497fc6a6f82fe97f699531ceb inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a9babd71497fc6a6f82fe97f699531ceb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a9babd71497fc6a6f82fe97f699531ceb">setValidSegmentCountFactor</a> (unsigned int factor)</td></tr>
-<tr class="memdesc:a9babd71497fc6a6f82fe97f699531ceb inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <em>factor</em> to be the value to multiply the return value of <a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5f1f231db8861ca747b67b5fb3f81eb" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2...">validSegmentCount()</a>. By default, this value is 1. The higher the value, the smaller the size of the segments considered valid. The effect of this function is immediate (<a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> does not need to be called). <br /></td></tr>
-<tr class="separator:a9babd71497fc6a6f82fe97f699531ceb inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8625bcb46400d25fb40d58bcb3c4da53 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a8625bcb46400d25fb40d58bcb3c4da53"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a8625bcb46400d25fb40d58bcb3c4da53">getValidSegmentCountFactor</a> () const</td></tr>
-<tr class="memdesc:a8625bcb46400d25fb40d58bcb3c4da53 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value used to multiply the return value of <a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5f1f231db8861ca747b67b5fb3f81eb" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2...">validSegmentCount()</a>. <br /></td></tr>
-<tr class="separator:a8625bcb46400d25fb40d58bcb3c4da53 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60054b052ee942683a81850623350068 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a60054b052ee942683a81850623350068"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a60054b052ee942683a81850623350068">getLongestValidSegmentLength</a> () const</td></tr>
-<tr class="memdesc:a60054b052ee942683a81850623350068 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the longest valid segment at the time <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> was called. <br /></td></tr>
-<tr class="separator:a60054b052ee942683a81850623350068 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a21c7cf2a1812781b693dcd5a3bda4a inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a6a21c7cf2a1812781b693dcd5a3bda4a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a6a21c7cf2a1812781b693dcd5a3bda4a">setValidSegmentCountFactor</a> (unsigned int factor)</td></tr>
+<tr class="memdesc:a6a21c7cf2a1812781b693dcd5a3bda4a inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <em>factor</em> to be the value to multiply the return value of <a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5f1f231db8861ca747b67b5fb3f81eb" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2...">validSegmentCount()</a>. By default, this value is 1. The higher the value, the smaller the size of the segments considered valid. The effect of this function is immediate (<a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> does not need to be called). <br /></td></tr>
+<tr class="separator:a6a21c7cf2a1812781b693dcd5a3bda4a inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace78ab8debbadfa1922e98c846acf497 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ace78ab8debbadfa1922e98c846acf497"></a>
+virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ace78ab8debbadfa1922e98c846acf497">getValidSegmentCountFactor</a> () const</td></tr>
+<tr class="memdesc:ace78ab8debbadfa1922e98c846acf497 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value used to multiply the return value of <a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5f1f231db8861ca747b67b5fb3f81eb" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2...">validSegmentCount()</a>. <br /></td></tr>
+<tr class="separator:ace78ab8debbadfa1922e98c846acf497 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd038fe4d298bc181ef27dc1d9004cd9 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="afd038fe4d298bc181ef27dc1d9004cd9"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#afd038fe4d298bc181ef27dc1d9004cd9">getLongestValidSegmentLength</a> () const</td></tr>
+<tr class="memdesc:afd038fe4d298bc181ef27dc1d9004cd9 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the longest valid segment at the time <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> was called. <br /></td></tr>
+<tr class="separator:afd038fe4d298bc181ef27dc1d9004cd9 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f898b0945c804596a30bc5f309e817e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a3f898b0945c804596a30bc5f309e817e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a3f898b0945c804596a30bc5f309e817e">computeSignature</a> (std::vector&lt; int &gt; &amp;signature) const</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a3f898b0945c804596a30bc5f309e817e">computeSignature</a> (std::vector&lt; int &gt; &amp;signature) const</td></tr>
 <tr class="memdesc:a3f898b0945c804596a30bc5f309e817e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute an array of ints that uniquely identifies the structure of the state space. The first element of the signature is the number of integers that follow. <br /></td></tr>
 <tr class="separator:a3f898b0945c804596a30bc5f309e817e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca89451f148cad4627c3c6887e0186e4 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="aca89451f148cad4627c3c6887e0186e4"></a>
@@ -443,11 +443,11 @@ const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memdesc:a5f04fc5bd81cc8498fdc411b50abc3fa inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const variant of the same function as above;. <br /></td></tr>
 <tr class="separator:a5f04fc5bd81cc8498fdc411b50abc3fa inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5e6b9f828da8d02338d55857ca74fda inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ac5e6b9f828da8d02338d55857ca74fda"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5e6b9f828da8d02338d55857ca74fda">copyToReals</a> (std::vector&lt; double &gt; &amp;reals, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *source) const</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5e6b9f828da8d02338d55857ca74fda">copyToReals</a> (std::vector&lt; double &gt; &amp;reals, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *source) const</td></tr>
 <tr class="memdesc:ac5e6b9f828da8d02338d55857ca74fda inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy all the real values from a state <em>source</em> to the array <em>reals</em> using <a class="el" href="classompl_1_1base_1_1StateSpace.html#aafd87a4ade6b3c9daae315db34bc367e" title="Get a pointer to the double value in state that loc points to. ">getValueAddressAtLocation()</a> <br /></td></tr>
 <tr class="separator:ac5e6b9f828da8d02338d55857ca74fda inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a762ef767d52b8d9df49333ed423ae23e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a762ef767d52b8d9df49333ed423ae23e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a762ef767d52b8d9df49333ed423ae23e">copyFromReals</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *destination, const std::vector&lt; double &gt; &amp;reals) const</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a762ef767d52b8d9df49333ed423ae23e">copyFromReals</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *destination, const std::vector&lt; double &gt; &amp;reals) const</td></tr>
 <tr class="memdesc:a762ef767d52b8d9df49333ed423ae23e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the values from <em>reals</em> to the state <em>destination</em> using <a class="el" href="classompl_1_1base_1_1StateSpace.html#aafd87a4ade6b3c9daae315db34bc367e" title="Get a pointer to the double value in state that loc points to. ">getValueAddressAtLocation()</a> <br /></td></tr>
 <tr class="separator:a762ef767d52b8d9df49333ed423ae23e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a309f2cdc5412ff16d31b87fec92b3595 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a309f2cdc5412ff16d31b87fec92b3595"></a>
@@ -833,7 +833,7 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a c
 </div><div class="memdoc">
 
 <p>When performing discrete validation of motions, the length of the longest segment that does not require state validation needs to be specified. This function sets this length as a fraction of the space's maximum extent. </p>
-<dl class="section note"><dt>Note</dt><dd>This function's effect is not considered until after <a class="el" href="classompl_1_1base_1_1CForestStateSpaceWrapper.html#aa36dfbc0119ab4514dda12806a2c75ab" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> has been called. For immediate effects (i.e., during planning) use <a class="el" href="classompl_1_1base_1_1StateSpace.html#a9babd71497fc6a6f82fe97f699531ceb" title="Set factor to be the value to multiply the return value of validSegmentCount(). By default...">setValidSegmentCountFactor()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function's effect is not considered until after <a class="el" href="classompl_1_1base_1_1CForestStateSpaceWrapper.html#aa36dfbc0119ab4514dda12806a2c75ab" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> has been called. For immediate effects (i.e., during planning) use <a class="el" href="classompl_1_1base_1_1StateSpace.html#a6a21c7cf2a1812781b693dcd5a3bda4a" title="Set factor to be the value to multiply the return value of validSegmentCount(). By default...">setValidSegmentCountFactor()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classompl_1_1base_1_1StateSpace.html#af51a4ef4cd30ddf26f38225b478a0f11">ompl::base::StateSpace</a>.</p>
 
@@ -863,10 +863,6 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a c
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

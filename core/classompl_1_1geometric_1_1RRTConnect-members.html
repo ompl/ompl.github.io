@@ -5,21 +5,33 @@
   <title>Member List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -47,6 +59,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -102,37 +115,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -168,47 +168,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a>(const std::string &amp;progressPropertyName, const PlannerProgressProperty &amp;prop)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4ba0969940dcdb34f22e1a1ce0c9129e7ca">ADVANCED</a> enum value</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a2ca68a50629dd31d550632480d001c17">as</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a7499389d5049b3eb778e841a0dfd605a">as</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab416900477cf4499139c01f35663dffb">checkValidity</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a77a55c5947c8ddbf1e5064337c22d20c">clear</a>() override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a07527c14eb0e9e9c2eaf3133728de501">connectionPoint_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const GetterType &amp;getter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a3f9da0d41951502ea4df1184ef5a99a6">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a70804c799f32c48dd5d40e7f66000a0a">addIntermediateStates_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a>(const std::string &amp;progressPropertyName, const PlannerProgressProperty &amp;prop)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4ba0969940dcdb34f22e1a1ce0c9129e7ca">ADVANCED</a> enum value</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a2ca68a50629dd31d550632480d001c17">as</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a7499389d5049b3eb778e841a0dfd605a">as</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab416900477cf4499139c01f35663dffb">checkValidity</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a77a55c5947c8ddbf1e5064337c22d20c">clear</a>() override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a07527c14eb0e9e9c2eaf3133728de501">connectionPoint_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const GetterType &amp;getter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a3f9da0d41951502ea4df1184ef5a99a6">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#ab82fb331140caa1d5c9c929db8df1c08">distanceBetweenTrees_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#ad6aeec9725a2588c7f087a67a76e5d2c">distanceFunction</a>(const Motion *a, const Motion *b) const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a74eab29b7c7ac5e75d88134067121e45">freeMemory</a>()</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a9bdea814a817637bd8e6f959c65ceaf9">getName</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">getPlannerData</a>(base::PlannerData &amp;data) const override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a66c8c7bea15161438a8a23ef733c9340">getRange</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a7ebc11cf89b36261c01dd0592a350b88">getSpaceInformation</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a845e46cdde4baeda91a5f008ae15ce3a">getSpecs</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4b">GrowState</a> enum name</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a140a2bf524fe7c39dfbe1e8d5f55fe80">growTree</a>(TreeData &amp;tree, TreeGrowingInfo &amp;tgi, Motion *rmotion)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a00d2469147e0a4f38cee18c97f19dbfc">isSetup</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a299caf818f757d96793d1bc092a665b3">maxDistance_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator=</b>(const Planner &amp;)=delete (defined in <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a>)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a9dc98f7169ae45aa0e886376f546887a">params</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a54cd84e228b9cd88ae88cdd10cc0712b">params</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a1cecf022e5ebac936c49b96079ba5359">params_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a6bbb3dcc3d1604977e319d52c16ef7e5">pdef_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a1c6ac45d44026aae6df87f3295d67436">pis_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Planner</b>(const Planner &amp;)=delete (defined in <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a>)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#aeb73b615f05ecc749204b3ef029a292a">Planner</a>(SpaceInformationPtr si, std::string name)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a> typedef</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a> typedef</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab41beafb015184c8e44a899debe9b5b7">printProperties</a>(std::ostream &amp;out) const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a325bbde59a8f7bab778c33d538cc4266">printSettings</a>(std::ostream &amp;out) const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4baf7876405ca61b09872f30ab8c79a12eb">REACHED</a> enum value</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a89885ce34b34c5c880993f3ad553bffa">rng_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a918795ad317b8cee40184c3e289f8d51">RRTConnect</a>(const base::SpaceInformationPtr &amp;si)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#abb9c22bc9815d896ae9c029b2047b0da">sampler_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a7d7a2f5333b9be68f61462abf6a5c24a">getIntermediateStates</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a9bdea814a817637bd8e6f959c65ceaf9">getName</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">getPlannerData</a>(base::PlannerData &amp;data) const override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a66c8c7bea15161438a8a23ef733c9340">getRange</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a7ebc11cf89b36261c01dd0592a350b88">getSpaceInformation</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a845e46cdde4baeda91a5f008ae15ce3a">getSpecs</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4b">GrowState</a> enum name</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a140a2bf524fe7c39dfbe1e8d5f55fe80">growTree</a>(TreeData &amp;tree, TreeGrowingInfo &amp;tgi, Motion *rmotion)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a00d2469147e0a4f38cee18c97f19dbfc">isSetup</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a299caf818f757d96793d1bc092a665b3">maxDistance_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator=</b>(const Planner &amp;)=delete (defined in <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a>)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a9dc98f7169ae45aa0e886376f546887a">params</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a54cd84e228b9cd88ae88cdd10cc0712b">params</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a1cecf022e5ebac936c49b96079ba5359">params_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a6bbb3dcc3d1604977e319d52c16ef7e5">pdef_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a1c6ac45d44026aae6df87f3295d67436">pis_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Planner</b>(const Planner &amp;)=delete (defined in <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a>)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#aeb73b615f05ecc749204b3ef029a292a">Planner</a>(SpaceInformationPtr si, std::string name)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a> typedef</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a> typedef</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab41beafb015184c8e44a899debe9b5b7">printProperties</a>(std::ostream &amp;out) const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a325bbde59a8f7bab778c33d538cc4266">printSettings</a>(std::ostream &amp;out) const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4baf7876405ca61b09872f30ab8c79a12eb">REACHED</a> enum value</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a89885ce34b34c5c880993f3ad553bffa">rng_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#aea8a84e73c86ff415931a29be34228f5">RRTConnect</a>(const base::SpaceInformationPtr &amp;si, bool addIntermediateStates=false)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#abb9c22bc9815d896ae9c029b2047b0da">sampler_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a8dc8ba4b7976bdf399b6110366397343">setIntermediateStates</a>(bool addIntermediateStates)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a99bb12c016b06563aab6bba5cdbed01e">setName</a>(const std::string &amp;name)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html#a8b4577228d584d25ff58d85d117d01d2">setNearestNeighbors</a>()</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTConnect.html">ompl::geometric::RRTConnect</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#add968ea14f1aa3d3bffc110da3e1d031">setProblemDefinition</a>(const ProblemDefinitionPtr &amp;pdef)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
@@ -244,10 +248,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

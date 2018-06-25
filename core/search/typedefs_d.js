@@ -8,6 +8,5 @@ var searchData=
   ['postpropagationevent',['PostPropagationEvent',['../classompl_1_1control_1_1ODESolver.html#ad496fc44bca880b8a16a0127a544320f',1,'ompl::control::ODESolver']]],
   ['postsetupevent',['PostSetupEvent',['../classompl_1_1tools_1_1Benchmark.html#a080a7685b2a5ce27116952351c770c97',1,'ompl::tools::Benchmark']]],
   ['presetupevent',['PreSetupEvent',['../classompl_1_1tools_1_1Benchmark.html#a4f9b4c8aabf07c684d42686b4d7e4cac',1,'ompl::tools::Benchmark']]],
-  ['projectioncoordinates',['ProjectionCoordinates',['../namespaceompl_1_1base.html#a01cfb1e28af37bb139841342cb4afb0c',1,'ompl::base']]],
   ['ptr',['Ptr',['../classompl_1_1base_1_1TypedSpaceInformation.html#ac85c66befef64c830a54ec51fd74bf36',1,'ompl::base::TypedSpaceInformation']]]
 ];

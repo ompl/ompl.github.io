@@ -5,21 +5,33 @@
   <title>ompl/geometric/planners/kpiece/BKPIECE1.h Source File</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -48,6 +60,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -103,37 +116,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -175,12 +175,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1base_1_1ValidStateSamplerPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1ValidStateSamplerPtr.html">ompl::base::ValidStateSamplerPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::ValidStateSampler. </div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html">ompl::geometric::BKPIECE1</a></div><div class="ttdoc">Bi-directional KPIECE with one level of discretization. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00073">BKPIECE1.h:73</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a0dbd0c85fa51f8ebce39a0ddc18517d8"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a0dbd0c85fa51f8ebce39a0ddc18517d8">ompl::geometric::BKPIECE1::setProjectionEvaluator</a></div><div class="ttdeci">void setProjectionEvaluator(const std::string &amp;name)</div><div class="ttdoc">Set the projection evaluator (select one from the ones registered with the state space). </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00090">BKPIECE1.h:90</a></div></div>
-<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_ae81ac9338565790508efaebbef3d8459"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#ae81ac9338565790508efaebbef3d8459">ompl::geometric::BKPIECE1::freeMotion</a></div><div class="ttdeci">void freeMotion(Motion *motion)</div><div class="ttdoc">Free the memory for a motion. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00241">BKPIECE1.cpp:241</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_ae81ac9338565790508efaebbef3d8459"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#ae81ac9338565790508efaebbef3d8459">ompl::geometric::BKPIECE1::freeMotion</a></div><div class="ttdeci">void freeMotion(Motion *motion)</div><div class="ttdoc">Free the memory for a motion. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00235">BKPIECE1.cpp:235</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_ac4b29de63c1a79e5ab2b819b182e230f"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#ac4b29de63c1a79e5ab2b819b182e230f">ompl::geometric::BKPIECE1::projectionEvaluator_</a></div><div class="ttdeci">base::ProjectionEvaluatorPtr projectionEvaluator_</div><div class="ttdoc">The employed projection evaluator. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00207">BKPIECE1.h:207</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a0e505ace63ee03e5ccde6e9820aeabdb"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a0e505ace63ee03e5ccde6e9820aeabdb">ompl::geometric::BKPIECE1::setProjectionEvaluator</a></div><div class="ttdeci">void setProjectionEvaluator(const base::ProjectionEvaluatorPtr &amp;projectionEvaluator)</div><div class="ttdoc">Set the projection evaluator. This class is able to compute the projection of a given state...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00083">BKPIECE1.h:83</a></div></div>
-<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_aa724226c3dec34b09cfa9a57e94b4679"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#aa724226c3dec34b09cfa9a57e94b4679">ompl::geometric::BKPIECE1::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00066">BKPIECE1.cpp:66</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_aa724226c3dec34b09cfa9a57e94b4679"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#aa724226c3dec34b09cfa9a57e94b4679">ompl::geometric::BKPIECE1::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00060">BKPIECE1.cpp:60</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00063">PlannerTerminationCondition.h:63</a></div></div>
-<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a10e5170141827497ad20dc06cc167e43"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a10e5170141827497ad20dc06cc167e43">ompl::geometric::BKPIECE1::getPlannerData</a></div><div class="ttdeci">void getPlannerData(base::PlannerData &amp;data) const override</div><div class="ttdoc">Get information about the current run of the motion planner. Repeated calls to this function will upd...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00258">BKPIECE1.cpp:258</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a10e5170141827497ad20dc06cc167e43"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a10e5170141827497ad20dc06cc167e43">ompl::geometric::BKPIECE1::getPlannerData</a></div><div class="ttdeci">void getPlannerData(base::PlannerData &amp;data) const override</div><div class="ttdoc">Get information about the current run of the motion planner. Repeated calls to this function will upd...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00252">BKPIECE1.cpp:252</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a921e950972763ff2a9fb7e3a32a710ab"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a921e950972763ff2a9fb7e3a32a710ab">ompl::geometric::BKPIECE1::failedExpansionScoreFactor_</a></div><div class="ttdeci">double failedExpansionScoreFactor_</div><div class="ttdoc">When extending a motion from a cell, the extension can fail. If it is, the score of the cell is multi...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00218">BKPIECE1.h:218</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_aa70b018d82b7bf967b7ed5ade3c51a81"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#aa70b018d82b7bf967b7ed5ade3c51a81">ompl::geometric::BKPIECE1::dStart_</a></div><div class="ttdeci">Discretization&lt; Motion &gt; dStart_</div><div class="ttdoc">The start tree. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00210">BKPIECE1.h:210</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a422ff4aa4fe25dd13e40e8c9962ccc12"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a422ff4aa4fe25dd13e40e8c9962ccc12">ompl::geometric::BKPIECE1::rng_</a></div><div class="ttdeci">RNG rng_</div><div class="ttdoc">The random number generator. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00231">BKPIECE1.h:231</a></div></div>
@@ -188,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_ad01e749cab8b9096d01e8f9f3ca35f61"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#ad01e749cab8b9096d01e8f9f3ca35f61">ompl::geometric::BKPIECE1::getRange</a></div><div class="ttdeci">double getRange() const</div><div class="ttdoc">Get the range the planner is using. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00112">BKPIECE1.h:112</a></div></div>
 <div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00021">AppBase.h:21</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_1_1Motion_html_ac115375f7782835ba53dab9453de65bf"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1_1_1Motion.html#ac115375f7782835ba53dab9453de65bf">ompl::geometric::BKPIECE1::Motion::Motion</a></div><div class="ttdeci">Motion(const base::SpaceInformationPtr &amp;si)</div><div class="ttdoc">Constructor that allocates memory for the state. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00184">BKPIECE1.h:184</a></div></div>
-<div class="ttc" id="classompl_1_1RNG_html"><div class="ttname"><a href="classompl_1_1RNG.html">ompl::RNG</a></div><div class="ttdoc">Random number generation. An instance of this class cannot be used by multiple threads at once (membe...</div><div class="ttdef"><b>Definition:</b> <a href="RandomNumbers_8h_source.html#l00058">RandomNumbers.h:58</a></div></div>
+<div class="ttc" id="classompl_1_1RNG_html"><div class="ttname"><a href="classompl_1_1RNG.html">ompl::RNG</a></div><div class="ttdoc">Random number generation. An instance of this class cannot be used by multiple threads at once (membe...</div><div class="ttdef"><b>Definition:</b> <a href="RandomNumbers_8h_source.html#l00056">RandomNumbers.h:56</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a15a290a36bac34264d12f0ca3c3dc46d"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a15a290a36bac34264d12f0ca3c3dc46d">ompl::geometric::BKPIECE1::maxDistance_</a></div><div class="ttdeci">double maxDistance_</div><div class="ttdoc">The maximum length of a motion to be added to a tree. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00228">BKPIECE1.h:228</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1Discretization_html"><div class="ttname"><a href="classompl_1_1geometric_1_1Discretization.html">ompl::geometric::Discretization</a></div><div class="ttdoc">One-level discretization used for KPIECE. </div><div class="ttdef"><b>Definition:</b> <a href="Discretization_8h_source.html#l00058">Discretization.h:58</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1Planner_html"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></div><div class="ttdoc">Base class for a planner. </div><div class="ttdef"><b>Definition:</b> <a href="Planner_8h_source.html#l00223">Planner.h:223</a></div></div>
@@ -197,9 +197,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structompl_1_1base_1_1PlannerStatus_html"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a></div><div class="ttdoc">A class to store the exit status of Planner::solve() </div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00048">PlannerStatus.h:48</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1SpaceInformationPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::SpaceInformation. </div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a1cc89cb07e13a333f6eed645a3dfcda3"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a1cc89cb07e13a333f6eed645a3dfcda3">ompl::geometric::BKPIECE1::setMinValidPathFraction</a></div><div class="ttdeci">void setMinValidPathFraction(double fraction)</div><div class="ttdoc">When extending a motion, the planner can decide to keep the first valid part of it, even if invalid states are found, as long as the valid part represents a sufficiently large fraction from the original motion. This function sets the minimum acceptable fraction. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00158">BKPIECE1.h:158</a></div></div>
-<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_abca5f831bdfe09ab62001a434bda47b8"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#abca5f831bdfe09ab62001a434bda47b8">ompl::geometric::BKPIECE1::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00248">BKPIECE1.cpp:248</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_abca5f831bdfe09ab62001a434bda47b8"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#abca5f831bdfe09ab62001a434bda47b8">ompl::geometric::BKPIECE1::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00242">BKPIECE1.cpp:242</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state. </div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00049">State.h:49</a></div></div>
-<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a2cf588b5cd49be01cc43c576794c499c"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a2cf588b5cd49be01cc43c576794c499c">ompl::geometric::BKPIECE1::solve</a></div><div class="ttdeci">base::PlannerStatus solve(const base::PlannerTerminationCondition &amp;ptc) override</div><div class="ttdoc">Function that can solve the motion planning problem. This function can be called multiple times on th...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00082">BKPIECE1.cpp:82</a></div></div>
+<div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a2cf588b5cd49be01cc43c576794c499c"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a2cf588b5cd49be01cc43c576794c499c">ompl::geometric::BKPIECE1::solve</a></div><div class="ttdeci">base::PlannerStatus solve(const base::PlannerTerminationCondition &amp;ptc) override</div><div class="ttdoc">Function that can solve the motion planning problem. This function can be called multiple times on th...</div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8cpp_source.html#l00076">BKPIECE1.cpp:76</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_html_a06f49930fd458b8ff60626a1f0b1b775"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1.html#a06f49930fd458b8ff60626a1f0b1b775">ompl::geometric::BKPIECE1::setFailedExpansionCellScoreFactor</a></div><div class="ttdeci">void setFailedExpansionCellScoreFactor(double factor)</div><div class="ttdoc">When extending a motion from a cell, the extension can be successful or it can fail. If the extension fails, the score of the cell is multiplied by factor. These number should be in the range (0, 1]. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00140">BKPIECE1.h:140</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_1_1Motion_html_a4a6799d168bbc9ee73504b56ddc8c34e"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1_1_1Motion.html#a4a6799d168bbc9ee73504b56ddc8c34e">ompl::geometric::BKPIECE1::Motion::state</a></div><div class="ttdeci">base::State * state</div><div class="ttdoc">The state contained by this motion. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00194">BKPIECE1.h:194</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1BKPIECE1_1_1Motion_html_a31d66a709c8a16e44787f019c9fc13b2"><div class="ttname"><a href="classompl_1_1geometric_1_1BKPIECE1_1_1Motion.html#a31d66a709c8a16e44787f019c9fc13b2">ompl::geometric::BKPIECE1::Motion::parent</a></div><div class="ttdeci">Motion * parent</div><div class="ttdoc">The parent motion in the exploration tree. </div><div class="ttdef"><b>Definition:</b> <a href="BKPIECE1_8h_source.html#l00197">BKPIECE1.h:197</a></div></div>
@@ -228,10 +228,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

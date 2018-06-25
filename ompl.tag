@@ -139,6 +139,10 @@
       <arglist>(const std::string &amp;objective, double threshold)</arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>AtlasOptions</name>
+    <filename>structAtlasOptions.html</filename>
+  </compound>
   <compound kind="class">
     <name>BinaryHeap&lt; BiDirMotion *, BiDirMotionCompare &gt;</name>
     <filename>classompl_1_1BinaryHeap.html</filename>
@@ -523,6 +527,136 @@
     </member>
     <member kind="function">
       <type>LessThanInternalCell &amp;</type>
+      <name>getComparisonOperator</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>BinaryHeap&lt; CostTripleAndVertexPtrPair, EdgeQueueSortFunc &gt;</name>
+    <filename>classompl_1_1BinaryHeap.html</filename>
+    <member kind="typedef">
+      <type>void(*)(Element *, void *)</type>
+      <name>EventAfterInsert</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>void(*)(Element *, void *)</type>
+      <name>EventBeforeRemove</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>onAfterInsert</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
+      <arglist>(EventAfterInsert event, void *arg)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>onBeforeRemove</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
+      <arglist>(EventBeforeRemove event, void *arg)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Element *</type>
+      <name>top</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>pop</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>remove</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
+      <arglist>(Element *element)</arglist>
+    </member>
+    <member kind="function">
+      <type>Element *</type>
+      <name>insert</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
+      <arglist>(const CostTripleAndVertexPtrPair &amp;data)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>insert</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
+      <arglist>(const std::vector&lt; CostTripleAndVertexPtrPair &gt; &amp;list)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>buildFrom</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
+      <arglist>(const std::vector&lt; CostTripleAndVertexPtrPair &gt; &amp;list)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rebuild</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>update</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
+      <arglist>(Element *element)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>empty</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>size</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getContent</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
+      <arglist>(std::vector&lt; CostTripleAndVertexPtrPair &gt; &amp;content) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sort</name>
+      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
+      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
+      <arglist>(std::vector&lt; CostTripleAndVertexPtrPair &gt; &amp;list)</arglist>
+    </member>
+    <member kind="function">
+      <type>EdgeQueueSortFunc &amp;</type>
       <name>getComparisonOperator</name>
       <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
       <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
@@ -1049,6 +1183,82 @@
       <arglist>()</arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>ConstrainedOptions</name>
+    <filename>structConstrainedOptions.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ConstrainedPlanningCommon::ConstrainedProblem</name>
+    <filename>classConstrainedPlanningCommon_1_1ConstrainedProblem.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ConstrainedPlanningImplicitChain::ChainConstraint</name>
+    <filename>classConstrainedPlanningImplicitChain_1_1ChainConstraint.html</filename>
+    <base>ompl::base::Constraint</base>
+    <class kind="class">ConstrainedPlanningImplicitChain::ChainConstraint::Wall</class>
+  </compound>
+  <compound kind="class">
+    <name>ConstrainedPlanningImplicitChain::ChainConstraint::Wall</name>
+    <filename>classConstrainedPlanningImplicitChain_1_1ChainConstraint_1_1Wall.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ConstrainedPlanningSphere::SphereConstraint</name>
+    <filename>classConstrainedPlanningSphere_1_1SphereConstraint.html</filename>
+    <base>ompl::base::Constraint</base>
+  </compound>
+  <compound kind="class">
+    <name>ConstrainedPlanningSphere::SphereProjection</name>
+    <filename>classConstrainedPlanningSphere_1_1SphereProjection.html</filename>
+    <base>ompl::base::ProjectionEvaluator</base>
+  </compound>
+  <compound kind="class">
+    <name>ConstrainedPlanningTorus::TorusConstraint</name>
+    <filename>classConstrainedPlanningTorus_1_1TorusConstraint.html</filename>
+    <base>ompl::base::Constraint</base>
+  </compound>
+  <compound kind="class">
+    <name>ConstrainedProblem</name>
+    <filename>classConstrainedProblem.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ConstraintGeneration::Constraint</name>
+    <filename>classConstraintGeneration_1_1Constraint.html</filename>
+    <member kind="function">
+      <type>def</type>
+      <name>__getitem__</name>
+      <anchorfile>classConstraintGeneration_1_1Constraint.html</anchorfile>
+      <anchor>a165da2cdf386ccdfd7c931f87ee9f9ae</anchor>
+      <arglist>(self, index)</arglist>
+    </member>
+    <member kind="function">
+      <type>def</type>
+      <name>getVars</name>
+      <anchorfile>classConstraintGeneration_1_1Constraint.html</anchorfile>
+      <anchor>a5627e97b0bd780d9e4be618fc00c56a8</anchor>
+      <arglist>(self)</arglist>
+    </member>
+    <member kind="function">
+      <type>def</type>
+      <name>getConstraints</name>
+      <anchorfile>classConstraintGeneration_1_1Constraint.html</anchorfile>
+      <anchor>a2e1cff84378f70039fb1f3b7277a15c7</anchor>
+      <arglist>(self)</arglist>
+    </member>
+    <member kind="function">
+      <type>def</type>
+      <name>addConstraint</name>
+      <anchorfile>classConstraintGeneration_1_1Constraint.html</anchorfile>
+      <anchor>a7db25568883415f3d14c054eb6799410</anchor>
+      <arglist>(self, f)</arglist>
+    </member>
+    <member kind="function">
+      <type>def</type>
+      <name>jacobian</name>
+      <anchorfile>classConstraintGeneration_1_1Constraint.html</anchorfile>
+      <anchor>a5bcee1c9ab76ffaaa5c4a97b1dacb9cd</anchor>
+      <arglist>(self)</arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>Discretization&lt; ompl::geometric::BKPIECE1::Motion &gt;</name>
     <filename>classompl_1_1geometric_1_1Discretization.html</filename>
@@ -1293,13 +1503,66 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>GreedyKCenters&lt; NNElement &gt;</name>
+    <filename>classompl_1_1GreedyKCenters.html</filename>
+    <member kind="typedef">
+      <type>std::function&lt; double(const NNElement &amp;, const NNElement &amp;)&gt;</type>
+      <name>DistanceFunction</name>
+      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
+      <anchor>a4efe9e669d852a90ece40527191d72bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Eigen::MatrixXd</type>
+      <name>Matrix</name>
+      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
+      <anchor>afaab15f295d63a4546a552647fa23c1e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setDistanceFunction</name>
+      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
+      <anchor>aa46b77a69db20e4c411bbb85956eab21</anchor>
+      <arglist>(const DistanceFunction &amp;distFun)</arglist>
+    </member>
+    <member kind="function">
+      <type>const DistanceFunction &amp;</type>
+      <name>getDistanceFunction</name>
+      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
+      <anchor>a9b9bcd71e87170f731f9e48b8b6a055e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>kcenters</name>
+      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
+      <anchor>ad8e0e7c79e810f3b3827dd8a5a8eeb01</anchor>
+      <arglist>(const std::vector&lt; NNElement &gt; &amp;data, unsigned int k, std::vector&lt; unsigned int &gt; &amp;centers, Matrix &amp;dists)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>DistanceFunction</type>
+      <name>distFun_</name>
+      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
+      <anchor>a4c617a02bb7489b3d1e32261f099f113</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>RNG</type>
+      <name>rng_</name>
+      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
+      <anchor>a9f9f1e9cacc57cc0a7c1526406cc94dd</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>Grid&lt; CellData * &gt;</name>
     <filename>classompl_1_1Grid.html</filename>
     <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
+      <type>Eigen::VectorXi</type>
       <name>Coord</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8fd2ab3bb168c7e39dc6b65d3f75ba4b</anchor>
+      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -1524,10 +1787,10 @@
     <name>Grid&lt; CellData *&gt;</name>
     <filename>classompl_1_1Grid.html</filename>
     <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
+      <type>Eigen::VectorXi</type>
       <name>Coord</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8fd2ab3bb168c7e39dc6b65d3f75ba4b</anchor>
+      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -1752,10 +2015,10 @@
     <name>Grid&lt; ompl::control::EST::MotionInfo &gt;</name>
     <filename>classompl_1_1Grid.html</filename>
     <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
+      <type>Eigen::VectorXi</type>
       <name>Coord</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8fd2ab3bb168c7e39dc6b65d3f75ba4b</anchor>
+      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -1980,10 +2243,10 @@
     <name>Grid&lt; ompl::geometric::ProjEST::MotionInfo &gt;</name>
     <filename>classompl_1_1Grid.html</filename>
     <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
+      <type>Eigen::VectorXi</type>
       <name>Coord</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8fd2ab3bb168c7e39dc6b65d3f75ba4b</anchor>
+      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -2208,10 +2471,10 @@
     <name>Grid&lt; ompl::geometric::pSBL::MotionInfo &gt;</name>
     <filename>classompl_1_1Grid.html</filename>
     <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
+      <type>Eigen::VectorXi</type>
       <name>Coord</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8fd2ab3bb168c7e39dc6b65d3f75ba4b</anchor>
+      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -2436,10 +2699,10 @@
     <name>Grid&lt; ompl::geometric::SBL::MotionInfo &gt;</name>
     <filename>classompl_1_1Grid.html</filename>
     <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
+      <type>Eigen::VectorXi</type>
       <name>Coord</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8fd2ab3bb168c7e39dc6b65d3f75ba4b</anchor>
+      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -3028,6 +3291,77 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>KinematicChainProjector</name>
+    <filename>classKinematicChainProjector.html</filename>
+    <base>ompl::base::ProjectionEvaluator</base>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getDimension</name>
+      <anchorfile>classKinematicChainProjector.html</anchorfile>
+      <anchor>a77319d166fe7465de2c2d0fac161d76a</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>project</name>
+      <anchorfile>classKinematicChainProjector.html</anchorfile>
+      <anchor>af1488fead90aa3cd4d7f86e44c2fb186</anchor>
+      <arglist>(const ompl::base::State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>KinematicChainSpace</name>
+    <filename>classKinematicChainSpace.html</filename>
+    <base>ompl::base::RealVectorStateSpace</base>
+    <member kind="function">
+      <type>void</type>
+      <name>registerProjections</name>
+      <anchorfile>classKinematicChainSpace.html</anchorfile>
+      <anchor>a81841311706b7dc8e30882d0c7b027d9</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>classKinematicChainSpace.html</anchorfile>
+      <anchor>a449b947f5fe785f01839ae42412e34ae</anchor>
+      <arglist>(const ompl::base::State *state1, const ompl::base::State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>enforceBounds</name>
+      <anchorfile>classKinematicChainSpace.html</anchorfile>
+      <anchor>a70ed11e1bed001826a598bac8dd22e1e</anchor>
+      <arglist>(ompl::base::State *state) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>equalStates</name>
+      <anchorfile>classKinematicChainSpace.html</anchorfile>
+      <anchor>a084def9949d479e5698345dfeb2f4877</anchor>
+      <arglist>(const ompl::base::State *state1, const ompl::base::State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolate</name>
+      <anchorfile>classKinematicChainSpace.html</anchorfile>
+      <anchor>a8d5420970c3b67f6f675f1ec98176c68</anchor>
+      <arglist>(const ompl::base::State *from, const ompl::base::State *to, const double t, ompl::base::State *state) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>KinematicChainValidityChecker</name>
+    <filename>classKinematicChainValidityChecker.html</filename>
+    <base>ompl::base::StateValidityChecker</base>
+    <member kind="function">
+      <type>bool</type>
+      <name>isValid</name>
+      <anchorfile>classKinematicChainValidityChecker.html</anchorfile>
+      <anchor>a24b295b867c0a98b661e1350d3569f58</anchor>
+      <arglist>(const ompl::base::State *state) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>KoulesControlSampler</name>
     <filename>classKoulesControlSampler.html</filename>
     <base>ompl::control::ControlSampler</base>
@@ -3151,8 +3485,8 @@
       <type>virtual void</type>
       <name>project</name>
       <anchorfile>classKoulesProjection.html</anchorfile>
-      <anchor>a91d8be6fd22721257d54cbfe7d6df0b8</anchor>
-      <arglist>(const ompl::base::State *state, ompl::base::EuclideanProjection &amp;projection) const</arglist>
+      <anchor>a8c71cb166fc3e5f2e4231e3e6d61e01e</anchor>
+      <arglist>(const ompl::base::State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -3169,6 +3503,200 @@
       <anchorfile>classKoulesStatePropagator.html</anchorfile>
       <anchor>aa426afe4b93169bc17f17b0d72766437</anchor>
       <arglist>(const ompl::base::State *start, const ompl::control::Control *control, const double duration, ompl::base::State *result) const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>NearestNeighborsGNAT&lt; NNElement &gt;</name>
+    <filename>classompl_1_1NearestNeighborsGNAT.html</filename>
+    <base>ompl::NearestNeighbors</base>
+    <member kind="function">
+      <type>void</type>
+      <name>setDistanceFunction</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>abf9fd332568e46b173caa069cb3d7b65</anchor>
+      <arglist>(const typename NearestNeighbors&lt; NNElement &gt;::DistanceFunction &amp;distFun) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a2ae0a5855cb97c01f8def5013d351296</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>reportsSortedResults</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a28597987114d643f33afaf1f94aeafcc</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>add</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>ac2ab166f10167e07b55a3fe5c88195bc</anchor>
+      <arglist>(const NNElement &amp;data) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>add</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a42fb426d77c7f1cc6a89d6f6e06a67da</anchor>
+      <arglist>(const std::vector&lt; NNElement &gt; &amp;data) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rebuildDataStructure</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a5a5d1ed1969d8a94096af37c2212953c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>remove</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a48879f4f40c84792378ccc4823041bbc</anchor>
+      <arglist>(const NNElement &amp;data) override</arglist>
+    </member>
+    <member kind="function">
+      <type>NNElement</type>
+      <name>nearest</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a252bb6d2aa3ff3edf540d0b041d4e892</anchor>
+      <arglist>(const NNElement &amp;data) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>nearestK</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>af59c70ac7e6fa37e2e555fad4915b9a9</anchor>
+      <arglist>(const NNElement &amp;data, std::size_t k, std::vector&lt; NNElement &gt; &amp;nbh) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>nearestR</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a9e10038b16f17ae175d2cee8e43308d6</anchor>
+      <arglist>(const NNElement &amp;data, double radius, std::vector&lt; NNElement &gt; &amp;nbh) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>size</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>aca63a6fbdbe2d1938084f01d7847da5d</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>list</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a83fdc5ea599a2025a2f8e10d92e7175e</anchor>
+      <arglist>(std::vector&lt; NNElement &gt; &amp;data) const override</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isRemoved</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a6bb84334105d10e972f3687ac00a3793</anchor>
+      <arglist>(const NNElement &amp;data) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>nearestKInternal</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a6d09afe7aa8b588270ab61f64d3026c6</anchor>
+      <arglist>(const NNElement &amp;data, std::size_t k, NearQueue &amp;nbhQueue) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>nearestRInternal</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>adbd6149cb209843d3870193e0d71654b</anchor>
+      <arglist>(const NNElement &amp;data, double radius, NearQueue &amp;nbhQueue) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>postprocessNearest</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a03bc066eb387dda356059d0690095c00</anchor>
+      <arglist>(NearQueue &amp;nbhQueue, std::vector&lt; NNElement &gt; &amp;nbh) const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>Node *</type>
+      <name>tree_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>af71f11d8395bb7ab208df7cf03351aaa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>degree_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a9d705ed546c919cd52c428255a0c1a9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>minDegree_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a0843613b6418efbb2b417c37789246c1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>maxDegree_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a925bada72c7c7e7826acdc1581a0a920</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>maxNumPtsPerLeaf_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a41c47b9f460e190bfadc2dc6f07cae3a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::size_t</type>
+      <name>size_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a40bd930123e198450f10736efe73a970</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::size_t</type>
+      <name>rebuildSize_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a2da7487ea1149c183ec8560280855a9d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::size_t</type>
+      <name>removedCacheSize_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a79547bf4b75f57dcf2d736c11f612b1d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>GreedyKCenters&lt; NNElement &gt;</type>
+      <name>pivotSelector_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a36b2e4bad87ded77f629a48425156bdc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::unordered_set&lt; const NNElement *&gt;</type>
+      <name>removed_</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>accc6371f2e2fdb66b70b3b7a4cdb3a87</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
+      <anchor>a1e1b937c81eb1d184ffa588589bcc07f</anchor>
+      <arglist>(std::ostream &amp;out, const NearestNeighborsGNAT&lt; NNElement &gt; &amp;gnat)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -3782,6 +4310,809 @@
       <anchorfile>classompl_1_1base_1_1AllValidStateValidityChecker.html</anchorfile>
       <anchor>a9aeeb31169eacd18c4cf2348a66f4d32</anchor>
       <arglist>(const State *) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::AtlasChart</name>
+    <filename>classompl_1_1base_1_1AtlasChart.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>AtlasChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a5a6ce37aa4aad64612026ee371a3bc04</anchor>
+      <arglist>(const AtlasStateSpace *atlas, const AtlasStateSpace::StateType *state)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~AtlasChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a788555d0c062181c6a3b104bd8c4d585</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a1c95639fbf7570db68cd26c17780b3ca</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const AtlasStateSpace::StateType *</type>
+      <name>getOrigin</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a26315247f05ea09d897fd32c267006b3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getAmbientDimension</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a360ea5537ebd63327fabd9eabf33998e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getManifoldDimension</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a718fa00e632dc9fb272c974c1fafaac7</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>phi</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>af3a07a6b5b871980e26c0bfda1b4ceb1</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;u, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>psi</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a593871dafb4eded9ba4152375636f6b1</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;u, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>psiInverse</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>ad85f550b77dadee97c78cf4fdf90b03f</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>inPolytope</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a05629a40e81a141f70084c186d0e8b1e</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;u, const Halfspace *ignore1=nullptr, const Halfspace *ignore2=nullptr) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>borderCheck</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a87c309b951f651df5b9f999c289a6d46</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;v) const</arglist>
+    </member>
+    <member kind="function">
+      <type>const AtlasChart *</type>
+      <name>owningNeighbor</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>af8b404d3158c034b027be68d5f9ba903</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>toPolygon</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a95f3c07160e1628ccf0dee0cc33179dd</anchor>
+      <arglist>(std::vector&lt; Eigen::VectorXd &gt; &amp;vertices) const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>getNeighborCount</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>ac6089735240c86623dcd42b3cdad973e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>estimateIsFrontier</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a1363834e31fd5c979046ace59608630f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>generateHalfspace</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>ac7362faa11728b8b8777ec89bfea64a3</anchor>
+      <arglist>(AtlasChart *c1, AtlasChart *c2)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>addBoundary</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a1b8ec45dee3a4db7ca6b6f41e31e341a</anchor>
+      <arglist>(Halfspace *halfspace)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const Constraint *</type>
+      <name>constraint_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>aa47b5b21a44f6df48a3fc582a71c8e0b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; Halfspace * &gt;</type>
+      <name>polytope_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
+      <anchor>a092fb3f7591e4ddb2048d60fb20159c9</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::AtlasStateSampler</name>
+    <filename>classompl_1_1base_1_1AtlasStateSampler.html</filename>
+    <base>ompl::base::StateSampler</base>
+    <member kind="function">
+      <type></type>
+      <name>AtlasStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSampler.html</anchorfile>
+      <anchor>ad8a0fc7824b684b300bdb28dcea6de0d</anchor>
+      <arglist>(const AtlasStateSpace *space)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniform</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSampler.html</anchorfile>
+      <anchor>acf6b11271ba004cd728c5914999af2c3</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniformNear</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSampler.html</anchorfile>
+      <anchor>af5aa235ae4f292ee1c7a4905066cff17</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleGaussian</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSampler.html</anchorfile>
+      <anchor>ad1eb7ed1443bbabf3cc1797c2602a2a8</anchor>
+      <arglist>(State *state, const State *mean, double stdDev) override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::AtlasStateSpace</name>
+    <filename>classompl_1_1base_1_1AtlasStateSpace.html</filename>
+    <base>ompl::base::ConstrainedStateSpace</base>
+    <class kind="class">ompl::base::AtlasStateSpace::StateType</class>
+    <member kind="function">
+      <type></type>
+      <name>AtlasStateSpace</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ac9680d2943d722a9249dcfe9c2d68c95</anchor>
+      <arglist>(const StateSpacePtr &amp;ambientSpace, const ConstraintPtr &amp;constraint, bool separate=true)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~AtlasStateSpace</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a1d8b2107cb33703c2113844955ff7007</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a11dc065788df57321c9699b56f3265d8</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocDefaultStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ad2298624cc5ca6f2394521fefa71c2ad</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a29c6f5739a8b885b64d8ffea760dbf90</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>copyState</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a656b759972d7d6442ba9ebc91a0eb043</anchor>
+      <arglist>(State *destination, const State *source) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a96f753e86e24a243b97dab1b37952dba</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setEpsilon</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>acd6ac1018866cc1d7d159ff2d1b55cc7</anchor>
+      <arglist>(double epsilon)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRho</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a6776d7b75168ae0cfa1ddc8fa2a4fd9a</anchor>
+      <arglist>(double rho)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setAlpha</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>acb262b58dc71ed679478066b640f462b</anchor>
+      <arglist>(double alpha)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setExploration</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a931df43dd9ce03ea021140b93229ccd5</anchor>
+      <arglist>(double exploration)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxChartsPerExtension</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aadf582787ca0c1ac2b866080f0e32846</anchor>
+      <arglist>(unsigned int charts)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBiasFunction</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aadfaa634d3461e9c4c60b90725e5d9f9</anchor>
+      <arglist>(const AtlasChartBiasFunction &amp;biasFunction)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSeparated</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ac81c1a72fb83b2f1c202eb184d070a21</anchor>
+      <arglist>(bool separate)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBackoff</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>af8736b3bd8c1862ae7371db686611b1d</anchor>
+      <arglist>(double backoff)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getEpsilon</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ad8d99ac057f7a5fcc5eb055c4a59af54</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getRho</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a3a1d190f7a028ffe8f41bececf64f48e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getAlpha</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a685415be3eaedd3e2a312569e0ed6ae1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getExploration</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a4de1e089669e343ddb796d5173c8acd3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getRho_s</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a4d2cca457d09a1a8a022bb5a9bdc3d03</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMaxChartsPerExtension</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ae1f21d5d2d32646d858ca5c50191d550</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isSeparated</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a0996def390019cfd7771643cdae47507</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>getChartCount</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a98e19886eb324758dbe947e596760580</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getBackoff</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a6a3fdde0066aaff2d5d9f5b259617988</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>newChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>acf67311c4c5c681e99fbf3b21e34bce4</anchor>
+      <arglist>(const StateType *state) const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>sampleChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a29d7d75c551537d5582440abf3bb36bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>owningChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a39f3a4b97f115cbfabf154e29394d104</anchor>
+      <arglist>(const StateType *state) const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>getChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>afb524fb0dc17a128e3662c12690e2292</anchor>
+      <arglist>(const StateType *state, bool force=false, bool *created=nullptr) const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>anchorChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7b811b3a8ac551d83063f6d08e5ba5fe</anchor>
+      <arglist>(const State *state) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>discreteGeodesic</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a9a94b63d47d4b59c4baaefae53ba1df9</anchor>
+      <arglist>(const State *from, const State *to, bool interpolate=false, std::vector&lt; State *&gt; *geodesic=nullptr) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>estimateFrontierPercent</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a2e5e052e74708d7f703d9e7969935fc9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>printPLY</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a6ce0a08ccb4c4b7c41eb83db20f98b65</anchor>
+      <arglist>(std::ostream &amp;out) const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; StateType * &gt;</type>
+      <name>anchors_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a1707a7af91a7823f0a555fae71b3c10e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; AtlasChart * &gt;</type>
+      <name>charts_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a4e2c8b252c89a942dfb7ea2fd3d62836</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>PDF&lt; AtlasChart * &gt;</type>
+      <name>chartPDF_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a4561491fb48347fc1da92d5922e904cc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>NearestNeighborsGNAT&lt; NNElement &gt;</type>
+      <name>chartNN_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aa3c31838cee531ba238bfc2033c78afa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>AtlasChartBiasFunction</type>
+      <name>biasFunction_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ac65baf8bfe82bca037c50d58eac26768</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>separate_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aec1c3bbc0443fe2f327856770b924268</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>RNG</type>
+      <name>rng_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ab775301c175d22645c5548732ccdaaa5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>epsilon_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7e3637aef4a7b7980e753d8c8c0ba66f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>rho_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aef8f443a2f089e99ed7dbdc9adf51df0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>cos_alpha_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a3726eb53cbf41d2f5bf22c4c357a82a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>exploration_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ac0fdddcfbeef1fc24a16468311801214</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>rho_s_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7fad144043cebd2fd03151620146203e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>backoff_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aa29f947d5b2cce8fccfcd5d22519d2ad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>maxChartsPerExtension_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a29464943c968c35f97761fee60121a5e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setEpsilon</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>acd6ac1018866cc1d7d159ff2d1b55cc7</anchor>
+      <arglist>(double epsilon)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRho</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a6776d7b75168ae0cfa1ddc8fa2a4fd9a</anchor>
+      <arglist>(double rho)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setAlpha</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>acb262b58dc71ed679478066b640f462b</anchor>
+      <arglist>(double alpha)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setExploration</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a931df43dd9ce03ea021140b93229ccd5</anchor>
+      <arglist>(double exploration)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxChartsPerExtension</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aadf582787ca0c1ac2b866080f0e32846</anchor>
+      <arglist>(unsigned int charts)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBiasFunction</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aadfaa634d3461e9c4c60b90725e5d9f9</anchor>
+      <arglist>(const AtlasChartBiasFunction &amp;biasFunction)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSeparated</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ac81c1a72fb83b2f1c202eb184d070a21</anchor>
+      <arglist>(bool separate)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBackoff</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>af8736b3bd8c1862ae7371db686611b1d</anchor>
+      <arglist>(double backoff)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getEpsilon</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ad8d99ac057f7a5fcc5eb055c4a59af54</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getRho</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a3a1d190f7a028ffe8f41bececf64f48e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getAlpha</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a685415be3eaedd3e2a312569e0ed6ae1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getExploration</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a4de1e089669e343ddb796d5173c8acd3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getRho_s</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a4d2cca457d09a1a8a022bb5a9bdc3d03</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMaxChartsPerExtension</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ae1f21d5d2d32646d858ca5c50191d550</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isSeparated</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a0996def390019cfd7771643cdae47507</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>getChartCount</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a98e19886eb324758dbe947e596760580</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getBackoff</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a6a3fdde0066aaff2d5d9f5b259617988</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>newChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>acf67311c4c5c681e99fbf3b21e34bce4</anchor>
+      <arglist>(const StateType *state) const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>sampleChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a29d7d75c551537d5582440abf3bb36bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>owningChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a39f3a4b97f115cbfabf154e29394d104</anchor>
+      <arglist>(const StateType *state) const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>getChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>afb524fb0dc17a128e3662c12690e2292</anchor>
+      <arglist>(const StateType *state, bool force=false, bool *created=nullptr) const</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>anchorChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7b811b3a8ac551d83063f6d08e5ba5fe</anchor>
+      <arglist>(const State *state) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>discreteGeodesic</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a9a94b63d47d4b59c4baaefae53ba1df9</anchor>
+      <arglist>(const State *from, const State *to, bool interpolate=false, std::vector&lt; State *&gt; *geodesic=nullptr) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>estimateFrontierPercent</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a2e5e052e74708d7f703d9e7969935fc9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>printPLY</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a6ce0a08ccb4c4b7c41eb83db20f98b65</anchor>
+      <arglist>(std::ostream &amp;out) const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>epsilon_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7e3637aef4a7b7980e753d8c8c0ba66f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>rho_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aef8f443a2f089e99ed7dbdc9adf51df0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>cos_alpha_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a3726eb53cbf41d2f5bf22c4c357a82a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>exploration_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ac0fdddcfbeef1fc24a16468311801214</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>rho_s_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7fad144043cebd2fd03151620146203e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>backoff_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aa29f947d5b2cce8fccfcd5d22519d2ad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>maxChartsPerExtension_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a29464943c968c35f97761fee60121a5e</anchor>
+      <arglist></arglist>
+    </member>
+    <docanchor file="classompl_1_1base_1_1AtlasStateSpace">gAtlas</docanchor>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::AtlasStateSpace::StateType</name>
+    <filename>classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html</filename>
+    <base>ompl::base::ConstrainedStateSpace::StateType</base>
+    <member kind="function">
+      <type></type>
+      <name>StateType</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a9b685c29e7851a81ac7d03e32ba94bac</anchor>
+      <arglist>(const ConstrainedStateSpace *space)</arglist>
+    </member>
+    <member kind="function">
+      <type>AtlasChart *</type>
+      <name>getChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a9ee8e5973620bb16ae278eb1e4f45b3b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setChart</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html</anchorfile>
+      <anchor>ac757ac98d6c7ffc78b86da02361f93dc</anchor>
+      <arglist>(AtlasChart *c) const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::BridgeTestValidStateSampler</name>
+    <filename>classompl_1_1base_1_1BridgeTestValidStateSampler.html</filename>
+    <base>ompl::base::ValidStateSampler</base>
+    <member kind="function">
+      <type></type>
+      <name>BridgeTestValidStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1BridgeTestValidStateSampler.html</anchorfile>
+      <anchor>a7a54fdc1219e1e97e913bfe8f5b70cbb</anchor>
+      <arglist>(const SpaceInformation *si)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>sample</name>
+      <anchorfile>classompl_1_1base_1_1BridgeTestValidStateSampler.html</anchorfile>
+      <anchor>ac413d16a7fbfc3444a6130cbe5d19ef9</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>sampleNear</name>
+      <anchorfile>classompl_1_1base_1_1BridgeTestValidStateSampler.html</anchorfile>
+      <anchor>a074bddcce58bffe7223f0ccc74030916</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getStdDev</name>
+      <anchorfile>classompl_1_1base_1_1BridgeTestValidStateSampler.html</anchorfile>
+      <anchor>a36c48b27b33a929d3963c619c331a519</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setStdDev</name>
+      <anchorfile>classompl_1_1base_1_1BridgeTestValidStateSampler.html</anchorfile>
+      <anchor>afca3149256aec6d8bdb5ae815bfe2e15</anchor>
+      <arglist>(double stddev)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>StateSamplerPtr</type>
+      <name>sampler_</name>
+      <anchorfile>classompl_1_1base_1_1BridgeTestValidStateSampler.html</anchorfile>
+      <anchor>ab4300e38a407b9aa5b6df7ae949dd5a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>stddev_</name>
+      <anchorfile>classompl_1_1base_1_1BridgeTestValidStateSampler.html</anchorfile>
+      <anchor>a5d6f929ed8bc083bcd06038d48ce0bc0</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -4795,6 +6126,853 @@
       <anchor>ac6b795506b02b5aa86d16d3feb0c12fa</anchor>
       <arglist>(State *state, unsigned int index) const override</arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstrainedMotionValidator</name>
+    <filename>classompl_1_1base_1_1ConstrainedMotionValidator.html</filename>
+    <base>ompl::base::MotionValidator</base>
+    <member kind="function">
+      <type></type>
+      <name>ConstrainedMotionValidator</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedMotionValidator.html</anchorfile>
+      <anchor>aa065e7127ae1ce732cd23ca7e3642275</anchor>
+      <arglist>(SpaceInformation *si)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstrainedMotionValidator</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedMotionValidator.html</anchorfile>
+      <anchor>a897afa14a244d3c739e2cbd10e82b6a5</anchor>
+      <arglist>(const SpaceInformationPtr &amp;si)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>checkMotion</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedMotionValidator.html</anchorfile>
+      <anchor>a534eb8dfda829df2da4795352bc48d62</anchor>
+      <arglist>(const State *s1, const State *s2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>checkMotion</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedMotionValidator.html</anchorfile>
+      <anchor>a6fdb5749c9f1b0f2c1f4bba76b07da78</anchor>
+      <arglist>(const State *s1, const State *s2, std::pair&lt; State *, double &gt; &amp;lastValid) const override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const ConstrainedStateSpace &amp;</type>
+      <name>ss_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedMotionValidator.html</anchorfile>
+      <anchor>ac01d9da7df42777a42072580bc7a1eea</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstrainedSpaceInformation</name>
+    <filename>classompl_1_1base_1_1ConstrainedSpaceInformation.html</filename>
+    <base>ompl::base::SpaceInformation</base>
+    <member kind="function">
+      <type></type>
+      <name>ConstrainedSpaceInformation</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedSpaceInformation.html</anchorfile>
+      <anchor>af46db86489864c9de22dc3803d991ee2</anchor>
+      <arglist>(StateSpacePtr space)</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMotionStates</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedSpaceInformation.html</anchorfile>
+      <anchor>ab246e26139d69a3b6c3517a4fccafef3</anchor>
+      <arglist>(const State *s1, const State *s2, std::vector&lt; State *&gt; &amp;states, unsigned int count, bool endpoints, bool alloc) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstrainedStateSpace</name>
+    <filename>classompl_1_1base_1_1ConstrainedStateSpace.html</filename>
+    <base>ompl::base::WrapperStateSpace</base>
+    <class kind="class">ompl::base::ConstrainedStateSpace::StateType</class>
+    <member kind="enumeration">
+      <type></type>
+      <name>SanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_SAMPLERS</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da2f124648bfd2bd72c0f2000997aa55b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_GEODESIC_SATISFY</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da1418b1544de813bf7808315a2ee6b9f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_GEODESIC_CONTINUITY</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da343f05f800434d26bb238a08c2d57d40</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_GEODESIC_INTERPOLATE</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da52005a0a4c0e60385d53b9eca18a8b7e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_JACOBIAN</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da387aac313de41a4fa7df1d962ca234ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_SAMPLERS</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da2f124648bfd2bd72c0f2000997aa55b7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_GEODESIC_SATISFY</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da1418b1544de813bf7808315a2ee6b9f8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_GEODESIC_CONTINUITY</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da343f05f800434d26bb238a08c2d57d40</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_GEODESIC_INTERPOLATE</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da52005a0a4c0e60385d53b9eca18a8b7e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>CONSTRAINED_STATESPACE_JACOBIAN</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ab71679cb1f5d35230b54f33e86c6517da387aac313de41a4fa7df1d962ca234ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstrainedStateSpace</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a9673ee354444d18a0c32d85f232e8382</anchor>
+      <arglist>(const StateSpacePtr &amp;ambientSpace, const ConstraintPtr &amp;constraint)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isMetricSpace</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>aa8283c37b80fbee9ecac85a7d7980e9a</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSpaceInformation</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a349cdde886586bc63b243c49176650ba</anchor>
+      <arglist>(SpaceInformation *si)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ae79fac42f95ee2d8f8f28d74ab9fe602</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a50701a7c829dbe5869376ad5eba1f601</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a706574802bed0fc539ee7c32011dc298</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>constrainedSanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a8e1324482598ba2c396877f9d86059a9</anchor>
+      <arglist>(unsigned int flags) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>abe381e7751f329702e0a5906d5ae8a59</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual unsigned int</type>
+      <name>validSegmentCount</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a6978f6ea5eb8ae95cae232cc05259c87</anchor>
+      <arglist>(const State *s1, const State *s2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolate</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a76c3278b1b6efdcd588a6609666281db</anchor>
+      <arglist>(const State *from, const State *to, double t, State *state) const override</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual bool</type>
+      <name>discreteGeodesic</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ae7fe37c311926741537d854fa3a45aa8</anchor>
+      <arglist>(const State *from, const State *to, bool interpolate=false, std::vector&lt; State *&gt; *geodesic=nullptr) const =0</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual State *</type>
+      <name>geodesicInterpolate</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a342e7cd243e2bc9f95b37b3eb447b40a</anchor>
+      <arglist>(const std::vector&lt; State *&gt; &amp;geodesic, double t) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setDelta</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a63761112fa407ecdfa039fcb27f631f4</anchor>
+      <arglist>(const double delta)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLambda</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a1327ddb0831627a49d289e22601453cf</anchor>
+      <arglist>(double lambda)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getDelta</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a18988282782c55e3a5b13eb16ff7c52d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLambda</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a3069963a553655a29ab4243c52d02854</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getAmbientDimension</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a985baf63acfd88159ca51afeae25e41e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getManifoldDimension</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>afda550dbe902a7d22ab16a60f4653f52</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const ConstraintPtr</type>
+      <name>getConstraint</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a4a02e8865a0a45ac2eddce1d5b8248b4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>SpaceInformation *</type>
+      <name>si_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ae715b570b104c090708de69d8c5da343</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const ConstraintPtr</type>
+      <name>constraint_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>aeef3f0a5675e4246ebcddb13a4f2b166</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const unsigned int</type>
+      <name>n_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>aa4c140b86a44c645d7ed1f30d4940b72</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const unsigned int</type>
+      <name>k_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ac26fa6580e0ffaa11c388bd19ba8e135</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>delta_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a84da2ea2a24f81f0c8f0407fe9e4309b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>lambda_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a6de1afc3140a0df5a8a659ee124883d1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>setup_</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a5263246afe2906dc44ed652da0a630c0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isMetricSpace</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>aa8283c37b80fbee9ecac85a7d7980e9a</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSpaceInformation</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a349cdde886586bc63b243c49176650ba</anchor>
+      <arglist>(SpaceInformation *si)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ae79fac42f95ee2d8f8f28d74ab9fe602</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a50701a7c829dbe5869376ad5eba1f601</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a706574802bed0fc539ee7c32011dc298</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>constrainedSanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a8e1324482598ba2c396877f9d86059a9</anchor>
+      <arglist>(unsigned int flags) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>abe381e7751f329702e0a5906d5ae8a59</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual unsigned int</type>
+      <name>validSegmentCount</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a6978f6ea5eb8ae95cae232cc05259c87</anchor>
+      <arglist>(const State *s1, const State *s2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolate</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a76c3278b1b6efdcd588a6609666281db</anchor>
+      <arglist>(const State *from, const State *to, double t, State *state) const override</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual bool</type>
+      <name>discreteGeodesic</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>ae7fe37c311926741537d854fa3a45aa8</anchor>
+      <arglist>(const State *from, const State *to, bool interpolate=false, std::vector&lt; State *&gt; *geodesic=nullptr) const =0</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual State *</type>
+      <name>geodesicInterpolate</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a342e7cd243e2bc9f95b37b3eb447b40a</anchor>
+      <arglist>(const std::vector&lt; State *&gt; &amp;geodesic, double t) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setDelta</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a63761112fa407ecdfa039fcb27f631f4</anchor>
+      <arglist>(const double delta)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLambda</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a1327ddb0831627a49d289e22601453cf</anchor>
+      <arglist>(double lambda)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getDelta</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a18988282782c55e3a5b13eb16ff7c52d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLambda</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a3069963a553655a29ab4243c52d02854</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getAmbientDimension</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a985baf63acfd88159ca51afeae25e41e</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getManifoldDimension</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>afda550dbe902a7d22ab16a60f4653f52</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const ConstraintPtr</type>
+      <name>getConstraint</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace.html</anchorfile>
+      <anchor>a4a02e8865a0a45ac2eddce1d5b8248b4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <docanchor file="classompl_1_1base_1_1ConstrainedStateSpace">gConstrained</docanchor>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstrainedStateSpace::StateType</name>
+    <filename>classompl_1_1base_1_1ConstrainedStateSpace_1_1StateType.html</filename>
+    <base>ompl::base::WrapperStateSpace::StateType</base>
+    <member kind="function">
+      <type></type>
+      <name>StateType</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace_1_1StateType.html</anchorfile>
+      <anchor>ae0c16c1fcae871e86d22fd67e798cce0</anchor>
+      <arglist>(const ConstrainedStateSpace *space)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>copy</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a9c34bd251d98449b1fcb662dc3b9982d</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;other)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstrainedValidStateSampler</name>
+    <filename>classompl_1_1base_1_1ConstrainedValidStateSampler.html</filename>
+    <base>ompl::base::ValidStateSampler</base>
+    <member kind="function">
+      <type></type>
+      <name>ConstrainedValidStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedValidStateSampler.html</anchorfile>
+      <anchor>a7bebe336eb90b4b20c07e086489dcdfd</anchor>
+      <arglist>(const SpaceInformation *si)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>sample</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedValidStateSampler.html</anchorfile>
+      <anchor>ae04d43b2eb5ce955003a9fe329764803</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>sampleNear</name>
+      <anchorfile>classompl_1_1base_1_1ConstrainedValidStateSampler.html</anchorfile>
+      <anchor>a4486f57fadf17c98d55572906bef4abc</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::Constraint</name>
+    <filename>classompl_1_1base_1_1Constraint.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>Constraint</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>aaefa1497a68c7944e146ff2811023398</anchor>
+      <arglist>(const unsigned int ambientDim, const unsigned int coDim, double tolerance=magic::CONSTRAINT_PROJECTION_TOLERANCE)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>function</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a08882bb91416db1a604baaa61525d2cc</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>function</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a22e21da4721119a35968a0cf325d8f65</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const =0</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>jacobian</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a7f15239c4bbc8b1b8a36e7579d47346c</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>jacobian</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a4800d1f76f1d56afa1e08dab415d8bda</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>project</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a84203729cf979b398e8e59f92d136ed3</anchor>
+      <arglist>(State *state) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>project</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a27c1ecac7eb642028d58b33d6742160d</anchor>
+      <arglist>(Eigen::Ref&lt; Eigen::VectorXd &gt; x) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>ab19d03c6f8a491a6db1b14ea055a1c62</anchor>
+      <arglist>(const State *state) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>af945e8c94949a4a06a199b567c277be9</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isSatisfied</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a0e4d9def91883487533583390fbd2281</anchor>
+      <arglist>(const State *state) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>isSatisfied</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a777dbc260073df452bf52caab80baef5</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getAmbientDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a6be267c6c9287f4833b053afde940d4a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getManifoldDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a49338ae4a7616d5ee59c043cd86ed912</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getCoDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a7c6917b07e2177eb10ca8da014044f9d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setManifoldDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>ac22291e02a0e3f2063f0a92eac0b70e7</anchor>
+      <arglist>(unsigned int k)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getTolerance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a2634e2534e66268e0c98ac2b2d240fb1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMaxIterations</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>af4b8b270a79ecf467682286ad121ab63</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTolerance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a4413eaf904a95e843b85938236a1a2ab</anchor>
+      <arglist>(const double tolerance)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxIterations</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>ab907de9231aac2c08ed507ef5e626210</anchor>
+      <arglist>(const unsigned int iterations)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const unsigned int</type>
+      <name>n_</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a865f005ecfec58fcae2f343e1620b2f7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>k_</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a11422165236ecd753545380c892554b1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>tolerance_</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a7e8342420eb0d011c30fa3b5ae32b3dd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>maxIterations_</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>af254fc9398582ff4ced7d4a0aff62cc9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>function</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a08882bb91416db1a604baaa61525d2cc</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>function</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a22e21da4721119a35968a0cf325d8f65</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const =0</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>jacobian</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a7f15239c4bbc8b1b8a36e7579d47346c</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>jacobian</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a4800d1f76f1d56afa1e08dab415d8bda</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>project</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a84203729cf979b398e8e59f92d136ed3</anchor>
+      <arglist>(State *state) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>project</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a27c1ecac7eb642028d58b33d6742160d</anchor>
+      <arglist>(Eigen::Ref&lt; Eigen::VectorXd &gt; x) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>ab19d03c6f8a491a6db1b14ea055a1c62</anchor>
+      <arglist>(const State *state) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>af945e8c94949a4a06a199b567c277be9</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isSatisfied</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a0e4d9def91883487533583390fbd2281</anchor>
+      <arglist>(const State *state) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>isSatisfied</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a777dbc260073df452bf52caab80baef5</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getAmbientDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a6be267c6c9287f4833b053afde940d4a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getManifoldDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a49338ae4a7616d5ee59c043cd86ed912</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getCoDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a7c6917b07e2177eb10ca8da014044f9d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setManifoldDimension</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>ac22291e02a0e3f2063f0a92eac0b70e7</anchor>
+      <arglist>(unsigned int k)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getTolerance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a2634e2534e66268e0c98ac2b2d240fb1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMaxIterations</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>af4b8b270a79ecf467682286ad121ab63</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTolerance</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>a4413eaf904a95e843b85938236a1a2ab</anchor>
+      <arglist>(const double tolerance)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxIterations</name>
+      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
+      <anchor>ab907de9231aac2c08ed507ef5e626210</anchor>
+      <arglist>(const unsigned int iterations)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstraintIntersection</name>
+    <filename>classompl_1_1base_1_1ConstraintIntersection.html</filename>
+    <base>ompl::base::Constraint</base>
+    <member kind="function">
+      <type></type>
+      <name>ConstraintIntersection</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
+      <anchor>a98f4da648c1e823e4d6fc27e8e39151a</anchor>
+      <arglist>(const unsigned int ambientDim, std::initializer_list&lt; Constraint *&gt; constraints)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~ConstraintIntersection</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
+      <anchor>a8fa5516ef2ca967729ef610204800fdb</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>function</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
+      <anchor>a2ba20e752dadd20fc14515add949d026</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>jacobian</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
+      <anchor>af97e4babac66afa17113a16e6cd0a710</anchor>
+      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; Constraint * &gt;</type>
+      <name>constraints_</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
+      <anchor>a25b774cfade430541b3e97b8e820e98d</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstraintObjective</name>
+    <filename>classompl_1_1base_1_1ConstraintObjective.html</filename>
+    <base>ompl::base::OptimizationObjective</base>
+    <member kind="function">
+      <type></type>
+      <name>ConstraintObjective</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintObjective.html</anchorfile>
+      <anchor>af6639fa567631f78e0686aab128974d5</anchor>
+      <arglist>(ConstraintPtr constraint, SpaceInformationPtr si)</arglist>
+    </member>
+    <member kind="function">
+      <type>Cost</type>
+      <name>stateCost</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintObjective.html</anchorfile>
+      <anchor>af15a1b51e3169a78d786f3bf6fa6b4cf</anchor>
+      <arglist>(const State *s) const override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ConstraintPtr</type>
+      <name>constraint_</name>
+      <anchorfile>classompl_1_1base_1_1ConstraintObjective.html</anchorfile>
+      <anchor>ae996661a4d07105573e4fb79bc5581cf</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ConstraintPtr</name>
+    <filename>classompl_1_1base_1_1ConstraintPtr.html</filename>
   </compound>
   <compound kind="class">
     <name>ompl::base::Cost</name>
@@ -6481,8 +8659,8 @@
       <type>void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1MorseProjection.html</anchorfile>
-      <anchor>a177286db7c36f71a4d3b4ec0b0178f5e</anchor>
-      <arglist>(const State *state, EuclideanProjection &amp;projection) const override</arglist>
+      <anchor>afa0f5df07cccbc0d045eb0c25f87863a</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>MorseStateSpace *</type>
@@ -8017,6 +10195,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>printPLY</name>
+      <anchorfile>classompl_1_1base_1_1PlannerData.html</anchorfile>
+      <anchor>ab1784a0fba1b49dc51ce1d308420d686</anchor>
+      <arglist>(std::ostream &amp;out, bool asIs=false) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>extractMinimumSpanningTree</name>
       <anchorfile>classompl_1_1base_1_1PlannerData.html</anchorfile>
       <anchor>aa79c3e5ed946f760d452047ef41fca6d</anchor>
@@ -8413,6 +10598,13 @@
       <anchorfile>classompl_1_1base_1_1PlannerData.html</anchorfile>
       <anchor>acf9fd81c96cf255b77dabeedefff23b3</anchor>
       <arglist>(std::ostream &amp;out=std::cout) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>printPLY</name>
+      <anchorfile>classompl_1_1base_1_1PlannerData.html</anchorfile>
+      <anchor>ab1784a0fba1b49dc51ce1d308420d686</anchor>
+      <arglist>(std::ostream &amp;out, bool asIs=false) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -9651,6 +11843,87 @@
     <filename>classompl_1_1base_1_1ProblemDefinitionPtr.html</filename>
   </compound>
   <compound kind="class">
+    <name>ompl::base::ProjectedStateSampler</name>
+    <filename>classompl_1_1base_1_1ProjectedStateSampler.html</filename>
+    <base>ompl::base::WrapperStateSampler</base>
+    <member kind="function">
+      <type></type>
+      <name>ProjectedStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSampler.html</anchorfile>
+      <anchor>a210f6ff4505a95ab477b4020917d7372</anchor>
+      <arglist>(const ProjectedStateSpace *space, StateSamplerPtr sampler)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniform</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSampler.html</anchorfile>
+      <anchor>a3f6c3f9e00ea5d7307df1c4f284a23b4</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniformNear</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSampler.html</anchorfile>
+      <anchor>afeae8a62192a065a220d469e2a198c7a</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleGaussian</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSampler.html</anchorfile>
+      <anchor>a41255c3cf780f61bf541afbea68429ba</anchor>
+      <arglist>(State *state, const State *mean, double stdDev) override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const ConstraintPtr</type>
+      <name>constraint_</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSampler.html</anchorfile>
+      <anchor>a6305265635ffcc1ca82451d404c436c4</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ProjectedStateSpace</name>
+    <filename>classompl_1_1base_1_1ProjectedStateSpace.html</filename>
+    <base>ompl::base::ConstrainedStateSpace</base>
+    <member kind="function">
+      <type></type>
+      <name>ProjectedStateSpace</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSpace.html</anchorfile>
+      <anchor>abcadcc14f480f2cd402debfed7a6fcac</anchor>
+      <arglist>(const StateSpacePtr &amp;ambientSpace, const ConstraintPtr &amp;constraint)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~ProjectedStateSpace</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSpace.html</anchorfile>
+      <anchor>a698bc4eb23ed8ecd8f4522a35779fa02</anchor>
+      <arglist>() override=default</arglist>
+    </member>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocDefaultStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSpace.html</anchorfile>
+      <anchor>a5e97dcbe21a79f0a9c109b9b57f46a4b</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSpace.html</anchorfile>
+      <anchor>a50e26a24f0242133527f17a3b7daa437</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>discreteGeodesic</name>
+      <anchorfile>classompl_1_1base_1_1ProjectedStateSpace.html</anchorfile>
+      <anchor>ae8be3bbd6fed5fdcf32f57a4d280085e</anchor>
+      <arglist>(const State *from, const State *to, bool interpolate=false, std::vector&lt; State *&gt; *geodesic=nullptr) const override</arglist>
+    </member>
+    <docanchor file="classompl_1_1base_1_1ProjectedStateSpace">gProject</docanchor>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::ProjectionEvaluator</name>
     <filename>classompl_1_1base_1_1ProjectionEvaluator.html</filename>
     <member kind="function">
@@ -9678,8 +11951,8 @@
       <type>virtual void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>a748a31a8f4e5737e93fcd74a430b0baf</anchor>
-      <arglist>(const State *state, EuclideanProjection &amp;projection) const =0</arglist>
+      <anchor>aabaf42c4d51b8da6537261e64e9d6996</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const =0</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
@@ -9790,15 +12063,15 @@
       <type>void</type>
       <name>computeCoordinates</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>a366008f704252336b1929d4158a6d3b6</anchor>
-      <arglist>(const EuclideanProjection &amp;projection, ProjectionCoordinates &amp;coord) const</arglist>
+      <anchor>af0cfc4b596b44abcd9d4c8cac204e917</anchor>
+      <arglist>(const Eigen::Ref&lt; Eigen::VectorXd &gt; &amp;projection, Eigen::Ref&lt; Eigen::VectorXi &gt; coord) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>computeCoordinates</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>a994961233526b5408583218fe604aabb</anchor>
-      <arglist>(const State *state, ProjectionCoordinates &amp;coord) const</arglist>
+      <anchor>aff05d62991d7dc8ba3b68151fb8ce4a4</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXi &gt; coord) const</arglist>
     </member>
     <member kind="function">
       <type>ParamSet &amp;</type>
@@ -9825,8 +12098,8 @@
       <type>virtual void</type>
       <name>printProjection</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>a42acffdad2a14684d4d70b2662c775f7</anchor>
-      <arglist>(const EuclideanProjection &amp;projection, std::ostream &amp;out=std::cout) const</arglist>
+      <anchor>a6ea02f32e6ea9e68951655f14cb714a7</anchor>
+      <arglist>(const Eigen::Ref&lt; Eigen::VectorXd &gt; &amp;projection, std::ostream &amp;out=std::cout) const</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -9893,10 +12166,10 @@
     <name>ompl::base::ProjectionMatrix</name>
     <filename>classompl_1_1base_1_1ProjectionMatrix.html</filename>
     <member kind="typedef">
-      <type>boost::numeric::ublas::matrix&lt; double &gt;</type>
+      <type>Eigen::MatrixXd</type>
       <name>Matrix</name>
       <anchorfile>classompl_1_1base_1_1ProjectionMatrix.html</anchorfile>
-      <anchor>ae68f9cc67896cca8050460d3fad9c803</anchor>
+      <anchor>a25524ec2f0ce20febf1032b6e93d6783</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -9917,8 +12190,8 @@
       <type>void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1ProjectionMatrix.html</anchorfile>
-      <anchor>aa4065cb0b174813fee1f6a1017e522bb</anchor>
-      <arglist>(const double *from, EuclideanProjection &amp;to) const</arglist>
+      <anchor>a2ad28b25b7f2423a6b87b55f9ab99721</anchor>
+      <arglist>(const double *from, Eigen::Ref&lt; Eigen::VectorXd &gt; to) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -10087,8 +12360,8 @@
       <type>void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1RealVectorIdentityProjectionEvaluator.html</anchorfile>
-      <anchor>a0b2091863fb82cf6b9d1f02ab9427ce4</anchor>
-      <arglist>(const State *state, EuclideanProjection &amp;projection) const override</arglist>
+      <anchor>a5f83dd9e4be33f03e90a9e8470e1886b</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -10134,8 +12407,8 @@
       <type>void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1RealVectorLinearProjectionEvaluator.html</anchorfile>
-      <anchor>aedf4f5fb6f8e27e1892d449a16a84d49</anchor>
-      <arglist>(const State *state, EuclideanProjection &amp;projection) const override</arglist>
+      <anchor>a7a7f2b9055002247c3aca4ee178e99a6</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>ProjectionMatrix</type>
@@ -10195,8 +12468,8 @@
       <type>void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1RealVectorOrthogonalProjectionEvaluator.html</anchorfile>
-      <anchor>af468ab440d4031fadd238f8a01f42183</anchor>
-      <arglist>(const State *state, EuclideanProjection &amp;projection) const override</arglist>
+      <anchor>ac6bfca52b57782e41bd044c3222d3da5</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const override</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -11799,18 +14072,18 @@
       <anchor>a704116f449704b30a3e23482a6084fdd</anchor>
       <arglist>(const StateSamplerPtr &amp;sss, const State *start, unsigned int steps, std::vector&lt; State *&gt; &amp;states, bool alloc) const</arglist>
     </member>
-    <member kind="function">
-      <type>bool</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
       <name>checkMotion</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>aafe2cf2ccda0d68e45644c4f61120ead</anchor>
+      <anchor>afd0cb435a39b89d2d5ac1587a1cf9408</anchor>
       <arglist>(const State *s1, const State *s2, std::pair&lt; State *, double &gt; &amp;lastValid) const</arglist>
     </member>
-    <member kind="function">
-      <type>bool</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
       <name>checkMotion</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>aeb522e1204b03381014cfcb527636e79</anchor>
+      <anchor>a026f22cb8f4a6e7648990f11c3acad7c</anchor>
       <arglist>(const State *s1, const State *s2) const</arglist>
     </member>
     <member kind="function">
@@ -11827,8 +14100,8 @@
       <anchor>a5af033ed12faad3cb9fa783c894c4a56</anchor>
       <arglist>(const std::vector&lt; State *&gt; &amp;states, unsigned int count) const</arglist>
     </member>
-    <member kind="function">
-      <type>unsigned int</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual unsigned int</type>
       <name>getMotionStates</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
       <anchor>a561e6fd3fb9cfba7afa8deb3886a929a</anchor>
@@ -12030,18 +14303,18 @@
       <anchor>a704116f449704b30a3e23482a6084fdd</anchor>
       <arglist>(const StateSamplerPtr &amp;sss, const State *start, unsigned int steps, std::vector&lt; State *&gt; &amp;states, bool alloc) const</arglist>
     </member>
-    <member kind="function">
-      <type>bool</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
       <name>checkMotion</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>aafe2cf2ccda0d68e45644c4f61120ead</anchor>
+      <anchor>afd0cb435a39b89d2d5ac1587a1cf9408</anchor>
       <arglist>(const State *s1, const State *s2, std::pair&lt; State *, double &gt; &amp;lastValid) const</arglist>
     </member>
-    <member kind="function">
-      <type>bool</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
       <name>checkMotion</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>aeb522e1204b03381014cfcb527636e79</anchor>
+      <anchor>a026f22cb8f4a6e7648990f11c3acad7c</anchor>
       <arglist>(const State *s1, const State *s2) const</arglist>
     </member>
     <member kind="function">
@@ -12058,8 +14331,8 @@
       <anchor>a5af033ed12faad3cb9fa783c894c4a56</anchor>
       <arglist>(const std::vector&lt; State *&gt; &amp;states, unsigned int count) const</arglist>
     </member>
-    <member kind="function">
-      <type>unsigned int</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual unsigned int</type>
       <name>getMotionStates</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
       <anchor>a561e6fd3fb9cfba7afa8deb3886a929a</anchor>
@@ -12693,29 +14966,29 @@
       <anchor>ac5f1f231db8861ca747b67b5fb3f81eb</anchor>
       <arglist>(const State *state1, const State *state2) const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>setValidSegmentCountFactor</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a9babd71497fc6a6f82fe97f699531ceb</anchor>
+      <anchor>a6a21c7cf2a1812781b693dcd5a3bda4a</anchor>
       <arglist>(unsigned int factor)</arglist>
     </member>
-    <member kind="function">
-      <type>unsigned int</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual unsigned int</type>
       <name>getValidSegmentCountFactor</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a8625bcb46400d25fb40d58bcb3c4da53</anchor>
+      <anchor>ace78ab8debbadfa1922e98c846acf497</anchor>
       <arglist>() const</arglist>
     </member>
-    <member kind="function">
-      <type>double</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
       <name>getLongestValidSegmentLength</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a60054b052ee942683a81850623350068</anchor>
+      <anchor>afd038fe4d298bc181ef27dc1d9004cd9</anchor>
       <arglist>() const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>computeSignature</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
       <anchor>a3f898b0945c804596a30bc5f309e817e</anchor>
@@ -12910,15 +15183,15 @@
       <anchor>a5f04fc5bd81cc8498fdc411b50abc3fa</anchor>
       <arglist>(const State *state, const std::string &amp;name) const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>copyToReals</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
       <anchor>ac5e6b9f828da8d02338d55857ca74fda</anchor>
       <arglist>(std::vector&lt; double &gt; &amp;reals, const State *source) const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>copyFromReals</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
       <anchor>a762ef767d52b8d9df49333ed423ae23e</anchor>
@@ -13246,29 +15519,29 @@
       <anchor>ac5f1f231db8861ca747b67b5fb3f81eb</anchor>
       <arglist>(const State *state1, const State *state2) const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>setValidSegmentCountFactor</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a9babd71497fc6a6f82fe97f699531ceb</anchor>
+      <anchor>a6a21c7cf2a1812781b693dcd5a3bda4a</anchor>
       <arglist>(unsigned int factor)</arglist>
     </member>
-    <member kind="function">
-      <type>unsigned int</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual unsigned int</type>
       <name>getValidSegmentCountFactor</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a8625bcb46400d25fb40d58bcb3c4da53</anchor>
+      <anchor>ace78ab8debbadfa1922e98c846acf497</anchor>
       <arglist>() const</arglist>
     </member>
-    <member kind="function">
-      <type>double</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
       <name>getLongestValidSegmentLength</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a60054b052ee942683a81850623350068</anchor>
+      <anchor>afd038fe4d298bc181ef27dc1d9004cd9</anchor>
       <arglist>() const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>computeSignature</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
       <anchor>a3f898b0945c804596a30bc5f309e817e</anchor>
@@ -13463,15 +15736,15 @@
       <anchor>a5f04fc5bd81cc8498fdc411b50abc3fa</anchor>
       <arglist>(const State *state, const std::string &amp;name) const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>copyToReals</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
       <anchor>ac5e6b9f828da8d02338d55857ca74fda</anchor>
       <arglist>(std::vector&lt; double &gt; &amp;reals, const State *source) const</arglist>
     </member>
-    <member kind="function">
-      <type>void</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
       <name>copyFromReals</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
       <anchor>a762ef767d52b8d9df49333ed423ae23e</anchor>
@@ -14182,8 +16455,8 @@
       <type>void</type>
       <name>project</name>
       <anchorfile>classompl_1_1base_1_1SubspaceProjectionEvaluator.html</anchorfile>
-      <anchor>a88a15e85605baa0bd83857f890ed553e</anchor>
-      <arglist>(const State *state, EuclideanProjection &amp;projection) const override</arglist>
+      <anchor>a3bc64e30bf8e9ce1d696f2cab287b42c</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>unsigned int</type>
@@ -14267,6 +16540,66 @@
       <anchor>abd9c33f3e41a03863aad8567dc6fac49</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::TangentBundleSpaceInformation</name>
+    <filename>classompl_1_1base_1_1TangentBundleSpaceInformation.html</filename>
+    <base>ompl::base::ConstrainedSpaceInformation</base>
+    <member kind="function">
+      <type></type>
+      <name>TangentBundleSpaceInformation</name>
+      <anchorfile>classompl_1_1base_1_1TangentBundleSpaceInformation.html</anchorfile>
+      <anchor>ac16f5b2448064e6f8ebb045ac05d986b</anchor>
+      <arglist>(StateSpacePtr space)</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMotionStates</name>
+      <anchorfile>classompl_1_1base_1_1TangentBundleSpaceInformation.html</anchorfile>
+      <anchor>a1cedbc6980ba20f506e27b92312749eb</anchor>
+      <arglist>(const State *s1, const State *s2, std::vector&lt; State *&gt; &amp;states, unsigned int count, bool endpoints, bool alloc) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>checkMotion</name>
+      <anchorfile>classompl_1_1base_1_1TangentBundleSpaceInformation.html</anchorfile>
+      <anchor>ac7b0046d6d6d17521a5ca25a39242960</anchor>
+      <arglist>(const State *s1, const State *s2, std::pair&lt; State *, double &gt; &amp;lastValid) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::TangentBundleStateSpace</name>
+    <filename>classompl_1_1base_1_1TangentBundleStateSpace.html</filename>
+    <base>ompl::base::AtlasStateSpace</base>
+    <member kind="function">
+      <type>void</type>
+      <name>sanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1TangentBundleStateSpace.html</anchorfile>
+      <anchor>a04d4bda1e17177a4cfe6b6ddbcae96b8</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>discreteGeodesic</name>
+      <anchorfile>classompl_1_1base_1_1TangentBundleStateSpace.html</anchorfile>
+      <anchor>a82848714e60cee6686ebb5d25cfb585a</anchor>
+      <arglist>(const State *from, const State *to, bool interpolate=false, std::vector&lt; State *&gt; *geodesic=nullptr) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>geodesicInterpolate</name>
+      <anchorfile>classompl_1_1base_1_1TangentBundleStateSpace.html</anchorfile>
+      <anchor>aeb00d0543b37057311e91c6dc9a747e9</anchor>
+      <arglist>(const std::vector&lt; State *&gt; &amp;geodesic, double t) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>project</name>
+      <anchorfile>classompl_1_1base_1_1TangentBundleStateSpace.html</anchorfile>
+      <anchor>ad51f0259bd53b0c8db0a37b51c606654</anchor>
+      <arglist>(State *state) const</arglist>
+    </member>
+    <docanchor file="classompl_1_1base_1_1TangentBundleStateSpace">gTangentBundle</docanchor>
   </compound>
   <compound kind="class">
     <name>ompl::base::ThunderRetrieveRepairPtr</name>
@@ -14835,6 +17168,398 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::base::WrapperProjectionEvaluator</name>
+    <filename>classompl_1_1base_1_1WrapperProjectionEvaluator.html</filename>
+    <base>ompl::base::ProjectionEvaluator</base>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1base_1_1WrapperProjectionEvaluator.html</anchorfile>
+      <anchor>ab31ec822cd625bd939b8f8ba2ca89a9d</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getDimension</name>
+      <anchorfile>classompl_1_1base_1_1WrapperProjectionEvaluator.html</anchorfile>
+      <anchor>a138e77a8b1081962d2bbd6070a440f42</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>project</name>
+      <anchorfile>classompl_1_1base_1_1WrapperProjectionEvaluator.html</anchorfile>
+      <anchor>a4ac3bd79149d4adf7c148644c2d5f69d</anchor>
+      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::WrapperStateSampler</name>
+    <filename>classompl_1_1base_1_1WrapperStateSampler.html</filename>
+    <base>ompl::base::StateSampler</base>
+    <member kind="function">
+      <type></type>
+      <name>WrapperStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSampler.html</anchorfile>
+      <anchor>aeb1404828b044aff9932ff0c0da99542</anchor>
+      <arglist>(const StateSpace *space, StateSamplerPtr sampler)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniform</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSampler.html</anchorfile>
+      <anchor>a311163085cd894c9e064b8f642c29b37</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniformNear</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSampler.html</anchorfile>
+      <anchor>a21b5c778e2ffc9058a0f8fc48fb95881</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleGaussian</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSampler.html</anchorfile>
+      <anchor>ade8c9340c29302c18a61177991b83812</anchor>
+      <arglist>(State *state, const State *mean, double stdDev) override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>StateSamplerPtr</type>
+      <name>sampler_</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSampler.html</anchorfile>
+      <anchor>a301df186cebe553b8205c7f07a3dbfe1</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::WrapperStateSpace</name>
+    <filename>classompl_1_1base_1_1WrapperStateSpace.html</filename>
+    <base>ompl::base::StateSpace</base>
+    <class kind="class">ompl::base::WrapperStateSpace::StateType</class>
+    <member kind="function">
+      <type>bool</type>
+      <name>isCompound</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>ab08859ce916d451303bb51e6b00983ea</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isDiscrete</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a86bda085ff9d5c49334f7b293efb9fae</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isHybrid</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>af9a19afb47d685a7a5ad78a97c7c7fd7</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isMetricSpace</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>ac04b15e440ecf2dc6fdc2c4843256918</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasSymmetricDistance</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>ae6fb525e50507a509af4778f5defeb33</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasSymmetricInterpolate</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a1cf5905cf6894cef772bd2d8be6f4e1a</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>const ParamSet &amp;</type>
+      <name>params</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>aa2858f74610b3a340f02e226341d6a88</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLongestValidSegmentFraction</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a19371b5621d56989d89b0c9a68540c4d</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLongestValidSegmentFraction</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a4ec23c478547aee7e46f5c3c57b581ce</anchor>
+      <arglist>(double segmentFraction) override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>validSegmentCount</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a5c0de05e7bf5c51bcc7164c762913d99</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setValidSegmentCountFactor</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a36d553247c1ad87770592f0da6cbf2a9</anchor>
+      <arglist>(unsigned int factor) override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getValidSegmentCountFactor</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a8b9d0b0af3c1f05e7cee76c2ec6f8e41</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLongestValidSegmentLength</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a93b0e2d9bd417b1e1c49b5369e247ba4</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>computeSignature</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a935487a02046908411be1a42a2d2ed80</anchor>
+      <arglist>(std::vector&lt; int &gt; &amp;signature) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getDimension</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>ad4c55cf67596c8dd0861ef6380178f24</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getMaximumExtent</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a437934384ef980c4353a2211806258fc</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getMeasure</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a2b0360ea61bb45ab9c492426cbba27d4</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>enforceBounds</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a5bb6986ee8ff457f432d746d871d3fa6</anchor>
+      <arglist>(State *state) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>satisfiesBounds</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a272774ebdb45f2666d0b9c6bde7718ca</anchor>
+      <arglist>(const State *state) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>copyState</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a5cee21956f8dcd825c45cb502f3bfb50</anchor>
+      <arglist>(State *destination, const State *source) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>ada6102cb4e47614f270b160b0ba70402</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getSerializationLength</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a14dbe362f6467a1b909c44c39b427478</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>serialize</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a84cf620115f1e17832548042d6f569a2</anchor>
+      <arglist>(void *serialization, const State *state) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>deserialize</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a01e07dc899ec470df42a7141badcf44e</anchor>
+      <arglist>(State *state, const void *serialization) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>equalStates</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>ae476aa3d9985edf80ed0178cfc7f090b</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolate</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a030bafb01be0e4bd751d499c9f788dd6</anchor>
+      <arglist>(const State *from, const State *to, double t, State *state) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocDefaultStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>acb6fffe4b0f57c4e8e1f6efc95e408c0</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a065d25987b6287515f3b88391a265db7</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>freeState</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a7e23b962c847a2707314bb9d44cd91f7</anchor>
+      <arglist>(State *state) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double *</type>
+      <name>getValueAddressAtIndex</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a9b27f4b6f21ddb60520f1fe72fa50b52</anchor>
+      <arglist>(State *state, unsigned int index) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>copyToReals</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a0eeef771c7f122185f9fc0670a213d31</anchor>
+      <arglist>(std::vector&lt; double &gt; &amp;reals, const State *source) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>copyFromReals</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a3480123701c89dd38f28001a92c0122d</anchor>
+      <arglist>(State *destination, const std::vector&lt; double &gt; &amp;reals) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>registerProjections</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>ab456c667cbaa6f79cb1f6873215a8140</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>printState</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a9068795ace372e914d7efabf4656481a</anchor>
+      <arglist>(const State *state, std::ostream &amp;out=std::cout) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>printSettings</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>aa8a57aa1e8589afa444720ae59b86048</anchor>
+      <arglist>(std::ostream &amp;out) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>printProjections</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>af31457e5dac3540b56b2cf3603d1ccd1</anchor>
+      <arglist>(std::ostream &amp;out) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a596ddfdd73bdee22e69485899a82ea07</anchor>
+      <arglist>(double zero, double eps, unsigned int flags) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sanityChecks</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a53c0b03012edc93952ea53d8152cd4fe</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocSubspaceStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a32333b7cd0360428dd1bab2436d5e8fe</anchor>
+      <arglist>(const StateSpace *subspace) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>computeLocations</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a132191ea6f5349c89f0f1862c9fbb203</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
+      <anchor>a36cec500fbec7250b9aa6c91ff3f8892</anchor>
+      <arglist>() override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::WrapperStateSpace::StateType</name>
+    <filename>classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html</filename>
+    <base>ompl::base::State</base>
+    <member kind="function">
+      <type></type>
+      <name>StateType</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a73e603ce2a987c1518ebca0d115cc16c</anchor>
+      <arglist>(State *state)</arglist>
+    </member>
+    <member kind="function">
+      <type>const State *</type>
+      <name>getState</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a7b2dac06f05dd15507197e89a46e7c0f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>getState</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a961511edc9cdf1cc2e762a169731713f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>State *</type>
+      <name>state_</name>
+      <anchorfile>classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a9cc4bc0d6cb4f0f304e0f246b13d2954</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>ompl::BinaryHeap</name>
     <filename>classompl_1_1BinaryHeap.html</filename>
     <templarg>_T</templarg>
@@ -15167,15 +17892,22 @@
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1CompoundControl.html</anchorfile>
-      <anchor>a32c3d95197699001063ddbc1a5de1bef</anchor>
-      <arglist>(const unsigned int index) const</arglist>
+      <anchor>a4c4eb708c75618fcb1d1424b0caaabbe</anchor>
+      <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1CompoundControl.html</anchorfile>
-      <anchor>ad6e8e8437f3a44dc8685181b34260be7</anchor>
-      <arglist>(const unsigned int index)</arglist>
+      <anchor>ae2ac9926add8272ac1ceff098910cac8</anchor>
+      <arglist>(unsigned int index)</arglist>
+    </member>
+    <member kind="function">
+      <type>Control *</type>
+      <name>operator[]</name>
+      <anchorfile>classompl_1_1control_1_1CompoundControl.html</anchorfile>
+      <anchor>ad76d3078c278f76412be86a7620f33c4</anchor>
+      <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="variable">
       <type>Control **</type>
@@ -18497,8 +21229,8 @@
       <type>void</type>
       <name>addMotion</name>
       <anchorfile>classompl_1_1control_1_1PDST.html</anchorfile>
-      <anchor>a2158a0fc794229ffdda2cb24d5c0e202</anchor>
-      <arglist>(Motion *motion, Cell *cell, base::State *, base::State *, base::EuclideanProjection &amp;, base::EuclideanProjection &amp;)</arglist>
+      <anchor>ad74e6e5dd5f36f59fdb27b76e7f017f0</anchor>
+      <arglist>(Motion *motion, Cell *cell, base::State *, base::State *, Eigen::Ref&lt; Eigen::VectorXd &gt;, Eigen::Ref&lt; Eigen::VectorXd &gt;)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -18614,8 +21346,8 @@
       <type>Cell *</type>
       <name>stab</name>
       <anchorfile>structompl_1_1control_1_1PDST_1_1Cell.html</anchorfile>
-      <anchor>ad9fbd2f6db05243ab9883a211efd653f</anchor>
-      <arglist>(const base::EuclideanProjection &amp;projection) const</arglist>
+      <anchor>a882491b29a07fce84c6b68f0cb45dec6</anchor>
+      <arglist>(const Eigen::Ref&lt; Eigen::VectorXd &gt; projection) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -23168,27 +25900,6 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>std::shared_ptr&lt; CostHelper &gt;</type>
-      <name>CostHelperPtr</name>
-      <anchorfile>classompl_1_1geometric_1_1BITstar.html</anchorfile>
-      <anchor>a7f00cb9addc9d74b7189aec381f038fa</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::shared_ptr&lt; ImplicitGraph &gt;</type>
-      <name>ImplicitGraphPtr</name>
-      <anchorfile>classompl_1_1geometric_1_1BITstar.html</anchorfile>
-      <anchor>ac01fce0666dc2ba34cf8ee084913ae62</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::shared_ptr&lt; SearchQueue &gt;</type>
-      <name>SearchQueuePtr</name>
-      <anchorfile>classompl_1_1geometric_1_1BITstar.html</anchorfile>
-      <anchor>a5a3eb7712e427445aecf215e4e7f95fa</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
       <type>std::function&lt; std::string()&gt;</type>
       <name>NameFunc</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar.html</anchorfile>
@@ -23202,11 +25913,11 @@
       <anchor>af6d4e84d731cf2a0961043598864d65b</anchor>
       <arglist>(const base::SpaceInformationPtr &amp;si, const std::string &amp;name=&quot;BITstar&quot;)</arglist>
     </member>
-    <member kind="function">
-      <type></type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
       <name>~BITstar</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar.html</anchorfile>
-      <anchor>a53b6d4bfca1d330f19969c41b9817544</anchor>
+      <anchor>a93557ffb26e1ab7601f61ac81f443caa</anchor>
       <arglist>() override=default</arglist>
     </member>
     <member kind="function">
@@ -23466,8 +26177,8 @@
       <type>void</type>
       <name>setup</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1CostHelper.html</anchorfile>
-      <anchor>aec36cf1460c80ff9cd092aa7129d04dc</anchor>
-      <arglist>(const ompl::base::OptimizationObjectivePtr &amp;opt, const ImplicitGraphPtr &amp;graph)</arglist>
+      <anchor>a9dfb02e423331a7fae695a9c649ce1a0</anchor>
+      <arglist>(const ompl::base::OptimizationObjectivePtr &amp;opt, ImplicitGraph *graph)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -23513,16 +26224,16 @@
     </member>
     <member kind="function">
       <type>ompl::base::Cost</type>
-      <name>lowerBoundHeuristicTarget</name>
+      <name>lowerBoundHeuristicToTarget</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1CostHelper.html</anchorfile>
-      <anchor>aaffd5d4c93401eaebc92c71e21a09eab</anchor>
+      <anchor>a6382d6d8a2101ba7a9ffeeaaded69e7e</anchor>
       <arglist>(const VertexConstPtrPair &amp;edgePair) const</arglist>
     </member>
     <member kind="function">
       <type>ompl::base::Cost</type>
-      <name>currentHeuristicTarget</name>
+      <name>currentHeuristicToTarget</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1CostHelper.html</anchorfile>
-      <anchor>a2bb14ebe77b1a5e95c3fc6e38ff3a2bd</anchor>
+      <anchor>a8ccfb995b99dd940bcba8954ac2e7015</anchor>
       <arglist>(const VertexConstPtrPair &amp;edgePair) const</arglist>
     </member>
     <member kind="function">
@@ -23637,8 +26348,8 @@
       <type>void</type>
       <name>setup</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html</anchorfile>
-      <anchor>a63d6bb1d8f59740872e0fb1a1124ace5</anchor>
-      <arglist>(const ompl::base::SpaceInformationPtr &amp;si, const ompl::base::ProblemDefinitionPtr &amp;pdef, const CostHelperPtr &amp;costHelper, const SearchQueuePtr &amp;searchQueue, const ompl::base::Planner *plannerPtr, ompl::base::PlannerInputStates &amp;pis)</arglist>
+      <anchor>ae03e64905324c0c9ed33739cab9c6a9b</anchor>
+      <arglist>(const ompl::base::SpaceInformationPtr &amp;si, const ompl::base::ProblemDefinitionPtr &amp;pdef, CostHelper *costHelper, SearchQueue *searchQueue, const ompl::base::Planner *plannerPtr, ompl::base::PlannerInputStates &amp;pis)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -23646,6 +26357,13 @@
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html</anchorfile>
       <anchor>a131fbf7c6940f668b1b90269048dc5e9</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasAStart</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html</anchorfile>
+      <anchor>a8f5c9e4193559adad091325c384b6d72</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -23961,6 +26679,27 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
+      <type>std::function&lt; bool(const CostDouble &amp;, const CostDouble &amp;)&gt;</type>
+      <name>VertexQueueSortFunc</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
+      <anchor>ad3f6081faba117e82e2e8a4af05673e3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::multimap&lt; CostDouble, VertexPtr, VertexQueueSortFunc &gt;</type>
+      <name>VertexQueueAsMMap</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
+      <anchor>a04e29d7351ec486e926a310be6debe0a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>VertexQueueAsMMap::iterator</type>
+      <name>VertexQueueIter</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
+      <anchor>abba99e13beb1397eb26c41444fb47a40</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
       <type>std::array&lt; ompl::base::Cost, 3u &gt;</type>
       <name>CostTriple</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
@@ -23968,17 +26707,38 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>std::function&lt; double(const VertexConstPtr &amp;, const VertexConstPtr &amp;)&gt;</type>
-      <name>DistanceFunc</name>
+      <type>std::pair&lt; CostTriple, VertexPtrPair &gt;</type>
+      <name>CostTripleAndVertexPtrPair</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
-      <anchor>a1eb6a88135807e47862390fdea674a42</anchor>
+      <anchor>af4c334f1bd84e8ad2e0245722a0b43bf</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>std::function&lt; unsigned int(const VertexPtr &amp;, VertexPtrVector *)&gt;</type>
-      <name>NeighbourhoodFunc</name>
+      <type>std::function&lt; bool(const CostTripleAndVertexPtrPair &amp;, const CostTripleAndVertexPtrPair &amp;)&gt;</type>
+      <name>EdgeQueueSortFunc</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
-      <anchor>ab90fcce10253f7f2363f07a16d0e71c9</anchor>
+      <anchor>a25d19c08051f88cee54cea419bb1755c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>ompl::BinaryHeap&lt; CostTripleAndVertexPtrPair, EdgeQueueSortFunc &gt;</type>
+      <name>EdgeQueueAsPairBinHeap</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
+      <anchor>a162d313daa8d23f27be575773d62c13d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>EdgeQueueAsPairBinHeap::Element *</type>
+      <name>EdgeQueueElemPtr</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
+      <anchor>a8c6aadb8cca80b5068570060ca21f0f7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::vector&lt; EdgeQueueElemPtr &gt;</type>
+      <name>EdgeQueueElemPtrVector</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
+      <anchor>a41f4acd2e6c9b3ea9935c088425a808f</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -23992,8 +26752,8 @@
       <type>void</type>
       <name>setup</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
-      <anchor>aee9aa078824533a782f27e92d94e1576</anchor>
-      <arglist>(const CostHelperPtr &amp;costHelpPtr, const ImplicitGraphPtr &amp;graphPtr)</arglist>
+      <anchor>a5340aeabe3c460d99a0763ac0f465e58</anchor>
+      <arglist>(CostHelper *costHelpPtr, ImplicitGraph *graphPtr)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24118,8 +26878,8 @@
       <type>std::pair&lt; unsigned int, unsigned int &gt;</type>
       <name>prune</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html</anchorfile>
-      <anchor>ab736e99d2fc7e3e4c3e7c2763f1c0d01</anchor>
-      <arglist>(const VertexConstPtr &amp;goalVertexPtr)</arglist>
+      <anchor>a140c1214097ce46a79de275acccc1fbe</anchor>
+      <arglist>(const VertexConstPtr &amp;vertex)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -24312,11 +27072,11 @@
       <type></type>
       <name>Vertex</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
-      <anchor>af3c8cb60b65e80bf48f9e381a070f266</anchor>
-      <arglist>(ompl::base::SpaceInformationPtr si, ompl::base::OptimizationObjectivePtr opt, bool root=false)</arglist>
+      <anchor>acc6b4d46293fe40725092567b24ad912</anchor>
+      <arglist>(ompl::base::SpaceInformationPtr si, const CostHelper *const costHelpPtr, bool root=false)</arglist>
     </member>
-    <member kind="function">
-      <type></type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual</type>
       <name>~Vertex</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
       <anchor>a2ea0eb96d9a4127dde59e836283fd856</anchor>
@@ -24389,15 +27149,15 @@
       <type>void</type>
       <name>addParent</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
-      <anchor>ac5219162f447d5c21dcede8fa1254731</anchor>
-      <arglist>(const VertexPtr &amp;newParent, const ompl::base::Cost &amp;edgeInCost, bool updateChildCosts=true)</arglist>
+      <anchor>a5b8054fe5c7d3d45d1a29cfd8e380125</anchor>
+      <arglist>(const VertexPtr &amp;newParent, const ompl::base::Cost &amp;edgeInCost, bool updateChildCosts)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>removeParent</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
-      <anchor>a54db328d90aced270a8e9c29556c36e8</anchor>
-      <arglist>(bool updateChildCosts=true)</arglist>
+      <anchor>a5ea64248f9da57fa9413a7be0915bc14</anchor>
+      <arglist>(bool updateChildCosts)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -24424,15 +27184,15 @@
       <type>void</type>
       <name>addChild</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
-      <anchor>a94c1e8805036ca92b29e1e80a487f2cb</anchor>
-      <arglist>(const VertexPtr &amp;newChild, bool updateChildCosts=true)</arglist>
+      <anchor>a885aacdb2369414d8544b2fe8c129067</anchor>
+      <arglist>(const VertexPtr &amp;newChild)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>removeChild</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
-      <anchor>a2528c8298de7264f4c6b317e1a5c7ac3</anchor>
-      <arglist>(const VertexPtr &amp;oldChild, bool updateChildCosts=true)</arglist>
+      <anchor>a06f123d3ddbca8930432ae0c0608ae25</anchor>
+      <arglist>(const VertexPtr &amp;oldChild)</arglist>
     </member>
     <member kind="function">
       <type>ompl::base::Cost</type>
@@ -24531,6 +27291,146 @@
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
       <anchor>a789938595253a13e87e3b193db162e0d</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>SearchQueue::VertexQueueIter</type>
+      <name>getVertexQueueIter</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a5a9382d68ff1d4d7522897c7abd6ede1</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setVertexQueueIter</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>ada3bb947a6bd8e9a82e394d017b38a8b</anchor>
+      <arglist>(const SearchQueue::VertexQueueIter &amp;newPtr)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clearVertexQueueIter</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>afa06c13d37ad60d98b30913c875c344e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasVertexQueueEntry</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>ab8a6d8bc335a37cd645231eebfdc661d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addIncomingEdgeQueuePtr</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a2596fb0b400d9f0dd68d6be279ec3802</anchor>
+      <arglist>(const SearchQueue::EdgeQueueElemPtr &amp;newInPtr, unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rmIncomingEdgeQueuePtr</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a24c1e8f49d53195d9bd58f8bba1a6ddc</anchor>
+      <arglist>(const SearchQueue::EdgeQueueElemPtr &amp;elemToDelete, unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rmIncomingEdgeQueuePtrByIter</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a274d2982416b625181536091b6b3493b</anchor>
+      <arglist>(const SearchQueue::EdgeQueueElemPtrVector::const_iterator &amp;constIterToDelete, unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clearIncomingEdgeQueuePtrs</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>ad563a2927797246953d02a99f8fe22a8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>BITstar::SearchQueue::EdgeQueueElemPtrVector::const_iterator</type>
+      <name>incomingEdgeQueuePtrsBeginConst</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>ad597783d772c72a287528d0492337681</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>BITstar::SearchQueue::EdgeQueueElemPtrVector::const_iterator</type>
+      <name>incomingEdgeQueuePtrsEndConst</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>abe0ecd538cdb697987f75976c290a6a0</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getNumIncomingEdgeQueuePtrs</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a4ab6fd8a51d484038a1b6eace4470f27</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasIncomingEdgeQueueEntries</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a028fdc90e594291c779dd4f896149900</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addOutgoingEdgeQueuePtr</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a74be12bb7ee05ccf3d36df7645b047ea</anchor>
+      <arglist>(const SearchQueue::EdgeQueueElemPtr &amp;newOutPtr, unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rmOutgoingEdgeQueuePtr</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>ad2415c9465077966ce9f9f43a7c08a0f</anchor>
+      <arglist>(const SearchQueue::EdgeQueueElemPtr &amp;elemToDelete, unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>rmOutgoingEdgeQueuePtrByIter</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>aae3760bc7badd8c76ec4b9c50d76ffd4</anchor>
+      <arglist>(const SearchQueue::EdgeQueueElemPtrVector::const_iterator &amp;constIterToDelete, unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clearOutgoingEdgeQueuePtrs</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a18b8609ed5a7732362c70212c9f23129</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>BITstar::SearchQueue::EdgeQueueElemPtrVector::const_iterator</type>
+      <name>outgoingEdgeQueuePtrsBeginConst</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>ab5e4160f76ec4efb7093d9061c6cd662</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>BITstar::SearchQueue::EdgeQueueElemPtrVector::const_iterator</type>
+      <name>outgoingEdgeQueuePtrsEndConst</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>afa825bc582a3241cd6a57f3ad7998727</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getNumOutgoingEdgeQueuePtrs</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>aa0432da1a337ba0c8d80981d0e70cfd3</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasOutgoingEdgeQueueEntries</name>
+      <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
+      <anchor>a5775216b042e7ac108a357e98d81211a</anchor>
+      <arglist>(unsigned int vertexQueueResetNum)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -28158,6 +31058,13 @@
       <arglist>(base::SpaceInformationPtr si)</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>PathHybridization</name>
+      <anchorfile>classompl_1_1geometric_1_1PathHybridization.html</anchorfile>
+      <anchor>ab83f1d569fd6a9e4b0ecc3dcb916891e</anchor>
+      <arglist>(base::SpaceInformationPtr si, base::OptimizationObjectivePtr obj)</arglist>
+    </member>
+    <member kind="function">
       <type>const base::PathPtr &amp;</type>
       <name>getHybridPath</name>
       <anchorfile>classompl_1_1geometric_1_1PathHybridization.html</anchorfile>
@@ -28189,8 +31096,8 @@
       <type>void</type>
       <name>matchPaths</name>
       <anchorfile>classompl_1_1geometric_1_1PathHybridization.html</anchorfile>
-      <anchor>a16d9d80b7e6d9f9ce17f3e5b8c5e1051</anchor>
-      <arglist>(const geometric::PathGeometric &amp;p, const geometric::PathGeometric &amp;q, double gapCost, std::vector&lt; int &gt; &amp;indexP, std::vector&lt; int &gt; &amp;indexQ) const</arglist>
+      <anchor>ad440c6adfc1c82b073a1431bafe081a4</anchor>
+      <arglist>(const geometric::PathGeometric &amp;p, const geometric::PathGeometric &amp;q, double gapValue, std::vector&lt; int &gt; &amp;indexP, std::vector&lt; int &gt; &amp;indexQ) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -28225,8 +31132,8 @@
       <type></type>
       <name>PathSimplifier</name>
       <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
-      <anchor>ae467b8a6e614d0b2b20f8b3c088e8ec4</anchor>
-      <arglist>(base::SpaceInformationPtr si, const base::GoalPtr &amp;goal=ompl::base::GoalPtr())</arglist>
+      <anchor>ae67337290a5d1a12bcfb79131ee6265a</anchor>
+      <arglist>(base::SpaceInformationPtr si, const base::GoalPtr &amp;goal=ompl::base::GoalPtr(), base::OptimizationObjectivePtr obj=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -28244,6 +31151,13 @@
     </member>
     <member kind="function">
       <type>bool</type>
+      <name>perturbPath</name>
+      <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
+      <anchor>a3006b09d80ec5543b0b9b81e94046df2</anchor>
+      <arglist>(PathGeometric &amp;path, double stepSize, unsigned int maxSteps=0, unsigned int maxEmptySteps=0, double snapToVertex=0.005)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
       <name>collapseCloseVertices</name>
       <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
       <anchor>a2761f8b4e41e01db0b4ecf11ee16d5bd</anchor>
@@ -28257,25 +31171,25 @@
       <arglist>(PathGeometric &amp;path, unsigned int maxSteps=5, double minChange=std::numeric_limits&lt; double &gt;::epsilon())</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
+      <type>bool</type>
       <name>simplifyMax</name>
       <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
-      <anchor>a7dc99833c0ee64ddd5ab8e9a73c0fdc0</anchor>
+      <anchor>a6c6491343075124bf79b67c9f99e794d</anchor>
       <arglist>(PathGeometric &amp;path)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
+      <type>bool</type>
       <name>simplify</name>
       <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
-      <anchor>a9834b1fda038c543ec4c8b1dcffa601b</anchor>
-      <arglist>(PathGeometric &amp;path, double maxTime)</arglist>
+      <anchor>a5e590d766299b22363cfb1831a274e40</anchor>
+      <arglist>(PathGeometric &amp;path, double maxTime, bool atLeastOnce=true)</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
+      <type>bool</type>
       <name>simplify</name>
       <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
-      <anchor>a070e4bed32452edab6ec74178f6d5540</anchor>
-      <arglist>(PathGeometric &amp;path, const base::PlannerTerminationCondition &amp;ptc)</arglist>
+      <anchor>ad1f88047c6ab5a83fda68620145a2e4d</anchor>
+      <arglist>(PathGeometric &amp;path, const base::PlannerTerminationCondition &amp;ptc, bool atLeastOnce=true)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -28317,6 +31231,13 @@
       <name>gsr_</name>
       <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
       <anchor>afde59be0e054bff41c2abd6204ba6174</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>base::OptimizationObjectivePtr</type>
+      <name>obj_</name>
+      <anchorfile>classompl_1_1geometric_1_1PathSimplifier.html</anchorfile>
+      <anchor>a8fd3eea0398d579e244d9822f73e7b8b</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -28412,8 +31333,8 @@
       <type>void</type>
       <name>addMotion</name>
       <anchorfile>classompl_1_1geometric_1_1PDST.html</anchorfile>
-      <anchor>a79df73de5dcaa54eeeed9b75642a6d2e</anchor>
-      <arglist>(Motion *motion, Cell *bsp, base::State *, base::EuclideanProjection &amp;)</arglist>
+      <anchor>a8c04e6c08cc4fb3bc7241e307812284a</anchor>
+      <arglist>(Motion *motion, Cell *bsp, base::State *, Eigen::Ref&lt; Eigen::VectorXd &gt;)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -28508,8 +31429,8 @@
       <type>Cell *</type>
       <name>stab</name>
       <anchorfile>structompl_1_1geometric_1_1PDST_1_1Cell.html</anchorfile>
-      <anchor>a2fca1e19a7b1087d069e35b57ea26281</anchor>
-      <arglist>(const ompl::base::EuclideanProjection &amp;projection) const</arglist>
+      <anchor>a3fb64e792b31a967c391f2d28aca601c</anchor>
+      <arglist>(const Eigen::Ref&lt; Eigen::VectorXd &gt; &amp;projection) const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -28882,6 +31803,13 @@
       <name>maybeConstructSolution</name>
       <anchorfile>classompl_1_1geometric_1_1PRM.html</anchorfile>
       <anchor>a819cc1db3a6b03f356a11aa0151f2fe4</anchor>
+      <arglist>(const std::vector&lt; Vertex &gt; &amp;starts, const std::vector&lt; Vertex &gt; &amp;goals, base::PathPtr &amp;solution)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>ompl::base::Cost</type>
+      <name>constructApproximateSolution</name>
+      <anchorfile>classompl_1_1geometric_1_1PRM.html</anchorfile>
+      <anchor>a04a23031128d6b0d8511f6f3507aa27b</anchor>
       <arglist>(const std::vector&lt; Vertex &gt; &amp;starts, const std::vector&lt; Vertex &gt; &amp;goals, base::PathPtr &amp;solution)</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -29553,8 +32481,8 @@
       <type></type>
       <name>RRT</name>
       <anchorfile>classompl_1_1geometric_1_1RRT.html</anchorfile>
-      <anchor>ad5d527eb6ae532aaa2ebdac6d743f8f7</anchor>
-      <arglist>(const base::SpaceInformationPtr &amp;si)</arglist>
+      <anchor>a9fb8d770cf42e851793a6fb9c4f11f97</anchor>
+      <arglist>(const base::SpaceInformationPtr &amp;si, bool addIntermediateStates=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -29590,6 +32518,20 @@
       <anchorfile>classompl_1_1geometric_1_1RRT.html</anchorfile>
       <anchor>a4f8f06f0d7ba397c6db2f9cf218c7ae9</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>getIntermediateStates</name>
+      <anchorfile>classompl_1_1geometric_1_1RRT.html</anchorfile>
+      <anchor>a70b298017d6705634caae8cd9fe06b17</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setIntermediateStates</name>
+      <anchorfile>classompl_1_1geometric_1_1RRT.html</anchorfile>
+      <anchor>a321336b1f6c4747c0f14144aac3c669c</anchor>
+      <arglist>(bool addIntermediateStates)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -29662,6 +32604,13 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>addIntermediateStates_</name>
+      <anchorfile>classompl_1_1geometric_1_1RRT.html</anchorfile>
+      <anchor>a2235d276b94163f04eaab4154ab3db78</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
       <type>RNG</type>
       <name>rng_</name>
       <anchorfile>classompl_1_1geometric_1_1RRT.html</anchorfile>
@@ -29712,8 +32661,8 @@
       <type></type>
       <name>RRTConnect</name>
       <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
-      <anchor>a918795ad317b8cee40184c3e289f8d51</anchor>
-      <arglist>(const base::SpaceInformationPtr &amp;si)</arglist>
+      <anchor>aea8a84e73c86ff415931a29be34228f5</anchor>
+      <arglist>(const base::SpaceInformationPtr &amp;si, bool addIntermediateStates=false)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -29735,6 +32684,20 @@
       <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
       <anchor>a77a55c5947c8ddbf1e5064337c22d20c</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>getIntermediateStates</name>
+      <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
+      <anchor>a7d7a2f5333b9be68f61462abf6a5c24a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setIntermediateStates</name>
+      <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
+      <anchor>a8dc8ba4b7976bdf399b6110366397343</anchor>
+      <arglist>(bool addIntermediateStates)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -29864,6 +32827,13 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>addIntermediateStates_</name>
+      <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
+      <anchor>a70804c799f32c48dd5d40e7f66000a0a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
       <type>RNG</type>
       <name>rng_</name>
       <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
@@ -29875,6 +32845,13 @@
       <name>connectionPoint_</name>
       <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
       <anchor>a07527c14eb0e9e9c2eaf3133728de501</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>distanceBetweenTrees_</name>
+      <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
+      <anchor>ab82fb331140caa1d5c9c929db8df1c08</anchor>
       <arglist></arglist>
     </member>
     <docanchor file="classompl_1_1geometric_1_1RRTConnect">gRRTC</docanchor>
@@ -29895,8 +32872,8 @@
       <type>void</type>
       <name>setEpsilon</name>
       <anchorfile>classompl_1_1geometric_1_1RRTsharp.html</anchorfile>
-      <anchor>a1c78c05d485a2528da926f0ffb10963e</anchor>
-      <arglist>(double epsilon)</arglist>
+      <anchor>afe7f0fa7a794a41c969456a8aee75d23</anchor>
+      <arglist>(double)</arglist>
     </member>
     <docanchor file="classompl_1_1geometric_1_1RRTsharp">gRRTsharp</docanchor>
   </compound>
@@ -30335,9 +33312,9 @@
     </member>
     <member kind="variable" protection="protected">
       <type>Motion *</type>
-      <name>lastGoalMotion_</name>
+      <name>bestGoalMotion_</name>
       <anchorfile>classompl_1_1geometric_1_1RRTstar.html</anchorfile>
-      <anchor>ab980c4b7c4bbdd577b17e1514c3749e8</anchor>
+      <anchor>aca14b46659d5968a8c8861e068846163</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -35192,10 +38169,10 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>boost::numeric::ublas::matrix&lt; double &gt;</type>
+      <type>Eigen::MatrixXd</type>
       <name>Matrix</name>
       <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>abf3c62fe960aba6ba0d4609fa0c015ed</anchor>
+      <anchor>afaab15f295d63a4546a552647fa23c1e</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -35243,10 +38220,10 @@
     <class kind="struct">ompl::Grid::HashFunCoordPtr</class>
     <class kind="struct">ompl::Grid::SortComponents</class>
     <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
+      <type>Eigen::VectorXi</type>
       <name>Coord</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8fd2ab3bb168c7e39dc6b65d3f75ba4b</anchor>
+      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -36254,7 +39231,7 @@
   <compound kind="class">
     <name>ompl::NearestNeighborsGNAT</name>
     <filename>classompl_1_1NearestNeighborsGNAT.html</filename>
-    <templarg></templarg>
+    <templarg>_T</templarg>
     <base>ompl::NearestNeighbors</base>
     <class kind="class">ompl::NearestNeighborsGNAT::Node</class>
     <member kind="function">
@@ -37509,15 +40486,29 @@
       <type>void</type>
       <name>uniformNormalVector</name>
       <anchorfile>classompl_1_1RNG.html</anchorfile>
-      <anchor>aa5394020e887f9f836bf01ae00c7a08f</anchor>
-      <arglist>(unsigned int n, double value[])</arglist>
+      <anchor>a62089151d89c30b1037b84d278bfbf2c</anchor>
+      <arglist>(std::vector&lt; double &gt; &amp;v)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>uniformInBall</name>
       <anchorfile>classompl_1_1RNG.html</anchorfile>
-      <anchor>a18270e83630f7710ea0aad2298e26f08</anchor>
-      <arglist>(double r, unsigned int n, double value[])</arglist>
+      <anchor>a71e2707a3685787fcc6c236b61497169</anchor>
+      <arglist>(double r, std::vector&lt; double &gt; &amp;v)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>uniformProlateHyperspheroidSurface</name>
+      <anchorfile>classompl_1_1RNG.html</anchorfile>
+      <anchor>aa3c1ab3770a7a7d46e7cb2326f6bd4cb</anchor>
+      <arglist>(const std::shared_ptr&lt; const ProlateHyperspheroid &gt; &amp;phsPtr, double value[])</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>uniformProlateHyperspheroid</name>
+      <anchorfile>classompl_1_1RNG.html</anchorfile>
+      <anchor>a848b4d46ba9103398687f3b5b9ecdc4c</anchor>
+      <arglist>(const std::shared_ptr&lt; const ProlateHyperspheroid &gt; &amp;phsPtr, double value[])</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static void</type>
@@ -39419,6 +42410,108 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>PDF&lt; ompl::base::AtlasChart *&gt;</name>
+    <filename>classompl_1_1PDF.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>PDF</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
+      <arglist>()=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>PDF</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
+      <arglist>(const std::vector&lt; ompl::base::AtlasChart * &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~PDF</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const std::vector&lt; Element *&gt; &amp;</type>
+      <name>getElements</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Element *</type>
+      <name>add</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
+      <arglist>(const ompl::base::AtlasChart * &amp;d, const double w)</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::AtlasChart * &amp;</type>
+      <name>sample</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
+      <arglist>(double r) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>update</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
+      <arglist>(Element *elem, const double w)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getWeight</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
+      <arglist>(const Element *elem) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>remove</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
+      <arglist>(Element *elem)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::size_t</type>
+      <name>size</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const ompl::base::AtlasChart * &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
+      <arglist>(unsigned int i) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>empty</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>printTree</name>
+      <anchorfile>classompl_1_1PDF.html</anchorfile>
+      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
+      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>PDF&lt; ompl::control::LTLPlanner::Motion *&gt;</name>
     <filename>classompl_1_1PDF.html</filename>
     <member kind="function">
@@ -39838,6 +42931,10 @@
     <name>SamplerSelector&lt; ompl::base::ValidStateSampler &gt;</name>
     <filename>structompl_1_1base_1_1SamplerSelector.html</filename>
   </compound>
+  <compound kind="struct">
+    <name>Segment</name>
+    <filename>structSegment.html</filename>
+  </compound>
   <compound kind="class">
     <name>StateSamplerArray&lt; ompl::base::StateSampler &gt;</name>
     <filename>classompl_1_1base_1_1StateSamplerArray.html</filename>
@@ -40087,11 +43184,23 @@
     <name>ompl::base</name>
     <filename>namespaceompl_1_1base.html</filename>
     <class kind="class">ompl::base::AllValidStateValidityChecker</class>
+    <class kind="class">ompl::base::AtlasChart</class>
+    <class kind="class">ompl::base::AtlasStateSampler</class>
+    <class kind="class">ompl::base::AtlasStateSpace</class>
+    <class kind="class">ompl::base::BridgeTestValidStateSampler</class>
     <class kind="class">ompl::base::CForestStateSampler</class>
     <class kind="class">ompl::base::CForestStateSpaceWrapper</class>
     <class kind="class">ompl::base::CompoundState</class>
     <class kind="class">ompl::base::CompoundStateSampler</class>
     <class kind="class">ompl::base::CompoundStateSpace</class>
+    <class kind="class">ompl::base::ConstrainedMotionValidator</class>
+    <class kind="class">ompl::base::ConstrainedSpaceInformation</class>
+    <class kind="class">ompl::base::ConstrainedStateSpace</class>
+    <class kind="class">ompl::base::ConstrainedValidStateSampler</class>
+    <class kind="class">ompl::base::Constraint</class>
+    <class kind="class">ompl::base::ConstraintIntersection</class>
+    <class kind="class">ompl::base::ConstraintObjective</class>
+    <class kind="class">ompl::base::ConstraintPtr</class>
     <class kind="class">ompl::base::Cost</class>
     <class kind="class">ompl::base::DiscreteMotionValidator</class>
     <class kind="class">ompl::base::DiscreteStateSampler</class>
@@ -40150,6 +43259,8 @@
     <class kind="class">ompl::base::PrecomputedStateSampler</class>
     <class kind="class">ompl::base::ProblemDefinition</class>
     <class kind="class">ompl::base::ProblemDefinitionPtr</class>
+    <class kind="class">ompl::base::ProjectedStateSampler</class>
+    <class kind="class">ompl::base::ProjectedStateSpace</class>
     <class kind="class">ompl::base::ProjectionEvaluator</class>
     <class kind="class">ompl::base::ProjectionEvaluatorPtr</class>
     <class kind="class">ompl::base::ProjectionMatrix</class>
@@ -40191,6 +43302,8 @@
     <class kind="struct">ompl::base::StateValidityCheckerSpecs</class>
     <class kind="class">ompl::base::SubspaceProjectionEvaluator</class>
     <class kind="class">ompl::base::SubspaceStateSampler</class>
+    <class kind="class">ompl::base::TangentBundleSpaceInformation</class>
+    <class kind="class">ompl::base::TangentBundleStateSpace</class>
     <class kind="class">ompl::base::ThunderRetrieveRepairPtr</class>
     <class kind="class">ompl::base::TimeStateSampler</class>
     <class kind="class">ompl::base::TimeStateSpace</class>
@@ -40201,6 +43314,9 @@
     <class kind="class">ompl::base::ValidStateSamplerPtr</class>
     <class kind="class">ompl::base::VFMechanicalWorkOptimizationObjective</class>
     <class kind="class">ompl::base::VFUpstreamCriterionOptimizationObjective</class>
+    <class kind="class">ompl::base::WrapperProjectionEvaluator</class>
+    <class kind="class">ompl::base::WrapperStateSampler</class>
+    <class kind="class">ompl::base::WrapperStateSpace</class>
     <member kind="typedef">
       <type>std::function&lt; bool(const GoalLazySamples *, State *)&gt;</type>
       <name>GoalSamplingFn</name>
@@ -40234,20 +43350,6 @@
       <name>ReportIntermediateSolutionFn</name>
       <anchorfile>namespaceompl_1_1base.html</anchorfile>
       <anchor>a2df95b5bc681e5b33d05a6544967a82f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; int &gt;</type>
-      <name>ProjectionCoordinates</name>
-      <anchorfile>namespaceompl_1_1base.html</anchorfile>
-      <anchor>a01cfb1e28af37bb139841342cb4afb0c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>boost::numeric::ublas::vector&lt; double &gt;</type>
-      <name>EuclideanProjection</name>
-      <anchorfile>namespaceompl_1_1base.html</anchorfile>
-      <anchor>aa83f2e90d56884b236b1e400d116b10b</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -40787,13 +43889,6 @@
     <class kind="class">ompl::geometric::TRRT</class>
     <class kind="class">ompl::geometric::VFRRT</class>
     <member kind="function">
-      <type>std::pair&lt; T, U &gt;</type>
-      <name>operator+</name>
-      <anchorfile>namespaceompl_1_1geometric.html</anchorfile>
-      <anchor>ad121325b27cc085517a717240de26b77</anchor>
-      <arglist>(const std::pair&lt; T, U &gt; &amp;lhs, const std::pair&lt; T, U &gt; &amp;rhs)</arglist>
-    </member>
-    <member kind="function">
       <type>OMPL_DEPRECATED base::PlannerPtr</type>
       <name>getDefaultPlanner</name>
       <anchorfile>namespaceompl_1_1geometric.html</anchorfile>
@@ -40836,6 +43931,20 @@
   <compound kind="namespace">
     <name>ompl::magic</name>
     <filename>namespaceompl_1_1magic.html</filename>
+    <member kind="variable" static="yes">
+      <type>static const double</type>
+      <name>CONSTRAINT_PROJECTION_TOLERANCE</name>
+      <anchorfile>namespaceompl_1_1magic.html</anchorfile>
+      <anchor>acf7675c13db11a313003955552b8708c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static const unsigned int</type>
+      <name>CONSTRAINT_PROJECTION_MAX_ITERATIONS</name>
+      <anchorfile>namespaceompl_1_1magic.html</anchorfile>
+      <anchor>ae5ab55799bfff2e34d89258bfb0a7536</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="variable" static="yes">
       <type>static const unsigned int</type>
       <name>DEFAULT_NEAREST_NEIGHBORS_LAZY</name>
@@ -41259,147 +44368,157 @@
     <filename>md_doc_markdown_demos</filename>
   </compound>
   <compound kind="page">
-    <name>md_doc_markdown_download</name>
+    <name>download</name>
     <title>Download</title>
-    <filename>md_doc_markdown_download</filename>
-    <docanchor file="md_doc_markdown_download" title="Repositories">download_repos</docanchor>
+    <filename>download</filename>
+    <docanchor file="download" title="Repositories">download_repos</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_doc_markdown_gui</name>
+    <name>gui</name>
     <title>Graphical User Interface to OMPL</title>
-    <filename>md_doc_markdown_gui</filename>
-    <docanchor file="md_doc_markdown_gui" title="Defining a motion planning problem">gui_define</docanchor>
-    <docanchor file="md_doc_markdown_gui" title="Setting up the planner">gui_planners</docanchor>
-    <docanchor file="md_doc_markdown_gui" title="Defining a bounding box for the robot">gui_bounding_box</docanchor>
-    <docanchor file="md_doc_markdown_gui" title="Visualizing solution paths">gui_paths</docanchor>
+    <filename>gui</filename>
+    <docanchor file="gui" title="Defining a motion planning problem">gui_define</docanchor>
+    <docanchor file="gui" title="Setting up the planner">gui_planners</docanchor>
+    <docanchor file="gui" title="Defining a bounding box for the robot">gui_bounding_box</docanchor>
+    <docanchor file="gui" title="Visualizing solution paths">gui_paths</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_doc_markdown_installation</name>
+    <name>installation</name>
     <title>Installation</title>
-    <filename>md_doc_markdown_installation</filename>
+    <filename>installation</filename>
   </compound>
   <compound kind="page">
-    <name>md_doc_markdown_license</name>
+    <name>license</name>
     <title>License</title>
-    <filename>md_doc_markdown_license</filename>
-    <docanchor file="md_doc_markdown_license" title="BSD License">bsdlicense</docanchor>
-    <docanchor file="md_doc_markdown_license" title="Rice University Software Distribution License">ricelicense</docanchor>
+    <filename>license</filename>
+    <docanchor file="license" title="BSD License">bsdlicense</docanchor>
+    <docanchor file="license" title="Rice University Software Distribution License">ricelicense</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_doc_markdown_releaseNotes</name>
+    <name>releaseNotes</name>
     <title>Release Notes</title>
-    <filename>md_doc_markdown_releaseNotes</filename>
+    <filename>releaseNotes</filename>
   </compound>
   <compound kind="page">
-    <name>md_doc_markdown_webapp</name>
+    <name>webapp</name>
     <title>OMPL Web App</title>
-    <filename>md_doc_markdown_webapp</filename>
-    <docanchor file="md_doc_markdown_webapp" title="Usage">webapp_usage</docanchor>
-    <docanchor file="md_doc_markdown_webapp" title="Deploying the OMPL Web App Locally">webapp_deploy</docanchor>
-    <docanchor file="md_doc_markdown_webapp" title="JavaScript Libraries Used by the OMPL Web App">webapp_licenses</docanchor>
+    <filename>webapp</filename>
+    <docanchor file="webapp" title="Usage">webapp_usage</docanchor>
+    <docanchor file="webapp" title="Deploying the OMPL Web App Locally">webapp_deploy</docanchor>
+    <docanchor file="webapp" title="JavaScript Libraries Used by the OMPL Web App">webapp_licenses</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_acknowledgements</name>
+    <name>acknowledgements</name>
     <title>Acknowledgements</title>
-    <filename>md_ompl_doc_markdown_acknowledgements</filename>
+    <filename>acknowledgements</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_api_overview</name>
+    <name>api_overview</name>
     <title>API Overview</title>
-    <filename>md_ompl_doc_markdown_api_overview</filename>
+    <filename>api_overview</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_benchmark</name>
+    <name>benchmark</name>
     <title>How to Benchmark Planners</title>
-    <filename>md_ompl_doc_markdown_benchmark</filename>
-    <docanchor file="md_ompl_doc_markdown_benchmark" title="Create a benchmark configuration file">benchmark_config</docanchor>
-    <docanchor file="md_ompl_doc_markdown_benchmark" title="Writing benchmarking code">benchmark_code</docanchor>
-    <docanchor file="md_ompl_doc_markdown_benchmark" title="Processing the benchmarking log file">benchmark_log</docanchor>
-    <docanchor file="md_ompl_doc_markdown_benchmark" title="Sample benchmark results">benchmark_sample_results</docanchor>
-    <docanchor file="md_ompl_doc_markdown_benchmark" title="The benchmark logfile format">benchmark_logfile_format</docanchor>
-    <docanchor file="md_ompl_doc_markdown_benchmark" title="The benchmark database schema">benchmark_database</docanchor>
+    <filename>benchmark</filename>
+    <docanchor file="benchmark" title="Create a benchmark configuration file">benchmark_config</docanchor>
+    <docanchor file="benchmark" title="Writing benchmarking code ">benchmark_code</docanchor>
+    <docanchor file="benchmark" title="Processing the benchmarking log file">benchmark_log</docanchor>
+    <docanchor file="benchmark" title="Sample benchmark results">benchmark_sample_results</docanchor>
+    <docanchor file="benchmark" title="The benchmark logfile format">benchmark_logfile_format</docanchor>
+    <docanchor file="benchmark" title="The benchmark database schema">benchmark_database</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_buildOptions</name>
+    <name>buildOptions</name>
     <title>Build Options</title>
-    <filename>md_ompl_doc_markdown_buildOptions</filename>
+    <filename>buildOptions</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_buildSystem</name>
+    <name>buildSystem</name>
     <title>Integrate Your Own Code with OMPL&apos;s Build System</title>
-    <filename>md_ompl_doc_markdown_buildSystem</filename>
+    <filename>buildSystem</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_CForest</name>
+    <name>CForest</name>
     <title>CForest Parallelization Framework</title>
-    <filename>md_ompl_doc_markdown_CForest</filename>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="CForest in OMPL">cf_ompl</docanchor>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="Main differences with the paper version">cf_diff</docanchor>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="Example">cf_example</docanchor>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="Results">cf_results</docanchor>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="Advanced information">cf_advanced</docanchor>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="Design and implementation details">cf_implementation</docanchor>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="Limitations">cf_limitations</docanchor>
-    <docanchor file="md_ompl_doc_markdown_CForest" title="Make your planner CForest-compatible">cf_compatible</docanchor>
+    <filename>CForest</filename>
+    <docanchor file="CForest" title="CForest in OMPL">cf_ompl</docanchor>
+    <docanchor file="CForest" title="Main differences with the paper version">cf_diff</docanchor>
+    <docanchor file="CForest" title="Example">cf_example</docanchor>
+    <docanchor file="CForest" title="Results">cf_results</docanchor>
+    <docanchor file="CForest" title="Advanced information">cf_advanced</docanchor>
+    <docanchor file="CForest" title="Design and implementation details">cf_implementation</docanchor>
+    <docanchor file="CForest" title="Limitations">cf_limitations</docanchor>
+    <docanchor file="CForest" title="Make your planner CForest-compatible">cf_compatible</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_citations</name>
+    <name>citations</name>
     <title>Citations</title>
-    <filename>md_ompl_doc_markdown_citations</filename>
+    <filename>citations</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_contact</name>
+    <name>constrainedPlanning</name>
+    <title>Constrained Planning</title>
+    <filename>constrainedPlanning</filename>
+  </compound>
+  <compound kind="page">
+    <name>constrainedPlanningTutorial</name>
+    <title>Constrained Planning Tutorial</title>
+    <filename>constrainedPlanningTutorial</filename>
+  </compound>
+  <compound kind="page">
+    <name>contact</name>
     <title>Contact Us</title>
-    <filename>md_ompl_doc_markdown_contact</filename>
+    <filename>contact</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_contrib</name>
+    <name>contrib</name>
     <title>Submit Your Contribution</title>
-    <filename>md_ompl_doc_markdown_contrib</filename>
+    <filename>contrib</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_demos</name>
+    <name>demos</name>
     <title>Demos</title>
-    <filename>md_ompl_doc_markdown_demos</filename>
+    <filename>demos</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_developers</name>
+    <name>developers</name>
     <title>Developers</title>
-    <filename>md_ompl_doc_markdown_developers</filename>
+    <filename>developers</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_education</name>
+    <name>education</name>
     <title>Teaching Module on Motion Planning</title>
-    <filename>md_ompl_doc_markdown_education</filename>
+    <filename>education</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_FAQ</name>
+    <name>FAQ</name>
     <title>Frequently Asked Questions</title>
-    <filename>md_ompl_doc_markdown_FAQ</filename>
+    <filename>FAQ</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_gallery</name>
+    <name>gallery</name>
     <title>Gallery</title>
-    <filename>md_ompl_doc_markdown_gallery</filename>
-    <docanchor file="md_ompl_doc_markdown_gallery" title="Planning Using OMPL.app">gallery_omplapp</docanchor>
-    <docanchor file="md_ompl_doc_markdown_gallery" title="Class Project from COMP 450 on Path Optimization">gallery_comp450</docanchor>
+    <filename>gallery</filename>
+    <docanchor file="gallery" title="Planning Using OMPL.app">gallery_omplapp</docanchor>
+    <docanchor file="gallery" title="Class Project from COMP 450 on Path Optimization">gallery_comp450</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_genericPlanning</name>
+    <name>genericPlanning</name>
     <title>Generic Instructions for Setting Up a Planning Context</title>
-    <filename>md_ompl_doc_markdown_genericPlanning</filename>
+    <filename>genericPlanning</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_geometricPlanningSE3</name>
+    <name>geometricPlanningSE3</name>
     <title>Geometric Planning for a Rigid Body in 3D</title>
-    <filename>md_ompl_doc_markdown_geometricPlanningSE3</filename>
-    <docanchor file="md_ompl_doc_markdown_geometricPlanningSE3" title="Using the ompl::geometric::SimpleSetup Class">geometricSimpleSetup</docanchor>
-    <docanchor file="md_ompl_doc_markdown_geometricPlanningSE3" title="Without ompl::geometric::SimpleSetup">withoutGeometricSimpleSetup</docanchor>
+    <filename>geometricPlanningSE3</filename>
+    <docanchor file="geometricPlanningSE3" title="Using the ompl::geometric::SimpleSetup Class">geometricSimpleSetup</docanchor>
+    <docanchor file="geometricPlanningSE3" title="Without ompl::geometric::SimpleSetup">withoutGeometricSimpleSetup</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_goalRepresentation</name>
+    <name>goalRepresentation</name>
     <title>Representing Goals in OMPL</title>
-    <filename>md_ompl_doc_markdown_goalRepresentation</filename>
+    <filename>goalRepresentation</filename>
   </compound>
   <compound kind="page">
     <name>implementingStateSpaces</name>
@@ -41407,53 +44526,54 @@
     <filename>implementingStateSpaces</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_installPyPlusPlus</name>
+    <name>installPyPlusPlus</name>
     <title>Installation of Py++</title>
-    <filename>md_ompl_doc_markdown_installPyPlusPlus</filename>
+    <filename>installPyPlusPlus</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_integration</name>
+    <name>integration</name>
     <title>Integration of OMPL in Other Systems</title>
-    <filename>md_ompl_doc_markdown_integration</filename>
-    <docanchor file="md_ompl_doc_markdown_integration" title="MoveIt!">integration_moveit</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="OpenRAVE">integration_openrave</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="V-REP">integration_vrep</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="MORSE">integration_morse</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="The Kautham Project">integration_kautham</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="VEROSIM">integration_verosim</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="AIKIDO">integration_aikido</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="Robotics Library">integration_rl</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="SIMS">integration_sims</docanchor>
-    <docanchor file="md_ompl_doc_markdown_integration" title="OMPL.app">integration_omplapp</docanchor>
+    <filename>integration</filename>
+    <docanchor file="integration" title="MoveIt!">integration_moveit</docanchor>
+    <docanchor file="integration" title="OpenRAVE">integration_openrave</docanchor>
+    <docanchor file="integration" title="V-REP">integration_vrep</docanchor>
+    <docanchor file="integration" title="MORSE">integration_morse</docanchor>
+    <docanchor file="integration" title="The Kautham Project">integration_kautham</docanchor>
+    <docanchor file="integration" title="VEROSIM">integration_verosim</docanchor>
+    <docanchor file="integration" title="AIKIDO">integration_aikido</docanchor>
+    <docanchor file="integration" title="EXOTica">integration_exotica</docanchor>
+    <docanchor file="integration" title="Robotics Library">integration_rl</docanchor>
+    <docanchor file="integration" title="SIMS">integration_sims</docanchor>
+    <docanchor file="integration" title="OMPL.app">integration_omplapp</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_mailingLists</name>
+    <name>mailingLists</name>
     <title>Mailing Lists</title>
-    <filename>md_ompl_doc_markdown_mailingLists</filename>
+    <filename>mailingLists</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_morse</name>
+    <name>morse</name>
     <title>Using OMPL with Morse</title>
-    <filename>md_ompl_doc_markdown_morse</filename>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Installation">morseInstallation</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Quickstart">morseQuickstart</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Setting up an environment">morseSettingUpAnEnvironment</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Adding robot(s)">morseAddingRobots</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Defining the goal">morseGoal</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Bounds configuration and planning">morsePlanning</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Playback and animation saving">morsePlayback</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Rendering animation videos">morseRendering</docanchor>
-    <docanchor file="md_ompl_doc_markdown_morse" title="Advanced tweaks">morseAdvancedTweaks</docanchor>
+    <filename>morse</filename>
+    <docanchor file="morse" title="Installation">morseInstallation</docanchor>
+    <docanchor file="morse" title="Quickstart">morseQuickstart</docanchor>
+    <docanchor file="morse" title="Setting up an environment">morseSettingUpAnEnvironment</docanchor>
+    <docanchor file="morse" title="Adding robot(s)">morseAddingRobots</docanchor>
+    <docanchor file="morse" title="Defining the goal">morseGoal</docanchor>
+    <docanchor file="morse" title="Bounds configuration and planning">morsePlanning</docanchor>
+    <docanchor file="morse" title="Playback and animation saving">morsePlayback</docanchor>
+    <docanchor file="morse" title="Rendering animation videos">morseRendering</docanchor>
+    <docanchor file="morse" title="Advanced tweaks">morseAdvancedTweaks</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_newPlanner</name>
+    <name>newPlanner</name>
     <title>Implementing a New Motion Planner</title>
-    <filename>md_ompl_doc_markdown_newPlanner</filename>
+    <filename>newPlanner</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_odeint</name>
+    <name>odeint</name>
     <title>Using the ODESolver for Planning with Controls</title>
-    <filename>md_ompl_doc_markdown_odeint</filename>
+    <filename>odeint</filename>
   </compound>
   <compound kind="page">
     <name>optimalPlanning</name>
@@ -41461,72 +44581,72 @@
     <filename>optimalPlanning</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_optimalPlanningTutorial</name>
+    <name>optimalPlanningTutorial</name>
     <title>Optimal Planning Tutorial</title>
-    <filename>md_ompl_doc_markdown_optimalPlanningTutorial</filename>
+    <filename>optimalPlanningTutorial</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_optimizationObjectivesTutorial</name>
+    <name>optimizationObjectivesTutorial</name>
     <title>Optimization Objectives Tutorial</title>
-    <filename>md_ompl_doc_markdown_optimizationObjectivesTutorial</filename>
+    <filename>optimizationObjectivesTutorial</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_pathVisualization</name>
+    <name>pathVisualization</name>
     <title>Path Visualization</title>
-    <filename>md_ompl_doc_markdown_pathVisualization</filename>
+    <filename>pathVisualization</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_plannerarena</name>
+    <name>plannerarena</name>
     <title>OMPL Planner Arena</title>
-    <filename>md_ompl_doc_markdown_plannerarena</filename>
+    <filename>plannerarena</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_planners</name>
+    <name>planners</name>
     <title>Available Planners</title>
-    <filename>md_ompl_doc_markdown_planners</filename>
-    <docanchor file="md_ompl_doc_markdown_planners" title="Geometric planners">geometric_planners</docanchor>
-    <docanchor file="md_ompl_doc_markdown_planners" title="Control-based planners">control_planners</docanchor>
+    <filename>planners</filename>
+    <docanchor file="planners" title="Geometric planners">geometric_planners</docanchor>
+    <docanchor file="planners" title="Control-based planners">control_planners</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_projections</name>
+    <name>projections</name>
     <title>Use of Projections in OMPL</title>
-    <filename>md_ompl_doc_markdown_projections</filename>
+    <filename>projections</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_pybindingsPlanner</name>
+    <name>pybindingsPlanner</name>
     <title>Creating Python Bindings for a New Planner</title>
-    <filename>md_ompl_doc_markdown_pybindingsPlanner</filename>
-    <docanchor file="md_ompl_doc_markdown_pybindingsPlanner" title="Updating the Python binding generation code">pybinding</docanchor>
-    <docanchor file="md_ompl_doc_markdown_pybindingsPlanner" title="Planner parameters">params</docanchor>
+    <filename>pybindingsPlanner</filename>
+    <docanchor file="pybindingsPlanner" title="Updating the Python binding generation code">pybinding</docanchor>
+    <docanchor file="pybindingsPlanner" title="Planner parameters">params</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_python</name>
+    <name>python</name>
     <title>Python Bindings</title>
-    <filename>md_ompl_doc_markdown_python</filename>
-    <docanchor file="md_ompl_doc_markdown_python" title="Usage of the Python bindings: Good practices">py_good_practices</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="Important differences between C++ and Python">cpp_py_diffs</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="Differences between the C++ and Python API&apos;s">py_api_diffs</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="A simple example">py_example</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="Creating std::function objects from Python functions">pyfunction_to_stdfunction</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="(Re)generating the Python bindings">updating_python_bindings</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="Code generation">binding_code_generation</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="Compiling the Python modules">compile_bindings</docanchor>
-    <docanchor file="md_ompl_doc_markdown_python" title="Forcing CMake to do The Right Thing">bindings_cmake</docanchor>
+    <filename>python</filename>
+    <docanchor file="python" title="Usage of the Python bindings: Good practices">py_good_practices</docanchor>
+    <docanchor file="python" title="Important differences between C++ and Python">cpp_py_diffs</docanchor>
+    <docanchor file="python" title="Differences between the C++ and Python API&apos;s">py_api_diffs</docanchor>
+    <docanchor file="python" title="A simple example">py_example</docanchor>
+    <docanchor file="python" title="Creating std::function objects from Python functions">pyfunction_to_stdfunction</docanchor>
+    <docanchor file="python" title="(Re)generating the Python bindings">updating_python_bindings</docanchor>
+    <docanchor file="python" title="Code generation">binding_code_generation</docanchor>
+    <docanchor file="python" title="Compiling the Python modules">compile_bindings</docanchor>
+    <docanchor file="python" title="Forcing CMake to do The Right Thing">bindings_cmake</docanchor>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_register</name>
+    <name>register</name>
     <title>Registration</title>
-    <filename>md_ompl_doc_markdown_register</filename>
+    <filename>register</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_samplers</name>
+    <name>samplers</name>
     <title>Available State Samplers</title>
-    <filename>md_ompl_doc_markdown_samplers</filename>
+    <filename>samplers</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_spaces</name>
+    <name>spaces</name>
     <title>Available Spaces</title>
-    <filename>md_ompl_doc_markdown_spaces</filename>
+    <filename>spaces</filename>
   </compound>
   <compound kind="page">
     <name>stateValidation</name>
@@ -41534,9 +44654,9 @@
     <filename>stateValidation</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_styleGuide</name>
+    <name>styleGuide</name>
     <title>OMPL Style Guide</title>
-    <filename>md_ompl_doc_markdown_styleGuide</filename>
+    <filename>styleGuide</filename>
   </compound>
   <compound kind="page">
     <name>thank-you</name>
@@ -41544,22 +44664,22 @@
     <filename>thank-you</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_thirdparty</name>
+    <name>thirdparty</name>
     <title>Contributions</title>
-    <filename>md_ompl_doc_markdown_thirdparty</filename>
+    <filename>thirdparty</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_tutorials</name>
+    <name>tutorials</name>
     <title>Tutorials</title>
-    <filename>md_ompl_doc_markdown_tutorials</filename>
+    <filename>tutorials</filename>
   </compound>
   <compound kind="page">
-    <name>md_ompl_doc_markdown_workingWithStates</name>
+    <name>workingWithStates</name>
     <title>Working with States and State Spaces</title>
-    <filename>md_ompl_doc_markdown_workingWithStates</filename>
-    <docanchor file="md_ompl_doc_markdown_workingWithStates" title="Allocating memory for states">stateAlloc</docanchor>
-    <docanchor file="md_ompl_doc_markdown_workingWithStates" title="Working with states">stateOps</docanchor>
-    <docanchor file="md_ompl_doc_markdown_workingWithStates" title="Operators for States and State Spaces">stateAndSpaceOperatorsCopy</docanchor>
+    <filename>workingWithStates</filename>
+    <docanchor file="workingWithStates" title="Allocating memory for states">stateAlloc</docanchor>
+    <docanchor file="workingWithStates" title="Working with states">stateOps</docanchor>
+    <docanchor file="workingWithStates" title="Operators for States and State Spaces">stateAndSpaceOperatorsCopy</docanchor>
   </compound>
   <compound kind="page">
     <name>index</name>

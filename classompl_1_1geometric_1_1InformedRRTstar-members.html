@@ -5,21 +5,33 @@
   <title>Member List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -48,6 +60,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -103,37 +116,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -178,47 +178,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>bestCost</b>() const (defined in <a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a>)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4056a3fb20f8076902fa194c1f711632">bestCost_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>bestCostProperty</b>() const (defined in <a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a>)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a290bc15f4f774f138c78d58732ac2ed7">calculateRewiringLowerBounds</a>()</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab416900477cf4499139c01f35663dffb">checkValidity</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2a471b9e2bc52e89850587463ecf4201">clear</a>() override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const GetterType &amp;getter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a3f9da0d41951502ea4df1184ef5a99a6">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a7cb1f7e0fbf61224324231de92d320cd">delayCC_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ae5e0cdc240f9b4c906b6b9085df35009">distanceFunction</a>(const Motion *a, const Motion *b) const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2046b5ca17c6030dac16cad855621a7d">freeMemory</a>()</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a0157358e54e9403bf94e71f437600ac8">getAdmissibleCostToCome</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ac665d982176c0f8dea30d728aaf63d3e">getBatchSize</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2e12e6739ae3c20e77593633dd3bf503">getDelayCC</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#af2014918272a5d72d4e02c6d94ef8085">getFocusSearch</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a18714baa05ca6692b838adcbc55072a5">getGoalBias</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a0c56e9f9de04abd05ceaaff12e99cf9d">getInformedSampling</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a023068fff9fa2555b3754da10c7af554">getKNearest</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a9bdea814a817637bd8e6f959c65ceaf9">getName</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4ef3f6a5f138bff5c8198455a25cf5d9">getNeighbors</a>(Motion *motion, std::vector&lt; Motion *&gt; &amp;nbh) const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a85ac0a5d340ff80940871f4775dbcd18">getNewStateRejection</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a8f2d8b1f78e9ba03c9933377d7f4eeb5">getNumSamplingAttempts</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9b5dabb231097421aea9ead67c50e833">getOrderedSampling</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab1325c7e35b64344a500dab65bf0c10a">getPlannerData</a>(base::PlannerData &amp;data) const override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab9d07911bf90d2a011daac10221ca2c9">getPrunedMeasure</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9a14039c25f011e025ee020909aad4a6">getPruneThreshold</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afd6077ba880d081fa71c10e9c149e1dd">getRange</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ad0216931ca7664df66b58424505a2924">getRewireFactor</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a56973f32a97bf0fb3cfaf99f11810aea">getSampleRejection</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a7ebc11cf89b36261c01dd0592a350b88">getSpaceInformation</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a845e46cdde4baeda91a5f008ae15ce3a">getSpecs</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb6bd9b83b44ddefb8db2ca12100af06">getTreePruning</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ae20251dbc5dbc0f9bdfb4c72141fbe13">goalBias_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9be4107ecbea43b0ebdd81049a208fa6">goalMotions_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1InformedRRTstar.html#a989e59137c9ca2dfd2d2953d02d9e6b6">InformedRRTstar</a>(const base::SpaceInformationPtr &amp;si)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1InformedRRTstar.html">ompl::geometric::InformedRRTstar</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a19ce83eeaab6c6f08295aee9173338f3">infSampler_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a00d2469147e0a4f38cee18c97f19dbfc">isSetup</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb8a6117217d2525b34bd0f00c1e9675">iterations_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4ba7ccb3455c354e6b14075d62d8793e">k_rrt_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a42191512b485fa0701e7a0c82e8972ac">keepCondition</a>(const Motion *motion, const base::Cost &amp;threshold) const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab980c4b7c4bbdd577b17e1514c3749e8">lastGoalMotion_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#aca14b46659d5968a8c8861e068846163">bestGoalMotion_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a290bc15f4f774f138c78d58732ac2ed7">calculateRewiringLowerBounds</a>()</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#ab416900477cf4499139c01f35663dffb">checkValidity</a>()</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2a471b9e2bc52e89850587463ecf4201">clear</a>() override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const GetterType &amp;getter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a3f9da0d41951502ea4df1184ef5a99a6">declareParam</a>(const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a7cb1f7e0fbf61224324231de92d320cd">delayCC_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ae5e0cdc240f9b4c906b6b9085df35009">distanceFunction</a>(const Motion *a, const Motion *b) const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2046b5ca17c6030dac16cad855621a7d">freeMemory</a>()</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a0157358e54e9403bf94e71f437600ac8">getAdmissibleCostToCome</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ac665d982176c0f8dea30d728aaf63d3e">getBatchSize</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a2e12e6739ae3c20e77593633dd3bf503">getDelayCC</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#af2014918272a5d72d4e02c6d94ef8085">getFocusSearch</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a18714baa05ca6692b838adcbc55072a5">getGoalBias</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a0c56e9f9de04abd05ceaaff12e99cf9d">getInformedSampling</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a023068fff9fa2555b3754da10c7af554">getKNearest</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a9bdea814a817637bd8e6f959c65ceaf9">getName</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4ef3f6a5f138bff5c8198455a25cf5d9">getNeighbors</a>(Motion *motion, std::vector&lt; Motion *&gt; &amp;nbh) const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a85ac0a5d340ff80940871f4775dbcd18">getNewStateRejection</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a8f2d8b1f78e9ba03c9933377d7f4eeb5">getNumSamplingAttempts</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9b5dabb231097421aea9ead67c50e833">getOrderedSampling</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab1325c7e35b64344a500dab65bf0c10a">getPlannerData</a>(base::PlannerData &amp;data) const override</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ab9d07911bf90d2a011daac10221ca2c9">getPrunedMeasure</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9a14039c25f011e025ee020909aad4a6">getPruneThreshold</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afd6077ba880d081fa71c10e9c149e1dd">getRange</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ad0216931ca7664df66b58424505a2924">getRewireFactor</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a56973f32a97bf0fb3cfaf99f11810aea">getSampleRejection</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a7ebc11cf89b36261c01dd0592a350b88">getSpaceInformation</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a845e46cdde4baeda91a5f008ae15ce3a">getSpecs</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb6bd9b83b44ddefb8db2ca12100af06">getTreePruning</a>() const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ae20251dbc5dbc0f9bdfb4c72141fbe13">goalBias_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9be4107ecbea43b0ebdd81049a208fa6">goalMotions_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1InformedRRTstar.html#a989e59137c9ca2dfd2d2953d02d9e6b6">InformedRRTstar</a>(const base::SpaceInformationPtr &amp;si)</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1InformedRRTstar.html">ompl::geometric::InformedRRTstar</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a19ce83eeaab6c6f08295aee9173338f3">infSampler_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a00d2469147e0a4f38cee18c97f19dbfc">isSetup</a>() const</td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#afb8a6117217d2525b34bd0f00c1e9675">iterations_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a4ba7ccb3455c354e6b14075d62d8793e">k_rrt_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a42191512b485fa0701e7a0c82e8972ac">keepCondition</a>(const Motion *motion, const base::Cost &amp;threshold) const</td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#ac63a1848f74d9b61604d012d4e9cc87d">maxDistance_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td><td class="entry"><a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html#a9fee363f009cf1f41399c6bb3cc01b04">nn_</a></td><td class="entry"><a class="el" href="classompl_1_1geometric_1_1RRTstar.html">ompl::geometric::RRTstar</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
@@ -307,10 +307,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

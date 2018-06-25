@@ -5,21 +5,33 @@
   <title>ompl/base/StateStorage.h Source File</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -47,6 +59,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -102,37 +115,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -183,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1base_1_1StateStorageWithMetadata_html_ab55dc6dc746107d0b2f7b639ac7d272a"><div class="ttname"><a href="classompl_1_1base_1_1StateStorageWithMetadata.html#ab55dc6dc746107d0b2f7b639ac7d272a">ompl::base::StateStorageWithMetadata::addState</a></div><div class="ttdeci">virtual void addState(const State *state, const M &amp;metadata)</div><div class="ttdoc">Add a state to the set of states maintained by this storage structure. The state is copied to interna...</div><div class="ttdef"><b>Definition:</b> <a href="StateStorage_8h_source.html#l00237">StateStorage.h:237</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateStorageWithMetadata_html_a2823f12dc99173a08109600958b04efc"><div class="ttname"><a href="classompl_1_1base_1_1StateStorageWithMetadata.html#a2823f12dc99173a08109600958b04efc">ompl::base::StateStorageWithMetadata::getMetadata</a></div><div class="ttdeci">M &amp; getMetadata(unsigned int index)</div><div class="ttdoc">Get write access to the metadata of a state at a particular index. </div><div class="ttdef"><b>Definition:</b> <a href="StateStorage_8h_source.html#l00257">StateStorage.h:257</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateStorage_html_afbb00541c40cf715e2625c3150f428dc"><div class="ttname"><a href="classompl_1_1base_1_1StateStorage.html#afbb00541c40cf715e2625c3150f428dc">ompl::base::StateStorage::sort</a></div><div class="ttdeci">void sort(const std::function&lt; bool(const State *, const State *)&gt; &amp;op)</div><div class="ttdoc">Sort the states according to the less-equal operator op. Metadata is NOT sorted; if metadata was adde...</div><div class="ttdef"><b>Definition:</b> <a href="StateStorage_8cpp_source.html#l00230">StateStorage.cpp:230</a></div></div>
-<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00042">Cost.h:42</a></div></div>
+<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedSpaceInformation_8h_source.html#l00052">ConstrainedSpaceInformation.h:52</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateStorage_html_addf755567a0adaac81baa169e2fec359"><div class="ttname"><a href="classompl_1_1base_1_1StateStorage.html#addf755567a0adaac81baa169e2fec359">ompl::base::StateStorage::StateStorage</a></div><div class="ttdeci">StateStorage(StateSpacePtr space)</div><div class="ttdoc">The state space to store states for is specified as argument. </div><div class="ttdef"><b>Definition:</b> <a href="StateStorage_8cpp_source.html#l00074">StateStorage.cpp:74</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateStorage_html_ad9b55829a0c149c699861d962f865b7e"><div class="ttname"><a href="classompl_1_1base_1_1StateStorage.html#ad9b55829a0c149c699861d962f865b7e">ompl::base::StateStorage::loadMetadata</a></div><div class="ttdeci">virtual void loadMetadata(const Header &amp;h, boost::archive::binary_iarchive &amp;ia)</div><div class="ttdoc">Load the state metadata from a binary archive ia, given the loaded header is h. No metadata is actual...</div><div class="ttdef"><b>Definition:</b> <a href="StateStorage_8cpp_source.html#l00150">StateStorage.cpp:150</a></div></div>
 <div class="ttc" id="classompl_1_1base_1_1StateStorage_html_a7c910520aee0b21254400f070cbf4d00"><div class="ttname"><a href="classompl_1_1base_1_1StateStorage.html#a7c910520aee0b21254400f070cbf4d00">ompl::base::StateStorage::getStateSamplerAllocatorRangeUntil</a></div><div class="ttdeci">StateSamplerAllocator getStateSamplerAllocatorRangeUntil(std::size_t until) const</div><div class="ttdoc">Get a sampler allocator to a sampler that can be specified for a StateSpace, such that all sampled st...</div><div class="ttdef"><b>Definition:</b> <a href="StateStorage_8cpp_source.html#l00240">StateStorage.cpp:240</a></div></div>
@@ -231,10 +231,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

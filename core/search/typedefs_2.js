@@ -8,10 +8,10 @@ var searchData=
   ['connectionstrategy',['ConnectionStrategy',['../classompl_1_1geometric_1_1LazyPRM.html#aa983e17f7a2c70447304d940bad9adc4',1,'ompl::geometric::LazyPRM::ConnectionStrategy()'],['../classompl_1_1geometric_1_1PRM.html#abe3e77af4b90f73a0c4965dc66a84ec1',1,'ompl::geometric::PRM::ConnectionStrategy()']]],
   ['controlsamplerallocator',['ControlSamplerAllocator',['../namespaceompl_1_1control.html#ae23e6bee7bf1437efd2ba3ae430cd4b6',1,'ompl::control']]],
   ['controltype',['ControlType',['../classompl_1_1control_1_1CompoundControlSpace.html#ab5bfd623a45fa04eef2a0c16957dd90c',1,'ompl::control::CompoundControlSpace']]],
-  ['coord',['Coord',['../classompl_1_1Grid.html#a8fd2ab3bb168c7e39dc6b65d3f75ba4b',1,'ompl::Grid::Coord()'],['../classompl_1_1GridB.html#a89b9087b1351ab5d26785f99b1583d8b',1,'ompl::GridB::Coord()'],['../classompl_1_1GridN.html#a956fca906da92d20c795578e486e46f3',1,'ompl::GridN::Coord()'],['../classompl_1_1geometric_1_1Discretization.html#a685f1b61176111a7a248f20350f421e7',1,'ompl::geometric::Discretization::Coord()']]],
+  ['coord',['Coord',['../classompl_1_1Grid.html#a4dfe6d93f717a9413f75ff0b661baee0',1,'ompl::Grid::Coord()'],['../classompl_1_1GridB.html#a89b9087b1351ab5d26785f99b1583d8b',1,'ompl::GridB::Coord()'],['../classompl_1_1GridN.html#a956fca906da92d20c795578e486e46f3',1,'ompl::GridN::Coord()'],['../classompl_1_1geometric_1_1Discretization.html#a685f1b61176111a7a248f20350f421e7',1,'ompl::geometric::Discretization::Coord()']]],
   ['coordhash',['CoordHash',['../classompl_1_1Grid.html#a66a7f0446cfe8842b4e642b552a8b5a4',1,'ompl::Grid']]],
   ['costdouble',['CostDouble',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aacef2ab8b4bc451c06d16ac2d344c3d1',1,'ompl::geometric::BITstar::SearchQueue']]],
-  ['costhelperptr',['CostHelperPtr',['../classompl_1_1geometric_1_1BITstar.html#a7f00cb9addc9d74b7189aec381f038fa',1,'ompl::geometric::BITstar']]],
   ['costtogoheuristic',['CostToGoHeuristic',['../namespaceompl_1_1base.html#a2b7dc279053e7c578c098ba6bb113741',1,'ompl::base']]],
-  ['costtriple',['CostTriple',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a5149456b144f2ec13ea824bccfd5852a',1,'ompl::geometric::BITstar::SearchQueue']]]
+  ['costtriple',['CostTriple',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a5149456b144f2ec13ea824bccfd5852a',1,'ompl::geometric::BITstar::SearchQueue']]],
+  ['costtripleandvertexptrpair',['CostTripleAndVertexPtrPair',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af4c334f1bd84e8ad2e0245722a0b43bf',1,'ompl::geometric::BITstar::SearchQueue']]]
 ];

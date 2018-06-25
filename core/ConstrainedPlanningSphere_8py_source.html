@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>demos/constraint/ConstrainedPlanningSphere.py Source File</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_913bfe5cd49c15c10de83786c9f7c5a0.html">demos</a></li><li class="navelem"><a class="el" href="dir_9c5df5183c736ea2f3042e1acf5b99b0.html">constraint</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ConstrainedPlanningSphere.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#!/usr/bin/env python</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"># Author: Mark Moll</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">import</span> argparse</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">import</span> math</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">from</span> ConstrainedPlanningCommon <span class="keyword">import</span> *</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classConstrainedPlanningSphere_1_1SphereConstraint.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConstrainedPlanningSphere_1_1SphereConstraint.html">SphereConstraint</a>(<a class="code" href="classompl_1_1base_1_1Constraint.html">ob.Constraint</a>):</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">def </span>__init__(self):</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        super(SphereConstraint, self).__init__(3, 1)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">def </span>function(self, x, out):</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        out[0] = np.linalg.norm(x) - 1</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">def </span>jacobian(self, x, out):</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        nrm = np.linalg.norm(x)</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> np.isfinite(nrm) <span class="keywordflow">and</span> nrm &gt; 0:</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            out[0, :] = x / nrm</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">else</span>:</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            out[0, :] = [1, 0, 0]</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classConstrainedPlanningSphere_1_1SphereProjection.html">   62</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConstrainedPlanningSphere_1_1SphereProjection.html">SphereProjection</a>(<a class="code" href="classompl_1_1base_1_1ProjectionEvaluator.html">ob.ProjectionEvaluator</a>):</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">def </span>__init__(self, space):</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        super(SphereProjection, self).__init__(space)</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">def </span><a class="code" href="classompl_1_1base_1_1ProjectionEvaluator.html#a1f0dda6f86ea99915688c4d59bb12042">getDimension</a>(self):</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> 2</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">def </span><a class="code" href="classompl_1_1base_1_1ProjectionEvaluator.html#a1a0598137c82fdbedb7a191184d30de1">defaultCellSizes</a>(self):</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        self.<a class="code" href="classompl_1_1base_1_1ProjectionEvaluator.html#afdc4796fe612cf83f74d4b313c664443">cellSizes_</a> = list2vec([.1, .1])</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">def </span>project(self, state, projection):</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        projection[0] = math.atan2(state[1], state[0])</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        projection[1] = math.acos(state[2])</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">def </span>obstacles(x):</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> -0.8 &lt; x[2] <span class="keywordflow">and</span> x[2] &lt; -0.6:</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> -0.05 &lt; x[1] <span class="keywordflow">and</span> x[1] &lt; 0.05:</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">return</span> x[0] &gt; 0</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">elif</span> -0.1 &lt; x[2] <span class="keywordflow">and</span> x[2] &lt; 0.1:</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> -0.05 &lt; x[0] <span class="keywordflow">and</span> x[0] &lt; 0.05:</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">return</span> x[1] &lt; 0</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">elif</span> 0.6 &lt; x[2] <span class="keywordflow">and</span> x[2] &lt; 0.8:</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> -0.05 &lt; x[1] <span class="keywordflow">and</span> x[1] &lt; 0.05:</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">return</span> x[0] &lt; 0</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">True</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">def </span>spherePlanningOnce(cp, plannername, output):</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    cp.setPlanner(plannername, <span class="stringliteral">&quot;sphere&quot;</span>)</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment"># Solve the problem</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    stat = cp.solveOnce(output, <span class="stringliteral">&quot;sphere&quot;</span>)</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> output:</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        ou.OMPL_INFORM(<span class="stringliteral">&quot;Dumping problem information to `sphere_info.txt`.&quot;</span>)</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        with open(<span class="stringliteral">&quot;sphere_info.txt&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> infofile:</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            print(cp.spaceType, file=infofile)</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    cp.atlasStats()</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> output:</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        cp.dumpGraph(<span class="stringliteral">&quot;sphere&quot;</span>)</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> stat</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">def </span>spherePlanningBench(cp, planners):</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    cp.setupBenchmark(planners, <span class="stringliteral">&quot;sphere&quot;</span>)</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    cp.runBenchmark()</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">def </span>spherePlanning(options):</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment"># Create the ambient space state space for the problem.</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    rvss = <a class="code" href="classompl_1_1base_1_1RealVectorStateSpace.html">ob.RealVectorStateSpace</a>(3)</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    bounds = <a class="code" href="classompl_1_1base_1_1RealVectorBounds.html">ob.RealVectorBounds</a>(3)</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    bounds.setLow(-2)</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    bounds.setHigh(2)</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    rvss.setBounds(bounds)</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment"># Create our constraint.</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    constraint = <a class="code" href="classConstrainedPlanningSphere_1_1SphereConstraint.html">SphereConstraint</a>()</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    cp = <a class="code" href="classConstrainedPlanningCommon_1_1ConstrainedProblem.html">ConstrainedProblem</a>(options.space, rvss, constraint, options)</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    cp.css.registerProjection(<span class="stringliteral">&quot;sphere&quot;</span>, <a class="code" href="classConstrainedPlanningSphere_1_1SphereProjection.html">SphereProjection</a>(cp.css))</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    start = <a class="code" href="classompl_1_1base_1_1State.html">ob.State</a>(cp.css)</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    goal = <a class="code" href="classompl_1_1base_1_1State.html">ob.State</a>(cp.css)</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    start[0] = 0</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    start[1] = 0</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    start[2] = -1</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    goal[0] = 0</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    goal[1] = 0</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    goal[2] = 1</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    cp.setStartAndGoalStates(start, goal)</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cp.ss.setStateValidityChecker(<a class="code" href="namespaceompl_1_1base.html#ad2db51d298c5e969437078e1e12e0e57">ob.StateValidityCheckerFn</a>(obstacles))</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    planners = options.planner.split(<span class="stringliteral">&quot;,&quot;</span>)</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> <span class="keywordflow">not</span> options.bench:</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        spherePlanningOnce(cp, planners[0], options.output)</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">else</span>:</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        spherePlanningBench(cp, planners)</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    parser = argparse.ArgumentParser()</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    parser.add_argument(<span class="stringliteral">&quot;-o&quot;</span>, <span class="stringliteral">&quot;--output&quot;</span>, action=<span class="stringliteral">&quot;store_true&quot;</span>,</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                        help=<span class="stringliteral">&quot;Dump found solution path (if one exists) in plain text and planning graph in GraphML to &quot;</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        <span class="stringliteral">&quot;`sphere_path.txt` and `sphere_graph.graphml` respectively.&quot;</span>)</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    parser.add_argument(<span class="stringliteral">&quot;--bench&quot;</span>, action=<span class="stringliteral">&quot;store_true&quot;</span>,</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        help=<span class="stringliteral">&quot;Do benchmarking on provided planner list.&quot;</span>)</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    addSpaceOption(parser)</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    addPlannerOption(parser)</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    addConstrainedOptions(parser)</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    addAtlasOptions(parser)</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    spherePlanning(parser.parse_args())</div><div class="ttc" id="classConstrainedPlanningSphere_1_1SphereConstraint_html"><div class="ttname"><a href="classConstrainedPlanningSphere_1_1SphereConstraint.html">ConstrainedPlanningSphere.SphereConstraint</a></div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedPlanningSphere_8py_source.html#l00046">ConstrainedPlanningSphere.py:46</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1ProjectionEvaluator_html_a1f0dda6f86ea99915688c4d59bb12042"><div class="ttname"><a href="classompl_1_1base_1_1ProjectionEvaluator.html#a1f0dda6f86ea99915688c4d59bb12042">ompl::base::ProjectionEvaluator::getDimension</a></div><div class="ttdeci">virtual unsigned int getDimension() const =0</div><div class="ttdoc">Return the dimension of the projection defined by this evaluator. </div></div>
+<div class="ttc" id="classompl_1_1base_1_1ProjectionEvaluator_html_afdc4796fe612cf83f74d4b313c664443"><div class="ttname"><a href="classompl_1_1base_1_1ProjectionEvaluator.html#afdc4796fe612cf83f74d4b313c664443">ompl::base::ProjectionEvaluator::cellSizes_</a></div><div class="ttdeci">std::vector&lt; double &gt; cellSizes_</div><div class="ttdoc">The size of a cell, in every dimension of the projected space, in the implicitly defined integer grid...</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionEvaluator_8h_source.html#l00268">ProjectionEvaluator.h:268</a></div></div>
+<div class="ttc" id="classConstrainedPlanningSphere_1_1SphereProjection_html"><div class="ttname"><a href="classConstrainedPlanningSphere_1_1SphereProjection.html">ConstrainedPlanningSphere.SphereProjection</a></div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedPlanningSphere_8py_source.html#l00062">ConstrainedPlanningSphere.py:62</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1ProjectionEvaluator_html_a1a0598137c82fdbedb7a191184d30de1"><div class="ttname"><a href="classompl_1_1base_1_1ProjectionEvaluator.html#a1a0598137c82fdbedb7a191184d30de1">ompl::base::ProjectionEvaluator::defaultCellSizes</a></div><div class="ttdeci">virtual void defaultCellSizes()</div><div class="ttdoc">Set the default cell dimensions for this projection. The default implementation of this function is e...</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionEvaluator_8cpp_source.html#l00189">ProjectionEvaluator.cpp:189</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1Constraint_html"><div class="ttname"><a href="classompl_1_1base_1_1Constraint.html">ompl::base::Constraint</a></div><div class="ttdoc">Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...</div><div class="ttdef"><b>Definition:</b> <a href="Constraint_8h_source.html#l00075">Constraint.h:75</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1RealVectorStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorStateSpace.html">ompl::base::RealVectorStateSpace</a></div><div class="ttdoc">A state space representing Rn. The distance function is the L2 norm. </div><div class="ttdef"><b>Definition:</b> <a href="RealVectorStateSpace_8h_source.html#l00073">RealVectorStateSpace.h:73</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state. </div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00049">State.h:49</a></div></div>
+<div class="ttc" id="classConstrainedPlanningCommon_1_1ConstrainedProblem_html"><div class="ttname"><a href="classConstrainedPlanningCommon_1_1ConstrainedProblem.html">ConstrainedPlanningCommon.ConstrainedProblem</a></div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedPlanningCommon_8py_source.html#l00124">ConstrainedPlanningCommon.py:124</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space. </div><div class="ttdef"><b>Definition:</b> <a href="RealVectorBounds_8h_source.html#l00047">RealVectorBounds.h:47</a></div></div>
+<div class="ttc" id="namespaceompl_1_1base_html_ad2db51d298c5e969437078e1e12e0e57"><div class="ttname"><a href="namespaceompl_1_1base.html#ad2db51d298c5e969437078e1e12e0e57">ompl::base::StateValidityCheckerFn</a></div><div class="ttdeci">std::function&lt; bool(const State *)&gt; StateValidityCheckerFn</div><div class="ttdoc">If no state validity checking class is specified (StateValidityChecker), a std::function can be speci...</div><div class="ttdef"><b>Definition:</b> <a href="base_2SpaceInformation_8h_source.html#l00076">SpaceInformation.h:76</a></div></div>
+<div class="ttc" id="classompl_1_1base_1_1ProjectionEvaluator_html"><div class="ttname"><a href="classompl_1_1base_1_1ProjectionEvaluator.html">ompl::base::ProjectionEvaluator</a></div><div class="ttdoc">Abstract definition for a class computing projections to Rn. Implicit integer grids are imposed on th...</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionEvaluator_8h_source.html#l00127">ProjectionEvaluator.h:127</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

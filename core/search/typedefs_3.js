@@ -6,7 +6,6 @@ var searchData=
   ['densepath',['DensePath',['../classompl_1_1geometric_1_1SPARS.html#ae5b8ca0af6ce6cefc03e81d784da732d',1,'ompl::geometric::SPARS']]],
   ['densevertex',['DenseVertex',['../classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e',1,'ompl::geometric::SPARS']]],
   ['directedcontrolsamplerallocator',['DirectedControlSamplerAllocator',['../namespaceompl_1_1control.html#af6a173f2a6c4c84114fe8d4363c65e70',1,'ompl::control']]],
-  ['distancefunc',['DistanceFunc',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a1eb6a88135807e47862390fdea674a42',1,'ompl::geometric::BITstar::SearchQueue']]],
   ['distancefunction',['DistanceFunction',['../classompl_1_1GreedyKCenters.html#a4efe9e669d852a90ece40527191d72bd',1,'ompl::GreedyKCenters::DistanceFunction()'],['../classompl_1_1NearestNeighbors.html#a69692a816af54715de7afdf0ff15141c',1,'ompl::NearestNeighbors::DistanceFunction()']]],
   ['duration',['duration',['../namespaceompl_1_1time.html#a408b9a566e1bd414a6afa9e32dc0734a',1,'ompl::time']]]
 ];

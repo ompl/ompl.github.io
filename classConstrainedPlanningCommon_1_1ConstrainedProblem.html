@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ConstrainedPlanningCommon.ConstrainedProblem Class Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">OMPL</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="download.html">Download</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
+              <li><a href="installation.html">Installation</a></li>
+              <li><a href="tutorials.html">Tutorials</a></li>
+              <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
+              <li><a href="python.html">Python Bindings</a></li>
+              <li><a href="planners.html">Available Planners</a></li>
+              <li><a href="benchmark.html">Benchmarking Planners</a></li>
+              <li><a href="spaces.html">Available State Spaces</a></li>
+              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
+              <li><a href="FAQ.html">FAQ</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">External links</li>
+              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
+              <li><a href="http://plannerarena.org">Planner Arena</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
+              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
+              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
+              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api_overview.html">API Overview</a></li>
+              <li><a href="annotated.html">Classes</a></li>
+              <li><a href="files.html">Files</a></li>
+              <li><a href="styleGuide.html">Style Guide</a></li>
+              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Repositories</li>
+              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
+              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
+              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Continuous Integration</li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
+              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="mailingLists.html">Mailing Lists</a></li>
+              <li><a href="developers.html">Developers</a></li>
+              <li><a href="thirdparty.html">Contributions</a></li>
+              <li><a href="contrib.html">Submit Contribution</a></li>
+              <li><a href="education.html">Education</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="license.html">License</a></li>
+              <li><a href="citations.html">Citations</a></li>
+              <li><a href="acknowledgements.html">Acknowledgments</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>ConstrainedPlanningCommon</b></li><li class="navelem"><a class="el" href="classConstrainedPlanningCommon_1_1ConstrainedProblem.html">ConstrainedProblem</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="classConstrainedPlanningCommon_1_1ConstrainedProblem-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ConstrainedPlanningCommon.ConstrainedProblem Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Inheritance diagram for ConstrainedPlanningCommon.ConstrainedProblem:</div>
+<div class="dyncontent">
+<div class="center"><img src="classConstrainedPlanningCommon_1_1ConstrainedProblem__inherit__graph.png" border="0" usemap="#ConstrainedPlanningCommon_8ConstrainedProblem_inherit__map" alt="Inheritance graph"/></div>
+<map name="ConstrainedPlanningCommon_8ConstrainedProblem_inherit__map" id="ConstrainedPlanningCommon_8ConstrainedProblem_inherit__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa8630044c6ccb2e133329521ec8f1c72"><td class="memItemLeft" align="right" valign="top"><a id="aa8630044c6ccb2e133329521ec8f1c72"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>__init__</b> (self, spaceType, space, constraint, options)</td></tr>
+<tr class="separator:aa8630044c6ccb2e133329521ec8f1c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435664489b8ccb12fc2760f1a9e89216"><td class="memItemLeft" align="right" valign="top"><a id="a435664489b8ccb12fc2760f1a9e89216"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>setStartAndGoalStates</b> (self, start, goal)</td></tr>
+<tr class="separator:a435664489b8ccb12fc2760f1a9e89216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c726ba5172f3fe11d5f52f97eaef3b"><td class="memItemLeft" align="right" valign="top"><a id="ae0c726ba5172f3fe11d5f52f97eaef3b"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>getPlanner</b> (self, plannerName, projectionName=None)</td></tr>
+<tr class="separator:ae0c726ba5172f3fe11d5f52f97eaef3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d231de56216d61dec40e51a0c3d3d27"><td class="memItemLeft" align="right" valign="top"><a id="a2d231de56216d61dec40e51a0c3d3d27"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>setPlanner</b> (self, plannerName, projectionName=None)</td></tr>
+<tr class="separator:a2d231de56216d61dec40e51a0c3d3d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2eb19c28b799447076b240d1aceb5fa"><td class="memItemLeft" align="right" valign="top"><a id="ae2eb19c28b799447076b240d1aceb5fa"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>solveOnce</b> (self, output=False, name=&quot;ompl&quot;)</td></tr>
+<tr class="separator:ae2eb19c28b799447076b240d1aceb5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b484218b54dbbe714bddd5129b1c21"><td class="memItemLeft" align="right" valign="top"><a id="a45b484218b54dbbe714bddd5129b1c21"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>setupBenchmark</b> (self, planners, problem)</td></tr>
+<tr class="separator:a45b484218b54dbbe714bddd5129b1c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79afb8240df288ecc685dd716889576c"><td class="memItemLeft" align="right" valign="top"><a id="a79afb8240df288ecc685dd716889576c"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>runBenchmark</b> (self)</td></tr>
+<tr class="separator:a79afb8240df288ecc685dd716889576c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963507fe5b620bb44b88a89cefdc264a"><td class="memItemLeft" align="right" valign="top"><a id="a963507fe5b620bb44b88a89cefdc264a"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>atlasStats</b> (self)</td></tr>
+<tr class="separator:a963507fe5b620bb44b88a89cefdc264a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dfdfee832508212b1ff22c803cfaaec"><td class="memItemLeft" align="right" valign="top"><a id="a4dfdfee832508212b1ff22c803cfaaec"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>dumpGraph</b> (self, name)</td></tr>
+<tr class="separator:a4dfdfee832508212b1ff22c803cfaaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a2e7f207aff6b2508dbab3f0b96ad6943"><td class="memItemLeft" align="right" valign="top"><a id="a2e7f207aff6b2508dbab3f0b96ad6943"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>spaceType</b></td></tr>
+<tr class="separator:a2e7f207aff6b2508dbab3f0b96ad6943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5489a141148e7ac58ee2c4c7a8ae93c1"><td class="memItemLeft" align="right" valign="top"><a id="a5489a141148e7ac58ee2c4c7a8ae93c1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>space</b></td></tr>
+<tr class="separator:a5489a141148e7ac58ee2c4c7a8ae93c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64468adbf519a5a8b678fb12847a15ea"><td class="memItemLeft" align="right" valign="top"><a id="a64468adbf519a5a8b678fb12847a15ea"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>constraint</b></td></tr>
+<tr class="separator:a64468adbf519a5a8b678fb12847a15ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9514fafa9384115aaeb61aa2d10c8bf"><td class="memItemLeft" align="right" valign="top"><a id="ac9514fafa9384115aaeb61aa2d10c8bf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>options</b></td></tr>
+<tr class="separator:ac9514fafa9384115aaeb61aa2d10c8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00655a299b357d7e0493f82731c19af8"><td class="memItemLeft" align="right" valign="top"><a id="a00655a299b357d7e0493f82731c19af8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>bench</b></td></tr>
+<tr class="separator:a00655a299b357d7e0493f82731c19af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a450912659b679888a9bb9573b83e2415"><td class="memItemLeft" align="right" valign="top"><a id="a450912659b679888a9bb9573b83e2415"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>request</b></td></tr>
+<tr class="separator:a450912659b679888a9bb9573b83e2415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad390466d73097d6e98ae3b9172e4084f"><td class="memItemLeft" align="right" valign="top"><a id="ad390466d73097d6e98ae3b9172e4084f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>pp</b></td></tr>
+<tr class="separator:ad390466d73097d6e98ae3b9172e4084f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca6215f8038c2e8aebae804bfebe92a"><td class="memItemLeft" align="right" valign="top"><a id="aeca6215f8038c2e8aebae804bfebe92a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>css</b></td></tr>
+<tr class="separator:aeca6215f8038c2e8aebae804bfebe92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0002b9c51d6684b41308cc98715a35cb"><td class="memItemLeft" align="right" valign="top"><a id="a0002b9c51d6684b41308cc98715a35cb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>csi</b></td></tr>
+<tr class="separator:a0002b9c51d6684b41308cc98715a35cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d787e05f313d3c2f13b582313cf664"><td class="memItemLeft" align="right" valign="top"><a id="a29d787e05f313d3c2f13b582313cf664"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ss</b></td></tr>
+<tr class="separator:a29d787e05f313d3c2f13b582313cf664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="ConstrainedPlanningCommon_8py_source.html#l00124">124</a> of file <a class="el" href="ConstrainedPlanningCommon_8py_source.html">ConstrainedPlanningCommon.py</a>.</p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>ompl/demos/constraint/<a class="el" href="ConstrainedPlanningCommon_8py_source.html">ConstrainedPlanningCommon.py</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container"><p>
+    <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
+    <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
+    <a href="http://www.rice.edu">Rice University</a><br>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14</span>
+  </p></div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

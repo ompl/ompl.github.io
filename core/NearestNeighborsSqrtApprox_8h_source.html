@@ -5,21 +5,33 @@
   <title>ompl/datastructures/NearestNeighborsSqrtApprox.h Source File</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -47,6 +59,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -102,37 +115,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -170,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1NearestNeighborsSqrtApprox_html_a8347e9996cd37cc227911c902f8f6ed2"><div class="ttname"><a href="classompl_1_1NearestNeighborsSqrtApprox.html#a8347e9996cd37cc227911c902f8f6ed2">ompl::NearestNeighborsSqrtApprox::nearest</a></div><div class="ttdeci">_T nearest(const _T &amp;data) const override</div><div class="ttdoc">Get the nearest neighbor of a point. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsSqrtApprox_8h_source.html#l00091">NearestNeighborsSqrtApprox.h:91</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsSqrtApprox_html_af5cfd5ec0b959ec740b192f08999d7d3"><div class="ttname"><a href="classompl_1_1NearestNeighborsSqrtApprox.html#af5cfd5ec0b959ec740b192f08999d7d3">ompl::NearestNeighborsSqrtApprox::checks_</a></div><div class="ttdeci">std::size_t checks_</div><div class="ttdoc">The number of checks to be performed when looking for a nearest neighbor. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsSqrtApprox_8h_source.html#l00126">NearestNeighborsSqrtApprox.h:126</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsSqrtApprox_html_a52f728837c991aba73ac643028bfa5a3"><div class="ttname"><a href="classompl_1_1NearestNeighborsSqrtApprox.html#a52f728837c991aba73ac643028bfa5a3">ompl::NearestNeighborsSqrtApprox::add</a></div><div class="ttdeci">void add(const _T &amp;data) override</div><div class="ttdoc">Add an element to the datastructure. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsSqrtApprox_8h_source.html#l00071">NearestNeighborsSqrtApprox.h:71</a></div></div>
-<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00042">Cost.h:42</a></div></div>
+<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedSpaceInformation_8h_source.html#l00052">ConstrainedSpaceInformation.h:52</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsSqrtApprox_html"><div class="ttname"><a href="classompl_1_1NearestNeighborsSqrtApprox.html">ompl::NearestNeighborsSqrtApprox</a></div><div class="ttdoc">A nearest neighbors datastructure that uses linear search. The linear search is done over sqrt(n) ele...</div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsSqrtApprox_8h_source.html#l00057">NearestNeighborsSqrtApprox.h:57</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsLinear_html_a9efa24e8a4aafe9033b3f2529d63a395"><div class="ttname"><a href="classompl_1_1NearestNeighborsLinear.html#a9efa24e8a4aafe9033b3f2529d63a395">ompl::NearestNeighborsLinear::remove</a></div><div class="ttdeci">bool remove(const _T &amp;data) override</div><div class="ttdoc">Remove an element from the datastructure. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsLinear_8h_source.html#l00086">NearestNeighborsLinear.h:86</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsLinear_html_a6d45d630045482b6b56bbb60f128e863"><div class="ttname"><a href="classompl_1_1NearestNeighborsLinear.html#a6d45d630045482b6b56bbb60f128e863">ompl::NearestNeighborsLinear::add</a></div><div class="ttdeci">void add(const _T &amp;data) override</div><div class="ttdoc">Add an element to the datastructure. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsLinear_8h_source.html#l00075">NearestNeighborsLinear.h:75</a></div></div>
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classompl_1_1NearestNeighborsSqrtApprox_html_a9048a23e845a0f51b4105ac451350003"><div class="ttname"><a href="classompl_1_1NearestNeighborsSqrtApprox.html#a9048a23e845a0f51b4105ac451350003">ompl::NearestNeighborsSqrtApprox::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear the datastructure. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsSqrtApprox_8h_source.html#l00064">NearestNeighborsSqrtApprox.h:64</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsLinear_html"><div class="ttname"><a href="classompl_1_1NearestNeighborsLinear.html">ompl::NearestNeighborsLinear</a></div><div class="ttdoc">A nearest neighbors datastructure that uses linear search. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsLinear_8h_source.html#l00056">NearestNeighborsLinear.h:56</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsLinear_html_a1fc78c1aba4d7a0a9e415f547f22c04b"><div class="ttname"><a href="classompl_1_1NearestNeighborsLinear.html#a1fc78c1aba4d7a0a9e415f547f22c04b">ompl::NearestNeighborsLinear::size</a></div><div class="ttdeci">std::size_t size() const override</div><div class="ttdoc">Get the number of elements in the datastructure. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsLinear_8h_source.html#l00144">NearestNeighborsLinear.h:144</a></div></div>
-<div class="ttc" id="classompl_1_1NearestNeighbors_html_a6f15f3b591fb69b91ca35e504723b54f"><div class="ttname"><a href="classompl_1_1NearestNeighbors.html#a6f15f3b591fb69b91ca35e504723b54f">ompl::NearestNeighbors::distFun_</a></div><div class="ttdeci">DistanceFunction distFun_</div><div class="ttdoc">The used distance function. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighbors_8h_source.html#l00115">NearestNeighbors.h:115</a></div></div>
+<div class="ttc" id="classompl_1_1NearestNeighbors_html_a6f15f3b591fb69b91ca35e504723b54f"><div class="ttname"><a href="classompl_1_1NearestNeighbors.html#a6f15f3b591fb69b91ca35e504723b54f">ompl::NearestNeighbors::distFun_</a></div><div class="ttdeci">DistanceFunction distFun_</div><div class="ttdoc">The used distance function. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighbors_8h_source.html#l00114">NearestNeighbors.h:114</a></div></div>
 <div class="ttc" id="classompl_1_1NearestNeighborsSqrtApprox_html_a04660cbb2850b92b6b771fff6320f7f0"><div class="ttname"><a href="classompl_1_1NearestNeighborsSqrtApprox.html#a04660cbb2850b92b6b771fff6320f7f0">ompl::NearestNeighborsSqrtApprox::add</a></div><div class="ttdeci">void add(const std::vector&lt; _T &gt; &amp;data) override</div><div class="ttdoc">Add a vector of points. </div><div class="ttdef"><b>Definition:</b> <a href="NearestNeighborsSqrtApprox_8h_source.html#l00077">NearestNeighborsSqrtApprox.h:77</a></div></div>
 <div class="ttc" id="classompl_1_1Exception_html"><div class="ttname"><a href="classompl_1_1Exception.html">ompl::Exception</a></div><div class="ttdoc">The exception type for ompl. </div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00046">Exception.h:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -199,10 +199,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

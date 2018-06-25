@@ -5,21 +5,33 @@
   <title>ompl/tools/benchmark/Benchmark.h Source File</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.14"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -47,6 +59,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -102,37 +115,24 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
 <!-- Generated by Doxygen 1.8.14 -->
@@ -199,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structompl_1_1tools_1_1Benchmark_1_1Request_html_a882d384685f86176fbb441c256d34044"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a882d384685f86176fbb441c256d34044">ompl::tools::Benchmark::Request::saveConsoleOutput</a></div><div class="ttdeci">bool saveConsoleOutput</div><div class="ttdoc">flag indicating whether console output is saved (in an automatically generated filename); true by def...</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00191">Benchmark.h:191</a></div></div>
 <div class="ttc" id="structompl_1_1tools_1_1Benchmark_1_1Request_html_a1c188da13dfe7bf45d2a56e3f3c60b43"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a1c188da13dfe7bf45d2a56e3f3c60b43">ompl::tools::Benchmark::Request::useThreads</a></div><div class="ttdeci">bool useThreads</div><div class="ttdoc">flag indicating whether planner runs should be run in a separate thread. It is advisable to set this ...</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00196">Benchmark.h:196</a></div></div>
 <div class="ttc" id="classompl_1_1tools_1_1Benchmark_html_a9641c6a479d33dc5e59a836bdd511fa4"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html#a9641c6a479d33dc5e59a836bdd511fa4">ompl::tools::Benchmark::addPlannerAllocator</a></div><div class="ttdeci">void addPlannerAllocator(const base::PlannerAllocator &amp;pa)</div><div class="ttdoc">Add a planner allocator to use. </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00263">Benchmark.h:263</a></div></div>
-<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00042">Cost.h:42</a></div></div>
+<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedSpaceInformation_8h_source.html#l00052">ConstrainedSpaceInformation.h:52</a></div></div>
 <div class="ttc" id="classompl_1_1tools_1_1Benchmark_html_a8a562ed0d721cffc94c8aa0a2e565a25"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html#a8a562ed0d721cffc94c8aa0a2e565a25">ompl::tools::Benchmark::gsetup_</a></div><div class="ttdeci">geometric::SimpleSetup * gsetup_</div><div class="ttdoc">The instance of the problem to benchmark (if geometric planning) </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00334">Benchmark.h:334</a></div></div>
 <div class="ttc" id="classompl_1_1geometric_1_1SimpleSetup_html"><div class="ttname"><a href="classompl_1_1geometric_1_1SimpleSetup.html">ompl::geometric::SimpleSetup</a></div><div class="ttdoc">Create the set of classes typically needed to solve a geometric problem. </div><div class="ttdef"><b>Definition:</b> <a href="geometric_2SimpleSetup_8h_source.html#l00063">SimpleSetup.h:63</a></div></div>
 <div class="ttc" id="classompl_1_1tools_1_1Benchmark_html_ade874bfcc461409dbe925aa6ee0bcbd3"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html#ade874bfcc461409dbe925aa6ee0bcbd3">ompl::tools::Benchmark::Benchmark</a></div><div class="ttdeci">Benchmark(geometric::SimpleSetup &amp;setup, const std::string &amp;name=std::string())</div><div class="ttdoc">Constructor needs the SimpleSetup instance needed for planning. Optionally, the experiment name (name...</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00204">Benchmark.h:204</a></div></div>
@@ -237,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment_html"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment.html">ompl::tools::Benchmark::CompleteExperiment</a></div><div class="ttdoc">This structure holds experimental data for a set of planners. </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00116">Benchmark.h:116</a></div></div>
 <div class="ttc" id="structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment_html_a4aa91e531666d7140810a65b2e489b2f"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment.html#a4aa91e531666d7140810a65b2e489b2f">ompl::tools::Benchmark::CompleteExperiment::cpuInfo</a></div><div class="ttdeci">std::string cpuInfo</div><div class="ttdoc">Information about the CPU of the machine the benchmark ran on. </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00149">Benchmark.h:149</a></div></div>
 <div class="ttc" id="structompl_1_1tools_1_1Benchmark_1_1Status_html_ae55a5240665b668a98d772f20dd8e896"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Status.html#ae55a5240665b668a98d772f20dd8e896">ompl::tools::Benchmark::Status::activePlanner</a></div><div class="ttdeci">std::string activePlanner</div><div class="ttdoc">The name of the planner currently being tested. </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00068">Benchmark.h:68</a></div></div>
-<div class="ttc" id="classompl_1_1tools_1_1Benchmark_html_a3257cb8dccc15037e81c0f235c61a7e8"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html#a3257cb8dccc15037e81c0f235c61a7e8">ompl::tools::Benchmark::benchmark</a></div><div class="ttdeci">virtual void benchmark(const Request &amp;req)</div><div class="ttdoc">Benchmark the added planners on the defined problem. Repeated calls clear previously gathered data...</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8cpp_source.html#l00392">Benchmark.cpp:392</a></div></div>
+<div class="ttc" id="classompl_1_1tools_1_1Benchmark_html_a3257cb8dccc15037e81c0f235c61a7e8"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html#a3257cb8dccc15037e81c0f235c61a7e8">ompl::tools::Benchmark::benchmark</a></div><div class="ttdeci">virtual void benchmark(const Request &amp;req)</div><div class="ttdoc">Benchmark the added planners on the defined problem. Repeated calls clear previously gathered data...</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8cpp_source.html#l00390">Benchmark.cpp:390</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div>
 <footer class="footer">
@@ -256,10 +256,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
