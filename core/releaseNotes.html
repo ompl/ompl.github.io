@@ -122,8 +122,8 @@
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onfocus="searchBox.OnSearchFieldFocus(true)"
+               onblur="searchBox.OnSearchFieldFocus(false)"
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
+<iframe src="javascript:void(0)" frameborder="0"
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Eigen3 is now a required dependency.</li>
 <li>Various BIT* improvements.</li>
 <li>PRM and RRTConnect can now return approximate solutions if an exact solution cannot be found. (This feature was already supported by several other planning algorithms in previous versions of OMPL.)</li>
-<li>Add support for <a href="https://spot.lrde.epita.fr">Spot</a>, a library that can be used to create finite automata from LTL specifications. This can be used by <a class="el" href="classompl_1_1control_1_1LTLPlanner.html" title="A planner for generating system trajectories to satisfy a logical specification given by an automaton...">ompl::control::LTLPlanner</a>. See the <a href="LTLWithTriangulation_8cpp_source.html">LTL with triangulation demo</a>.</li>
+<li>Added support for <a href="https://spot.lrde.epita.fr">Spot</a>, a library that can be used to create finite automata from LTL specifications. This can be used by <a class="el" href="classompl_1_1control_1_1LTLPlanner.html" title="A planner for generating system trajectories to satisfy a logical specification given by an automaton...">ompl::control::LTLPlanner</a>. See the <a href="LTLWithTriangulation_8cpp_source.html">LTL with triangulation demo</a>.</li>
 <li>A new method has been added, <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a3006b09d80ec5543b0b9b81e94046df2" title="Given a path, attempt to improve the cost by randomly perturbing a randomly selected point on the pat...">ompl::geometric::PathSimplifier::perturbPath</a>, which can locally optimize a path with respect to a user-specified optimization objective. Existing methods of <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html" title="This class contains routines that attempt to simplify geometric paths. ">ompl::geometric::PathSimplifier</a> are now also cost-aware.</li>
 <li><a class="el" href="classompl_1_1geometric_1_1PathHybridization.html" title="Given multiple geometric paths, attempt to combine them in order to obtain a shorter solution...">ompl::geometric::PathHybridization</a> can now also optimize paths with respect to a user-specified optimization objective.</li>
 <li>Fix for bugs in path simplification and interpolation that could cause path simplification to produce a path that was invalid or longer than the original path when using GoalRegions (as opposed to just one GoalState).</li>
