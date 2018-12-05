@@ -54,7 +54,6 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -209,10 +208,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6234444fd75f10224dff2e1a342998ea"><td class="memTemplParams" colspan="2"><a id="a6234444fd75f10224dff2e1a342998ea"></a>
-template&lt;typename _T &gt; </td></tr>
+<tr class="memitem:a6234444fd75f10224dff2e1a342998ea"><td class="memTemplParams" colspan="2">template&lt;typename _T &gt; </td></tr>
 <tr class="memitem:a6234444fd75f10224dff2e1a342998ea"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; _T &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1SelfConfig.html#a6234444fd75f10224dff2e1a342998ea">getDefaultNearestNeighbors</a> (const <a class="el" href="classompl_1_1base_1_1Planner.html">base::Planner</a> *planner)</td></tr>
-<tr class="memdesc:a6234444fd75f10224dff2e1a342998ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a default nearest neighbor datastructure for the given space. <br /></td></tr>
+<tr class="memdesc:a6234444fd75f10224dff2e1a342998ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a default nearest neighbor datastructure for the given space.  <a href="#a6234444fd75f10224dff2e1a342998ea">More...</a><br /></td></tr>
 <tr class="separator:a6234444fd75f10224dff2e1a342998ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9f747585a0c3fdc50667d9f8a39095d"><td class="memItemLeft" align="right" valign="top"><a id="ae9f747585a0c3fdc50667d9f8a39095d"></a>
 static <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::PlannerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1SelfConfig.html#ae9f747585a0c3fdc50667d9f8a39095d">getDefaultPlanner</a> (const <a class="el" href="classompl_1_1base_1_1GoalPtr.html">base::GoalPtr</a> &amp;goal)</td></tr>
@@ -223,7 +221,45 @@ static <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::PlannerPt
 <div class="textblock"><p>This class contains methods that automatically configure various parameters for motion planning. If expensive computation is performed, the results are cached. </p>
 
 <p class="definition">Definition at line <a class="el" href="SelfConfig_8h_source.html#l00059">59</a> of file <a class="el" href="SelfConfig_8h_source.html">SelfConfig.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6234444fd75f10224dff2e1a342998ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6234444fd75f10224dff2e1a342998ea">&#9670;&nbsp;</a></span>getDefaultNearestNeighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt;_T&gt;* ompl::tools::SelfConfig::getDefaultNearestNeighbors </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1Planner.html">base::Planner</a> *&#160;</td>
+          <td class="paramname"><em>planner</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Select a default nearest neighbor datastructure for the given space. </p>
+<p>The default depends on the planning algorithm and the space the planner operates in:</p><ul>
+<li>If the space is a metric space and the planner is single-threaded, then the default is <a class="el" href="classompl_1_1NearestNeighborsGNATNoThreadSafety.html" title="Geometric Near-neighbor Access Tree (GNAT), a data structure for nearest neighbor search...">ompl::NearestNeighborsGNATNoThreadSafety</a>.</li>
+<li>If the space is a metric space and the planner is multi-threaded, then the default is <a class="el" href="classompl_1_1NearestNeighborsGNAT.html" title="Geometric Near-neighbor Access Tree (GNAT), a data structure for nearest neighbor search...">ompl::NearestNeighborsGNAT</a>.</li>
+<li>If the space is a not a metric space, then the default is <a class="el" href="classompl_1_1NearestNeighborsSqrtApprox.html" title="A nearest neighbors datastructure that uses linear search. The linear search is done over sqrt(n) ele...">ompl::NearestNeighborsSqrtApprox</a>. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="SelfConfig_8h_source.html#l00106">106</a> of file <a class="el" href="SelfConfig_8h_source.html">SelfConfig.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>ompl/tools/config/<a class="el" href="SelfConfig_8h_source.html">SelfConfig.h</a></li>
 <li>ompl/tools/config/src/<a class="el" href="SelfConfig_8cpp_source.html">SelfConfig.cpp</a></li>
 </ul>

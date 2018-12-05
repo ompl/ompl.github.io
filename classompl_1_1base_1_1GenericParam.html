@@ -54,7 +54,6 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -164,7 +163,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classompl_1_1base_1_1GenericParam-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -181,7 +179,7 @@ Inheritance diagram for ompl::base::GenericParam:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1base_1_1GenericParam__inherit__graph.png" border="0" usemap="#ompl_1_1base_1_1GenericParam_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1base_1_1GenericParam_inherit__map" id="ompl_1_1base_1_1GenericParam_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1base_1_1SpecificParam.html" title="This is a helper class that instantiates parameters with different data types. " alt="" coords="5,80,169,107"/>
+<area shape="rect" id="node2" href="classompl_1_1base_1_1SpecificParam.html" title="This is a helper class that instantiates parameters with different data types. " alt="" coords="5,80,217,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -221,14 +219,6 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <tr class="memdesc:ae5d0c6e5545dbdf6cfb252bfc6e59493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the suggested range of values. <br /></td></tr>
 <tr class="separator:ae5d0c6e5545dbdf6cfb252bfc6e59493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a01151b7aeb9acf307288e2c551c8a1f2"><td class="memTemplParams" colspan="2"><a id="a01151b7aeb9acf307288e2c551c8a1f2"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a01151b7aeb9acf307288e2c551c8a1f2"><td class="memTemplItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1GenericParam.html#a01151b7aeb9acf307288e2c551c8a1f2">maybeWrapBool</a> (const std::string &amp;value) const</td></tr>
-<tr class="memdesc:a01151b7aeb9acf307288e2c551c8a1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bool values such as "false" cannot be converted to bool using lexical_cast. We need to map those to "0" or "1". <br /></td></tr>
-<tr class="separator:a01151b7aeb9acf307288e2c551c8a1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a4aa3a92cdf3ce19efdec17284ac460ae"><td class="memItemLeft" align="right" valign="top"><a id="a4aa3a92cdf3ce19efdec17284ac460ae"></a>
@@ -242,7 +232,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Motion planning algorithms often employ parameters to guide their exploration process. (e.g., goal biasing). Motion planners (and some of their components) use this class to declare what the parameters are, in a generic way, so that they can be set externally. </p>
 
-<p class="definition">Definition at line <a class="el" href="GenericParam_8h_source.html#l00064">64</a> of file <a class="el" href="GenericParam_8h_source.html">GenericParam.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GenericParam_8h_source.html#l00063">63</a> of file <a class="el" href="GenericParam_8h_source.html">GenericParam.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="adfcb7422d41e2a863c604bc6b28e892e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adfcb7422d41e2a863c604bc6b28e892e">&#9670;&nbsp;</a></span>rangeSuggestion_</h2>
@@ -271,13 +261,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <li><code>int</code>, <code>double:</code> either "first:last" or "first:stepsize:last". In the first case, the stepsize is assumed to be 1. It is important to use floating point representations for double ranges (i.e., "1." instead of "1") to make sure the type is deduced correctly. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="GenericParam_8h_source.html#l00145">145</a> of file <a class="el" href="GenericParam_8h_source.html">GenericParam.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GenericParam_8h_source.html#l00129">129</a> of file <a class="el" href="GenericParam_8h_source.html">GenericParam.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>ompl/base/<a class="el" href="GenericParam_8h_source.html">GenericParam.h</a></li>
-<li>ompl/base/src/<a class="el" href="GenericParam_8cpp_source.html">GenericParam.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div>

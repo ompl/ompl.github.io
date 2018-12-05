@@ -10,6 +10,7 @@ var searchData=
   ['lbkpiece1',['LBKPIECE1',['../classompl_1_1geometric_1_1LBKPIECE1.html#a8e0b666627ef259f53f1f61d39e0e144',1,'ompl::geometric::LBKPIECE1']]],
   ['lbtrrt',['LBTRRT',['../classompl_1_1geometric_1_1LBTRRT.html#ab0536dead0cb0e12e71dd6df46ad2024',1,'ompl::geometric::LBTRRT']]],
   ['length',['length',['../classompl_1_1base_1_1Path.html#aeff0effe4aa66fb70382a4c192cb8a31',1,'ompl::base::Path::length()'],['../classompl_1_1control_1_1PathControl.html#ac45bbac7a4567666f0ab58fac6b5530f',1,'ompl::control::PathControl::length()'],['../classompl_1_1geometric_1_1PathGeometric.html#a8874ee6287db8736844a997702cc93af',1,'ompl::geometric::PathGeometric::length()']]],
+  ['lexical_5fcast',['lexical_cast',['../classompl_1_1base_1_1SpecificParam.html#a1eacd11acf5f4800880e220b6b99796f',1,'ompl::base::SpecificParam']]],
   ['lightning',['Lightning',['../classompl_1_1tools_1_1Lightning.html#af148743f9ddd1ab99bf6eeb994b4fd1b',1,'ompl::tools::Lightning::Lightning(const base::SpaceInformationPtr &amp;si)'],['../classompl_1_1tools_1_1Lightning.html#af60e1927f5d6d9c90e1b203f1363b2ef',1,'ompl::tools::Lightning::Lightning(const base::StateSpacePtr &amp;space)']]],
   ['lightningdb',['LightningDB',['../classompl_1_1tools_1_1LightningDB.html#a2f66cffe479034cef4d0d0f54edc3cb3',1,'ompl::tools::LightningDB']]],
   ['lightningretrieverepair',['LightningRetrieveRepair',['../classompl_1_1geometric_1_1LightningRetrieveRepair.html#a28f17397f83c81fdd73ceb3befcd9796',1,'ompl::geometric::LightningRetrieveRepair']]],

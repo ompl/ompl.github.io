@@ -6878,13 +6878,6 @@
       <anchor>ae5d0c6e5545dbdf6cfb252bfc6e59493</anchor>
       <arglist>() const</arglist>
     </member>
-    <member kind="function" protection="protected">
-      <type>const std::string &amp;</type>
-      <name>maybeWrapBool</name>
-      <anchorfile>classompl_1_1base_1_1GenericParam.html</anchorfile>
-      <anchor>a01151b7aeb9acf307288e2c551c8a1f2</anchor>
-      <arglist>(const std::string &amp;value) const</arglist>
-    </member>
     <member kind="variable" protection="protected">
       <type>std::string</type>
       <name>name_</name>
@@ -8695,8 +8688,8 @@
       <type>void</type>
       <name>declareParam</name>
       <anchorfile>classompl_1_1base_1_1ParamSet.html</anchorfile>
-      <anchor>a3b27e180d07144d220f332750590fc71</anchor>
-      <arglist>(const std::string &amp;name, const typename SpecificParam&lt; T &gt;::SetterFn &amp;setter, const typename SpecificParam&lt; T &gt;::GetterFn &amp;getter=typename SpecificParam&lt; T &gt;::GetterFn())</arglist>
+      <anchor>a7601fe9c29bbfb75daae602d484d2ec1</anchor>
+      <arglist>(const std::string &amp;name, const typename SpecificParam&lt; T &gt;::SetterFn &amp;setter, const typename SpecificParam&lt; T &gt;::GetterFn &amp;getter=[] { return T();})</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -10192,10 +10185,10 @@
       <arglist>(Archive &amp;ar, const unsigned int)</arglist>
     </member>
     <member kind="variable">
-      <type>boost::uint32_t</type>
+      <type>std::uint_fast32_t</type>
       <name>marker</name>
       <anchorfile>structompl_1_1base_1_1PlannerDataStorage_1_1Header.html</anchorfile>
-      <anchor>a35e630886b177274a7313ddaccdad2dd</anchor>
+      <anchor>a51f9f343b9ed7921bf70441b31a7d08b</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -13875,6 +13868,27 @@
       <anchor>a57f4d59f883dad7e5cdba2bd4945952e</anchor>
       <arglist>() const override</arglist>
     </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>getValue</name>
+      <anchorfile>classompl_1_1base_1_1SpecificParam.html</anchorfile>
+      <anchor>acb87fa74f22a5ca55b3c8cbfb25b7a55</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>getValue</name>
+      <anchorfile>classompl_1_1base_1_1SpecificParam.html</anchorfile>
+      <anchor>acb87fa74f22a5ca55b3c8cbfb25b7a55</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>T</type>
+      <name>lexical_cast</name>
+      <anchorfile>classompl_1_1base_1_1SpecificParam.html</anchorfile>
+      <anchor>a1eacd11acf5f4800880e220b6b99796f</anchor>
+      <arglist>(const std::string &amp;value) const</arglist>
+    </member>
     <member kind="variable" protection="protected">
       <type>SetterFn</type>
       <name>setter_</name>
@@ -15551,10 +15565,10 @@
       <arglist>(Archive &amp;ar, const unsigned int)</arglist>
     </member>
     <member kind="variable">
-      <type>boost::uint32_t</type>
+      <type>std::uint_fast32_t</type>
       <name>marker</name>
       <anchorfile>structompl_1_1base_1_1StateStorage_1_1Header.html</anchorfile>
-      <anchor>adea13a95336ff3e3fba60147635ce304</anchor>
+      <anchor>afa49667a83d83b6d54f36255ec6db7ab</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -40176,10 +40190,10 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>boost::uint32_t</type>
+      <type>std::uint_fast32_t</type>
       <name>seed</name>
       <anchorfile>structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment.html</anchorfile>
-      <anchor>ae7ba23aa3cb97e4f6e6e9ce817775024</anchor>
+      <anchor>a90d9e1427aabb29d9e2a7587e6440ac5</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">

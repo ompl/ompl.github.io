@@ -54,7 +54,6 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -123,8 +122,8 @@
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
@@ -151,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -162,7 +161,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Release Notes </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>OMPL.app 1.4.0 (June 25, 2018)</h1>
+<div class="textblock"><h1>OMPL 1.4.1 (December 5, 2018)</h1>
+<ul>
+<li>Add support for PySide2.</li>
+<li>Made Planner Arena work with latest versions of R packages.</li>
+<li>Misc. bug and documentation fixes.</li>
+</ul>
+<h1>OMPL.app 1.4.0 (June 25, 2018)</h1>
 <ul>
 <li>There is a new framework for planning with constraints that unifies and generalizes prior proposed algorithms such as CBiRRT2, AtlasRRT and TangentBundle-RRT. The framework decouples the methodology used for computing configurations that satisfy constraints from the high-level planning strategy. This allows the user to use any sampling-based planning algorithm in OMPL with arbitrary geometric constraints. See the <a href="constrainedPlanning.html">overview</a>, <a href="constrainedPlanningTutorial.html">tutorial</a> and various <a href="group__demos.html">demos</a> in <code>ompl/demos/constraint</code>.</li>
 <li>Eigen3 is now a required dependency.</li>

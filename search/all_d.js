@@ -1,7 +1,7 @@
 var searchData=
 [
   ['mailing_20lists',['Mailing Lists',['../mailingLists.html',1,'']]],
-  ['marker',['marker',['../structompl_1_1base_1_1PlannerDataStorage_1_1Header.html#a35e630886b177274a7313ddaccdad2dd',1,'ompl::base::PlannerDataStorage::Header::marker()'],['../structompl_1_1base_1_1StateStorage_1_1Header.html#adea13a95336ff3e3fba60147635ce304',1,'ompl::base::StateStorage::Header::marker()']]],
+  ['marker',['marker',['../structompl_1_1base_1_1PlannerDataStorage_1_1Header.html#a51f9f343b9ed7921bf70441b31a7d08b',1,'ompl::base::PlannerDataStorage::Header::marker()'],['../structompl_1_1base_1_1StateStorage_1_1Header.html#afa49667a83d83b6d54f36255ec6db7ab',1,'ompl::base::StateStorage::Header::marker()']]],
   ['markexpandedtosamples',['markExpandedToSamples',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a3207670686530701aa189e8b7254ae9a',1,'ompl::geometric::BITstar::Vertex']]],
   ['markexpandedtovertices',['markExpandedToVertices',['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a73a48a90dd81745e5b970472175a2066',1,'ompl::geometric::BITstar::Vertex']]],
   ['markgoalstate',['markGoalState',['../classompl_1_1base_1_1PlannerData.html#a7772ac307d153831c0e7ecfc4fb1c18b',1,'ompl::base::PlannerData']]],
@@ -46,7 +46,6 @@ var searchData=
   ['maxtime',['maxTime',['../structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment.html#a6e2afb5aa508d11d99c8c900ac185e31',1,'ompl::tools::Benchmark::CompleteExperiment::maxTime()'],['../structompl_1_1tools_1_1Benchmark_1_1Request.html#ae29e119a2a3ca7d1325f701159a7636a',1,'ompl::tools::Benchmark::Request::maxTime()']]],
   ['maxtime_5f',['maxTime_',['../classompl_1_1base_1_1TimeStateSpace.html#a40cc110f6c4295f575a33cbc27c96eba',1,'ompl::base::TimeStateSpace']]],
   ['maybeconstructsolution',['maybeConstructSolution',['../classompl_1_1geometric_1_1PRM.html#a819cc1db3a6b03f356a11aa0151f2fe4',1,'ompl::geometric::PRM']]],
-  ['maybewrapbool',['maybeWrapBool',['../classompl_1_1base_1_1GenericParam.html#a01151b7aeb9acf307288e2c551c8a1f2',1,'ompl::base::GenericParam']]],
   ['mc_5f',['mc_',['../classompl_1_1geometric_1_1RRTXstatic.html#a7fea8a7560a45871e75beb465142bd74',1,'ompl::geometric::RRTXstatic']]],
   ['mechanicalworkoptimizationobjective',['MechanicalWorkOptimizationObjective',['../classompl_1_1base_1_1MechanicalWorkOptimizationObjective.html',1,'ompl::base::MechanicalWorkOptimizationObjective'],['../classompl_1_1base_1_1MechanicalWorkOptimizationObjective.html#a0eae6572471af6a9bae53ca7aee983f3',1,'ompl::base::MechanicalWorkOptimizationObjective::MechanicalWorkOptimizationObjective()']]],
   ['memusage_5ft',['MemUsage_t',['../namespaceompl_1_1machine.html#ab33b6ae8d7c29d501ac4f205cc5719e4',1,'ompl::machine']]],
