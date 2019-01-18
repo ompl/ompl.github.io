@@ -34,21 +34,19 @@ install_python_binding_dependencies()
     # install additional python dependencies via pip
     sudo -H pip${PYTHONV} install -vU pygccxml pyplusplus
     # install castxml
+    if [[ $ubuntu_version < 1610 ]]; then
+        wget -O - https://data.kitware.com/api/v1/file/57b5dea08d777f10f2696379/download | tar zxf - -C ${HOME}
+        export PATH=$HOME/castxml/bin:$PATH
+    else
+        sudo apt-get -y install castxml
+    fi
     if [[ $ubuntu_version > 1410 ]]; then
-        if [[ $ubuntu_version < 1610 ]]; then
-            wget -O - https://data.kitware.com/api/v1/file/57b5dea08d777f10f2696379/download | tar zxf - -C ${HOME}
-            export PATH=$HOME/castxml/bin:$PATH
-        else
-            sudo apt-get -y install castxml
-        fi
         sudo apt-get -y install libboost-python-dev
         if [[ $ubuntu_version > 1710 ]]; then
             sudo apt-get -y install libboost-numpy-dev python${PYTHONV}-numpy
         fi
     else
         sudo apt-get -y install libboost-python1.55-dev
-        wget -O - https://midas3.kitware.com/midas/download/item/318227/castxml-linux.tar.gz | tar zxf - -C $HOME
-        export PATH=$HOME/castxml/bin:$PATH
     fi
 }
 
@@ -88,8 +86,8 @@ install_ompl()
     else
         OMPL="omplapp"
     fi
-    wget -O - https://bitbucket.org/ompl/ompl/downloads/$OMPL-1.4.1-Source.tar.gz | tar zxf -
-    cd $OMPL-1.4.1-Source
+    wget -O - https://bitbucket.org/ompl/ompl/downloads/$OMPL-1.4.2-Source.tar.gz | tar zxf -
+    cd $OMPL-1.4.2-Source
     mkdir -p build/Release
     cd build/Release
     cmake ../.. -DPYTHON_EXEC=/usr/bin/python${PYTHONV}

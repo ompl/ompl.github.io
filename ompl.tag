@@ -14499,7 +14499,21 @@
       <type>std::string</type>
       <name>getValue</name>
       <anchorfile>classompl_1_1base_1_1SpecificParam.html</anchorfile>
-      <anchor>acb87fa74f22a5ca55b3c8cbfb25b7a55</anchor>
+      <anchor>ab5f8fd1bbc7f204709e6031452b09e3f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>getValue</name>
+      <anchorfile>classompl_1_1base_1_1SpecificParam.html</anchorfile>
+      <anchor>ae91750718fdea0f979cf6f00add250b6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>getValue</name>
+      <anchorfile>classompl_1_1base_1_1SpecificParam.html</anchorfile>
+      <anchor>a9db28cf9432b22d3db7640c265b2a89d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -43129,6 +43143,48 @@
       <anchorfile>namespaceompl.html</anchorfile>
       <anchor>a6c1f0987bd0b549658bd65925d03e3e9</anchor>
       <arglist>(unsigned int N, double dFoci, double dTransverse)</arglist>
+    </member>
+    <member kind="function">
+      <type>float</type>
+      <name>stof</name>
+      <anchorfile>namespaceompl.html</anchorfile>
+      <anchor>ab065cf50eed9ea179f2bf841f0a7b859</anchor>
+      <arglist>(const std::string &amp;str)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>stod</name>
+      <anchorfile>namespaceompl.html</anchorfile>
+      <anchor>ab649cb537776c3a149bca7cf7f7c51c2</anchor>
+      <arglist>(const std::string &amp;str)</arglist>
+    </member>
+    <member kind="function">
+      <type>long double</type>
+      <name>stold</name>
+      <anchorfile>namespaceompl.html</anchorfile>
+      <anchor>ab0cd45938b2dc3d9fce58a601ad37b87</anchor>
+      <arglist>(const std::string &amp;str)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>toString</name>
+      <anchorfile>namespaceompl.html</anchorfile>
+      <anchor>a6e6c38ce80fbb8f10d826bb19b64735a</anchor>
+      <arglist>(float val)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>toString</name>
+      <anchorfile>namespaceompl.html</anchorfile>
+      <anchor>af6ea1e987fc83522088e39df1f36696b</anchor>
+      <arglist>(double val)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>toString</name>
+      <anchorfile>namespaceompl.html</anchorfile>
+      <anchor>aa5f03752d2f5bb0784301647d9b31183</anchor>
+      <arglist>(long double val)</arglist>
     </member>
   </compound>
   <compound kind="namespace">

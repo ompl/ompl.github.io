@@ -5,21 +5,33 @@
   <title>Class Members</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <link href="css/tabs.css" rel="stylesheet">
-  <link href="css/doxygen.css" rel="stylesheet">
-  <link href="css/search.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="css/ompl.css" rel="stylesheet">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <script src="search/searchdata.js"></script>
-  <script src="search/search.js"></script>
+  <meta name="generator" content="Doxygen 1.8.15"/>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" async="async" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -48,6 +60,7 @@
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
               <li><a href="spaces.html">Available State Spaces</a></li>
               <li><a href="optimalPlanning.html">Optimal Planning</a></li>
+              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
               <li><a href="FAQ.html">FAQ</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">External links</li>
@@ -76,8 +89,8 @@
               <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
               <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
               <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
@@ -103,42 +116,31 @@
             </ul>
           </li>
           <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-          <!-- Doxygen API search box -->
-          <div id="searchli">
-            <div id="MSearchBox" class="MSearchBoxInactive">
-              <span class="left">
-                <img id="MSearchSelect" src="search/mag_sel.png"
-                onmouseover="return searchBox.OnSearchSelectShow()"
-                onmouseout="return searchBox.OnSearchSelectHide()"
-                alt=""/>
-                <input type="text" id="MSearchField" value="Search API" accesskey="S"
-                onfocus="searchBox.OnSearchFieldFocus(true)"
-                onblur="searchBox.OnSearchFieldFocus(false)"
-                onkeyup="searchBox.OnSearchFieldChange(event)"/>
-              </span><span class="right">
-                <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-              </span>
-            </div>
-          </div>
+                  <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- window showing the filter options -->
-  <div id="MSearchSelectWindow"
-  onmouseover="return searchBox.OnSearchSelectShow()"
-  onmouseout="return searchBox.OnSearchSelectHide()"
-  onkeydown="return searchBox.OnSearchSelectKey(event)">
-  <a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a></div>
-  <!-- iframe showing the search results (closed by default) -->
-  <div id="MSearchResultsWindow">
-    <iframe src="" frameborder="0"name="MSearchResults" id="MSearchResults"></iframe>
-  </div>
   <div class="container" role="main">
     <div>
-<!-- Generated by Doxygen 1.8.10 -->
+<!-- Generated by Doxygen 1.8.15 -->
 <script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
 </script>
 </div><!-- top -->
 <!-- window showing the filter options -->
@@ -158,27 +160,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
-<h3><a class="anchor" id="index_~"></a>- ~ -</h3><ul>
+<h3><a id="index__7E"></a>- ~ -</h3><ul>
 <li>~AnytimePathShortening()
-: <a class="el" href="classompl_1_1geometric_1_1AnytimePathShortening.html#a22f8b530dcecb9c01b249f16bfcc59fc">ompl::geometric::AnytimePathShortening</a>
+: <a class="el" href="classompl_1_1geometric_1_1AnytimePathShortening.html#a1c232188759e88c19e9753f4f9f2cb07">ompl::geometric::AnytimePathShortening</a>
+</li>
+<li>~AtlasChart()
+: <a class="el" href="classompl_1_1base_1_1AtlasChart.html#a788555d0c062181c6a3b104bd8c4d585">ompl::base::AtlasChart</a>
+</li>
+<li>~AtlasStateSpace()
+: <a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html#a1d8b2107cb33703c2113844955ff7007">ompl::base::AtlasStateSpace</a>
 </li>
 <li>~BITstar()
-: <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a888e73419db8ea777fe1b54b046d34af">ompl::geometric::BITstar</a>
+: <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a93557ffb26e1ab7601f61ac81f443caa">ompl::geometric::BITstar</a>
 </li>
 <li>~CForestStateSampler()
-: <a class="el" href="classompl_1_1base_1_1CForestStateSampler.html#a8c4dd8878454e969cf24b3c16abbc4cc">ompl::base::CForestStateSampler</a>
+: <a class="el" href="classompl_1_1base_1_1CForestStateSampler.html#a1ab1d6a828f108d0681625a1297090b7">ompl::base::CForestStateSampler</a>
 </li>
 <li>~CompoundControlSampler()
-: <a class="el" href="classompl_1_1control_1_1CompoundControlSampler.html#a74052738dc2f61bfb3c59956d1323efc">ompl::control::CompoundControlSampler</a>
+: <a class="el" href="classompl_1_1control_1_1CompoundControlSampler.html#ae9b0e5cd393eda207232bf6ca80ed06a">ompl::control::CompoundControlSampler</a>
 </li>
 <li>~CompoundStateSampler()
-: <a class="el" href="classompl_1_1base_1_1CompoundStateSampler.html#a65d4594f84d5a86f520a423c8299cf34">ompl::base::CompoundStateSampler</a>
+: <a class="el" href="classompl_1_1base_1_1CompoundStateSampler.html#a96fac6d5187dd3bfe684bf3c292531c5">ompl::base::CompoundStateSampler</a>
+</li>
+<li>~ConstraintIntersection()
+: <a class="el" href="classompl_1_1base_1_1ConstraintIntersection.html#a8fa5516ef2ca967729ef610204800fdb">ompl::base::ConstraintIntersection</a>
 </li>
 <li>~FCLContinuousMotionValidator()
-: <a class="el" href="classompl_1_1app_1_1FCLContinuousMotionValidator.html#ab3fee34c72d511c90dd849d986660319">ompl::app::FCLContinuousMotionValidator</a>
+: <a class="el" href="classompl_1_1app_1_1FCLContinuousMotionValidator.html#a99dfafc5a98cc9e88103a3cba3afba2e">ompl::app::FCLContinuousMotionValidator</a>
 </li>
 <li>~Goal()
-: <a class="el" href="classompl_1_1base_1_1Goal.html#abc80622d90d8b304a0627abde2e8c142">ompl::base::Goal</a>
+: <a class="el" href="classompl_1_1base_1_1Goal.html#a6cb5c3bcea09ac131c381f4241c6685c">ompl::base::Goal</a>
 </li>
 <li>~Grid()
 : <a class="el" href="classompl_1_1Grid.html#acace53abca008ae9210248cb2d54739d">ompl::Grid&lt; _T &gt;</a>
@@ -187,30 +198,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classompl_1_1tools_1_1LightningDB.html#a2bc311d02286154535987b6375317f37">ompl::tools::LightningDB</a>
 </li>
 <li>~LTLPlanner()
-: <a class="el" href="classompl_1_1control_1_1LTLPlanner.html#a9e98eb8ba7590177994bb659c0a886b5">ompl::control::LTLPlanner</a>
+: <a class="el" href="classompl_1_1control_1_1LTLPlanner.html#ab69a1fb51d40de5e28ce09159c68f13c">ompl::control::LTLPlanner</a>
 </li>
 <li>~Motion()
-: <a class="el" href="structompl_1_1control_1_1LTLPlanner_1_1Motion.html#ac79a2b8e46b6eadbd5dc40fb230c1274">ompl::control::LTLPlanner::Motion</a>
+: <a class="el" href="structompl_1_1control_1_1LTLPlanner_1_1Motion.html#a7f21a868dfc310313764096e5b024daa">ompl::control::LTLPlanner::Motion</a>
 </li>
 <li>~ODESolver()
-: <a class="el" href="classompl_1_1control_1_1ODESolver.html#a2007e1376254b2691a0a0bab8fc1ddb2">ompl::control::ODESolver</a>
+: <a class="el" href="classompl_1_1control_1_1ODESolver.html#a2c25c5d8023f9934e909523fcd8801e8">ompl::control::ODESolver</a>
 </li>
 <li>~Path()
-: <a class="el" href="classompl_1_1base_1_1Path.html#a3cff10b5f4f536f41652fb62da02ae60">ompl::base::Path</a>
+: <a class="el" href="classompl_1_1base_1_1Path.html#ab2a9e691ca10b7341e8eb81a313ff58f">ompl::base::Path</a>
 </li>
 <li>~PDF()
 : <a class="el" href="classompl_1_1PDF.html#a9f6f99197d8379496126a1a48021d149">ompl::PDF&lt; _T &gt;</a>
 </li>
 <li>~Planner()
-: <a class="el" href="classompl_1_1base_1_1Planner.html#a03f24b87575ab8d31b921fea6525a0c5">ompl::base::Planner</a>
+: <a class="el" href="classompl_1_1base_1_1Planner.html#ab452a5462004f3848b92b2669bc8cf89">ompl::base::Planner</a>
 </li>
 <li>~PlannerData()
 : <a class="el" href="classompl_1_1base_1_1PlannerData.html#aeaae435c61fbc1f4c894da0140830e68">ompl::base::PlannerData</a>
-, <a class="el" href="classompl_1_1control_1_1PlannerData.html#aa70e81a977868ed6b45fd395001cd348">ompl::control::PlannerData</a>
+, <a class="el" href="classompl_1_1control_1_1PlannerData.html#ae3d3a44f14bacb30bc00d41d0980baf5">ompl::control::PlannerData</a>
 </li>
 <li>~PlannerDataStorage()
 : <a class="el" href="classompl_1_1base_1_1PlannerDataStorage.html#abc48cb7a260846e6aee4b93c1dbd2fb5">ompl::base::PlannerDataStorage</a>
-, <a class="el" href="classompl_1_1control_1_1PlannerDataStorage.html#ac9977783f4b8bf37a0f632de68398667">ompl::control::PlannerDataStorage</a>
+, <a class="el" href="classompl_1_1control_1_1PlannerDataStorage.html#a22149c2714de24650e7c85dfaff2249a">ompl::control::PlannerDataStorage</a>
 </li>
 <li>~PlannerInputStates()
 : <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html#a1103c26d0ead2fc41764394b94b1bfbf">ompl::base::PlannerInputStates</a>
@@ -221,29 +232,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~Profiler()
 : <a class="el" href="classompl_1_1tools_1_1Profiler.html#a3fe921fbbd004300bf7aec938a5b566c">ompl::tools::Profiler</a>
 </li>
+<li>~ProjectedStateSpace()
+: <a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html#a698bc4eb23ed8ecd8f4522a35779fa02">ompl::base::ProjectedStateSpace</a>
+</li>
 <li>~PropositionalDecomposition()
-: <a class="el" href="classompl_1_1control_1_1PropositionalDecomposition.html#a3c29d4fd46849b2238f12d52d3d484ef">ompl::control::PropositionalDecomposition</a>
+: <a class="el" href="classompl_1_1control_1_1PropositionalDecomposition.html#aeea93f4e027fd2e865b02a86435fa540">ompl::control::PropositionalDecomposition</a>
 </li>
 <li>~ScopedState()
 : <a class="el" href="classompl_1_1base_1_1ScopedState.html#a12a01012a255416cefd52ceda1ae452a">ompl::base::ScopedState&lt; T &gt;</a>
 </li>
 <li>~SPARS()
-: <a class="el" href="classompl_1_1geometric_1_1SPARS.html#abdd0ee2d927e4d5c2513e7c4046183fd">ompl::geometric::SPARS</a>
+: <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a247ed5097d23da1129551ea127935b07">ompl::geometric::SPARS</a>
 </li>
 <li>~SPARSdb()
-: <a class="el" href="classompl_1_1geometric_1_1SPARSdb.html#a4b6bb23b6d9c286edfb246c6fe42b889">ompl::geometric::SPARSdb</a>
+: <a class="el" href="classompl_1_1geometric_1_1SPARSdb.html#a4010f646a18f5d1f228ed2bebd7978e8">ompl::geometric::SPARSdb</a>
 </li>
 <li>~SPARStwo()
-: <a class="el" href="classompl_1_1geometric_1_1SPARStwo.html#aeb71539484ecad27ff509f9ea37fbb7b">ompl::geometric::SPARStwo</a>
+: <a class="el" href="classompl_1_1geometric_1_1SPARStwo.html#af06623fea778d3d9be53f855a0fe1a0b">ompl::geometric::SPARStwo</a>
 </li>
 <li>~ThunderDB()
-: <a class="el" href="classompl_1_1tools_1_1ThunderDB.html#a0e0bc6e9b2b04a7d2a7cb65e12e30a21">ompl::tools::ThunderDB</a>
+: <a class="el" href="classompl_1_1tools_1_1ThunderDB.html#a946a107d62ef5706fae8b86ebdc0822a">ompl::tools::ThunderDB</a>
 </li>
 <li>~Vertex()
 : <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html#a2ea0eb96d9a4127dde59e836283fd856">ompl::geometric::BITstar::Vertex</a>
 </li>
 <li>~VFRRT()
-: <a class="el" href="classompl_1_1geometric_1_1VFRRT.html#a1426756c6981685f9a2609aa1a40226d">ompl::geometric::VFRRT</a>
+: <a class="el" href="classompl_1_1geometric_1_1VFRRT.html#a525325b8a5eda45e310d50af6c1d3de5">ompl::geometric::VFRRT</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -253,7 +267,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <a href="http://www.kavrakilab.org">Physical and Biological Computing Group</a> &bull;
     <a href="http://www.cs.rice.edu">Department of Computer Science</a> &bull;
     <a href="http://www.rice.edu">Rice University</a><br>
-    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.10</span>
+    <span class="gray">Generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.15</span>
   </p></div>
 </footer>
 <script>
@@ -264,10 +278,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="js/jquery.js"></script>
-<script src="js/jquery.powertip.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/dynsections.js"></script>
-<script src="js/ompl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

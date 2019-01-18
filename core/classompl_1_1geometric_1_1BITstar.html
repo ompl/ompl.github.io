@@ -54,6 +54,7 @@
               <li><a href="installation.html">Installation</a></li>
               <li><a href="tutorials.html">Tutorials</a></li>
               <li><a href="group__demos.html">Demos</a></li>
+              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
               <li><a href="python.html">Python Bindings</a></li>
               <li><a href="planners.html">Available Planners</a></li>
               <li><a href="benchmark.html">Benchmarking Planners</a></li>
@@ -88,8 +89,8 @@
               <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
               <li class="divider"></li>
               <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux)</a></li>
+              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
+              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
               <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
               <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
@@ -576,7 +577,7 @@ Optimal Planning via the Heuristically Guided Search of Implicit Random Geometri
 <p>Delay the consideration of rewiring edges until an initial solution is found. When multiple batches are required to find an initial solution, this can improve the time required to do so, by delaying improvements in the cost-to-come to a connected vertex. As the rewiring edges are considered once an initial solution is found, this has no effect on the theoretical asymptotic optimality of the planner. </p>
 <p><a class="anchor" id="gBITstarSetDelayRewiringUntilInitialSolution"></a></p>
 
-<p class="definition">Definition at line <a class="el" href="BITstar_8cpp_source.html#l01139">1139</a> of file <a class="el" href="BITstar_8cpp_source.html">BITstar.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BITstar_8cpp_source.html#l01141">1141</a> of file <a class="el" href="BITstar_8cpp_source.html">BITstar.cpp</a>.</p>
 
 </div>
 </div>
@@ -599,7 +600,7 @@ Optimal Planning via the Heuristically Guided Search of Implicit Random Geometri
 <p>Drop <em>all</em> unconnected samples when pruning, regardless of their heuristic value. This provides a method for BIT* to remove samples that have not been connected to the graph and may be beneficial in problems where portions of the free space are unreachable (i.e., disconnected). BIT* calculates the connection radius for each batch from the underlying uniform distribution of states. The resulting larger connection radius may be detrimental in areas where the graph is dense, but maintains the theoretical asymptotic optimality of the planner. </p>
 <p><a class="anchor" id="gBITstarSetDropSamplesOnPrune"></a></p>
 
-<p class="definition">Definition at line <a class="el" href="BITstar_8cpp_source.html#l01159">1159</a> of file <a class="el" href="BITstar_8cpp_source.html">BITstar.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BITstar_8cpp_source.html#l01161">1161</a> of file <a class="el" href="BITstar_8cpp_source.html">BITstar.cpp</a>.</p>
 
 </div>
 </div>
@@ -622,7 +623,7 @@ Optimal Planning via the Heuristically Guided Search of Implicit Random Geometri
 <p>Delay the generation of samples until they are <em>necessary</em>. This only works when using an r-disc connection scheme, and is currently only implemented for problems seeking to minimize path length. This helps reduce the complexity of nearest-neighbour look ups, and can be particularly beneficial in unbounded planning problems where selecting an appropriate bounding box is difficult. With JIT sampling enabled, BIT* can solve planning problems whose state space has <em>infinite</em> <em>boundaries</em>. When enumerating outgoing edges from a vertex, BIT* uses JIT sampling to assure that the area within r of the vertex has been sampled during this batch. This is done in a way that maintains uniform sample distribution and has no effect on the theoretical asymptotic optimality of the planner. </p>
 <p><a class="anchor" id="gBITstarSetJustInTimeSampling"></a></p>
 
-<p class="definition">Definition at line <a class="el" href="BITstar_8cpp_source.html#l01149">1149</a> of file <a class="el" href="BITstar_8cpp_source.html">BITstar.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BITstar_8cpp_source.html#l01151">1151</a> of file <a class="el" href="BITstar_8cpp_source.html">BITstar.cpp</a>.</p>
 
 </div>
 </div>
