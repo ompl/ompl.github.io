@@ -12,7 +12,7 @@ var searchData=
   ['bkpiece1',['BKPIECE1',['../classompl_1_1geometric_1_1BKPIECE1.html#a1e61534ba2f912016e00d94cfc5449e5',1,'ompl::geometric::BKPIECE1']]],
   ['bordercheck',['borderCheck',['../classompl_1_1base_1_1AtlasChart.html#a87c309b951f651df5b9f999c289a6d46',1,'ompl::base::AtlasChart']]],
   ['bridgetestvalidstatesampler',['BridgeTestValidStateSampler',['../classompl_1_1base_1_1BridgeTestValidStateSampler.html#a7a54fdc1219e1e97e913bfe8f5b70cbb',1,'ompl::base::BridgeTestValidStateSampler']]],
-  ['buildavail',['buildAvail',['../classompl_1_1control_1_1LTLPlanner.html#aa960ed258c58c90915021a8cf50e1fbd',1,'ompl::control::LTLPlanner']]],
+  ['buildavail',['buildAvail',['../classompl_1_1control_1_1LTLPlanner.html#a622b64d5891bfdf7546e9813e29823e7',1,'ompl::control::LTLPlanner']]],
   ['buildfrom',['buildFrom',['../classompl_1_1BinaryHeap.html#ac8d1b64b5b7d50cd09380bfa14bbc45d',1,'ompl::BinaryHeap']]],
   ['buildgraph',['buildGraph',['../classompl_1_1control_1_1ProductGraph.html#ad4576a35e3089da64262abdc550a064c',1,'ompl::control::ProductGraph']]]
 ];
