@@ -95,7 +95,7 @@
               <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
             </ul>
           </li>
-          <li><a href="https://bitbucket.org/ompl/ompl/issues?status=new&status=open">Issues</a></li>
+          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -123,8 +123,8 @@
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onfocus="searchBox.OnSearchFieldFocus(true)"
+               onblur="searchBox.OnSearchFieldFocus(false)"
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
+<iframe src="javascript:void(0)" frameborder="0"
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -302,7 +302,7 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
 </li>
 </ul>
 <p>Using SQL queries one can easily select a subset of the data or compute <a href="http://en.wikipedia.org/wiki/Join_(SQL)">joins</a> of tables. Consider the following snippet of R code:</p>
-<div class="fragment"><div class="line">library(&quot;ggplot2&quot;)</div><div class="line">library(&quot;RSQLite&quot;)</div><div class="line">con &lt;- dbConnect(dbDriver(&quot;SQLite&quot;), &quot;benchmark.db&quot;)</div><div class="line"></div><div class="line"># read data</div><div class="line">runs &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, runs.* FROM plannerConfigs INNER JOIN runs ON plannerConfigs.id = runs.plannerid&quot;)</div><div class="line">progress &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, progress.* FROM plannerConfigs INNER JOIN runs INNER JOIN progress ON plannerConfigs.id=runs.plannerid AND runs.id=progress.runid&quot;)</div><div class="line"></div><div class="line"># plot some data</div><div class="line">pdf(&#39;plots.pdf&#39;, width=8, height=6)</div><div class="line">qplot(name, time, data=runs, geom=c(&quot;jitter&quot;,&quot;boxplot&quot;))</div><div class="line">qplot(time, best_cost, data=progress, alpha=I(1/2), colour=name, geom=c(&quot;point&quot;, &quot;smooth&quot;))</div><div class="line"></div><div class="line">dev.off()</div><div class="line">dbDisconnect(con)</div></div><!-- fragment --><p>For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:  
+<div class="fragment"><div class="line">library(&quot;ggplot2&quot;)</div><div class="line">library(&quot;RSQLite&quot;)</div><div class="line">con &lt;- dbConnect(dbDriver(&quot;SQLite&quot;), &quot;benchmark.db&quot;)</div><div class="line"></div><div class="line"># read data</div><div class="line">runs &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, runs.* FROM plannerConfigs INNER JOIN runs ON plannerConfigs.id = runs.plannerid&quot;)</div><div class="line">progress &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, progress.* FROM plannerConfigs INNER JOIN runs INNER JOIN progress ON plannerConfigs.id=runs.plannerid AND runs.id=progress.runid&quot;)</div><div class="line"></div><div class="line"># plot some data</div><div class="line">pdf(&#39;plots.pdf&#39;, width=8, height=6)</div><div class="line">qplot(name, time, data=runs, geom=c(&quot;jitter&quot;,&quot;boxplot&quot;))</div><div class="line">qplot(time, best_cost, data=progress, alpha=I(1/2), colour=name, geom=c(&quot;point&quot;, &quot;smooth&quot;))</div><div class="line"></div><div class="line">dev.off()</div><div class="line">dbDisconnect(con)</div></div><!-- fragment --><p>For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:
 <div class="row">
 <div class="col-md-6 col-sm-6">
   <img src="images/R_time.png" width="100%"><br>
