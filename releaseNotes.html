@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Release Notes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>Release Notes</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,42 +136,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
 
 </div><!-- top -->
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">Release Notes </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>OMPL.app 1.4.2 (January 18, 2019)</h1>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md3"></a>
+OMPL.app 1.5.0 (June 2, 2020)</h1>
+<ul>
+<li>A C++14 compiler is now required. The minimum version of CMake required is now 3.5 and the minimum version of Boost supported is now 1.58.</li>
+<li>All development now takes place on <a href="https://github.com/ompl/ompl">Github</a>. This used to be a git mirror of the mercurial repository on BitBucket, but since BitBucket is phasing out mercurial support the GitHub repo is now the main repo. All the old issues have been migrated to GitHub.</li>
+<li>Added build targets for easily creating Docker images for OMPL, the <a href="http://plannerarena.org">PlannerArena web server</a>, and the <a href="http://omplapp.kavrakilab.org">OMPL web app</a>. Docker images are available on <a href="https://hub.docker.com/u/kavrakilab">Docker Hub</a>.</li>
+<li>Added new planners:<ul>
+<li><a class="el" href="classompl_1_1geometric_1_1XXL.html#gXXL">XXL</a>: a probabilistically complete sampling-based algorithm designed to plan the motions of high-dimensional mobile manipulators and related platforms.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1ABITstar.html#gABITstar">ABIT*</a>: an extension to BIT* that uses advanced graph-search techniques to find initial solutions faster.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1AITstar.html#gAITstar">AIT*</a>: an anytime asymptotically optimal algorithm that simultaneously estimates and exploits problem-specific heuristics.</li>
+<li><a href="quotientSpacePlanning.html">Quotient-Space RRT</a>: a generalization of RRT to plan on different abstraction levels. The abstraction levels are represented by quotient-spaces.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1TSRRT.html#gTSRRT">Taskspace RRT</a>: a variant of RRT where exploration is guided by the task space.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1RLRT.html#gRLRT">RLRT</a> and <a class="el" href="classompl_1_1geometric_1_1BiRLRT.html#gBiRLRT">BiRLRT</a>: basic tree-based planners without any sophistic heuristics to guide the exploration, useful as a baseline for comparison against other tree-based planners.</li>
+</ul>
+</li>
+<li>PRM, PRM*, LazyPRM, and LazyPRM* can now be initialized with an <a class="el" href="classompl_1_1base_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">ompl::base::PlannerData</a> instance (the generic way to represent roadmaps/trees in OMPL). This means that you seed these planners with data from a previous run from any other planner. Using the <a class="el" href="classompl_1_1base_1_1PlannerDataStorage.html" title="Object that handles loading/storing a PlannerData object to/from a binary stream. Serialization of ve...">ompl::base::PlannerDataStorage</a> functionality, this data can be saved to or loaded from disk.</li>
+<li>Added support for deterministic sampling. Halton sampling is included, other deterministic sampling methods can be added.</li>
+<li>Added a new PlannerTerminationCondition called CostConvergenceTerminationCondition, which can be used to terminate asymptotically (near-)optimal planners based on convergence.</li>
+<li>Clean up ompl_benchmark_script.py for Python 3.</li>
+<li>Updated PlannerArena again to work with latest versions of R dependencies.</li>
+<li>Misc. bug and documentation fixes.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+OMPL.app 1.4.2 (January 18, 2019)</h1>
 <ul>
 <li>Misc. small bug fixes.</li>
 </ul>
-<h1>OMPL.app 1.4.1 (December 5, 2018)</h1>
+<h1><a class="anchor" id="autotoc_md5"></a>
+OMPL.app 1.4.1 (December 5, 2018)</h1>
 <ul>
 <li>Add support for PySide2.</li>
 <li>Made Planner Arena work with latest versions of R packages.</li>
 <li>Misc. bug and documentation fixes.</li>
 </ul>
-<h1>OMPL.app 1.4.0 (June 25, 2018)</h1>
+<h1><a class="anchor" id="autotoc_md6"></a>
+OMPL.app 1.4.0 (June 25, 2018)</h1>
 <ul>
 <li>There is a new framework for planning with constraints that unifies and generalizes prior proposed algorithms such as CBiRRT2, AtlasRRT and TangentBundle-RRT. The framework decouples the methodology used for computing configurations that satisfy constraints from the high-level planning strategy. This allows the user to use any sampling-based planning algorithm in OMPL with arbitrary geometric constraints. See the <a href="constrainedPlanning.html">overview</a>, <a href="constrainedPlanningTutorial.html">tutorial</a> and various <a href="group__demos.html">demos</a> in <code>ompl/demos/constraint</code>.</li>
 <li>Eigen3 is now a required dependency.</li>
 <li>Various BIT* improvements.</li>
 <li>PRM and RRTConnect can now return approximate solutions if an exact solution cannot be found. (This feature was already supported by several other planning algorithms in previous versions of OMPL.)</li>
 <li>Added support for <a href="https://spot.lrde.epita.fr">Spot</a>, a library that can be used to create finite automata from LTL specifications. This can be used by <a class="el" href="classompl_1_1control_1_1LTLPlanner.html" title="A planner for generating system trajectories to satisfy a logical specification given by an automaton...">ompl::control::LTLPlanner</a>. See the <a href="LTLWithTriangulation_8cpp_source.html">LTL with triangulation demo</a>.</li>
-<li>A new method has been added, <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a3006b09d80ec5543b0b9b81e94046df2" title="Given a path, attempt to improve the cost by randomly perturbing a randomly selected point on the pat...">ompl::geometric::PathSimplifier::perturbPath</a>, which can locally optimize a path with respect to a user-specified optimization objective. Existing methods of <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html" title="This class contains routines that attempt to simplify geometric paths. ">ompl::geometric::PathSimplifier</a> are now also cost-aware.</li>
-<li><a class="el" href="classompl_1_1geometric_1_1PathHybridization.html" title="Given multiple geometric paths, attempt to combine them in order to obtain a shorter solution...">ompl::geometric::PathHybridization</a> can now also optimize paths with respect to a user-specified optimization objective.</li>
+<li>A new method has been added, <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a3006b09d80ec5543b0b9b81e94046df2" title="Given a path, attempt to improve the cost by randomly perturbing a randomly selected point on the pat...">ompl::geometric::PathSimplifier::perturbPath</a>, which can locally optimize a path with respect to a user-specified optimization objective. Existing methods of <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html" title="This class contains routines that attempt to simplify geometric paths.">ompl::geometric::PathSimplifier</a> are now also cost-aware.</li>
+<li><a class="el" href="classompl_1_1geometric_1_1PathHybridization.html" title="Given multiple geometric paths, attempt to combine them in order to obtain a shorter solution.">ompl::geometric::PathHybridization</a> can now also optimize paths with respect to a user-specified optimization objective.</li>
 <li>Fix for bugs in path simplification and interpolation that could cause path simplification to produce a path that was invalid or longer than the original path when using GoalRegions (as opposed to just one GoalState).</li>
 <li>Added an option to RRT to add intermediate states during tree extension (this matches the same option that already existed in RRTConnect).</li>
 <li>Added the Bridge Test Sampler.</li>
 <li>Misc. bug fixes.</li>
 </ul>
-<h1>OMPL.app 1.3.2 (November 11, 2017)</h1>
+<h1><a class="anchor" id="autotoc_md7"></a>
+OMPL.app 1.3.2 (November 11, 2017)</h1>
 <ul>
 <li>Bug fixes for gcc6, clang5, and new versions of Boost.</li>
 <li>Made PlannerArena work with latest versions of R packages.</li>
@@ -195,12 +206,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Added support for development version of FCL.</li>
 <li>Misc. bug fixes.</li>
 </ul>
-<h1>OMPL.app 1.3.1 (May 18, 2017)</h1>
+<h1><a class="anchor" id="autotoc_md8"></a>
+OMPL.app 1.3.1 (May 18, 2017)</h1>
 <ul>
 <li>Tidy up code.</li>
 <li>Small bug fixes.</li>
 </ul>
-<h1>OMPL.app 1.3.0 (March 1, 2017)</h1>
+<h1><a class="anchor" id="autotoc_md9"></a>
+OMPL.app 1.3.0 (March 1, 2017)</h1>
 <ul>
 <li>Added new planners:<ul>
 <li><a class="el" href="classompl_1_1geometric_1_1RRTsharp.html#gRRTsharp">RRT#</a>, a variant of <a class="el" href="classompl_1_1geometric_1_1RRTstar.html#gRRTstar">RRT*</a> with an improved convergence rate.</li>
@@ -213,13 +226,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Fixes for Boost 1.63 and pygccxml 1.8.5.</li>
 <li>Misc. small bug fixes.</li>
 </ul>
-<h1>OMPL.app 1.2.1 (July 1, 2016)</h1>
+<h1><a class="anchor" id="autotoc_md10"></a>
+OMPL.app 1.2.1 (July 1, 2016)</h1>
 <ul>
-<li>New simplified installation instructions. There is now also a <a href="http://ompl.kavrakilab.org/install-ompl-ubuntu.sh">installation script</a> that will download and install OMPL and all its dependencies on Ubuntu 14.04, 15.10, and 16.04.</li>
+<li>New simplified installation instructions. There is now also an <a href="https://ompl.kavrakilab.org/install-ompl-ubuntu.sh">installation script</a> that will download and install OMPL and all its dependencies on Ubuntu 14.04, 15.10, and 16.04.</li>
 <li>Fixed python bindings for gcc5. Python bindings still take a <a href="https://github.com/gccxml/pygccxml/issues/56">very long time</a> to generate.</li>
 <li>Misc. small bug fixes.</li>
 </ul>
-<h1>OMPL.app 1.2.0 (June 20, 2016)</h1>
+<h1><a class="anchor" id="autotoc_md11"></a>
+OMPL.app 1.2.0 (June 20, 2016)</h1>
 <ul>
 <li>C++11 is now <b>required</b>. A lot of Boost usage in older versions of OMPL has been replaced with C++11 STL equivalents.</li>
 <li>Added several new planners and improved existing planners:<ul>
@@ -231,7 +246,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>Minimum Boost version is now 1.54.</li>
 </ul>
-<h1>OMPL.app 1.1.0 (October 28, 2015)</h1>
+<h1><a class="anchor" id="autotoc_md12"></a>
+OMPL.app 1.1.0 (October 28, 2015)</h1>
 <ul>
 <li>Added several new and updated planners:<ul>
 <li><a class="el" href="classompl_1_1geometric_1_1LightningPtr.html#Lightning">Lightning</a>: the Lightning Framework is a experienced-based motion planner that recalls from a database of previously generated paths the most similar one to the current planning problem and attempts to repair it, while at the same time planning from scratch in a different thread.</li>
@@ -243,18 +259,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>An updated version of <a class="el" href="classompl_1_1geometric_1_1FMT.html#gFMT">FMT*</a> that, among other things, caches collision checks.</li>
 </ul>
 </li>
-<li><a href="http://omplapp.kavrakilab.org">New web-based based version of OMPL.app!</a> The web app has all the functionality of the standalone GUI. In addition, it allows you to interactively construct benchmark jobs that can be submitted to a benchmark server. We have a public version of the web app and benchmarking server running at <a href="http://omplapp.kavrakilab.org,">http://omplapp.kavrakilab.org,</a> but the web app and benchmark server can also be run locally.</li>
-<li>There are two new concepts, <a class="el" href="classompl_1_1base_1_1InformedSampler.html" title="An abstract class for the concept of using information about the state space and the current solution...">ompl::base::InformedSampler</a> and <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html" title="A wrapper class that allows an InformedSampler to be used as a StateSampler. ">ompl::base::InformedStateSampler</a>, that capture the idea of using information about the state space and the current solution cost to limit future search to a planning subproblem that contains all possibly better solutions. The <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html" title="An informed sampler for problems seeking to minimize path length. ">ompl::base::PathLengthDirectInfSampler</a> is derived from InformedStateSampler and can be used to limit sampling to only those states that can lead to a shorter path than the best-found solution so far. This sampler is used in <a class="el" href="namespaceompl_1_1geometric.html" title="This namespace contains code that is specific to planning under geometric constraints. ">ompl::geometric</a>:InformedRRTstar and <a class="el" href="classompl_1_1geometric_1_1BITstar.html" title="Batch Informed Trees (BIT*) ">ompl::geometric::BITstar</a>.</li>
-<li>The <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html" title="This class contains routines that attempt to simplify geometric paths. ">ompl::geometric::PathSimplifier</a> can now also optimize a path with respect to a (sampleable) goal. This means, for example, that a solution path is no longer “stuck” with an awkward inverse kinematics solution for a goal.</li>
+<li><a href="http://omplapp.kavrakilab.org">New web-based based version of OMPL.app!</a> The web app has all the functionality of the standalone GUI. In addition, it allows you to interactively construct benchmark jobs that can be submitted to a benchmark server. We have a public version of the web app and benchmarking server running at <a href="http://omplapp.kavrakilab.org">http://omplapp.kavrakilab.org</a>, but the web app and benchmark server can also be run locally.</li>
+<li>There are two new concepts, <a class="el" href="classompl_1_1base_1_1InformedSampler.html" title="An abstract class for the concept of using information about the state space and the current solution...">ompl::base::InformedSampler</a> and <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html" title="A wrapper class that allows an InformedSampler to be used as a StateSampler.">ompl::base::InformedStateSampler</a>, that capture the idea of using information about the state space and the current solution cost to limit future search to a planning subproblem that contains all possibly better solutions. The <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html" title="An informed sampler for problems seeking to minimize path length.">ompl::base::PathLengthDirectInfSampler</a> is derived from InformedStateSampler and can be used to limit sampling to only those states that can lead to a shorter path than the best-found solution so far. This sampler is used in <a class="el" href="namespaceompl_1_1geometric.html" title="This namespace contains code that is specific to planning under geometric constraints.">ompl::geometric</a>:InformedRRTstar and <a class="el" href="classompl_1_1geometric_1_1BITstar.html" title="Batch Informed Trees (BIT*)">ompl::geometric::BITstar</a>.</li>
+<li>The <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html" title="This class contains routines that attempt to simplify geometric paths.">ompl::geometric::PathSimplifier</a> can now also optimize a path with respect to a (sampleable) goal. This means, for example, that a solution path is no longer “stuck” with an awkward inverse kinematics solution for a goal.</li>
 <li>Added a <code>plannerarena</code> script to simplify running <a href="http://plannerarena.org">Planner Arena</a> locally.</li>
 <li>Added a new planner termination conditions that allow one to terminate after a fixed number of iterations.</li>
 <li>The GNAT data structure for nearest neighbor queries has been updated and should be faster in general. There is now also non-threadsafe version of the GNAT data structure that is automatically selected for single-threaded planners. This version should be even faster.</li>
 <li>Added an option to turn off the path simplification in benchmarking.</li>
 <li>Added support for parametrized benchmarks. Planner Arena can show performance across values for a given parameter.</li>
 <li>Made it easier to get repeatable runs of an algorithm by enabling the user to set the seed of the <em>local</em> random number generators (i.e., not just the global seed).</li>
-<li>The <a href="http://ompl.kavrakilab.org/blog.html">OMPL blog</a> is now <a href="http://www.jekyllrb.com">Jekyll</a>-based and hosted as a <a href="https://github.com/ompl/blog">repository on GitHub</a>. If you have a project that uses OMPL, you can send us a pull request (please check with us first whether it would be appropriate for the blog before you write content).</li>
+<li>The <a href="https://ompl.kavrakilab.org/blog.html">OMPL blog</a> is now <a href="https://www.jekyllrb.com">Jekyll</a>-based and hosted as a <a href="https://github.com/ompl/blog">repository on GitHub</a>. If you have a project that uses OMPL, you can send us a pull request (please check with us first whether it would be appropriate for the blog before you write content).</li>
 </ul>
-<h1>OMPL.app 1.0.0 (October 26, 2014)</h1>
+<h1><a class="anchor" id="autotoc_md13"></a>
+OMPL.app 1.0.0 (October 26, 2014)</h1>
 <ul>
 <li>Added many new planners:<ul>
 <li><a class="el" href="classompl_1_1control_1_1LTLPlanner.html#cLTLPlanner">Linear Temporal Logical Planner (LTLPlanner)</a>: a planner that finds solutions for kinodynamic motion planning problems where the goal is specified by a Linear Temporal Logic (LTL) specification.</li>
@@ -266,7 +283,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>RRT* has a new option to periodically prune parts of the tree that are guaranteed <em>not</em> to contain the optimal solution. This idea was introduced in CForest, but it useful independently of the CForest parallelization. Although pruning is almost always useful, it is <em>disabled</em> by default to preserve the original behavior.</li>
 <li>Created consistent behavior across all planners that can optimize paths. Calls to the solve method of RRT*, PRM*, SPARS, SPARStwo, and LBTRRT will terminate when (1) the planner termination condition is true or (2) the optimization objective is satisfied. To make these planners terminate when <em>any</em> solution is found, you can set the cost threshold for the optimization objective to, e.g., OptimizationObjective::infiniteCost(). For most of these planners, asymptotic (approximate) optimality is only guaranteed when using the PathLengthOptimizationObjective class.</li>
-<li>Most control-based planners can now use steering functions. The user simply needs to override <a class="el" href="classompl_1_1control_1_1StatePropagator.html#acc52d20ab1da84b020aa3dbe5579769e" title="Compute the control that can take the system from state from to state to. Store that control in resul...">ompl::control::StatePropagator::steer()</a> and <a class="el" href="classompl_1_1control_1_1StatePropagator.html#adec7afc666eee8c3d7b09646d5644087" title="Return true if the steer() function has been implemented. ">ompl::control::StatePropagator::canSteer()</a> in a derived class.</li>
+<li>Most control-based planners can now use steering functions. The user simply needs to override <a class="el" href="classompl_1_1control_1_1StatePropagator.html#acc52d20ab1da84b020aa3dbe5579769e" title="Compute the control that can take the system from state from to state to. Store that control in resul...">ompl::control::StatePropagator::steer()</a> and <a class="el" href="classompl_1_1control_1_1StatePropagator.html#adec7afc666eee8c3d7b09646d5644087" title="Return true if the steer() function has been implemented.">ompl::control::StatePropagator::canSteer()</a> in a derived class.</li>
 <li>Several improvements to benchmarking functionality:<ul>
 <li><a href="http://plannerarena.org">Planner Arena</a> has been relaunched and can be used to interactively visualize benchmark results.</li>
 <li>ompl_benchmark_statistics.py can now also parse MoveIt! benchmark log files using the flag <code>--moveit</code>.</li>
@@ -278,7 +295,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Minimum Boost version is now 1.48 and minimum CMake version is now 2.8.7.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.14.2 (May 23, 2014)</h1>
+<h1><a class="anchor" id="autotoc_md14"></a>
+OMPL.app 0.14.2 (May 23, 2014)</h1>
 <ul>
 <li>Changed the <a class="el" href="benchmark.html#benchmark_database">benchmark database schema</a> to make it easier to create your own plots.</li>
 <li>Real-valued state components are now also stored when exporting PlannerData objects in <a href="http://graphml.graphdrawing.org">GraphML</a> format.</li>
@@ -287,12 +305,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>New menu option in the OMPL.app GUI to save the roadmap/tree created by a planner in GraphML format.</li>
 <li>Update FCL bindings to be compatible with FCL 0.3.0.</li>
 </ul>
-<h1>OMPL.app 0.14.1 (January 23, 2014)</h1>
+<h1><a class="anchor" id="autotoc_md15"></a>
+OMPL.app 0.14.1 (January 23, 2014)</h1>
 <ul>
 <li>Update PlannerData to use new cost infrastructure.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.14.0 (December 20, 2013)</h1>
+<h1><a class="anchor" id="autotoc_md16"></a>
+OMPL.app 0.14.0 (December 20, 2013)</h1>
 <ul>
 <li>Added new cost infrastructure to plan optimal paths with respect to arbitrary cost functions. Several common cost objective functions have been defined (such as path length and mechanical work) and new ones can easily be defined.</li>
 <li>RRT*, PRM*, TRRT, and PRM have been updated to use this cost infrastructure.</li>
@@ -309,7 +329,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Updated gccxml snapshot. If you use gcc 4.8 and the OMPL Python bindings, you need to run "make installpyplusplus" again.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.13.0 (August 5, 2013)</h1>
+<h1><a class="anchor" id="autotoc_md17"></a>
+OMPL.app 0.13.0 (August 5, 2013)</h1>
 <ul>
 <li>Added several new planners:<ul>
 <li><a class="el" href="classompl_1_1geometric_1_1SPARS.html#gSPARS">SPARS</a> and <a class="el" href="classompl_1_1geometric_1_1SPARStwo.html#gSPARStwo">SPARS2</a> are roadmap-based planners that operate similarly to Visibility-based PRM, but provide asymptotic near-optimality guarantees.</li>
@@ -321,35 +342,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Various optimizations in the Syclop planner.</li>
 <li>The Syclop planner can now operate over triangular decompositions. This is enabled if the <a href="http://www.cs.cmu.edu/~quake/triangle.html">triangle</a> package is installed.</li>
 <li>Significantly reworked and extended unit tests for planning algorithms.</li>
-<li>Added method to extract a <a class="el" href="classompl_1_1base_1_1StateStorage.html" title="Manage loading and storing for a set of states of a specified state space. ">ompl::base::StateStorage</a> object from <a class="el" href="classompl_1_1base_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique...">ompl::base::PlannerData</a>.</li>
+<li>Added method to extract a <a class="el" href="classompl_1_1base_1_1StateStorage.html" title="Manage loading and storing for a set of states of a specified state space.">ompl::base::StateStorage</a> object from <a class="el" href="classompl_1_1base_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">ompl::base::PlannerData</a>.</li>
 <li>State spaces can indicate whether they are metric.</li>
 <li>Certain path shortcutting techniques are disabled for non-metric state spaces during path simplification.</li>
 <li>Extended ProblemDefinition API to support path optimizing planners.</li>
-<li>Added printAsMatrix method to <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html" title="Definition of a geometric path. ">ompl::geometric::PathGeometric</a> and <a class="el" href="classompl_1_1control_1_1PathControl.html" title="Definition of a control path. ">ompl::control::PathControl</a> to facilitate plotting of paths. Added a <a href="pathVisualization.html">tutorial on path visualization</a>.</li>
+<li>Added printAsMatrix method to <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html" title="Definition of a geometric path.">ompl::geometric::PathGeometric</a> and <a class="el" href="classompl_1_1control_1_1PathControl.html" title="Definition of a control path.">ompl::control::PathControl</a> to facilitate plotting of paths. Added a <a href="pathVisualization.html">tutorial on path visualization</a>.</li>
 <li>The path format produced by the printAsMatrix method is also used by the <a href="gui.html">OMPL.app GUI</a>.</li>
 <li>Added more <a href="group__demos.html">demo programs</a>.</li>
-<li>Use the officially released version of <a href="http://www.boost.org/libs/numeric/odeint">OdeInt</a> that comes with Boost 1.53 for numerical integration. The bundled version of OdeInt is not used or installed if the user has Boost &gt;= 1.53 installed.</li>
+<li>Use the officially released version of <a href="https://www.boost.org/libs/numeric/odeint">OdeInt</a> that comes with Boost 1.53 for numerical integration. The bundled version of OdeInt is not used or installed if the user has Boost &gt;= 1.53 installed.</li>
 <li>Updated Py++ toolchain (gccxml, pygccxml, pyplusplus). If you use gcc 4.7/4.8 or Boost 1.54, you need to run "make installpyplusplus" again.</li>
 <li>Various fixes for Python 3.x. The python bindings and GUI can now be used with Python 3.x.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.12.2 (January 22, 2013)</h1>
+<h1><a class="anchor" id="autotoc_md18"></a>
+OMPL.app 0.12.2 (January 22, 2013)</h1>
 <ul>
 <li>Initial support for FLANN, a library for approximate nearest neighbors.</li>
 <li>Documentation updates.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.12.1 (12/12/12)</h1>
+<h1><a class="anchor" id="autotoc_md19"></a>
+OMPL.app 0.12.1 (12/12/12)</h1>
 <ul>
 <li>Stricter checking for FCL and CCD versions, to avoid link problems with ROS Fuerte.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.12.0 (November 20, 2012)</h1>
+<h1><a class="anchor" id="autotoc_md20"></a>
+OMPL.app 0.12.0 (November 20, 2012)</h1>
 <ul>
 <li>Added representation of costs to <a class="el" href="classompl_1_1base_1_1StateValidityChecker.html" title="Abstract definition for a class checking the validity of states. The implementation of this class mus...">ompl::base::StateValidityChecker</a>.</li>
-<li>Added the notion of objectives to be optimized: <a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives. ">ompl::base::OptimizationObjective</a>.</li>
+<li>Added the notion of objectives to be optimized: <a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives.">ompl::base::OptimizationObjective</a>.</li>
 <li>Added <a class="el" href="classompl_1_1geometric_1_1TRRT.html#gTRRT">T-RRT</a>, a planner for planning low-cost paths.</li>
-<li>Planners now have the option to report the non-existence of a solution (<a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem. ">ompl::base::SolutionNonExistenceProof</a>).</li>
+<li>Planners now have the option to report the non-existence of a solution (<a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem.">ompl::base::SolutionNonExistenceProof</a>).</li>
 <li>Replaced PQP with FCL as the default collision checker.</li>
 <li>In the GUI the trees/roadmap produced by a planner can now be visualized.</li>
 <li>Improved infrastructure for creating python bindings for planners (see <a href="pybindingsPlanner.html">tutorial</a> for details).</li>
@@ -357,14 +381,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Documentation updates.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.11.1 (July 26, 2012)</h1>
+<h1><a class="anchor" id="autotoc_md21"></a>
+OMPL.app 0.11.1 (July 26, 2012)</h1>
 <ul>
 <li>Fixed bug in RRT* where nearest neighbor radius shrinks too fast.</li>
 <li>Added option for versioned installs: multiple versions of OMPL.app can be installed simultaneously (disabled by default). This is enabled by running <code>cmake -DOMPL_VERSIONED_INSTALL=ON</code>.</li>
 <li>Added support for Assimp 3 (Assimp 2 is still supported as well).</li>
 <li>Bug and documentation fixes.</li>
 </ul>
-<h1>OMPL.app 0.11.0 (June 30, 2012)</h1>
+<h1><a class="anchor" id="autotoc_md22"></a>
+OMPL.app 0.11.0 (June 30, 2012)</h1>
 <ul>
 <li>PlannerData now uses the Boost Graph Library (BGL). This offers much more flexibility and power in the inspection of planner data structures. Rather than storing only the data common to all planners, each planner can store its own (meta)data per vertex and edge in a graph. All graph algorithms that exists in BGL can be applied directly.</li>
 <li>Added PlannerDataStorage object for serialization/deserialization of PlannerData</li>
@@ -380,14 +406,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Reduced dependencies: GTest has been replaced by Boost Test, subversion and CVS are no longer needed to get some optional dependencies.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.10.2 (March 21, 2012)</h1>
+<h1><a class="anchor" id="autotoc_md23"></a>
+OMPL.app 0.10.2 (March 21, 2012)</h1>
 <ul>
 <li>Created a blog to highlight new features.</li>
 <li>Added support for multi-robot rigid-body motion planning.</li>
 <li>Updated FCL (which now uses FLANN instead of ANN for nearest neighbors)</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.10.1 (February 27, 2012)</h1>
+<h1><a class="anchor" id="autotoc_md24"></a>
+OMPL.app 0.10.1 (February 27, 2012)</h1>
 <ul>
 <li>Added representation of discrete control spaces.</li>
 <li>Fixes for XCode 4.3 when compiling the Python bindings.</li>
@@ -395,7 +423,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Removed mutex from FCL collision checking wrapper. The newer version of the FCL library is thread-safe.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.10.0 (February 16, 2012)</h1>
+<h1><a class="anchor" id="autotoc_md25"></a>
+OMPL.app 0.10.0 (February 16, 2012)</h1>
 <ul>
 <li>Minimum Boost version is now 1.44.</li>
 <li>Added a primer on sampling-based motion planning and OMPL.</li>
@@ -419,14 +448,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>The C++ code switched to the preferred boost::function syntax. A general method for exposing boost::function objects to Python was added, but this requires a patch to pygccxml.</li>
 <li>To make installing and patching Py++, pygccml, and gccxml easier there is now a script called installPyPlusPlus.sh that does this. One can call this script after running cmake by typing “make installpyplusplus”.</li>
 </ul>
-<h1>OMPL.app 0.9.5 (October 4, 2011)</h1>
+<h1><a class="anchor" id="autotoc_md26"></a>
+OMPL.app 0.9.5 (October 4, 2011)</h1>
 <ul>
 <li>Added control sampler functions that allow specifying an intended direction of propagation</li>
 <li>Made python, Boost.Python, PyOpenGL, and PyQt optional; the omplapp library is useful even without the GUI or python bindings.</li>
 <li>Removed pre-generated Python binding code. It turns out that they are dependent on the particular Boost version.</li>
 <li>Bug fixes.</li>
 </ul>
-<h1>OMPL.app 0.9.4 (August 16, 2011)</h1>
+<h1><a class="anchor" id="autotoc_md27"></a>
+OMPL.app 0.9.4 (August 16, 2011)</h1>
 <ul>
 <li>Renamed StateManifold to StateSpace and ControlManifold to ControlSpace</li>
 <li>Added RRTstar contribution</li>
@@ -446,7 +477,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Move code for extracting machine properties from util/ to benchmark/</li>
 <li>Documentation fixes</li>
 </ul>
-<h1>OMPL.app 0.9.3 (May 2, 2011)</h1>
+<h1><a class="anchor" id="autotoc_md28"></a>
+OMPL.app 0.9.3 (May 2, 2011)</h1>
 <ul>
 <li>Added support for visualizing internal planner data</li>
 <li>Planning for 2D environments as well (SE2)</li>
@@ -457,17 +489,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Separate "magic constants" to a separate, visible, location</li>
 <li>A number of bug fixes</li>
 </ul>
-<h1>OMPL.app 0.9.2 (February 21, 2011)</h1>
+<h1><a class="anchor" id="autotoc_md29"></a>
+OMPL.app 0.9.2 (February 21, 2011)</h1>
 <ul>
 <li>Updates to operations on states: indexing in states can be done using state spaces or using integer values</li>
 <li>Bug fixes for planning with controls</li>
 <li>Minor doc improvements</li>
 </ul>
-<h1>OMPL.app 0.9.1 (December 17, 2010)</h1>
+<h1><a class="anchor" id="autotoc_md30"></a>
+OMPL.app 0.9.1 (December 17, 2010)</h1>
 <ul>
 <li>Minor updates to build system</li>
 </ul>
-<h1>OMPL.app 0.9.0 (December 15, 2010; initial release)</h1>
+<h1><a class="anchor" id="autotoc_md31"></a>
+OMPL.app 0.9.0 (December 15, 2010; initial release)</h1>
 <ul>
 <li>Implementations of many state-of-the-art sampling-based motion planning algorithms. For purely geometric planning, there are implementations of KPIECE, SBL, RRT, RRT Connect, EST, PRM, Lazy RRT, and others. For planning with differential constraints there are implementations of KPIECE and RRT. Addition of new planners poses very few constraints on the added code.</li>
 <li>A flexible mechanism for constructing arbitrarily complex configuration spaces and control spaces from simpler ones.</li>
@@ -479,15 +514,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Tools for systematic, large-scale benchmarking. </li>
 </ul>
 </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -497,6 +533,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

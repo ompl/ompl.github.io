@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>demos/SE3RigidBodyPlanning/BlimpPlanning.cpp Source File</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>demos/SE3RigidBodyPlanning/BlimpPlanning.cpp Source File</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,14 +136,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_913bfe5cd49c15c10de83786c9f7c5a0.html">demos</a></li><li class="navelem"><a class="el" href="dir_12973ff1107624c23588f87cd4827494.html">SE3RigidBodyPlanning</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_890c7ad3b7440808f93f4c2e75726f9d.html">demos</a></li><li class="navelem"><a class="el" href="dir_c388c1aa93c17642d5308f8c8f4813fe.html">SE3RigidBodyPlanning</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -166,26 +151,124 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">BlimpPlanning.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Rice University Software Distribution License</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (c) 2010, Rice University</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * All Rights Reserved.</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * For a full description see the file named LICENSE.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *********************************************************************/</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Author: Mark Moll */</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;ompl/control/planners/kpiece/KPIECE1.h&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;ompl/control/planners/rrt/RRT.h&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;ompl/tools/benchmark/Benchmark.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;omplapp/apps/BlimpPlanning.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;omplapp/config.h&gt;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceompl.html">ompl</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> blimpSetup(<a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> &amp;setup)</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classompl_1_1base_1_1StateSpacePtr.html">base::StateSpacePtr</a> stateSpace(setup.getStateSpace());</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// set the bounds for the R^3 part of SE(3)</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classompl_1_1base_1_1RealVectorBounds.html">base::RealVectorBounds</a> bounds(3);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    bounds.setLow(-10);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    bounds.setHigh(10);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    stateSpace-&gt;as&lt;<a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html">base::CompoundStateSpace</a>&gt;()-&gt;as&lt;base::SE3StateSpace&gt;(0)-&gt;setBounds(bounds);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// define start state</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classompl_1_1base_1_1ScopedState.html">base::ScopedState&lt;base::SE3StateSpace&gt;</a> start(setup.getGeometricComponentStateSpace());</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    start-&gt;setX(0.);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    start-&gt;setY(0.);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    start-&gt;setZ(0.);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    start-&gt;rotation().setIdentity();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// define goal state</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classompl_1_1base_1_1ScopedState.html">base::ScopedState&lt;base::SE3StateSpace&gt;</a> goal(setup.getGeometricComponentStateSpace());</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    goal-&gt;setX(5.);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    goal-&gt;setY(5.);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    goal-&gt;setZ(5.);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    goal-&gt;rotation().setIdentity();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// set the start &amp; goal states</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    setup.setStartAndGoalStates(setup.getFullStateFromGeometricComponent(start),</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                setup.getFullStateFromGeometricComponent(goal), .5);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> blimpDemo(<a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> &amp;setup)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::vector&lt;double&gt; coords;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n\n***** Planning for a &quot;</span> &lt;&lt; setup.getName() &lt;&lt; <span class="stringliteral">&quot; *****\n&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    setup.setPlanner(std::make_shared&lt;control::RRT&gt;(setup.getSpaceInformation()));</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// try to solve the problem</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (setup.solve(40))</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// print the (approximate) solution path: print states along the path</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// and controls required to get from one state to the next</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classompl_1_1control_1_1PathControl.html">control::PathControl</a> &amp;path(setup.getSolutionPath());</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        path.interpolate();  <span class="comment">// uncomment if you want to plot the path</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        path.printAsMatrix(std::cout);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (!setup.haveExactSolutionPath())</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Solution is approximate. Distance to actual goal is &quot;</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                      &lt;&lt; setup.getProblemDefinition()-&gt;getSolutionDifference() &lt;&lt; std::endl;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> blimpBenchmark(<a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> &amp;setup)</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html">tools::Benchmark::Request</a> request(100., 10000., 10);  <span class="comment">// runtime (s), memory (MB), run count</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    setup.setup();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classompl_1_1tools_1_1Benchmark.html">tools::Benchmark</a> b(setup, setup.getName());</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    b.<a class="code" href="classompl_1_1tools_1_1Benchmark.html#a86fdc0094b39debe8ee310a9e2de8e31">addPlanner</a>(std::make_shared&lt;control::RRT&gt;(setup.getSpaceInformation()));</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    b.addPlanner(std::make_shared&lt;control::KPIECE1&gt;(setup.getSpaceInformation()));</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    b.benchmark(request);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    b.saveResultsToFile();</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** <span class="comment">/*unused*/</span>)</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> blimp;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    blimpSetup(blimp);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// If any command line arguments are given, solve the problem multiple</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// times with different planners and collect benchmark statistics.</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Otherwise, solve the problem once and print the path.</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 1)</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        blimpBenchmark(blimp);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        blimpDemo(blimp);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div><div class="ttc" id="classompl_1_1app_1_1BlimpPlanning_html"><div class="ttname"><a href="classompl_1_1app_1_1BlimpPlanning.html">ompl::app::BlimpPlanning</a></div><div class="ttdoc">A class to facilitate planning for a simple blimp model. </div><div class="ttdef"><b>Definition:</b> <a href="BlimpPlanning_8h_source.html#l00036">BlimpPlanning.h:36</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1ScopedState_html"><div class="ttname"><a href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState</a></div><div class="ttdoc">Definition of a scoped state. </div><div class="ttdef"><b>Definition:</b> <a href="ScopedState_8h_source.html#l00056">ScopedState.h:56</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1StateSpacePtr_html"><div class="ttname"><a href="classompl_1_1base_1_1StateSpacePtr.html">ompl::base::StateSpacePtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::StateSpace. </div></div>
-<div class="ttc" id="classompl_1_1tools_1_1Benchmark_html_a86fdc0094b39debe8ee310a9e2de8e31"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html#a86fdc0094b39debe8ee310a9e2de8e31">ompl::tools::Benchmark::addPlanner</a></div><div class="ttdeci">void addPlanner(const base::PlannerPtr &amp;planner)</div><div class="ttdoc">Add a planner to use. </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00253">Benchmark.h:253</a></div></div>
-<div class="ttc" id="classompl_1_1control_1_1PathControl_html"><div class="ttname"><a href="classompl_1_1control_1_1PathControl.html">ompl::control::PathControl</a></div><div class="ttdoc">Definition of a control path. </div><div class="ttdef"><b>Definition:</b> <a href="PathControl_8h_source.html#l00060">PathControl.h:60</a></div></div>
-<div class="ttc" id="classompl_1_1tools_1_1Benchmark_html"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a></div><div class="ttdoc">Benchmark a set of planners on a problem instance. </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00048">Benchmark.h:48</a></div></div>
-<div class="ttc" id="namespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library. </div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00021">AppBase.h:21</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1CompoundStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html">ompl::base::CompoundStateSpace</a></div><div class="ttdoc">A space to allow the composition of state spaces. </div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00573">StateSpace.h:573</a></div></div>
-<div class="ttc" id="structompl_1_1tools_1_1Benchmark_1_1Request_html"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html">ompl::tools::Benchmark::Request</a></div><div class="ttdoc">Representation of a benchmark request. </div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00156">Benchmark.h:156</a></div></div>
-<div class="ttc" id="classompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space. </div><div class="ttdef"><b>Definition:</b> <a href="RealVectorBounds_8h_source.html#l00047">RealVectorBounds.h:47</a></div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Rice University Software Distribution License</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (c) 2010, Rice University</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * All Rights Reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * For a full description see the file named LICENSE.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Author: Mark Moll */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;ompl/control/planners/kpiece/KPIECE1.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;ompl/control/planners/rrt/RRT.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;ompl/tools/benchmark/Benchmark.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;omplapp/apps/BlimpPlanning.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;omplapp/config.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceompl.html">ompl</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> blimpSetup(<a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> &amp;setup)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    base::StateSpacePtr stateSpace(setup.getStateSpace());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// set the bounds for the R^3 part of SE(3)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classompl_1_1base_1_1RealVectorBounds.html">base::RealVectorBounds</a> bounds(3);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    bounds.setLow(-10);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    bounds.setHigh(10);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    stateSpace-&gt;as&lt;<a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html">base::CompoundStateSpace</a>&gt;()-&gt;as&lt;base::SE3StateSpace&gt;(0)-&gt;setBounds(bounds);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// define start state</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classompl_1_1base_1_1ScopedState.html">base::ScopedState&lt;base::SE3StateSpace&gt;</a> start(setup.getGeometricComponentStateSpace());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    start-&gt;setX(0.);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    start-&gt;setY(0.);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    start-&gt;setZ(0.);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    start-&gt;rotation().setIdentity();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// define goal state</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classompl_1_1base_1_1ScopedState.html">base::ScopedState&lt;base::SE3StateSpace&gt;</a> goal(setup.getGeometricComponentStateSpace());</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    goal-&gt;setX(5.);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    goal-&gt;setY(5.);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    goal-&gt;setZ(5.);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    goal-&gt;rotation().setIdentity();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// set the start &amp; goal states</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    setup.setStartAndGoalStates(setup.getFullStateFromGeometricComponent(start),</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                setup.getFullStateFromGeometricComponent(goal), .5);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> blimpDemo(<a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> &amp;setup)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::vector&lt;double&gt; coords;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n\n***** Planning for a &quot;</span> &lt;&lt; setup.getName() &lt;&lt; <span class="stringliteral">&quot; *****\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    setup.setPlanner(std::make_shared&lt;control::RRT&gt;(setup.getSpaceInformation()));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// try to solve the problem</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (setup.solve(40))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// print the (approximate) solution path: print states along the path</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// and controls required to get from one state to the next</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classompl_1_1control_1_1PathControl.html">control::PathControl</a> &amp;path(setup.getSolutionPath());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        path.interpolate();  <span class="comment">// uncomment if you want to plot the path</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        path.printAsMatrix(std::cout);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (!setup.haveExactSolutionPath())</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Solution is approximate. Distance to actual goal is &quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                      &lt;&lt; setup.getProblemDefinition()-&gt;getSolutionDifference() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> blimpBenchmark(<a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> &amp;setup)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html">tools::Benchmark::Request</a> request(100., 10000., 10);  <span class="comment">// runtime (s), memory (MB), run count</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    setup.setup();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classompl_1_1tools_1_1Benchmark.html">tools::Benchmark</a> b(setup, setup.getName());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    b.addPlanner(std::make_shared&lt;control::RRT&gt;(setup.getSpaceInformation()));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    b.addPlanner(std::make_shared&lt;control::KPIECE1&gt;(setup.getSpaceInformation()));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    b.benchmark(request);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    b.saveResultsToFile();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** <span class="comment">/*unused*/</span>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classompl_1_1app_1_1BlimpPlanning.html">app::BlimpPlanning</a> blimp;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    blimpSetup(blimp);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// If any command line arguments are given, solve the problem multiple</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// times with different planners and collect benchmark statistics.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Otherwise, solve the problem once and print the path.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 1)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        blimpBenchmark(blimp);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        blimpDemo(blimp);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html">ompl::base::CompoundStateSpace</a></div><div class="ttdoc">A space to allow the composition of state spaces.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00637">StateSpace.h:638</a></div></div>
+<div class="ttc" id="aclassompl_1_1app_1_1BlimpPlanning_html"><div class="ttname"><a href="classompl_1_1app_1_1BlimpPlanning.html">ompl::app::BlimpPlanning</a></div><div class="ttdoc">A class to facilitate planning for a simple blimp model.</div><div class="ttdef"><b>Definition:</b> <a href="BlimpPlanning_8h_source.html#l00052">BlimpPlanning.h:53</a></div></div>
+<div class="ttc" id="astructompl_1_1tools_1_1Benchmark_1_1Request_html"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html">ompl::tools::Benchmark::Request</a></div><div class="ttdoc">Representation of a benchmark request.</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00252">Benchmark.h:253</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Benchmark_html"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a></div><div class="ttdoc">Benchmark a set of planners on a problem instance.</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00112">Benchmark.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1PathControl_html"><div class="ttname"><a href="classompl_1_1control_1_1PathControl.html">ompl::control::PathControl</a></div><div class="ttdoc">Definition of a control path.</div><div class="ttdef"><b>Definition:</b> <a href="PathControl_8h_source.html#l00092">PathControl.h:93</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1ScopedState_html"><div class="ttname"><a href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState</a></div><div class="ttdoc">Definition of a scoped state.</div><div class="ttdef"><b>Definition:</b> <a href="ScopedState_8h_source.html#l00120">ScopedState.h:121</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00021">AppBase.h:22</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space.</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorBounds_8h_source.html#l00111">RealVectorBounds.h:112</a></div></div>
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -195,6 +278,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

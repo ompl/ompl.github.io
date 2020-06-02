@@ -1,24 +1,6 @@
 var searchData=
 [
-  ['realvectorbounds',['RealVectorBounds',['../classompl_1_1base_1_1RealVectorBounds.html',1,'ompl::base']]],
-  ['realvectorcontrolspace',['RealVectorControlSpace',['../classompl_1_1control_1_1RealVectorControlSpace.html',1,'ompl::control']]],
-  ['realvectorcontroluniformsampler',['RealVectorControlUniformSampler',['../classompl_1_1control_1_1RealVectorControlUniformSampler.html',1,'ompl::control']]],
-  ['realvectoridentityprojectionevaluator',['RealVectorIdentityProjectionEvaluator',['../classompl_1_1base_1_1RealVectorIdentityProjectionEvaluator.html',1,'ompl::base']]],
-  ['realvectorlinearprojectionevaluator',['RealVectorLinearProjectionEvaluator',['../classompl_1_1base_1_1RealVectorLinearProjectionEvaluator.html',1,'ompl::base']]],
-  ['realvectororthogonalprojectionevaluator',['RealVectorOrthogonalProjectionEvaluator',['../classompl_1_1base_1_1RealVectorOrthogonalProjectionEvaluator.html',1,'ompl::base']]],
-  ['realvectorrandomlinearprojectionevaluator',['RealVectorRandomLinearProjectionEvaluator',['../classompl_1_1base_1_1RealVectorRandomLinearProjectionEvaluator.html',1,'ompl::base']]],
-  ['realvectorstatesampler',['RealVectorStateSampler',['../classompl_1_1base_1_1RealVectorStateSampler.html',1,'ompl::base']]],
-  ['realvectorstatespace',['RealVectorStateSpace',['../classompl_1_1base_1_1RealVectorStateSpace.html',1,'ompl::base']]],
-  ['reedssheppmotionvalidator',['ReedsSheppMotionValidator',['../classompl_1_1base_1_1ReedsSheppMotionValidator.html',1,'ompl::base']]],
-  ['reedsshepppath',['ReedsSheppPath',['../classompl_1_1base_1_1ReedsSheppStateSpace_1_1ReedsSheppPath.html',1,'ompl::base::ReedsSheppStateSpace']]],
-  ['reedssheppstatespace',['ReedsSheppStateSpace',['../classompl_1_1base_1_1ReedsSheppStateSpace.html',1,'ompl::base']]],
-  ['region',['Region',['../classompl_1_1control_1_1Syclop_1_1Region.html',1,'ompl::control::Syclop']]],
-  ['rejectioninfsampler',['RejectionInfSampler',['../classompl_1_1base_1_1RejectionInfSampler.html',1,'ompl::base']]],
-  ['request',['Request',['../structompl_1_1tools_1_1Benchmark_1_1Request.html',1,'ompl::tools::Benchmark']]],
-  ['rng',['RNG',['../classompl_1_1RNG.html',1,'ompl']]],
-  ['rrt',['RRT',['../classompl_1_1control_1_1RRT.html',1,'ompl::control::RRT'],['../classompl_1_1geometric_1_1RRT.html',1,'ompl::geometric::RRT']]],
-  ['rrtconnect',['RRTConnect',['../classompl_1_1geometric_1_1RRTConnect.html',1,'ompl::geometric']]],
-  ['rrtsharp',['RRTsharp',['../classompl_1_1geometric_1_1RRTsharp.html',1,'ompl::geometric']]],
-  ['rrtstar',['RRTstar',['../classompl_1_1geometric_1_1RRTstar.html',1,'ompl::geometric']]],
-  ['rrtxstatic',['RRTXstatic',['../classompl_1_1geometric_1_1RRTXstatic.html',1,'ompl::geometric']]]
+  ['qrrtimpl_3140',['QRRTImpl',['../classompl_1_1geometric_1_1QRRTImpl.html',1,'ompl::geometric']]],
+  ['quotientspace_3141',['QuotientSpace',['../classompl_1_1geometric_1_1QuotientSpace.html',1,'ompl::geometric']]],
+  ['quotientspacegraph_3142',['QuotientSpaceGraph',['../classompl_1_1geometric_1_1QuotientSpaceGraph.html',1,'ompl::geometric']]]
 ];

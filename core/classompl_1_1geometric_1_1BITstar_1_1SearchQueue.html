@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::geometric::BITstar::SearchQueue Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::geometric::BITstar::SearchQueue Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -171,264 +156,180 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>A queue of edges to be processed that integrates both the expansion of <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html#gVertex">Vertices</a> and the ordering of the resulting edges.
+<p>A queue of edges, sorted according to a sort key.  
  <a href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="SearchQueue_8h_source.html">ompl/geometric/planners/bitstar/datastructures/SearchQueue.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="SearchQueue_8h_source.html">ompl/geometric/planners/informedtrees/bitstar/SearchQueue.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aacef2ab8b4bc451c06d16ac2d344c3d1"><td class="memItemLeft" align="right" valign="top"><a id="aacef2ab8b4bc451c06d16ac2d344c3d1"></a>
-typedef std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 2u &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aacef2ab8b4bc451c06d16ac2d344c3d1">CostDouble</a></td></tr>
-<tr class="memdesc:aacef2ab8b4bc451c06d16ac2d344c3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pair of costs, i.e., the vertex queue sorting key. Done as an array instead of a pair for consistency with the EdgeQueue. <br /></td></tr>
-<tr class="separator:aacef2ab8b4bc451c06d16ac2d344c3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f6081faba117e82e2e8a4af05673e3"><td class="memItemLeft" align="right" valign="top"><a id="ad3f6081faba117e82e2e8a4af05673e3"></a>
-typedef std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aacef2ab8b4bc451c06d16ac2d344c3d1">CostDouble</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aacef2ab8b4bc451c06d16ac2d344c3d1">CostDouble</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ad3f6081faba117e82e2e8a4af05673e3">VertexQueueSortFunc</a></td></tr>
-<tr class="memdesc:ad3f6081faba117e82e2e8a4af05673e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function signature of the sorting function for the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html" title="The vertex of the underlying graphs in BIT*. ">Vertex</a> Queue. <br /></td></tr>
-<tr class="separator:ad3f6081faba117e82e2e8a4af05673e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04e29d7351ec486e926a310be6debe0a"><td class="memItemLeft" align="right" valign="top"><a id="a04e29d7351ec486e926a310be6debe0a"></a>
-typedef std::multimap&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aacef2ab8b4bc451c06d16ac2d344c3d1">CostDouble</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ad3f6081faba117e82e2e8a4af05673e3">VertexQueueSortFunc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a04e29d7351ec486e926a310be6debe0a">VertexQueueAsMMap</a></td></tr>
-<tr class="memdesc:a04e29d7351ec486e926a310be6debe0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying vertex queue. The advantage of a multimap over a multiset is that a copy of the key is stored with the value, which guarantees that the ordering remains sane even if the data inherently behind the queue value changes. In such a case the queue will remain sorted by the old key until manually updated. <br /></td></tr>
-<tr class="separator:a04e29d7351ec486e926a310be6debe0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba99e13beb1397eb26c41444fb47a40"><td class="memItemLeft" align="right" valign="top"><a id="abba99e13beb1397eb26c41444fb47a40"></a>
-typedef VertexQueueAsMMap::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#abba99e13beb1397eb26c41444fb47a40">VertexQueueIter</a></td></tr>
-<tr class="memdesc:abba99e13beb1397eb26c41444fb47a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator into the vertex queue multimap. <br /></td></tr>
-<tr class="separator:abba99e13beb1397eb26c41444fb47a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5149456b144f2ec13ea824bccfd5852a"><td class="memItemLeft" align="right" valign="top"><a id="a5149456b144f2ec13ea824bccfd5852a"></a>
-typedef std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 3u &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a5149456b144f2ec13ea824bccfd5852a">CostTriple</a></td></tr>
-<tr class="memdesc:a5149456b144f2ec13ea824bccfd5852a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A triplet of costs, i.e., the edge queue sorting key. <br /></td></tr>
-<tr class="separator:a5149456b144f2ec13ea824bccfd5852a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4c334f1bd84e8ad2e0245722a0b43bf"><td class="memItemLeft" align="right" valign="top"><a id="af4c334f1bd84e8ad2e0245722a0b43bf"></a>
-typedef std::pair&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a5149456b144f2ec13ea824bccfd5852a">CostTriple</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af4c334f1bd84e8ad2e0245722a0b43bf">CostTripleAndVertexPtrPair</a></td></tr>
-<tr class="memdesc:af4c334f1bd84e8ad2e0245722a0b43bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data stored in the edge-queue binary heap. <br /></td></tr>
-<tr class="separator:af4c334f1bd84e8ad2e0245722a0b43bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25d19c08051f88cee54cea419bb1755c"><td class="memItemLeft" align="right" valign="top"><a id="a25d19c08051f88cee54cea419bb1755c"></a>
-typedef std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af4c334f1bd84e8ad2e0245722a0b43bf">CostTripleAndVertexPtrPair</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af4c334f1bd84e8ad2e0245722a0b43bf">CostTripleAndVertexPtrPair</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a25d19c08051f88cee54cea419bb1755c">EdgeQueueSortFunc</a></td></tr>
-<tr class="memdesc:a25d19c08051f88cee54cea419bb1755c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function signature of the sorting function for the Edge Queue. <br /></td></tr>
-<tr class="separator:a25d19c08051f88cee54cea419bb1755c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a162d313daa8d23f27be575773d62c13d"><td class="memItemLeft" align="right" valign="top"><a id="a162d313daa8d23f27be575773d62c13d"></a>
-typedef <a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af4c334f1bd84e8ad2e0245722a0b43bf">CostTripleAndVertexPtrPair</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a25d19c08051f88cee54cea419bb1755c">EdgeQueueSortFunc</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a162d313daa8d23f27be575773d62c13d">EdgeQueueAsPairBinHeap</a></td></tr>
-<tr class="memdesc:a162d313daa8d23f27be575773d62c13d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying edge queue. Using static keys for the same reason as the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html" title="The vertex of the underlying graphs in BIT*. ">Vertex</a> Queue. <br /></td></tr>
-<tr class="separator:a162d313daa8d23f27be575773d62c13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c6aadb8cca80b5068570060ca21f0f7"><td class="memItemLeft" align="right" valign="top"><a id="a8c6aadb8cca80b5068570060ca21f0f7"></a>
-typedef EdgeQueueAsPairBinHeap::Element *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a8c6aadb8cca80b5068570060ca21f0f7">EdgeQueueElemPtr</a></td></tr>
-<tr class="memdesc:a8c6aadb8cca80b5068570060ca21f0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">An element pointer into the edge queue binary heap. <br /></td></tr>
-<tr class="separator:a8c6aadb8cca80b5068570060ca21f0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41f4acd2e6c9b3ea9935c088425a808f"><td class="memItemLeft" align="right" valign="top"><a id="a41f4acd2e6c9b3ea9935c088425a808f"></a>
-typedef std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a8c6aadb8cca80b5068570060ca21f0f7">EdgeQueueElemPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a41f4acd2e6c9b3ea9935c088425a808f">EdgeQueueElemPtrVector</a></td></tr>
-<tr class="memdesc:a41f4acd2e6c9b3ea9935c088425a808f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of edge queue pointers. <br /></td></tr>
-<tr class="separator:a41f4acd2e6c9b3ea9935c088425a808f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab0338c57c33ad8966739c4e31b35ed"><td class="memItemLeft" align="right" valign="top"><a id="a3ab0338c57c33ad8966739c4e31b35ed"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a3ab0338c57c33ad8966739c4e31b35ed">SortKey</a> = std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 3u &gt;</td></tr>
+<tr class="memdesc:a3ab0338c57c33ad8966739c4e31b35ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">A triplet of costs, i.e., the edge queue sorting key. <br /></td></tr>
+<tr class="separator:a3ab0338c57c33ad8966739c4e31b35ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32215a51832c2d8677a9ebd62b8b673"><td class="memItemLeft" align="right" valign="top"><a id="af32215a51832c2d8677a9ebd62b8b673"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af32215a51832c2d8677a9ebd62b8b673">SortKeyAndVertexPtrPair</a> = std::pair&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a3ab0338c57c33ad8966739c4e31b35ed">SortKey</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a85f2f074b60a176d939867e33d17fc9e">VertexPtrPair</a> &gt;</td></tr>
+<tr class="memdesc:af32215a51832c2d8677a9ebd62b8b673"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data stored in the edge-queue binary heap. <br /></td></tr>
+<tr class="separator:af32215a51832c2d8677a9ebd62b8b673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151edabaafd1ad342bbb236f18fce7c1"><td class="memItemLeft" align="right" valign="top"><a id="a151edabaafd1ad342bbb236f18fce7c1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a151edabaafd1ad342bbb236f18fce7c1">EdgeComparisonFunction</a> = std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af32215a51832c2d8677a9ebd62b8b673">SortKeyAndVertexPtrPair</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af32215a51832c2d8677a9ebd62b8b673">SortKeyAndVertexPtrPair</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:a151edabaafd1ad342bbb236f18fce7c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function signature of the sorting function for the Edge Queue. <br /></td></tr>
+<tr class="separator:a151edabaafd1ad342bbb236f18fce7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a146105dc5dfce31e32dd898d729630"><td class="memItemLeft" align="right" valign="top"><a id="a4a146105dc5dfce31e32dd898d729630"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a4a146105dc5dfce31e32dd898d729630">EdgeQueue</a> = <a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af32215a51832c2d8677a9ebd62b8b673">SortKeyAndVertexPtrPair</a>, <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a151edabaafd1ad342bbb236f18fce7c1">EdgeComparisonFunction</a> &gt;</td></tr>
+<tr class="memdesc:a4a146105dc5dfce31e32dd898d729630"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying edge queue. Using static keys for the same reason as the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html" title="The vertex of the underlying graphs in gBITstar BIT*.">Vertex</a> Queue. <br /></td></tr>
+<tr class="separator:a4a146105dc5dfce31e32dd898d729630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064de263aff4000e5a1e73319b736e69"><td class="memItemLeft" align="right" valign="top"><a id="a064de263aff4000e5a1e73319b736e69"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a064de263aff4000e5a1e73319b736e69">EdgeQueueElemPtr</a> = EdgeQueue::Element *</td></tr>
+<tr class="memdesc:a064de263aff4000e5a1e73319b736e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">An element pointer into the edge queue binary heap. <br /></td></tr>
+<tr class="separator:a064de263aff4000e5a1e73319b736e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc07a5eeeb3eef288dc86430a6da6339"><td class="memItemLeft" align="right" valign="top"><a id="acc07a5eeeb3eef288dc86430a6da6339"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#acc07a5eeeb3eef288dc86430a6da6339">EdgeQueueElemPtrVector</a> = std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a064de263aff4000e5a1e73319b736e69">EdgeQueueElemPtr</a> &gt;</td></tr>
+<tr class="memdesc:acc07a5eeeb3eef288dc86430a6da6339"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of edge queue pointers. <br /></td></tr>
+<tr class="separator:acc07a5eeeb3eef288dc86430a6da6339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acb3d67e1be201b14cf464505392218d8"><td class="memItemLeft" align="right" valign="top"><a id="acb3d67e1be201b14cf464505392218d8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#acb3d67e1be201b14cf464505392218d8">SearchQueue</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a1972ba4a3a68f77ffa2c3319a69dce49">NameFunc</a> nameFunc)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#acb3d67e1be201b14cf464505392218d8">SearchQueue</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae71973648e04f572fb9a0e3973d8b21b">NameFunc</a> nameFunc)</td></tr>
 <tr class="memdesc:acb3d67e1be201b14cf464505392218d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a search queue. It must be setup before use. <br /></td></tr>
 <tr class="separator:acb3d67e1be201b14cf464505392218d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18cc11bf0d7e2aa2cc2e233b8eb39fed"><td class="memItemLeft" align="right" valign="top"><a id="a18cc11bf0d7e2aa2cc2e233b8eb39fed"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a18cc11bf0d7e2aa2cc2e233b8eb39fed">~SearchQueue</a> ()=default</td></tr>
+<tr class="memdesc:a18cc11bf0d7e2aa2cc2e233b8eb39fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruct the search queue using the default deconstructor. <br /></td></tr>
+<tr class="separator:a18cc11bf0d7e2aa2cc2e233b8eb39fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5340aeabe3c460d99a0763ac0f465e58"><td class="memItemLeft" align="right" valign="top"><a id="a5340aeabe3c460d99a0763ac0f465e58"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a5340aeabe3c460d99a0763ac0f465e58">setup</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar_1_1CostHelper.html">CostHelper</a> *costHelpPtr, <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html">ImplicitGraph</a> *graphPtr)</td></tr>
-<tr class="memdesc:a5340aeabe3c460d99a0763ac0f465e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html" title="A queue of edges to be processed that integrates both the expansion of Vertices and the ordering of t...">SearchQueue</a>, must be called before use. <br /></td></tr>
+<tr class="memdesc:a5340aeabe3c460d99a0763ac0f465e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html" title="A queue of edges, sorted according to a sort key.">SearchQueue</a>, must be called before use. <br /></td></tr>
 <tr class="separator:a5340aeabe3c460d99a0763ac0f465e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c9a4c37357ac2ed1ae31340f90a1cc0"><td class="memItemLeft" align="right" valign="top"><a id="a6c9a4c37357ac2ed1ae31340f90a1cc0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a6c9a4c37357ac2ed1ae31340f90a1cc0">clear</a> ()</td></tr>
-<tr class="memdesc:a6c9a4c37357ac2ed1ae31340f90a1cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the queue to the state of construction. <br /></td></tr>
-<tr class="separator:a6c9a4c37357ac2ed1ae31340f90a1cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99feb76b281206fecd77a5e3c5fd8bcc"><td class="memItemLeft" align="right" valign="top"><a id="a99feb76b281206fecd77a5e3c5fd8bcc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a99feb76b281206fecd77a5e3c5fd8bcc">enqueueVertex</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;newVertex, bool removeFromFree)</td></tr>
-<tr class="memdesc:a99feb76b281206fecd77a5e3c5fd8bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a vertex into the vertex expansion queue. Vertices remain in the vertex queue until pruned or manually removed. A moving token marks the line between expanded and not expanded vertices. Will instruct the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html" title="A conceptual representation of samples as an edge-implicit random geometric graph. ">ImplicitGraph</a> to move the vertex between sets, as necessary. <br /></td></tr>
-<tr class="separator:a99feb76b281206fecd77a5e3c5fd8bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8531c44223085caf150d719ad10dddc"><td class="memItemLeft" align="right" valign="top"><a id="aa8531c44223085caf150d719ad10dddc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aa8531c44223085caf150d719ad10dddc">enqueueEdge</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;newEdge)</td></tr>
-<tr class="memdesc:aa8531c44223085caf150d719ad10dddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an edge into the edge processing queue. The source vertex of this edge must be in the expansion queue (although it may already be expanded). <br /></td></tr>
-<tr class="separator:aa8531c44223085caf150d719ad10dddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a467e515205b1f02a7385cc0c064ba15b"><td class="memItemLeft" align="right" valign="top"><a id="a467e515205b1f02a7385cc0c064ba15b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a467e515205b1f02a7385cc0c064ba15b">enqueueEdge</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;sourceVertex, const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;targetVertex)</td></tr>
-<tr class="memdesc:a467e515205b1f02a7385cc0c064ba15b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an edge into the edge processing queue. The source vertex of this edge must be in the expansion queue (although it may already be expanded). <br /></td></tr>
-<tr class="separator:a467e515205b1f02a7385cc0c064ba15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49ea3b9ab0e89435658cf9512864fe22"><td class="memItemLeft" align="right" valign="top"><a id="a49ea3b9ab0e89435658cf9512864fe22"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a49ea3b9ab0e89435658cf9512864fe22">unqueueVertex</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;oldVertex)</td></tr>
-<tr class="memdesc:a49ea3b9ab0e89435658cf9512864fe22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase a vertex from the vertex expansion queue. Will disconnect the vertex from its parent and remove the associated incoming and outgoing edges from the edge queue. Will instruct the <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1ImplicitGraph.html" title="A conceptual representation of samples as an edge-implicit random geometric graph. ">ImplicitGraph</a> to move the vertex between sets, as necessary. <br /></td></tr>
-<tr class="separator:a49ea3b9ab0e89435658cf9512864fe22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e2e759784f960c7b67b55f28e33ccd3"><td class="memItemLeft" align="right" valign="top"><a id="a5e2e759784f960c7b67b55f28e33ccd3"></a>
-<a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a5e2e759784f960c7b67b55f28e33ccd3">frontVertex</a> ()</td></tr>
-<tr class="memdesc:a5e2e759784f960c7b67b55f28e33ccd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the best vertex on the queue, leaving it at the front of the vertex queue. <br /></td></tr>
-<tr class="separator:a5e2e759784f960c7b67b55f28e33ccd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27b6b6824c29e3b192653d619f63127a"><td class="memItemLeft" align="right" valign="top"><a id="a27b6b6824c29e3b192653d619f63127a"></a>
-<a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a27b6b6824c29e3b192653d619f63127a">frontEdge</a> ()</td></tr>
-<tr class="memdesc:a27b6b6824c29e3b192653d619f63127a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the best edge on the queue, leaving it at the front of the edge queue. <br /></td></tr>
-<tr class="separator:a27b6b6824c29e3b192653d619f63127a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d8304afd2c620d037433b7c5dee64af"><td class="memItemLeft" align="right" valign="top"><a id="a7d8304afd2c620d037433b7c5dee64af"></a>
-<a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aacef2ab8b4bc451c06d16ac2d344c3d1">CostDouble</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a7d8304afd2c620d037433b7c5dee64af">frontVertexValue</a> ()</td></tr>
-<tr class="memdesc:a7d8304afd2c620d037433b7c5dee64af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the best vertex on the queue, leaving it at the front of the vertex queue. <br /></td></tr>
-<tr class="separator:a7d8304afd2c620d037433b7c5dee64af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a0f3155abd5e4dc0bc8f522abcc96e7"><td class="memItemLeft" align="right" valign="top"><a id="a1a0f3155abd5e4dc0bc8f522abcc96e7"></a>
-<a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a5149456b144f2ec13ea824bccfd5852a">CostTriple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a1a0f3155abd5e4dc0bc8f522abcc96e7">frontEdgeValue</a> ()</td></tr>
-<tr class="memdesc:a1a0f3155abd5e4dc0bc8f522abcc96e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the best edge on the queue, leaving it at the front of the edge queue. <br /></td></tr>
-<tr class="separator:a1a0f3155abd5e4dc0bc8f522abcc96e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a4da7182d43e5f56deeab0a6c196005"><td class="memItemLeft" align="right" valign="top"><a id="a7a4da7182d43e5f56deeab0a6c196005"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a7a4da7182d43e5f56deeab0a6c196005">popFrontEdge</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> *bestEdge)</td></tr>
-<tr class="memdesc:a7a4da7182d43e5f56deeab0a6c196005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the best edge off the queue, removing it from the front of the edge queue in the process. <br /></td></tr>
-<tr class="separator:a7a4da7182d43e5f56deeab0a6c196005"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a088abff4ac3b8a13a1af910c4b8b7d91"><td class="memItemLeft" align="right" valign="top"><a id="a088abff4ac3b8a13a1af910c4b8b7d91"></a>
-<a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a088abff4ac3b8a13a1af910c4b8b7d91">popFrontEdge</a> ()</td></tr>
-<tr class="memdesc:a088abff4ac3b8a13a1af910c4b8b7d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the best edge off the queue, removing it from the front of the edge queue in the process. <br /></td></tr>
-<tr class="separator:a088abff4ac3b8a13a1af910c4b8b7d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fec43892a4dcaa8bacaf67fa1948366"><td class="memItemLeft" align="right" valign="top"><a id="a3fec43892a4dcaa8bacaf67fa1948366"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a3fec43892a4dcaa8bacaf67fa1948366">hasSolution</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;solnCost)</td></tr>
-<tr class="memdesc:a3fec43892a4dcaa8bacaf67fa1948366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark that a solution has been found. <br /></td></tr>
-<tr class="separator:a3fec43892a4dcaa8bacaf67fa1948366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a967cafe0811c38365cb624aadac9d76b"><td class="memItemLeft" align="right" valign="top"><a id="a967cafe0811c38365cb624aadac9d76b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a967cafe0811c38365cb624aadac9d76b">removeEdgesTo</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;cVertex)</td></tr>
-<tr class="memdesc:a967cafe0811c38365cb624aadac9d76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase all edges in the edge queue that lead to the given vertex. <br /></td></tr>
-<tr class="separator:a967cafe0811c38365cb624aadac9d76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2efd78374d08d734c4d4896657124386"><td class="memItemLeft" align="right" valign="top"><a id="a2efd78374d08d734c4d4896657124386"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a2efd78374d08d734c4d4896657124386">removeEdgesFrom</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;pVertex)</td></tr>
-<tr class="memdesc:a2efd78374d08d734c4d4896657124386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase all edges in the edge queue that leave from the given vertex. <br /></td></tr>
-<tr class="separator:a2efd78374d08d734c4d4896657124386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8a2bdc30bc5824c9ddcdbca21daa884"><td class="memItemLeft" align="right" valign="top"><a id="af8a2bdc30bc5824c9ddcdbca21daa884"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af8a2bdc30bc5824c9ddcdbca21daa884">removeExtraEdgesTo</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;cVertex)</td></tr>
-<tr class="memdesc:af8a2bdc30bc5824c9ddcdbca21daa884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes edges in the edge queue that lead to the given vertex that would not be added to the queue now. <br /></td></tr>
-<tr class="separator:af8a2bdc30bc5824c9ddcdbca21daa884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43455a2bda7671b3dea5ad0c9d0fd527"><td class="memItemLeft" align="right" valign="top"><a id="a43455a2bda7671b3dea5ad0c9d0fd527"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a43455a2bda7671b3dea5ad0c9d0fd527">removeExtraEdgesFrom</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;pVertex)</td></tr>
-<tr class="memdesc:a43455a2bda7671b3dea5ad0c9d0fd527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes edges in the edge queue that leave from the given vertex that would not be added to the queue now. <br /></td></tr>
-<tr class="separator:a43455a2bda7671b3dea5ad0c9d0fd527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae75c3c671c8068031bee690d24cce90a"><td class="memItemLeft" align="right" valign="top"><a id="ae75c3c671c8068031bee690d24cce90a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ae75c3c671c8068031bee690d24cce90a">markVertexUnsorted</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;vertex)</td></tr>
-<tr class="memdesc:ae75c3c671c8068031bee690d24cce90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark the queue as requiring resorting downstream of the specified vertex. <br /></td></tr>
-<tr class="separator:ae75c3c671c8068031bee690d24cce90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a140c1214097ce46a79de275acccc1fbe"><td class="memItemLeft" align="right" valign="top"><a id="a140c1214097ce46a79de275acccc1fbe"></a>
-std::pair&lt; unsigned int, unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a140c1214097ce46a79de275acccc1fbe">prune</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae2c8c06f2c54b1bf182dc62dce515ff0">VertexConstPtr</a> &amp;vertex)</td></tr>
-<tr class="memdesc:a140c1214097ce46a79de275acccc1fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune the vertex queue of vertices whose their lower-bound heuristic is greater then the threshold. Descendents of pruned vertices that are not pruned themselves are returned to the set of free states. Returns the number of vertices removed, and the number of said vertices that are completely thrown away (i.e., are not even useful as a sample) <br /></td></tr>
-<tr class="separator:a140c1214097ce46a79de275acccc1fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cb61eb8d22d05c4732ae90a3679bd91"><td class="memItemLeft" align="right" valign="top"><a id="a2cb61eb8d22d05c4732ae90a3679bd91"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a2cb61eb8d22d05c4732ae90a3679bd91">resort</a> ()</td></tr>
-<tr class="memdesc:a2cb61eb8d22d05c4732ae90a3679bd91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resort the queue around the marked unsorted vertices. If allowed, will remove any vertices that need to be resorted but would later be pruned. <br /></td></tr>
-<tr class="separator:a2cb61eb8d22d05c4732ae90a3679bd91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae10372373501108a5bbcff40b12fdb2c"><td class="memItemLeft" align="right" valign="top"><a id="ae10372373501108a5bbcff40b12fdb2c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ae10372373501108a5bbcff40b12fdb2c">finish</a> ()</td></tr>
-<tr class="memdesc:ae10372373501108a5bbcff40b12fdb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish the queue if it is sorted, if not resort the queue. Finishing the queue clears all the edge containers and moves the vertex expansion token to the end. After calling <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ae10372373501108a5bbcff40b12fdb2c" title="Finish the queue if it is sorted, if not resort the queue. Finishing the queue clears all the edge co...">finish()</a> ON A SORTED QUEUE, <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a33cb00c31bb0a63cab2288383136ee88" title="Returns true if the queue is empty. In the case where the edge queue is empty but the vertex queue is...">isEmpty()</a> will return true. Keeps threshold, etc. <br /></td></tr>
-<tr class="separator:ae10372373501108a5bbcff40b12fdb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02a0b95fca371f87f7c185b4264762ae"><td class="memItemLeft" align="right" valign="top"><a id="a02a0b95fca371f87f7c185b4264762ae"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a02a0b95fca371f87f7c185b4264762ae">reset</a> ()</td></tr>
-<tr class="memdesc:a02a0b95fca371f87f7c185b4264762ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the queue, clearing all the edge containers and moving the vertex expansion token to the start. After a call to reset, <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a33cb00c31bb0a63cab2288383136ee88" title="Returns true if the queue is empty. In the case where the edge queue is empty but the vertex queue is...">isEmpty()</a> will return false (unless there is no data in the queue of course). Keeps threshold, list of unsorted vertices, etc. <br /></td></tr>
+<tr class="memdesc:a02a0b95fca371f87f7c185b4264762ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the queue to the state of construction. <br /></td></tr>
 <tr class="separator:a02a0b95fca371f87f7c185b4264762ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244177c004ef14d4d81bc68b2fe702a5"><td class="memItemLeft" align="right" valign="top"><a id="a244177c004ef14d4d81bc68b2fe702a5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a244177c004ef14d4d81bc68b2fe702a5">vertexInsertCondition</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;state) const</td></tr>
-<tr class="memdesc:a244177c004ef14d4d81bc68b2fe702a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The condition used to insert vertices into the queue. Compares lowerBoundHeuristicVertex to the given threshold. Returns true if the vertex's best cost is lower than the internally set threshold. <br /></td></tr>
-<tr class="separator:a244177c004ef14d4d81bc68b2fe702a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa695908b9ce8f8d5258e02e3a2a75b0"><td class="memItemLeft" align="right" valign="top"><a id="afa695908b9ce8f8d5258e02e3a2a75b0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#afa695908b9ce8f8d5258e02e3a2a75b0">edgeInsertCondition</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edge) const</td></tr>
-<tr class="memdesc:afa695908b9ce8f8d5258e02e3a2a75b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The condition used to insert edges into the queue. Compares lowerBoundHeuristicEdge to the given threshold. Returns true if the edge's best cost is lower than the internally set threshold. <br /></td></tr>
-<tr class="separator:afa695908b9ce8f8d5258e02e3a2a75b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa309d912e8af5ce8e2bc5b06d9f0440e"><td class="memItemLeft" align="right" valign="top"><a id="aa309d912e8af5ce8e2bc5b06d9f0440e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aa309d912e8af5ce8e2bc5b06d9f0440e">vertexPruneCondition</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;state) const</td></tr>
-<tr class="memdesc:aa309d912e8af5ce8e2bc5b06d9f0440e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The condition used to prune vertices out of the queue. Compares currentHeuristicVertex to the given threshold. Returns true if the vertex's best cost is greater than the internally set threshold. <br /></td></tr>
-<tr class="separator:aa309d912e8af5ce8e2bc5b06d9f0440e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6fa720b7baf944b55ffb7578faab9ea"><td class="memItemLeft" align="right" valign="top"><a id="ad6fa720b7baf944b55ffb7578faab9ea"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ad6fa720b7baf944b55ffb7578faab9ea">samplePruneCondition</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;state) const</td></tr>
-<tr class="memdesc:ad6fa720b7baf944b55ffb7578faab9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The condition used to prune disconnected samples from the free set. Compares lowerBoundHeuristicVertex to the given threshold. Returns true if the vertex's best cost is greater than or equal to the internally set threshold. <br /></td></tr>
-<tr class="separator:ad6fa720b7baf944b55ffb7578faab9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4536f20dba7d146d5236c81dc4a83ce"><td class="memItemLeft" align="right" valign="top"><a id="ac4536f20dba7d146d5236c81dc4a83ce"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ac4536f20dba7d146d5236c81dc4a83ce">edgePruneCondition</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a">VertexPtrPair</a> &amp;edge) const</td></tr>
-<tr class="memdesc:ac4536f20dba7d146d5236c81dc4a83ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The condition used to prune edge (i.e., vertex-pair) out of the queue. Compares currentHeuristicEdge to the given threshold. Returns true if the edge's best cost is greater than the internally set threshold. <br /></td></tr>
-<tr class="separator:ac4536f20dba7d146d5236c81dc4a83ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d47478fee6fc3223daa2febb4a0b57c"><td class="memItemLeft" align="right" valign="top"><a id="a2d47478fee6fc3223daa2febb4a0b57c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a2d47478fee6fc3223daa2febb4a0b57c">enableCascadingRewirings</a> (bool enable)</td></tr>
+<tr class="memdesc:a2d47478fee6fc3223daa2febb4a0b57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether cascading of rewirings is enabled. <br /></td></tr>
+<tr class="separator:a2d47478fee6fc3223daa2febb4a0b57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11eda829b4aaaff219af62cc0f0ae878"><td class="memItemLeft" align="right" valign="top"><a id="a11eda829b4aaaff219af62cc0f0ae878"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a11eda829b4aaaff219af62cc0f0ae878">insertOutgoingEdges</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8cb165ce4294ebd59c4c34188e19f7ab">VertexPtr</a> &amp;vertex)</td></tr>
+<tr class="memdesc:a11eda829b4aaaff219af62cc0f0ae878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the edge queue by adding all the potential edges from the vertex to nearby states. <br /></td></tr>
+<tr class="separator:a11eda829b4aaaff219af62cc0f0ae878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ef6f2c3eba4b5fe1cb477062c09bce"><td class="memItemLeft" align="right" valign="top"><a id="a73ef6f2c3eba4b5fe1cb477062c09bce"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a73ef6f2c3eba4b5fe1cb477062c09bce">insertOutgoingEdgesOfStartVertices</a> ()</td></tr>
+<tr class="memdesc:a73ef6f2c3eba4b5fe1cb477062c09bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert the outgoing edges of all start vertices. <br /></td></tr>
+<tr class="separator:a73ef6f2c3eba4b5fe1cb477062c09bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85638e57569cbc433bffcdbdc3c3c99d"><td class="memItemLeft" align="right" valign="top"><a id="a85638e57569cbc433bffcdbdc3c3c99d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a85638e57569cbc433bffcdbdc3c3c99d">insertOutgoingEdgesOfInconsistentVertices</a> ()</td></tr>
+<tr class="memdesc:a85638e57569cbc433bffcdbdc3c3c99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert the outgoing edges of all inconsistent vertices. <br /></td></tr>
+<tr class="separator:a85638e57569cbc433bffcdbdc3c3c99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65a4c984993bee171b9a5e6fc44b4f8"><td class="memItemLeft" align="right" valign="top"><a id="aa65a4c984993bee171b9a5e6fc44b4f8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aa65a4c984993bee171b9a5e6fc44b4f8">addToInconsistentSet</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8cb165ce4294ebd59c4c34188e19f7ab">VertexPtr</a> &amp;vertex)</td></tr>
+<tr class="memdesc:aa65a4c984993bee171b9a5e6fc44b4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the set of inconsistent vertices. <br /></td></tr>
+<tr class="separator:aa65a4c984993bee171b9a5e6fc44b4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3db60d287304fadb2fe146ef20a6a74c"><td class="memItemLeft" align="right" valign="top"><a id="a3db60d287304fadb2fe146ef20a6a74c"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a85f2f074b60a176d939867e33d17fc9e">VertexPtrPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a3db60d287304fadb2fe146ef20a6a74c">getFrontEdge</a> ()</td></tr>
+<tr class="memdesc:a3db60d287304fadb2fe146ef20a6a74c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the best edge on the queue, leaving it at the front of the edge queue. <br /></td></tr>
+<tr class="separator:a3db60d287304fadb2fe146ef20a6a74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2c4588304c862b2a6aa57c0cfc4f35b"><td class="memItemLeft" align="right" valign="top"><a id="aa2c4588304c862b2a6aa57c0cfc4f35b"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a3ab0338c57c33ad8966739c4e31b35ed">SortKey</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aa2c4588304c862b2a6aa57c0cfc4f35b">getFrontEdgeValue</a> ()</td></tr>
+<tr class="memdesc:aa2c4588304c862b2a6aa57c0cfc4f35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the best edge on the queue, leaving it at the front of the edge queue. <br /></td></tr>
+<tr class="separator:aa2c4588304c862b2a6aa57c0cfc4f35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088abff4ac3b8a13a1af910c4b8b7d91"><td class="memItemLeft" align="right" valign="top"><a id="a088abff4ac3b8a13a1af910c4b8b7d91"></a>
+<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a85f2f074b60a176d939867e33d17fc9e">VertexPtrPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a088abff4ac3b8a13a1af910c4b8b7d91">popFrontEdge</a> ()</td></tr>
+<tr class="memdesc:a088abff4ac3b8a13a1af910c4b8b7d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the best edge off the queue, removing it from the front of the edge queue in the process. <br /></td></tr>
+<tr class="separator:a088abff4ac3b8a13a1af910c4b8b7d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9a4c37357ac2ed1ae31340f90a1cc0"><td class="memItemLeft" align="right" valign="top"><a id="a6c9a4c37357ac2ed1ae31340f90a1cc0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a6c9a4c37357ac2ed1ae31340f90a1cc0">clear</a> ()</td></tr>
+<tr class="memdesc:a6c9a4c37357ac2ed1ae31340f90a1cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish the queue if it is sorted, if not resort the queue. Finishing the queue clears all the edge containers and moves the vertex expansion token to the end. After calling finish() ON A SORTED QUEUE, <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a33cb00c31bb0a63cab2288383136ee88" title="Returns true if the queue is empty. In the case where the edge queue is empty but the vertex queue is...">isEmpty()</a> will return true. Keeps threshold, etc. <br /></td></tr>
+<tr class="separator:a6c9a4c37357ac2ed1ae31340f90a1cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e58525b5d9806f939924a42e703a3e"><td class="memItemLeft" align="right" valign="top"><a id="af7e58525b5d9806f939924a42e703a3e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af7e58525b5d9806f939924a42e703a3e">clearInconsistentSet</a> ()</td></tr>
+<tr class="memdesc:af7e58525b5d9806f939924a42e703a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the set of inconsistent vertices. <br /></td></tr>
+<tr class="separator:af7e58525b5d9806f939924a42e703a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3393d3ae68a70f2638f4e63ffda79760"><td class="memItemLeft" align="right" valign="top"><a id="a3393d3ae68a70f2638f4e63ffda79760"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a3393d3ae68a70f2638f4e63ffda79760">rebuildEdgeQueue</a> ()</td></tr>
+<tr class="memdesc:a3393d3ae68a70f2638f4e63ffda79760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update all the sort keys of the edges in the queue and resort. <br /></td></tr>
+<tr class="separator:a3393d3ae68a70f2638f4e63ffda79760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1236802a8d9bce2feb66d3a5b894a65"><td class="memItemLeft" align="right" valign="top"><a id="af1236802a8d9bce2feb66d3a5b894a65"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af1236802a8d9bce2feb66d3a5b894a65">update</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a064de263aff4000e5a1e73319b736e69">EdgeQueueElemPtr</a> elementPtr)</td></tr>
+<tr class="memdesc:af1236802a8d9bce2feb66d3a5b894a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the sort key of a particular edge and its position in the queue. <br /></td></tr>
+<tr class="separator:af1236802a8d9bce2feb66d3a5b894a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7492ed8edb93f3d2bacdeef326f5849"><td class="memItemLeft" align="right" valign="top"><a id="ac7492ed8edb93f3d2bacdeef326f5849"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ac7492ed8edb93f3d2bacdeef326f5849">setInflationFactor</a> (double factor)</td></tr>
+<tr class="memdesc:ac7492ed8edb93f3d2bacdeef326f5849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cost-to-go inflation factor. <br /></td></tr>
+<tr class="separator:ac7492ed8edb93f3d2bacdeef326f5849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd7d8a6eec9f418bb74e9d729bc1c5e"><td class="memItemLeft" align="right" valign="top"><a id="a9fd7d8a6eec9f418bb74e9d729bc1c5e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a9fd7d8a6eec9f418bb74e9d729bc1c5e">registerSolutionCost</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;solutionCost)</td></tr>
+<tr class="memdesc:a9fd7d8a6eec9f418bb74e9d729bc1c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark that a solution has been found. <br /></td></tr>
+<tr class="separator:a9fd7d8a6eec9f418bb74e9d729bc1c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b422b4caef1ae65fe25fcfa3d2607e"><td class="memItemLeft" align="right" valign="top"><a id="a48b422b4caef1ae65fe25fcfa3d2607e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a48b422b4caef1ae65fe25fcfa3d2607e">removeInEdgesConnectedToVertexFromQueue</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8cb165ce4294ebd59c4c34188e19f7ab">VertexPtr</a> &amp;vertex)</td></tr>
+<tr class="memdesc:a48b422b4caef1ae65fe25fcfa3d2607e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase all edges in the edge queue that lead to the given vertex. <br /></td></tr>
+<tr class="separator:a48b422b4caef1ae65fe25fcfa3d2607e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd4e07f500a0edd8ee45380ea5abc88"><td class="memItemLeft" align="right" valign="top"><a id="abcd4e07f500a0edd8ee45380ea5abc88"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#abcd4e07f500a0edd8ee45380ea5abc88">removeOutEdgesConnectedToVertexFromQueue</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8cb165ce4294ebd59c4c34188e19f7ab">VertexPtr</a> &amp;vertex)</td></tr>
+<tr class="memdesc:abcd4e07f500a0edd8ee45380ea5abc88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase all edges in the edge queue that leave from the given vertex. <br /></td></tr>
+<tr class="separator:abcd4e07f500a0edd8ee45380ea5abc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb8a1817e881a4feb26daef96a70a4c"><td class="memItemLeft" align="right" valign="top"><a id="adfb8a1817e881a4feb26daef96a70a4c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#adfb8a1817e881a4feb26daef96a70a4c">removeAllEdgesConnectedToVertexFromQueue</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8cb165ce4294ebd59c4c34188e19f7ab">VertexPtr</a> &amp;vertex)</td></tr>
+<tr class="memdesc:adfb8a1817e881a4feb26daef96a70a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase all edges in the edge queue that are connected to the given vertex. <br /></td></tr>
+<tr class="separator:adfb8a1817e881a4feb26daef96a70a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb41822478f268095e78627676f64f1e"><td class="memItemLeft" align="right" valign="top"><a id="abb41822478f268095e78627676f64f1e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#abb41822478f268095e78627676f64f1e">removeFromInconsistentSet</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8cb165ce4294ebd59c4c34188e19f7ab">VertexPtr</a> &amp;vertex)</td></tr>
+<tr class="memdesc:abb41822478f268095e78627676f64f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a vertex from the set of inconsistent vertices. <br /></td></tr>
+<tr class="separator:abb41822478f268095e78627676f64f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2adfb28a05de297652b01f2aa6bcd243"><td class="memItemLeft" align="right" valign="top"><a id="a2adfb28a05de297652b01f2aa6bcd243"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a2adfb28a05de297652b01f2aa6bcd243">getInflationFactor</a> () const</td></tr>
+<tr class="memdesc:a2adfb28a05de297652b01f2aa6bcd243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cost-to-go inflation factor. <br /></td></tr>
+<tr class="separator:a2adfb28a05de297652b01f2aa6bcd243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae7aedb5d24c66c79e1d2a513586440"><td class="memItemLeft" align="right" valign="top"><a id="a6ae7aedb5d24c66c79e1d2a513586440"></a>
+std::shared_ptr&lt; const unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a6ae7aedb5d24c66c79e1d2a513586440">getSearchId</a> () const</td></tr>
+<tr class="memdesc:a6ae7aedb5d24c66c79e1d2a513586440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow access to the current search id. <br /></td></tr>
+<tr class="separator:a6ae7aedb5d24c66c79e1d2a513586440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bd337d2544a4643d998f51c847cd8e8"><td class="memItemLeft" align="right" valign="top"><a id="a4bd337d2544a4643d998f51c847cd8e8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a4bd337d2544a4643d998f51c847cd8e8">canPossiblyImproveCurrentSolution</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a8cb165ce4294ebd59c4c34188e19f7ab">VertexPtr</a> &amp;state) const</td></tr>
+<tr class="memdesc:a4bd337d2544a4643d998f51c847cd8e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The condition used to insert vertices into the queue. Compares lowerBoundHeuristicVertex to the given threshold. Returns true if the vertex's best cost is lower than the internally set threshold. <br /></td></tr>
+<tr class="separator:a4bd337d2544a4643d998f51c847cd8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a90277611cc4392ecb30108c533d987"><td class="memItemLeft" align="right" valign="top"><a id="a8a90277611cc4392ecb30108c533d987"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a8a90277611cc4392ecb30108c533d987">canPossiblyImproveCurrentSolution</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#a85f2f074b60a176d939867e33d17fc9e">VertexPtrPair</a> &amp;edge) const</td></tr>
+<tr class="memdesc:a8a90277611cc4392ecb30108c533d987"><td class="mdescLeft">&#160;</td><td class="mdescRight">The condition used to insert edges into the queue. Compares lowerBoundHeuristicEdge to the given threshold. Returns true if the edge's best cost is lower than the internally set threshold. <br /></td></tr>
+<tr class="separator:a8a90277611cc4392ecb30108c533d987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a8802a89e9a63feb176b24d0e4ee6b"><td class="memItemLeft" align="right" valign="top"><a id="a83a8802a89e9a63feb176b24d0e4ee6b"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a83a8802a89e9a63feb176b24d0e4ee6b">numEdges</a> ()</td></tr>
 <tr class="memdesc:a83a8802a89e9a63feb176b24d0e4ee6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of edges in the queue. Will resort/expand the queue if necessary. <br /></td></tr>
 <tr class="separator:a83a8802a89e9a63feb176b24d0e4ee6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a255631a05369dfff38bc8672b65a2aa6"><td class="memItemLeft" align="right" valign="top"><a id="a255631a05369dfff38bc8672b65a2aa6"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a255631a05369dfff38bc8672b65a2aa6">numVertices</a> ()</td></tr>
-<tr class="memdesc:a255631a05369dfff38bc8672b65a2aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of vertices left to expand. This has nontrivial cost, as the token must be moved through the vector to count. Will resort/expand the queue if necessary. <br /></td></tr>
-<tr class="separator:a255631a05369dfff38bc8672b65a2aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1393ee12576ff738936405c009cacfba"><td class="memItemLeft" align="right" valign="top"><a id="a1393ee12576ff738936405c009cacfba"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a1393ee12576ff738936405c009cacfba">numEdgesTo</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;cVertex)</td></tr>
-<tr class="memdesc:a1393ee12576ff738936405c009cacfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of edges in the queue pointing to a specific vertex. Will resort/expand the queue if necessary. <br /></td></tr>
-<tr class="separator:a1393ee12576ff738936405c009cacfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70d9c24fee2b9a910436ea632eb6a46a"><td class="memItemLeft" align="right" valign="top"><a id="a70d9c24fee2b9a910436ea632eb6a46a"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a70d9c24fee2b9a910436ea632eb6a46a">numEdgesFrom</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa">VertexPtr</a> &amp;pVertex)</td></tr>
-<tr class="memdesc:a70d9c24fee2b9a910436ea632eb6a46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of edges in the queue coming from a specific vertex. Will resort/expand the queue if necessary. <br /></td></tr>
-<tr class="separator:a70d9c24fee2b9a910436ea632eb6a46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8974eee2e97ab7639d1898019f52d2"><td class="memItemLeft" align="right" valign="top"><a id="adb8974eee2e97ab7639d1898019f52d2"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#adb8974eee2e97ab7639d1898019f52d2">numUnsorted</a> () const</td></tr>
-<tr class="memdesc:adb8974eee2e97ab7639d1898019f52d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of vertices marked as unsorted. <br /></td></tr>
-<tr class="separator:adb8974eee2e97ab7639d1898019f52d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92f64db8fe13e2db3c06d4d6fae2add9"><td class="memItemLeft" align="right" valign="top"><a id="a92f64db8fe13e2db3c06d4d6fae2add9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a92f64db8fe13e2db3c06d4d6fae2add9">isSorted</a> () const</td></tr>
-<tr class="memdesc:a92f64db8fe13e2db3c06d4d6fae2add9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the queue is still sorted. <br /></td></tr>
-<tr class="separator:a92f64db8fe13e2db3c06d4d6fae2add9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8348d6c6d1635d554204bd1cece37bc8"><td class="memItemLeft" align="right" valign="top"><a id="a8348d6c6d1635d554204bd1cece37bc8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a8348d6c6d1635d554204bd1cece37bc8">isReset</a> () const</td></tr>
-<tr class="memdesc:a8348d6c6d1635d554204bd1cece37bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the queue is reset. This means that no edges have been expanded and the vertex expansion token is pointing at the start. <br /></td></tr>
-<tr class="separator:a8348d6c6d1635d554204bd1cece37bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33cb00c31bb0a63cab2288383136ee88"><td class="memItemLeft" align="right" valign="top"><a id="a33cb00c31bb0a63cab2288383136ee88"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a33cb00c31bb0a63cab2288383136ee88">isEmpty</a> ()</td></tr>
 <tr class="memdesc:a33cb00c31bb0a63cab2288383136ee88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the queue is empty. In the case where the edge queue is empty but the vertex queue is not, this function will expand vertices <em>until</em> the edge queue is not empty or there are no vertices to expand. <br /></td></tr>
 <tr class="separator:a33cb00c31bb0a63cab2288383136ee88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5a6dd7b6aa56b9e9f94befbf1b6e9a6"><td class="memItemLeft" align="right" valign="top"><a id="ae5a6dd7b6aa56b9e9f94befbf1b6e9a6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ae5a6dd7b6aa56b9e9f94befbf1b6e9a6">isVertexExpanded</a> (const <a class="el" href="classompl_1_1geometric_1_1BITstar.html#ae2c8c06f2c54b1bf182dc62dce515ff0">VertexConstPtr</a> &amp;vertex) const</td></tr>
-<tr class="memdesc:ae5a6dd7b6aa56b9e9f94befbf1b6e9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a given vertex has been expanded or not. <br /></td></tr>
-<tr class="separator:ae5a6dd7b6aa56b9e9f94befbf1b6e9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04dbdfe4da9497a9e1ac4562087de072"><td class="memItemLeft" align="right" valign="top"><a id="a04dbdfe4da9497a9e1ac4562087de072"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a04dbdfe4da9497a9e1ac4562087de072">getVertices</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#a2f935b34768c9df4a784c17c2f3b5090">VertexConstPtrVector</a> *vertexQueue)</td></tr>
-<tr class="memdesc:a04dbdfe4da9497a9e1ac4562087de072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the vertices in the vertex queue that are left to be expanded. This is expensive and is only meant for animations/debugging. <br /></td></tr>
-<tr class="separator:a04dbdfe4da9497a9e1ac4562087de072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af10aeaa60adf14f22fd13059f5896ec7"><td class="memItemLeft" align="right" valign="top"><a id="af10aeaa60adf14f22fd13059f5896ec7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af10aeaa60adf14f22fd13059f5896ec7">getEdges</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#aa32f8e81420fa7eb85d066443ba22a21">VertexConstPtrPairVector</a> *edgeQueue)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#af10aeaa60adf14f22fd13059f5896ec7">getEdges</a> (<a class="el" href="classompl_1_1geometric_1_1BITstar.html#ac50cb6283e7b208cd90d52fd7b063911">VertexConstPtrPairVector</a> *edgeQueue)</td></tr>
 <tr class="memdesc:af10aeaa60adf14f22fd13059f5896ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a copy of the edge queue. This is expensive and is only meant for animations/debugging. <br /></td></tr>
 <tr class="separator:af10aeaa60adf14f22fd13059f5896ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a280b87ef8f08e7888dd99b01223b1b7a"><td class="memItemLeft" align="right" valign="top"><a id="a280b87ef8f08e7888dd99b01223b1b7a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a280b87ef8f08e7888dd99b01223b1b7a">setStrictQueueOrdering</a> (bool beStrict)</td></tr>
-<tr class="memdesc:a280b87ef8f08e7888dd99b01223b1b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the queue to stay strictly sorted with each rewiring. <br /></td></tr>
-<tr class="separator:a280b87ef8f08e7888dd99b01223b1b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b123071012f5c1b37d8313b466782cc"><td class="memItemLeft" align="right" valign="top"><a id="a9b123071012f5c1b37d8313b466782cc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a9b123071012f5c1b37d8313b466782cc">getStrictQueueOrdering</a> () const</td></tr>
-<tr class="memdesc:a9b123071012f5c1b37d8313b466782cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the queue stays strictly sorted with each rewiring. <br /></td></tr>
-<tr class="separator:a9b123071012f5c1b37d8313b466782cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90a8f823a336652975da68bb630f896f"><td class="memItemLeft" align="right" valign="top"><a id="a90a8f823a336652975da68bb630f896f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a90a8f823a336652975da68bb630f896f">setDelayedRewiring</a> (bool delayRewiring)</td></tr>
-<tr class="memdesc:a90a8f823a336652975da68bb630f896f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay considering rewiring edges until an initial solution is found. <br /></td></tr>
-<tr class="separator:a90a8f823a336652975da68bb630f896f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa878cfe96bc42136db8dabbb1202b4af"><td class="memItemLeft" align="right" valign="top"><a id="aa878cfe96bc42136db8dabbb1202b4af"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#aa878cfe96bc42136db8dabbb1202b4af">getDelayedRewiring</a> () const</td></tr>
-<tr class="memdesc:aa878cfe96bc42136db8dabbb1202b4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether BIT* is delaying rewiring until a solution is found. <br /></td></tr>
-<tr class="separator:aa878cfe96bc42136db8dabbb1202b4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc27721c20bd7868b45f2d14a71bd47f"><td class="memItemLeft" align="right" valign="top"><a id="adc27721c20bd7868b45f2d14a71bd47f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#adc27721c20bd7868b45f2d14a71bd47f">setPruneDuringResort</a> (bool <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a140c1214097ce46a79de275acccc1fbe">prune</a>)</td></tr>
-<tr class="memdesc:adc27721c20bd7868b45f2d14a71bd47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune during resorts. <br /></td></tr>
-<tr class="separator:adc27721c20bd7868b45f2d14a71bd47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdf505ccbdf563cfa74421dcf3a218ce"><td class="memItemLeft" align="right" valign="top"><a id="abdf505ccbdf563cfa74421dcf3a218ce"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#abdf505ccbdf563cfa74421dcf3a218ce">getPruneDuringResort</a> () const</td></tr>
-<tr class="memdesc:abdf505ccbdf563cfa74421dcf3a218ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune during resorts. <br /></td></tr>
-<tr class="separator:abdf505ccbdf563cfa74421dcf3a218ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1eb516c180bc7f1f151eaa6b63bf214"><td class="memItemLeft" align="right" valign="top"><a id="ac1eb516c180bc7f1f151eaa6b63bf214"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ac1eb516c180bc7f1f151eaa6b63bf214">numEdgesPopped</a> () const</td></tr>
 <tr class="memdesc:ac1eb516c180bc7f1f151eaa6b63bf214"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of edges popped off the queue for processing (numEdgesPopped_). <br /></td></tr>
 <tr class="separator:ac1eb516c180bc7f1f151eaa6b63bf214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A queue of edges to be processed that integrates both the expansion of <a class="el" href="classompl_1_1geometric_1_1BITstar_1_1Vertex.html#gVertex">Vertices</a> and the ordering of the resulting edges. </p>
-<p><a class="anchor" id="SearchQueue"></a></p><dl class="section user"><dt>Short Description</dt><dd>A two-stage queue that consists of vertices expanded into edges to be processed. The queue consists of a vertex expansion queue and an edge processing queue. Vertices are expanded as needed from the vertex queue into edges places in the edge queue. Edges are removed from the edge queue for processing by <a class="el" href="classompl_1_1geometric_1_1BITstar.html#gBITstar">BIT*</a>. The vertex queue is implemented as a static ordered list of the vertices in the graph with a token (i.e., an iterator) pointing to the next vertex that needs to be expanded. This is specifically a multimap ordered on <a class="el" href="classompl_1_1base_1_1Cost.html" title="Definition of a cost value. Can represent the cost of a motion or the cost of a state. ">ompl::base::Cost</a>. The edge queue is implemented as an ordered list of potential edges. It is filled by the vertex queue and emptied by popping the best value off the front. It is specifically a multimap ordered on std::pair&lt;ompl::base::Cost, ompl::base::Cost&gt;</dd></dl>
-<dl class="section user"><dt>Notes:</dt><dd><ul>
-<li>An eraseEdge() function could be made by mimicking the vertex -&gt; vertexQueue_::iterator lookup datastructure for the edgeQueue_ </li>
-</ul>
-</dd></dl>
+<div class="textblock"><p>A queue of edges, sorted according to a sort key. </p>
+<p><a class="anchor" id="SearchQueue"></a></p><dl class="section user"><dt>Short Description</dt><dd>A search queue holding edges ordered on a sort key, i.e., a cost triple with a lexicographical comparison. The queue is implemented as a binary heap. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SearchQueue_8h_source.html#l00092">92</a> of file <a class="el" href="SearchQueue_8h_source.html">SearchQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SearchQueue_8h_source.html#l00128">128</a> of file <a class="el" href="SearchQueue_8h_source.html">SearchQueue.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>ompl/geometric/planners/bitstar/datastructures/<a class="el" href="SearchQueue_8h_source.html">SearchQueue.h</a></li>
-<li>ompl/geometric/planners/bitstar/datastructures/src/<a class="el" href="SearchQueue_8cpp_source.html">SearchQueue.cpp</a></li>
+<li>ompl/geometric/planners/informedtrees/bitstar/<a class="el" href="SearchQueue_8h_source.html">SearchQueue.h</a></li>
+<li>ompl/geometric/planners/informedtrees/bitstar/src/<a class="el" href="SearchQueue_8cpp_source.html">SearchQueue.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -438,6 +339,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

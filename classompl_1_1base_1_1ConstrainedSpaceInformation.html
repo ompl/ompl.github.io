@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::base::ConstrainedSpaceInformation Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::base::ConstrainedSpaceInformation Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -170,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Space information for a constrained state space. Implements more direct for getting motion states.
+<p>Space information for a constrained state space. Implements more direct for getting motion states.  
  <a href="classompl_1_1base_1_1ConstrainedSpaceInformation.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ConstrainedSpaceInformation_8h_source.html">ompl/base/ConstrainedSpaceInformation.h</a>&gt;</code></p>
@@ -179,8 +164,9 @@ Inheritance diagram for ompl::base::ConstrainedSpaceInformation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1base_1_1ConstrainedSpaceInformation__inherit__graph.png" border="0" usemap="#ompl_1_1base_1_1ConstrainedSpaceInformation_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1base_1_1ConstrainedSpaceInformation_inherit__map" id="ompl_1_1base_1_1ConstrainedSpaceInformation_inherit__map">
-<area shape="rect" id="node3" href="classompl_1_1base_1_1TangentBundleSpaceInformation.html" title="Space information for a tangent bundle&#45;based state space. Implements more direct for getting motion s..." alt="" coords="15,169,200,211"/>
-<area shape="rect" id="node2" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d..." alt="" coords="8,5,207,32"/>
+<area shape="rect" title="Space information for a constrained state space. Implements more direct for getting motion states." alt="" coords="5,80,209,121"/>
+<area shape="rect" href="classompl_1_1base_1_1TangentBundleSpaceInformation.html" title="Space information for a tangent bundle&#45;based state space. Implements more direct for getting motion s..." alt="" coords="15,169,200,211"/>
+<area shape="rect" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d..." alt="" coords="8,5,207,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -190,9 +176,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedSpaceInformation.html#af46db86489864c9de22dc3803d991ee2">ConstrainedSpaceInformation</a> (<a class="el" href="classompl_1_1base_1_1StateSpacePtr.html">StateSpacePtr</a> space)</td></tr>
 <tr class="memdesc:af46db86489864c9de22dc3803d991ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Sets the instance of the state space to plan with. <br /></td></tr>
 <tr class="separator:af46db86489864c9de22dc3803d991ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab246e26139d69a3b6c3517a4fccafef3"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedSpaceInformation.html#ab246e26139d69a3b6c3517a4fccafef3">getMotionStates</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s1, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s2, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;states, unsigned int count, bool endpoints, bool alloc) const override</td></tr>
-<tr class="memdesc:ab246e26139d69a3b6c3517a4fccafef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <em>count</em> states that make up a motion between <em>s1</em> and <em>s2</em>. Returns the number of states that were added to <em>states</em>. Uses the constrained state space's manifold traversal method to obtain states. Will always allocate states.  <a href="#ab246e26139d69a3b6c3517a4fccafef3">More...</a><br /></td></tr>
-<tr class="separator:ab246e26139d69a3b6c3517a4fccafef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8ac143240b3ffac84fe0964d1ccb07"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedSpaceInformation.html#aef8ac143240b3ffac84fe0964d1ccb07">getMotionStates</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s1, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s2, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;states, unsigned int, bool endpoints, bool) const override</td></tr>
+<tr class="memdesc:aef8ac143240b3ffac84fe0964d1ccb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <em>count</em> states that make up a motion between <em>s1</em> and <em>s2</em>. Returns the number of states that were added to <em>states</em>. Uses the constrained state space's manifold traversal method to obtain states. Will always allocate states.  <a href="classompl_1_1base_1_1ConstrainedSpaceInformation.html#aef8ac143240b3ffac84fe0964d1ccb07">More...</a><br /></td></tr>
+<tr class="separator:aef8ac143240b3ffac84fe0964d1ccb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classompl_1_1base_1_1SpaceInformation"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1SpaceInformation')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1SpaceInformation.html">ompl::base::SpaceInformation</a></td></tr>
 <tr class="memitem:af03655b77277e1bb3941b2d2343784ec inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="af03655b77277e1bb3941b2d2343784ec"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SpaceInformation</b> (const <a class="el" href="classompl_1_1base_1_1SpaceInformation.html">SpaceInformation</a> &amp;)=delete</td></tr>
@@ -245,7 +231,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a0449ec0893e02aca2bdfc63323b624e5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the instance of the state validity checker to use. Parallel implementations of planners assume this validity checker is thread safe. <br /></td></tr>
 <tr class="separator:a0449ec0893e02aca2bdfc63323b624e5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60c96cd6f8450bf8cd1a3a08ed1dee6 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="ac60c96cd6f8450bf8cd1a3a08ed1dee6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ac60c96cd6f8450bf8cd1a3a08ed1dee6">setStateValidityChecker</a> (const <a class="el" href="namespaceompl_1_1base.html#ad2db51d298c5e969437078e1e12e0e57">StateValidityCheckerFn</a> &amp;svc)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ac60c96cd6f8450bf8cd1a3a08ed1dee6">setStateValidityChecker</a> (const <a class="el" href="namespaceompl_1_1base.html#a7cd31d19ef5b789b0bff97bf6e249ebf">StateValidityCheckerFn</a> &amp;svc)</td></tr>
 <tr class="memdesc:ac60c96cd6f8450bf8cd1a3a08ed1dee6 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">If no state validity checking class is specified (<a class="el" href="classompl_1_1base_1_1StateValidityChecker.html" title="Abstract definition for a class checking the validity of states. The implementation of this class mus...">StateValidityChecker</a>), a function can be specified instead. This version however incurs a small additional overhead when calling the function, since there is one more level of indirection. <br /></td></tr>
 <tr class="separator:ac60c96cd6f8450bf8cd1a3a08ed1dee6 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6d23843c9489c59e8faad6e1d4faf29 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="ac6d23843c9489c59e8faad6e1d4faf29"></a>
@@ -254,7 +240,8 @@ const <a class="el" href="classompl_1_1base_1_1StateValidityCheckerPtr.html">Sta
 <tr class="separator:ac6d23843c9489c59e8faad6e1d4faf29 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69e58548f91db3e30ac7f41c87459279 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a69e58548f91db3e30ac7f41c87459279"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a69e58548f91db3e30ac7f41c87459279">setMotionValidator</a> (const <a class="el" href="classompl_1_1base_1_1MotionValidatorPtr.html">MotionValidatorPtr</a> &amp;mv)</td></tr>
-<tr class="memdesc:a69e58548f91db3e30ac7f41c87459279 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the instance of the motion validity checker to use. Parallel implementations of planners assume this validity checker is thread safe. <br /></td></tr>
+<tr class="memdesc:a69e58548f91db3e30ac7f41c87459279 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the instance of the motion validity checker to use. Parallel implementations of planners assume this validity checker is thread safe. <br  />
+ <br /></td></tr>
 <tr class="separator:a69e58548f91db3e30ac7f41c87459279 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0258348f3cb78cddbdafde3a3d3f0c8 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="af0258348f3cb78cddbdafde3a3d3f0c8"></a>
 const <a class="el" href="classompl_1_1base_1_1MotionValidatorPtr.html">MotionValidatorPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#af0258348f3cb78cddbdafde3a3d3f0c8">getMotionValidator</a> () const</td></tr>
@@ -276,18 +263,18 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a9853da6c28a1a1fd5f543013546a0f4b">allocState</a> () const</td></tr>
 <tr class="memdesc:a9853da6c28a1a1fd5f543013546a0f4b inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory for a state. <br /></td></tr>
 <tr class="separator:a9853da6c28a1a1fd5f543013546a0f4b inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ab869742afa3b5b6b8dd2a43e26d624 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a5ab869742afa3b5b6b8dd2a43e26d624"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a5ab869742afa3b5b6b8dd2a43e26d624">allocStates</a> (std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;states) const</td></tr>
-<tr class="memdesc:a5ab869742afa3b5b6b8dd2a43e26d624 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory for each element of the array <em>states</em>. <br /></td></tr>
-<tr class="separator:a5ab869742afa3b5b6b8dd2a43e26d624 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c998c4063f342bfb272d51fc59ad57 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="ac9c998c4063f342bfb272d51fc59ad57"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ac9c998c4063f342bfb272d51fc59ad57">allocStates</a> (std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;states) const</td></tr>
+<tr class="memdesc:ac9c998c4063f342bfb272d51fc59ad57 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory for each element of the array <em>states</em>. <br /></td></tr>
+<tr class="separator:ac9c998c4063f342bfb272d51fc59ad57 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a178583601cea48741ba3fa972b3204a5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a178583601cea48741ba3fa972b3204a5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a178583601cea48741ba3fa972b3204a5">freeState</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state) const</td></tr>
 <tr class="memdesc:a178583601cea48741ba3fa972b3204a5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory of a state. <br /></td></tr>
 <tr class="separator:a178583601cea48741ba3fa972b3204a5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55408aaef640d6e24d24a7fdeceb73ba inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a55408aaef640d6e24d24a7fdeceb73ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a55408aaef640d6e24d24a7fdeceb73ba">freeStates</a> (std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;states) const</td></tr>
-<tr class="memdesc:a55408aaef640d6e24d24a7fdeceb73ba inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory of an array of states. <br /></td></tr>
-<tr class="separator:a55408aaef640d6e24d24a7fdeceb73ba inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ea3297e3e30e2f75645baba2b86a1b inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a75ea3297e3e30e2f75645baba2b86a1b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a75ea3297e3e30e2f75645baba2b86a1b">freeStates</a> (std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;states) const</td></tr>
+<tr class="memdesc:a75ea3297e3e30e2f75645baba2b86a1b inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory of an array of states. <br /></td></tr>
+<tr class="separator:a75ea3297e3e30e2f75645baba2b86a1b inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace85769316418c8108e9fc7ebf5932b9 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="ace85769316418c8108e9fc7ebf5932b9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ace85769316418c8108e9fc7ebf5932b9">copyState</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *destination, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *source) const</td></tr>
 <tr class="memdesc:ace85769316418c8108e9fc7ebf5932b9 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a state to another. <br /></td></tr>
@@ -302,10 +289,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a7b50b1e32e378ca72d373de94c338d2b inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb136d78ca86bff17a8233023cc32ba1 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="adb136d78ca86bff17a8233023cc32ba1"></a>
 <a class="el" href="classompl_1_1base_1_1ValidStateSamplerPtr.html">ValidStateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#adb136d78ca86bff17a8233023cc32ba1">allocValidStateSampler</a> () const</td></tr>
-<tr class="memdesc:adb136d78ca86bff17a8233023cc32ba1 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an instance of a valid state sampler for this space. If <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ae6391771fc74984a3266f986cfe07780" title="Set the allocator to use for a valid state sampler. This replaces the default uniform valid state sam...">setValidStateSamplerAllocator()</a> was previously called, the specified allocator is used to produce the state sampler. Otherwise, a <a class="el" href="classompl_1_1base_1_1UniformValidStateSampler.html" title="A state sampler that only samples valid states, uniformly. ">ompl::base::UniformValidStateSampler()</a> is allocated. <br /></td></tr>
+<tr class="memdesc:adb136d78ca86bff17a8233023cc32ba1 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an instance of a valid state sampler for this space. If <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ae6391771fc74984a3266f986cfe07780" title="Set the allocator to use for a valid state sampler. This replaces the default uniform valid state sam...">setValidStateSamplerAllocator()</a> was previously called, the specified allocator is used to produce the state sampler. Otherwise, a <a class="el" href="classompl_1_1base_1_1UniformValidStateSampler.html" title="A state sampler that only samples valid states, uniformly.">ompl::base::UniformValidStateSampler()</a> is allocated. <br /></td></tr>
 <tr class="separator:adb136d78ca86bff17a8233023cc32ba1 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6391771fc74984a3266f986cfe07780 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="ae6391771fc74984a3266f986cfe07780"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ae6391771fc74984a3266f986cfe07780">setValidStateSamplerAllocator</a> (const <a class="el" href="namespaceompl_1_1base.html#a85c4b4a409c1eac0b865577ff375e1ca">ValidStateSamplerAllocator</a> &amp;vssa)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ae6391771fc74984a3266f986cfe07780">setValidStateSamplerAllocator</a> (const <a class="el" href="namespaceompl_1_1base.html#afe1d1e8c2e70b9876dd5621027eb19f4">ValidStateSamplerAllocator</a> &amp;vssa)</td></tr>
 <tr class="memdesc:ae6391771fc74984a3266f986cfe07780 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the allocator to use for a valid state sampler. This replaces the default uniform valid state sampler. This call can be made at any time, but it should not be changed while <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">ompl::base::Planner::solve()</a> is executing. <br /></td></tr>
 <tr class="separator:ae6391771fc74984a3266f986cfe07780 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae805bde7621a7fd6c9022f6890645bd4 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="ae805bde7621a7fd6c9022f6890645bd4"></a>
@@ -322,26 +309,26 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memitem:a232205840dbfd893f4484e25f74e0268 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a232205840dbfd893f4484e25f74e0268">searchValidNearby</a> (const <a class="el" href="classompl_1_1base_1_1ValidStateSamplerPtr.html">ValidStateSamplerPtr</a> &amp;sampler, <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *near, double <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a604815a30c0d5827f8ae85359afba7f1">distance</a>) const</td></tr>
 <tr class="memdesc:a232205840dbfd893f4484e25f74e0268 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a valid state near a given one. If the given state is valid, it will be returned itself. The two passed state pointers need not point to different memory. Returns true on success.  <a href="classompl_1_1base_1_1SpaceInformation.html#a232205840dbfd893f4484e25f74e0268">More...</a><br /></td></tr>
 <tr class="separator:a232205840dbfd893f4484e25f74e0268 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a704116f449704b30a3e23482a6084fdd inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a704116f449704b30a3e23482a6084fdd">randomBounceMotion</a> (const <a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a> &amp;sss, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *start, unsigned int steps, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;states, bool alloc) const</td></tr>
-<tr class="memdesc:a704116f449704b30a3e23482a6084fdd inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produce a valid motion starting at <em>start</em> by randomly bouncing off of invalid states. The start state <em>start</em> is not included in the computed motion (<em>states</em>). Returns the number of elements written to <em>states</em> (less or equal to <em>steps</em>).  <a href="classompl_1_1base_1_1SpaceInformation.html#a704116f449704b30a3e23482a6084fdd">More...</a><br /></td></tr>
-<tr class="separator:a704116f449704b30a3e23482a6084fdd inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a9da658cfafed46ee7d17c0e3a37b5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ad9a9da658cfafed46ee7d17c0e3a37b5">randomBounceMotion</a> (const <a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a> &amp;sss, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *start, unsigned int steps, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;states, bool alloc) const</td></tr>
+<tr class="memdesc:ad9a9da658cfafed46ee7d17c0e3a37b5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produce a valid motion starting at <em>start</em> by randomly bouncing off of invalid states. The start state <em>start</em> is not included in the computed motion (<em>states</em>). Returns the number of elements written to <em>states</em> (less or equal to <em>steps</em>).  <a href="classompl_1_1base_1_1SpaceInformation.html#ad9a9da658cfafed46ee7d17c0e3a37b5">More...</a><br /></td></tr>
+<tr class="separator:ad9a9da658cfafed46ee7d17c0e3a37b5 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd0cb435a39b89d2d5ac1587a1cf9408 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#afd0cb435a39b89d2d5ac1587a1cf9408">checkMotion</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s1, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s2, std::pair&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *, double &gt; &amp;lastValid) const</td></tr>
 <tr class="memdesc:afd0cb435a39b89d2d5ac1587a1cf9408 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incrementally check if the path between two motions is valid. Also compute the last state that was valid and the time of that state. The time is used to parametrize the motion from s1 to s2, s1 being at t = 0 and s2 being at t = 1. This function assumes s1 is valid.  <a href="classompl_1_1base_1_1SpaceInformation.html#afd0cb435a39b89d2d5ac1587a1cf9408">More...</a><br /></td></tr>
 <tr class="separator:afd0cb435a39b89d2d5ac1587a1cf9408 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026f22cb8f4a6e7648990f11c3acad7c inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a026f22cb8f4a6e7648990f11c3acad7c"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a026f22cb8f4a6e7648990f11c3acad7c">checkMotion</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s1, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s2) const</td></tr>
-<tr class="memdesc:a026f22cb8f4a6e7648990f11c3acad7c inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the path between two states (from <em>s1</em> to <em>s2</em>) is valid, using the <a class="el" href="classompl_1_1base_1_1MotionValidator.html" title="Abstract definition for a class checking the validity of motions – path segments between states...">MotionValidator</a>. This function assumes <em>s1</em> is valid. <br /></td></tr>
+<tr class="memdesc:a026f22cb8f4a6e7648990f11c3acad7c inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the path between two states (from <em>s1</em> to <em>s2</em>) is valid, using the <a class="el" href="classompl_1_1base_1_1MotionValidator.html" title="Abstract definition for a class checking the validity of motions – path segments between states....">MotionValidator</a>. This function assumes <em>s1</em> is valid. <br /></td></tr>
 <tr class="separator:a026f22cb8f4a6e7648990f11c3acad7c inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e6518e2afd7477f0301f9e3556a6ace inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a4e6518e2afd7477f0301f9e3556a6ace">checkMotion</a> (const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;states, unsigned int count, unsigned int &amp;firstInvalidStateIndex) const</td></tr>
-<tr class="memdesc:a4e6518e2afd7477f0301f9e3556a6ace inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incrementally check if a sequence of states is valid. Given a vector of states, this routine only checks the first <em>count</em> elements and marks the index of the first invalid state.  <a href="classompl_1_1base_1_1SpaceInformation.html#a4e6518e2afd7477f0301f9e3556a6ace">More...</a><br /></td></tr>
-<tr class="separator:a4e6518e2afd7477f0301f9e3556a6ace inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5af033ed12faad3cb9fa783c894c4a56 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a5af033ed12faad3cb9fa783c894c4a56"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a5af033ed12faad3cb9fa783c894c4a56">checkMotion</a> (const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;states, unsigned int count) const</td></tr>
-<tr class="memdesc:a5af033ed12faad3cb9fa783c894c4a56 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a sequence of states is valid using subdivision. <br /></td></tr>
-<tr class="separator:a5af033ed12faad3cb9fa783c894c4a56 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe948a4b3a3582bffee708219e65abbb inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#abe948a4b3a3582bffee708219e65abbb">checkMotion</a> (const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;states, unsigned int count, unsigned int &amp;firstInvalidStateIndex) const</td></tr>
+<tr class="memdesc:abe948a4b3a3582bffee708219e65abbb inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incrementally check if a sequence of states is valid. Given a vector of states, this routine only checks the first <em>count</em> elements and marks the index of the first invalid state.  <a href="classompl_1_1base_1_1SpaceInformation.html#abe948a4b3a3582bffee708219e65abbb">More...</a><br /></td></tr>
+<tr class="separator:abe948a4b3a3582bffee708219e65abbb inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ecfb831275291ecec78c0c17b2fef3 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a63ecfb831275291ecec78c0c17b2fef3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a63ecfb831275291ecec78c0c17b2fef3">checkMotion</a> (const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;states, unsigned int count) const</td></tr>
+<tr class="memdesc:a63ecfb831275291ecec78c0c17b2fef3 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a sequence of states is valid using subdivision. <br /></td></tr>
+<tr class="separator:a63ecfb831275291ecec78c0c17b2fef3 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14b9e1488f71995fddacd99ecde88fa4 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a14b9e1488f71995fddacd99ecde88fa4"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a14b9e1488f71995fddacd99ecde88fa4">getCheckedMotionCount</a> () const</td></tr>
-<tr class="memdesc:a14b9e1488f71995fddacd99ecde88fa4 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of motion segments checked by the <a class="el" href="classompl_1_1base_1_1MotionValidator.html" title="Abstract definition for a class checking the validity of motions – path segments between states...">MotionValidator</a> so far. <br /></td></tr>
+<tr class="memdesc:a14b9e1488f71995fddacd99ecde88fa4 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of motion segments checked by the <a class="el" href="classompl_1_1base_1_1MotionValidator.html" title="Abstract definition for a class checking the validity of motions – path segments between states....">MotionValidator</a> so far. <br /></td></tr>
 <tr class="separator:a14b9e1488f71995fddacd99ecde88fa4 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66c76a83cf1fbb521e0b6ed92e367f21 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a66c76a83cf1fbb521e0b6ed92e367f21"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a66c76a83cf1fbb521e0b6ed92e367f21">probabilityOfValidState</a> (unsigned int attempts) const</td></tr>
@@ -353,7 +340,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a8324758cb376b64cd07fe64b62ca1d45 inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bf93b3b7e3f12c1b2f88fb4528ed33d inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="a4bf93b3b7e3f12c1b2f88fb4528ed33d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a4bf93b3b7e3f12c1b2f88fb4528ed33d">samplesPerSecond</a> (double &amp;uniform, double &amp;near, double &amp;gaussian, unsigned int attempts) const</td></tr>
-<tr class="memdesc:a4bf93b3b7e3f12c1b2f88fb4528ed33d inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate the number of samples that can be drawn per second, using the sampler returned by <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a7b50b1e32e378ca72d373de94c338d2b" title="Allocate a uniform state sampler for the state space. ">allocStateSampler()</a> <br /></td></tr>
+<tr class="memdesc:a4bf93b3b7e3f12c1b2f88fb4528ed33d inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate the number of samples that can be drawn per second, using the sampler returned by <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a7b50b1e32e378ca72d373de94c338d2b" title="Allocate a uniform state sampler for the state space.">allocStateSampler()</a> <br /></td></tr>
 <tr class="separator:a4bf93b3b7e3f12c1b2f88fb4528ed33d inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaafcf07fda025a0ebb21844563d8b2ef inherit pub_methods_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="aaafcf07fda025a0ebb21844563d8b2ef"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#aaafcf07fda025a0ebb21844563d8b2ef">printSettings</a> (std::ostream &amp;out=std::cout) const</td></tr>
@@ -405,7 +392,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:af5dd22573e611e150d15af2081dd26c8 inherit pro_attribs_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4" title="Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...">setup()</a> has been called on this instance. <br /></td></tr>
 <tr class="separator:af5dd22573e611e150d15af2081dd26c8 inherit pro_attribs_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad20bb9ec674edd4d4dbb2d13b2d89abd inherit pro_attribs_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="ad20bb9ec674edd4d4dbb2d13b2d89abd"></a>
-<a class="el" href="namespaceompl_1_1base.html#a85c4b4a409c1eac0b865577ff375e1ca">ValidStateSamplerAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ad20bb9ec674edd4d4dbb2d13b2d89abd">vssa_</a></td></tr>
+<a class="el" href="namespaceompl_1_1base.html#afe1d1e8c2e70b9876dd5621027eb19f4">ValidStateSamplerAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1SpaceInformation.html#ad20bb9ec674edd4d4dbb2d13b2d89abd">vssa_</a></td></tr>
 <tr class="memdesc:ad20bb9ec674edd4d4dbb2d13b2d89abd inherit pro_attribs_classompl_1_1base_1_1SpaceInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">The optional valid state sampler allocator. <br /></td></tr>
 <tr class="separator:ad20bb9ec674edd4d4dbb2d13b2d89abd inherit pro_attribs_classompl_1_1base_1_1SpaceInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9dd30fdbe4e702930f465d73f692427 inherit pro_attribs_classompl_1_1base_1_1SpaceInformation"><td class="memItemLeft" align="right" valign="top"><a id="aa9dd30fdbe4e702930f465d73f692427"></a>
@@ -416,10 +403,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Space information for a constrained state space. Implements more direct for getting motion states. </p>
 
-<p class="definition">Definition at line <a class="el" href="ConstrainedSpaceInformation_8h_source.html#l00109">109</a> of file <a class="el" href="ConstrainedSpaceInformation_8h_source.html">ConstrainedSpaceInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ConstrainedSpaceInformation_8h_source.html#l00173">173</a> of file <a class="el" href="ConstrainedSpaceInformation_8h_source.html">ConstrainedSpaceInformation.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab246e26139d69a3b6c3517a4fccafef3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab246e26139d69a3b6c3517a4fccafef3">&#9670;&nbsp;</a></span>getMotionStates()</h2>
+<a id="aef8ac143240b3ffac84fe0964d1ccb07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8ac143240b3ffac84fe0964d1ccb07">&#9670;&nbsp;</a></span>getMotionStates()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,14 +429,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;&#160;</td>
           <td class="paramname"><em>states</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>count</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -461,7 +448,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>alloc</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -489,11 +476,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a561e6fd3fb9cfba7afa8deb3886a929a">ompl::base::SpaceInformation</a>.</p>
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a39e763f083d06db4b364d1bc0034ea38">ompl::base::SpaceInformation</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classompl_1_1base_1_1TangentBundleSpaceInformation.html#a1cedbc6980ba20f506e27b92312749eb">ompl::base::TangentBundleSpaceInformation</a>.</p>
+<p>Reimplemented in <a class="el" href="classompl_1_1base_1_1TangentBundleSpaceInformation.html#a2253f756749cbbcc58d752a12238378a">ompl::base::TangentBundleSpaceInformation</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ConstrainedSpaceInformation_8h_source.html#l00133">133</a> of file <a class="el" href="ConstrainedSpaceInformation_8h_source.html">ConstrainedSpaceInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ConstrainedSpaceInformation_8h_source.html#l00197">197</a> of file <a class="el" href="ConstrainedSpaceInformation_8h_source.html">ConstrainedSpaceInformation.h</a>.</p>
 
 </div>
 </div>
@@ -503,13 +490,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -519,6 +506,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

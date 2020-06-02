@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::base::RealVectorDeterministicStateSampler Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div><!-- Generated by Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1base.html">base</a></li><li class="navelem"><a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html">RealVectorDeterministicStateSampler</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classompl_1_1base_1_1RealVectorDeterministicStateSampler-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ompl::base::RealVectorDeterministicStateSampler Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Deterministic state sampler for the R<sup>n</sup> state space.  
+ <a href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="DeterministicStateSampler_8h_source.html">ompl/base/samplers/DeterministicStateSampler.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ompl::base::RealVectorDeterministicStateSampler:</div>
+<div class="dyncontent">
+<div class="center"><img src="classompl_1_1base_1_1RealVectorDeterministicStateSampler__inherit__graph.png" border="0" usemap="#ompl_1_1base_1_1RealVectorDeterministicStateSampler_inherit__map" alt="Inheritance graph"/></div>
+<map name="ompl_1_1base_1_1RealVectorDeterministicStateSampler_inherit__map" id="ompl_1_1base_1_1RealVectorDeterministicStateSampler_inherit__map">
+<area shape="rect" title="Deterministic state sampler for the Rn state space." alt="" coords="5,169,243,211"/>
+<area shape="rect" href="classompl_1_1base_1_1DeterministicStateSampler.html" title="An abstract class for the concept of using deterministic sampling sequences to decrease the dispersio..." alt="" coords="38,80,210,121"/>
+<area shape="rect" href="classompl_1_1base_1_1StateSampler.html" title="Abstract definition of a state space sampler." alt="" coords="36,5,212,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a0ca9132d1179a07a5688e13c5b72d41e"><td class="memItemLeft" align="right" valign="top"><a id="a0ca9132d1179a07a5688e13c5b72d41e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a0ca9132d1179a07a5688e13c5b72d41e">RealVectorDeterministicStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *space, DeterministicSamplerType type=DeterministicSamplerType::HALTON)</td></tr>
+<tr class="memdesc:a0ca9132d1179a07a5688e13c5b72d41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, which creates the sequence internally based on the specified sequence type. Uses the default constructor for the sequence. <br /></td></tr>
+<tr class="separator:a0ca9132d1179a07a5688e13c5b72d41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f4179edda21f4bcb3c6de9b363b588"><td class="memItemLeft" align="right" valign="top"><a id="a25f4179edda21f4bcb3c6de9b363b588"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a25f4179edda21f4bcb3c6de9b363b588">RealVectorDeterministicStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *space, std::shared_ptr&lt; <a class="el" href="classompl_1_1base_1_1DeterministicSequence.html">DeterministicSequence</a> &gt; sequence_ptr, bool stretch=true)</td></tr>
+<tr class="memdesc:a25f4179edda21f4bcb3c6de9b363b588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that takes a pointer to a <a class="el" href="classompl_1_1base_1_1DeterministicSequence.html" title="An abstract class for deterministic sequences in arbitrary dimensions.">DeterministicSequence</a> and uses that object instead of its own. This can be used to apply non default options to the deterministic sequence. <br /></td></tr>
+<tr class="separator:a25f4179edda21f4bcb3c6de9b363b588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7df15a83a119772d4abc263aa1a40b"><td class="memItemLeft" align="right" valign="top"><a id="a8b7df15a83a119772d4abc263aa1a40b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a8b7df15a83a119772d4abc263aa1a40b">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state) override</td></tr>
+<tr class="memdesc:a8b7df15a83a119772d4abc263aa1a40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state. <br /></td></tr>
+<tr class="separator:a8b7df15a83a119772d4abc263aa1a40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7814d2b63a38fa666e3e553f5e27be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a2a7814d2b63a38fa666e3e553f5e27be">sampleUniformNear</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *near, double distance) override</td></tr>
+<tr class="memdesc:a2a7814d2b63a38fa666e3e553f5e27be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state near another, within a neighborhood controlled by a distance parameter.  <a href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a2a7814d2b63a38fa666e3e553f5e27be">More...</a><br /></td></tr>
+<tr class="separator:a2a7814d2b63a38fa666e3e553f5e27be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e01a9dc8468c8b6a2b23ff14618924"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a35e01a9dc8468c8b6a2b23ff14618924">sampleGaussian</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *mean, double stdDev) override</td></tr>
+<tr class="memdesc:a35e01a9dc8468c8b6a2b23ff14618924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state using a Gaussian distribution with given <em>mean</em> and standard deviation (<em>stdDev</em>).  <a href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a35e01a9dc8468c8b6a2b23ff14618924">More...</a><br /></td></tr>
+<tr class="separator:a35e01a9dc8468c8b6a2b23ff14618924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1base_1_1DeterministicStateSampler"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1DeterministicStateSampler')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html">ompl::base::DeterministicStateSampler</a></td></tr>
+<tr class="memitem:abc97001613eb75a1c75eabf35e5eb6dd inherit pub_methods_classompl_1_1base_1_1DeterministicStateSampler"><td class="memItemLeft" align="right" valign="top"><a id="abc97001613eb75a1c75eabf35e5eb6dd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html#abc97001613eb75a1c75eabf35e5eb6dd">DeterministicStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *space, DeterministicSamplerType type=DeterministicSamplerType::HALTON)</td></tr>
+<tr class="memdesc:abc97001613eb75a1c75eabf35e5eb6dd inherit pub_methods_classompl_1_1base_1_1DeterministicStateSampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, which creates the sequence internally based on the specified sequence type. Uses the default constructor for the sequence. <br /></td></tr>
+<tr class="separator:abc97001613eb75a1c75eabf35e5eb6dd inherit pub_methods_classompl_1_1base_1_1DeterministicStateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c16ca9cecfcbfc6c5977cd38696580e inherit pub_methods_classompl_1_1base_1_1DeterministicStateSampler"><td class="memItemLeft" align="right" valign="top"><a id="a0c16ca9cecfcbfc6c5977cd38696580e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html#a0c16ca9cecfcbfc6c5977cd38696580e">DeterministicStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *space, std::shared_ptr&lt; <a class="el" href="classompl_1_1base_1_1DeterministicSequence.html">DeterministicSequence</a> &gt; sequence_ptr)</td></tr>
+<tr class="memdesc:a0c16ca9cecfcbfc6c5977cd38696580e inherit pub_methods_classompl_1_1base_1_1DeterministicStateSampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that takes a pointer to a <a class="el" href="classompl_1_1base_1_1DeterministicSequence.html" title="An abstract class for deterministic sequences in arbitrary dimensions.">DeterministicSequence</a> and uses that object instead of its own. This can be used to apply non default options to the deterministic sequence. <br /></td></tr>
+<tr class="separator:a0c16ca9cecfcbfc6c5977cd38696580e inherit pub_methods_classompl_1_1base_1_1DeterministicStateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1base_1_1StateSampler"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1StateSampler')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1StateSampler.html">ompl::base::StateSampler</a></td></tr>
+<tr class="memitem:a196a647d90f742980528f25b4fe4206a inherit pub_methods_classompl_1_1base_1_1StateSampler"><td class="memItemLeft" align="right" valign="top"><a id="a196a647d90f742980528f25b4fe4206a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>StateSampler</b> (const <a class="el" href="classompl_1_1base_1_1StateSampler.html">StateSampler</a> &amp;)=delete</td></tr>
+<tr class="separator:a196a647d90f742980528f25b4fe4206a inherit pub_methods_classompl_1_1base_1_1StateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd82d057263a9ba6cf137884d92372c inherit pub_methods_classompl_1_1base_1_1StateSampler"><td class="memItemLeft" align="right" valign="top"><a id="a6dd82d057263a9ba6cf137884d92372c"></a>
+<a class="el" href="classompl_1_1base_1_1StateSampler.html">StateSampler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classompl_1_1base_1_1StateSampler.html">StateSampler</a> &amp;)=delete</td></tr>
+<tr class="separator:a6dd82d057263a9ba6cf137884d92372c inherit pub_methods_classompl_1_1base_1_1StateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b7e6623b9ee8f4dc16b88b5a2c62248 inherit pub_methods_classompl_1_1base_1_1StateSampler"><td class="memItemLeft" align="right" valign="top"><a id="a1b7e6623b9ee8f4dc16b88b5a2c62248"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSampler.html#a1b7e6623b9ee8f4dc16b88b5a2c62248">StateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *space)</td></tr>
+<tr class="memdesc:a1b7e6623b9ee8f4dc16b88b5a2c62248 inherit pub_methods_classompl_1_1base_1_1StateSampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:a1b7e6623b9ee8f4dc16b88b5a2c62248 inherit pub_methods_classompl_1_1base_1_1StateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classompl_1_1base_1_1DeterministicStateSampler"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classompl_1_1base_1_1DeterministicStateSampler')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html">ompl::base::DeterministicStateSampler</a></td></tr>
+<tr class="memitem:a54c68ae3f596110307dba114c4e08d28 inherit pub_types_classompl_1_1base_1_1DeterministicStateSampler"><td class="memItemLeft" align="right" valign="top"><a id="a54c68ae3f596110307dba114c4e08d28"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>DeterministicSamplerType</b> { <b>HALTON</b>
+ }</td></tr>
+<tr class="separator:a54c68ae3f596110307dba114c4e08d28 inherit pub_types_classompl_1_1base_1_1DeterministicStateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classompl_1_1base_1_1DeterministicStateSampler"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1DeterministicStateSampler')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html">ompl::base::DeterministicStateSampler</a></td></tr>
+<tr class="memitem:ac80d87a95b4c19355688a005b6ded5f3 inherit pro_attribs_classompl_1_1base_1_1DeterministicStateSampler"><td class="memItemLeft" align="right" valign="top"><a id="ac80d87a95b4c19355688a005b6ded5f3"></a>
+std::shared_ptr&lt; <a class="el" href="classompl_1_1base_1_1DeterministicSequence.html">DeterministicSequence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sequence_ptr_</b></td></tr>
+<tr class="separator:ac80d87a95b4c19355688a005b6ded5f3 inherit pro_attribs_classompl_1_1base_1_1DeterministicStateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classompl_1_1base_1_1StateSampler"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1StateSampler')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1StateSampler.html">ompl::base::StateSampler</a></td></tr>
+<tr class="memitem:ade7594512889b577995b3479c71f3b6d inherit pro_attribs_classompl_1_1base_1_1StateSampler"><td class="memItemLeft" align="right" valign="top"><a id="ade7594512889b577995b3479c71f3b6d"></a>
+const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSampler.html#ade7594512889b577995b3479c71f3b6d">space_</a></td></tr>
+<tr class="memdesc:ade7594512889b577995b3479c71f3b6d inherit pro_attribs_classompl_1_1base_1_1StateSampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state space this sampler samples. <br /></td></tr>
+<tr class="separator:ade7594512889b577995b3479c71f3b6d inherit pro_attribs_classompl_1_1base_1_1StateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b2f106c42eaa4788bb6914cd5371fb inherit pro_attribs_classompl_1_1base_1_1StateSampler"><td class="memItemLeft" align="right" valign="top"><a id="ad8b2f106c42eaa4788bb6914cd5371fb"></a>
+<a class="el" href="classompl_1_1RNG.html">RNG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSampler.html#ad8b2f106c42eaa4788bb6914cd5371fb">rng_</a></td></tr>
+<tr class="memdesc:ad8b2f106c42eaa4788bb6914cd5371fb inherit pro_attribs_classompl_1_1base_1_1StateSampler"><td class="mdescLeft">&#160;</td><td class="mdescRight">An instance of a random number generator. <br /></td></tr>
+<tr class="separator:ad8b2f106c42eaa4788bb6914cd5371fb inherit pro_attribs_classompl_1_1base_1_1StateSampler"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deterministic state sampler for the R<sup>n</sup> state space. </p>
+
+<p class="definition">Definition at line <a class="el" href="DeterministicStateSampler_8h_source.html#l00190">190</a> of file <a class="el" href="DeterministicStateSampler_8h_source.html">DeterministicStateSampler.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a35e01a9dc8468c8b6a2b23ff14618924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e01a9dc8468c8b6a2b23ff14618924">&#9670;&nbsp;</a></span>sampleGaussian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::base::RealVectorDeterministicStateSampler::sampleGaussian </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td>
+          <td class="paramname"><em>mean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>stdDev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sample a state using a Gaussian distribution with given <em>mean</em> and standard deviation (<em>stdDev</em>). </p>
+<p>As with sampleUniform, the implementation of sampleGaussian is specific to the derived class and few assumptions can be made about the distance between <code>state</code> and <code>mean</code>. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html#a4fbc99a868978508706bfe7809c9a08a">ompl::base::DeterministicStateSampler</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="DeterministicStateSampler_8cpp_source.html#l00179">179</a> of file <a class="el" href="DeterministicStateSampler_8cpp_source.html">DeterministicStateSampler.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2a7814d2b63a38fa666e3e553f5e27be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7814d2b63a38fa666e3e553f5e27be">&#9670;&nbsp;</a></span>sampleUniformNear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::base::RealVectorDeterministicStateSampler::sampleUniformNear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td>
+          <td class="paramname"><em>near</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>distance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sample a state near another, within a neighborhood controlled by a distance parameter. </p>
+<p>Typically, StateSampler-derived classes will return in <code>state</code> a state that is uniformly distributed within a ball with radius <code>distance</code> defined by the distance function from the corresponding state space. However, this is not guaranteed. For example, the default state sampler for the <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm.">RealVectorStateSpace</a> returns samples uniformly distributed using L_inf distance, while the default distance function is L_2 distance. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html#a90aac007bdfb5b993090657090456bcd">ompl::base::DeterministicStateSampler</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="DeterministicStateSampler_8cpp_source.html#l00174">174</a> of file <a class="el" href="DeterministicStateSampler_8cpp_source.html">DeterministicStateSampler.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/base/samplers/<a class="el" href="DeterministicStateSampler_8h_source.html">DeterministicStateSampler.h</a></li>
+<li>ompl/base/samplers/src/<a class="el" href="DeterministicStateSampler_8cpp_source.html">DeterministicStateSampler.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

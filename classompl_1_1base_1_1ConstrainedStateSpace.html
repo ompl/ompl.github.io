@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::base::ConstrainedStateSpace Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::base::ConstrainedStateSpace Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -173,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="classompl_1_1base_1_1StateSpace.html" title="Representation of a space in which planning can be performed. Topology specific sampling, interpolation and distance are defined. ">StateSpace</a> that has a <em><a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a></em> imposed upon it. Underlying space functions are passed to the ambient space, and the constraint is used to inform any manifold related operations. <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a349cdde886586bc63b243c49176650ba" title="Sets the space information for this state space. Required for collision checking in manifold traversa...">setSpaceInformation()</a> must be called in order for collision checking to be done in tandem with manifold traversal.
+<p>A <a class="el" href="classompl_1_1base_1_1StateSpace.html" title="Representation of a space in which planning can be performed. Topology specific sampling,...">StateSpace</a> that has a <em><a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a></em> imposed upon it. Underlying space functions are passed to the ambient space, and the constraint is used to inform any manifold related operations. <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a349cdde886586bc63b243c49176650ba" title="Sets the space information for this state space. Required for collision checking in manifold traversa...">setSpaceInformation()</a> must be called in order for collision checking to be done in tandem with manifold traversal.  
  <a href="classompl_1_1base_1_1ConstrainedStateSpace.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ConstrainedStateSpace_8h_source.html">ompl/base/spaces/constraint/ConstrainedStateSpace.h</a>&gt;</code></p>
@@ -182,27 +167,28 @@ Inheritance diagram for ompl::base::ConstrainedStateSpace:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1base_1_1ConstrainedStateSpace__inherit__graph.png" border="0" usemap="#ompl_1_1base_1_1ConstrainedStateSpace_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1base_1_1ConstrainedStateSpace_inherit__map" id="ompl_1_1base_1_1ConstrainedStateSpace_inherit__map">
-<area shape="rect" id="node4" href="classompl_1_1base_1_1AtlasStateSpace.html" title="ConstrainedStateSpace encapsulating a planner&#45;agnostic atlas algorithm for planning on a constraint m..." alt="" coords="5,266,199,293"/>
-<area shape="rect" id="node6" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection&#45;based methodology for planning with constraints..." alt="" coords="223,259,405,300"/>
-<area shape="rect" id="node2" href="classompl_1_1base_1_1WrapperStateSpace.html" title="State space wrapper that transparently passes state space operations through to the underlying space..." alt="" coords="119,80,296,121"/>
-<area shape="rect" id="node3" href="classompl_1_1base_1_1StateSpace.html" title="Representation of a space in which planning can be performed. Topology specific sampling, interpolation and distance are defined. " alt="" coords="125,5,289,32"/>
-<area shape="rect" id="node5" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner&#45;agnostic lazy atlas algorithm for planning on a constra..." alt="" coords="9,348,195,389"/>
+<area shape="rect" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi..." alt="" coords="109,169,306,211"/>
+<area shape="rect" href="classompl_1_1base_1_1AtlasStateSpace.html" title="ConstrainedStateSpace encapsulating a planner&#45;agnostic atlas algorithm for planning on a constraint m..." alt="" coords="5,266,199,293"/>
+<area shape="rect" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection&#45;based methodology for planning with constraints." alt="" coords="223,259,405,300"/>
+<area shape="rect" href="classompl_1_1base_1_1WrapperStateSpace.html" title="State space wrapper that transparently passes state space operations through to the underlying space...." alt="" coords="119,80,296,121"/>
+<area shape="rect" href="classompl_1_1base_1_1StateSpace.html" title="Representation of a space in which planning can be performed. Topology specific sampling,..." alt="" coords="125,5,289,32"/>
+<area shape="rect" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner&#45;agnostic lazy atlas algorithm for planning on a constra..." alt="" coords="9,348,195,389"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace_1_1StateType.html">StateType</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state. ">State</a> in a <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi...">ConstrainedStateSpace</a>, represented as a dense real vector of values. For convenience and efficiency of various <a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a> related operations, this <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state. ">State</a> inherits from Eigen::Map&lt;Eigen::VectorXd&gt;, mapping the underlying dense double vector into an Eigen::VectorXd. Note that this state type inherits from <a class="el" href="classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html" title="Wrapper state type. Contains a reference to an underlying state. ">WrapperStateSpace::StateType</a>, and as such the underlying state can be accessed by <a class="el" href="classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html#a961511edc9cdf1cc2e762a169731713f" title="Get a pointer to the underlying state. ">getState()</a>.  <a href="classompl_1_1base_1_1ConstrainedStateSpace_1_1StateType.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state.">State</a> in a <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi...">ConstrainedStateSpace</a>, represented as a dense real vector of values. For convenience and efficiency of various <a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a> related operations, this <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state.">State</a> inherits from Eigen::Map&lt;Eigen::VectorXd&gt;, mapping the underlying dense double vector into an Eigen::VectorXd. Note that this state type inherits from <a class="el" href="classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html" title="Wrapper state type. Contains a reference to an underlying state.">WrapperStateSpace::StateType</a>, and as such the underlying state can be accessed by <a class="el" href="classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html#a961511edc9cdf1cc2e762a169731713f" title="Get a pointer to the underlying state.">getState()</a>.  <a href="classompl_1_1base_1_1ConstrainedStateSpace_1_1StateType.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ab71679cb1f5d35230b54f33e86c6517d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517d">SanityChecks</a> { <br />
-&#160;&#160;<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da2f124648bfd2bd72c0f2000997aa55b7">CONSTRAINED_STATESPACE_SAMPLERS</a> = (1 &lt;&lt; 1),
-<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da1418b1544de813bf7808315a2ee6b9f8">CONSTRAINED_STATESPACE_GEODESIC_SATISFY</a> = (1 &lt;&lt; 2),
-<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da343f05f800434d26bb238a08c2d57d40">CONSTRAINED_STATESPACE_GEODESIC_CONTINUITY</a> = (1 &lt;&lt; 3),
-<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da52005a0a4c0e60385d53b9eca18a8b7e">CONSTRAINED_STATESPACE_GEODESIC_INTERPOLATE</a> = (1 &lt;&lt; 4),
+&#160;&#160;<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da2f124648bfd2bd72c0f2000997aa55b7">CONSTRAINED_STATESPACE_SAMPLERS</a> = (1 &lt;&lt; 1), 
+<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da1418b1544de813bf7808315a2ee6b9f8">CONSTRAINED_STATESPACE_GEODESIC_SATISFY</a> = (1 &lt;&lt; 2), 
+<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da343f05f800434d26bb238a08c2d57d40">CONSTRAINED_STATESPACE_GEODESIC_CONTINUITY</a> = (1 &lt;&lt; 3), 
+<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da52005a0a4c0e60385d53b9eca18a8b7e">CONSTRAINED_STATESPACE_GEODESIC_INTERPOLATE</a> = (1 &lt;&lt; 4), 
 <br />
 &#160;&#160;<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab71679cb1f5d35230b54f33e86c6517da387aac313de41a4fa7df1d962ca234ec">CONSTRAINED_STATESPACE_JACOBIAN</a> = (1 &lt;&lt; 5)
 <br />
@@ -211,23 +197,23 @@ Public Types</h2></td></tr>
 <tr class="separator:ab71679cb1f5d35230b54f33e86c6517d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classompl_1_1base_1_1StateSpace"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classompl_1_1base_1_1StateSpace')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classompl_1_1base_1_1StateSpace.html">ompl::base::StateSpace</a></td></tr>
 <tr class="memitem:a64feddc33bb3b7459c4f589e6cd9d17e inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17e">SanityChecks</a> { <br />
-&#160;&#160;<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea044307209c21e4830272ca52945a3062">STATESPACE_DISTANCE_DIFFERENT_STATES</a> = (1 &lt;&lt; 1),
-<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">STATESPACE_DISTANCE_SYMMETRIC</a> = (1 &lt;&lt; 2),
-<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">STATESPACE_INTERPOLATION</a> = (1 &lt;&lt; 3),
-<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">STATESPACE_TRIANGLE_INEQUALITY</a> = (1 &lt;&lt; 4),
+&#160;&#160;<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea044307209c21e4830272ca52945a3062">STATESPACE_DISTANCE_DIFFERENT_STATES</a> = (1 &lt;&lt; 1), 
+<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">STATESPACE_DISTANCE_SYMMETRIC</a> = (1 &lt;&lt; 2), 
+<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">STATESPACE_INTERPOLATION</a> = (1 &lt;&lt; 3), 
+<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">STATESPACE_TRIANGLE_INEQUALITY</a> = (1 &lt;&lt; 4), 
 <br />
-&#160;&#160;<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">STATESPACE_DISTANCE_BOUND</a> = (1 &lt;&lt; 5),
-<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea3c050038b3403113c40e3485398a9b18">STATESPACE_RESPECT_BOUNDS</a> = (1 &lt;&lt; 6),
-<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17eafb4e9823a65ace5477bcc1cfc267b3fc">STATESPACE_ENFORCE_BOUNDS_NO_OP</a> = (1 &lt;&lt; 7),
+&#160;&#160;<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">STATESPACE_DISTANCE_BOUND</a> = (1 &lt;&lt; 5), 
+<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea3c050038b3403113c40e3485398a9b18">STATESPACE_RESPECT_BOUNDS</a> = (1 &lt;&lt; 6), 
+<a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17eafb4e9823a65ace5477bcc1cfc267b3fc">STATESPACE_ENFORCE_BOUNDS_NO_OP</a> = (1 &lt;&lt; 7), 
 <a class="el" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea88b4708168876d0b1b010e40285c1cc1">STATESPACE_SERIALIZATION</a> = (1 &lt;&lt; 8)
 <br />
  }</td></tr>
-<tr class="memdesc:a64feddc33bb3b7459c4f589e6cd9d17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags to use in a bit mask for state space sanity checks. Some basic checks do not have flags associated (they are always executed; for example, whether <a class="el" href="classompl_1_1base_1_1StateSpace.html#abff3478c3fc4da03c94d6f929f6ca7f9" title="Copy a state to another. The memory of source and destination should NOT overlap. ...">copyState()</a> works as expected)  <a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17e">More...</a><br /></td></tr>
+<tr class="memdesc:a64feddc33bb3b7459c4f589e6cd9d17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags to use in a bit mask for state space sanity checks. Some basic checks do not have flags associated (they are always executed; for example, whether <a class="el" href="classompl_1_1base_1_1StateSpace.html#abff3478c3fc4da03c94d6f929f6ca7f9" title="Copy a state to another. The memory of source and destination should NOT overlap.">copyState()</a> works as expected)  <a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17e">More...</a><br /></td></tr>
 <tr class="separator:a64feddc33bb3b7459c4f589e6cd9d17e inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d7aa9ecaf711b534e7d4f8b6472e898 inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a7d7aa9ecaf711b534e7d4f8b6472e898"></a>
-typedef <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a7d7aa9ecaf711b534e7d4f8b6472e898">StateType</a></td></tr>
-<tr class="memdesc:a7d7aa9ecaf711b534e7d4f8b6472e898 inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the type of state allocated by this space. <br /></td></tr>
-<tr class="separator:a7d7aa9ecaf711b534e7d4f8b6472e898 inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358860aabda701b73fb0fe01cbdfb0d3 inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a358860aabda701b73fb0fe01cbdfb0d3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a358860aabda701b73fb0fe01cbdfb0d3">StateType</a> = <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a></td></tr>
+<tr class="memdesc:a358860aabda701b73fb0fe01cbdfb0d3 inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the type of state allocated by this space. <br /></td></tr>
+<tr class="separator:a358860aabda701b73fb0fe01cbdfb0d3 inherit pub_types_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -264,28 +250,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#abe381e7751f329702e0a5906d5ae8a59">sanityChecks</a> () const override</td></tr>
 <tr class="memdesc:abe381e7751f329702e0a5906d5ae8a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform both constrained and regular sanity checks. <br /></td></tr>
 <tr class="separator:abe381e7751f329702e0a5906d5ae8a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6978f6ea5eb8ae95cae232cc05259c87"><td class="memItemLeft" align="right" valign="top"><a id="a6978f6ea5eb8ae95cae232cc05259c87"></a>
-virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a6978f6ea5eb8ae95cae232cc05259c87">validSegmentCount</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s1, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s2) const override</td></tr>
-<tr class="memdesc:a6978f6ea5eb8ae95cae232cc05259c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the valid segment count on the manifold, as valid segment count is determined by <em>delta_</em> and <em>lambda_</em>. <br /></td></tr>
-<tr class="separator:a6978f6ea5eb8ae95cae232cc05259c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53799358a1cc69a3f1e6a26c8dbaaf9"><td class="memItemLeft" align="right" valign="top"><a id="ab53799358a1cc69a3f1e6a26c8dbaaf9"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ab53799358a1cc69a3f1e6a26c8dbaaf9">validSegmentCount</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s1, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *s2) const override</td></tr>
+<tr class="memdesc:ab53799358a1cc69a3f1e6a26c8dbaaf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the valid segment count on the manifold, as valid segment count is determined by <em>delta_</em> and <em>lambda_</em>. <br /></td></tr>
+<tr class="separator:ab53799358a1cc69a3f1e6a26c8dbaaf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Constrained Planning</div></td></tr>
 <tr class="memitem:a76c3278b1b6efdcd588a6609666281db"><td class="memItemLeft" align="right" valign="top"><a id="a76c3278b1b6efdcd588a6609666281db"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a76c3278b1b6efdcd588a6609666281db">interpolate</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *from, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *to, double t, <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state) const override</td></tr>
-<tr class="memdesc:a76c3278b1b6efdcd588a6609666281db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a state between <em>from</em> and <em>to</em> around time <em>t</em>, where <em>t</em> = 0 is <em>from</em>, and <em>t</em> = 1 is the final state reached by discreteGeodesic(<em>from</em>, <em>to</em>, true, ...), which may not be <em>to</em>. <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state. ">State</a> returned in <em>state</em>. <br /></td></tr>
+<tr class="memdesc:a76c3278b1b6efdcd588a6609666281db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a state between <em>from</em> and <em>to</em> around time <em>t</em>, where <em>t</em> = 0 is <em>from</em>, and <em>t</em> = 1 is the final state reached by discreteGeodesic(<em>from</em>, <em>to</em>, true, ...), which may not be <em>to</em>. <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state.">State</a> returned in <em>state</em>. <br /></td></tr>
 <tr class="separator:a76c3278b1b6efdcd588a6609666281db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7fe37c311926741537d854fa3a45aa8"><td class="memItemLeft" align="right" valign="top"><a id="ae7fe37c311926741537d854fa3a45aa8"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ae7fe37c311926741537d854fa3a45aa8">discreteGeodesic</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *from, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *to, bool <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a76c3278b1b6efdcd588a6609666281db">interpolate</a>=false, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; *geodesic=nullptr) const =0</td></tr>
-<tr class="memdesc:ae7fe37c311926741537d854fa3a45aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the manifold from <em>from</em> toward <em>to</em>. Returns true if we reached <em>to</em>, and false if we stopped early for any reason, such as a collision or traveling too far. No collision checking is performed if <em>interpolate</em> is true. If <em>geodesic</em> is not nullptr, the sequence of intermediates is saved to it, including a copy of <em>from</em>, as well as the final state, which is a copy of <em>to</em> if we reached <em>to</em>. Caller is responsible for freeing states returned in <em>geodesic</em>. Needs to be implemented by any constrained state space. <br /></td></tr>
-<tr class="separator:ae7fe37c311926741537d854fa3a45aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a342e7cd243e2bc9f95b37b3eb447b40a"><td class="memItemLeft" align="right" valign="top"><a id="a342e7cd243e2bc9f95b37b3eb447b40a"></a>
-virtual <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a342e7cd243e2bc9f95b37b3eb447b40a">geodesicInterpolate</a> (const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;geodesic, double t) const</td></tr>
-<tr class="memdesc:a342e7cd243e2bc9f95b37b3eb447b40a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like interpolate(...), but interpolates between intermediate states already supplied in <em>stateList</em> from a previous call to discreteGeodesic(..., <em>geodesic</em>). The <em>from</em> and <em>to</em> states are the first and last elements <em>stateList</em>. Returns a pointer to a state in <em>geodesic</em>. <br /></td></tr>
-<tr class="separator:a342e7cd243e2bc9f95b37b3eb447b40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7945eeb749bed04c6f3a8bf39e3fcd9d"><td class="memItemLeft" align="right" valign="top"><a id="a7945eeb749bed04c6f3a8bf39e3fcd9d"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a7945eeb749bed04c6f3a8bf39e3fcd9d">discreteGeodesic</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *from, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *to, bool <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a76c3278b1b6efdcd588a6609666281db">interpolate</a>=false, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; *geodesic=nullptr) const =0</td></tr>
+<tr class="memdesc:a7945eeb749bed04c6f3a8bf39e3fcd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the manifold from <em>from</em> toward <em>to</em>. Returns true if we reached <em>to</em>, and false if we stopped early for any reason, such as a collision or traveling too far. No collision checking is performed if <em>interpolate</em> is true. If <em>geodesic</em> is not nullptr, the sequence of intermediates is saved to it, including a copy of <em>from</em>, as well as the final state, which is a copy of <em>to</em> if we reached <em>to</em>. Caller is responsible for freeing states returned in <em>geodesic</em>. Needs to be implemented by any constrained state space. <br /></td></tr>
+<tr class="separator:a7945eeb749bed04c6f3a8bf39e3fcd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e179bc674e590fe1eb44c344b1db528"><td class="memItemLeft" align="right" valign="top"><a id="a0e179bc674e590fe1eb44c344b1db528"></a>
+virtual <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a0e179bc674e590fe1eb44c344b1db528">geodesicInterpolate</a> (const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;geodesic, double t) const</td></tr>
+<tr class="memdesc:a0e179bc674e590fe1eb44c344b1db528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like interpolate(...), but interpolates between intermediate states already supplied in <em>stateList</em> from a previous call to discreteGeodesic(..., <em>geodesic</em>). The <em>from</em> and <em>to</em> states are the first and last elements <em>stateList</em>. Returns a pointer to a state in <em>geodesic</em>. <br /></td></tr>
+<tr class="separator:a0e179bc674e590fe1eb44c344b1db528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Setters and Getters</div></td></tr>
-<tr class="memitem:a63761112fa407ecdfa039fcb27f631f4"><td class="memItemLeft" align="right" valign="top"><a id="a63761112fa407ecdfa039fcb27f631f4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a63761112fa407ecdfa039fcb27f631f4">setDelta</a> (const double delta)</td></tr>
-<tr class="memdesc:a63761112fa407ecdfa039fcb27f631f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <em>delta</em>, the step size for traversing the manifold and collision checking. Default defined by ompl::magic::CONSTRAINED_STATE_SPACE_DELTA. <br /></td></tr>
-<tr class="separator:a63761112fa407ecdfa039fcb27f631f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b381611fa84be9e6d0ff2870b11498"><td class="memItemLeft" align="right" valign="top"><a id="ac4b381611fa84be9e6d0ff2870b11498"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ac4b381611fa84be9e6d0ff2870b11498">setDelta</a> (double delta)</td></tr>
+<tr class="memdesc:ac4b381611fa84be9e6d0ff2870b11498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <em>delta</em>, the step size for traversing the manifold and collision checking. Default defined by ompl::magic::CONSTRAINED_STATE_SPACE_DELTA. <br /></td></tr>
+<tr class="separator:ac4b381611fa84be9e6d0ff2870b11498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1327ddb0831627a49d289e22601453cf"><td class="memItemLeft" align="right" valign="top"><a id="a1327ddb0831627a49d289e22601453cf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a1327ddb0831627a49d289e22601453cf">setLambda</a> (double lambda)</td></tr>
 <tr class="memdesc:a1327ddb0831627a49d289e22601453cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <em>lambda</em>, where lambda * distance(x, y) is the maximum length of the geodesic x to y. Additionally, lambda * delta is the greatest distance a point can diverge from its previous step, to preserve continuity. Must be greater than 1. <br /></td></tr>
@@ -296,7 +282,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a18988282782c55e3a5b13eb16ff7c52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3069963a553655a29ab4243c52d02854"><td class="memItemLeft" align="right" valign="top"><a id="a3069963a553655a29ab4243c52d02854"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a3069963a553655a29ab4243c52d02854">getLambda</a> () const</td></tr>
-<tr class="memdesc:a3069963a553655a29ab4243c52d02854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lambda (see <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a1327ddb0831627a49d289e22601453cf" title="Set lambda, where lambda * distance(x, y) is the maximum length of the geodesic x to y...">setLambda()</a>). <br /></td></tr>
+<tr class="memdesc:a3069963a553655a29ab4243c52d02854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lambda (see <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a1327ddb0831627a49d289e22601453cf" title="Set lambda, where lambda * distance(x, y) is the maximum length of the geodesic x to y....">setLambda()</a>). <br /></td></tr>
 <tr class="separator:a3069963a553655a29ab4243c52d02854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a985baf63acfd88159ca51afeae25e41e"><td class="memItemLeft" align="right" valign="top"><a id="a985baf63acfd88159ca51afeae25e41e"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a985baf63acfd88159ca51afeae25e41e">getAmbientDimension</a> () const</td></tr>
@@ -378,15 +364,15 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:a5c0de05e7bf5c51bcc7164c762913d99 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36d553247c1ad87770592f0da6cbf2a9 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a36d553247c1ad87770592f0da6cbf2a9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36d553247c1ad87770592f0da6cbf2a9">setValidSegmentCountFactor</a> (unsigned int factor) override</td></tr>
-<tr class="memdesc:a36d553247c1ad87770592f0da6cbf2a9 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <em>factor</em> to be the value to multiply the return value of <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a5c0de05e7bf5c51bcc7164c762913d99" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2...">validSegmentCount()</a>. By default, this value is 1. The higher the value, the smaller the size of the segments considered valid. The effect of this function is immediate (<a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> does not need to be called). <br /></td></tr>
+<tr class="memdesc:a36d553247c1ad87770592f0da6cbf2a9 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <em>factor</em> to be the value to multiply the return value of <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a5c0de05e7bf5c51bcc7164c762913d99" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2.">validSegmentCount()</a>. By default, this value is 1. The higher the value, the smaller the size of the segments considered valid. The effect of this function is immediate (<a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> does not need to be called). <br /></td></tr>
 <tr class="separator:a36d553247c1ad87770592f0da6cbf2a9 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b9d0b0af3c1f05e7cee76c2ec6f8e41 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a8b9d0b0af3c1f05e7cee76c2ec6f8e41"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a8b9d0b0af3c1f05e7cee76c2ec6f8e41">getValidSegmentCountFactor</a> () const override</td></tr>
-<tr class="memdesc:a8b9d0b0af3c1f05e7cee76c2ec6f8e41 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value used to multiply the return value of <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a5c0de05e7bf5c51bcc7164c762913d99" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2...">validSegmentCount()</a>. <br /></td></tr>
+<tr class="memdesc:a8b9d0b0af3c1f05e7cee76c2ec6f8e41 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value used to multiply the return value of <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a5c0de05e7bf5c51bcc7164c762913d99" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2.">validSegmentCount()</a>. <br /></td></tr>
 <tr class="separator:a8b9d0b0af3c1f05e7cee76c2ec6f8e41 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93b0e2d9bd417b1e1c49b5369e247ba4 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a93b0e2d9bd417b1e1c49b5369e247ba4"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a93b0e2d9bd417b1e1c49b5369e247ba4">getLongestValidSegmentLength</a> () const override</td></tr>
-<tr class="memdesc:a93b0e2d9bd417b1e1c49b5369e247ba4 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the longest valid segment at the time <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> was called. <br /></td></tr>
+<tr class="memdesc:a93b0e2d9bd417b1e1c49b5369e247ba4 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the longest valid segment at the time <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> was called. <br /></td></tr>
 <tr class="separator:a93b0e2d9bd417b1e1c49b5369e247ba4 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a935487a02046908411be1a42a2d2ed80 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a935487a02046908411be1a42a2d2ed80"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a935487a02046908411be1a42a2d2ed80">computeSignature</a> (std::vector&lt; int &gt; &amp;signature) const override</td></tr>
@@ -416,7 +402,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a5cee21956f8dcd825c45cb502f3bfb50 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada6102cb4e47614f270b160b0ba70402 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ada6102cb4e47614f270b160b0ba70402"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#ada6102cb4e47614f270b160b0ba70402">distance</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state1, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state2) const override</td></tr>
-<tr class="memdesc:ada6102cb4e47614f270b160b0ba70402 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes distance between two states. This function satisfies the properties of a metric if <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#ac04b15e440ecf2dc6fdc2c4843256918" title="Return true if the distance function associated with the space is a metric. ">isMetricSpace()</a> is true, and its return value will always be between 0 and <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a437934384ef980c4353a2211806258fc" title="Get the maximum value a call to distance() can return (or an upper bound). For unbounded state spaces...">getMaximumExtent()</a> <br /></td></tr>
+<tr class="memdesc:ada6102cb4e47614f270b160b0ba70402 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes distance between two states. This function satisfies the properties of a metric if <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#ac04b15e440ecf2dc6fdc2c4843256918" title="Return true if the distance function associated with the space is a metric.">isMetricSpace()</a> is true, and its return value will always be between 0 and <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a437934384ef980c4353a2211806258fc" title="Get the maximum value a call to distance() can return (or an upper bound). For unbounded state spaces...">getMaximumExtent()</a> <br /></td></tr>
 <tr class="separator:ada6102cb4e47614f270b160b0ba70402 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14dbe362f6467a1b909c44c39b427478 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a14dbe362f6467a1b909c44c39b427478"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a14dbe362f6467a1b909c44c39b427478">getSerializationLength</a> () const override</td></tr>
@@ -484,7 +470,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a3480123701c89dd38f28001a92c0122d inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab456c667cbaa6f79cb1f6873215a8140 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ab456c667cbaa6f79cb1f6873215a8140"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#ab456c667cbaa6f79cb1f6873215a8140">registerProjections</a> () override</td></tr>
-<tr class="memdesc:ab456c667cbaa6f79cb1f6873215a8140 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register the projections for this state space. Usually, this is at least the default projection. These are implicit projections, set by the implementation of the state space. This is called by <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a>. <br /></td></tr>
+<tr class="memdesc:ab456c667cbaa6f79cb1f6873215a8140 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register the projections for this state space. Usually, this is at least the default projection. These are implicit projections, set by the implementation of the state space. This is called by <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a>. <br /></td></tr>
 <tr class="separator:ab456c667cbaa6f79cb1f6873215a8140 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9068795ace372e914d7efabf4656481a inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a9068795ace372e914d7efabf4656481a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a9068795ace372e914d7efabf4656481a">printState</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, std::ostream &amp;out=std::cout) const override</td></tr>
@@ -496,14 +482,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:aa8a57aa1e8589afa444720ae59b86048 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31457e5dac3540b56b2cf3603d1ccd1 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="af31457e5dac3540b56b2cf3603d1ccd1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#af31457e5dac3540b56b2cf3603d1ccd1">printProjections</a> (std::ostream &amp;out) const override</td></tr>
-<tr class="memdesc:af31457e5dac3540b56b2cf3603d1ccd1 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the list of registered projections. This function is also called by <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#aa8a57aa1e8589afa444720ae59b86048" title="Print the settings for this state space to a stream. ">printSettings()</a> <br /></td></tr>
+<tr class="memdesc:af31457e5dac3540b56b2cf3603d1ccd1 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the list of registered projections. This function is also called by <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#aa8a57aa1e8589afa444720ae59b86048" title="Print the settings for this state space to a stream.">printSettings()</a> <br /></td></tr>
 <tr class="separator:af31457e5dac3540b56b2cf3603d1ccd1 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a596ddfdd73bdee22e69485899a82ea07 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a596ddfdd73bdee22e69485899a82ea07">sanityChecks</a> (double zero, double eps, unsigned int flags) const override</td></tr>
 <tr class="memdesc:a596ddfdd73bdee22e69485899a82ea07 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform sanity checks for this state space. Throws an exception if failures are found.  <a href="classompl_1_1base_1_1WrapperStateSpace.html#a596ddfdd73bdee22e69485899a82ea07">More...</a><br /></td></tr>
 <tr class="separator:a596ddfdd73bdee22e69485899a82ea07 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53c0b03012edc93952ea53d8152cd4fe inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a53c0b03012edc93952ea53d8152cd4fe"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a53c0b03012edc93952ea53d8152cd4fe">sanityChecks</a> () const override</td></tr>
-<tr class="memdesc:a53c0b03012edc93952ea53d8152cd4fe inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that allows derived state spaces to choose which checks should pass (see SanityChecks flags) and how strict the checks are. This just calls <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a596ddfdd73bdee22e69485899a82ea07" title="Perform sanity checks for this state space. Throws an exception if failures are found. ">sanityChecks()</a> with some default arguments. <br /></td></tr>
+<tr class="memdesc:a53c0b03012edc93952ea53d8152cd4fe inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that allows derived state spaces to choose which checks should pass (see SanityChecks flags) and how strict the checks are. This just calls <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a596ddfdd73bdee22e69485899a82ea07" title="Perform sanity checks for this state space. Throws an exception if failures are found.">sanityChecks()</a> with some default arguments. <br /></td></tr>
 <tr class="separator:a53c0b03012edc93952ea53d8152cd4fe inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32333b7cd0360428dd1bab2436d5e8fe inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a32333b7cd0360428dd1bab2436d5e8fe"></a>
 <a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a32333b7cd0360428dd1bab2436d5e8fe">allocSubspaceStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *subspace) const override</td></tr>
@@ -511,11 +497,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a32333b7cd0360428dd1bab2436d5e8fe inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a132191ea6f5349c89f0f1862c9fbb203 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a132191ea6f5349c89f0f1862c9fbb203"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a132191ea6f5349c89f0f1862c9fbb203">computeLocations</a> () override</td></tr>
-<tr class="memdesc:a132191ea6f5349c89f0f1862c9fbb203 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the location information for various components of the state space. Either this function or <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> must be called before any calls to getValueAddressAtName(), getValueAddressAtLocation() (and other functions where those are used). <br /></td></tr>
+<tr class="memdesc:a132191ea6f5349c89f0f1862c9fbb203 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the location information for various components of the state space. Either this function or <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> must be called before any calls to getValueAddressAtName(), getValueAddressAtLocation() (and other functions where those are used). <br /></td></tr>
 <tr class="separator:a132191ea6f5349c89f0f1862c9fbb203 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36cec500fbec7250b9aa6c91ff3f8892 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a36cec500fbec7250b9aa6c91ff3f8892"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892">setup</a> () override</td></tr>
-<tr class="memdesc:a36cec500fbec7250b9aa6c91ff3f8892 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform final setup steps. This function is automatically called by the <a class="el" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d...">SpaceInformation</a>. If any default projections are to be registered, this call will set them and call their <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> method is still called. <br /></td></tr>
+<tr class="memdesc:a36cec500fbec7250b9aa6c91ff3f8892 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform final setup steps. This function is automatically called by the <a class="el" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d...">SpaceInformation</a>. If any default projections are to be registered, this call will set them and call their <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html#a36cec500fbec7250b9aa6c91ff3f8892" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> method is still called. <br /></td></tr>
 <tr class="separator:a36cec500fbec7250b9aa6c91ff3f8892 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43eed9acbf9a1d3077309443577b4605 inherit pub_methods_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a43eed9acbf9a1d3077309443577b4605"></a>
 const <a class="el" href="classompl_1_1base_1_1StateSpacePtr.html">StateSpacePtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getSpace</b> () const</td></tr>
@@ -579,12 +565,12 @@ const <a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;
 <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#aca89451f148cad4627c3c6887e0186e4">cloneState</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *source) const</td></tr>
 <tr class="memdesc:aca89451f148cad4627c3c6887e0186e4 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone a state. <br /></td></tr>
 <tr class="separator:aca89451f148cad4627c3c6887e0186e4 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5b18b1d517255a93c2745171eefc55b inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ae5b18b1d517255a93c2745171eefc55b"></a>
-virtual <a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ae5b18b1d517255a93c2745171eefc55b">allocStateSampler</a> () const</td></tr>
-<tr class="memdesc:ae5b18b1d517255a93c2745171eefc55b inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an instance of the state sampler for this space. This sampler will be allocated with the sampler allocator that was previously specified by <a class="el" href="classompl_1_1base_1_1StateSpace.html#aa88e8a85586b93866ef3b2a6fb31c114" title="Set the sampler allocator to use. ">setStateSamplerAllocator()</a> or, if no sampler allocator was specified, <a class="el" href="classompl_1_1base_1_1StateSpace.html#a85423c93ff1f5dfca07d3b27ef58ef61" title="Allocate an instance of the default uniform state sampler for this space. ">allocDefaultStateSampler()</a> is called. <br /></td></tr>
-<tr class="separator:ae5b18b1d517255a93c2745171eefc55b inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6113d233f38fd0c5f86aa0349bb081 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="acf6113d233f38fd0c5f86aa0349bb081"></a>
+virtual <a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#acf6113d233f38fd0c5f86aa0349bb081">allocStateSampler</a> () const</td></tr>
+<tr class="memdesc:acf6113d233f38fd0c5f86aa0349bb081 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate an instance of the state sampler for this space. This sampler will be allocated with the sampler allocator that was previously specified by <a class="el" href="classompl_1_1base_1_1StateSpace.html#aa88e8a85586b93866ef3b2a6fb31c114" title="Set the sampler allocator to use.">setStateSamplerAllocator()</a> or, if no sampler allocator was specified, <a class="el" href="classompl_1_1base_1_1StateSpace.html#a85423c93ff1f5dfca07d3b27ef58ef61" title="Allocate an instance of the default uniform state sampler for this space.">allocDefaultStateSampler()</a> is called. <br /></td></tr>
+<tr class="separator:acf6113d233f38fd0c5f86aa0349bb081 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa88e8a85586b93866ef3b2a6fb31c114 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="aa88e8a85586b93866ef3b2a6fb31c114"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#aa88e8a85586b93866ef3b2a6fb31c114">setStateSamplerAllocator</a> (const <a class="el" href="namespaceompl_1_1base.html#a557e351077f8cfa4cdc65d063ffc6262">StateSamplerAllocator</a> &amp;ssa)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#aa88e8a85586b93866ef3b2a6fb31c114">setStateSamplerAllocator</a> (const <a class="el" href="namespaceompl_1_1base.html#a729f324a0a979bd7087e3d279bbdd77e">StateSamplerAllocator</a> &amp;ssa)</td></tr>
 <tr class="memdesc:aa88e8a85586b93866ef3b2a6fb31c114 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sampler allocator to use. <br /></td></tr>
 <tr class="separator:aa88e8a85586b93866ef3b2a6fb31c114 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd0c1c40dcb3687c024629119e2d905d inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="abd0c1c40dcb3687c024629119e2d905d"></a>
@@ -597,11 +583,11 @@ const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="separator:a26ca6c025f57f50d4e3b10f82a3a0a07 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addf8580ca115602848ab2c5f40c5816d inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="addf8580ca115602848ab2c5f40c5816d"></a>
 const std::vector&lt; <a class="el" href="structompl_1_1base_1_1StateSpace_1_1ValueLocation.html">ValueLocation</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#addf8580ca115602848ab2c5f40c5816d">getValueLocations</a> () const</td></tr>
-<tr class="memdesc:addf8580ca115602848ab2c5f40c5816d inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the locations of values of type double contained in a state from this space. The order of the values is consistent with <a class="el" href="classompl_1_1base_1_1StateSpace.html#a3b4b4123fa98346459f434e92aad3b8f" title="Many states contain a number of double values. This function provides a means to get the memory addre...">getValueAddressAtIndex()</a>. The <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> function must have been previously called. <br /></td></tr>
+<tr class="memdesc:addf8580ca115602848ab2c5f40c5816d inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the locations of values of type double contained in a state from this space. The order of the values is consistent with <a class="el" href="classompl_1_1base_1_1StateSpace.html#a3b4b4123fa98346459f434e92aad3b8f" title="Many states contain a number of double values. This function provides a means to get the memory addre...">getValueAddressAtIndex()</a>. The <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> function must have been previously called. <br /></td></tr>
 <tr class="separator:addf8580ca115602848ab2c5f40c5816d inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90ec872a6de60b51b54800b21d771a92 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a90ec872a6de60b51b54800b21d771a92"></a>
 const std::map&lt; std::string, <a class="el" href="structompl_1_1base_1_1StateSpace_1_1ValueLocation.html">ValueLocation</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a90ec872a6de60b51b54800b21d771a92">getValueLocationsByName</a> () const</td></tr>
-<tr class="memdesc:a90ec872a6de60b51b54800b21d771a92 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the named locations of values of type double contained in a state from this space. The <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> function must have been previously called. <br /></td></tr>
+<tr class="memdesc:a90ec872a6de60b51b54800b21d771a92 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the named locations of values of type double contained in a state from this space. The <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> function must have been previously called. <br /></td></tr>
 <tr class="separator:a90ec872a6de60b51b54800b21d771a92 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafd87a4ade6b3c9daae315db34bc367e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="aafd87a4ade6b3c9daae315db34bc367e"></a>
 double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#aafd87a4ade6b3c9daae315db34bc367e">getValueAddressAtLocation</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="structompl_1_1base_1_1StateSpace_1_1ValueLocation.html">ValueLocation</a> &amp;loc) const</td></tr>
@@ -627,14 +613,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ac79f6342fb2d85f1c2c87bfff812fbbf">registerDefaultProjection</a> (const <a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a> &amp;projection)</td></tr>
 <tr class="memdesc:ac79f6342fb2d85f1c2c87bfff812fbbf inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register the default projection for this state space. <br /></td></tr>
 <tr class="separator:ac79f6342fb2d85f1c2c87bfff812fbbf inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f6c3b3c0c6ef22d3e9b6046b5b22d5f inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a5f6c3b3c0c6ef22d3e9b6046b5b22d5f"></a>
-<a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a5f6c3b3c0c6ef22d3e9b6046b5b22d5f">getProjection</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:a5f6c3b3c0c6ef22d3e9b6046b5b22d5f inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the projection registered under a specific name. <br /></td></tr>
-<tr class="separator:a5f6c3b3c0c6ef22d3e9b6046b5b22d5f inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e803c232f578203eedd42e23cd31c47 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a8e803c232f578203eedd42e23cd31c47"></a>
-<a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a8e803c232f578203eedd42e23cd31c47">getDefaultProjection</a> () const</td></tr>
-<tr class="memdesc:a8e803c232f578203eedd42e23cd31c47 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default projection. <br /></td></tr>
-<tr class="separator:a8e803c232f578203eedd42e23cd31c47 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf84b7aa4f46da81705b996ca4eb995e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="adf84b7aa4f46da81705b996ca4eb995e"></a>
+<a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#adf84b7aa4f46da81705b996ca4eb995e">getProjection</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:adf84b7aa4f46da81705b996ca4eb995e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the projection registered under a specific name. <br /></td></tr>
+<tr class="separator:adf84b7aa4f46da81705b996ca4eb995e inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2669ac13d055b7165c62b031757448fc inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a2669ac13d055b7165c62b031757448fc"></a>
+<a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a2669ac13d055b7165c62b031757448fc">getDefaultProjection</a> () const</td></tr>
+<tr class="memdesc:a2669ac13d055b7165c62b031757448fc inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default projection. <br /></td></tr>
+<tr class="separator:a2669ac13d055b7165c62b031757448fc inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8bd7ede43fadaa2daf619bbe3ba38a inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="afe8bd7ede43fadaa2daf619bbe3ba38a"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#afe8bd7ede43fadaa2daf619bbe3ba38a">hasProjection</a> (const std::string &amp;name) const</td></tr>
 <tr class="memdesc:afe8bd7ede43fadaa2daf619bbe3ba38a inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a projection with a specified name is available. <br /></td></tr>
@@ -643,14 +629,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#abc6814104ec21e73d67c60499a6572bd">hasDefaultProjection</a> () const</td></tr>
 <tr class="memdesc:abc6814104ec21e73d67c60499a6572bd inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a default projection is available. <br /></td></tr>
 <tr class="separator:abc6814104ec21e73d67c60499a6572bd inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace65a163a35658337147133edea69f78 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ace65a163a35658337147133edea69f78"></a>
-const std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ace65a163a35658337147133edea69f78">getRegisteredProjections</a> () const</td></tr>
-<tr class="memdesc:ace65a163a35658337147133edea69f78 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the registered projections. <br /></td></tr>
-<tr class="separator:ace65a163a35658337147133edea69f78 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdf477c4b0a7e0e77a8c77240547a6f9 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="abdf477c4b0a7e0e77a8c77240547a6f9"></a>
-<a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#abdf477c4b0a7e0e77a8c77240547a6f9">allocSubspaceStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpacePtr.html">StateSpacePtr</a> &amp;subspace) const</td></tr>
-<tr class="memdesc:abdf477c4b0a7e0e77a8c77240547a6f9 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a sampler that actually samples only components that are part of <em>subspace</em>. <br /></td></tr>
-<tr class="separator:abdf477c4b0a7e0e77a8c77240547a6f9 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f013cc6932e409a9ab088f784fcc77 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ad4f013cc6932e409a9ab088f784fcc77"></a>
+const std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ad4f013cc6932e409a9ab088f784fcc77">getRegisteredProjections</a> () const</td></tr>
+<tr class="memdesc:ad4f013cc6932e409a9ab088f784fcc77 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the registered projections. <br /></td></tr>
+<tr class="separator:ad4f013cc6932e409a9ab088f784fcc77 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866a3c84c923ac0f8766113e3122d51b inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a866a3c84c923ac0f8766113e3122d51b"></a>
+<a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a866a3c84c923ac0f8766113e3122d51b">allocSubspaceStateSampler</a> (const <a class="el" href="classompl_1_1base_1_1StateSpacePtr.html">StateSpacePtr</a> &amp;subspace) const</td></tr>
+<tr class="memdesc:a866a3c84c923ac0f8766113e3122d51b inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a sampler that actually samples only components that are part of <em>subspace</em>. <br /></td></tr>
+<tr class="separator:a866a3c84c923ac0f8766113e3122d51b inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa16af79216ae39837e988e5dac41eae6 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="aa16af79216ae39837e988e5dac41eae6"></a>
 <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#aa16af79216ae39837e988e5dac41eae6">getSubstateAtLocation</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="structompl_1_1base_1_1StateSpace_1_1SubstateLocation.html">SubstateLocation</a> &amp;loc) const</td></tr>
 <tr class="memdesc:aa16af79216ae39837e988e5dac41eae6 inherit pub_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the substate of <em>state</em> that is pointed to by <em>loc</em>. <br /></td></tr>
@@ -708,7 +694,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a6de1afc3140a0df5a8a659ee124883d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5263246afe2906dc44ed652da0a630c0"><td class="memItemLeft" align="right" valign="top"><a id="a5263246afe2906dc44ed652da0a630c0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a5263246afe2906dc44ed652da0a630c0">setup_</a> {false}</td></tr>
-<tr class="memdesc:a5263246afe2906dc44ed652da0a630c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ae79fac42f95ee2d8f8f28d74ab9fe602" title="Final setup for the space. ">setup()</a> has been called. <br /></td></tr>
+<tr class="memdesc:a5263246afe2906dc44ed652da0a630c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#ae79fac42f95ee2d8f8f28d74ab9fe602" title="Final setup for the space.">setup()</a> has been called. <br /></td></tr>
 <tr class="separator:a5263246afe2906dc44ed652da0a630c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classompl_1_1base_1_1WrapperStateSpace"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1WrapperStateSpace')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1WrapperStateSpace.html">ompl::base::WrapperStateSpace</a></td></tr>
 <tr class="memitem:a68ff499562609c35b704f770f1f7d1a4 inherit pro_attribs_classompl_1_1base_1_1WrapperStateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a68ff499562609c35b704f770f1f7d1a4"></a>
@@ -720,12 +706,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:a68556edd816136a66a0d81544baef08c inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type assigned for this state space. <br /></td></tr>
 <tr class="separator:a68556edd816136a66a0d81544baef08c inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2db3152c4edbac084af3ec6962107ddb inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a2db3152c4edbac084af3ec6962107ddb"></a>
-<a class="el" href="namespaceompl_1_1base.html#a557e351077f8cfa4cdc65d063ffc6262">StateSamplerAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a2db3152c4edbac084af3ec6962107ddb">ssa_</a></td></tr>
+<a class="el" href="namespaceompl_1_1base.html#a729f324a0a979bd7087e3d279bbdd77e">StateSamplerAllocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a2db3152c4edbac084af3ec6962107ddb">ssa_</a></td></tr>
 <tr class="memdesc:a2db3152c4edbac084af3ec6962107ddb inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">An optional state sampler allocator. <br /></td></tr>
 <tr class="separator:a2db3152c4edbac084af3ec6962107ddb inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af139d63d7b1067a70cb6e744e85fef96 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="af139d63d7b1067a70cb6e744e85fef96"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#af139d63d7b1067a70cb6e744e85fef96">maxExtent_</a></td></tr>
-<tr class="memdesc:af139d63d7b1067a70cb6e744e85fef96 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extent of this space at the time <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> was called. <br /></td></tr>
+<tr class="memdesc:af139d63d7b1067a70cb6e744e85fef96 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extent of this space at the time <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> was called. <br /></td></tr>
 <tr class="separator:af139d63d7b1067a70cb6e744e85fef96 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaba86765fbfc6686312e50934edfd70 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="aeaba86765fbfc6686312e50934edfd70"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#aeaba86765fbfc6686312e50934edfd70">longestValidSegmentFraction_</a></td></tr>
@@ -733,11 +719,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:aeaba86765fbfc6686312e50934edfd70 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8967afde4dc99333aef63eb85554bf81 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a8967afde4dc99333aef63eb85554bf81"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a8967afde4dc99333aef63eb85554bf81">longestValidSegment_</a></td></tr>
-<tr class="memdesc:a8967afde4dc99333aef63eb85554bf81 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">The longest valid segment at the time <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation. If any default projections are to be registered, this call will set them and call their setup() functions. It is safe to call this function multiple times. At a subsequent call, projections that have been previously user configured are not re-instantiated, but their setup() method is still called. ">setup()</a> was called. <br /></td></tr>
+<tr class="memdesc:a8967afde4dc99333aef63eb85554bf81 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">The longest valid segment at the time <a class="el" href="classompl_1_1base_1_1StateSpace.html#a92ca030ac21b5aa209241febcfbae2e7" title="Perform final setup steps. This function is automatically called by the SpaceInformation....">setup()</a> was called. <br /></td></tr>
 <tr class="separator:a8967afde4dc99333aef63eb85554bf81 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3fbdc24d4e07283890eb68f49bc1467 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="aa3fbdc24d4e07283890eb68f49bc1467"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#aa3fbdc24d4e07283890eb68f49bc1467">longestValidSegmentCountFactor_</a></td></tr>
-<tr class="memdesc:aa3fbdc24d4e07283890eb68f49bc1467 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">The factor to multiply the value returned by <a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5f1f231db8861ca747b67b5fb3f81eb" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2...">validSegmentCount()</a>. Rarely used but useful for things like doubling the resolution. <br /></td></tr>
+<tr class="memdesc:aa3fbdc24d4e07283890eb68f49bc1467 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">The factor to multiply the value returned by <a class="el" href="classompl_1_1base_1_1StateSpace.html#a44d83288d6636eb134b3335bb1c57fcf" title="Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2.">validSegmentCount()</a>. Rarely used but useful for things like doubling the resolution. <br /></td></tr>
 <tr class="separator:aa3fbdc24d4e07283890eb68f49bc1467 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab32be9ff082fcb2926cbc8166613e09a inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ab32be9ff082fcb2926cbc8166613e09a"></a>
 std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1ProjectionEvaluatorPtr.html">ProjectionEvaluatorPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ab32be9ff082fcb2926cbc8166613e09a">projections_</a></td></tr>
@@ -753,7 +739,7 @@ std::vector&lt; <a class="el" href="structompl_1_1base_1_1StateSpace_1_1ValueLoc
 <tr class="separator:ac0f6c83355692e7f40d4ead85b9f225b inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac24c368e6e9130b505d89c824a9ec1e7 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ac24c368e6e9130b505d89c824a9ec1e7"></a>
 std::map&lt; std::string, <a class="el" href="structompl_1_1base_1_1StateSpace_1_1ValueLocation.html">ValueLocation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ac24c368e6e9130b505d89c824a9ec1e7">valueLocationsByName_</a></td></tr>
-<tr class="memdesc:ac24c368e6e9130b505d89c824a9ec1e7 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the known value locations, by name. The names of state spaces access the first element of a state. <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm. ">RealVectorStateSpace</a> dimensions are used to access individual dimensions. <br /></td></tr>
+<tr class="memdesc:ac24c368e6e9130b505d89c824a9ec1e7 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">All the known value locations, by name. The names of state spaces access the first element of a state. <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm.">RealVectorStateSpace</a> dimensions are used to access individual dimensions. <br /></td></tr>
 <tr class="separator:ac24c368e6e9130b505d89c824a9ec1e7 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23aa4613b3ef62e88fbfc23fb6757e34 inherit pro_attribs_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a23aa4613b3ef62e88fbfc23fb6757e34"></a>
 std::map&lt; std::string, <a class="el" href="structompl_1_1base_1_1StateSpace_1_1SubstateLocation.html">SubstateLocation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a23aa4613b3ef62e88fbfc23fb6757e34">substateLocationsByName_</a></td></tr>
@@ -763,10 +749,10 @@ std::map&lt; std::string, <a class="el" href="structompl_1_1base_1_1StateSpace_1
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classompl_1_1base_1_1StateSpace"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classompl_1_1base_1_1StateSpace')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1StateSpace.html">ompl::base::StateSpace</a></td></tr>
-<tr class="memitem:a114320d94e92779e41c6379c517bca61 inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a114320d94e92779e41c6379c517bca61"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a114320d94e92779e41c6379c517bca61">Diagram</a> (std::ostream &amp;out)</td></tr>
-<tr class="memdesc:a114320d94e92779e41c6379c517bca61 inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a Graphviz digraph that represents the containment diagram for all the instantiated state spaces. <br /></td></tr>
-<tr class="separator:a114320d94e92779e41c6379c517bca61 inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925ed4f0e97f137b4c2128afe9f36b2f inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="a925ed4f0e97f137b4c2128afe9f36b2f"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#a925ed4f0e97f137b4c2128afe9f36b2f">Diagram</a> (std::ostream &amp;out)</td></tr>
+<tr class="memdesc:a925ed4f0e97f137b4c2128afe9f36b2f inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a Graphviz digraph that represents the containment diagram for all the instantiated state spaces. <br /></td></tr>
+<tr class="separator:a925ed4f0e97f137b4c2128afe9f36b2f inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3ab5334644d6c9f8538f59a21bec854 inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="memItemLeft" align="right" valign="top"><a id="ad3ab5334644d6c9f8538f59a21bec854"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSpace.html#ad3ab5334644d6c9f8538f59a21bec854">List</a> (std::ostream &amp;out)</td></tr>
 <tr class="memdesc:ad3ab5334644d6c9f8538f59a21bec854 inherit pub_static_methods_classompl_1_1base_1_1StateSpace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the list of available state space instances. <br /></td></tr>
@@ -778,16 +764,16 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a c
 <tr class="separator:a45e65cf86a2c5cb1e4394dd8aafb4d3b inherit pro_static_attribs_classompl_1_1base_1_1StateSpace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="classompl_1_1base_1_1StateSpace.html" title="Representation of a space in which planning can be performed. Topology specific sampling, interpolation and distance are defined. ">StateSpace</a> that has a <em><a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a></em> imposed upon it. Underlying space functions are passed to the ambient space, and the constraint is used to inform any manifold related operations. <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a349cdde886586bc63b243c49176650ba" title="Sets the space information for this state space. Required for collision checking in manifold traversa...">setSpaceInformation()</a> must be called in order for collision checking to be done in tandem with manifold traversal. </p>
-<p><a class="anchor" id="gConstrained"></a></p><dl class="section user"><dt>Short Description</dt><dd><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi...">ConstrainedStateSpace</a> encapsulates the idea of decoupled constrained planning, where the planner and constraint satisfaction methodology are separated. Core to this idea is the augmentation of a state space, rather than the augmentation of a planner. In OMPL, this is implemented as the <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi...">ConstrainedStateSpace</a> and its concrete implementations: <a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection-based methodology for planning with constraints...">ProjectedStateSpace</a> for projection-based constraint satisfaction, <a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic atlas algorithm for planning on a constraint m...">AtlasStateSpace</a> for atlas-based manifold approximation, and <a class="el" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic lazy atlas algorithm for planning on a constra...">TangentBundleStateSpace</a> for a lazy atlas-based approach.</dd></dl>
-<p>The core benefit of this method is that there is no additional work to make a sampling-based planner plan with constraints (in this case, a differentiable function of a state, implemented in <a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a>), enabling mix-and-matching of planners with constraint methodologies, e.g., KPIECE1 with <a class="el" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic lazy atlas algorithm for planning on a constra...">TangentBundleStateSpace</a>, or RRT* with <a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection-based methodology for planning with constraints...">ProjectedStateSpace</a>, and so on.</p>
+<div class="textblock"><p>A <a class="el" href="classompl_1_1base_1_1StateSpace.html" title="Representation of a space in which planning can be performed. Topology specific sampling,...">StateSpace</a> that has a <em><a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a></em> imposed upon it. Underlying space functions are passed to the ambient space, and the constraint is used to inform any manifold related operations. <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html#a349cdde886586bc63b243c49176650ba" title="Sets the space information for this state space. Required for collision checking in manifold traversa...">setSpaceInformation()</a> must be called in order for collision checking to be done in tandem with manifold traversal. </p>
+<p><a class="anchor" id="gConstrained"></a></p><dl class="section user"><dt>Short Description</dt><dd><a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi...">ConstrainedStateSpace</a> encapsulates the idea of decoupled constrained planning, where the planner and constraint satisfaction methodology are separated. Core to this idea is the augmentation of a state space, rather than the augmentation of a planner. In OMPL, this is implemented as the <a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi...">ConstrainedStateSpace</a> and its concrete implementations: <a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection-based methodology for planning with constraints.">ProjectedStateSpace</a> for projection-based constraint satisfaction, <a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic atlas algorithm for planning on a constraint m...">AtlasStateSpace</a> for atlas-based manifold approximation, and <a class="el" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic lazy atlas algorithm for planning on a constra...">TangentBundleStateSpace</a> for a lazy atlas-based approach.</dd></dl>
+<p>The core benefit of this method is that there is no additional work to make a sampling-based planner plan with constraints (in this case, a differentiable function of a state, implemented in <a class="el" href="classompl_1_1base_1_1Constraint.html" title="Definition of a differentiable holonomic constraint on a configuration space. See Constrained Plannin...">Constraint</a>), enabling mix-and-matching of planners with constraint methodologies, e.g., KPIECE1 with <a class="el" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic lazy atlas algorithm for planning on a constra...">TangentBundleStateSpace</a>, or RRT* with <a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection-based methodology for planning with constraints.">ProjectedStateSpace</a>, and so on.</p>
 <p>See <a class="el" href="constrainedPlanning.html">Constrained Planning</a> for more details.</p>
 <dl class="section user"><dt>External Documentation</dt><dd>The following paper describes the idea of decoupled constrained planning, as implemented in OMPL.</dd></dl>
-<p>Z. Kingston, M. Moll, and L. E. Kavraki, "Decoupling Constraints from Sampling-Based Planners," in International Symposium of Robotics Research, Puerto Varas, Chile, 2017. PrePrint: <a href="http://kavrakilab.org/publications/kingston2017decoupling-constraints.pdf">[PDF]</a></p>
-<p>For more information on constrained sampling-based planning in general, see the following review paper. The sections on projection- and atlas-based planning describe the methods used in the <a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection-based methodology for planning with constraints...">ProjectedStateSpace</a>, <a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic atlas algorithm for planning on a constraint m...">AtlasStateSpace</a>, and <a class="el" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic lazy atlas algorithm for planning on a constra...">TangentBundleStateSpace</a>.</p>
-<p>Z. Kingston, M. Moll, and L. E. Kavraki, “Sampling-Based Methods for Motion Planning with Constraints,” Annual Review of Control, Robotics, and Autonomous Systems, 2018. DOI: <a href="http://dx.doi.org/10.1146/annurev-control-060117-105226">10.1146/annurev-control-060117-105226</a> <a href="http://kavrakilab.org/publications/kingston2018sampling-based-methods-for-motion-planning.pdf">[PDF]</a>. </p>
+<p>Zachary Kingston, Mark Moll, and Lydia E. Kavraki, Exploring Implicit Spaces for Constrained Sampling-Based Planning, <em>International Journal of Robotics Research,</em> 38(10–11):1151–1178, September 2019. DOI: <a href="https://dx.doi.org/10.1177/0278364919868530">10.1177/0278364919868530</a> PrePrint: <a href="http://www.kavrakilab.org/publications/kingston2019exploring-implicit-spaces-for-constrained.pdf">[PDF]</a></p>
+<p>For more information on constrained sampling-based planning in general, see the following review paper. The sections on projection- and atlas-based planning describe the methods used in the <a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection-based methodology for planning with constraints.">ProjectedStateSpace</a>, <a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic atlas algorithm for planning on a constraint m...">AtlasStateSpace</a>, and <a class="el" href="classompl_1_1base_1_1TangentBundleStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic lazy atlas algorithm for planning on a constra...">TangentBundleStateSpace</a>.</p>
+<p>Z. Kingston, M. Moll, and L. E. Kavraki, “Sampling-Based Methods for Motion Planning with Constraints,” Annual Review of Control, Robotics, and Autonomous Systems, 2018. DOI: <a href="https://dx.doi.org/10.1146/annurev-control-060117-105226">10.1146/annurev-control-060117-105226</a> <a href="http://kavrakilab.org/publications/kingston2018sampling-based-methods-for-motion-planning.pdf">[PDF]</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ConstrainedStateSpace_8h_source.html#l00131">131</a> of file <a class="el" href="ConstrainedStateSpace_8h_source.html">ConstrainedStateSpace.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ConstrainedStateSpace_8h_source.html#l00165">165</a> of file <a class="el" href="ConstrainedStateSpace_8h_source.html">ConstrainedStateSpace.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ab71679cb1f5d35230b54f33e86c6517d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab71679cb1f5d35230b54f33e86c6517d">&#9670;&nbsp;</a></span>SanityChecks</h2>
@@ -815,7 +801,7 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a c
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="ConstrainedStateSpace_8h_source.html#l00136">136</a> of file <a class="el" href="ConstrainedStateSpace_8h_source.html">ConstrainedStateSpace.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ConstrainedStateSpace_8h_source.html#l00170">170</a> of file <a class="el" href="ConstrainedStateSpace_8h_source.html">ConstrainedStateSpace.h</a>.</p>
 
 </div>
 </div>
@@ -826,13 +812,13 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a c
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -842,6 +828,7 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a c
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

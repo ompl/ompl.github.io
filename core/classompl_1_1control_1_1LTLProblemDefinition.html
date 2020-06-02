@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::control::LTLProblemDefinition Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::control::LTLProblemDefinition Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -176,20 +161,21 @@ Inheritance diagram for ompl::control::LTLProblemDefinition:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1control_1_1LTLProblemDefinition__inherit__graph.png" border="0" usemap="#ompl_1_1control_1_1LTLProblemDefinition_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1control_1_1LTLProblemDefinition_inherit__map" id="ompl_1_1control_1_1LTLProblemDefinition_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1base_1_1ProblemDefinition.html" title="Definition of a problem to be solved. This includes the start state(s) for the system and a goal spec..." alt="" coords="5,5,205,32"/>
+<area shape="rect" title=" " alt="" coords="16,80,195,121"/>
+<area shape="rect" href="classompl_1_1base_1_1ProblemDefinition.html" title="Definition of a problem to be solved. This includes the start state(s) for the system and a goal spec..." alt="" coords="5,5,205,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaba7fcb2e2c5e3e961408d5f830dc154"><td class="memItemLeft" align="right" valign="top"><a id="aaba7fcb2e2c5e3e961408d5f830dc154"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LTLProblemDefinition</b> (const <a class="el" href="classompl_1_1control_1_1LTLSpaceInformationPtr.html">control::LTLSpaceInformationPtr</a> &amp;ltlsi)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LTLProblemDefinition</b> (const control::LTLSpaceInformationPtr &amp;ltlsi)</td></tr>
 <tr class="separator:aaba7fcb2e2c5e3e961408d5f830dc154"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13c881cde088609c9944c413f687e0ac"><td class="memItemLeft" align="right" valign="top"><a id="a13c881cde088609c9944c413f687e0ac"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addLowerStartState</b> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *s)</td></tr>
 <tr class="separator:a13c881cde088609c9944c413f687e0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a7f51d1285b1aebe3e9e530d600cf6"><td class="memItemLeft" align="right" valign="top"><a id="a09a7f51d1285b1aebe3e9e530d600cf6"></a>
-<a class="el" href="classompl_1_1base_1_1PathPtr.html">base::PathPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getLowerSolutionPath</b> () const</td></tr>
+base::PathPtr&#160;</td><td class="memItemRight" valign="bottom"><b>getLowerSolutionPath</b> () const</td></tr>
 <tr class="separator:a09a7f51d1285b1aebe3e9e530d600cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classompl_1_1base_1_1ProblemDefinition"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1ProblemDefinition')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html">ompl::base::ProblemDefinition</a></td></tr>
 <tr class="memitem:a105a02ab978b8148691d333b611b8bea inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a105a02ab978b8148691d333b611b8bea"></a>
@@ -202,6 +188,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>addLowerStartState</b
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a9b3921b72163f519f1e4474b60a642bb">ProblemDefinition</a> (<a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> si)</td></tr>
 <tr class="memdesc:a9b3921b72163f519f1e4474b60a642bb inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a problem definition given the <a class="el" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d...">SpaceInformation</a> it is part of. <br /></td></tr>
 <tr class="separator:a9b3921b72163f519f1e4474b60a642bb inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade29bbc8e28bac270e7bd7293a85499d inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ade29bbc8e28bac270e7bd7293a85499d">clone</a> () const</td></tr>
+<tr class="memdesc:ade29bbc8e28bac270e7bd7293a85499d inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a copy of the problem definition.  <a href="classompl_1_1base_1_1ProblemDefinition.html#ade29bbc8e28bac270e7bd7293a85499d">More...</a><br /></td></tr>
+<tr class="separator:ade29bbc8e28bac270e7bd7293a85499d inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a992fbaad92f636fc1dc5d59a02197966 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a992fbaad92f636fc1dc5d59a02197966"></a>
 const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a992fbaad92f636fc1dc5d59a02197966">getSpaceInformation</a> () const</td></tr>
 <tr class="memdesc:a992fbaad92f636fc1dc5d59a02197966 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the space information this problem definition is for. <br /></td></tr>
@@ -211,8 +200,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a3120682d036099f68fd26805fee0736d inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a start state. The state is copied. <br /></td></tr>
 <tr class="separator:a3120682d036099f68fd26805fee0736d inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a874c33b1adab325a2ebf489fa04b8099 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a874c33b1adab325a2ebf489fa04b8099">addStartState</a> (const <a class="el" href="classompl_1_1base_1_1ScopedState.html">ScopedState</a>&lt;&gt; &amp;state)</td></tr>
-<tr class="memdesc:a874c33b1adab325a2ebf489fa04b8099 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a start state. The state is copied. <br />
-  <a href="classompl_1_1base_1_1ProblemDefinition.html#a874c33b1adab325a2ebf489fa04b8099">More...</a><br /></td></tr>
+<tr class="memdesc:a874c33b1adab325a2ebf489fa04b8099 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a start state. The state is copied.  <a href="classompl_1_1base_1_1ProblemDefinition.html#a874c33b1adab325a2ebf489fa04b8099">More...</a><br /></td></tr>
 <tr class="separator:a874c33b1adab325a2ebf489fa04b8099 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a326f73358aaf6c510a8a49996a3eba1b inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a326f73358aaf6c510a8a49996a3eba1b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a326f73358aaf6c510a8a49996a3eba1b">hasStartState</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, unsigned int *startIndex=nullptr) const</td></tr>
@@ -231,8 +219,7 @@ const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td
 <tr class="memdesc:ab1f2d8fa8a3c50ddacc83aa74f05d5d0 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a specific start state. <br /></td></tr>
 <tr class="separator:ab1f2d8fa8a3c50ddacc83aa74f05d5d0 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9fb68d7aab6f613645cf02fa6995c52 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ad9fb68d7aab6f613645cf02fa6995c52">getStartState</a> (unsigned int index)</td></tr>
-<tr class="memdesc:ad9fb68d7aab6f613645cf02fa6995c52 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a specific start state. <br />
-  <a href="classompl_1_1base_1_1ProblemDefinition.html#ad9fb68d7aab6f613645cf02fa6995c52">More...</a><br /></td></tr>
+<tr class="memdesc:ad9fb68d7aab6f613645cf02fa6995c52 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a specific start state.  <a href="classompl_1_1base_1_1ProblemDefinition.html#ad9fb68d7aab6f613645cf02fa6995c52">More...</a><br /></td></tr>
 <tr class="separator:ad9fb68d7aab6f613645cf02fa6995c52 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a039bef3abd7e8319e4ea2e4cda752ff6 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a039bef3abd7e8319e4ea2e4cda752ff6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a039bef3abd7e8319e4ea2e4cda752ff6">setGoal</a> (const <a class="el" href="classompl_1_1base_1_1GoalPtr.html">GoalPtr</a> &amp;goal)</td></tr>
@@ -246,28 +233,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 const <a class="el" href="classompl_1_1base_1_1GoalPtr.html">GoalPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a71e20eb387a023333f34b6761a01c64f">getGoal</a> () const</td></tr>
 <tr class="memdesc:a71e20eb387a023333f34b6761a01c64f inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current goal. <br /></td></tr>
 <tr class="separator:a71e20eb387a023333f34b6761a01c64f inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37c694e768f474a48cb8929db43f8ff5 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a37c694e768f474a48cb8929db43f8ff5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a37c694e768f474a48cb8929db43f8ff5">getInputStates</a> (std::vector&lt; const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&gt; &amp;states) const</td></tr>
-<tr class="memdesc:a37c694e768f474a48cb8929db43f8ff5 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the input states. This includes start states and states that are part of goal regions that can be casted as <a class="el" href="classompl_1_1base_1_1GoalState.html" title="Definition of a goal state. ">ompl::base::GoalState</a> or <a class="el" href="classompl_1_1base_1_1GoalStates.html" title="Definition of a set of goal states. ">ompl::base::GoalStates</a>. <br /></td></tr>
-<tr class="separator:a37c694e768f474a48cb8929db43f8ff5 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bbe8e4e7ba1e019143f74c561c6a78 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a06bbe8e4e7ba1e019143f74c561c6a78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a06bbe8e4e7ba1e019143f74c561c6a78">getInputStates</a> (std::vector&lt; const <a class="el" href="classompl_1_1base_1_1State.html">State</a> * &gt; &amp;states) const</td></tr>
+<tr class="memdesc:a06bbe8e4e7ba1e019143f74c561c6a78 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the input states. This includes start states and states that are part of goal regions that can be casted as <a class="el" href="classompl_1_1base_1_1GoalState.html" title="Definition of a goal state.">ompl::base::GoalState</a> or <a class="el" href="classompl_1_1base_1_1GoalStates.html" title="Definition of a set of goal states.">ompl::base::GoalStates</a>. <br /></td></tr>
+<tr class="separator:a06bbe8e4e7ba1e019143f74c561c6a78 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8bac7fdb29b4ee578fc0097eb4ddcae inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ab8bac7fdb29b4ee578fc0097eb4ddcae">setStartAndGoalStates</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *start, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *goal, double threshold=std::numeric_limits&lt; double &gt;::epsilon())</td></tr>
 <tr class="memdesc:ab8bac7fdb29b4ee578fc0097eb4ddcae inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">In the simplest case possible, we have a single starting state and a single goal state.  <a href="classompl_1_1base_1_1ProblemDefinition.html#ab8bac7fdb29b4ee578fc0097eb4ddcae">More...</a><br /></td></tr>
 <tr class="separator:ab8bac7fdb29b4ee578fc0097eb4ddcae inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1692ecead754797abae9b827072aaee0 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a1692ecead754797abae9b827072aaee0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a1692ecead754797abae9b827072aaee0">setGoalState</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *goal, double threshold=std::numeric_limits&lt; double &gt;::epsilon())</td></tr>
-<tr class="memdesc:a1692ecead754797abae9b827072aaee0 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple form of setting the goal. This is called by <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ab8bac7fdb29b4ee578fc0097eb4ddcae" title="In the simplest case possible, we have a single starting state and a single goal state. ">setStartAndGoalStates()</a>. A more general form is <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a039bef3abd7e8319e4ea2e4cda752ff6" title="Set the goal. ">setGoal()</a> <br /></td></tr>
+<tr class="memdesc:a1692ecead754797abae9b827072aaee0 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple form of setting the goal. This is called by <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ab8bac7fdb29b4ee578fc0097eb4ddcae" title="In the simplest case possible, we have a single starting state and a single goal state.">setStartAndGoalStates()</a>. A more general form is <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a039bef3abd7e8319e4ea2e4cda752ff6" title="Set the goal.">setGoal()</a> <br /></td></tr>
 <tr class="separator:a1692ecead754797abae9b827072aaee0 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ada7160decb7894ac566615eb22633a inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a5ada7160decb7894ac566615eb22633a">setStartAndGoalStates</a> (const <a class="el" href="classompl_1_1base_1_1ScopedState.html">ScopedState</a>&lt;&gt; &amp;start, const <a class="el" href="classompl_1_1base_1_1ScopedState.html">ScopedState</a>&lt;&gt; &amp;goal, const double threshold=std::numeric_limits&lt; double &gt;::epsilon())</td></tr>
-<tr class="memdesc:a5ada7160decb7894ac566615eb22633a inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">In the simplest case possible, we have a single starting state and a single goal state. <br />
-  <a href="classompl_1_1base_1_1ProblemDefinition.html#a5ada7160decb7894ac566615eb22633a">More...</a><br /></td></tr>
+<tr class="memdesc:a5ada7160decb7894ac566615eb22633a inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">In the simplest case possible, we have a single starting state and a single goal state.  <a href="classompl_1_1base_1_1ProblemDefinition.html#a5ada7160decb7894ac566615eb22633a">More...</a><br /></td></tr>
 <tr class="separator:a5ada7160decb7894ac566615eb22633a inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a935f86078c4e65dd397db736c02b3c81 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a935f86078c4e65dd397db736c02b3c81">setGoalState</a> (const <a class="el" href="classompl_1_1base_1_1ScopedState.html">ScopedState</a>&lt;&gt; &amp;goal, const double threshold=std::numeric_limits&lt; double &gt;::epsilon())</td></tr>
-<tr class="memdesc:a935f86078c4e65dd397db736c02b3c81 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple form of setting the goal. This is called by <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ab8bac7fdb29b4ee578fc0097eb4ddcae" title="In the simplest case possible, we have a single starting state and a single goal state. ">setStartAndGoalStates()</a>. A more general form is <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a039bef3abd7e8319e4ea2e4cda752ff6" title="Set the goal. ">setGoal()</a> <br />
-  <a href="classompl_1_1base_1_1ProblemDefinition.html#a935f86078c4e65dd397db736c02b3c81">More...</a><br /></td></tr>
+<tr class="memdesc:a935f86078c4e65dd397db736c02b3c81 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple form of setting the goal. This is called by <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ab8bac7fdb29b4ee578fc0097eb4ddcae" title="In the simplest case possible, we have a single starting state and a single goal state.">setStartAndGoalStates()</a>. A more general form is <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a039bef3abd7e8319e4ea2e4cda752ff6" title="Set the goal.">setGoal()</a>  <a href="classompl_1_1base_1_1ProblemDefinition.html#a935f86078c4e65dd397db736c02b3c81">More...</a><br /></td></tr>
 <tr class="separator:a935f86078c4e65dd397db736c02b3c81 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa67a2a8f431bd6ef73cb52a34042c27e inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="aa67a2a8f431bd6ef73cb52a34042c27e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#aa67a2a8f431bd6ef73cb52a34042c27e">hasOptimizationObjective</a> () const</td></tr>
-<tr class="memdesc:aa67a2a8f431bd6ef73cb52a34042c27e inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if an optimization objective was defined for planning. <br /></td></tr>
+<tr class="memdesc:aa67a2a8f431bd6ef73cb52a34042c27e inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if an optimization objective was defined for planning <br  />
+ <br /></td></tr>
 <tr class="separator:aa67a2a8f431bd6ef73cb52a34042c27e inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f08584141d6946545fb7cf545283e67 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a7f08584141d6946545fb7cf545283e67"></a>
 const <a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">OptimizationObjectivePtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a7f08584141d6946545fb7cf545283e67">getOptimizationObjective</a> () const</td></tr>
@@ -278,11 +264,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:ab2c1ea487eb353290651767435f0e74b inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the optimization objective to be considered during planning. <br /></td></tr>
 <tr class="separator:ab2c1ea487eb353290651767435f0e74b inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d1719c601dfc32613d658d33a24b3c1 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a6d1719c601dfc32613d658d33a24b3c1"></a>
-const <a class="el" href="namespaceompl_1_1base.html#a2df95b5bc681e5b33d05a6544967a82f">ReportIntermediateSolutionFn</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a6d1719c601dfc32613d658d33a24b3c1">getIntermediateSolutionCallback</a> () const</td></tr>
+const <a class="el" href="namespaceompl_1_1base.html#a2654ca90af54f839e5aa8936f1e23351">ReportIntermediateSolutionFn</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a6d1719c601dfc32613d658d33a24b3c1">getIntermediateSolutionCallback</a> () const</td></tr>
 <tr class="memdesc:a6d1719c601dfc32613d658d33a24b3c1 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">When this function returns a valid function pointer, that function should be called by planners that compute intermediate solutions every time a better solution is found. <br /></td></tr>
 <tr class="separator:a6d1719c601dfc32613d658d33a24b3c1 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d02593c2c26824ecaf0e29ef40e596 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="ad5d02593c2c26824ecaf0e29ef40e596"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ad5d02593c2c26824ecaf0e29ef40e596">setIntermediateSolutionCallback</a> (const <a class="el" href="namespaceompl_1_1base.html#a2df95b5bc681e5b33d05a6544967a82f">ReportIntermediateSolutionFn</a> &amp;callback)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ad5d02593c2c26824ecaf0e29ef40e596">setIntermediateSolutionCallback</a> (const <a class="el" href="namespaceompl_1_1base.html#a2654ca90af54f839e5aa8936f1e23351">ReportIntermediateSolutionFn</a> &amp;callback)</td></tr>
 <tr class="memdesc:ad5d02593c2c26824ecaf0e29ef40e596 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the callback to be called by planners that can compute intermediate solutions. <br /></td></tr>
 <tr class="separator:ad5d02593c2c26824ecaf0e29ef40e596 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23854a049ce1f5793e63709e532365f4 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a23854a049ce1f5793e63709e532365f4"></a>
@@ -349,15 +335,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a9de3f4de43cc87f4c03ec7d11517be09 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1916346ceb217c0db3db1b0059b54b11 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a1916346ceb217c0db3db1b0059b54b11"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a1916346ceb217c0db3db1b0059b54b11">clearSolutionNonExistenceProof</a> ()</td></tr>
-<tr class="memdesc:a1916346ceb217c0db3db1b0059b54b11 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes any existing instance of <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem. ">SolutionNonExistenceProof</a>. <br /></td></tr>
+<tr class="memdesc:a1916346ceb217c0db3db1b0059b54b11 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes any existing instance of <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem.">SolutionNonExistenceProof</a>. <br /></td></tr>
 <tr class="separator:a1916346ceb217c0db3db1b0059b54b11 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacd6d95f5f2386395e1e4a1f9a3f0425 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="aacd6d95f5f2386395e1e4a1f9a3f0425"></a>
 const <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProofPtr.html">SolutionNonExistenceProofPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#aacd6d95f5f2386395e1e4a1f9a3f0425">getSolutionNonExistenceProof</a> () const</td></tr>
-<tr class="memdesc:aacd6d95f5f2386395e1e4a1f9a3f0425 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a pointer to the <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem. ">SolutionNonExistenceProof</a> instance for this problem definition. <br /></td></tr>
+<tr class="memdesc:aacd6d95f5f2386395e1e4a1f9a3f0425 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a pointer to the <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem.">SolutionNonExistenceProof</a> instance for this problem definition. <br /></td></tr>
 <tr class="separator:aacd6d95f5f2386395e1e4a1f9a3f0425 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b2d1cdeb0b4df2a1e77e6096daf1d10 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a8b2d1cdeb0b4df2a1e77e6096daf1d10"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a8b2d1cdeb0b4df2a1e77e6096daf1d10">setSolutionNonExistenceProof</a> (const <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProofPtr.html">SolutionNonExistenceProofPtr</a> &amp;nonExistenceProof)</td></tr>
-<tr class="memdesc:a8b2d1cdeb0b4df2a1e77e6096daf1d10 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the instance of <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem. ">SolutionNonExistenceProof</a> for this problem definition. <br /></td></tr>
+<tr class="memdesc:a8b2d1cdeb0b4df2a1e77e6096daf1d10 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the instance of <a class="el" href="classompl_1_1base_1_1SolutionNonExistenceProof.html" title="Abstract definition of a proof for the non-existence of a solution to a problem.">SolutionNonExistenceProof</a> for this problem definition. <br /></td></tr>
 <tr class="separator:a8b2d1cdeb0b4df2a1e77e6096daf1d10 inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4df120ec0b708a2aa8c0960a53388c7a inherit pub_methods_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="a4df120ec0b708a2aa8c0960a53388c7a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#a4df120ec0b708a2aa8c0960a53388c7a">print</a> (std::ostream &amp;out=std::cout) const</td></tr>
@@ -402,13 +388,13 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *
 <tr class="memdesc:ab9ad7eb5bcfff9223ddcc8a5dab14301 inherit pro_attribs_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">The objective to be optimized while solving the planning problem. <br /></td></tr>
 <tr class="separator:ab9ad7eb5bcfff9223ddcc8a5dab14301 inherit pro_attribs_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac217dd5eacd9ca281b96a6cfc1c5dc5a inherit pro_attribs_classompl_1_1base_1_1ProblemDefinition"><td class="memItemLeft" align="right" valign="top"><a id="ac217dd5eacd9ca281b96a6cfc1c5dc5a"></a>
-<a class="el" href="namespaceompl_1_1base.html#a2df95b5bc681e5b33d05a6544967a82f">ReportIntermediateSolutionFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ac217dd5eacd9ca281b96a6cfc1c5dc5a">intermediateSolutionCallback_</a></td></tr>
+<a class="el" href="namespaceompl_1_1base.html#a2654ca90af54f839e5aa8936f1e23351">ReportIntermediateSolutionFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1ProblemDefinition.html#ac217dd5eacd9ca281b96a6cfc1c5dc5a">intermediateSolutionCallback_</a></td></tr>
 <tr class="memdesc:ac217dd5eacd9ca281b96a6cfc1c5dc5a inherit pro_attribs_classompl_1_1base_1_1ProblemDefinition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function which is called when a new intermediate solution has been found. <br /></td></tr>
 <tr class="separator:ac217dd5eacd9ca281b96a6cfc1c5dc5a inherit pro_attribs_classompl_1_1base_1_1ProblemDefinition"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="LTLProblemDefinition_8h_source.html#l00055">55</a> of file <a class="el" href="LTLProblemDefinition_8h_source.html">LTLProblemDefinition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LTLProblemDefinition_8h_source.html#l00119">119</a> of file <a class="el" href="LTLProblemDefinition_8h_source.html">LTLProblemDefinition.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>ompl/control/planners/ltl/<a class="el" href="LTLProblemDefinition_8h_source.html">LTLProblemDefinition.h</a></li>
 <li>ompl/control/planners/ltl/src/<a class="el" href="LTLProblemDefinition_8cpp_source.html">LTLProblemDefinition.cpp</a></li>
@@ -416,13 +402,13 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -432,6 +418,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">State</a> *
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

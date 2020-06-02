@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl/geometric/planners/informedtrees/aitstar/Vertex.h Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div><!-- Generated by Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_17c48f595f6f0fa6f2d85f97530691ab.html">ompl</a></li><li class="navelem"><a class="el" href="dir_c499107df537fcff6821ae24aff68b33.html">geometric</a></li><li class="navelem"><a class="el" href="dir_664aed2659b9a5e936d2b465df201862.html">planners</a></li><li class="navelem"><a class="el" href="dir_ab46e2454c8d6112208013c692886799.html">informedtrees</a></li><li class="navelem"><a class="el" href="dir_2d5e31aab5d2d821c709f1bc53fbfa27.html">aitstar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Vertex.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Copyright (c) 2019-present University of Oxford</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  are met:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   * Neither the names of the copyright holders nor the names of its</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Authors: Marlin Strub</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_AITSTAR_VERTEX_</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_AITSTAR_VERTEX_</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;ompl/base/OptimizationObjective.h&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;ompl/base/ProblemDefinition.h&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;ompl/base/ScopedState.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;ompl/base/SpaceInformation.h&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;ompl/base/State.h&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/BinaryHeap.h&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/informedtrees/aitstar/Edge.h&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">namespace </span>geometric</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">namespace </span>aitstar</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">class </span>Vertex</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a33866f03b8d30c1ddbaaba310c308e0f">Vertex</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;spaceInformation,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> &amp;problemDefinition,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                       <span class="keyword">const</span> std::size_t &amp;batchId);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keyword">virtual</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5530cebe7c91709e212d671211c91e30">~Vertex</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                std::size_t <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a7df0ced1a1b84ae7d859ede1ffa05272">getId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *<a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a152ef3a1406fc9b68f98b84ff166ddda">getState</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> <span class="keyword">const</span> *<a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a152ef3a1406fc9b68f98b84ff166ddda">getState</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState&lt;&gt;</a> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a71f1fdd5c7915a37cfc42c4fa0a906c8">getScopedState</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6fb6ede1f03af46b2f2d46c532ed45da">getCostToComeFromStart</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a71c6a8fb9ff6f99b2da5d45382098a03">getCostToComeFromGoal</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1e8b33969a36f80d330366a82e3cda1a">getExpandedCostToComeFromGoal</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9d7873fb58ca30ac79c9cd1225dfd8bd">getCostToGoToGoal</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad9a9927ad208a216d80c607b4646079d">getEdgeCostFromForwardParent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a74caac8ce85580607d48af2820e8aad7">hasForwardParent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5ac50160e0232b506f8dd4a2ccb2746f">setForwardParent</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;edgeCost);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#af825ceb63181927849136668afe874b9">resetForwardParent</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab49ac08fe881484fe4ce838a7106ea63">hasReverseParent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9dde7e4048681ebf5c1174eaa6886b8a">setReverseParent</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a193fb1ff06fbc31c0de71ec9400f7013">resetReverseParent</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                std::shared_ptr&lt;Vertex&gt; <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad5e42a9adf4e0d4a100bf2dd3674ca90">getForwardParent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                std::shared_ptr&lt;Vertex&gt; <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aebc05e4c5ed6a21c9f3d3e05373d040c">getReverseParent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a8864dce1fd9f9c1d545ccac5d299956b">setForwardEdgeCost</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#acf7ace9d2728edfc6fe785202c17022a">setCostToComeFromStart</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6c0aa769627a92b3828709f274809b5f">setCostToComeFromGoal</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a739be588ca82d87a6315bcd7986534ef">setExpandedCostToComeFromGoal</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad4eb953b1769ed4f936db83f9e8bd6ac">setCostToGoToGoal</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a84c82604f227b07f46affb89893f2b64">updateCostOfForwardBranch</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                std::vector&lt;std::weak_ptr&lt;aitstar::Vertex&gt;&gt; <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#acd1e077d6ccde8624cdc0c137c5f88bb">invalidateReverseBranch</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                std::vector&lt;std::weak_ptr&lt;aitstar::Vertex&gt;&gt; <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a13cf5ba4429b5b3878ee1cf141693557">invalidateForwardBranch</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a82cd8366075c20d3d42019e65bb319ff">addToForwardChildren</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a3ff3bdf66ea8c6272e4bbbd7e47f306f">removeFromForwardChildren</a>(std::size_t vertexId);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#adfce85b19d1c04b3e489a7a059930772">getForwardChildren</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">  154</a></span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a70443096da78d1e99cddb8298fc75899">addToReverseChildren</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aaeda9515e8cdc5179bd486b9c34fd3c7">removeFromReverseChildren</a>(std::size_t vertexId);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a020f3a3bc6e6f7048c32452a817b029e">getReverseChildren</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab0e793d8334e9d0915d4b8dfcc3ea335">whitelistAsChild</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1a828d1110a2d1e56eb262453c417ad2">isWhitelistedAsChild</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1d64c6ce84cff8bc564e0fa3ae9d54ed">blacklistAsChild</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a75ffb784facf0eb6e3ced6bcbbe0a4d7">isBlacklistedAsChild</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a401786f869c76b39cdacafefdd0ba16c">hasCachedNeighbors</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ae4515b0cbbe5284707a919b7ad816738">cacheNeighbors</a>(<span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; &amp;neighbors) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                <span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; &amp;<a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a3bb16a3d91169246e85530111e4ae170">getNeighbors</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a29d1a02dbc86132630fa3d1e0de16d9e">registerPoppedOutgoingEdgeDuringForwardSearch</a>();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab9a8f8354ca1f00680a19b5cf849403e">registerExpansionDuringReverseSearch</a>();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aad5d751340069a30e01fd8252f95816d">unregisterExpansionDuringReverseSearch</a>();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#adda32fd81a707d37112893ee0d12fd98">registerInsertionIntoQueueDuringReverseSearch</a>();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a2f65e77acd4a5866b53b2bca464b88d3">hasHadOutgoingEdgePoppedDuringCurrentForwardSearch</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a451831d2465b46f62e494cf0c52ca8af">hasBeenExpandedDuringCurrentReverseSearch</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aed4a0cc16ef58194b737136ae1665a76">hasBeenInsertedIntoQueueDuringCurrentReverseSearch</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a4fb120dd389290c6b3ba0b7987179072">setReverseQueuePointer</a>(</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    <span class="keyword">typename</span> <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt;,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt; &amp;,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                           <span class="keyword">const</span> std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                               &amp;)&gt;&gt;::Element *pointer);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <span class="keyword">typename</span> <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt;,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    std::function&lt;bool(<span class="keyword">const</span> std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt; &amp;,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                       <span class="keyword">const</span> std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt; &amp;)&gt;&gt;::</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    Element *</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6a87d3600207bb245855f7ed30e96d52">getReverseQueuePointer</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5e1c8174c35162a164ccee68d7223691">resetReverseQueuePointer</a>();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ae54e399d0140657384e1dcb4daac8ba5">addToForwardQueueIncomingLookup</a>(</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    <span class="keyword">typename</span> <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        *pointer);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab058469b6c69ad79c0ddb772175e5a4c">addToForwardQueueOutgoingLookup</a>(</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    <span class="keyword">typename</span> <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        *pointer);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                std::vector&lt;<a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt;bool(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element *&gt;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a16c3d66f17cb19c5ce5c8d81540a186b">getForwardQueueIncomingLookup</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                std::vector&lt;<a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt;bool(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element *&gt;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a56e21a5ba7348ee92aaf6574c319ad64">getForwardQueueOutgoingLookup</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#abc1b602d70a2376ca4905ad2b25b062e">removeFromForwardQueueIncomingLookup</a>(</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;<a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                     std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        *element);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9a466214ef6ed61cd4719157cbf4fb4a">removeFromForwardQueueOutgoingLookup</a>(</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;<a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                     std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                        *element);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a768a19ee5b580a7e455fe42370bbf2c2">resetForwardQueueIncomingLookup</a>();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a297e624120d40744676ec64e6885e691">resetForwardQueueOutgoingLookup</a>();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> spaceInformation_;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> problemDefinition_;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">ompl::base::OptimizationObjectivePtr</a> objective_;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                std::vector&lt;std::weak_ptr&lt;Vertex&gt;&gt; forwardChildren_{};</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                std::vector&lt;std::weak_ptr&lt;Vertex&gt;&gt; reverseChildren_{};</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <span class="keyword">mutable</span> std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; neighbors_{};</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="keyword">mutable</span> std::vector&lt;std::weak_ptr&lt;Vertex&gt;&gt; whitelistedChildren_{};</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keyword">mutable</span> std::vector&lt;std::weak_ptr&lt;Vertex&gt;&gt; blacklistedChildren_{};</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                std::weak_ptr&lt;Vertex&gt; forwardParent_;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                std::weak_ptr&lt;Vertex&gt; reverseParent_;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state_;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> costToComeFromStart_;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> edgeCostFromForwardParent_;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="keyword">mutable</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> costToComeFromGoal_;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keyword">mutable</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> expandedCostToComeFromGoal_;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="keyword">mutable</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> costToGoToGoal_;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                <span class="keyword">const</span> std::size_t vertexId_;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keyword">const</span> std::size_t&amp; batchId_;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="keyword">mutable</span> std::size_t neighborBatchId_{0u};</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                <span class="keyword">mutable</span> std::size_t reverseSearchBatchId_{0u};</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                <span class="keyword">mutable</span> std::size_t poppedOutgoingEdgeId_{0u};</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <span class="keyword">mutable</span> std::size_t expandedReverseSearchId_{0u};</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="keyword">mutable</span> std::size_t insertedIntoQueueId_{0u};</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keyword">mutable</span> std::size_t reverseQueuePointerId_{0u};</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keyword">using</span> ReverseQueueElement = <span class="keyword">typename</span> <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt;,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                    std::function&lt;bool(<span class="keyword">const</span> std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt; &amp;,</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                       <span class="keyword">const</span> std::pair&lt;std::array&lt;ompl::base::Cost, 2u&gt;, std::shared_ptr&lt;Vertex&gt;&gt; &amp;)&gt;&gt;::</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    Element;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="keyword">mutable</span> ReverseQueueElement *reverseQueuePointer_{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6a87d3600207bb245855f7ed30e96d52">  350</a></span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <span class="keyword">using</span> ForwardQueueElement = <span class="keyword">typename</span> <a class="code" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                    <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt;bool(<span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, <span class="keyword">const</span> <a class="code" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                <span class="keyword">mutable</span> std::vector&lt;ForwardQueueElement *&gt; forwardQueueIncomingLookup_;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <span class="keyword">mutable</span> std::vector&lt;ForwardQueueElement *&gt; forwardQueueOutgoingLookup_;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            };</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        }  <span class="comment">// namespace aitstar</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }  <span class="comment">// namespace geometric</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}  <span class="comment">// namespace ompl</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">#endif  // OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_AITSTAR_VERTEX_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a1a828d1110a2d1e56eb262453c417ad2"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1a828d1110a2d1e56eb262453c417ad2">ompl::geometric::aitstar::Vertex::isWhitelistedAsChild</a></div><div class="ttdeci">bool isWhitelistedAsChild(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Returns whether a child is whitelisted.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00332">Vertex.cpp:332</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformationPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::SpaceInformation.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a9d7873fb58ca30ac79c9cd1225dfd8bd"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9d7873fb58ca30ac79c9cd1225dfd8bd">ompl::geometric::aitstar::Vertex::getCostToGoToGoal</a></div><div class="ttdeci">ompl::base::Cost getCostToGoToGoal() const</div><div class="ttdoc">Returns the cost to go heuristic from this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00131">Vertex.cpp:131</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a739be588ca82d87a6315bcd7986534ef"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a739be588ca82d87a6315bcd7986534ef">ompl::geometric::aitstar::Vertex::setExpandedCostToComeFromGoal</a></div><div class="ttdeci">void setExpandedCostToComeFromGoal(const ompl::base::Cost &amp;cost)</div><div class="ttdoc">Sets the cost to come to this vertex from the goal when it was expanded.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00180">Vertex.cpp:180</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a16c3d66f17cb19c5ce5c8d81540a186b"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a16c3d66f17cb19c5ce5c8d81540a186b">ompl::geometric::aitstar::Vertex::getForwardQueueIncomingLookup</a></div><div class="ttdeci">std::vector&lt; ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt; &gt;::Element * &gt; getForwardQueueIncomingLookup() const</div><div class="ttdoc">Returns the forward queue incoming lookup of this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00487">Vertex.cpp:487</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a5530cebe7c91709e212d671211c91e30"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5530cebe7c91709e212d671211c91e30">ompl::geometric::aitstar::Vertex::~Vertex</a></div><div class="ttdeci">virtual ~Vertex()</div><div class="ttdoc">Destructs the vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00082">Vertex.cpp:82</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00113">State.h:114</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a70443096da78d1e99cddb8298fc75899"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a70443096da78d1e99cddb8298fc75899">ompl::geometric::aitstar::Vertex::addToReverseChildren</a></div><div class="ttdeci">void addToReverseChildren(const std::shared_ptr&lt; Vertex &gt; &amp;vertex)</div><div class="ttdoc">Adds a vertex this vertex's children.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00303">Vertex.cpp:303</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a9dde7e4048681ebf5c1174eaa6886b8a"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9dde7e4048681ebf5c1174eaa6886b8a">ompl::geometric::aitstar::Vertex::setReverseParent</a></div><div class="ttdeci">void setReverseParent(const std::shared_ptr&lt; Vertex &gt; &amp;vertex)</div><div class="ttdoc">Sets the parent vertex (in the reverse-search tree).</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00262">Vertex.cpp:262</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a75ffb784facf0eb6e3ced6bcbbe0a4d7"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a75ffb784facf0eb6e3ced6bcbbe0a4d7">ompl::geometric::aitstar::Vertex::isBlacklistedAsChild</a></div><div class="ttdeci">bool isBlacklistedAsChild(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Returns whether a child is blacklisted.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00349">Vertex.cpp:349</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a152ef3a1406fc9b68f98b84ff166ddda"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a152ef3a1406fc9b68f98b84ff166ddda">ompl::geometric::aitstar::Vertex::getState</a></div><div class="ttdeci">ompl::base::State * getState()</div><div class="ttdoc">Provides write access to the underlying state.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00093">Vertex.cpp:93</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a297e624120d40744676ec64e6885e691"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a297e624120d40744676ec64e6885e691">ompl::geometric::aitstar::Vertex::resetForwardQueueOutgoingLookup</a></div><div class="ttdeci">void resetForwardQueueOutgoingLookup()</div><div class="ttdoc">Resets the forward queue outgoing lookup.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00520">Vertex.cpp:520</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_aaeda9515e8cdc5179bd486b9c34fd3c7"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aaeda9515e8cdc5179bd486b9c34fd3c7">ompl::geometric::aitstar::Vertex::removeFromReverseChildren</a></div><div class="ttdeci">void removeFromReverseChildren(std::size_t vertexId)</div><div class="ttdoc">Removes a vertex from this vertex's forward children.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00308">Vertex.cpp:308</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Cost_html"><div class="ttname"><a href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a></div><div class="ttdoc">Definition of a cost value. Can represent the cost of a motion or the cost of a state.</div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00111">Cost.h:112</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a5ac50160e0232b506f8dd4a2ccb2746f"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5ac50160e0232b506f8dd4a2ccb2746f">ompl::geometric::aitstar::Vertex::setForwardParent</a></div><div class="ttdeci">void setForwardParent(const std::shared_ptr&lt; Vertex &gt; &amp;vertex, const ompl::base::Cost &amp;edgeCost)</div><div class="ttdoc">Sets the parent vertex (in the forward-search tree).</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00239">Vertex.cpp:239</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ae54e399d0140657384e1dcb4daac8ba5"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ae54e399d0140657384e1dcb4daac8ba5">ompl::geometric::aitstar::Vertex::addToForwardQueueIncomingLookup</a></div><div class="ttdeci">void addToForwardQueueIncomingLookup(typename ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *pointer)</div><div class="ttdoc">Adds an element to the forward queue incoming lookup.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00471">Vertex.cpp:471</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OptimizationObjectivePtr_html"><div class="ttname"><a href="classompl_1_1base_1_1OptimizationObjectivePtr.html">OptimizationObjectivePtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::OptimizationObjective.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a56e21a5ba7348ee92aaf6574c319ad64"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a56e21a5ba7348ee92aaf6574c319ad64">ompl::geometric::aitstar::Vertex::getForwardQueueOutgoingLookup</a></div><div class="ttdeci">std::vector&lt; ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt; &gt;::Element * &gt; getForwardQueueOutgoingLookup() const</div><div class="ttdoc">Returns the forward queue outgoing lookup of this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00494">Vertex.cpp:494</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Edge_html"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">ompl::geometric::aitstar::Edge</a></div><div class="ttdef"><b>Definition:</b> <a href="Edge_8h_source.html#l00151">Edge.h:152</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a7df0ced1a1b84ae7d859ede1ffa05272"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a7df0ced1a1b84ae7d859ede1ffa05272">ompl::geometric::aitstar::Vertex::getId</a></div><div class="ttdeci">std::size_t getId() const</div><div class="ttdoc">Get the unique id of this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00088">Vertex.cpp:88</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a13cf5ba4429b5b3878ee1cf141693557"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a13cf5ba4429b5b3878ee1cf141693557">ompl::geometric::aitstar::Vertex::invalidateForwardBranch</a></div><div class="ttdeci">std::vector&lt; std::weak_ptr&lt; aitstar::Vertex &gt; &gt; invalidateForwardBranch()</div><div class="ttdoc">Recursively invalidates the branch of the forward tree rooted in this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00221">Vertex.cpp:221</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a768a19ee5b580a7e455fe42370bbf2c2"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a768a19ee5b580a7e455fe42370bbf2c2">ompl::geometric::aitstar::Vertex::resetForwardQueueIncomingLookup</a></div><div class="ttdeci">void resetForwardQueueIncomingLookup()</div><div class="ttdoc">Resets the forward queue incoming lookup.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00515">Vertex.cpp:515</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_abc1b602d70a2376ca4905ad2b25b062e"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#abc1b602d70a2376ca4905ad2b25b062e">ompl::geometric::aitstar::Vertex::removeFromForwardQueueIncomingLookup</a></div><div class="ttdeci">void removeFromForwardQueueIncomingLookup(ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *element)</div><div class="ttdoc">Remove an element from the incoming queue lookup.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00499">Vertex.cpp:499</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a1e8b33969a36f80d330366a82e3cda1a"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1e8b33969a36f80d330366a82e3cda1a">ompl::geometric::aitstar::Vertex::getExpandedCostToComeFromGoal</a></div><div class="ttdeci">ompl::base::Cost getExpandedCostToComeFromGoal() const</div><div class="ttdoc">Returns the cost to come to this vertex from the goal when it was expanded.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00122">Vertex.cpp:122</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html"><div class="ttname"><a href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a></div><div class="ttdoc">This class provides an implementation of an updatable min-heap. Using it is a bit cumbersome,...</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00084">BinaryHeap.h:85</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ab9a8f8354ca1f00680a19b5cf849403e"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab9a8f8354ca1f00680a19b5cf849403e">ompl::geometric::aitstar::Vertex::registerExpansionDuringReverseSearch</a></div><div class="ttdeci">void registerExpansionDuringReverseSearch()</div><div class="ttdoc">Registers the expansion of this vertex during the current reverse search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00410">Vertex.cpp:410</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a193fb1ff06fbc31c0de71ec9400f7013"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a193fb1ff06fbc31c0de71ec9400f7013">ompl::geometric::aitstar::Vertex::resetReverseParent</a></div><div class="ttdeci">void resetReverseParent()</div><div class="ttdoc">Resets the reverse parent of the vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00274">Vertex.cpp:274</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_acd1e077d6ccde8624cdc0c137c5f88bb"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#acd1e077d6ccde8624cdc0c137c5f88bb">ompl::geometric::aitstar::Vertex::invalidateReverseBranch</a></div><div class="ttdeci">std::vector&lt; std::weak_ptr&lt; aitstar::Vertex &gt; &gt; invalidateReverseBranch()</div><div class="ttdoc">Recursively invalidates the branch of the reverse tree rooted in this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00201">Vertex.cpp:201</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a6c0aa769627a92b3828709f274809b5f"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6c0aa769627a92b3828709f274809b5f">ompl::geometric::aitstar::Vertex::setCostToComeFromGoal</a></div><div class="ttdeci">void setCostToComeFromGoal(const ompl::base::Cost &amp;cost)</div><div class="ttdoc">Sets the cost to come to this vertex from the goal.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00174">Vertex.cpp:174</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a9a466214ef6ed61cd4719157cbf4fb4a"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9a466214ef6ed61cd4719157cbf4fb4a">ompl::geometric::aitstar::Vertex::removeFromForwardQueueOutgoingLookup</a></div><div class="ttdeci">void removeFromForwardQueueOutgoingLookup(ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *element)</div><div class="ttdoc">Remove an element from the outgoing queue lookup.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00507">Vertex.cpp:507</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ad5e42a9adf4e0d4a100bf2dd3674ca90"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad5e42a9adf4e0d4a100bf2dd3674ca90">ompl::geometric::aitstar::Vertex::getForwardParent</a></div><div class="ttdeci">std::shared_ptr&lt; Vertex &gt; getForwardParent() const</div><div class="ttdoc">Returns the parent of the vertex (in the forward-search tree).</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00149">Vertex.cpp:149</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a29d1a02dbc86132630fa3d1e0de16d9e"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a29d1a02dbc86132630fa3d1e0de16d9e">ompl::geometric::aitstar::Vertex::registerPoppedOutgoingEdgeDuringForwardSearch</a></div><div class="ttdeci">void registerPoppedOutgoingEdgeDuringForwardSearch()</div><div class="ttdoc">Registers that a child has been added to this vertex during the current forward search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00405">Vertex.cpp:405</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_aad5d751340069a30e01fd8252f95816d"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aad5d751340069a30e01fd8252f95816d">ompl::geometric::aitstar::Vertex::unregisterExpansionDuringReverseSearch</a></div><div class="ttdeci">void unregisterExpansionDuringReverseSearch()</div><div class="ttdoc">Unregisters the expansion of this vertex during the current reverse search, needed when a reverse bra...</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00416">Vertex.cpp:416</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a71c6a8fb9ff6f99b2da5d45382098a03"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a71c6a8fb9ff6f99b2da5d45382098a03">ompl::geometric::aitstar::Vertex::getCostToComeFromGoal</a></div><div class="ttdeci">ompl::base::Cost getCostToComeFromGoal() const</div><div class="ttdoc">Returns the cost to come to this vertex from the goal.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00113">Vertex.cpp:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1ProblemDefinitionPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::ProblemDefinition.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a5e1c8174c35162a164ccee68d7223691"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5e1c8174c35162a164ccee68d7223691">ompl::geometric::aitstar::Vertex::resetReverseQueuePointer</a></div><div class="ttdeci">void resetReverseQueuePointer()</div><div class="ttdoc">Resets the reverse queue pointer.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00466">Vertex.cpp:466</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_acf7ace9d2728edfc6fe785202c17022a"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#acf7ace9d2728edfc6fe785202c17022a">ompl::geometric::aitstar::Vertex::setCostToComeFromStart</a></div><div class="ttdeci">void setCostToComeFromStart(const ompl::base::Cost &amp;cost)</div><div class="ttdoc">Sets the cost to come to this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00169">Vertex.cpp:169</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a4fb120dd389290c6b3ba0b7987179072"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a4fb120dd389290c6b3ba0b7987179072">ompl::geometric::aitstar::Vertex::setReverseQueuePointer</a></div><div class="ttdeci">void setReverseQueuePointer(typename ompl::BinaryHeap&lt; std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt;, std::function&lt; bool(const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;, const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;)&gt;&gt;::Element *pointer)</div><div class="ttdoc">Sets the reverse queue pointer of this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00441">Vertex.cpp:441</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a8864dce1fd9f9c1d545ccac5d299956b"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a8864dce1fd9f9c1d545ccac5d299956b">ompl::geometric::aitstar::Vertex::setForwardEdgeCost</a></div><div class="ttdeci">void setForwardEdgeCost(const ompl::base::Cost &amp;cost)</div><div class="ttdoc">Sets the cost to come to this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00164">Vertex.cpp:164</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_aed4a0cc16ef58194b737136ae1665a76"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aed4a0cc16ef58194b737136ae1665a76">ompl::geometric::aitstar::Vertex::hasBeenInsertedIntoQueueDuringCurrentReverseSearch</a></div><div class="ttdeci">bool hasBeenInsertedIntoQueueDuringCurrentReverseSearch() const</div><div class="ttdoc">Returns whether the vertex has been inserted into the queue during the current reverse search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00436">Vertex.cpp:436</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a84c82604f227b07f46affb89893f2b64"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a84c82604f227b07f46affb89893f2b64">ompl::geometric::aitstar::Vertex::updateCostOfForwardBranch</a></div><div class="ttdeci">void updateCostOfForwardBranch() const</div><div class="ttdoc">Updates the cost to the whole branch rooted at this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00190">Vertex.cpp:190</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_adfce85b19d1c04b3e489a7a059930772"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#adfce85b19d1c04b3e489a7a059930772">ompl::geometric::aitstar::Vertex::getForwardChildren</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; getForwardChildren() const</div><div class="ttdoc">Returns this vertex's children in the forward search tree.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00382">Vertex.cpp:382</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a401786f869c76b39cdacafefdd0ba16c"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a401786f869c76b39cdacafefdd0ba16c">ompl::geometric::aitstar::Vertex::hasCachedNeighbors</a></div><div class="ttdeci">bool hasCachedNeighbors() const</div><div class="ttdoc">Returns whether the vertex knows its nearest neighbors on the current approximation.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00361">Vertex.cpp:361</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ab49ac08fe881484fe4ce838a7106ea63"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab49ac08fe881484fe4ce838a7106ea63">ompl::geometric::aitstar::Vertex::hasReverseParent</a></div><div class="ttdeci">bool hasReverseParent() const</div><div class="ttdoc">Returns whether this vertex has a parent in the reverse search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00154">Vertex.cpp:154</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ad4eb953b1769ed4f936db83f9e8bd6ac"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad4eb953b1769ed4f936db83f9e8bd6ac">ompl::geometric::aitstar::Vertex::setCostToGoToGoal</a></div><div class="ttdeci">void setCostToGoToGoal(const ompl::base::Cost &amp;cost)</div><div class="ttdoc">Sets the cost to go heuristic of this vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00185">Vertex.cpp:185</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a33866f03b8d30c1ddbaaba310c308e0f"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a33866f03b8d30c1ddbaaba310c308e0f">ompl::geometric::aitstar::Vertex::Vertex</a></div><div class="ttdeci">Vertex(const ompl::base::SpaceInformationPtr &amp;spaceInformation, const ompl::base::ProblemDefinitionPtr &amp;problemDefinition, const std::size_t &amp;batchId)</div><div class="ttdoc">Constructs a vertex by sampling a state.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00063">Vertex.cpp:63</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a020f3a3bc6e6f7048c32452a817b029e"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a020f3a3bc6e6f7048c32452a817b029e">ompl::geometric::aitstar::Vertex::getReverseChildren</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; getReverseChildren() const</div><div class="ttdoc">Returns this vertex's children in the reverse search tree.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00393">Vertex.cpp:393</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ae4515b0cbbe5284707a919b7ad816738"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ae4515b0cbbe5284707a919b7ad816738">ompl::geometric::aitstar::Vertex::cacheNeighbors</a></div><div class="ttdeci">void cacheNeighbors(const std::vector&lt; std::shared_ptr&lt; Vertex &gt;&gt; &amp;neighbors) const</div><div class="ttdoc">Caches the neighbors for the current approximation.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00366">Vertex.cpp:366</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ad9a9927ad208a216d80c607b4646079d"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad9a9927ad208a216d80c607b4646079d">ompl::geometric::aitstar::Vertex::getEdgeCostFromForwardParent</a></div><div class="ttdeci">ompl::base::Cost getEdgeCostFromForwardParent() const</div><div class="ttdoc">Returns the edge cost from the forward parent.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00136">Vertex.cpp:136</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a2f65e77acd4a5866b53b2bca464b88d3"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a2f65e77acd4a5866b53b2bca464b88d3">ompl::geometric::aitstar::Vertex::hasHadOutgoingEdgePoppedDuringCurrentForwardSearch</a></div><div class="ttdeci">bool hasHadOutgoingEdgePoppedDuringCurrentForwardSearch() const</div><div class="ttdoc">Returns whether the vertex has had an outgoing edge popped during the current forward search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00426">Vertex.cpp:426</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a71f1fdd5c7915a37cfc42c4fa0a906c8"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a71f1fdd5c7915a37cfc42c4fa0a906c8">ompl::geometric::aitstar::Vertex::getScopedState</a></div><div class="ttdeci">ompl::base::ScopedState getScopedState() const</div><div class="ttdoc">Returns a scoped copy of the underlying state.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00103">Vertex.cpp:103</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a451831d2465b46f62e494cf0c52ca8af"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a451831d2465b46f62e494cf0c52ca8af">ompl::geometric::aitstar::Vertex::hasBeenExpandedDuringCurrentReverseSearch</a></div><div class="ttdeci">bool hasBeenExpandedDuringCurrentReverseSearch() const</div><div class="ttdoc">Returns whether the vertex has been expanded during the current reverse search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00431">Vertex.cpp:431</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a1d64c6ce84cff8bc564e0fa3ae9d54ed"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1d64c6ce84cff8bc564e0fa3ae9d54ed">ompl::geometric::aitstar::Vertex::blacklistAsChild</a></div><div class="ttdeci">void blacklistAsChild(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Blacklists a child.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00344">Vertex.cpp:344</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_aebc05e4c5ed6a21c9f3d3e05373d040c"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aebc05e4c5ed6a21c9f3d3e05373d040c">ompl::geometric::aitstar::Vertex::getReverseParent</a></div><div class="ttdeci">std::shared_ptr&lt; Vertex &gt; getReverseParent() const</div><div class="ttdoc">Returns the parent of the vertex (in the reverse-search tree).</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00159">Vertex.cpp:159</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a6a87d3600207bb245855f7ed30e96d52"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6a87d3600207bb245855f7ed30e96d52">ompl::geometric::aitstar::Vertex::getReverseQueuePointer</a></div><div class="ttdeci">ompl::BinaryHeap&lt; std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt; &gt;, std::function&lt; bool(const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;, const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;)&gt; &gt;::Element * getReverseQueuePointer() const</div><div class="ttdoc">Returns the reverse queue pointer of this vertex.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a3ff3bdf66ea8c6272e4bbbd7e47f306f"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a3ff3bdf66ea8c6272e4bbbd7e47f306f">ompl::geometric::aitstar::Vertex::removeFromForwardChildren</a></div><div class="ttdeci">void removeFromForwardChildren(std::size_t vertexId)</div><div class="ttdoc">Removes a vertex from this vertex's forward children.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00284">Vertex.cpp:284</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ab058469b6c69ad79c0ddb772175e5a4c"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab058469b6c69ad79c0ddb772175e5a4c">ompl::geometric::aitstar::Vertex::addToForwardQueueOutgoingLookup</a></div><div class="ttdeci">void addToForwardQueueOutgoingLookup(typename ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *pointer)</div><div class="ttdoc">Adds an element to the forward queue outgoing lookup.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00478">Vertex.cpp:478</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_af825ceb63181927849136668afe874b9"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#af825ceb63181927849136668afe874b9">ompl::geometric::aitstar::Vertex::resetForwardParent</a></div><div class="ttdeci">void resetForwardParent()</div><div class="ttdoc">Resets the forward parent of the vertex.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00257">Vertex.cpp:257</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a82cd8366075c20d3d42019e65bb319ff"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a82cd8366075c20d3d42019e65bb319ff">ompl::geometric::aitstar::Vertex::addToForwardChildren</a></div><div class="ttdeci">void addToForwardChildren(const std::shared_ptr&lt; Vertex &gt; &amp;vertex)</div><div class="ttdoc">Adds a vertex to this vertex's forward children.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00279">Vertex.cpp:279</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1ScopedState_html"><div class="ttname"><a href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState</a></div><div class="ttdoc">Definition of a scoped state.</div><div class="ttdef"><b>Definition:</b> <a href="ScopedState_8h_source.html#l00120">ScopedState.h:121</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a74caac8ce85580607d48af2820e8aad7"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a74caac8ce85580607d48af2820e8aad7">ompl::geometric::aitstar::Vertex::hasForwardParent</a></div><div class="ttdeci">bool hasForwardParent() const</div><div class="ttdoc">Returns whether this vertex has a parent in the forward search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00141">Vertex.cpp:141</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_ab0e793d8334e9d0915d4b8dfcc3ea335"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab0e793d8334e9d0915d4b8dfcc3ea335">ompl::geometric::aitstar::Vertex::whitelistAsChild</a></div><div class="ttdeci">void whitelistAsChild(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Whitelists a child.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00327">Vertex.cpp:327</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a3bb16a3d91169246e85530111e4ae170"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a3bb16a3d91169246e85530111e4ae170">ompl::geometric::aitstar::Vertex::getNeighbors</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; &amp; getNeighbors() const</div><div class="ttdoc">Returns the nearest neighbors, throws if not up to date.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00372">Vertex.cpp:372</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_adda32fd81a707d37112893ee0d12fd98"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#adda32fd81a707d37112893ee0d12fd98">ompl::geometric::aitstar::Vertex::registerInsertionIntoQueueDuringReverseSearch</a></div><div class="ttdeci">void registerInsertionIntoQueueDuringReverseSearch()</div><div class="ttdoc">Registers the insertion of this vertex into the open queue during the current reverse search.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00421">Vertex.cpp:421</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1aitstar_1_1Vertex_html_a6fb6ede1f03af46b2f2d46c532ed45da"><div class="ttname"><a href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6fb6ede1f03af46b2f2d46c532ed45da">ompl::geometric::aitstar::Vertex::getCostToComeFromStart</a></div><div class="ttdeci">ompl::base::Cost getCostToComeFromStart() const</div><div class="ttdoc">Returns the cost to come to this vertex from the start.</div><div class="ttdef"><b>Definition:</b> <a href="aitstar_2src_2Vertex_8cpp_source.html#l00108">Vertex.cpp:108</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00021">AppBase.h:22</a></div></div>
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

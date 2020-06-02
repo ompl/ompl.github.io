@@ -1,24 +1,5 @@
 var searchData=
 [
-  ['validstatesamplerallocator',['ValidStateSamplerAllocator',['../namespaceompl_1_1base.html#a85c4b4a409c1eac0b865577ff375e1ca',1,'ompl::base']]],
-  ['value_5ftype',['value_type',['../classompl_1_1geometric_1_1SPARSdb_1_1edgeWeightMap.html#aac6eb5e8f9680634e7782837429ba7d5',1,'ompl::geometric::SPARSdb::edgeWeightMap']]],
-  ['vertex',['Vertex',['../classompl_1_1base_1_1PlannerData_1_1Graph.html#a2e80a08894e7be697cfb09960aafb7c6',1,'ompl::base::PlannerData::Graph::Vertex()'],['../classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681',1,'ompl::geometric::LazyPRM::Vertex()'],['../classompl_1_1geometric_1_1PRM.html#ae5e716e7ab7cc38987dd47566490694f',1,'ompl::geometric::PRM::Vertex()'],['../classompl_1_1geometric_1_1SPARStwo.html#ab3573be612a3928091fe5edf6fd0907d',1,'ompl::geometric::SPARStwo::Vertex()'],['../classompl_1_1geometric_1_1SPARSdb.html#a34616ea5076e533abe4a490d622df889',1,'ompl::geometric::SPARSdb::Vertex()']]],
-  ['vertexconstptr',['VertexConstPtr',['../classompl_1_1geometric_1_1BITstar.html#ae2c8c06f2c54b1bf182dc62dce515ff0',1,'ompl::geometric::BITstar']]],
-  ['vertexconstptrpair',['VertexConstPtrPair',['../classompl_1_1geometric_1_1BITstar.html#a4a191ef6c088df39365ed444e6987438',1,'ompl::geometric::BITstar']]],
-  ['vertexconstptrpairvector',['VertexConstPtrPairVector',['../classompl_1_1geometric_1_1BITstar.html#aa32f8e81420fa7eb85d066443ba22a21',1,'ompl::geometric::BITstar']]],
-  ['vertexconstptrvector',['VertexConstPtrVector',['../classompl_1_1geometric_1_1BITstar.html#a2f935b34768c9df4a784c17c2f3b5090',1,'ompl::geometric::BITstar']]],
-  ['vertexid',['VertexId',['../classompl_1_1geometric_1_1BITstar.html#a457c97219bbc73817071643412c14118',1,'ompl::geometric::BITstar']]],
-  ['vertexindextype',['VertexIndexType',['../classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b',1,'ompl::geometric::SPARS::VertexIndexType()'],['../classompl_1_1geometric_1_1SPARStwo.html#a9a7826afb1c1bd7bdeb0b073c84f18cd',1,'ompl::geometric::SPARStwo::VertexIndexType()'],['../classompl_1_1geometric_1_1SPARSdb.html#abd6f753bfe38f2a4cf379ff068cf3458',1,'ompl::geometric::SPARSdb::VertexIndexType()']]],
-  ['vertexpair',['VertexPair',['../classompl_1_1geometric_1_1SPARStwo.html#aa6d3dd2016760e97dcbb5d12b48e83f9',1,'ompl::geometric::SPARStwo::VertexPair()'],['../classompl_1_1geometric_1_1SPARSdb.html#ad8de4ecb4d9b3be29d478493de02ca4d',1,'ompl::geometric::SPARSdb::VertexPair()']]],
-  ['vertexproperties',['VertexProperties',['../classompl_1_1geometric_1_1SPARSdb.html#aaf62fddcfd1dca5eafdd57d59fec3706',1,'ompl::geometric::SPARSdb']]],
-  ['vertexptr',['VertexPtr',['../classompl_1_1geometric_1_1BITstar.html#adff43a966e7cba88d21a4927602703fa',1,'ompl::geometric::BITstar']]],
-  ['vertexptrnnptr',['VertexPtrNNPtr',['../classompl_1_1geometric_1_1BITstar.html#a8866361e68967038e12f4175b1cea681',1,'ompl::geometric::BITstar']]],
-  ['vertexptrpair',['VertexPtrPair',['../classompl_1_1geometric_1_1BITstar.html#ae606dd4b834ca3ac621533ba65b3f19a',1,'ompl::geometric::BITstar']]],
-  ['vertexptrpairvector',['VertexPtrPairVector',['../classompl_1_1geometric_1_1BITstar.html#afe1b225bb892b36f14f49041d7af2ba0',1,'ompl::geometric::BITstar']]],
-  ['vertexptrvector',['VertexPtrVector',['../classompl_1_1geometric_1_1BITstar.html#a1330c5b8a068a54fccf22b51ac105a2f',1,'ompl::geometric::BITstar']]],
-  ['vertexqueueasmmap',['VertexQueueAsMMap',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#a04e29d7351ec486e926a310be6debe0a',1,'ompl::geometric::BITstar::SearchQueue']]],
-  ['vertexqueueiter',['VertexQueueIter',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#abba99e13beb1397eb26c41444fb47a40',1,'ompl::geometric::BITstar::SearchQueue']]],
-  ['vertexqueuesortfunc',['VertexQueueSortFunc',['../classompl_1_1geometric_1_1BITstar_1_1SearchQueue.html#ad3f6081faba117e82e2e8a4af05673e3',1,'ompl::geometric::BITstar::SearchQueue']]],
-  ['vertexweakptr',['VertexWeakPtr',['../classompl_1_1geometric_1_1BITstar.html#a69da813a0975ab62f230b963d92fb630',1,'ompl::geometric::BITstar']]],
-  ['viterator',['VIterator',['../classompl_1_1base_1_1PlannerData_1_1Graph.html#ab6765d0a47482465da6ff2db1e2c0292',1,'ompl::base::PlannerData::Graph']]]
+  ['treedata_5822',['TreeData',['../classompl_1_1geometric_1_1BiTRRT.html#a41e787e94232d65324262af83939b50e',1,'ompl::geometric::BiTRRT::TreeData()'],['../classompl_1_1geometric_1_1RRTConnect.html#af482977ca67a836f2d3e4bbdbc95323f',1,'ompl::geometric::RRTConnect::TreeData()']]],
+  ['type_5823',['Type',['../classompl_1_1base_1_1PlannerData_1_1Graph.html#a39cb3854146428ffd4d21d85650766e2',1,'ompl::base::PlannerData::Graph']]]
 ];

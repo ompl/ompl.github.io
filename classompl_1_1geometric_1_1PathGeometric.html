@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::geometric::PathGeometric Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::geometric::PathGeometric Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -172,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Definition of a geometric path.
+<p>Definition of a geometric path.  
  <a href="classompl_1_1geometric_1_1PathGeometric.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PathGeometric_8h_source.html">ompl/geometric/PathGeometric.h</a>&gt;</code></p>
@@ -181,14 +166,15 @@ Inheritance diagram for ompl::geometric::PathGeometric:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1geometric_1_1PathGeometric__inherit__graph.png" border="0" usemap="#ompl_1_1geometric_1_1PathGeometric_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1geometric_1_1PathGeometric_inherit__map" id="ompl_1_1geometric_1_1PathGeometric_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1base_1_1Path.html" title="Abstract definition of a path. " alt="" coords="51,5,173,32"/>
+<area shape="rect" title="Definition of a geometric path." alt="" coords="5,80,219,107"/>
+<area shape="rect" href="classompl_1_1base_1_1Path.html" title="Abstract definition of a path." alt="" coords="51,5,173,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab85d32ca5bce67da74a3b116ac11fd73"><td class="memItemLeft" align="right" valign="top"><a id="ab85d32ca5bce67da74a3b116ac11fd73"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ab85d32ca5bce67da74a3b116ac11fd73">PathGeometric</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> &amp;si)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ab85d32ca5bce67da74a3b116ac11fd73">PathGeometric</a> (const base::SpaceInformationPtr &amp;si)</td></tr>
 <tr class="memdesc:ab85d32ca5bce67da74a3b116ac11fd73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a path instance for a given space information. <br /></td></tr>
 <tr class="separator:ab85d32ca5bce67da74a3b116ac11fd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45d676fcc2896ecf9e9156bac2cba4fb"><td class="memItemLeft" align="right" valign="top"><a id="a45d676fcc2896ecf9e9156bac2cba4fb"></a>
@@ -196,11 +182,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a45d676fcc2896ecf9e9156bac2cba4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br /></td></tr>
 <tr class="separator:a45d676fcc2896ecf9e9156bac2cba4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e872d1a6b4528ec809b2fcc1e2c34bd"><td class="memItemLeft" align="right" valign="top"><a id="a1e872d1a6b4528ec809b2fcc1e2c34bd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a1e872d1a6b4528ec809b2fcc1e2c34bd">PathGeometric</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> &amp;si, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a1e872d1a6b4528ec809b2fcc1e2c34bd">PathGeometric</a> (const base::SpaceInformationPtr &amp;si, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
 <tr class="memdesc:a1e872d1a6b4528ec809b2fcc1e2c34bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a path instance from a single state. <br /></td></tr>
 <tr class="separator:a1e872d1a6b4528ec809b2fcc1e2c34bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa61a7877241c63468398fa82d9021957"><td class="memItemLeft" align="right" valign="top"><a id="aa61a7877241c63468398fa82d9021957"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#aa61a7877241c63468398fa82d9021957">PathGeometric</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> &amp;si, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state1, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state2)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#aa61a7877241c63468398fa82d9021957">PathGeometric</a> (const base::SpaceInformationPtr &amp;si, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state1, const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state2)</td></tr>
 <tr class="memdesc:aa61a7877241c63468398fa82d9021957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a path instance from two states (thus making a segment) <br /></td></tr>
 <tr class="separator:aa61a7877241c63468398fa82d9021957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44bcadcd08a5c494557652d7f75f0e17"><td class="memItemLeft" align="right" valign="top"><a id="a44bcadcd08a5c494557652d7f75f0e17"></a>
@@ -208,7 +194,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a44bcadcd08a5c494557652d7f75f0e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator. <br /></td></tr>
 <tr class="separator:a44bcadcd08a5c494557652d7f75f0e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab158a42de7bcdd1b41a4228955535d21"><td class="memItemLeft" align="right" valign="top"><a id="ab158a42de7bcdd1b41a4228955535d21"></a>
-<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ab158a42de7bcdd1b41a4228955535d21">cost</a> (const <a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">base::OptimizationObjectivePtr</a> &amp;obj) const override</td></tr>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ab158a42de7bcdd1b41a4228955535d21">cost</a> (const base::OptimizationObjectivePtr &amp;obj) const override</td></tr>
 <tr class="memdesc:ab158a42de7bcdd1b41a4228955535d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sum of the costs for the sequence of segments that make up the path, computed using OptimizationObjective::motionCost(). OptimizationObjective::initialCost() and OptimizationObjective::terminalCost() are also used in the computation for the first and last states, respectively. Empty paths have identity cost. <br /></td></tr>
 <tr class="separator:ab158a42de7bcdd1b41a4228955535d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8874ee6287db8736844a997702cc93af"><td class="memItemLeft" align="right" valign="top"><a id="a8874ee6287db8736844a997702cc93af"></a>
@@ -220,10 +206,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a16a6593f43ee73bebcc3f5de8ceee29b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the path is valid. <br /></td></tr>
 <tr class="separator:a16a6593f43ee73bebcc3f5de8ceee29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10b135957051a6923a8a1f4e23b10453"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a10b135957051a6923a8a1f4e23b10453">smoothness</a> () const</td></tr>
-<tr class="memdesc:a10b135957051a6923a8a1f4e23b10453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a notion of smoothness for this path. The closer the value is to 0, the smoother the path. Detailed formula follows.  <a href="#a10b135957051a6923a8a1f4e23b10453">More...</a><br /></td></tr>
+<tr class="memdesc:a10b135957051a6923a8a1f4e23b10453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a notion of smoothness for this path. The closer the value is to 0, the smoother the path. Detailed formula follows.  <a href="classompl_1_1geometric_1_1PathGeometric.html#a10b135957051a6923a8a1f4e23b10453">More...</a><br /></td></tr>
 <tr class="separator:a10b135957051a6923a8a1f4e23b10453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a264077e2fa5f4ec6ffaa4199016e7529"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a264077e2fa5f4ec6ffaa4199016e7529">clearance</a> () const</td></tr>
-<tr class="memdesc:a264077e2fa5f4ec6ffaa4199016e7529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the clearance of the way-points along the path (no interpolation is performed). Detailed formula follows.  <a href="#a264077e2fa5f4ec6ffaa4199016e7529">More...</a><br /></td></tr>
+<tr class="memdesc:a264077e2fa5f4ec6ffaa4199016e7529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the clearance of the way-points along the path (no interpolation is performed). Detailed formula follows.  <a href="classompl_1_1geometric_1_1PathGeometric.html#a264077e2fa5f4ec6ffaa4199016e7529">More...</a><br /></td></tr>
 <tr class="separator:a264077e2fa5f4ec6ffaa4199016e7529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d1fb7095d1bc93aafa899ec8e97d206"><td class="memItemLeft" align="right" valign="top"><a id="a2d1fb7095d1bc93aafa899ec8e97d206"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a2d1fb7095d1bc93aafa899ec8e97d206">print</a> (std::ostream &amp;out) const override</td></tr>
@@ -231,7 +217,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a2d1fb7095d1bc93aafa899ec8e97d206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f39595d6821f88fcdbdc6382f94c9d5"><td class="memItemLeft" align="right" valign="top"><a id="a3f39595d6821f88fcdbdc6382f94c9d5"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a3f39595d6821f88fcdbdc6382f94c9d5">printAsMatrix</a> (std::ostream &amp;out) const</td></tr>
-<tr class="memdesc:a3f39595d6821f88fcdbdc6382f94c9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the path as a real-valued matrix where the i-th row represents the i-th state along the path. Each row contains the state components as returned by <a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5e6b9f828da8d02338d55857ca74fda" title="Copy all the real values from a state source to the array reals using getValueAddressAtLocation() ...">ompl::base::StateSpace::copyToReals</a>. <br /></td></tr>
+<tr class="memdesc:a3f39595d6821f88fcdbdc6382f94c9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the path as a real-valued matrix where the i-th row represents the i-th state along the path. Each row contains the state components as returned by <a class="el" href="classompl_1_1base_1_1StateSpace.html#ac5e6b9f828da8d02338d55857ca74fda" title="Copy all the real values from a state source to the array reals using getValueAddressAtLocation()">ompl::base::StateSpace::copyToReals</a>. <br /></td></tr>
 <tr class="separator:a3f39595d6821f88fcdbdc6382f94c9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Path operations</div></td></tr>
 <tr class="memitem:a29c50018bc71d4d25b0f8e4d3e97aecd"><td class="memItemLeft" align="right" valign="top"><a id="a29c50018bc71d4d25b0f8e4d3e97aecd"></a>
@@ -251,17 +237,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a68e0627b7957b35e2723f9434ace5a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the path. <br /></td></tr>
 <tr class="separator:a68e0627b7957b35e2723f9434ace5a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a348f26bf4989964dddf791ef746a9098"><td class="memItemLeft" align="right" valign="top">std::pair&lt; bool, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a348f26bf4989964dddf791ef746a9098">checkAndRepair</a> (unsigned int attempts)</td></tr>
-<tr class="memdesc:a348f26bf4989964dddf791ef746a9098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the path is valid. If it is not, attempts are made to fix the path by sampling around invalid states. Not more than <em>attempts</em> samples are drawn.  <a href="#a348f26bf4989964dddf791ef746a9098">More...</a><br /></td></tr>
+<tr class="memdesc:a348f26bf4989964dddf791ef746a9098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the path is valid. If it is not, attempts are made to fix the path by sampling around invalid states. Not more than <em>attempts</em> samples are drawn.  <a href="classompl_1_1geometric_1_1PathGeometric.html#a348f26bf4989964dddf791ef746a9098">More...</a><br /></td></tr>
 <tr class="separator:a348f26bf4989964dddf791ef746a9098"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addc7c545fa8a284978c1e1e016425779"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#addc7c545fa8a284978c1e1e016425779">overlay</a> (const <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;over, unsigned int startIndex=0)</td></tr>
-<tr class="memdesc:addc7c545fa8a284978c1e1e016425779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlay the path <em>over</em> on top of the current path. States are added to the current path if needed (by copying the last state).  <a href="#addc7c545fa8a284978c1e1e016425779">More...</a><br /></td></tr>
+<tr class="memdesc:addc7c545fa8a284978c1e1e016425779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlay the path <em>over</em> on top of the current path. States are added to the current path if needed (by copying the last state).  <a href="classompl_1_1geometric_1_1PathGeometric.html#addc7c545fa8a284978c1e1e016425779">More...</a><br /></td></tr>
 <tr class="separator:addc7c545fa8a284978c1e1e016425779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9eb3ea81cc3ab442aae67d311bc4156"><td class="memItemLeft" align="right" valign="top"><a id="aa9eb3ea81cc3ab442aae67d311bc4156"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#aa9eb3ea81cc3ab442aae67d311bc4156">append</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
 <tr class="memdesc:aa9eb3ea81cc3ab442aae67d311bc4156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append <em>state</em> to the end of this path. The memory for <em>state</em> is copied. <br /></td></tr>
 <tr class="separator:aa9eb3ea81cc3ab442aae67d311bc4156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa054135956c0ce6c7c447451a0a02cbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#aa054135956c0ce6c7c447451a0a02cbb">append</a> (const <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path)</td></tr>
-<tr class="memdesc:aa054135956c0ce6c7c447451a0a02cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append <em>path</em> at the end of this path. States from <em>path</em> are copied.  <a href="#aa054135956c0ce6c7c447451a0a02cbb">More...</a><br /></td></tr>
+<tr class="memdesc:aa054135956c0ce6c7c447451a0a02cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append <em>path</em> at the end of this path. States from <em>path</em> are copied.  <a href="classompl_1_1geometric_1_1PathGeometric.html#aa054135956c0ce6c7c447451a0a02cbb">More...</a><br /></td></tr>
 <tr class="separator:aa054135956c0ce6c7c447451a0a02cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a569a99480710219771fe9a5e00b0b271"><td class="memItemLeft" align="right" valign="top"><a id="a569a99480710219771fe9a5e00b0b271"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a569a99480710219771fe9a5e00b0b271">prepend</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
@@ -269,11 +255,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a569a99480710219771fe9a5e00b0b271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362fc9c2882411fb1a9a4ed6f455bb24"><td class="memItemLeft" align="right" valign="top"><a id="a362fc9c2882411fb1a9a4ed6f455bb24"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a362fc9c2882411fb1a9a4ed6f455bb24">keepAfter</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
-<tr class="memdesc:a362fc9c2882411fb1a9a4ed6f455bb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep the part of the path that is after <em>state</em> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ad4dd97199351d75f3f9fb3f96543790a" title="Get the index of the way-point along the path that is closest to state. Returns -1 for an empty path...">getClosestIndex()</a> is used to find out which way-point is closest to <em>state</em>) <br /></td></tr>
+<tr class="memdesc:a362fc9c2882411fb1a9a4ed6f455bb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep the part of the path that is after <em>state</em> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ad4dd97199351d75f3f9fb3f96543790a" title="Get the index of the way-point along the path that is closest to state. Returns -1 for an empty path.">getClosestIndex()</a> is used to find out which way-point is closest to <em>state</em>) <br /></td></tr>
 <tr class="separator:a362fc9c2882411fb1a9a4ed6f455bb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a795008c4bba0631eae4bbaedb953d6a0"><td class="memItemLeft" align="right" valign="top"><a id="a795008c4bba0631eae4bbaedb953d6a0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a795008c4bba0631eae4bbaedb953d6a0">keepBefore</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
-<tr class="memdesc:a795008c4bba0631eae4bbaedb953d6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep the part of the path that is before <em>state</em> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ad4dd97199351d75f3f9fb3f96543790a" title="Get the index of the way-point along the path that is closest to state. Returns -1 for an empty path...">getClosestIndex()</a> is used to find out which way-point is closest to <em>state</em>) <br /></td></tr>
+<tr class="memdesc:a795008c4bba0631eae4bbaedb953d6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep the part of the path that is before <em>state</em> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#ad4dd97199351d75f3f9fb3f96543790a" title="Get the index of the way-point along the path that is closest to state. Returns -1 for an empty path.">getClosestIndex()</a> is used to find out which way-point is closest to <em>state</em>) <br /></td></tr>
 <tr class="separator:a795008c4bba0631eae4bbaedb953d6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67c54a5fc580e7914bb594e58a096089"><td class="memItemLeft" align="right" valign="top"><a id="a67c54a5fc580e7914bb594e58a096089"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a67c54a5fc580e7914bb594e58a096089">random</a> ()</td></tr>
@@ -335,6 +321,10 @@ const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceIn
 <tr class="memitem:a07b298e9c29ee82e9e2780d2d179e58d inherit pub_methods_classompl_1_1base_1_1Path"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Path.html#a07b298e9c29ee82e9e2780d2d179e58d">as</a> ()</td></tr>
 <tr class="memdesc:a07b298e9c29ee82e9e2780d2d179e58d inherit pub_methods_classompl_1_1base_1_1Path"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast this instance to a desired type.  <a href="classompl_1_1base_1_1Path.html#a07b298e9c29ee82e9e2780d2d179e58d">More...</a><br /></td></tr>
 <tr class="separator:a07b298e9c29ee82e9e2780d2d179e58d inherit pub_methods_classompl_1_1base_1_1Path"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c63af3bd4a94d8a3f93e6d0fe36bdb1 inherit pub_methods_classompl_1_1base_1_1Path"><td class="memItemLeft" align="right" valign="top"><a id="a9c63af3bd4a94d8a3f93e6d0fe36bdb1"></a>
+virtual <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Path.html#a9c63af3bd4a94d8a3f93e6d0fe36bdb1">cost</a> (const <a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">OptimizationObjectivePtr</a> &amp;obj) const =0</td></tr>
+<tr class="memdesc:a9c63af3bd4a94d8a3f93e6d0fe36bdb1 inherit pub_methods_classompl_1_1base_1_1Path"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the cost of the path with respect to a specified optimization objective. <br /></td></tr>
+<tr class="separator:a9c63af3bd4a94d8a3f93e6d0fe36bdb1 inherit pub_methods_classompl_1_1base_1_1Path"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -363,7 +353,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State
 <div class="textblock"><p>Definition of a geometric path. </p>
 <p>This is the type of path computed by geometric planners. </p>
 
-<p class="definition">Definition at line <a class="el" href="PathGeometric_8h_source.html#l00060">60</a> of file <a class="el" href="PathGeometric_8h_source.html">PathGeometric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PathGeometric_8h_source.html#l00097">97</a> of file <a class="el" href="PathGeometric_8h_source.html">PathGeometric.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa054135956c0ce6c7c447451a0a02cbb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa054135956c0ce6c7c447451a0a02cbb">&#9670;&nbsp;</a></span>append()</h2>
@@ -432,7 +422,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State
 <p>The formula used for computing clearance is: </p><p class="formulaDsp">
 \[ \mbox{clearance} = \frac{1}{n}\sum\limits_{i=0}^{n-1}cl(s_i) \]
 </p>
-<p> \(n\) is the number of states along the path (see <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f" title="Get the number of states (way-points) that make up this path. ">getStateCount()</a>) \(s_i\) is the i<sup>th</sup> state along the path (see <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b" title="Get the state located at index along the path. ">getState()</a>) \(cl()\) gives the distance to the nearest invalid state for a particular state (see <a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#a3b81207d576bb32e44057d15e1c895ab" title="Report the distance to the nearest invalid state when starting from state. If the distance is negativ...">ompl::base::StateValidityChecker::clearance()</a>) </p>
+<p> \(n\) is the number of states along the path (see <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f" title="Get the number of states (way-points) that make up this path.">getStateCount()</a>) \(s_i\) is the i<sup>th</sup> state along the path (see <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b" title="Get the state located at index along the path.">getState()</a>) \(cl()\) gives the distance to the nearest invalid state for a particular state (see <a class="el" href="classompl_1_1base_1_1StateValidityChecker.html#a3b81207d576bb32e44057d15e1c895ab" title="Report the distance to the nearest invalid state when starting from state. If the distance is negativ...">ompl::base::StateValidityChecker::clearance()</a>) </p>
 
 <p class="definition">Definition at line <a class="el" href="PathGeometric_8cpp_source.html#l00111">111</a> of file <a class="el" href="PathGeometric_8cpp_source.html">PathGeometric.cpp</a>.</p>
 
@@ -465,7 +455,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State
 </div><div class="memdoc">
 
 <p>Overlay the path <em>over</em> on top of the current path. States are added to the current path if needed (by copying the last state). </p>
-<p>If <em>over</em> consists of states form a different state space than the existing path, the data from those states is copied over, for the corresponding components. If <em>over</em> is from the same state space as this path, and <em>startIndex</em> is 0, this function's result will be the same as with <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a44bcadcd08a5c494557652d7f75f0e17" title="Assignment operator. ">operator=()</a> </p>
+<p>If <em>over</em> consists of states form a different state space than the existing path, the data from those states is copied over, for the corresponding components. If <em>over</em> is from the same state space as this path, and <em>startIndex</em> is 0, this function's result will be the same as with <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#a44bcadcd08a5c494557652d7f75f0e17" title="Assignment operator.">operator=()</a> </p>
 
 <p class="definition">Definition at line <a class="el" href="PathGeometric_8cpp_source.html#l00432">432</a> of file <a class="el" href="PathGeometric_8cpp_source.html">PathGeometric.cpp</a>.</p>
 
@@ -490,7 +480,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State
 <p>The idea is to look at the triangles formed by consecutive path segments and compute the angle between those segments using Pythagora's theorem. Then, the outside angle for the computed angle is normalized by the path segments and contributes to the path smoothness. For a straight line path, the smoothness will be 0. </p><p class="formulaDsp">
 \[ \mbox{smoothness} = \sum\limits_{i=2}^{n-1}\left(\frac{2\left(\pi - \arccos\left(\frac{a_i^2+b_i^2-c_i^2}{2 a_i b_i}\right)\right)}{a_i + b_i}\right)^2 \]
 </p>
-<p> where \(a_i = \mbox{dist}(s_{i-2}, s_{i-1}), b_i = \mbox{dist}(s_{i-1}, s_{i}), c_i = \mbox{dist}(s_{i-2}, s_i)\), \(s_i\) is the i<sup>th</sup> state along the path (see <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b" title="Get the state located at index along the path. ">getState()</a>) and \(\mbox{dist}(s_i, s_j)\) gives the distance between two states (see <a class="el" href="classompl_1_1base_1_1StateSpace.html#acb781becdcdf8770d61c218632c71bd5" title="Computes distance between two states. This function satisfies the properties of a metric if isMetricS...">ompl::base::StateSpace::distance()</a>). </p>
+<p> where \(a_i = \mbox{dist}(s_{i-2}, s_{i-1}), b_i = \mbox{dist}(s_{i-1}, s_{i}), c_i = \mbox{dist}(s_{i-2}, s_i)\), \(s_i\) is the i<sup>th</sup> state along the path (see <a class="el" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b" title="Get the state located at index along the path.">getState()</a>) and \(\mbox{dist}(s_i, s_j)\) gives the distance between two states (see <a class="el" href="classompl_1_1base_1_1StateSpace.html#acb781becdcdf8770d61c218632c71bd5" title="Computes distance between two states. This function satisfies the properties of a metric if isMetricS...">ompl::base::StateSpace::distance()</a>). </p>
 
 <p class="definition">Definition at line <a class="el" href="PathGeometric_8cpp_source.html#l00123">123</a> of file <a class="el" href="PathGeometric_8cpp_source.html">PathGeometric.cpp</a>.</p>
 
@@ -503,13 +493,13 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -519,6 +509,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

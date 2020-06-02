@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::geometric::aitstar::Vertex Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div><!-- Generated by Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1geometric.html">geometric</a></li><li class="navelem"><b>aitstar</b></li><li class="navelem"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classompl_1_1geometric_1_1aitstar_1_1Vertex-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ompl::geometric::aitstar::Vertex Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a33866f03b8d30c1ddbaaba310c308e0f"><td class="memItemLeft" align="right" valign="top"><a id="a33866f03b8d30c1ddbaaba310c308e0f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a33866f03b8d30c1ddbaaba310c308e0f">Vertex</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;spaceInformation, const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> &amp;problemDefinition, const std::size_t &amp;batchId)</td></tr>
+<tr class="memdesc:a33866f03b8d30c1ddbaaba310c308e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a vertex by sampling a state. <br /></td></tr>
+<tr class="separator:a33866f03b8d30c1ddbaaba310c308e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5530cebe7c91709e212d671211c91e30"><td class="memItemLeft" align="right" valign="top"><a id="a5530cebe7c91709e212d671211c91e30"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5530cebe7c91709e212d671211c91e30">~Vertex</a> ()</td></tr>
+<tr class="memdesc:a5530cebe7c91709e212d671211c91e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the vertex. <br /></td></tr>
+<tr class="separator:a5530cebe7c91709e212d671211c91e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df0ced1a1b84ae7d859ede1ffa05272"><td class="memItemLeft" align="right" valign="top"><a id="a7df0ced1a1b84ae7d859ede1ffa05272"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a7df0ced1a1b84ae7d859ede1ffa05272">getId</a> () const</td></tr>
+<tr class="memdesc:a7df0ced1a1b84ae7d859ede1ffa05272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the unique id of this vertex. <br /></td></tr>
+<tr class="separator:a7df0ced1a1b84ae7d859ede1ffa05272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152ef3a1406fc9b68f98b84ff166ddda"><td class="memItemLeft" align="right" valign="top"><a id="a152ef3a1406fc9b68f98b84ff166ddda"></a>
+<a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a152ef3a1406fc9b68f98b84ff166ddda">getState</a> ()</td></tr>
+<tr class="memdesc:a152ef3a1406fc9b68f98b84ff166ddda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides write access to the underlying state. <br /></td></tr>
+<tr class="separator:a152ef3a1406fc9b68f98b84ff166ddda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f6ebd45282e6ca52343643db9725230"><td class="memItemLeft" align="right" valign="top"><a id="a7f6ebd45282e6ca52343643db9725230"></a>
+<a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a7f6ebd45282e6ca52343643db9725230">getState</a> () const</td></tr>
+<tr class="memdesc:a7f6ebd45282e6ca52343643db9725230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides read access to the underlying state. <br /></td></tr>
+<tr class="separator:a7f6ebd45282e6ca52343643db9725230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f1fdd5c7915a37cfc42c4fa0a906c8"><td class="memItemLeft" align="right" valign="top"><a id="a71f1fdd5c7915a37cfc42c4fa0a906c8"></a>
+<a class="el" href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a71f1fdd5c7915a37cfc42c4fa0a906c8">getScopedState</a> () const</td></tr>
+<tr class="memdesc:a71f1fdd5c7915a37cfc42c4fa0a906c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a scoped copy of the underlying state. <br /></td></tr>
+<tr class="separator:a71f1fdd5c7915a37cfc42c4fa0a906c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb6ede1f03af46b2f2d46c532ed45da"><td class="memItemLeft" align="right" valign="top"><a id="a6fb6ede1f03af46b2f2d46c532ed45da"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6fb6ede1f03af46b2f2d46c532ed45da">getCostToComeFromStart</a> () const</td></tr>
+<tr class="memdesc:a6fb6ede1f03af46b2f2d46c532ed45da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cost to come to this vertex from the start. <br /></td></tr>
+<tr class="separator:a6fb6ede1f03af46b2f2d46c532ed45da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71c6a8fb9ff6f99b2da5d45382098a03"><td class="memItemLeft" align="right" valign="top"><a id="a71c6a8fb9ff6f99b2da5d45382098a03"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a71c6a8fb9ff6f99b2da5d45382098a03">getCostToComeFromGoal</a> () const</td></tr>
+<tr class="memdesc:a71c6a8fb9ff6f99b2da5d45382098a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cost to come to this vertex from the goal. <br /></td></tr>
+<tr class="separator:a71c6a8fb9ff6f99b2da5d45382098a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e8b33969a36f80d330366a82e3cda1a"><td class="memItemLeft" align="right" valign="top"><a id="a1e8b33969a36f80d330366a82e3cda1a"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1e8b33969a36f80d330366a82e3cda1a">getExpandedCostToComeFromGoal</a> () const</td></tr>
+<tr class="memdesc:a1e8b33969a36f80d330366a82e3cda1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cost to come to this vertex from the goal when it was expanded. <br /></td></tr>
+<tr class="separator:a1e8b33969a36f80d330366a82e3cda1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7873fb58ca30ac79c9cd1225dfd8bd"><td class="memItemLeft" align="right" valign="top"><a id="a9d7873fb58ca30ac79c9cd1225dfd8bd"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9d7873fb58ca30ac79c9cd1225dfd8bd">getCostToGoToGoal</a> () const</td></tr>
+<tr class="memdesc:a9d7873fb58ca30ac79c9cd1225dfd8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cost to go heuristic from this vertex. <br /></td></tr>
+<tr class="separator:a9d7873fb58ca30ac79c9cd1225dfd8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a9927ad208a216d80c607b4646079d"><td class="memItemLeft" align="right" valign="top"><a id="ad9a9927ad208a216d80c607b4646079d"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad9a9927ad208a216d80c607b4646079d">getEdgeCostFromForwardParent</a> () const</td></tr>
+<tr class="memdesc:ad9a9927ad208a216d80c607b4646079d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the edge cost from the forward parent. <br /></td></tr>
+<tr class="separator:ad9a9927ad208a216d80c607b4646079d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74caac8ce85580607d48af2820e8aad7"><td class="memItemLeft" align="right" valign="top"><a id="a74caac8ce85580607d48af2820e8aad7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a74caac8ce85580607d48af2820e8aad7">hasForwardParent</a> () const</td></tr>
+<tr class="memdesc:a74caac8ce85580607d48af2820e8aad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this vertex has a parent in the forward search. <br /></td></tr>
+<tr class="separator:a74caac8ce85580607d48af2820e8aad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac50160e0232b506f8dd4a2ccb2746f"><td class="memItemLeft" align="right" valign="top"><a id="a5ac50160e0232b506f8dd4a2ccb2746f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5ac50160e0232b506f8dd4a2ccb2746f">setForwardParent</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex, const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;edgeCost)</td></tr>
+<tr class="memdesc:a5ac50160e0232b506f8dd4a2ccb2746f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the parent vertex (in the forward-search tree). <br /></td></tr>
+<tr class="separator:a5ac50160e0232b506f8dd4a2ccb2746f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af825ceb63181927849136668afe874b9"><td class="memItemLeft" align="right" valign="top"><a id="af825ceb63181927849136668afe874b9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#af825ceb63181927849136668afe874b9">resetForwardParent</a> ()</td></tr>
+<tr class="memdesc:af825ceb63181927849136668afe874b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the forward parent of the vertex. <br /></td></tr>
+<tr class="separator:af825ceb63181927849136668afe874b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49ac08fe881484fe4ce838a7106ea63"><td class="memItemLeft" align="right" valign="top"><a id="ab49ac08fe881484fe4ce838a7106ea63"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab49ac08fe881484fe4ce838a7106ea63">hasReverseParent</a> () const</td></tr>
+<tr class="memdesc:ab49ac08fe881484fe4ce838a7106ea63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this vertex has a parent in the reverse search. <br /></td></tr>
+<tr class="separator:ab49ac08fe881484fe4ce838a7106ea63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dde7e4048681ebf5c1174eaa6886b8a"><td class="memItemLeft" align="right" valign="top"><a id="a9dde7e4048681ebf5c1174eaa6886b8a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9dde7e4048681ebf5c1174eaa6886b8a">setReverseParent</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex)</td></tr>
+<tr class="memdesc:a9dde7e4048681ebf5c1174eaa6886b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the parent vertex (in the reverse-search tree). <br /></td></tr>
+<tr class="separator:a9dde7e4048681ebf5c1174eaa6886b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193fb1ff06fbc31c0de71ec9400f7013"><td class="memItemLeft" align="right" valign="top"><a id="a193fb1ff06fbc31c0de71ec9400f7013"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a193fb1ff06fbc31c0de71ec9400f7013">resetReverseParent</a> ()</td></tr>
+<tr class="memdesc:a193fb1ff06fbc31c0de71ec9400f7013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the reverse parent of the vertex. <br /></td></tr>
+<tr class="separator:a193fb1ff06fbc31c0de71ec9400f7013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e42a9adf4e0d4a100bf2dd3674ca90"><td class="memItemLeft" align="right" valign="top"><a id="ad5e42a9adf4e0d4a100bf2dd3674ca90"></a>
+std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad5e42a9adf4e0d4a100bf2dd3674ca90">getForwardParent</a> () const</td></tr>
+<tr class="memdesc:ad5e42a9adf4e0d4a100bf2dd3674ca90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parent of the vertex (in the forward-search tree). <br /></td></tr>
+<tr class="separator:ad5e42a9adf4e0d4a100bf2dd3674ca90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc05e4c5ed6a21c9f3d3e05373d040c"><td class="memItemLeft" align="right" valign="top"><a id="aebc05e4c5ed6a21c9f3d3e05373d040c"></a>
+std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aebc05e4c5ed6a21c9f3d3e05373d040c">getReverseParent</a> () const</td></tr>
+<tr class="memdesc:aebc05e4c5ed6a21c9f3d3e05373d040c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parent of the vertex (in the reverse-search tree). <br /></td></tr>
+<tr class="separator:aebc05e4c5ed6a21c9f3d3e05373d040c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8864dce1fd9f9c1d545ccac5d299956b"><td class="memItemLeft" align="right" valign="top"><a id="a8864dce1fd9f9c1d545ccac5d299956b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a8864dce1fd9f9c1d545ccac5d299956b">setForwardEdgeCost</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost)</td></tr>
+<tr class="memdesc:a8864dce1fd9f9c1d545ccac5d299956b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cost to come to this vertex. <br /></td></tr>
+<tr class="separator:a8864dce1fd9f9c1d545ccac5d299956b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7ace9d2728edfc6fe785202c17022a"><td class="memItemLeft" align="right" valign="top"><a id="acf7ace9d2728edfc6fe785202c17022a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#acf7ace9d2728edfc6fe785202c17022a">setCostToComeFromStart</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost)</td></tr>
+<tr class="memdesc:acf7ace9d2728edfc6fe785202c17022a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cost to come to this vertex. <br /></td></tr>
+<tr class="separator:acf7ace9d2728edfc6fe785202c17022a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0aa769627a92b3828709f274809b5f"><td class="memItemLeft" align="right" valign="top"><a id="a6c0aa769627a92b3828709f274809b5f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6c0aa769627a92b3828709f274809b5f">setCostToComeFromGoal</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost)</td></tr>
+<tr class="memdesc:a6c0aa769627a92b3828709f274809b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cost to come to this vertex from the goal. <br /></td></tr>
+<tr class="separator:a6c0aa769627a92b3828709f274809b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739be588ca82d87a6315bcd7986534ef"><td class="memItemLeft" align="right" valign="top"><a id="a739be588ca82d87a6315bcd7986534ef"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a739be588ca82d87a6315bcd7986534ef">setExpandedCostToComeFromGoal</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost)</td></tr>
+<tr class="memdesc:a739be588ca82d87a6315bcd7986534ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cost to come to this vertex from the goal when it was expanded. <br /></td></tr>
+<tr class="separator:a739be588ca82d87a6315bcd7986534ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4eb953b1769ed4f936db83f9e8bd6ac"><td class="memItemLeft" align="right" valign="top"><a id="ad4eb953b1769ed4f936db83f9e8bd6ac"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ad4eb953b1769ed4f936db83f9e8bd6ac">setCostToGoToGoal</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost)</td></tr>
+<tr class="memdesc:ad4eb953b1769ed4f936db83f9e8bd6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cost to go heuristic of this vertex. <br /></td></tr>
+<tr class="separator:ad4eb953b1769ed4f936db83f9e8bd6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c82604f227b07f46affb89893f2b64"><td class="memItemLeft" align="right" valign="top"><a id="a84c82604f227b07f46affb89893f2b64"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a84c82604f227b07f46affb89893f2b64">updateCostOfForwardBranch</a> () const</td></tr>
+<tr class="memdesc:a84c82604f227b07f46affb89893f2b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the cost to the whole branch rooted at this vertex. <br /></td></tr>
+<tr class="separator:a84c82604f227b07f46affb89893f2b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1e077d6ccde8624cdc0c137c5f88bb"><td class="memItemLeft" align="right" valign="top"><a id="acd1e077d6ccde8624cdc0c137c5f88bb"></a>
+std::vector&lt; std::weak_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">aitstar::Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#acd1e077d6ccde8624cdc0c137c5f88bb">invalidateReverseBranch</a> ()</td></tr>
+<tr class="memdesc:acd1e077d6ccde8624cdc0c137c5f88bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively invalidates the branch of the reverse tree rooted in this vertex. <br /></td></tr>
+<tr class="separator:acd1e077d6ccde8624cdc0c137c5f88bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13cf5ba4429b5b3878ee1cf141693557"><td class="memItemLeft" align="right" valign="top"><a id="a13cf5ba4429b5b3878ee1cf141693557"></a>
+std::vector&lt; std::weak_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">aitstar::Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a13cf5ba4429b5b3878ee1cf141693557">invalidateForwardBranch</a> ()</td></tr>
+<tr class="memdesc:a13cf5ba4429b5b3878ee1cf141693557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively invalidates the branch of the forward tree rooted in this vertex. <br /></td></tr>
+<tr class="separator:a13cf5ba4429b5b3878ee1cf141693557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82cd8366075c20d3d42019e65bb319ff"><td class="memItemLeft" align="right" valign="top"><a id="a82cd8366075c20d3d42019e65bb319ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a82cd8366075c20d3d42019e65bb319ff">addToForwardChildren</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex)</td></tr>
+<tr class="memdesc:a82cd8366075c20d3d42019e65bb319ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a vertex to this vertex's forward children. <br /></td></tr>
+<tr class="separator:a82cd8366075c20d3d42019e65bb319ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff3bdf66ea8c6272e4bbbd7e47f306f"><td class="memItemLeft" align="right" valign="top"><a id="a3ff3bdf66ea8c6272e4bbbd7e47f306f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a3ff3bdf66ea8c6272e4bbbd7e47f306f">removeFromForwardChildren</a> (std::size_t vertexId)</td></tr>
+<tr class="memdesc:a3ff3bdf66ea8c6272e4bbbd7e47f306f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a vertex from this vertex's forward children. <br /></td></tr>
+<tr class="separator:a3ff3bdf66ea8c6272e4bbbd7e47f306f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfce85b19d1c04b3e489a7a059930772"><td class="memItemLeft" align="right" valign="top"><a id="adfce85b19d1c04b3e489a7a059930772"></a>
+std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#adfce85b19d1c04b3e489a7a059930772">getForwardChildren</a> () const</td></tr>
+<tr class="memdesc:adfce85b19d1c04b3e489a7a059930772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns this vertex's children in the forward search tree. <br /></td></tr>
+<tr class="separator:adfce85b19d1c04b3e489a7a059930772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70443096da78d1e99cddb8298fc75899"><td class="memItemLeft" align="right" valign="top"><a id="a70443096da78d1e99cddb8298fc75899"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a70443096da78d1e99cddb8298fc75899">addToReverseChildren</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex)</td></tr>
+<tr class="memdesc:a70443096da78d1e99cddb8298fc75899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a vertex this vertex's children. <br /></td></tr>
+<tr class="separator:a70443096da78d1e99cddb8298fc75899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeda9515e8cdc5179bd486b9c34fd3c7"><td class="memItemLeft" align="right" valign="top"><a id="aaeda9515e8cdc5179bd486b9c34fd3c7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aaeda9515e8cdc5179bd486b9c34fd3c7">removeFromReverseChildren</a> (std::size_t vertexId)</td></tr>
+<tr class="memdesc:aaeda9515e8cdc5179bd486b9c34fd3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a vertex from this vertex's forward children. <br /></td></tr>
+<tr class="separator:aaeda9515e8cdc5179bd486b9c34fd3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020f3a3bc6e6f7048c32452a817b029e"><td class="memItemLeft" align="right" valign="top"><a id="a020f3a3bc6e6f7048c32452a817b029e"></a>
+std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a020f3a3bc6e6f7048c32452a817b029e">getReverseChildren</a> () const</td></tr>
+<tr class="memdesc:a020f3a3bc6e6f7048c32452a817b029e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns this vertex's children in the reverse search tree. <br /></td></tr>
+<tr class="separator:a020f3a3bc6e6f7048c32452a817b029e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e793d8334e9d0915d4b8dfcc3ea335"><td class="memItemLeft" align="right" valign="top"><a id="ab0e793d8334e9d0915d4b8dfcc3ea335"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab0e793d8334e9d0915d4b8dfcc3ea335">whitelistAsChild</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:ab0e793d8334e9d0915d4b8dfcc3ea335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whitelists a child. <br /></td></tr>
+<tr class="separator:ab0e793d8334e9d0915d4b8dfcc3ea335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a828d1110a2d1e56eb262453c417ad2"><td class="memItemLeft" align="right" valign="top"><a id="a1a828d1110a2d1e56eb262453c417ad2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1a828d1110a2d1e56eb262453c417ad2">isWhitelistedAsChild</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:a1a828d1110a2d1e56eb262453c417ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a child is whitelisted. <br /></td></tr>
+<tr class="separator:a1a828d1110a2d1e56eb262453c417ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d64c6ce84cff8bc564e0fa3ae9d54ed"><td class="memItemLeft" align="right" valign="top"><a id="a1d64c6ce84cff8bc564e0fa3ae9d54ed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a1d64c6ce84cff8bc564e0fa3ae9d54ed">blacklistAsChild</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:a1d64c6ce84cff8bc564e0fa3ae9d54ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blacklists a child. <br /></td></tr>
+<tr class="separator:a1d64c6ce84cff8bc564e0fa3ae9d54ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ffb784facf0eb6e3ced6bcbbe0a4d7"><td class="memItemLeft" align="right" valign="top"><a id="a75ffb784facf0eb6e3ced6bcbbe0a4d7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a75ffb784facf0eb6e3ced6bcbbe0a4d7">isBlacklistedAsChild</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:a75ffb784facf0eb6e3ced6bcbbe0a4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether a child is blacklisted. <br /></td></tr>
+<tr class="separator:a75ffb784facf0eb6e3ced6bcbbe0a4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401786f869c76b39cdacafefdd0ba16c"><td class="memItemLeft" align="right" valign="top"><a id="a401786f869c76b39cdacafefdd0ba16c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a401786f869c76b39cdacafefdd0ba16c">hasCachedNeighbors</a> () const</td></tr>
+<tr class="memdesc:a401786f869c76b39cdacafefdd0ba16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the vertex knows its nearest neighbors on the current approximation. <br /></td></tr>
+<tr class="separator:a401786f869c76b39cdacafefdd0ba16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4515b0cbbe5284707a919b7ad816738"><td class="memItemLeft" align="right" valign="top"><a id="ae4515b0cbbe5284707a919b7ad816738"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ae4515b0cbbe5284707a919b7ad816738">cacheNeighbors</a> (const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&gt; &amp;neighbors) const</td></tr>
+<tr class="memdesc:ae4515b0cbbe5284707a919b7ad816738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caches the neighbors for the current approximation. <br /></td></tr>
+<tr class="separator:ae4515b0cbbe5284707a919b7ad816738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb16a3d91169246e85530111e4ae170"><td class="memItemLeft" align="right" valign="top"><a id="a3bb16a3d91169246e85530111e4ae170"></a>
+const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a3bb16a3d91169246e85530111e4ae170">getNeighbors</a> () const</td></tr>
+<tr class="memdesc:a3bb16a3d91169246e85530111e4ae170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the nearest neighbors, throws if not up to date. <br /></td></tr>
+<tr class="separator:a3bb16a3d91169246e85530111e4ae170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d1a02dbc86132630fa3d1e0de16d9e"><td class="memItemLeft" align="right" valign="top"><a id="a29d1a02dbc86132630fa3d1e0de16d9e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a29d1a02dbc86132630fa3d1e0de16d9e">registerPoppedOutgoingEdgeDuringForwardSearch</a> ()</td></tr>
+<tr class="memdesc:a29d1a02dbc86132630fa3d1e0de16d9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers that a child has been added to this vertex during the current forward search. <br /></td></tr>
+<tr class="separator:a29d1a02dbc86132630fa3d1e0de16d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a8f8354ca1f00680a19b5cf849403e"><td class="memItemLeft" align="right" valign="top"><a id="ab9a8f8354ca1f00680a19b5cf849403e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab9a8f8354ca1f00680a19b5cf849403e">registerExpansionDuringReverseSearch</a> ()</td></tr>
+<tr class="memdesc:ab9a8f8354ca1f00680a19b5cf849403e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the expansion of this vertex during the current reverse search. <br /></td></tr>
+<tr class="separator:ab9a8f8354ca1f00680a19b5cf849403e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad5d751340069a30e01fd8252f95816d"><td class="memItemLeft" align="right" valign="top"><a id="aad5d751340069a30e01fd8252f95816d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aad5d751340069a30e01fd8252f95816d">unregisterExpansionDuringReverseSearch</a> ()</td></tr>
+<tr class="memdesc:aad5d751340069a30e01fd8252f95816d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the expansion of this vertex during the current reverse search, needed when a reverse branch is invalidated due to a collision detection on an edge. <br /></td></tr>
+<tr class="separator:aad5d751340069a30e01fd8252f95816d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda32fd81a707d37112893ee0d12fd98"><td class="memItemLeft" align="right" valign="top"><a id="adda32fd81a707d37112893ee0d12fd98"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#adda32fd81a707d37112893ee0d12fd98">registerInsertionIntoQueueDuringReverseSearch</a> ()</td></tr>
+<tr class="memdesc:adda32fd81a707d37112893ee0d12fd98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the insertion of this vertex into the open queue during the current reverse search. <br /></td></tr>
+<tr class="separator:adda32fd81a707d37112893ee0d12fd98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f65e77acd4a5866b53b2bca464b88d3"><td class="memItemLeft" align="right" valign="top"><a id="a2f65e77acd4a5866b53b2bca464b88d3"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a2f65e77acd4a5866b53b2bca464b88d3">hasHadOutgoingEdgePoppedDuringCurrentForwardSearch</a> () const</td></tr>
+<tr class="memdesc:a2f65e77acd4a5866b53b2bca464b88d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the vertex has had an outgoing edge popped during the current forward search. <br /></td></tr>
+<tr class="separator:a2f65e77acd4a5866b53b2bca464b88d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a451831d2465b46f62e494cf0c52ca8af"><td class="memItemLeft" align="right" valign="top"><a id="a451831d2465b46f62e494cf0c52ca8af"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a451831d2465b46f62e494cf0c52ca8af">hasBeenExpandedDuringCurrentReverseSearch</a> () const</td></tr>
+<tr class="memdesc:a451831d2465b46f62e494cf0c52ca8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the vertex has been expanded during the current reverse search. <br /></td></tr>
+<tr class="separator:a451831d2465b46f62e494cf0c52ca8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4a0cc16ef58194b737136ae1665a76"><td class="memItemLeft" align="right" valign="top"><a id="aed4a0cc16ef58194b737136ae1665a76"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#aed4a0cc16ef58194b737136ae1665a76">hasBeenInsertedIntoQueueDuringCurrentReverseSearch</a> () const</td></tr>
+<tr class="memdesc:aed4a0cc16ef58194b737136ae1665a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the vertex has been inserted into the queue during the current reverse search. <br /></td></tr>
+<tr class="separator:aed4a0cc16ef58194b737136ae1665a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb120dd389290c6b3ba0b7987179072"><td class="memItemLeft" align="right" valign="top"><a id="a4fb120dd389290c6b3ba0b7987179072"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a4fb120dd389290c6b3ba0b7987179072">setReverseQueuePointer</a> (typename <a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; std::pair&lt; std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 2u &gt;, std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&gt;, std::function&lt; bool(const std::pair&lt; std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 2u &gt;, std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&gt; &amp;, const std::pair&lt; std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 2u &gt;, std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&gt; &amp;)&gt;&gt;::Element *pointer)</td></tr>
+<tr class="memdesc:a4fb120dd389290c6b3ba0b7987179072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the reverse queue pointer of this vertex. <br /></td></tr>
+<tr class="separator:a4fb120dd389290c6b3ba0b7987179072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a87d3600207bb245855f7ed30e96d52"><td class="memItemLeft" align="right" valign="top"><a id="a6a87d3600207bb245855f7ed30e96d52"></a>
+<a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; std::pair&lt; std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 2u &gt;, std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt; &gt;, std::function&lt; bool(const std::pair&lt; std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 2u &gt;, std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&gt; &amp;, const std::pair&lt; std::array&lt; <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>, 2u &gt;, std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html">Vertex</a> &gt;&gt; &amp;)&gt; &gt;::Element *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a6a87d3600207bb245855f7ed30e96d52">getReverseQueuePointer</a> () const</td></tr>
+<tr class="memdesc:a6a87d3600207bb245855f7ed30e96d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the reverse queue pointer of this vertex. <br /></td></tr>
+<tr class="separator:a6a87d3600207bb245855f7ed30e96d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1c8174c35162a164ccee68d7223691"><td class="memItemLeft" align="right" valign="top"><a id="a5e1c8174c35162a164ccee68d7223691"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a5e1c8174c35162a164ccee68d7223691">resetReverseQueuePointer</a> ()</td></tr>
+<tr class="memdesc:a5e1c8174c35162a164ccee68d7223691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the reverse queue pointer. <br /></td></tr>
+<tr class="separator:a5e1c8174c35162a164ccee68d7223691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54e399d0140657384e1dcb4daac8ba5"><td class="memItemLeft" align="right" valign="top"><a id="ae54e399d0140657384e1dcb4daac8ba5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ae54e399d0140657384e1dcb4daac8ba5">addToForwardQueueIncomingLookup</a> (typename <a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element *pointer)</td></tr>
+<tr class="memdesc:ae54e399d0140657384e1dcb4daac8ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the forward queue incoming lookup. <br /></td></tr>
+<tr class="separator:ae54e399d0140657384e1dcb4daac8ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab058469b6c69ad79c0ddb772175e5a4c"><td class="memItemLeft" align="right" valign="top"><a id="ab058469b6c69ad79c0ddb772175e5a4c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#ab058469b6c69ad79c0ddb772175e5a4c">addToForwardQueueOutgoingLookup</a> (typename <a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element *pointer)</td></tr>
+<tr class="memdesc:ab058469b6c69ad79c0ddb772175e5a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the forward queue outgoing lookup. <br /></td></tr>
+<tr class="separator:ab058469b6c69ad79c0ddb772175e5a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c3d66f17cb19c5ce5c8d81540a186b"><td class="memItemLeft" align="right" valign="top"><a id="a16c3d66f17cb19c5ce5c8d81540a186b"></a>
+std::vector&lt; <a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt; &gt;::Element * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a16c3d66f17cb19c5ce5c8d81540a186b">getForwardQueueIncomingLookup</a> () const</td></tr>
+<tr class="memdesc:a16c3d66f17cb19c5ce5c8d81540a186b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the forward queue incoming lookup of this vertex. <br /></td></tr>
+<tr class="separator:a16c3d66f17cb19c5ce5c8d81540a186b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e21a5ba7348ee92aaf6574c319ad64"><td class="memItemLeft" align="right" valign="top"><a id="a56e21a5ba7348ee92aaf6574c319ad64"></a>
+std::vector&lt; <a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt; &gt;::Element * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a56e21a5ba7348ee92aaf6574c319ad64">getForwardQueueOutgoingLookup</a> () const</td></tr>
+<tr class="memdesc:a56e21a5ba7348ee92aaf6574c319ad64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the forward queue outgoing lookup of this vertex. <br /></td></tr>
+<tr class="separator:a56e21a5ba7348ee92aaf6574c319ad64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1b602d70a2376ca4905ad2b25b062e"><td class="memItemLeft" align="right" valign="top"><a id="abc1b602d70a2376ca4905ad2b25b062e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#abc1b602d70a2376ca4905ad2b25b062e">removeFromForwardQueueIncomingLookup</a> (<a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element *element)</td></tr>
+<tr class="memdesc:abc1b602d70a2376ca4905ad2b25b062e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an element from the incoming queue lookup. <br /></td></tr>
+<tr class="separator:abc1b602d70a2376ca4905ad2b25b062e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a466214ef6ed61cd4719157cbf4fb4a"><td class="memItemLeft" align="right" valign="top"><a id="a9a466214ef6ed61cd4719157cbf4fb4a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a9a466214ef6ed61cd4719157cbf4fb4a">removeFromForwardQueueOutgoingLookup</a> (<a class="el" href="classompl_1_1BinaryHeap.html">ompl::BinaryHeap</a>&lt; <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a>, std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Edge.html">aitstar::Edge</a> &amp;)&gt;&gt;::Element *element)</td></tr>
+<tr class="memdesc:a9a466214ef6ed61cd4719157cbf4fb4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an element from the outgoing queue lookup. <br /></td></tr>
+<tr class="separator:a9a466214ef6ed61cd4719157cbf4fb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768a19ee5b580a7e455fe42370bbf2c2"><td class="memItemLeft" align="right" valign="top"><a id="a768a19ee5b580a7e455fe42370bbf2c2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a768a19ee5b580a7e455fe42370bbf2c2">resetForwardQueueIncomingLookup</a> ()</td></tr>
+<tr class="memdesc:a768a19ee5b580a7e455fe42370bbf2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the forward queue incoming lookup. <br /></td></tr>
+<tr class="separator:a768a19ee5b580a7e455fe42370bbf2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297e624120d40744676ec64e6885e691"><td class="memItemLeft" align="right" valign="top"><a id="a297e624120d40744676ec64e6885e691"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1aitstar_1_1Vertex.html#a297e624120d40744676ec64e6885e691">resetForwardQueueOutgoingLookup</a> ()</td></tr>
+<tr class="memdesc:a297e624120d40744676ec64e6885e691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the forward queue outgoing lookup. <br /></td></tr>
+<tr class="separator:a297e624120d40744676ec64e6885e691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="aitstar_2Vertex_8h_source.html#l00154">154</a> of file <a class="el" href="aitstar_2Vertex_8h_source.html">Vertex.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/geometric/planners/informedtrees/aitstar/<a class="el" href="aitstar_2Vertex_8h_source.html">Vertex.h</a></li>
+<li>ompl/geometric/planners/informedtrees/aitstar/src/<a class="el" href="aitstar_2src_2Vertex_8cpp_source.html">Vertex.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

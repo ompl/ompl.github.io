@@ -1,19 +1,7 @@
 var searchData=
 [
-  ['sampler',['Sampler',['../classompl_1_1base_1_1StateSamplerArray.html#a975d4bc341acf6116a94fdc6f050cc01',1,'ompl::base::StateSamplerArray']]],
-  ['samplerptr',['SamplerPtr',['../classompl_1_1base_1_1StateSamplerArray.html#a0869da074058c67fb600d355c0d8a9c4',1,'ompl::base::StateSamplerArray']]],
-  ['scopedstateptr',['ScopedStatePtr',['../namespaceompl_1_1base.html#a0ac8aab470d9f1b1ce41376f9eeebf8f',1,'ompl::base']]],
-  ['scopedstatetype',['ScopedStateType',['../classompl_1_1base_1_1TypedSpaceInformation.html#a9ddeb55dc86ed9f767bf9c50c2648456',1,'ompl::base::TypedSpaceInformation']]],
-  ['setterfn',['SetterFn',['../classompl_1_1base_1_1SpecificParam.html#a2d44f9d40d6f4705c346809927aa05bf',1,'ompl::base::SpecificParam']]],
-  ['spaceptr',['SpacePtr',['../classompl_1_1base_1_1TypedSpaceInformation.html#a549e276b9a6e68e9d66cafd132f96aa7',1,'ompl::base::TypedSpaceInformation']]],
-  ['spacetype',['SpaceType',['../classompl_1_1base_1_1TypedSpaceInformation.html#ad7e706625125e4a02ee0f6cfae132c7d',1,'ompl::base::TypedSpaceInformation']]],
-  ['spannergraph',['SpannerGraph',['../classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914',1,'ompl::geometric::SPARS']]],
-  ['sparsdbptr',['SPARSdbPtr',['../namespaceompl_1_1tools.html#a7369c3bd0449509dfc5fcd9a8c5b7bd8',1,'ompl::tools']]],
-  ['sparseedge',['SparseEdge',['../classompl_1_1geometric_1_1SPARS.html#af3cb7d22c7e537c197e480f25ef5319f',1,'ompl::geometric::SPARS']]],
-  ['sparseneighbors',['SparseNeighbors',['../classompl_1_1geometric_1_1SPARS.html#ae197310fae04def0d1a8e91bfab761a1',1,'ompl::geometric::SPARS']]],
-  ['sparsevertex',['SparseVertex',['../classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab',1,'ompl::geometric::SPARS']]],
-  ['statepropagatorfn',['StatePropagatorFn',['../namespaceompl_1_1control.html#a9f8d45a0a6856ae47bb0823f0f015962',1,'ompl::control']]],
-  ['statesamplerallocator',['StateSamplerAllocator',['../namespaceompl_1_1base.html#a557e351077f8cfa4cdc65d063ffc6262',1,'ompl::base']]],
-  ['statetype',['StateType',['../classompl_1_1base_1_1ScopedState.html#a5a33e968e72f92b5e25bdf3e2feaa0c6',1,'ompl::base::ScopedState::StateType()'],['../classompl_1_1base_1_1StateSpace.html#a7d7aa9ecaf711b534e7d4f8b6472e898',1,'ompl::base::StateSpace::StateType()'],['../classompl_1_1base_1_1CompoundStateSpace.html#a8f8adc95448072a01b13bfb573abf799',1,'ompl::base::CompoundStateSpace::StateType()'],['../classompl_1_1base_1_1TypedSpaceInformation.html#a0119f3c8370a3b2fdef4ed330b79381e',1,'ompl::base::TypedSpaceInformation::StateType()'],['../classompl_1_1control_1_1ODESolver.html#a89dbf06c71fe9fa377dfa12184f1b597',1,'ompl::control::ODESolver::StateType()']]],
-  ['statevaliditycheckerfn',['StateValidityCheckerFn',['../namespaceompl_1_1base.html#ad2db51d298c5e969437078e1e12e0e57',1,'ompl::base']]]
+  ['reference_5648',['reference',['../classompl_1_1geometric_1_1SPARSdb_1_1edgeWeightMap.html#a390c7c424fa96f7817b0163921a0844a',1,'ompl::geometric::SPARSdb::edgeWeightMap']]],
+  ['reportintermediatesolutionfn_5649',['ReportIntermediateSolutionFn',['../namespaceompl_1_1base.html#a2654ca90af54f839e5aa8936f1e23351',1,'ompl::base']]],
+  ['roadmapneighbors_5650',['RoadmapNeighbors',['../classompl_1_1geometric_1_1LazyPRM.html#a522222dd27c3cf391ad8ed7d2d54b658',1,'ompl::geometric::LazyPRM::RoadmapNeighbors()'],['../classompl_1_1geometric_1_1PRM.html#a16590ccd7c12b34b89961129eeae7736',1,'ompl::geometric::PRM::RoadmapNeighbors()']]],
+  ['runproperties_5651',['RunProperties',['../classompl_1_1tools_1_1Benchmark.html#ad660e80e710f6fd524d865bc232311e5',1,'ompl::tools::Benchmark']]]
 ];

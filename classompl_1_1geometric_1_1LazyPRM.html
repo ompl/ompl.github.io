@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::geometric::LazyPRM Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::geometric::LazyPRM Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -175,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Lazy Probabilistic RoadMap planner.
+<p>Lazy Probabilistic RoadMap planner.  
  <a href="classompl_1_1geometric_1_1LazyPRM.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="LazyPRM_8h_source.html">ompl/geometric/planners/prm/LazyPRM.h</a>&gt;</code></p>
@@ -184,8 +169,9 @@ Inheritance diagram for ompl::geometric::LazyPRM:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1geometric_1_1LazyPRM__inherit__graph.png" border="0" usemap="#ompl_1_1geometric_1_1LazyPRM_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1geometric_1_1LazyPRM_inherit__map" id="ompl_1_1geometric_1_1LazyPRM_inherit__map">
-<area shape="rect" id="node3" href="classompl_1_1geometric_1_1LazyPRMstar.html" title="PRM* planner. " alt="" coords="5,155,209,181"/>
-<area shape="rect" id="node2" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. " alt="" coords="37,5,177,32"/>
+<area shape="rect" title="Lazy Probabilistic RoadMap planner." alt="" coords="16,80,199,107"/>
+<area shape="rect" href="classompl_1_1geometric_1_1LazyPRMstar.html" title="PRM* planner." alt="" coords="5,155,209,181"/>
+<area shape="rect" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner." alt="" coords="37,5,177,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -202,44 +188,48 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a832a28e2d5e40f583ca6e33ad6dad681"><td class="memItemLeft" align="right" valign="top"><a id="a832a28e2d5e40f583ca6e33ad6dad681"></a>
-typedef boost::adjacency_list_traits&lt; boost::vecS, boost::listS, boost::undirectedS &gt;::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a></td></tr>
-<tr class="memdesc:a832a28e2d5e40f583ca6e33ad6dad681"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for a vertex in the roadmap. <br /></td></tr>
-<tr class="separator:a832a28e2d5e40f583ca6e33ad6dad681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7fb53233972c380415cf86d1b1bbc2f"><td class="memItemLeft" align="right" valign="top">typedef boost::adjacency_list&lt; boost::vecS, boost::listS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_index_t, unsigned long int, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__flags__t.html">vertex_flags_t</a>, unsigned int, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__component__t.html">vertex_component_t</a>, unsigned long int, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a>, boost::property&lt; boost::vertex_rank_t, unsigned long int &gt; &gt; &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1edge__flags__t.html">edge_flags_t</a>, unsigned int &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a></td></tr>
-<tr class="memdesc:ae7fb53233972c380415cf86d1b1bbc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying roadmap graph.  <a href="#ae7fb53233972c380415cf86d1b1bbc2f">More...</a><br /></td></tr>
-<tr class="separator:ae7fb53233972c380415cf86d1b1bbc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31a9a1b56b9bdfe92f08bdac56dfca43"><td class="memItemLeft" align="right" valign="top"><a id="a31a9a1b56b9bdfe92f08bdac56dfca43"></a>
-typedef boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a> &gt;::edge_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a31a9a1b56b9bdfe92f08bdac56dfca43">Edge</a></td></tr>
-<tr class="memdesc:a31a9a1b56b9bdfe92f08bdac56dfca43"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for an edge in the roadmap. <br /></td></tr>
-<tr class="separator:a31a9a1b56b9bdfe92f08bdac56dfca43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c1404816481de05f47380c3fa3c4c1"><td class="memItemLeft" align="right" valign="top"><a id="aa0c1404816481de05f47380c3fa3c4c1"></a>
-typedef std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa0c1404816481de05f47380c3fa3c4c1">RoadmapNeighbors</a></td></tr>
-<tr class="memdesc:aa0c1404816481de05f47380c3fa3c4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nearest neighbors data structure for roadmap vertices. <br /></td></tr>
-<tr class="separator:aa0c1404816481de05f47380c3fa3c4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa983e17f7a2c70447304d940bad9adc4"><td class="memItemLeft" align="right" valign="top"><a id="aa983e17f7a2c70447304d940bad9adc4"></a>
-typedef std::function&lt; const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &gt; &amp;(const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa983e17f7a2c70447304d940bad9adc4">ConnectionStrategy</a></td></tr>
-<tr class="memdesc:aa983e17f7a2c70447304d940bad9adc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function returning the milestones that should be attempted to connect to. <br /></td></tr>
-<tr class="separator:aa983e17f7a2c70447304d940bad9adc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2146c85e4e5bde8ec9b9ff350fa3b894"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a2146c85e4e5bde8ec9b9ff350fa3b894">ConnectionFilter</a></td></tr>
-<tr class="memdesc:a2146c85e4e5bde8ec9b9ff350fa3b894"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that can reject connections.  <a href="#a2146c85e4e5bde8ec9b9ff350fa3b894">More...</a><br /></td></tr>
-<tr class="separator:a2146c85e4e5bde8ec9b9ff350fa3b894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3444b46b9abe6276a820c5792b3e9d9d"><td class="memItemLeft" align="right" valign="top"><a id="a3444b46b9abe6276a820c5792b3e9d9d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> = boost::adjacency_list_traits&lt; boost::vecS, boost::listS, boost::undirectedS &gt;::vertex_descriptor</td></tr>
+<tr class="memdesc:a3444b46b9abe6276a820c5792b3e9d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for a vertex in the roadmap. <br /></td></tr>
+<tr class="separator:a3444b46b9abe6276a820c5792b3e9d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98dd9d439eec42797973cf6a945603d9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a> = boost::adjacency_list&lt; boost::vecS, boost::listS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_index_t, unsigned long int, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__flags__t.html">vertex_flags_t</a>, unsigned int, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__component__t.html">vertex_component_t</a>, unsigned long int, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a>, boost::property&lt; boost::vertex_rank_t, unsigned long int &gt; &gt;&gt; &gt;&gt; &gt;, boost::property&lt; boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1edge__flags__t.html">edge_flags_t</a>, unsigned int &gt; &gt;&gt;</td></tr>
+<tr class="memdesc:a98dd9d439eec42797973cf6a945603d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying roadmap graph.  <a href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">More...</a><br /></td></tr>
+<tr class="separator:a98dd9d439eec42797973cf6a945603d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f6dc9cc10f3a2ac5e8631f61d0436e"><td class="memItemLeft" align="right" valign="top"><a id="ae7f6dc9cc10f3a2ac5e8631f61d0436e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7f6dc9cc10f3a2ac5e8631f61d0436e">Edge</a> = boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a> &gt;::edge_descriptor</td></tr>
+<tr class="memdesc:ae7f6dc9cc10f3a2ac5e8631f61d0436e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for an edge in the roadmap. <br /></td></tr>
+<tr class="separator:ae7f6dc9cc10f3a2ac5e8631f61d0436e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522222dd27c3cf391ad8ed7d2d54b658"><td class="memItemLeft" align="right" valign="top"><a id="a522222dd27c3cf391ad8ed7d2d54b658"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a522222dd27c3cf391ad8ed7d2d54b658">RoadmapNeighbors</a> = std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a522222dd27c3cf391ad8ed7d2d54b658"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nearest neighbors data structure for roadmap vertices. <br /></td></tr>
+<tr class="separator:a522222dd27c3cf391ad8ed7d2d54b658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a499a121ce9a9d4b63b5d2371c41cb283"><td class="memItemLeft" align="right" valign="top"><a id="a499a121ce9a9d4b63b5d2371c41cb283"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a499a121ce9a9d4b63b5d2371c41cb283">ConnectionStrategy</a> = std::function&lt; const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &gt; &amp;(const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a>)&gt;</td></tr>
+<tr class="memdesc:a499a121ce9a9d4b63b5d2371c41cb283"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function returning the milestones that should be attempted to connect to. <br /></td></tr>
+<tr class="separator:a499a121ce9a9d4b63b5d2371c41cb283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce43622537c7f1a5e7307438fb3af08"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#adce43622537c7f1a5e7307438fb3af08">ConnectionFilter</a> = std::function&lt; bool(const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:adce43622537c7f1a5e7307438fb3af08"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that can reject connections.  <a href="classompl_1_1geometric_1_1LazyPRM.html#adce43622537c7f1a5e7307438fb3af08">More...</a><br /></td></tr>
+<tr class="separator:adce43622537c7f1a5e7307438fb3af08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
-<tr class="memitem:ad35ad462773b75e3f3ec411bed1bd260 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="ad35ad462773b75e3f3ec411bed1bd260"></a>
-typedef std::function&lt; std::string()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a></td></tr>
-<tr class="memdesc:ad35ad462773b75e3f3ec411bed1bd260 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a function which returns a property about the planner's progress that can be queried by a benchmarking routine. <br /></td></tr>
-<tr class="separator:ad35ad462773b75e3f3ec411bed1bd260 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a919f116d094eb88e4c877c44531c2b75"></a>
-typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a></td></tr>
-<tr class="memdesc:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which maps the name of a progress property to the function to be used for querying that property. <br /></td></tr>
-<tr class="separator:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a33c8326d45e5c1ec99edf5f964b34f61"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> = std::function&lt; std::string()&gt;</td></tr>
+<tr class="memdesc:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a function which returns a property about the planner's progress that can be queried by a benchmarking routine. <br /></td></tr>
+<tr class="separator:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="adc4df80108aec5db29373302e4b8d723"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> = std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> &gt;</td></tr>
+<tr class="memdesc:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which maps the name of a progress property to the function to be used for querying that property. <br /></td></tr>
+<tr class="separator:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa63b04145d5e0af3da3f674a812dccdb"><td class="memItemLeft" align="right" valign="top"><a id="aa63b04145d5e0af3da3f674a812dccdb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa63b04145d5e0af3da3f674a812dccdb">LazyPRM</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> &amp;si, bool starStrategy=false)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa63b04145d5e0af3da3f674a812dccdb">LazyPRM</a> (const base::SpaceInformationPtr &amp;si, bool starStrategy=false)</td></tr>
 <tr class="memdesc:aa63b04145d5e0af3da3f674a812dccdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:aa63b04145d5e0af3da3f674a812dccdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c7ec327a9037ff9f1761f025be8f24"><td class="memItemLeft" align="right" valign="top"><a id="a75c7ec327a9037ff9f1761f025be8f24"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a75c7ec327a9037ff9f1761f025be8f24">LazyPRM</a> (const <a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data, bool starStrategy=false)</td></tr>
+<tr class="memdesc:a75c7ec327a9037ff9f1761f025be8f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:a75c7ec327a9037ff9f1761f025be8f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1765a9b7fcd212255dee4c1d19ad6e68"><td class="memItemLeft" align="right" valign="top"><a id="a1765a9b7fcd212255dee4c1d19ad6e68"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a1765a9b7fcd212255dee4c1d19ad6e68">setRange</a> (double distance)</td></tr>
 <tr class="memdesc:a1765a9b7fcd212255dee4c1d19ad6e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum length of a motion to be added to the roadmap. <br /></td></tr>
@@ -254,18 +244,19 @@ template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
 <tr class="memdesc:a5fc492995adb9a7cde597b5ccc9492ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a different nearest neighbors datastructure. <br /></td></tr>
 <tr class="separator:a5fc492995adb9a7cde597b5ccc9492ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40c8e727e2335089ccee34fa6f48bb6"><td class="memItemLeft" align="right" valign="top"><a id="ae40c8e727e2335089ccee34fa6f48bb6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae40c8e727e2335089ccee34fa6f48bb6">setProblemDefinition</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">base::ProblemDefinitionPtr</a> &amp;pdef) override</td></tr>
-<tr class="memdesc:ae40c8e727e2335089ccee34fa6f48bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem definition for the planner. The problem needs to be set before calling <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. Note: If this problem definition replaces a previous one, it may also be necessary to call <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4d2fa48d628921d9fde03e26b02fee0e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a>. <br /></td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setProblemDefinition</b> (const base::ProblemDefinitionPtr &amp;pdef) override</td></tr>
 <tr class="separator:ae40c8e727e2335089ccee34fa6f48bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e40a02beaa616ed5113e6c684451c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a1e40a02beaa616ed5113e6c684451c96">setConnectionStrategy</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa983e17f7a2c70447304d940bad9adc4">ConnectionStrategy</a> &amp;connectionStrategy)</td></tr>
-<tr class="memdesc:a1e40a02beaa616ed5113e6c684451c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the connection strategy function that specifies the milestones that connection attempts will be make to for a given milestone.  <a href="#a1e40a02beaa616ed5113e6c684451c96">More...</a><br /></td></tr>
+<tr class="memitem:a1e40a02beaa616ed5113e6c684451c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a1e40a02beaa616ed5113e6c684451c96">setConnectionStrategy</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a499a121ce9a9d4b63b5d2371c41cb283">ConnectionStrategy</a> &amp;connectionStrategy)</td></tr>
+<tr class="memdesc:a1e40a02beaa616ed5113e6c684451c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the connection strategy function that specifies the milestones that connection attempts will be make to for a given milestone.  <a href="classompl_1_1geometric_1_1LazyPRM.html#a1e40a02beaa616ed5113e6c684451c96">More...</a><br /></td></tr>
 <tr class="separator:a1e40a02beaa616ed5113e6c684451c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe01fe0ead4eb09a6464a5d79984fd42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#abe01fe0ead4eb09a6464a5d79984fd42">setDefaultConnectionStrategy</a> ()</td></tr>
+<tr class="separator:abe01fe0ead4eb09a6464a5d79984fd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a401a0017e3d7f0af28b994ca15551760"><td class="memItemLeft" align="right" valign="top"><a id="a401a0017e3d7f0af28b994ca15551760"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a401a0017e3d7f0af28b994ca15551760">setMaxNearestNeighbors</a> (unsigned int k)</td></tr>
 <tr class="memdesc:a401a0017e3d7f0af28b994ca15551760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that sets the connection strategy to the default one with k nearest neighbors. <br /></td></tr>
 <tr class="separator:a401a0017e3d7f0af28b994ca15551760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e5afdfd294ce840b5918990406854da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a8e5afdfd294ce840b5918990406854da">setConnectionFilter</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a2146c85e4e5bde8ec9b9ff350fa3b894">ConnectionFilter</a> &amp;connectionFilter)</td></tr>
-<tr class="memdesc:a8e5afdfd294ce840b5918990406854da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the function that can reject a milestone connection.  <a href="#a8e5afdfd294ce840b5918990406854da">More...</a><br /></td></tr>
+<tr class="memitem:a8e5afdfd294ce840b5918990406854da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a8e5afdfd294ce840b5918990406854da">setConnectionFilter</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#adce43622537c7f1a5e7307438fb3af08">ConnectionFilter</a> &amp;connectionFilter)</td></tr>
+<tr class="memdesc:a8e5afdfd294ce840b5918990406854da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the function that can reject a milestone connection.  <a href="classompl_1_1geometric_1_1LazyPRM.html#a8e5afdfd294ce840b5918990406854da">More...</a><br /></td></tr>
 <tr class="separator:a8e5afdfd294ce840b5918990406854da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f9d2378c602a01d2133f791ba8e82e3"><td class="memItemLeft" align="right" valign="top"><a id="a9f9d2378c602a01d2133f791ba8e82e3"></a>
 unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a9f9d2378c602a01d2133f791ba8e82e3">milestoneCount</a> () const</td></tr>
@@ -277,7 +268,8 @@ unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="separator:a8f042ce14a00a19b8d2c45899593141d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84f84f8261d2bea0156c9995ca004f17"><td class="memItemLeft" align="right" valign="top"><a id="a84f84f8261d2bea0156c9995ca004f17"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a84f84f8261d2bea0156c9995ca004f17">getPlannerData</a> (<a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data) const override</td></tr>
-<tr class="memdesc:a84f84f8261d2bea0156c9995ca004f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current run of the motion planner. Repeated calls to this function will update <em>data</em> (only additions are made). This is useful to see what changed in the exploration datastructure, between calls to <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, for example (without calling <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4d2fa48d628921d9fde03e26b02fee0e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between). <br /></td></tr>
+<tr class="memdesc:a84f84f8261d2bea0156c9995ca004f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current run of the motion planner. Repeated calls to this function will update <em>data</em> (only additions are made). This is useful to see what changed in the exploration datastructure, between calls to <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, for example (without calling <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4d2fa48d628921d9fde03e26b02fee0e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between). <br  />
+ <br /></td></tr>
 <tr class="separator:a84f84f8261d2bea0156c9995ca004f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d458646c4ec8beed75d9f9d91ab35d"><td class="memItemLeft" align="right" valign="top"><a id="af0d458646c4ec8beed75d9f9d91ab35d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#af0d458646c4ec8beed75d9f9d91ab35d">setup</a> () override</td></tr>
@@ -287,13 +279,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4d2fa48d628921d9fde03e26b02fee0e">clear</a> () override</td></tr>
 <tr class="memdesc:a4d2fa48d628921d9fde03e26b02fee0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will ignore all previous work. <br /></td></tr>
 <tr class="separator:a4d2fa48d628921d9fde03e26b02fee0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad53276b0c3b1741868a9c216a1eada3b"><td class="memItemLeft" align="right" valign="top"><a id="ad53276b0c3b1741868a9c216a1eada3b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ad53276b0c3b1741868a9c216a1eada3b">clearQuery</a> ()</td></tr>
-<tr class="memdesc:ad53276b0c3b1741868a9c216a1eada3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the query previously loaded from the ProblemDefinition. Subsequent calls to <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will reuse the previously computed roadmap, but will clear the set of input states constructed by the previous call to <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. This enables multi-query functionality for <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html" title="Lazy Probabilistic RoadMap planner. ">LazyPRM</a>. <br /></td></tr>
-<tr class="separator:ad53276b0c3b1741868a9c216a1eada3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2cf669e8e65d17ef21776eb17dcd5f"><td class="memItemLeft" align="right" valign="top"><a id="a0a2cf669e8e65d17ef21776eb17dcd5f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a0a2cf669e8e65d17ef21776eb17dcd5f">clearQuery</a> () override</td></tr>
+<tr class="memdesc:a0a2cf669e8e65d17ef21776eb17dcd5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the query previously loaded from the ProblemDefinition. Subsequent calls to <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will reuse the previously computed roadmap, but will clear the set of input states constructed by the previous call to <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. This enables multi-query functionality for <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html" title="Lazy Probabilistic RoadMap planner.">LazyPRM</a>. <br /></td></tr>
+<tr class="separator:a0a2cf669e8e65d17ef21776eb17dcd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119f27a626a8aec4cd24038f2890b784"><td class="memItemLeft" align="right" valign="top"><a id="a119f27a626a8aec4cd24038f2890b784"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a119f27a626a8aec4cd24038f2890b784">clearValidity</a> ()</td></tr>
+<tr class="memdesc:a119f27a626a8aec4cd24038f2890b784"><td class="mdescLeft">&#160;</td><td class="mdescRight">change the validity flag of each node and edge to VALIDITY_UNKNOWN <br /></td></tr>
+<tr class="separator:a119f27a626a8aec4cd24038f2890b784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c22a2b6d8549f3966eb12279550e7d0"><td class="memItemLeft" align="right" valign="top"><a id="a5c22a2b6d8549f3966eb12279550e7d0"></a>
 <a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a5c22a2b6d8549f3966eb12279550e7d0">solve</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc) override</td></tr>
-<tr class="memdesc:a5c22a2b6d8549f3966eb12279550e7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4d2fa48d628921d9fde03e26b02fee0e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. If this option is used, it is assumed the problem definition is not changed (unpredictable results otherwise). The only change in the problem definition that is accounted for is the addition of starting or goal states (but not changing previously added start/goal states). The function terminates if the call to <em>ptc</em> returns true. <br /></td></tr>
+<tr class="memdesc:a5c22a2b6d8549f3966eb12279550e7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4d2fa48d628921d9fde03e26b02fee0e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. If this option is used, it is assumed the problem definition is not changed (unpredictable results otherwise). The only change in the problem definition that is accounted for is the addition of starting or goal states (but not changing previously added start/goal states). If <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a0a2cf669e8e65d17ef21776eb17dcd5f" title="Clear the query previously loaded from the ProblemDefinition. Subsequent calls to solve() will reuse ...">clearQuery()</a> is called, the planner may retain prior datastructures generated from a previous query on a new problem definition. The function terminates if the call to <em>ptc</em> returns true. <br /></td></tr>
 <tr class="separator:a5c22a2b6d8549f3966eb12279550e7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
 <tr class="memitem:ad0ca26742e6b70a57dc7c0e28f66857d inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="ad0ca26742e6b70a57dc7c0e28f66857d"></a>
@@ -326,12 +322,20 @@ const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceIn
 const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a> () const</td></tr>
 <tr class="memdesc:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve. <br /></td></tr>
 <tr class="separator:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a5891ac7a3e5a39143f87745f25d74926"></a>
+<a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a5891ac7a3e5a39143f87745f25d74926">getProblemDefinition</a> ()</td></tr>
+<tr class="memdesc:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve. <br /></td></tr>
+<tr class="separator:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a260b7d28d444b115f1356d3f96c37785"></a>
 const <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a> () const</td></tr>
 <tr class="memdesc:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the planner input states. <br /></td></tr>
 <tr class="separator:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="add968ea14f1aa3d3bffc110da3e1d031"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#add968ea14f1aa3d3bffc110da3e1d031">setProblemDefinition</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;pdef)</td></tr>
+<tr class="memdesc:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem definition for the planner. The problem needs to be set before calling <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. Note: If this problem definition replaces a previous one, it may also be necessary to call <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> or <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a>. <br /></td></tr>
+<tr class="separator:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a46d2a6941a33dbac28e6736949375e2b"></a>
-<a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a46d2a6941a33dbac28e6736949375e2b">solve</a> (const <a class="el" href="namespaceompl_1_1base.html#a47c9ced2eac48435658b52a5e42c25ad">PlannerTerminationConditionFn</a> &amp;ptc, double checkInterval)</td></tr>
+<a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a46d2a6941a33dbac28e6736949375e2b">solve</a> (const <a class="el" href="namespaceompl_1_1base.html#a5c218cde462780a4502dfc561708e903">PlannerTerminationConditionFn</a> &amp;ptc, double checkInterval)</td></tr>
 <tr class="memdesc:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is only evaluated at a specified interval. <br /></td></tr>
 <tr class="separator:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a5a61ca64b36881603af880677f6445a7"></a>
@@ -367,7 +371,7 @@ const <a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;
 <tr class="memdesc:a54cd84e228b9cd88ae88cdd10cc0712b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner. <br /></td></tr>
 <tr class="separator:a54cd84e228b9cd88ae88cdd10cc0712b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b03485fc36143f4f26718c050ddb928 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a8b03485fc36143f4f26718c050ddb928"></a>
-const <a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a> () const</td></tr>
+const <a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a> () const</td></tr>
 <tr class="memdesc:a8b03485fc36143f4f26718c050ddb928 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a planner's planner progress property map. <br /></td></tr>
 <tr class="separator:a8b03485fc36143f4f26718c050ddb928 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab41beafb015184c8e44a899debe9b5b7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="ab41beafb015184c8e44a899debe9b5b7"></a>
@@ -398,29 +402,29 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a39498f53a3a21f6b2f79b969c21b6f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free all the memory allocated by the planner. <br /></td></tr>
 <tr class="separator:a39498f53a3a21f6b2f79b969c21b6f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67fc35ddf02bfda235c5c1cf9bc4562f"><td class="memItemLeft" align="right" valign="top"><a id="a67fc35ddf02bfda235c5c1cf9bc4562f"></a>
-<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a67fc35ddf02bfda235c5c1cf9bc4562f">addMilestone</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
+<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a67fc35ddf02bfda235c5c1cf9bc4562f">addMilestone</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
 <tr class="memdesc:a67fc35ddf02bfda235c5c1cf9bc4562f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a milestone for a given state (<em>state</em>), store it in the nearest neighbors data structure and then connect it to the roadmap in accordance to the connection strategy. <br /></td></tr>
 <tr class="separator:a67fc35ddf02bfda235c5c1cf9bc4562f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ebe4aa223649c25854fbabe3300e0f1"><td class="memItemLeft" align="right" valign="top"><a id="a2ebe4aa223649c25854fbabe3300e0f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>uniteComponents</b> (<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> a, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> b)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>uniteComponents</b> (<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> a, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> b)</td></tr>
 <tr class="separator:a2ebe4aa223649c25854fbabe3300e0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c795ecce0e174950bbaf0c14f1d8e4b"><td class="memItemLeft" align="right" valign="top"><a id="a5c795ecce0e174950bbaf0c14f1d8e4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>markComponent</b> (<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> v, unsigned long int newComponent)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>markComponent</b> (<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> v, unsigned long int newComponent)</td></tr>
 <tr class="separator:a5c795ecce0e174950bbaf0c14f1d8e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea38d543bdd18d4f52c343d253ac1521"><td class="memItemLeft" align="right" valign="top"><a id="aea38d543bdd18d4f52c343d253ac1521"></a>
 long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aea38d543bdd18d4f52c343d253ac1521">solutionComponent</a> (std::pair&lt; std::size_t, std::size_t &gt; *startGoalPair) const</td></tr>
 <tr class="memdesc:aea38d543bdd18d4f52c343d253ac1521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if any pair of a start state and goal state are part of the same connected component. If so, return the id of that component. Otherwise, return -1. <br /></td></tr>
 <tr class="separator:aea38d543bdd18d4f52c343d253ac1521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45c2d9a402b4a0ed55e159857157c1ac"><td class="memItemLeft" align="right" valign="top"><a id="a45c2d9a402b4a0ed55e159857157c1ac"></a>
-<a class="el" href="classompl_1_1base_1_1PathPtr.html">ompl::base::PathPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a45c2d9a402b4a0ed55e159857157c1ac">constructSolution</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &amp;start, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &amp;goal)</td></tr>
+<a class="el" href="classompl_1_1base_1_1PathPtr.html">ompl::base::PathPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a45c2d9a402b4a0ed55e159857157c1ac">constructSolution</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &amp;start, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &amp;goal)</td></tr>
 <tr class="memdesc:a45c2d9a402b4a0ed55e159857157c1ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two milestones from the same connected component, construct a path connecting them and set it as the solution. <br /></td></tr>
 <tr class="separator:a45c2d9a402b4a0ed55e159857157c1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf939f87b23f147ccd3feb81ba230786"><td class="memItemLeft" align="right" valign="top"><a id="acf939f87b23f147ccd3feb81ba230786"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#acf939f87b23f147ccd3feb81ba230786">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> a, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> b) const</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#acf939f87b23f147ccd3feb81ba230786">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> a, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> b) const</td></tr>
 <tr class="memdesc:acf939f87b23f147ccd3feb81ba230786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distance between two milestones (this is simply distance between the states of the milestones) <br /></td></tr>
 <tr class="separator:acf939f87b23f147ccd3feb81ba230786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4050bed8492b265ac4cb2297eaedfee1"><td class="memItemLeft" align="right" valign="top"><a id="a4050bed8492b265ac4cb2297eaedfee1"></a>
-<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4050bed8492b265ac4cb2297eaedfee1">costHeuristic</a> (<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> u, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> v) const</td></tr>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a4050bed8492b265ac4cb2297eaedfee1">costHeuristic</a> (<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> u, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> v) const</td></tr>
 <tr class="memdesc:a4050bed8492b265ac4cb2297eaedfee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two vertices, returns a heuristic on the cost of the path connecting them. This method wraps OptimizationObjective::motionCostHeuristic. <br /></td></tr>
 <tr class="separator:a4050bed8492b265ac4cb2297eaedfee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
@@ -435,7 +439,7 @@ template&lt;typename T , typename PlannerType , typename SetterType &gt; </td></
 <tr class="memdesc:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter function. <br /></td></tr>
 <tr class="separator:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a3dc481539fac465497ad158e1bdac91a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a> (const std::string &amp;progressPropertyName, const <a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a> &amp;prop)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a> (const std::string &amp;progressPropertyName, const <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> &amp;prop)</td></tr>
 <tr class="memdesc:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner progress property called <em>progressPropertyName</em> with a property querying function <em>prop</em> to this planner's progress property map. <br /></td></tr>
 <tr class="separator:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -446,11 +450,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a69e4d8cc2927af5087ee17a298d75a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether the default connection strategy is the Star strategy. <br /></td></tr>
 <tr class="separator:a69e4d8cc2927af5087ee17a298d75a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1e9b00858c7f6db43c067917fb11fef"><td class="memItemLeft" align="right" valign="top"><a id="ae1e9b00858c7f6db43c067917fb11fef"></a>
-<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa983e17f7a2c70447304d940bad9adc4">ConnectionStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae1e9b00858c7f6db43c067917fb11fef">connectionStrategy_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a499a121ce9a9d4b63b5d2371c41cb283">ConnectionStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae1e9b00858c7f6db43c067917fb11fef">connectionStrategy_</a></td></tr>
 <tr class="memdesc:ae1e9b00858c7f6db43c067917fb11fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns the milestones to attempt connections with. <br /></td></tr>
 <tr class="separator:ae1e9b00858c7f6db43c067917fb11fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd182af51b6ee32e9524d2facba797c2"><td class="memItemLeft" align="right" valign="top"><a id="afd182af51b6ee32e9524d2facba797c2"></a>
-<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a2146c85e4e5bde8ec9b9ff350fa3b894">ConnectionFilter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#afd182af51b6ee32e9524d2facba797c2">connectionFilter_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#adce43622537c7f1a5e7307438fb3af08">ConnectionFilter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#afd182af51b6ee32e9524d2facba797c2">connectionFilter_</a></td></tr>
 <tr class="memdesc:afd182af51b6ee32e9524d2facba797c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that can reject a milestone connection. <br /></td></tr>
 <tr class="separator:afd182af51b6ee32e9524d2facba797c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bea9f10cbd61b2918ac4be6f6815e50"><td class="memItemLeft" align="right" valign="top"><a id="a3bea9f10cbd61b2918ac4be6f6815e50"></a>
@@ -462,47 +466,47 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memdesc:a66bd8ec10704ff451fbc06c590dfa540"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum length of a motion to be added to a tree. <br /></td></tr>
 <tr class="separator:a66bd8ec10704ff451fbc06c590dfa540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8d4a07e4fe1cbbae2c882e208b30f44"><td class="memItemLeft" align="right" valign="top"><a id="af8d4a07e4fe1cbbae2c882e208b30f44"></a>
-<a class="el" href="classompl_1_1base_1_1StateSamplerPtr.html">base::StateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#af8d4a07e4fe1cbbae2c882e208b30f44">sampler_</a></td></tr>
+base::StateSamplerPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#af8d4a07e4fe1cbbae2c882e208b30f44">sampler_</a></td></tr>
 <tr class="memdesc:af8d4a07e4fe1cbbae2c882e208b30f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampler user for generating random in the state space. <br /></td></tr>
 <tr class="separator:af8d4a07e4fe1cbbae2c882e208b30f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab63912cee459a58f13540dcd851b2e93"><td class="memItemLeft" align="right" valign="top"><a id="ab63912cee459a58f13540dcd851b2e93"></a>
-<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa0c1404816481de05f47380c3fa3c4c1">RoadmapNeighbors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ab63912cee459a58f13540dcd851b2e93">nn_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a522222dd27c3cf391ad8ed7d2d54b658">RoadmapNeighbors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ab63912cee459a58f13540dcd851b2e93">nn_</a></td></tr>
 <tr class="memdesc:ab63912cee459a58f13540dcd851b2e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nearest neighbors data structure. <br /></td></tr>
 <tr class="separator:ab63912cee459a58f13540dcd851b2e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a791c1417a166d7a891d62dfde5e816c2"><td class="memItemLeft" align="right" valign="top"><a id="a791c1417a166d7a891d62dfde5e816c2"></a>
-<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a791c1417a166d7a891d62dfde5e816c2">g_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a791c1417a166d7a891d62dfde5e816c2">g_</a></td></tr>
 <tr class="memdesc:a791c1417a166d7a891d62dfde5e816c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connectivity graph. <br /></td></tr>
 <tr class="separator:a791c1417a166d7a891d62dfde5e816c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a193ae6dbe80dee3d69097664cf4cc157"><td class="memItemLeft" align="right" valign="top"><a id="a193ae6dbe80dee3d69097664cf4cc157"></a>
-std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a193ae6dbe80dee3d69097664cf4cc157">startM_</a></td></tr>
+std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a193ae6dbe80dee3d69097664cf4cc157">startM_</a></td></tr>
 <tr class="memdesc:a193ae6dbe80dee3d69097664cf4cc157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of start milestones. <br /></td></tr>
 <tr class="separator:a193ae6dbe80dee3d69097664cf4cc157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba83ef4574f52fe4127ac35f96b360cc"><td class="memItemLeft" align="right" valign="top"><a id="aba83ef4574f52fe4127ac35f96b360cc"></a>
-std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aba83ef4574f52fe4127ac35f96b360cc">goalM_</a></td></tr>
+std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aba83ef4574f52fe4127ac35f96b360cc">goalM_</a></td></tr>
 <tr class="memdesc:aba83ef4574f52fe4127ac35f96b360cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of goal milestones. <br /></td></tr>
 <tr class="separator:aba83ef4574f52fe4127ac35f96b360cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6883f39c60bace14e1ad799a34ecd97"><td class="memItemLeft" align="right" valign="top"><a id="ac6883f39c60bace14e1ad799a34ecd97"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a>, boost::vertex_index_t &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ac6883f39c60bace14e1ad799a34ecd97">indexProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a>, boost::vertex_index_t &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ac6883f39c60bace14e1ad799a34ecd97">indexProperty_</a></td></tr>
 <tr class="memdesc:ac6883f39c60bace14e1ad799a34ecd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the internal base::state at each Vertex. <br /></td></tr>
 <tr class="separator:ac6883f39c60bace14e1ad799a34ecd97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcd49e46180b5049341e6933a9de1b0a"><td class="memItemLeft" align="right" valign="top"><a id="afcd49e46180b5049341e6933a9de1b0a"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__state__t.html">vertex_state_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#afcd49e46180b5049341e6933a9de1b0a">stateProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__state__t.html">vertex_state_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#afcd49e46180b5049341e6933a9de1b0a">stateProperty_</a></td></tr>
 <tr class="memdesc:afcd49e46180b5049341e6933a9de1b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the internal base::state at each Vertex. <br /></td></tr>
 <tr class="separator:afcd49e46180b5049341e6933a9de1b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a661d990a47db9f64ff51d93020037584"><td class="memItemLeft" align="right" valign="top"><a id="a661d990a47db9f64ff51d93020037584"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a>, boost::edge_weight_t &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a661d990a47db9f64ff51d93020037584">weightProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a>, boost::edge_weight_t &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a661d990a47db9f64ff51d93020037584">weightProperty_</a></td></tr>
 <tr class="memdesc:a661d990a47db9f64ff51d93020037584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the weights of each Edge. <br /></td></tr>
 <tr class="separator:a661d990a47db9f64ff51d93020037584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62769ed475cd1e37ff07ec407a0c6474"><td class="memItemLeft" align="right" valign="top"><a id="a62769ed475cd1e37ff07ec407a0c6474"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__component__t.html">vertex_component_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a62769ed475cd1e37ff07ec407a0c6474">vertexComponentProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__component__t.html">vertex_component_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a62769ed475cd1e37ff07ec407a0c6474">vertexComponentProperty_</a></td></tr>
 <tr class="memdesc:a62769ed475cd1e37ff07ec407a0c6474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the connected component of a vertex. <br /></td></tr>
 <tr class="separator:a62769ed475cd1e37ff07ec407a0c6474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d00831d96da1a1be102bddefbea94e"><td class="memItemLeft" align="right" valign="top"><a id="a37d00831d96da1a1be102bddefbea94e"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__flags__t.html">vertex_flags_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a37d00831d96da1a1be102bddefbea94e">vertexValidityProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__flags__t.html">vertex_flags_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a37d00831d96da1a1be102bddefbea94e">vertexValidityProperty_</a></td></tr>
 <tr class="memdesc:a37d00831d96da1a1be102bddefbea94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the validity state of a vertex. <br /></td></tr>
 <tr class="separator:a37d00831d96da1a1be102bddefbea94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a150ec69782ce5334c8c7c4ab016ec820"><td class="memItemLeft" align="right" valign="top"><a id="a150ec69782ce5334c8c7c4ab016ec820"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1edge__flags__t.html">edge_flags_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a150ec69782ce5334c8c7c4ab016ec820">edgeValidityProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">Graph</a>, <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1edge__flags__t.html">edge_flags_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a150ec69782ce5334c8c7c4ab016ec820">edgeValidityProperty_</a></td></tr>
 <tr class="memdesc:a150ec69782ce5334c8c7c4ab016ec820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the validity state of an edge. <br /></td></tr>
 <tr class="separator:a150ec69782ce5334c8c7c4ab016ec820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30baba1e3bcffaff085f832ac162e4e1"><td class="memItemLeft" align="right" valign="top"><a id="a30baba1e3bcffaff085f832ac162e4e1"></a>
@@ -511,11 +515,11 @@ unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="separator:a30baba1e3bcffaff085f832ac162e4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ef1b20443606277a39897328d6a202"><td class="memItemLeft" align="right" valign="top"><a id="a62ef1b20443606277a39897328d6a202"></a>
 std::map&lt; unsigned long int, unsigned long int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a62ef1b20443606277a39897328d6a202">componentSize_</a></td></tr>
-<tr class="memdesc:a62ef1b20443606277a39897328d6a202"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of elements in each component in the <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html" title="Lazy Probabilistic RoadMap planner. ">LazyPRM</a> roadmap. <br /></td></tr>
+<tr class="memdesc:a62ef1b20443606277a39897328d6a202"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of elements in each component in the <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html" title="Lazy Probabilistic RoadMap planner.">LazyPRM</a> roadmap. <br /></td></tr>
 <tr class="separator:a62ef1b20443606277a39897328d6a202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9b2195ab4aab77da2d502852e733bb6"><td class="memItemLeft" align="right" valign="top"><a id="af9b2195ab4aab77da2d502852e733bb6"></a>
-<a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">base::OptimizationObjectivePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#af9b2195ab4aab77da2d502852e733bb6">opt_</a></td></tr>
-<tr class="memdesc:af9b2195ab4aab77da2d502852e733bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objective cost function for <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">PRM</a> graph edges. <br /></td></tr>
+base::OptimizationObjectivePtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#af9b2195ab4aab77da2d502852e733bb6">opt_</a></td></tr>
+<tr class="memdesc:af9b2195ab4aab77da2d502852e733bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objective cost function for <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">PRM</a> graph edges. <br /></td></tr>
 <tr class="separator:af9b2195ab4aab77da2d502852e733bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ea93ec4c37505e0e222f20500071a4a"><td class="memItemLeft" align="right" valign="top"><a id="a5ea93ec4c37505e0e222f20500071a4a"></a>
 <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bestCost_</b> {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td></tr>
@@ -534,7 +538,8 @@ unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><b>iteratio
 <tr class="separator:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a1c6ac45d44026aae6df87f3295d67436"></a>
 <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a1c6ac45d44026aae6df87f3295d67436">pis_</a></td></tr>
-<tr class="memdesc:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class to extract valid input states. <br /></td></tr>
+<tr class="memdesc:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class to extract valid input states <br  />
+ <br /></td></tr>
 <tr class="separator:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a806de82eeff9ef9231963a9851524b97"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td></tr>
@@ -549,7 +554,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map from parameter names to parameter instances for this planner. This field is populated by the <a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c" title="This function declares a parameter for this planner instance, and specifies the setter and getter fun...">declareParam()</a> function. <br /></td></tr>
 <tr class="separator:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="ab630ca0634156172daf1a2620a01caf4"></a>
-<a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td></tr>
+<a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td></tr>
 <tr class="memdesc:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mapping between this planner's progress property names and the functions used for querying those progress properties. <br /></td></tr>
 <tr class="separator:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="adba44a4ee27079c5b258a2ebed719eed"></a>
@@ -570,20 +575,20 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Lazy Probabilistic RoadMap planner. </p>
-<p><a class="anchor" id="gLazyPRM"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html" title="Lazy Probabilistic RoadMap planner. ">LazyPRM</a> is a planner that constructs a roadmap of milestones that approximate the connectivity of the state space, just like <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">PRM</a> does. The difference is that the planner uses lazy collision checking. </dd></dl>
-<dl class="section user"><dt>External documentation</dt><dd>R. Bohlin and L.E. Kavraki Path Planning Using Lazy <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">PRM</a> <em>IEEE International Conference on Robotics and Automation</em>, San Francisco, pp. 521–528, 2000. DOI: <a href="http://dx.doi.org/10.1109/ROBOT.2000.844107">10.1109/ROBOT.2000.844107</a><br />
+<p><a class="anchor" id="gLazyPRM"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1LazyPRM.html" title="Lazy Probabilistic RoadMap planner.">LazyPRM</a> is a planner that constructs a roadmap of milestones that approximate the connectivity of the state space, just like <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">PRM</a> does. The difference is that the planner uses lazy collision checking. </dd></dl>
+<dl class="section user"><dt>External documentation</dt><dd>R. Bohlin and L.E. Kavraki Path Planning Using Lazy <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">PRM</a> <em>IEEE International Conference on Robotics and Automation</em>, San Francisco, pp. 521–528, 2000. DOI: <a href="http://dx.doi.org/10.1109/ROBOT.2000.844107">10.1109/ROBOT.2000.844107</a><br  />
  <a href="http://www.kavrakilab.org/robotics/lazyprm.html">[more]</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00073">73</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00105">105</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a2146c85e4e5bde8ec9b9ff350fa3b894"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2146c85e4e5bde8ec9b9ff350fa3b894">&#9670;&nbsp;</a></span>ConnectionFilter</h2>
+<a id="adce43622537c7f1a5e7307438fb3af08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adce43622537c7f1a5e7307438fb3af08">&#9670;&nbsp;</a></span>ConnectionFilter</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::function&lt;bool(const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a> &amp;)&gt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a2146c85e4e5bde8ec9b9ff350fa3b894">ompl::geometric::LazyPRM::ConnectionFilter</a></td>
+          <td class="memname">using <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#adce43622537c7f1a5e7307438fb3af08">ompl::geometric::LazyPRM::ConnectionFilter</a> =  std::function&lt;bool (const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &amp;, const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a> &amp;)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -591,18 +596,18 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
 <p>A function that can reject connections. </p>
 <p>This is called after previous connections from the neighbor list have been added to the roadmap. </p>
 
-<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00145">145</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00176">176</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
 
 </div>
 </div>
-<a id="ae7fb53233972c380415cf86d1b1bbc2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7fb53233972c380415cf86d1b1bbc2f">&#9670;&nbsp;</a></span>Graph</h2>
+<a id="a98dd9d439eec42797973cf6a945603d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98dd9d439eec42797973cf6a945603d9">&#9670;&nbsp;</a></span>Graph</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef boost::adjacency_list&lt; boost::vecS, boost::listS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_index_t, unsigned long int, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__flags__t.html">vertex_flags_t</a>, unsigned int, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__component__t.html">vertex_component_t</a>, unsigned long int, boost::property&lt;boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a832a28e2d5e40f583ca6e33ad6dad681">Vertex</a>, boost::property&lt;boost::vertex_rank_t, unsigned long int&gt; &gt; &gt; &gt; &gt; &gt;, boost::property&lt;boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1edge__flags__t.html">edge_flags_t</a>, unsigned int&gt; &gt; &gt; <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#ae7fb53233972c380415cf86d1b1bbc2f">ompl::geometric::LazyPRM::Graph</a></td>
+          <td class="memname">using <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a98dd9d439eec42797973cf6a945603d9">ompl::geometric::LazyPRM::Graph</a> =  boost::adjacency_list&lt; boost::vecS, boost::listS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_index_t, unsigned long int, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__flags__t.html">vertex_flags_t</a>, unsigned int, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1vertex__component__t.html">vertex_component_t</a>, unsigned long int, boost::property&lt;boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a3444b46b9abe6276a820c5792b3e9d9d">Vertex</a>, boost::property&lt;boost::vertex_rank_t, unsigned long int&gt; &gt;&gt; &gt;&gt; &gt;, boost::property&lt;boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1LazyPRM_1_1edge__flags__t.html">edge_flags_t</a>, unsigned int&gt; &gt;&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -612,7 +617,7 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
 <dl class="section user"><dt>Obviously, a ompl::base::State* vertex property is required.</dt><dd>The incremental connected components algorithm requires vertex_predecessor_t and vertex_rank_t properties. If boost::vecS is not used for vertex storage, then there must also be a boost:vertex_index_t property manually added.</dd></dl>
 <dl class="section user"><dt>Edges should be undirected and have a weight property.</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00128">128</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00148">148</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
 
 </div>
 </div>
@@ -629,7 +634,7 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
         <tr>
           <td class="memname">void ompl::geometric::LazyPRM::setConnectionFilter </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a2146c85e4e5bde8ec9b9ff350fa3b894">ConnectionFilter</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#adce43622537c7f1a5e7307438fb3af08">ConnectionFilter</a> &amp;&#160;</td>
           <td class="paramname"><em>connectionFilter</em></td><td>)</td>
           <td></td>
         </tr>
@@ -650,7 +655,7 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00214">214</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00250">250</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
 
 </div>
 </div>
@@ -666,7 +671,7 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
         <tr>
           <td class="memname">void ompl::geometric::LazyPRM::setConnectionStrategy </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#aa983e17f7a2c70447304d940bad9adc4">ConnectionStrategy</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1LazyPRM.html#a499a121ce9a9d4b63b5d2371c41cb283">ConnectionStrategy</a> &amp;&#160;</td>
           <td class="paramname"><em>connectionStrategy</em></td><td>)</td>
           <td></td>
         </tr>
@@ -687,7 +692,27 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00190">190</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LazyPRM_8h_source.html#l00224">224</a> of file <a class="el" href="LazyPRM_8h_source.html">LazyPRM.h</a>.</p>
+
+</div>
+</div>
+<a id="abe01fe0ead4eb09a6464a5d79984fd42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe01fe0ead4eb09a6464a5d79984fd42">&#9670;&nbsp;</a></span>setDefaultConnectionStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::LazyPRM::setDefaultConnectionStrategy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set default strategy for connecting to nearest neighbors </p>
+
+<p class="definition">Definition at line <a class="el" href="LazyPRM_8cpp_source.html#l00227">227</a> of file <a class="el" href="LazyPRM_8cpp_source.html">LazyPRM.cpp</a>.</p>
 
 </div>
 </div>
@@ -698,13 +723,13 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -714,6 +739,7 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

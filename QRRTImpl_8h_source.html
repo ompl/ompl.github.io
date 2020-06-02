@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl/geometric/planners/quotientspace/algorithms/QRRTImpl.h Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div><!-- Generated by Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_17c48f595f6f0fa6f2d85f97530691ab.html">ompl</a></li><li class="navelem"><a class="el" href="dir_c499107df537fcff6821ae24aff68b33.html">geometric</a></li><li class="navelem"><a class="el" href="dir_664aed2659b9a5e936d2b465df201862.html">planners</a></li><li class="navelem"><a class="el" href="dir_dc2f5525ca964e6a3aafa8a0ed60f1ed.html">quotientspace</a></li><li class="navelem"><a class="el" href="dir_d0b6f6b221f50f12147ea6cb4180965c.html">algorithms</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">QRRTImpl.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Copyright (c) 2019, University of Stuttgart</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  are met:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   * Neither the name of the University of Stuttgart nor the names</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     of its contributors may be used to endorse or promote products</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     derived from this software without specific prior written</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *     permission.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/* Author: Andreas Orthey */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef OMPL_GEOMETRIC_PLANNERS_QUOTIENTSPACE_QRRTIMPL_</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define OMPL_GEOMETRIC_PLANNERS_QUOTIENTSPACE_QRRTIMPL_</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;ompl/geometric/planners/quotientspace/datastructures/QuotientSpaceGraph.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;ompl/datastructures/PDF.h&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">namespace </span>base</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        OMPL_CLASS_FORWARD(OptimizationObjective);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">namespace </span>geometric</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">class </span>QRRTImpl : <span class="keyword">public</span> <a class="code" href="classompl_1_1geometric_1_1QuotientSpaceGraph.html">ompl::geometric::QuotientSpaceGraph</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">using</span> BaseT = QuotientSpaceGraph;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            QRRTImpl(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;si, <a class="code" href="classompl_1_1geometric_1_1QuotientSpace.html#a848b53b479d5503839751ef2f4271c1a">QuotientSpace</a> *parent_);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">virtual</span> ~QRRTImpl() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#ad07f6130b3dff05ced6f912be2a5abc0">grow</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> getSolution(<a class="code" href="classompl_1_1base_1_1PathPtr.html">ompl::base::PathPtr</a> &amp;solution) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#a40fabcfc627d86d412a05b71ef93444e">getImportance</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#ad3ea2e2a3bb6f9d1c22626353bb11c66">sample</a>(<a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *q_random) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#a729caf47e7cfbdf9a258bfe5bbbe289a">sampleQuotient</a>(<a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#aed8c895f00f46ac96c041de2f3970dc6">setup</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#ad17f00e3b26496c067317b30a6979d8b">clear</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">void</span> setGoalBias(<span class="keywordtype">double</span> goalBias);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordtype">double</span> getGoalBias() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">void</span> setRange(<span class="keywordtype">double</span> distance);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordtype">double</span> getRange() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1QuotientSpaceGraph_1_1Configuration.html">Configuration</a> *<a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#a87e5da8e31b7aa6cebb87585e754ef91">qRandom_</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            std::vector&lt;Vertex&gt; <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#ac68caca723e0cbf8485dab4195764ef1">shortestPathVertices_</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1QRRTImpl.html">   85</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#a972da7414f9563cc8c4b614bb1a2455e">maxDistance_</a>{.0};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#a710862e65f6efd9889f90a0c5446c147">goalBias_</a>{.05};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classompl_1_1base_1_1Goal.html">ompl::base::Goal</a> *<a class="code" href="classompl_1_1geometric_1_1QRRTImpl.html#a94aadeaae063ee9e6ec15ee3d619e745">goal_</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }  <span class="comment">// namespace geometric</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace ompl</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_a972da7414f9563cc8c4b614bb1a2455e"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#a972da7414f9563cc8c4b614bb1a2455e">ompl::geometric::QRRTImpl::maxDistance_</a></div><div class="ttdeci">double maxDistance_</div><div class="ttdoc">Maximum distance of expanding the tree.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8h_source.html#l00118">QRRTImpl.h:118</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PathPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1PathPtr.html">PathPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::Path.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformationPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::SpaceInformation.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_a710862e65f6efd9889f90a0c5446c147"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#a710862e65f6efd9889f90a0c5446c147">ompl::geometric::QRRTImpl::goalBias_</a></div><div class="ttdeci">double goalBias_</div><div class="ttdoc">Goal bias similar to RRT.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8h_source.html#l00120">QRRTImpl.h:120</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00113">State.h:114</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_ad17f00e3b26496c067317b30a6979d8b"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#ad17f00e3b26496c067317b30a6979d8b">ompl::geometric::QRRTImpl::clear</a></div><div class="ttdeci">virtual void clear() override</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8cpp_source.html#l00084">QRRTImpl.cpp:84</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_a94aadeaae063ee9e6ec15ee3d619e745"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#a94aadeaae063ee9e6ec15ee3d619e745">ompl::geometric::QRRTImpl::goal_</a></div><div class="ttdeci">ompl::base::Goal * goal_</div><div class="ttdoc">Goal state or goal region.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8h_source.html#l00123">QRRTImpl.h:123</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_a87e5da8e31b7aa6cebb87585e754ef91"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#a87e5da8e31b7aa6cebb87585e754ef91">ompl::geometric::QRRTImpl::qRandom_</a></div><div class="ttdeci">Configuration * qRandom_</div><div class="ttdoc">Random configuration placeholder.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8h_source.html#l00113">QRRTImpl.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_ad3ea2e2a3bb6f9d1c22626353bb11c66"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#ad3ea2e2a3bb6f9d1c22626353bb11c66">ompl::geometric::QRRTImpl::sample</a></div><div class="ttdeci">virtual bool sample(ompl::base::State *q_random) override</div><div class="ttdoc">Uniform sampling.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8cpp_source.html#l00182">QRRTImpl.cpp:182</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_aed8c895f00f46ac96c041de2f3970dc6"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#aed8c895f00f46ac96c041de2f3970dc6">ompl::geometric::QRRTImpl::setup</a></div><div class="ttdeci">virtual void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8cpp_source.html#l00076">QRRTImpl.cpp:76</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_a40fabcfc627d86d412a05b71ef93444e"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#a40fabcfc627d86d412a05b71ef93444e">ompl::geometric::QRRTImpl::getImportance</a></div><div class="ttdeci">double getImportance() const override</div><div class="ttdoc">Importance based on how many vertices the tree has.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8cpp_source.html#l00162">QRRTImpl.cpp:162</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QuotientSpaceGraph_html"><div class="ttname"><a href="classompl_1_1geometric_1_1QuotientSpaceGraph.html">ompl::geometric::QuotientSpaceGraph</a></div><div class="ttdoc">A graph on a quotient-space.</div><div class="ttdef"><b>Definition:</b> <a href="QuotientSpaceGraph_8h_source.html#l00100">QuotientSpaceGraph.h:101</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Goal_html"><div class="ttname"><a href="classompl_1_1base_1_1Goal.html">ompl::base::Goal</a></div><div class="ttdoc">Abstract definition of goals.</div><div class="ttdef"><b>Definition:</b> <a href="Goal_8h_source.html#l00126">Goal.h:127</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_ad07f6130b3dff05ced6f912be2a5abc0"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#ad07f6130b3dff05ced6f912be2a5abc0">ompl::geometric::QRRTImpl::grow</a></div><div class="ttdeci">virtual void grow() override</div><div class="ttdoc">One iteration of RRT with adjusted sampling function.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8cpp_source.html#l00106">QRRTImpl.cpp:106</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QuotientSpaceGraph_1_1Configuration_html"><div class="ttname"><a href="classompl_1_1geometric_1_1QuotientSpaceGraph_1_1Configuration.html">ompl::geometric::QuotientSpaceGraph::Configuration</a></div><div class="ttdoc">A configuration in quotient-space.</div><div class="ttdef"><b>Definition:</b> <a href="QuotientSpaceGraph_8h_source.html#l00108">QuotientSpaceGraph.h:109</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_a729caf47e7cfbdf9a258bfe5bbbe289a"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#a729caf47e7cfbdf9a258bfe5bbbe289a">ompl::geometric::QRRTImpl::sampleQuotient</a></div><div class="ttdeci">virtual bool sampleQuotient(ompl::base::State *) override</div><div class="ttdoc">Quotient-Space sampling by choosing a random vertex from parent class tree.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8cpp_source.html#l00204">QRRTImpl.cpp:204</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QuotientSpace_html_a848b53b479d5503839751ef2f4271c1a"><div class="ttname"><a href="classompl_1_1geometric_1_1QuotientSpace.html#a848b53b479d5503839751ef2f4271c1a">ompl::geometric::QuotientSpace::QuotientSpace</a></div><div class="ttdeci">QuotientSpace(const ompl::base::SpaceInformationPtr &amp;si, QuotientSpace *parent_=nullptr)</div><div class="ttdoc">Quotient Space contains three OMPL spaces, which we call Q1, Q0 and X1.</div><div class="ttdef"><b>Definition:</b> <a href="QuotientSpace_8cpp_source.html#l00050">QuotientSpace.cpp:50</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00021">AppBase.h:22</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1QRRTImpl_html_ac68caca723e0cbf8485dab4195764ef1"><div class="ttname"><a href="classompl_1_1geometric_1_1QRRTImpl.html#ac68caca723e0cbf8485dab4195764ef1">ompl::geometric::QRRTImpl::shortestPathVertices_</a></div><div class="ttdeci">std::vector&lt; Vertex &gt; shortestPathVertices_</div><div class="ttdoc">Current shortest path on tree.</div><div class="ttdef"><b>Definition:</b> <a href="QRRTImpl_8h_source.html#l00115">QRRTImpl.h:115</a></div></div>
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

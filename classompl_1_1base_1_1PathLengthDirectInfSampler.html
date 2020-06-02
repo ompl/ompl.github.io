@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::base::PathLengthDirectInfSampler Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::base::PathLengthDirectInfSampler Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -170,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>An informed sampler for problems seeking to minimize path length.
+<p>An informed sampler for problems seeking to minimize path length.  
  <a href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PathLengthDirectInfSampler_8h_source.html">ompl/base/samplers/informed/PathLengthDirectInfSampler.h</a>&gt;</code></p>
@@ -179,14 +164,15 @@ Inheritance diagram for ompl::base::PathLengthDirectInfSampler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1base_1_1PathLengthDirectInfSampler__inherit__graph.png" border="0" usemap="#ompl_1_1base_1_1PathLengthDirectInfSampler_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1base_1_1PathLengthDirectInfSampler_inherit__map" id="ompl_1_1base_1_1PathLengthDirectInfSampler_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1base_1_1InformedSampler.html" title="An abstract class for the concept of using information about the state space and the current solution..." alt="" coords="5,5,203,32"/>
+<area shape="rect" title="An informed sampler for problems seeking to minimize path length." alt="" coords="5,80,203,121"/>
+<area shape="rect" href="classompl_1_1base_1_1InformedSampler.html" title="An abstract class for the concept of using information about the state space and the current solution..." alt="" coords="5,5,203,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afd6854a7310c32be02c76f066c1a857d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#afd6854a7310c32be02c76f066c1a857d">PathLengthDirectInfSampler</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;probDefn, unsigned int maxNumberCalls)</td></tr>
-<tr class="memdesc:afd6854a7310c32be02c76f066c1a857d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution using a direct ellipsoidal method.  <a href="#afd6854a7310c32be02c76f066c1a857d">More...</a><br /></td></tr>
+<tr class="memdesc:afd6854a7310c32be02c76f066c1a857d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution using a direct ellipsoidal method.  <a href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#afd6854a7310c32be02c76f066c1a857d">More...</a><br /></td></tr>
 <tr class="separator:afd6854a7310c32be02c76f066c1a857d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a006f26f2d8cb6c394e6006b830cc5c6c"><td class="memItemLeft" align="right" valign="top"><a id="a006f26f2d8cb6c394e6006b830cc5c6c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#a006f26f2d8cb6c394e6006b830cc5c6c">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr, const <a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a> &amp;maxCost) override</td></tr>
@@ -205,7 +191,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memdesc:afc5d5e94e76a105704b6f6ec15c08533"><td class="mdescLeft">&#160;</td><td class="mdescRight">The measure of the subset of the state space defined by the current solution cost that is being searched. Does not consider problem boundaries but returns the measure of the entire space if no solution has been found. In the case of multiple goals, this measure assume each individual subset is independent, therefore the resulting measure will be an overestimate if any of the subsets overlap. <br /></td></tr>
 <tr class="separator:afc5d5e94e76a105704b6f6ec15c08533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afccaa3c95ac432d12ea44f6817e294d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1base_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#afccaa3c95ac432d12ea44f6817e294d3">heuristicSolnCost</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *statePtr) const override</td></tr>
-<tr class="memdesc:afccaa3c95ac432d12ea44f6817e294d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function to calculate the heuristic estimate of the solution cost for the informed subset of a given state.  <a href="#afccaa3c95ac432d12ea44f6817e294d3">More...</a><br /></td></tr>
+<tr class="memdesc:afccaa3c95ac432d12ea44f6817e294d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function to calculate the heuristic estimate of the solution cost for the informed subset of a given state.  <a href="classompl_1_1base_1_1PathLengthDirectInfSampler.html#afccaa3c95ac432d12ea44f6817e294d3">More...</a><br /></td></tr>
 <tr class="separator:afccaa3c95ac432d12ea44f6817e294d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classompl_1_1base_1_1InformedSampler"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1InformedSampler')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1InformedSampler.html">ompl::base::InformedSampler</a></td></tr>
 <tr class="memitem:a50a87064ce6444816d08f976dc09dc1c inherit pub_methods_classompl_1_1base_1_1InformedSampler"><td class="memItemLeft" align="right" valign="top"><a id="a50a87064ce6444816d08f976dc09dc1c"></a>
@@ -249,14 +235,13 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An informed sampler for problems seeking to minimize path length. </p>
-<p><a class="anchor" id="gPathLengthDirectInfSampler"></a> <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html" title="An informed sampler for problems seeking to minimize path length. ">PathLengthDirectInfSampler</a> is a method to generate uniform samples in the subset of a problem that could provide a shorter path from start to goal. This subset is a prolate hyperspheroid (PHS), a special type of an hyperellipsoid) and can be sampled directly.</p>
+<p><a class="anchor" id="gPathLengthDirectInfSampler"></a> <a class="el" href="classompl_1_1base_1_1PathLengthDirectInfSampler.html" title="An informed sampler for problems seeking to minimize path length.">PathLengthDirectInfSampler</a> is a method to generate uniform samples in the subset of a problem that could provide a shorter path from start to goal. This subset is a prolate hyperspheroid (PHS), a special type of an hyperellipsoid) and can be sampled directly.</p>
 <p>Informed sampling is a method to focus search which continuing to consider all homotopy classes that can provide a better solution. Directly sampling the informed subset guarantees a non-zero probability of improving a solution regardless of the size of the planning domain, the number of state dimensions, and how close the current solution is to the theoretical minimum.</p>
-<p>Currently only implemented for problems in R^n (i.e., <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm. ">RealVectorStateSpace</a>), SE(2) (i.e., <a class="el" href="classompl_1_1base_1_1SE2StateSpace.html" title="A state space representing SE(2) ">SE2StateSpace</a>), and SE(3) (i.e., <a class="el" href="classompl_1_1base_1_1SE3StateSpace.html" title="A state space representing SE(3) ">SE3StateSpace</a>). Until an initial solution is found, this sampler simply passes-through to a uniform distribution over the entire state space.</p>
+<p>Currently only implemented for problems in R^n (i.e., <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm.">RealVectorStateSpace</a>), SE(2) (i.e., <a class="el" href="classompl_1_1base_1_1SE2StateSpace.html" title="A state space representing SE(2)">SE2StateSpace</a>), and SE(3) (i.e., <a class="el" href="classompl_1_1base_1_1SE3StateSpace.html" title="A state space representing SE(3)">SE3StateSpace</a>). Until an initial solution is found, this sampler simply passes-through to a uniform distribution over the entire state space.</p>
 <dl class="section user"><dt>Associated publication:</dt><dd></dd></dl>
-<p>J. D. Gammell, S. S. Srinivasa, T. D. Barfoot, "Informed RRT*: Optimal Sampling-based
- Path Planning Focused via Direct Sampling of an Admissible Ellipsoidal Heuristic." In Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). Chicago, IL, USA, 14-18 Sept. 2014. DOI: <a href="http://dx.doi.org/10.1109/IROS.2014.6942976">10.1109/IROS.2014.6942976</a>. <a href="http://www.youtube.com/watch?v=d7dX5MvDYTc">Illustration video</a>. <a href="http://www.youtube.com/watch?v=nsl-5MZfwu4">Short description video</a>. </p>
+<p>J. D. Gammell, T. D. Barfoot, S. S. Srinivasa, "Informed sampling for asymptotically optimal path planning." IEEE Transactions on Robotics (T-RO), 34(4): 966-984, Aug. 2018. DOI: <a href="https://doi.org/10.1109/TRO.2018.2830331">TRO.2018.2830331</a>. arXiv: <a href="https://arxiv.org/pdf/1706.06454">1706.06454 [cs.RO]</a>. <a href="https://www.youtube.com/watch?v=d7dX5MvDYTc">Illustration video</a>. <a href="https://www.youtube.com/watch?v=nsl-5MZfwu4">Short description video</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="PathLengthDirectInfSampler_8h_source.html#l00081">81</a> of file <a class="el" href="PathLengthDirectInfSampler_8h_source.html">PathLengthDirectInfSampler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PathLengthDirectInfSampler_8h_source.html#l00144">144</a> of file <a class="el" href="PathLengthDirectInfSampler_8h_source.html">PathLengthDirectInfSampler.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afd6854a7310c32be02c76f066c1a857d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd6854a7310c32be02c76f066c1a857d">&#9670;&nbsp;</a></span>PathLengthDirectInfSampler()</h2>
@@ -285,9 +270,9 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><div class="memdoc">
 
 <p>Construct a sampler that only generates states with a heuristic solution estimate that is less than the cost of the current solution using a direct ellipsoidal method. </p>
-<p>Note: We don't check that there is a cost-to-go heuristic set in the optimization objective, as this direct sampling is only for Euclidean distance. </p>
+<p>Note: We don't check that there is a cost-to-go heuristic set in the optimization objective, as this direct sampling is only for Euclidean distance.</p>
 
-<p class="definition">Definition at line <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html#l00058">58</a> of file <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html">PathLengthDirectInfSampler.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html#l00122">122</a> of file <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html">PathLengthDirectInfSampler.cpp</a>.</p>
 
 </div>
 </div>
@@ -317,11 +302,11 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><div class="memdoc">
 
 <p>A helper function to calculate the heuristic estimate of the solution cost for the informed subset of a given state. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Use a heuristic function for the full solution cost defined in <a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives. ">OptimizationObjective</a> or some new Heuristic class once said function is defined. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Use a heuristic function for the full solution cost defined in <a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives.">OptimizationObjective</a> or some new Heuristic class once said function is defined. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classompl_1_1base_1_1InformedSampler.html#a373b10b1f993913e9ffed99ddba45e3c">ompl::base::InformedSampler</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html#l00328">328</a> of file <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html">PathLengthDirectInfSampler.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html#l00392">392</a> of file <a class="el" href="PathLengthDirectInfSampler_8cpp_source.html">PathLengthDirectInfSampler.cpp</a>.</p>
 
 </div>
 </div>
@@ -332,13 +317,13 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -348,6 +333,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

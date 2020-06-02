@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['representing_20goals_20in_20ompl',['Representing Goals in OMPL',['../goalRepresentation.html',1,'']]],
-  ['registration',['Registration',['../register.html',1,'']]],
-  ['release_20notes',['Release Notes',['../releaseNotes.html',1,'']]]
+  ['quotient_20space_20planning_20framework_5967',['Quotient Space Planning Framework',['../quotientSpacePlanning.html',1,'']]],
+  ['quotientspace_20planning_20tutorial_5968',['QuotientSpace Planning Tutorial',['../quotientSpacePlanningTutorial.html',1,'']]]
 ];

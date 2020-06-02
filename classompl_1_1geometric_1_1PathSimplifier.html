@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::geometric::PathSimplifier Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::geometric::PathSimplifier Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -172,31 +157,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>This class contains routines that attempt to simplify geometric paths.
+<p>This class contains routines that attempt to simplify geometric paths.  
  <a href="classompl_1_1geometric_1_1PathSimplifier.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PathSimplifier_8h_source.html">ompl/geometric/PathSimplifier.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae67337290a5d1a12bcfb79131ee6265a"><td class="memItemLeft" align="right" valign="top"><a id="ae67337290a5d1a12bcfb79131ee6265a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#ae67337290a5d1a12bcfb79131ee6265a">PathSimplifier</a> (<a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> si, const <a class="el" href="classompl_1_1base_1_1GoalPtr.html">base::GoalPtr</a> &amp;goal=<a class="el" href="classompl_1_1base_1_1GoalPtr.html">ompl::base::GoalPtr</a>(), <a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">base::OptimizationObjectivePtr</a> obj=nullptr)</td></tr>
-<tr class="memdesc:ae67337290a5d1a12bcfb79131ee6265a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an instance for a specified space information. Optionally, a GoalSampleableRegion may be passed in to attempt improvements at the end of the path as well. <br /></td></tr>
-<tr class="separator:ae67337290a5d1a12bcfb79131ee6265a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47ae860e9725be8d187261bcf1673a8"><td class="memItemLeft" align="right" valign="top"><a id="ac47ae860e9725be8d187261bcf1673a8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#ac47ae860e9725be8d187261bcf1673a8">PathSimplifier</a> (base::SpaceInformationPtr si, const base::GoalPtr &amp;goal=<a class="el" href="classompl_1_1base_1_1GoalPtr.html">ompl::base::GoalPtr</a>(), const base::OptimizationObjectivePtr &amp;obj=nullptr)</td></tr>
+<tr class="memdesc:ac47ae860e9725be8d187261bcf1673a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an instance for a specified space information. Optionally, a GoalSampleableRegion may be passed in to attempt improvements at the end of the path as well. <br /></td></tr>
+<tr class="separator:ac47ae860e9725be8d187261bcf1673a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a693986392b3b13a17743035cf295c539"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a693986392b3b13a17743035cf295c539">reduceVertices</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path, unsigned int maxSteps=0, unsigned int maxEmptySteps=0, double rangeRatio=0.33)</td></tr>
-<tr class="memdesc:a693986392b3b13a17743035cf295c539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to remove vertices from it while keeping the path valid. This is an iterative process that attempts to do "short-cutting" on the path. Connection is attempted between non-consecutive way-points on the path. If the connection is successful, the path is shortened by removing the in-between way-points. This function returns true if changes were made to the path.  <a href="#a693986392b3b13a17743035cf295c539">More...</a><br /></td></tr>
+<tr class="memdesc:a693986392b3b13a17743035cf295c539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to remove vertices from it while keeping the path valid. This is an iterative process that attempts to do "short-cutting" on the path. Connection is attempted between non-consecutive way-points on the path. If the connection is successful, the path is shortened by removing the in-between way-points. This function returns true if changes were made to the path.  <a href="classompl_1_1geometric_1_1PathSimplifier.html#a693986392b3b13a17743035cf295c539">More...</a><br /></td></tr>
 <tr class="separator:a693986392b3b13a17743035cf295c539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a911bdadf0c84acdae69d003b99f8d48e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a911bdadf0c84acdae69d003b99f8d48e">shortcutPath</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path, unsigned int maxSteps=0, unsigned int maxEmptySteps=0, double rangeRatio=0.33, double snapToVertex=0.005)</td></tr>
-<tr class="memdesc:a911bdadf0c84acdae69d003b99f8d48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to shorten it while maintaining its validity. This is an iterative process that attempts to do "short-cutting" on the path. Connection is attempted between random points along the path segments. Unlike the <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a693986392b3b13a17743035cf295c539" title="Given a path, attempt to remove vertices from it while keeping the path valid. This is an iterative p...">reduceVertices()</a> function, this function does not sample only vertices produced by the planner, but intermediate points on the path. If the connection is successful, the path is shortened by removing the in-between states (and new vertices are created when needed). This function returns true if changes were made to the path.  <a href="#a911bdadf0c84acdae69d003b99f8d48e">More...</a><br /></td></tr>
+<tr class="memdesc:a911bdadf0c84acdae69d003b99f8d48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to shorten it while maintaining its validity. This is an iterative process that attempts to do "short-cutting" on the path. Connection is attempted between random points along the path segments. Unlike the <a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a693986392b3b13a17743035cf295c539" title="Given a path, attempt to remove vertices from it while keeping the path valid. This is an iterative p...">reduceVertices()</a> function, this function does not sample only vertices produced by the planner, but intermediate points on the path. If the connection is successful, the path is shortened by removing the in-between states (and new vertices are created when needed). This function returns true if changes were made to the path.  <a href="classompl_1_1geometric_1_1PathSimplifier.html#a911bdadf0c84acdae69d003b99f8d48e">More...</a><br /></td></tr>
 <tr class="separator:a911bdadf0c84acdae69d003b99f8d48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3006b09d80ec5543b0b9b81e94046df2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a3006b09d80ec5543b0b9b81e94046df2">perturbPath</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path, double stepSize, unsigned int maxSteps=0, unsigned int maxEmptySteps=0, double snapToVertex=0.005)</td></tr>
-<tr class="memdesc:a3006b09d80ec5543b0b9b81e94046df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to improve the cost by randomly perturbing a randomly selected point on the path. This is an iterative process that should ideally be run in conjunction with shortcutPath. This function is not called by any of the 'simplify*' funcions because it is only effective when used with a non-metric cost. The default cost used is path length, on which perturbPath is not as performant. This function returns true if changes were make to the path.  <a href="#a3006b09d80ec5543b0b9b81e94046df2">More...</a><br /></td></tr>
+<tr class="memdesc:a3006b09d80ec5543b0b9b81e94046df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to improve the cost by randomly perturbing a randomly selected point on the path. This is an iterative process that should ideally be run in conjunction with shortcutPath. This function is not called by any of the 'simplify*' funcions because it is only effective when used with a non-metric cost. The default cost used is path length, on which perturbPath is not as performant. This function returns true if changes were make to the path.  <a href="classompl_1_1geometric_1_1PathSimplifier.html#a3006b09d80ec5543b0b9b81e94046df2">More...</a><br /></td></tr>
 <tr class="separator:a3006b09d80ec5543b0b9b81e94046df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2761f8b4e41e01db0b4ecf11ee16d5bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a2761f8b4e41e01db0b4ecf11ee16d5bd">collapseCloseVertices</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path, unsigned int maxSteps=0, unsigned int maxEmptySteps=0)</td></tr>
-<tr class="memdesc:a2761f8b4e41e01db0b4ecf11ee16d5bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to remove vertices from it while keeping the path valid. This is an iterative process that attempts to do "short-cutting" on the path. Connection is attempted between non-consecutive states that are close along the path. If the connection is successful, the path is shortened by removing the in-between states. This function returns true if changes were made to the path.  <a href="#a2761f8b4e41e01db0b4ecf11ee16d5bd">More...</a><br /></td></tr>
+<tr class="memdesc:a2761f8b4e41e01db0b4ecf11ee16d5bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to remove vertices from it while keeping the path valid. This is an iterative process that attempts to do "short-cutting" on the path. Connection is attempted between non-consecutive states that are close along the path. If the connection is successful, the path is shortened by removing the in-between states. This function returns true if changes were made to the path.  <a href="classompl_1_1geometric_1_1PathSimplifier.html#a2761f8b4e41e01db0b4ecf11ee16d5bd">More...</a><br /></td></tr>
 <tr class="separator:a2761f8b4e41e01db0b4ecf11ee16d5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4ecd0970d2061c457f57b7665fd6f6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#aa4ecd0970d2061c457f57b7665fd6f6b">smoothBSpline</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path, unsigned int maxSteps=5, double minChange=std::numeric_limits&lt; double &gt;::epsilon())</td></tr>
-<tr class="memdesc:aa4ecd0970d2061c457f57b7665fd6f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to smooth it (the validity of the path is maintained).  <a href="#aa4ecd0970d2061c457f57b7665fd6f6b">More...</a><br /></td></tr>
+<tr class="memdesc:aa4ecd0970d2061c457f57b7665fd6f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a path, attempt to smooth it (the validity of the path is maintained).  <a href="classompl_1_1geometric_1_1PathSimplifier.html#aa4ecd0970d2061c457f57b7665fd6f6b">More...</a><br /></td></tr>
 <tr class="separator:aa4ecd0970d2061c457f57b7665fd6f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c6491343075124bf79b67c9f99e794d"><td class="memItemLeft" align="right" valign="top"><a id="a6c6491343075124bf79b67c9f99e794d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a6c6491343075124bf79b67c9f99e794d">simplifyMax</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path)</td></tr>
@@ -211,10 +196,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:ad1f88047c6ab5a83fda68620145a2e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run simplification algorithms on the path as long as the termination condition does not become true, and at least once if <em>atLeastOnce</em>. Return <em>false</em> iff the simplified path is not valid. <br /></td></tr>
 <tr class="separator:ad1f88047c6ab5a83fda68620145a2e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf1dae2d22eccd4ffde5a0c95e18dbe1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#acf1dae2d22eccd4ffde5a0c95e18dbe1">findBetterGoal</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path, double maxTime, unsigned int samplingAttempts=10, double rangeRatio=0.33, double snapToVertex=0.005)</td></tr>
-<tr class="memdesc:acf1dae2d22eccd4ffde5a0c95e18dbe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to improve the solution path by sampling a new goal state and connecting this state to the solution path for at most <em>maxTime</em> seconds.  <a href="#acf1dae2d22eccd4ffde5a0c95e18dbe1">More...</a><br /></td></tr>
+<tr class="memdesc:acf1dae2d22eccd4ffde5a0c95e18dbe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to improve the solution path by sampling a new goal state and connecting this state to the solution path for at most <em>maxTime</em> seconds.  <a href="classompl_1_1geometric_1_1PathSimplifier.html#acf1dae2d22eccd4ffde5a0c95e18dbe1">More...</a><br /></td></tr>
 <tr class="separator:acf1dae2d22eccd4ffde5a0c95e18dbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44074cdbbb873e096694eace130c98b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a44074cdbbb873e096694eace130c98b5">findBetterGoal</a> (<a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;path, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc, unsigned int samplingAttempts=10, double rangeRatio=0.33, double snapToVertex=0.005)</td></tr>
-<tr class="memdesc:a44074cdbbb873e096694eace130c98b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to improve the solution path by sampling a new goal state and connecting this state to the solution path while the termination condition is not met.  <a href="#a44074cdbbb873e096694eace130c98b5">More...</a><br /></td></tr>
+<tr class="memdesc:a44074cdbbb873e096694eace130c98b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to improve the solution path by sampling a new goal state and connecting this state to the solution path while the termination condition is not met.  <a href="classompl_1_1geometric_1_1PathSimplifier.html#a44074cdbbb873e096694eace130c98b5">More...</a><br /></td></tr>
 <tr class="separator:a44074cdbbb873e096694eace130c98b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed7e93fa582c5480ae1e7610e787f3c7"><td class="memItemLeft" align="right" valign="top"><a id="aed7e93fa582c5480ae1e7610e787f3c7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#aed7e93fa582c5480ae1e7610e787f3c7">freeStates</a> (bool flag)</td></tr>
@@ -227,14 +212,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aad385d15df92ce1059462946274659fc"><td class="memItemLeft" align="right" valign="top"><a id="aad385d15df92ce1059462946274659fc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>selectAlongPath</b> (std::vector&lt; double &gt; dists, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&gt; states, double distTo, double threshold, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *select_state, int &amp;pos)</td></tr>
-<tr class="separator:aad385d15df92ce1059462946274659fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82df60c7590d7cafd9bb989f283d8612"><td class="memItemLeft" align="right" valign="top"><a id="a82df60c7590d7cafd9bb989f283d8612"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>selectAlongPath</b> (std::vector&lt; double &gt; dists, std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> * &gt; states, double distTo, double threshold, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *select_state, int &amp;pos)</td></tr>
+<tr class="separator:a82df60c7590d7cafd9bb989f283d8612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a37aa79782fd655f32d3b67a748e9a0db"><td class="memItemLeft" align="right" valign="top"><a id="a37aa79782fd655f32d3b67a748e9a0db"></a>
-<a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a37aa79782fd655f32d3b67a748e9a0db">si_</a></td></tr>
+base::SpaceInformationPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a37aa79782fd655f32d3b67a748e9a0db">si_</a></td></tr>
 <tr class="memdesc:a37aa79782fd655f32d3b67a748e9a0db"><td class="mdescLeft">&#160;</td><td class="mdescRight">The space information this path simplifier uses. <br /></td></tr>
 <tr class="separator:a37aa79782fd655f32d3b67a748e9a0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afde59be0e054bff41c2abd6204ba6174"><td class="memItemLeft" align="right" valign="top"><a id="afde59be0e054bff41c2abd6204ba6174"></a>
@@ -242,7 +227,7 @@ std::shared_ptr&lt; <a class="el" href="classompl_1_1base_1_1GoalSampleableRegio
 <tr class="memdesc:afde59be0e054bff41c2abd6204ba6174"><td class="mdescLeft">&#160;</td><td class="mdescRight">The goal object for the path simplifier. Used for end-of-path improvements. <br /></td></tr>
 <tr class="separator:afde59be0e054bff41c2abd6204ba6174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fd3eea0398d579e244d9822f73e7b8b"><td class="memItemLeft" align="right" valign="top"><a id="a8fd3eea0398d579e244d9822f73e7b8b"></a>
-<a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">base::OptimizationObjectivePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a8fd3eea0398d579e244d9822f73e7b8b">obj_</a></td></tr>
+base::OptimizationObjectivePtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1PathSimplifier.html#a8fd3eea0398d579e244d9822f73e7b8b">obj_</a></td></tr>
 <tr class="memdesc:a8fd3eea0398d579e244d9822f73e7b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The optimization objective to use when making improvements. Will be used on all methods except reduce vertices (whose goal is not necessary to improve the solution). <br /></td></tr>
 <tr class="separator:a8fd3eea0398d579e244d9822f73e7b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c9255a96aa9ed4104595070c6a91d92"><td class="memItemLeft" align="right" valign="top"><a id="a0c9255a96aa9ed4104595070c6a91d92"></a>
@@ -258,7 +243,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="textblock"><p>This class contains routines that attempt to simplify geometric paths. </p>
 <p>Some of these are in fact routines that shorten the path, and do not necessarily make it smoother. </p>
 
-<p class="definition">Definition at line <a class="el" href="PathSimplifier_8h_source.html#l00065">65</a> of file <a class="el" href="PathSimplifier_8h_source.html">PathSimplifier.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PathSimplifier_8h_source.html#l00129">129</a> of file <a class="el" href="PathSimplifier_8h_source.html">PathSimplifier.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2761f8b4e41e01db0b4ecf11ee16d5bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2761f8b4e41e01db0b4ecf11ee16d5bd">&#9670;&nbsp;</a></span>collapseCloseVertices()</h2>
@@ -302,70 +287,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PathSimplifier_8cpp_source.html#l00606">606</a> of file <a class="el" href="PathSimplifier_8cpp_source.html">PathSimplifier.cpp</a>.</p>
-
-</div>
-</div>
-<a id="acf1dae2d22eccd4ffde5a0c95e18dbe1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf1dae2d22eccd4ffde5a0c95e18dbe1">&#9670;&nbsp;</a></span>findBetterGoal() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ompl::geometric::PathSimplifier::findBetterGoal </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;&#160;</td>
-          <td class="paramname"><em>path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxTime</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>samplingAttempts</em> = <code>10</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>rangeRatio</em> = <code>0.33</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>snapToVertex</em> = <code>0.005</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Attempt to improve the solution path by sampling a new goal state and connecting this state to the solution path for at most <em>maxTime</em> seconds. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sampingAttempts</td><td>The maximum number of attempts to connect a candidate goal state to a part of <em>path</em> </td></tr>
-    <tr><td class="paramname">rangeRatio</td><td>The fraction of the end of the path to consider for connection to a candidate goal state, in (0,1].</td></tr>
-    <tr><td class="paramname">snapToVertex</td><td>The percentage of the total path length to consider as "close enough" to an existing state in the path for the method to "snap" the connection to that particular state. This prevents states in the path that are very close to each other. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="PathSimplifier_8cpp_source.html#l00754">754</a> of file <a class="el" href="PathSimplifier_8cpp_source.html">PathSimplifier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PathSimplifier_8cpp_source.html#l00605">605</a> of file <a class="el" href="PathSimplifier_8cpp_source.html">PathSimplifier.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a44074cdbbb873e096694eace130c98b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44074cdbbb873e096694eace130c98b5">&#9670;&nbsp;</a></span>findBetterGoal() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a44074cdbbb873e096694eace130c98b5">&#9670;&nbsp;</a></span>findBetterGoal() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,7 +345,65 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PathSimplifier_8cpp_source.html#l00761">761</a> of file <a class="el" href="PathSimplifier_8cpp_source.html">PathSimplifier.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PathSimplifier_8cpp_source.html#l00760">760</a> of file <a class="el" href="PathSimplifier_8cpp_source.html">PathSimplifier.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acf1dae2d22eccd4ffde5a0c95e18dbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1dae2d22eccd4ffde5a0c95e18dbe1">&#9670;&nbsp;</a></span>findBetterGoal() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::PathSimplifier::findBetterGoal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1geometric_1_1PathGeometric.html">PathGeometric</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>samplingAttempts</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rangeRatio</em> = <code>0.33</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>snapToVertex</em> = <code>0.005</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attempt to improve the solution path by sampling a new goal state and connecting this state to the solution path for at most <em>maxTime</em> seconds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sampingAttempts</td><td>The maximum number of attempts to connect a candidate goal state to a part of <em>path</em> </td></tr>
+    <tr><td class="paramname">rangeRatio</td><td>The fraction of the end of the path to consider for connection to a candidate goal state, in (0,1].</td></tr>
+    <tr><td class="paramname">snapToVertex</td><td>The percentage of the total path length to consider as "close enough" to an existing state in the path for the method to "snap" the connection to that particular state. This prevents states in the path that are very close to each other. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="PathSimplifier_8cpp_source.html#l00753">753</a> of file <a class="el" href="PathSimplifier_8cpp_source.html">PathSimplifier.cpp</a>.</p>
 
 </div>
 </div>
@@ -478,7 +463,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section user"><dt>External Documentation</dt><dd></dd></dl>
-<p>J. Mainprice, E. Sisbot, L. Jaillet, J. Cortes, R. Alami, T. Simeon Planning human-aware motions using a sampling-based costmap planner, <em>Robotics and Automation (ICRA)</em>, August 2011. DOI: <a href="http://dx.doi.org/10.1109/ICRA.2011.5980048">10.1109/ICRA.2011.5980048</a><br />
+<p>J. Mainprice, E. Sisbot, L. Jaillet, J. Cortes, R. Alami, T. Simeon Planning human-aware motions using a sampling-based costmap planner, <em>Robotics and Automation (ICRA)</em>, August 2011. DOI: <a href="http://dx.doi.org/10.1109/ICRA.2011.5980048">10.1109/ICRA.2011.5980048</a><br  />
  <a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=5980048">[PDF]</a> </p>
 
 <p class="definition">Definition at line <a class="el" href="PathSimplifier_8cpp_source.html#l00386">386</a> of file <a class="el" href="PathSimplifier_8cpp_source.html">PathSimplifier.cpp</a>.</p>
@@ -648,13 +633,13 @@ This function assumes the triangle inequality holds and should not be run on non
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -664,6 +649,7 @@ This function assumes the triangle inequality holds and should not be run on non
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

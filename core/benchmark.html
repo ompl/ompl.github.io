@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>How to Benchmark Planners</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>How to Benchmark Planners</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,30 +136,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
 
 </div><!-- top -->
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">How to Benchmark Planners </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>OMPL contains a ompl::Benchmark class that facilitates solving a motion planning problem repeatedly with different parameters, different planners, different samplers, or even differently configured versions of the same planning algorithm. Below, we will describe how you can use this class.</p>
-<ul>
-<li><a class="el" href="benchmark.html#benchmark_code">Writing benchmarking code </a></li>
-<li><a class="el" href="benchmark.html#benchmark_log">Processing the benchmarking log file</a></li>
-<li><a class="el" href="benchmark.html#benchmark_sample_results">Sample benchmark results</a></li>
-<li><a class="el" href="benchmark.html#benchmark_logfile_format">The benchmark logfile format</a></li>
-<li><a class="el" href="benchmark.html#benchmark_database">The benchmark database schema</a></li>
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#benchmark_code">Writing benchmarking code</a></li>
+<li class="level1"><a href="#benchmark_log">Processing the benchmarking log file</a></li>
+<li class="level1"><a href="#benchmark_sample_results">Sample benchmark results</a></li>
+<li class="level1"><a href="#benchmark_logfile_format">The benchmark logfile format</a></li>
+<li class="level1"><a href="#benchmark_database">The benchmark database schema</a></li>
 </ul>
-<p>For a command line program for rigid body motion planning and basic kinodynamic motion planning, see the <a href="http://ompl.kavrakilab.org/benchmark.html">ompl_benchmark</a> program in OMPL.app.</p>
+</div>
+<div class="textblock"><p>OMPL contains a ompl::Benchmark class that facilitates solving a motion planning problem repeatedly with different parameters, different planners, different samplers, or even differently configured versions of the same planning algorithm. Below, we will describe how you can use this class.</p>
+<p>For a command line program for rigid body motion planning and basic kinodynamic motion planning, see the <a href="https://ompl.kavrakilab.org/benchmark.html">ompl_benchmark</a> program in OMPL.app.</p>
 <p>For interactive visualization of benchmark databases, please see <a href="http://plannerarena.org">plannerarena.org</a>.</p>
+<h1><a class="anchor" id="benchmark_code"></a>
+Writing benchmarking code</h1>
 <p>Benchmarking a set of planners on a specified problem using the Benchmark class in your own code is a simple task in OMPL. The steps involved are as follows:</p>
 <ul>
-<li>Configure the benchmark problem using <a class="el" href="classompl_1_1geometric_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a geometric problem. ">ompl::geometric::SimpleSetup</a> or <a class="el" href="classompl_1_1control_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a control problem. ">ompl::control::SimpleSetup</a></li>
+<li>Configure the benchmark problem using <a class="el" href="classompl_1_1geometric_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a geometric problem.">ompl::geometric::SimpleSetup</a> or <a class="el" href="classompl_1_1control_1_1SimpleSetup.html" title="Create the set of classes typically needed to solve a control problem.">ompl::control::SimpleSetup</a></li>
 <li>Create a ompl::Benchmark object that takes the problem as input</li>
 <li>Optionally, specify some parameters for the benchmark object using ompl::Benchmark::addExperimentParameter, which is useful when aggregating benchmark results over parametrized benchmarks.</li>
 <li>Add one or more planners to the benchmark</li>
@@ -182,16 +170,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Run the benchmark problem a specified number of times, subject to specified time and memory limits</li>
 </ul>
 <p>The following code snippet shows you how to do this. We will start with some initial code that you have probably already used:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;ompl/tools/benchmark/Benchmark.h&quot;</span></div><div class="line"></div><div class="line"><span class="comment">// A function that matches the ompl::base::PlannerAllocator type.</span></div><div class="line"><span class="comment">// It will be used later to allocate an instance of EST</span></div><div class="line"><a class="code" href="classompl_1_1base_1_1PlannerPtr.html">ompl::base::PlannerPtr</a> myConfiguredPlanner(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;si)</div><div class="line">{</div><div class="line">    geometric::EST *est = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1EST.html">ompl::geometric::EST</a>(si);</div><div class="line">    est-&gt;setRange(100.0);</div><div class="line">    <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1PlannerPtr.html">ompl::base::PlannerPtr</a>(est);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// Create a state space for the space we are planning in</span></div><div class="line"><a class="code" href="classompl_1_1geometric_1_1SimpleSetup.html">ompl::geometric::SimpleSetup</a> ss(space);</div><div class="line"></div><div class="line"><span class="comment">// Configure the problem to solve: set start state(s)</span></div><div class="line"><span class="comment">// and goal representation</span></div><div class="line"><span class="comment">// Everything must be set up to the point ss.solve()</span></div><div class="line"><span class="comment">// can be called. Setting up a planner is not needed.</span></div></div><!-- fragment --><p>Benchmarking code starts here:</p>
-<div class="fragment"><div class="line"><span class="comment">// First we create a benchmark class:</span></div><div class="line"><a class="code" href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a> b(ss, <span class="stringliteral">&quot;my experiment&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// Optionally, specify some benchmark parameters (doesn&#39;t change how the benchmark is run)</span></div><div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_dofs&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>)</div><div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_obstacles&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>)</div><div class="line"></div><div class="line"><span class="comment">// We add the planners to evaluate.</span></div><div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::KPIECE1(ss.getSpaceInformation())));</div><div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::RRT(ss.getSpaceInformation())));</div><div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::SBL(ss.getSpaceInformation())));</div><div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::LBKPIECE1(ss.getSpaceInformation())));</div><div class="line"><span class="comment">// etc</span></div><div class="line"></div><div class="line"><span class="comment">// For planners that we want to configure in specific ways,</span></div><div class="line"><span class="comment">// the ompl::base::PlannerAllocator should be used:</span></div><div class="line">b.addPlannerAllocator(std::bind(&amp;myConfiguredPlanner, std::placeholders::_1));</div><div class="line"><span class="comment">// etc.</span></div><div class="line"></div><div class="line"><span class="comment">// Now we can benchmark: 5 second time limit for each plan computation,</span></div><div class="line"><span class="comment">// 100 MB maximum memory usage per plan computation, 50 runs for each planner</span></div><div class="line"><span class="comment">// and true means that a text-mode progress bar should be displayed while</span></div><div class="line"><span class="comment">// computation is running.</span></div><div class="line"><a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html">ompl::tools::Benchmark::Request</a> req;</div><div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#ae29e119a2a3ca7d1325f701159a7636a">maxTime</a> = 5.0;</div><div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a12b3d959f8e7349120cdd87ef21f72b8">maxMem</a> = 100.0;</div><div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a0252082e35f936c93c86eabf0d713e01">runCount</a> = 50;</div><div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a0e63ef873358346cfb78a69121dfd2ec">displayProgress</a> = <span class="keyword">true</span>;</div><div class="line">b.benchmark(req);</div><div class="line"></div><div class="line"><span class="comment">// This will generate a file of the form ompl_host_time.log</span></div><div class="line">b.saveResultsToFile();</div></div><!-- fragment --><p>Adding callbacks for before and after the execution of a run is also possible:</p>
-<div class="fragment"><div class="line"><span class="comment">// Assume these functions are defined</span></div><div class="line"><span class="keywordtype">void</span> optionalPreRunEvent(<span class="keyword">const</span> base::PlannerPtr &amp;planner)</div><div class="line">{</div><div class="line">    <span class="comment">// do whatever configuration we want to the planner,</span></div><div class="line">    <span class="comment">// including changing of problem definition (input states)</span></div><div class="line">    <span class="comment">// via planner-&gt;getProblemDefinition()</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">void</span> optionalPostRunEvent(<span class="keyword">const</span> base::PlannerPtr &amp;planner, tools::Benchmark::RunProperties &amp;run)</div><div class="line">{</div><div class="line">    <span class="comment">// do any cleanup, or set values for upcoming run (or upcoming call to the pre-run event).</span></div><div class="line"></div><div class="line">    <span class="comment">// adding elements to the set of collected run properties is also possible;</span></div><div class="line">    <span class="comment">// (the added data will be recorded in the log file)</span></div><div class="line"></div><div class="line">    run[<span class="stringliteral">&quot;some extra property name INTEGER&quot;</span>] = <span class="stringliteral">&quot;some value&quot;</span>;</div><div class="line">    <span class="comment">// The format of added data is string key, string value pairs,</span></div><div class="line">    <span class="comment">// with the convention that the last word in string key is one of</span></div><div class="line">    <span class="comment">// REAL, INTEGER, BOOLEAN, STRING. (this will be the type of the field</span></div><div class="line">    <span class="comment">// when the log file is processed and saved as a database).</span></div><div class="line">    <span class="comment">// The values are always converted to string.</span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// After the Benchmark class is defined, the events can be optionally registered:</span></div><div class="line">b.setPreRunEvent(std::bind(&amp;optionalPreRunEvent, std::placeholders::_1));</div><div class="line">b.setPostRunEvent(std::bind(&amp;optionalPostRunEvent, std::placeholders::_1, std::placeholders::_2));</div></div><!-- fragment --><h1><a class="anchor" id="benchmark_log"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;ompl/tools/benchmark/Benchmark.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// A function that matches the ompl::base::PlannerAllocator type.</span></div>
+<div class="line"><span class="comment">// It will be used later to allocate an instance of EST</span></div>
+<div class="line"><a class="code" href="classompl_1_1base_1_1PlannerPtr.html">ompl::base::PlannerPtr</a> myConfiguredPlanner(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;si)</div>
+<div class="line">{</div>
+<div class="line">    geometric::EST *est = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1EST.html">ompl::geometric::EST</a>(si);</div>
+<div class="line">    est-&gt;setRange(100.0);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1PlannerPtr.html">ompl::base::PlannerPtr</a>(est);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Create a state space for the space we are planning in</span></div>
+<div class="line"><a class="code" href="classompl_1_1geometric_1_1SimpleSetup.html">ompl::geometric::SimpleSetup</a> ss(space);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Configure the problem to solve: set start state(s)</span></div>
+<div class="line"><span class="comment">// and goal representation</span></div>
+<div class="line"><span class="comment">// Everything must be set up to the point ss.solve()</span></div>
+<div class="line"><span class="comment">// can be called. Setting up a planner is not needed.</span></div>
+</div><!-- fragment --><p>Benchmarking code starts here:</p>
+<div class="fragment"><div class="line"><span class="comment">// First we create a benchmark class:</span></div>
+<div class="line"><a class="code" href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a> b(ss, <span class="stringliteral">&quot;my experiment&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Optionally, specify some benchmark parameters (doesn&#39;t change how the benchmark is run)</span></div>
+<div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_dofs&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>)</div>
+<div class="line">b.addExperimentParameter(<span class="stringliteral">&quot;num_obstacles&quot;</span>, <span class="stringliteral">&quot;INTEGER&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// We add the planners to evaluate.</span></div>
+<div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::KPIECE1(ss.getSpaceInformation())));</div>
+<div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::RRT(ss.getSpaceInformation())));</div>
+<div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::SBL(ss.getSpaceInformation())));</div>
+<div class="line">b.addPlanner(base::PlannerPtr(<span class="keyword">new</span> geometric::LBKPIECE1(ss.getSpaceInformation())));</div>
+<div class="line"><span class="comment">// etc</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// For planners that we want to configure in specific ways,</span></div>
+<div class="line"><span class="comment">// the ompl::base::PlannerAllocator should be used:</span></div>
+<div class="line">b.addPlannerAllocator(std::bind(&amp;myConfiguredPlanner, std::placeholders::_1));</div>
+<div class="line"><span class="comment">// etc.</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Now we can benchmark: 5 second time limit for each plan computation,</span></div>
+<div class="line"><span class="comment">// 100 MB maximum memory usage per plan computation, 50 runs for each planner</span></div>
+<div class="line"><span class="comment">// and true means that a text-mode progress bar should be displayed while</span></div>
+<div class="line"><span class="comment">// computation is running.</span></div>
+<div class="line"><a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html">ompl::tools::Benchmark::Request</a> req;</div>
+<div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#ae29e119a2a3ca7d1325f701159a7636a">maxTime</a> = 5.0;</div>
+<div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a12b3d959f8e7349120cdd87ef21f72b8">maxMem</a> = 100.0;</div>
+<div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a0252082e35f936c93c86eabf0d713e01">runCount</a> = 50;</div>
+<div class="line">req.<a class="code" href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a0e63ef873358346cfb78a69121dfd2ec">displayProgress</a> = <span class="keyword">true</span>;</div>
+<div class="line">b.benchmark(req);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This will generate a file of the form ompl_host_time.log</span></div>
+<div class="line">b.saveResultsToFile();</div>
+</div><!-- fragment --><p>Adding callbacks for before and after the execution of a run is also possible:</p>
+<div class="fragment"><div class="line"><span class="comment">// Assume these functions are defined</span></div>
+<div class="line"><span class="keywordtype">void</span> optionalPreRunEvent(<span class="keyword">const</span> base::PlannerPtr &amp;planner)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// do whatever configuration we want to the planner,</span></div>
+<div class="line">    <span class="comment">// including changing of problem definition (input states)</span></div>
+<div class="line">    <span class="comment">// via planner-&gt;getProblemDefinition()</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> optionalPostRunEvent(<span class="keyword">const</span> base::PlannerPtr &amp;planner, tools::Benchmark::RunProperties &amp;run)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// do any cleanup, or set values for upcoming run (or upcoming call to the pre-run event).</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// adding elements to the set of collected run properties is also possible;</span></div>
+<div class="line">    <span class="comment">// (the added data will be recorded in the log file)</span></div>
+<div class="line"> </div>
+<div class="line">    run[<span class="stringliteral">&quot;some extra property name INTEGER&quot;</span>] = <span class="stringliteral">&quot;some value&quot;</span>;</div>
+<div class="line">    <span class="comment">// The format of added data is string key, string value pairs,</span></div>
+<div class="line">    <span class="comment">// with the convention that the last word in string key is one of</span></div>
+<div class="line">    <span class="comment">// REAL, INTEGER, BOOLEAN, STRING. (this will be the type of the field</span></div>
+<div class="line">    <span class="comment">// when the log file is processed and saved as a database).</span></div>
+<div class="line">    <span class="comment">// The values are always converted to string.</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// After the Benchmark class is defined, the events can be optionally registered:</span></div>
+<div class="line">b.setPreRunEvent(std::bind(&amp;optionalPreRunEvent, std::placeholders::_1));</div>
+<div class="line">b.setPostRunEvent(std::bind(&amp;optionalPostRunEvent, std::placeholders::_1, std::placeholders::_2));</div>
+</div><!-- fragment --><h1><a class="anchor" id="benchmark_log"></a>
 Processing the benchmarking log file</h1>
-<p>Once the C++ code computing the results has been executed, a log file is generated. This contains information about the settings of the planners, the parameters of the problem tested on, etc. To visualize this information, we provide a script that parses the log files: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py logfile.log -d mydatabase.db
-</pre><p>This will generate a SQLite database containing the parsed data. If no database name is specified, the named is assumed to be benchmark.db. Once this database is generated, we can visualize the results. The recommended way is to upload the database to <a href="http://plannerarena.org">Planner Arena</a> and navigate through the different plots. Planner Arena can also be run locally with the <code>plannerarena</code> script (requires R to be installed). Alternatively, you can also produce some basic plots with <code>ompl_benchmark_statistics.py</code> like so: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -p boxplot.pdf
-</pre><p>This will generate a series of plots, one for each of the attributes described below, showing the results for each planner. <a href="#benchmark_sample_results">Below</a> we have included some sample benchmark results.</p>
-<p>If you would like to process the data in different ways, you can generate a dump file that you can load in a MySQL database: </p><pre class="fragment">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -m mydump.sql
-</pre><p>For more details on how to use the benchmark script, see: </p><pre class="fragment">scripts/ompl_benchmark_statistics.py --help
-</pre><p>Collected benchmark data for each experiment:</p>
+<p>Once the C++ code computing the results has been executed, a log file is generated. This contains information about the settings of the planners, the parameters of the problem tested on, etc. To visualize this information, we provide a script that parses the log files:</p>
+<div class="fragment"><div class="line">ompl/scripts/ompl_benchmark_statistics.py logfile.log -d mydatabase.db</div>
+</div><!-- fragment --><p>This will generate a SQLite database containing the parsed data. If no database name is specified, the named is assumed to be benchmark.db. Once this database is generated, we can visualize the results. The recommended way is to upload the database to <a href="http://plannerarena.org">Planner Arena</a> and navigate through the different plots. Planner Arena can also be run locally with the <code>plannerarena</code> script (requires R to be installed). Alternatively, you can also produce some basic plots with <code>ompl_benchmark_statistics.py</code> like so:</p>
+<div class="fragment"><div class="line">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -p boxplot.pdf</div>
+</div><!-- fragment --><p>This will generate a series of plots, one for each of the attributes described below, showing the results for each planner. <a href="#benchmark_sample_results">Below</a> we have included some sample benchmark results.</p>
+<p>If you would like to process the data in different ways, you can generate a dump file that you can load in a MySQL database:</p>
+<div class="fragment"><div class="line">ompl/scripts/ompl_benchmark_statistics.py -d mydatabase.db -m mydump.sql</div>
+</div><!-- fragment --><p>For more details on how to use the benchmark script, see:</p>
+<div class="fragment"><div class="line">scripts/ompl_benchmark_statistics.py --help</div>
+</div><!-- fragment --><p>Collected benchmark data for each experiment:</p>
 <ul>
 <li><b>name:</b> name of experiment (optional)</li>
 <li><b>totaltime:</b> the total duration for conducting the experiment (seconds)</li>
@@ -222,11 +290,12 @@ Processing the benchmarking log file</h1>
 <li><b>simplified correct solution strict:</b> (boolean) flag indicating whether the found solution is correct after simplification, when checked at a finer resolution.</li>
 <li><b>graph states:</b> (integer) the number of states in the constructed graph</li>
 <li><b>graph motions:</b> (integer) the number of edges (motions) in the constructed graph</li>
-<li><b>valid segment fraction:</b> (real) the fraction of segments that turned out to be valid (using <a class="el" href="classompl_1_1base_1_1MotionValidator.html" title="Abstract definition for a class checking the validity of motions – path segments between states...">ompl::base::MotionValidator</a>) out of all the segments that were checked for validity</li>
+<li><b>valid segment fraction:</b> (real) the fraction of segments that turned out to be valid (using <a class="el" href="classompl_1_1base_1_1MotionValidator.html" title="Abstract definition for a class checking the validity of motions – path segments between states....">ompl::base::MotionValidator</a>) out of all the segments that were checked for validity</li>
 <li>more planner-specific properties</li>
 </ul>
-<p>Planning algorithms can also register callback functions that the Benchmark class will use to measure progress properties at regular intervals during a run of the planning algorithm. Currently only RRT* uses this functionality. The RRT* constructor registers, among others, a function that returns the cost of the best path found so far: </p><pre class="fragment">addPlannerProgressProperty("best cost REAL", std::bind(&amp;RRTstar::getBestCost, this));
-</pre><p>With the Benchmark class one can thus measure how the cost is decreasing over time. The ompl_benchmark_statistics.py script will automatically generate plots of progress properties as a function of time.</p>
+<p>Planning algorithms can also register callback functions that the Benchmark class will use to measure progress properties at regular intervals during a run of the planning algorithm. Currently only RRT* uses this functionality. The RRT* constructor registers, among others, a function that returns the cost of the best path found so far:</p>
+<div class="fragment"><div class="line">addPlannerProgressProperty(<span class="stringliteral">&quot;best cost REAL&quot;</span>, std::bind(&amp;RRTstar::getBestCost, <span class="keyword">this</span>));</div>
+</div><!-- fragment --><p>With the Benchmark class one can thus measure how the cost is decreasing over time. The ompl_benchmark_statistics.py script will automatically generate plots of progress properties as a function of time.</p>
 <h1><a class="anchor" id="benchmark_sample_results"></a>
 Sample benchmark results</h1>
 <p>Below are sample results for running benchmarks for two example problems: the “cubicles” environment and the “Twistycool” environment. The complete benchmarking program (SE3RigidBodyPlanningBenchmark.cpp), the environment and robot files are included with OMPL.app, so you can rerun the exact same benchmarks on your own machine. See the <a href="gallery.html#gallery_omplapp">gallery</a> for visualizations of sample solutions to both problems. The results below were run on a recent model Apple MacBook Pro (2.66 GHz Intel Core i7, 8GB of RAM). It is important to note that none of the planner parameters were tuned; all benchmarks were run with default settings. From these results one cannot draw any firm conclusions about which planner is “better” than some other planner.</p>
@@ -235,26 +304,62 @@ Sample benchmark results</h1>
 <li><a href="images/cubicles.pdf">The “cubicles” problem with default settings</a></li>
 <li><a href="images/Twistycool.pdf">The “Twistycool” problem with default settings</a></li>
 </ul>
-<p>The plots show comparisons between <a class="el" href="classompl_1_1geometric_1_1RRTConnect.html" title="RRT-Connect (RRTConnect) ">ompl::geometric::RRTConnect</a>, <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees. ">ompl::geometric::RRT</a>, <a class="el" href="classompl_1_1geometric_1_1BKPIECE1.html" title="Bi-directional KPIECE with one level of discretization. ">ompl::geometric::BKPIECE1</a>, <a class="el" href="classompl_1_1geometric_1_1LBKPIECE1.html" title="Lazy Bi-directional KPIECE with one level of discretization. ">ompl::geometric::LBKPIECE1</a>, <a class="el" href="classompl_1_1geometric_1_1KPIECE1.html" title="Kinematic Planning by Interior-Exterior Cell Exploration. ">ompl::geometric::KPIECE1</a>, <a class="el" href="classompl_1_1geometric_1_1SBL.html" title="Single-Query Bi-Directional Probabilistic Roadmap Planner with Lazy Collision Checking. ">ompl::geometric::SBL</a>, <a class="el" href="classompl_1_1geometric_1_1EST.html" title="Expansive Space Trees. ">ompl::geometric::EST</a>, and <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">ompl::geometric::PRM</a>. Each planner is run 500 times with a 10 second time limit for the cubicles problem for each sampling strategy, while for the Twistycool problem each planner is run 50 times with a 60 second time limit.</p>
-<p>For integer and real-valued measurements the script will compute <a href="http://en.wikipedia.org/wiki/Box_plot">box plots</a>. For example, here is the plot for the real-valued attribute <b>time</b> for the cubicles environment:</p>
-<div class="row"><div class="image">
-<img src="images/cubicles_time.png" class="col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1 img-responsive"/>
-</div>
-</div><p>For boolean measurements the script will create bar charts with the percentage of <b>true</b> values. For example, here is the plot for the boolean attribute <b>solved</b> for the Twistycool environment, a much harder problem:</p>
-<div class="row"><div class="image">
-<img src="images/Twistycool_solved.png" class="col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1 img-responsive"/>
-</div>
-</div><p>Whenever measurements are not always available for a particular attribute, the columns for each planner are labeled with the number of runs for which no data was available. For instance, the boolean attribute <b>correct solution</b> is not set if a solution is not found.</p>
+<p>The plots show comparisons between <a class="el" href="classompl_1_1geometric_1_1RRTConnect.html" title="RRT-Connect (RRTConnect)">ompl::geometric::RRTConnect</a>, <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees.">ompl::geometric::RRT</a>, <a class="el" href="classompl_1_1geometric_1_1BKPIECE1.html" title="Bi-directional KPIECE with one level of discretization.">ompl::geometric::BKPIECE1</a>, <a class="el" href="classompl_1_1geometric_1_1LBKPIECE1.html" title="Lazy Bi-directional KPIECE with one level of discretization.">ompl::geometric::LBKPIECE1</a>, <a class="el" href="classompl_1_1geometric_1_1KPIECE1.html" title="Kinematic Planning by Interior-Exterior Cell Exploration.">ompl::geometric::KPIECE1</a>, <a class="el" href="classompl_1_1geometric_1_1SBL.html" title="Single-Query Bi-Directional Probabilistic Roadmap Planner with Lazy Collision Checking.">ompl::geometric::SBL</a>, <a class="el" href="classompl_1_1geometric_1_1EST.html" title="Expansive Space Trees.">ompl::geometric::EST</a>, and <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">ompl::geometric::PRM</a>. Each planner is run 500 times with a 10 second time limit for the cubicles problem for each sampling strategy, while for the Twistycool problem each planner is run 50 times with a 60 second time limit.</p>
+<p>For integer and real-valued measurements the script will compute <a href="https://en.wikipedia.org/wiki/Box_plot">box plots</a>. For example, here is the plot for the real-valued attribute <b>time</b> for the cubicles environment:</p>
+<div class="row"><div class="col-md-8 col-sm-10 offset-md-2 offset-sm-1"><img src="images/cubicles_time.png" alt="" class="img-fluid" class="inline"/></div></div><p>For boolean measurements the script will create bar charts with the percentage of <b>true</b> values. For example, here is the plot for the boolean attribute <b>solved</b> for the Twistycool environment, a much harder problem:</p>
+<div class="row"><div class="col-md-8 col-sm-10 offset-md-2 offset-sm-1"><img src="images/Twistycool_solved.png" alt="" class="img-fluid" class="inline"/></div></div><p>Whenever measurements are not always available for a particular attribute, the columns for each planner are labeled with the number of runs for which no data was available. For instance, the boolean attribute <b>correct solution</b> is not set if a solution is not found.</p>
 <h1><a class="anchor" id="benchmark_logfile_format"></a>
 The benchmark logfile format</h1>
 <p>The benchmark log files have a pretty simple structure. Below we have included their syntax in <a href="https://en.wikipedia.org/wiki/Extended_Backus–Naur_Form">Extended Backus-Naur Form</a>. This may be useful for someone interested in extending other planning libraries with similar logging capabilities (which would be helpful in a direct comparison of the performance of planning libraries). Log files in this format can be parsed by ompl_benchmark_statistics.py (see next section).</p>
-<div class="fragment"><div class="line">logfile               ::= preamble planners_data;</div><div class="line">preamble              ::= [version] experiment [exp_property_count exp_properties] hostname date setup [cpuinfo]</div><div class="line">                          random_seed time_limit memory_limit [num_runs]</div><div class="line">                          total_time [num_enums enums] num_planners;</div><div class="line">version               ::= library_name &quot; version &quot; version_number EOL;</div><div class="line">experiment            ::= &quot;Experiment &quot; experiment_name EOL;</div><div class="line">exp_property_count    ::= int &quot; experiment properties&quot; EOL;</div><div class="line">exp_properties        ::= exp_property | exp_property exp_properties;</div><div class="line">exp_property          ::= name property_type &quot;=&quot; num EOL;</div><div class="line">hostname              ::= &quot;Running on &quot; host EOL;</div><div class="line">date                  ::= &quot;Starting at &quot; date_string EOL;</div><div class="line">setup                 ::= multi_line_string;</div><div class="line">cpuinfo               ::= multi_line_string;</div><div class="line">multi_line_string     ::= &quot;&lt;&lt;&lt;|&quot; EOL strings &quot;|&gt;&gt;&gt;&quot; EOL;</div><div class="line">strings               ::= string EOL | string EOL strings</div><div class="line">random_seed           ::= int &quot; is the random seed&quot; EOL;</div><div class="line">time_limit            ::= float &quot; seconds per run&quot; EOL;</div><div class="line">memory_limit          ::= float &quot; MB per run&quot; EOL;</div><div class="line">num_runs              ::= int &quot; runs per planner&quot; EOL;</div><div class="line">total_time            ::= float &quot; seconds spent to collect the data&quot; EOL;</div><div class="line">num_enums             ::= num &quot; enum type&quot; EOL;</div><div class="line">enums                 ::= enum | enum enums;</div><div class="line">enum                  ::= enum_name &quot;|&quot; enum_values EOL;</div><div class="line">enum_values           ::= enum_value | enum_value &quot;|&quot; enum_values;</div><div class="line">num_planners          ::= int &quot; planners&quot; EOL;</div><div class="line">planners_data         ::= planner_data | planner_data planners_data;</div><div class="line">planner_data          ::= planner_name EOL int &quot; common properties&quot; EOL</div><div class="line">                          planner_properties int &quot; properties for each run&quot; EOL</div><div class="line">                          run_properties int &quot; runs&quot; EOL run_measurements</div><div class="line">                          [int &quot;progress properties for each run&quot; EOL</div><div class="line">                          progress_properties int &quot; runs&quot; EOL</div><div class="line">                          progress_measurements] &quot;.&quot; EOL;</div><div class="line">planner_properties    ::= &quot;&quot; | planner_property planner_properties;</div><div class="line">planner_property      ::= property_name &quot; = &quot; property_value EOL;</div><div class="line">run_properties        ::= property | property run_properties;</div><div class="line">progress_properties   ::= property | property progress_properties;</div><div class="line">property              ::= property_name &quot; &quot; property_type EOL;</div><div class="line">property_type         ::= &quot;BOOLEAN&quot; | &quot;INTEGER&quot; | &quot;REAL&quot;;</div><div class="line">run_measurements      ::= run_measurement | run_measurement run_measurements;</div><div class="line">run_measurement       ::= data &quot;; &quot; | data &quot;; &quot; run_measurement;</div><div class="line">data                  ::= num | &quot;inf&quot; | &quot;nan&quot; | &quot;&quot;;</div><div class="line">progress_measurements ::= progress_measurement EOL</div><div class="line">                         | progress_measurement EOL progress_measurements;</div><div class="line">progress_measurement  ::= prog_run_data | prog_run_data &quot;;&quot; progress_measurement;</div><div class="line">prog_run_data         ::= data &quot;,&quot; | data &quot;,&quot; prog_run_data;</div></div><!-- fragment --><p>Here, <code>EOL</code> denotes a newline character, <code>int</code> denotes an integer, <code>float</code> denotes a floating point number, <code>num</code> denotes an integer or float value and undefined symbols correspond to strings without whitespace characters. The exception is <code>property_name</code> which is a string that <em>can</em> have whitespace characters. It is also assumed that if the log file says there is data for <em>k</em> planners that that really is the case (likewise for the number of run measurements and the optional progress measurements).</p>
+<div class="fragment"><div class="line">logfile               ::= preamble planners_data;</div>
+<div class="line">preamble              ::= [version] experiment [exp_property_count exp_properties] hostname date setup [cpuinfo]</div>
+<div class="line">                          random_seed time_limit memory_limit [num_runs]</div>
+<div class="line">                          total_time [num_enums enums] num_planners;</div>
+<div class="line">version               ::= library_name &quot; version &quot; version_number EOL;</div>
+<div class="line">experiment            ::= &quot;Experiment &quot; experiment_name EOL;</div>
+<div class="line">exp_property_count    ::= int &quot; experiment properties&quot; EOL;</div>
+<div class="line">exp_properties        ::= exp_property | exp_property exp_properties;</div>
+<div class="line">exp_property          ::= name property_type &quot;=&quot; num EOL;</div>
+<div class="line">hostname              ::= &quot;Running on &quot; host EOL;</div>
+<div class="line">date                  ::= &quot;Starting at &quot; date_string EOL;</div>
+<div class="line">setup                 ::= multi_line_string;</div>
+<div class="line">cpuinfo               ::= multi_line_string;</div>
+<div class="line">multi_line_string     ::= &quot;&lt;&lt;&lt;|&quot; EOL strings &quot;|&gt;&gt;&gt;&quot; EOL;</div>
+<div class="line">strings               ::= string EOL | string EOL strings</div>
+<div class="line">random_seed           ::= int &quot; is the random seed&quot; EOL;</div>
+<div class="line">time_limit            ::= float &quot; seconds per run&quot; EOL;</div>
+<div class="line">memory_limit          ::= float &quot; MB per run&quot; EOL;</div>
+<div class="line">num_runs              ::= int &quot; runs per planner&quot; EOL;</div>
+<div class="line">total_time            ::= float &quot; seconds spent to collect the data&quot; EOL;</div>
+<div class="line">num_enums             ::= num &quot; enum type&quot; EOL;</div>
+<div class="line">enums                 ::= enum | enum enums;</div>
+<div class="line">enum                  ::= enum_name &quot;|&quot; enum_values EOL;</div>
+<div class="line">enum_values           ::= enum_value | enum_value &quot;|&quot; enum_values;</div>
+<div class="line">num_planners          ::= int &quot; planners&quot; EOL;</div>
+<div class="line">planners_data         ::= planner_data | planner_data planners_data;</div>
+<div class="line">planner_data          ::= planner_name EOL int &quot; common properties&quot; EOL</div>
+<div class="line">                          planner_properties int &quot; properties for each run&quot; EOL</div>
+<div class="line">                          run_properties int &quot; runs&quot; EOL run_measurements</div>
+<div class="line">                          [int &quot;progress properties for each run&quot; EOL</div>
+<div class="line">                          progress_properties int &quot; runs&quot; EOL</div>
+<div class="line">                          progress_measurements] &quot;.&quot; EOL;</div>
+<div class="line">planner_properties    ::= &quot;&quot; | planner_property planner_properties;</div>
+<div class="line">planner_property      ::= property_name &quot; = &quot; property_value EOL;</div>
+<div class="line">run_properties        ::= property | property run_properties;</div>
+<div class="line">progress_properties   ::= property | property progress_properties;</div>
+<div class="line">property              ::= property_name &quot; &quot; property_type EOL;</div>
+<div class="line">property_type         ::= &quot;BOOLEAN&quot; | &quot;INTEGER&quot; | &quot;REAL&quot;;</div>
+<div class="line">run_measurements      ::= run_measurement | run_measurement run_measurements;</div>
+<div class="line">run_measurement       ::= data &quot;; &quot; | data &quot;; &quot; run_measurement;</div>
+<div class="line">data                  ::= num | &quot;inf&quot; | &quot;nan&quot; | &quot;&quot;;</div>
+<div class="line">progress_measurements ::= progress_measurement EOL</div>
+<div class="line">                         | progress_measurement EOL progress_measurements;</div>
+<div class="line">progress_measurement  ::= prog_run_data | prog_run_data &quot;;&quot; progress_measurement;</div>
+<div class="line">prog_run_data         ::= data &quot;,&quot; | data &quot;,&quot; prog_run_data;</div>
+</div><!-- fragment --><p>Here, <code>EOL</code> denotes a newline character, <code>int</code> denotes an integer, <code>float</code> denotes a floating point number, <code>num</code> denotes an integer or float value and undefined symbols correspond to strings without whitespace characters. The exception is <code>property_name</code> which is a string that <em>can</em> have whitespace characters. It is also assumed that if the log file says there is data for <em>k</em> planners that that really is the case (likewise for the number of run measurements and the optional progress measurements).</p>
 <h1><a class="anchor" id="benchmark_database"></a>
 The benchmark database schema</h1>
-<div class="col-sm-4 pull-right"> <div class="image">
-<img src="images/benchmarkdb_schema.png" width="100%"/>
-</div>
- <br />
+<div class="col-sm-4 float-right"> <img src="images/benchmarkdb_schema.png" alt="" width="100%" class="inline"/> <br  />
  <b>The benchmark database schema</b> </div><p> The ompl_benchmark_statistics.py script can produce a series of plots from a database of benchmark results, but in many cases you may want to produce your own custom plots. For this it useful to understand the schema used for the database. There are five tables in a benchmark database:</p>
 <ul>
 <li><b>experiments</b>. This table contains the following information:<ul>
@@ -278,7 +383,7 @@ The benchmark database schema</h1>
 <li><em>settings:</em> a string containing a “print-out” of all the settings of the planner.</li>
 </ul>
 </li>
-<li><b>enums</b>: This table contains description of enumerate types that are measured during benchmarking. By default there is only one such such type defined: <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve() ">ompl::base::PlannerStatus</a>. The table contains the following information:<ul>
+<li><b>enums</b>: This table contains description of enumerate types that are measured during benchmarking. By default there is only one such such type defined: <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve()">ompl::base::PlannerStatus</a>. The table contains the following information:<ul>
 <li><em>name:</em> name of the enumerate type (e.g., “status”).</li>
 <li><em>value:</em> numerical value used in the runs</li>
 <li><em>description:</em> text description of each value (e.g. “Exact solution,” “Approximate solution,” “Timeout,” etc.)</li>
@@ -301,8 +406,23 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
 </ul>
 </li>
 </ul>
-<p>Using SQL queries one can easily select a subset of the data or compute <a href="http://en.wikipedia.org/wiki/Join_(SQL)">joins</a> of tables. Consider the following snippet of R code:</p>
-<div class="fragment"><div class="line">library(&quot;ggplot2&quot;)</div><div class="line">library(&quot;RSQLite&quot;)</div><div class="line">con &lt;- dbConnect(dbDriver(&quot;SQLite&quot;), &quot;benchmark.db&quot;)</div><div class="line"></div><div class="line"># read data</div><div class="line">runs &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, runs.* FROM plannerConfigs INNER JOIN runs ON plannerConfigs.id = runs.plannerid&quot;)</div><div class="line">progress &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, progress.* FROM plannerConfigs INNER JOIN runs INNER JOIN progress ON plannerConfigs.id=runs.plannerid AND runs.id=progress.runid&quot;)</div><div class="line"></div><div class="line"># plot some data</div><div class="line">pdf(&#39;plots.pdf&#39;, width=8, height=6)</div><div class="line">qplot(name, time, data=runs, geom=c(&quot;jitter&quot;,&quot;boxplot&quot;))</div><div class="line">qplot(time, best_cost, data=progress, alpha=I(1/2), colour=name, geom=c(&quot;point&quot;, &quot;smooth&quot;))</div><div class="line"></div><div class="line">dev.off()</div><div class="line">dbDisconnect(con)</div></div><!-- fragment --><p>For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:
+<p>Using SQL queries one can easily select a subset of the data or compute <a href="https://en.wikipedia.org/wiki/Join_(SQL)">joins</a> of tables. Consider the following snippet of R code:</p>
+<div class="fragment"><div class="line">library(&quot;ggplot2&quot;)</div>
+<div class="line">library(&quot;RSQLite&quot;)</div>
+<div class="line">con &lt;- dbConnect(dbDriver(&quot;SQLite&quot;), &quot;benchmark.db&quot;)</div>
+<div class="line"> </div>
+<div class="line"># read data</div>
+<div class="line">runs &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, runs.* FROM plannerConfigs INNER JOIN runs ON plannerConfigs.id = runs.plannerid&quot;)</div>
+<div class="line">progress &lt;- dbGetQuery(con, &quot;SELECT REPLACE(plannerConfigs.name,&#39;geometric_&#39;,&#39;&#39;) AS name, progress.* FROM plannerConfigs INNER JOIN runs INNER JOIN progress ON plannerConfigs.id=runs.plannerid AND runs.id=progress.runid&quot;)</div>
+<div class="line"> </div>
+<div class="line"># plot some data</div>
+<div class="line">pdf(&#39;plots.pdf&#39;, width=8, height=6)</div>
+<div class="line">qplot(name, time, data=runs, geom=c(&quot;jitter&quot;,&quot;boxplot&quot;))</div>
+<div class="line">qplot(time, best_cost, data=progress, alpha=I(1/2), colour=name, geom=c(&quot;point&quot;, &quot;smooth&quot;))</div>
+<div class="line"> </div>
+<div class="line">dev.off()</div>
+<div class="line">dbDisconnect(con)</div>
+</div><!-- fragment --><p>For a small database with 1 experiment (the “cubicles” problem from OMPL.app) and 5 planner configurations we then obtain the following two plots:  
 <div class="row">
 <div class="col-md-6 col-sm-6">
   <img src="images/R_time.png" width="100%"><br>
@@ -316,15 +436,26 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
 </p>
 <dl class="section note"><dt>Note</dt><dd>Similar code is used for <a href="http://plannerarena.org">Planner Arena</a>, a web site for interactive visualization of benchmark databases. The Planner Arena code is part of the OMPL source. Instructions for running Planner Arena locally can be found <a href="plannerarena.html">here</a>. </dd></dl>
 </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformationPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::SpaceInformation.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1SimpleSetup_html"><div class="ttname"><a href="classompl_1_1geometric_1_1SimpleSetup.html">ompl::geometric::SimpleSetup</a></div><div class="ttdoc">Create the set of classes typically needed to solve a geometric problem.</div><div class="ttdef"><b>Definition:</b> <a href="geometric_2SimpleSetup_8h_source.html#l00126">SimpleSetup.h:127</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerPtr.html">PlannerPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::Planner.</div></div>
+<div class="ttc" id="astructompl_1_1tools_1_1Benchmark_1_1Request_html_a0252082e35f936c93c86eabf0d713e01"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a0252082e35f936c93c86eabf0d713e01">ompl::tools::Benchmark::Request::runCount</a></div><div class="ttdeci">unsigned int runCount</div><div class="ttdoc">the number of times to run each planner; 100 by default If set to 0, then run each planner as many ti...</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00276">Benchmark.h:276</a></div></div>
+<div class="ttc" id="astructompl_1_1tools_1_1Benchmark_1_1Request_html_a0e63ef873358346cfb78a69121dfd2ec"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a0e63ef873358346cfb78a69121dfd2ec">ompl::tools::Benchmark::Request::displayProgress</a></div><div class="ttdeci">bool displayProgress</div><div class="ttdoc">flag indicating whether progress is to be displayed or not; true by default</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00283">Benchmark.h:283</a></div></div>
+<div class="ttc" id="astructompl_1_1tools_1_1Benchmark_1_1Request_html"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html">ompl::tools::Benchmark::Request</a></div><div class="ttdoc">Representation of a benchmark request.</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00252">Benchmark.h:253</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Benchmark_html"><div class="ttname"><a href="classompl_1_1tools_1_1Benchmark.html">ompl::tools::Benchmark</a></div><div class="ttdoc">Benchmark a set of planners on a problem instance.</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00112">Benchmark.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1EST_html"><div class="ttname"><a href="classompl_1_1geometric_1_1EST.html">ompl::geometric::EST</a></div><div class="ttdoc">Expansive Space Trees.</div><div class="ttdef"><b>Definition:</b> <a href="geometric_2planners_2est_2EST_8h_source.html#l00129">EST.h:130</a></div></div>
+<div class="ttc" id="astructompl_1_1tools_1_1Benchmark_1_1Request_html_a12b3d959f8e7349120cdd87ef21f72b8"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html#a12b3d959f8e7349120cdd87ef21f72b8">ompl::tools::Benchmark::Request::maxMem</a></div><div class="ttdeci">double maxMem</div><div class="ttdoc">the maximum amount of memory a planner is allowed to use (MB); 4096.0 by default</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00272">Benchmark.h:272</a></div></div>
+<div class="ttc" id="astructompl_1_1tools_1_1Benchmark_1_1Request_html_ae29e119a2a3ca7d1325f701159a7636a"><div class="ttname"><a href="structompl_1_1tools_1_1Benchmark_1_1Request.html#ae29e119a2a3ca7d1325f701159a7636a">ompl::tools::Benchmark::Request::maxTime</a></div><div class="ttdeci">double maxTime</div><div class="ttdoc">the maximum amount of time a planner is allowed to run (seconds); 5.0 by default</div><div class="ttdef"><b>Definition:</b> <a href="Benchmark_8h_source.html#l00269">Benchmark.h:269</a></div></div>
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -334,6 +465,7 @@ The actual properties stored depend on the planner, but in the case of RRT* it s
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

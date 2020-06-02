@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::base::StateSampler Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::base::StateSampler Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -171,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract definition of a state space sampler.
+<p>Abstract definition of a state space sampler.  
  <a href="classompl_1_1base_1_1StateSampler.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="StateSampler_8h_source.html">ompl/base/StateSampler.h</a>&gt;</code></p>
@@ -180,19 +165,24 @@ Inheritance diagram for ompl::base::StateSampler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1base_1_1StateSampler__inherit__graph.png" border="0" usemap="#ompl_1_1base_1_1StateSampler_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1base_1_1StateSampler_inherit__map" id="ompl_1_1base_1_1StateSampler_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1base_1_1AtlasStateSampler.html" title="StateSampler for use on an atlas. " alt="" coords="229,5,435,32"/>
-<area shape="rect" id="node3" href="classompl_1_1base_1_1CForestStateSampler.html" title="Extended state sampler to use with the CForest planning algorithm. It wraps the user&#45;specified state ..." alt="" coords="245,57,419,98"/>
-<area shape="rect" id="node4" href="classompl_1_1base_1_1CompoundStateSampler.html" title="Definition of a compound state sampler. This is useful to construct samplers for compound states..." alt="" coords="237,122,427,163"/>
-<area shape="rect" id="node5" href="classompl_1_1base_1_1DiscreteStateSampler.html" title="State space sampler for discrete states. " alt="" coords="245,187,419,229"/>
-<area shape="rect" id="node6" href="classompl_1_1base_1_1InformedStateSampler.html" title="A wrapper class that allows an InformedSampler to be used as a StateSampler. " alt="" coords="243,253,421,294"/>
-<area shape="rect" id="node7" href="classompl_1_1base_1_1PrecomputedStateSampler.html" title="State space sampler for discrete states. " alt="" coords="229,318,435,359"/>
-<area shape="rect" id="node8" href="classompl_1_1base_1_1RealVectorStateSampler.html" title="State sampler for the Rn state space. " alt="" coords="236,383,428,425"/>
-<area shape="rect" id="node9" href="classompl_1_1base_1_1SO2StateSampler.html" title="State space sampler for SO(2) " alt="" coords="231,449,433,476"/>
-<area shape="rect" id="node10" href="classompl_1_1base_1_1SO3StateSampler.html" title="State space sampler for SO(3), using quaternion representation. " alt="" coords="231,500,433,527"/>
-<area shape="rect" id="node11" href="classompl_1_1base_1_1SubspaceStateSampler.html" title="Construct a sampler that samples only within a subspace of the space. " alt="" coords="239,551,425,593"/>
-<area shape="rect" id="node12" href="classompl_1_1base_1_1TimeStateSampler.html" title="State space sampler for time. " alt="" coords="229,617,435,644"/>
-<area shape="rect" id="node13" href="classompl_1_1base_1_1WrapperStateSampler.html" title="A state sampler that wraps around another state sampler. " alt="" coords="243,669,421,710"/>
-<area shape="rect" id="node14" href="classompl_1_1base_1_1ProjectedStateSampler.html" title="StateSampler for use for a projection&#45;based state space. " alt="" coords="483,669,665,710"/>
+<area shape="rect" title="Abstract definition of a state space sampler." alt="" coords="5,391,181,417"/>
+<area shape="rect" href="classompl_1_1base_1_1AtlasStateSampler.html" title="StateSampler for use on an atlas." alt="" coords="229,5,435,32"/>
+<area shape="rect" href="classompl_1_1base_1_1CForestStateSampler.html" title="Extended state sampler to use with the CForest planning algorithm. It wraps the user&#45;specified state ..." alt="" coords="245,57,419,98"/>
+<area shape="rect" href="classompl_1_1base_1_1CompoundStateSampler.html" title="Definition of a compound state sampler. This is useful to construct samplers for compound states." alt="" coords="237,122,427,163"/>
+<area shape="rect" href="classompl_1_1base_1_1DeterministicStateSampler.html" title="An abstract class for the concept of using deterministic sampling sequences to decrease the dispersio..." alt="" coords="246,187,418,229"/>
+<area shape="rect" href="classompl_1_1base_1_1DiscreteStateSampler.html" title="State space sampler for discrete states." alt="" coords="245,253,419,294"/>
+<area shape="rect" href="classompl_1_1base_1_1InformedStateSampler.html" title="A wrapper class that allows an InformedSampler to be used as a StateSampler." alt="" coords="243,318,421,359"/>
+<area shape="rect" href="classompl_1_1base_1_1PrecomputedStateSampler.html" title="State space sampler for discrete states." alt="" coords="229,383,435,425"/>
+<area shape="rect" href="classompl_1_1base_1_1RealVectorStateSampler.html" title="State sampler for the Rn state space." alt="" coords="236,449,428,490"/>
+<area shape="rect" href="classompl_1_1base_1_1SO2StateSampler.html" title="State space sampler for SO(2)" alt="" coords="231,515,433,541"/>
+<area shape="rect" href="classompl_1_1base_1_1SO3StateSampler.html" title="State space sampler for SO(3), using quaternion representation" alt="" coords="231,565,433,592"/>
+<area shape="rect" href="classompl_1_1base_1_1SubspaceStateSampler.html" title="Construct a sampler that samples only within a subspace of the space." alt="" coords="239,617,425,658"/>
+<area shape="rect" href="classompl_1_1base_1_1TimeStateSampler.html" title="State space sampler for time." alt="" coords="229,683,435,709"/>
+<area shape="rect" href="classompl_1_1base_1_1WrapperStateSampler.html" title="A state sampler that wraps around another state sampler." alt="" coords="243,734,421,775"/>
+<area shape="rect" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html" title="Deterministic state sampler for the Rn state space." alt="" coords="483,122,720,163"/>
+<area shape="rect" href="classompl_1_1base_1_1SE2DeterministicStateSampler.html" title="Deterministic state sampler for the Rn state space." alt="" coords="503,187,700,229"/>
+<area shape="rect" href="classompl_1_1base_1_1SO2DeterministicStateSampler.html" title="Deterministic state space sampler for SO(2)" alt="" coords="502,253,701,294"/>
+<area shape="rect" href="classompl_1_1base_1_1ProjectedStateSampler.html" title="StateSampler for use for a projection&#45;based state space." alt="" coords="510,734,693,775"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -213,10 +203,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:ae34c29e2eaefc49bab4dee255a782b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state. <br /></td></tr>
 <tr class="separator:ae34c29e2eaefc49bab4dee255a782b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cfa7cb3eed59fa2e2e7049ca9c34e03"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSampler.html#a4cfa7cb3eed59fa2e2e7049ca9c34e03">sampleUniformNear</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *near, double distance)=0</td></tr>
-<tr class="memdesc:a4cfa7cb3eed59fa2e2e7049ca9c34e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state near another, within a neighborhood controlled by a distance parameter.  <a href="#a4cfa7cb3eed59fa2e2e7049ca9c34e03">More...</a><br /></td></tr>
+<tr class="memdesc:a4cfa7cb3eed59fa2e2e7049ca9c34e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state near another, within a neighborhood controlled by a distance parameter.  <a href="classompl_1_1base_1_1StateSampler.html#a4cfa7cb3eed59fa2e2e7049ca9c34e03">More...</a><br /></td></tr>
 <tr class="separator:a4cfa7cb3eed59fa2e2e7049ca9c34e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa52bb1f8b70c28b50779a5607e929db8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1StateSampler.html#aa52bb1f8b70c28b50779a5607e929db8">sampleGaussian</a> (<a class="el" href="classompl_1_1base_1_1State.html">State</a> *state, const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *mean, double stdDev)=0</td></tr>
-<tr class="memdesc:aa52bb1f8b70c28b50779a5607e929db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state using a Gaussian distribution with given <em>mean</em> and standard deviation (<em>stdDev</em>).  <a href="#aa52bb1f8b70c28b50779a5607e929db8">More...</a><br /></td></tr>
+<tr class="memdesc:aa52bb1f8b70c28b50779a5607e929db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample a state using a Gaussian distribution with given <em>mean</em> and standard deviation (<em>stdDev</em>).  <a href="classompl_1_1base_1_1StateSampler.html#aa52bb1f8b70c28b50779a5607e929db8">More...</a><br /></td></tr>
 <tr class="separator:aa52bb1f8b70c28b50779a5607e929db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -233,7 +223,7 @@ const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract definition of a state space sampler. </p>
 
-<p class="definition">Definition at line <a class="el" href="StateSampler_8h_source.html#l00064">64</a> of file <a class="el" href="StateSampler_8h_source.html">StateSampler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StateSampler_8h_source.html#l00128">128</a> of file <a class="el" href="StateSampler_8h_source.html">StateSampler.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa52bb1f8b70c28b50779a5607e929db8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa52bb1f8b70c28b50779a5607e929db8">&#9670;&nbsp;</a></span>sampleGaussian()</h2>
@@ -278,7 +268,7 @@ const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *
 <p>Sample a state using a Gaussian distribution with given <em>mean</em> and standard deviation (<em>stdDev</em>). </p>
 <p>As with sampleUniform, the implementation of sampleGaussian is specific to the derived class and few assumptions can be made about the distance between <code>state</code> and <code>mean</code>. </p>
 
-<p>Implemented in <a class="el" href="classompl_1_1base_1_1SubspaceStateSampler.html#a724b2abd599820adb7d69c013cd15a8c">ompl::base::SubspaceStateSampler</a>, <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#af04761173d9692b6ceaf9d18bf475272">ompl::base::InformedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CompoundStateSampler.html#a42e0ed2c9210ff6dbe44fdc4f9473757">ompl::base::CompoundStateSampler</a>, <a class="el" href="classompl_1_1base_1_1AtlasStateSampler.html#ad1eb7ed1443bbabf3cc1797c2602a2a8">ompl::base::AtlasStateSampler</a>, <a class="el" href="classompl_1_1base_1_1ProjectedStateSampler.html#a41255c3cf780f61bf541afbea68429ba">ompl::base::ProjectedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CForestStateSampler.html#a18475f3036fbb645d0cb287ad1fb92f9">ompl::base::CForestStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO3StateSampler.html#a38422e925e0c473eee3d2193d439e29f">ompl::base::SO3StateSampler</a>, <a class="el" href="classompl_1_1base_1_1WrapperStateSampler.html#ade8c9340c29302c18a61177991b83812">ompl::base::WrapperStateSampler</a>, <a class="el" href="classompl_1_1base_1_1RealVectorStateSampler.html#a2648da566d6aef9b4255959840eb1534">ompl::base::RealVectorStateSampler</a>, <a class="el" href="classompl_1_1base_1_1PrecomputedStateSampler.html#a7382904bab7202d40247026ebdfcb2f4">ompl::base::PrecomputedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1DiscreteStateSampler.html#a3ace7c4fa63d4a85ec940455cd647e3f">ompl::base::DiscreteStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO2StateSampler.html#a0fb7fbc67be1c5f7dfa8e9a5276781db">ompl::base::SO2StateSampler</a>, and <a class="el" href="classompl_1_1base_1_1TimeStateSampler.html#a42d5468dd62fc4f502a52060484afaf6">ompl::base::TimeStateSampler</a>.</p>
+<p>Implemented in <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#af04761173d9692b6ceaf9d18bf475272">ompl::base::InformedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SE2DeterministicStateSampler.html#a2186224213fd1b4fb77101e3c0c87409">ompl::base::SE2DeterministicStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SubspaceStateSampler.html#a724b2abd599820adb7d69c013cd15a8c">ompl::base::SubspaceStateSampler</a>, <a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a35e01a9dc8468c8b6a2b23ff14618924">ompl::base::RealVectorDeterministicStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CompoundStateSampler.html#a42e0ed2c9210ff6dbe44fdc4f9473757">ompl::base::CompoundStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO2DeterministicStateSampler.html#a17c4eb6a6f6f2d26832bff2d42743e6f">ompl::base::SO2DeterministicStateSampler</a>, <a class="el" href="classompl_1_1base_1_1ProjectedStateSampler.html#a41255c3cf780f61bf541afbea68429ba">ompl::base::ProjectedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CForestStateSampler.html#a18475f3036fbb645d0cb287ad1fb92f9">ompl::base::CForestStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO3StateSampler.html#a38422e925e0c473eee3d2193d439e29f">ompl::base::SO3StateSampler</a>, <a class="el" href="classompl_1_1base_1_1WrapperStateSampler.html#ade8c9340c29302c18a61177991b83812">ompl::base::WrapperStateSampler</a>, <a class="el" href="classompl_1_1base_1_1RealVectorStateSampler.html#a2648da566d6aef9b4255959840eb1534">ompl::base::RealVectorStateSampler</a>, <a class="el" href="classompl_1_1base_1_1PrecomputedStateSampler.html#a7382904bab7202d40247026ebdfcb2f4">ompl::base::PrecomputedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1DiscreteStateSampler.html#a3ace7c4fa63d4a85ec940455cd647e3f">ompl::base::DiscreteStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO2StateSampler.html#a0fb7fbc67be1c5f7dfa8e9a5276781db">ompl::base::SO2StateSampler</a>, <a class="el" href="classompl_1_1base_1_1TimeStateSampler.html#a42d5468dd62fc4f502a52060484afaf6">ompl::base::TimeStateSampler</a>, <a class="el" href="classompl_1_1base_1_1AtlasStateSampler.html#ad1eb7ed1443bbabf3cc1797c2602a2a8">ompl::base::AtlasStateSampler</a>, and <a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html#a4fbc99a868978508706bfe7809c9a08a">ompl::base::DeterministicStateSampler</a>.</p>
 
 </div>
 </div>
@@ -323,9 +313,9 @@ const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *
 </div><div class="memdoc">
 
 <p>Sample a state near another, within a neighborhood controlled by a distance parameter. </p>
-<p>Typically, StateSampler-derived classes will return in <code>state</code> a state that is uniformly distributed within a ball with radius <code>distance</code> defined by the distance function from the corresponding state space. However, this is not guaranteed. For example, the default state sampler for the <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm. ">RealVectorStateSpace</a> returns samples uniformly distributed using L_inf distance, while the default distance function is L_2 distance. </p>
+<p>Typically, StateSampler-derived classes will return in <code>state</code> a state that is uniformly distributed within a ball with radius <code>distance</code> defined by the distance function from the corresponding state space. However, this is not guaranteed. For example, the default state sampler for the <a class="el" href="classompl_1_1base_1_1RealVectorStateSpace.html" title="A state space representing Rn. The distance function is the L2 norm.">RealVectorStateSpace</a> returns samples uniformly distributed using L_inf distance, while the default distance function is L_2 distance. </p>
 
-<p>Implemented in <a class="el" href="classompl_1_1base_1_1SubspaceStateSampler.html#a5b6905097c22e18079486012a0e59632">ompl::base::SubspaceStateSampler</a>, <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#a643fb9a25f8dc638dffa6a75be878230">ompl::base::InformedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CompoundStateSampler.html#acb942effe30b4500c99a51ebe178c8b3">ompl::base::CompoundStateSampler</a>, <a class="el" href="classompl_1_1base_1_1AtlasStateSampler.html#af5aa235ae4f292ee1c7a4905066cff17">ompl::base::AtlasStateSampler</a>, <a class="el" href="classompl_1_1base_1_1ProjectedStateSampler.html#afeae8a62192a065a220d469e2a198c7a">ompl::base::ProjectedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CForestStateSampler.html#a70bd7e323855cea78971900e92a617be">ompl::base::CForestStateSampler</a>, <a class="el" href="classompl_1_1base_1_1WrapperStateSampler.html#a21b5c778e2ffc9058a0f8fc48fb95881">ompl::base::WrapperStateSampler</a>, <a class="el" href="classompl_1_1base_1_1RealVectorStateSampler.html#ab5fc83d7ad977dbf63de819d47aaf16e">ompl::base::RealVectorStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO3StateSampler.html#a61b9a2c995dbbf622c5224e8e0aa63cc">ompl::base::SO3StateSampler</a>, <a class="el" href="classompl_1_1base_1_1PrecomputedStateSampler.html#aae0c56bd0eb7c48fecd718749427a66a">ompl::base::PrecomputedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1DiscreteStateSampler.html#aa5cc10e9d779dac0a38e4ede96b11cd8">ompl::base::DiscreteStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO2StateSampler.html#a20f9ef52a23068327a35ecdeca6b1d25">ompl::base::SO2StateSampler</a>, and <a class="el" href="classompl_1_1base_1_1TimeStateSampler.html#abcd8b1e4caff6160c5608262dd13de0f">ompl::base::TimeStateSampler</a>.</p>
+<p>Implemented in <a class="el" href="classompl_1_1base_1_1InformedStateSampler.html#a643fb9a25f8dc638dffa6a75be878230">ompl::base::InformedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SE2DeterministicStateSampler.html#a4cfb60e9d8a633e55d454414a727f589">ompl::base::SE2DeterministicStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SubspaceStateSampler.html#a5b6905097c22e18079486012a0e59632">ompl::base::SubspaceStateSampler</a>, <a class="el" href="classompl_1_1base_1_1RealVectorDeterministicStateSampler.html#a2a7814d2b63a38fa666e3e553f5e27be">ompl::base::RealVectorDeterministicStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CompoundStateSampler.html#acb942effe30b4500c99a51ebe178c8b3">ompl::base::CompoundStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO2DeterministicStateSampler.html#aa6a2b4521cea1335c0710cd2f4a0a6b0">ompl::base::SO2DeterministicStateSampler</a>, <a class="el" href="classompl_1_1base_1_1CForestStateSampler.html#a70bd7e323855cea78971900e92a617be">ompl::base::CForestStateSampler</a>, <a class="el" href="classompl_1_1base_1_1ProjectedStateSampler.html#afeae8a62192a065a220d469e2a198c7a">ompl::base::ProjectedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1WrapperStateSampler.html#a21b5c778e2ffc9058a0f8fc48fb95881">ompl::base::WrapperStateSampler</a>, <a class="el" href="classompl_1_1base_1_1RealVectorStateSampler.html#ab5fc83d7ad977dbf63de819d47aaf16e">ompl::base::RealVectorStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO3StateSampler.html#a61b9a2c995dbbf622c5224e8e0aa63cc">ompl::base::SO3StateSampler</a>, <a class="el" href="classompl_1_1base_1_1PrecomputedStateSampler.html#aae0c56bd0eb7c48fecd718749427a66a">ompl::base::PrecomputedStateSampler</a>, <a class="el" href="classompl_1_1base_1_1DiscreteStateSampler.html#aa5cc10e9d779dac0a38e4ede96b11cd8">ompl::base::DiscreteStateSampler</a>, <a class="el" href="classompl_1_1base_1_1SO2StateSampler.html#a20f9ef52a23068327a35ecdeca6b1d25">ompl::base::SO2StateSampler</a>, <a class="el" href="classompl_1_1base_1_1TimeStateSampler.html#abcd8b1e4caff6160c5608262dd13de0f">ompl::base::TimeStateSampler</a>, <a class="el" href="classompl_1_1base_1_1AtlasStateSampler.html#af5aa235ae4f292ee1c7a4905066cff17">ompl::base::AtlasStateSampler</a>, and <a class="el" href="classompl_1_1base_1_1DeterministicStateSampler.html#a90aac007bdfb5b993090657090456bcd">ompl::base::DeterministicStateSampler</a>.</p>
 
 </div>
 </div>
@@ -335,13 +325,13 @@ const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -351,6 +341,7 @@ const <a class="el" href="classompl_1_1base_1_1StateSpace.html">StateSpace</a> *
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

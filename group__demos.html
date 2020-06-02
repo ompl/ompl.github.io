@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Demos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>Demos</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -152,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -168,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a href="PlannerData_8py_source.html">Analyze and visualize planner data in Python.</a> This demo relies on the <a href="http://projects.skewed.de/graph-tool">graph-tool</a> package.</li>
 <li><a href="RigidBodyPlanningWithControls_8cpp_source.html">Rigid body planning with controls</a> <a href="RigidBodyPlanningWithControls_8py_source.html">[Python version]</a>. This demo shows how to perform planning under differential constraints for a simple car-like vehicle.</li>
 <li><a href="RigidBodyPlanningWithIntegrationAndControls_8cpp_source.html">Rigid body planning with integration and controls.</a> This example extends the previous example by showing how one can plan for systems of ordinary differential equations in a generic way. This example uses simple Euler integration. For higher accuracy it is recommended to use the ODESolver class described in the next demo.</li>
-<li><a href="RigidBodyPlanningWithODESolverAndControls_8cpp_source.html">Rigid body planning with ODESolver and controls.</a> <a href="RigidBodyPlanningWithODESolverAndControls_8py_source.html">[Python version]</a> This example compares and contrasts the previous demo of planning with integration and planning using the ODESolver class, which wraps around <a href="http://www.boost.org/libs/numeric/odeint">Boost.Numeric.Odeint</a>. Code showing the same model being planned with a user-implemented numerical integration technique as well as the ODESolver is presented.</li>
+<li><a href="RigidBodyPlanningWithODESolverAndControls_8cpp_source.html">Rigid body planning with ODESolver and controls.</a> <a href="RigidBodyPlanningWithODESolverAndControls_8py_source.html">[Python version]</a> This example compares and contrasts the previous demo of planning with integration and planning using the ODESolver class, which wraps around <a href="https://www.boost.org/libs/numeric/odeint">Boost.Numeric.Odeint</a>. Code showing the same model being planned with a user-implemented numerical integration technique as well as the ODESolver is presented.</li>
 <li><p class="startli"><a href="Koules_8cpp_source.html">Koules</a> This is a very elaborate demo to illustrate planning for underactuated kinodynamic systems with drift. It based on an old Unix game called <a href="http://www.ucw.cz/~hubicka/koules/English/">Koules</a>. The physics have been made significantly harder compared to the original game. The demo can solve just one level of Koules, all levels, or run a number of planners on one level as a benchmarking run. The demo prints out a path that can be turned into a movie using <a class="el" href="KoulesPlayback_8py_source.html">KoulesPlayback.py</a>. Example usage: </p><pre class="fragment">  &gt; ./demo_Koules --planall --planner kpiece --numkoules 7 --maxtime 600 --output koules7.log
   &gt; /path/to/ompl/demos/KoulesPlaypack.py koules7.log
 </pre><p class="startli">This will create a movie called koules7.mp4. See <a href="gallery.html">the gallery</a> for an example of what this might look like.</p>
@@ -176,10 +161,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li><a href="HybridSystemPlanning_8cpp_source.html">Planning for a simple hybrid system.</a> This demo shows how one could plan for a car with gears. The gear is a discrete state variable, while its pose is continuous. The car needs to make a sharp turn and is forced to change gears. This is not the best way to plan for hybrid systems, since this approach ignores completely the structure that exist in the system. Nevertheless, it demonstrates that the planners in OMPL are state space agnostic and can plan in discrete or hybrid state spaces.</li>
 <li><a href="RigidBodyPlanningWithIK_8cpp_source.html">Rigid body planning with an Inverse Kinematics solver generating goal states in a separate thread.</a> This demo shows off two neat features of OMPL: a genetic algorithm-based Inverse Kinematics solver and a lazy goal state sampler. In a separate thread goal states are computed by the IK solver. While solving a motion planning problem, the planning algorithms select a random goal state from the ones computed so far.</li>
-<li><a href="OpenDERigidBodyPlanning_8cpp_source.html">Rigid body planning using the Open Dynamics Engine (OpenDE).</a> When OpenDE is installed, OMPL will compile an extension that makes is easier to use OpenDE for forward propagation of models of motion. In this example, a box is pushed around in the plane from a start position to a goal position.</li>
+<li><a href="OpenDERigidBodyPlanning_8cpp_source.html">Rigid body planning using the Open Dynamics Engine (ODE).</a> When ODE is installed, OMPL will compile an extension that makes is easier to use ODE for forward propagation of models of motion. In this example, a box is pushed around in the plane from a start position to a goal position.</li>
 <li><a href="RandomWalkPlanner_8py_source.html">Random walk planner.</a> A simple demo illustrating how to create a new planning algorithm in Python. This particular planner simply performs a random walk until it gets close to the goal.</li>
-<li><a href="GeometricCarPlanning_8cpp_source.html">Planning for Dubins and Reeds-Shepp cars.</a> This demo illustrates the use of the <a class="el" href="classompl_1_1base_1_1DubinsStateSpace.html" title="An SE(2) state space where distance is measured by the length of Dubins curves. ">ompl::base::DubinsStateSpace</a> and <a class="el" href="classompl_1_1base_1_1ReedsSheppStateSpace.html" title="An SE(2) state space where distance is measured by the length of Reeds-Shepp curves. ">ompl::base::ReedsSheppStateSpace</a>. The demo can solve two simple planning problems, print trajectories from the origin to a user-specified state, or print a discretized distance field.</li>
-<li><a href="OptimalPlanning_8cpp_source.html">Optimal planning for a 2D point robot.</a> <a href="OptimalPlanning_8py_source.html">[Python version]</a>. This demo illustrates the use of <code><a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives. ">ompl::base::OptimizationObjective</a></code> to construct optimization objectives for optimal motion planning.</li>
+<li><a href="GeometricCarPlanning_8cpp_source.html">Planning for Dubins and Reeds-Shepp cars.</a> This demo illustrates the use of the <a class="el" href="classompl_1_1base_1_1DubinsStateSpace.html" title="An SE(2) state space where distance is measured by the length of Dubins curves.">ompl::base::DubinsStateSpace</a> and <a class="el" href="classompl_1_1base_1_1ReedsSheppStateSpace.html" title="An SE(2) state space where distance is measured by the length of Reeds-Shepp curves.">ompl::base::ReedsSheppStateSpace</a>. The demo can solve two simple planning problems, print trajectories from the origin to a user-specified state, or print a discretized distance field.</li>
+<li><a href="OptimalPlanning_8cpp_source.html">Optimal planning for a 2D point robot.</a> <a href="OptimalPlanning_8py_source.html">[Python version]</a>. This demo illustrates the use of <code><a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives.">ompl::base::OptimizationObjective</a></code> to construct optimization objectives for optimal motion planning.</li>
 <li><a href="HypercubeBenchmark_8cpp_source.html">Hypercube benchmark.</a> A simple benchmark where the configuration space consists of a hypercube in R<sup>n</sup> and the free space is a narrow corridor along edges of the hypercube. The exploration progress of a planner is therefore hard to capture in a low-dimensional projection.</li>
 <li><a href="KinematicChainBenchmark_8cpp_source.html">Kinematic chain benchmark.</a> A benchmark for an <em>n</em>-link kinematic chain to get out of a narrow passage. It requires the chain to fold up and expand again. As in the previous benchmark, the free space is hard to capture by a low-dimensional projection of the configuration space.</li>
 <li><a href="Point2DPlanning_8cpp_source.html">2D point planning using a PPM image as a map</a> [<a href="Point2DPlanning_8py_source.html">Python version</a>]</li>
@@ -193,8 +178,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a href="ConstrainedPlanningKinematicChain_8cpp_source.html">ConstrainedPlanningKinematicChain</a>. Similar to the kinematic chain benchmark above, but with a constraint that only allows the tip of the manipulator to move along a line.</li>
 </ul>
 </li>
+<li>QuotientSpace Planning Demos. Planning on different abstraction levels. For more information refer to the <a href="quotientSpacePlanning.html">QuotientSpace Planning Guide</a> and the <a href="quotientSpacePlanningTutorial.html">QuotientSpace Planning Tutorial</a><ul>
+<li><a href="QuotientSpacePlanningRigidBody2D_8cpp_source.html">Quotient Space Rigid Body in 2D</a>. Two-level planning for a rigid body in \(SE(2)\) with quotient space \(\mathbb{R}^2\).</li>
+<li><a href="QuotientSpacePlanningRigidBody3D_8cpp_source.html">Quotient Space Rigid Body in 3D</a>. Two-level planning for a rigid body in \(SE(3)\) with quotient space \(\mathbb{R}^3\).</li>
+<li><a href="QuotientSpacePlanningHyperCube_8cpp_source.html">Quotient Space HyperCube</a>. N-level hypercube benchmark using a point robot moving in a cube \(\mathbb{R}^N\). We use QuotientSpaces \(\{\mathbb{R}^2,\mathbb{R}^4,\cdots,\mathbb{R}^N\) (This is a modified version of the <a href="HypercubeBenchmark_8cpp_source.html">Hypercube benchmark</a>).</li>
+<li><a href="QuotientSpacePlanningKinematicChain_8cpp_source.html">Quotient Space Kinematic Chain</a>. Planning benchmark of different QuotientSpace seuqences for a kinematic chain in \(\mathbb{R}^N\) (This is a modified version of the <a href="KinematicChainBenchmark_8cpp_source.html">Kinematic chain benchmark.</a>).</li>
 </ul>
-<h1>OMPL.app Demos</h1>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md0"></a>
+OMPL.app Demos</h2>
 <ul>
 <li><a href="demos_2SE2RigidBodyPlanning_2SE2RigidBodyPlanning_8cpp_source.html">Rigid body planning in 2D using meshes and collision checking.</a></li>
 <li><a href="demos_2SE3RigidBodyPlanning_2SE3RigidBodyPlanning_8cpp_source.html">Rigid body planning in 3D using meshes and collision checking.</a></li>
@@ -202,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a href="demos_2SE2RigidBodyPlanning_2DynamicCarPlanning_8cpp_source.html">Planning for a second-order car.</a></li>
 <li><a href="demos_2SE3RigidBodyPlanning_2BlimpPlanning_8cpp_source.html">Planning for a blimp.</a></li>
 <li><a href="demos_2SE3RigidBodyPlanning_2QuadrotorPlanning_8cpp_source.html">Planning for a quadrotor.</a></li>
-<li><a href="planOpenDE_8cpp_source.html">Rigid body planning using the Open Dynamics Engine (OpenDE) with graphics.</a> A robot pushes obstacles out of the way to get to the goal position.</li>
+<li><a href="planOpenDE_8cpp_source.html">Rigid body planning using the Open Dynamics Engine (ODE) with graphics.</a> A robot pushes obstacles out of the way to get to the goal position.</li>
 <li><a href="SE3RigidBodyPlanningBenchmark_8cpp_source.html">Benchmarking planners on rigid body motion planning problems in 3D.</a></li>
 <li><a href="demos_2SE2RigidBodyPlanning_2SE2MultiRigidBodyPlanning_8cpp_source.html">Planning for multiple 2D rigid bodies.</a></li>
 <li><a href="demos_2SE3RigidBodyPlanning_2SE3MultiRigidBodyPlanning_8cpp_source.html">Planning for multiple 3D rigid bodies.</a> </li>
@@ -210,13 +203,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -226,6 +219,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

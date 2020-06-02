@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::geometric::SPARS Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::geometric::SPARS Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -174,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><b> SPArse Roadmap Spanner technique. </b>
+<p><b> SPArse Roadmap Spanner technique. </b>  
  <a href="classompl_1_1geometric_1_1SPARS.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="SPARS_8h_source.html">ompl/geometric/planners/prm/SPARS.h</a>&gt;</code></p>
@@ -183,7 +168,8 @@ Inheritance diagram for ompl::geometric::SPARS:</div>
 <div class="dyncontent">
 <div class="center"><img src="classompl_1_1geometric_1_1SPARS__inherit__graph.png" border="0" usemap="#ompl_1_1geometric_1_1SPARS_inherit__map" alt="Inheritance graph"/></div>
 <map name="ompl_1_1geometric_1_1SPARS_inherit__map" id="ompl_1_1geometric_1_1SPARS_inherit__map">
-<area shape="rect" id="node2" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. " alt="" coords="20,5,160,32"/>
+<area shape="rect" title="SPArse Roadmap Spanner technique." alt="" coords="5,80,175,107"/>
+<area shape="rect" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner." alt="" coords="20,5,160,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -203,73 +189,73 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ab32058a4cdbd6e4ab645537cc7735cdd"><td class="memItemLeft" align="right" valign="top"><a id="ab32058a4cdbd6e4ab645537cc7735cdd"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd">GuardType</a> { <br />
-&#160;&#160;<b>START</b>,
-<b>GOAL</b>,
-<b>COVERAGE</b>,
-<b>CONNECTIVITY</b>,
+&#160;&#160;<b>START</b>, 
+<b>GOAL</b>, 
+<b>COVERAGE</b>, 
+<b>CONNECTIVITY</b>, 
 <br />
-&#160;&#160;<b>INTERFACE</b>,
+&#160;&#160;<b>INTERFACE</b>, 
 <b>QUALITY</b>
 <br />
  }</td></tr>
 <tr class="memdesc:ab32058a4cdbd6e4ab645537cc7735cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration which specifies the reason a guard is added to the spanner. <br /></td></tr>
 <tr class="separator:ab32058a4cdbd6e4ab645537cc7735cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a790771925906ba4551b89a94be96bd7b"><td class="memItemLeft" align="right" valign="top"><a id="a790771925906ba4551b89a94be96bd7b"></a>
-typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a></td></tr>
-<tr class="memdesc:a790771925906ba4551b89a94be96bd7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type used internally for representing vertex IDs. <br /></td></tr>
-<tr class="separator:a790771925906ba4551b89a94be96bd7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81edac38a1e360515ccbb23e03bde035"><td class="memItemLeft" align="right" valign="top"><a id="a81edac38a1e360515ccbb23e03bde035"></a>
-typedef std::unordered_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a81edac38a1e360515ccbb23e03bde035">InterfaceHash</a></td></tr>
-<tr class="memdesc:a81edac38a1e360515ccbb23e03bde035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash for storing interface information. <br /></td></tr>
-<tr class="separator:a81edac38a1e360515ccbb23e03bde035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5b8ca0af6ce6cefc03e81d784da732d"><td class="memItemLeft" align="right" valign="top"><a id="ae5b8ca0af6ce6cefc03e81d784da732d"></a>
-typedef std::deque&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae5b8ca0af6ce6cefc03e81d784da732d">DensePath</a></td></tr>
-<tr class="memdesc:ae5b8ca0af6ce6cefc03e81d784da732d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal representation of a dense path. <br /></td></tr>
-<tr class="separator:ae5b8ca0af6ce6cefc03e81d784da732d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57a562c36673bafb6e57133ffa06f914"><td class="memItemLeft" align="right" valign="top">typedef boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt; boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__color__t.html">vertex_color_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd">GuardType</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__list__t.html">vertex_list_t</a>, std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a> &gt;, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__interface__list__t.html">vertex_interface_list_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a81edac38a1e360515ccbb23e03bde035">InterfaceHash</a> &gt; &gt; &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a></td></tr>
-<tr class="memdesc:a57a562c36673bafb6e57133ffa06f914"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructed roadmap spanner.  <a href="#a57a562c36673bafb6e57133ffa06f914">More...</a><br /></td></tr>
-<tr class="separator:a57a562c36673bafb6e57133ffa06f914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8084fd9bf075d1248dce995175a469ab"><td class="memItemLeft" align="right" valign="top"><a id="a8084fd9bf075d1248dce995175a469ab"></a>
-typedef boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a> &gt;::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a></td></tr>
-<tr class="memdesc:a8084fd9bf075d1248dce995175a469ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex in the sparse roadmap that is constructed. <br /></td></tr>
-<tr class="separator:a8084fd9bf075d1248dce995175a469ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3cb7d22c7e537c197e480f25ef5319f"><td class="memItemLeft" align="right" valign="top"><a id="af3cb7d22c7e537c197e480f25ef5319f"></a>
-typedef boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a> &gt;::edge_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af3cb7d22c7e537c197e480f25ef5319f">SparseEdge</a></td></tr>
-<tr class="memdesc:af3cb7d22c7e537c197e480f25ef5319f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An edge in the sparse roadmap that is constructed. <br /></td></tr>
-<tr class="separator:af3cb7d22c7e537c197e480f25ef5319f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae197310fae04def0d1a8e91bfab761a1"><td class="memItemLeft" align="right" valign="top"><a id="ae197310fae04def0d1a8e91bfab761a1"></a>
-typedef std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae197310fae04def0d1a8e91bfab761a1">SparseNeighbors</a></td></tr>
-<tr class="memdesc:ae197310fae04def0d1a8e91bfab761a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nearest neighbor structure which works over the SpannerGraph. <br /></td></tr>
-<tr class="separator:ae197310fae04def0d1a8e91bfab761a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aced5413901bfab67dad3e34383b4560c"><td class="memItemLeft" align="right" valign="top">typedef boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt; boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__representative__t.html">vertex_representative_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a></td></tr>
-<tr class="memdesc:aced5413901bfab67dad3e34383b4560c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying roadmap graph.  <a href="#aced5413901bfab67dad3e34383b4560c">More...</a><br /></td></tr>
-<tr class="separator:aced5413901bfab67dad3e34383b4560c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a309ea6c01d2ccfd8b2c6696f2de70d6e"><td class="memItemLeft" align="right" valign="top"><a id="a309ea6c01d2ccfd8b2c6696f2de70d6e"></a>
-typedef boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a> &gt;::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a></td></tr>
-<tr class="memdesc:a309ea6c01d2ccfd8b2c6696f2de70d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex in DenseGraph. <br /></td></tr>
-<tr class="separator:a309ea6c01d2ccfd8b2c6696f2de70d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86371fd420fa3d3dbaf1ff941279704e"><td class="memItemLeft" align="right" valign="top"><a id="a86371fd420fa3d3dbaf1ff941279704e"></a>
-typedef boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a> &gt;::edge_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a86371fd420fa3d3dbaf1ff941279704e">DenseEdge</a></td></tr>
-<tr class="memdesc:a86371fd420fa3d3dbaf1ff941279704e"><td class="mdescLeft">&#160;</td><td class="mdescRight">An edge in DenseGraph. <br /></td></tr>
-<tr class="separator:a86371fd420fa3d3dbaf1ff941279704e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7afec5a14531b80488f0886d7fc0ad3b"><td class="memItemLeft" align="right" valign="top"><a id="a7afec5a14531b80488f0886d7fc0ad3b"></a>
-typedef std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7afec5a14531b80488f0886d7fc0ad3b">DenseNeighbors</a></td></tr>
-<tr class="memdesc:a7afec5a14531b80488f0886d7fc0ad3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nearest neighbor structure which works over the DenseGraph. <br /></td></tr>
-<tr class="separator:a7afec5a14531b80488f0886d7fc0ad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d02d91073d51e4a0d28ccf664da708"><td class="memItemLeft" align="right" valign="top"><a id="a04d02d91073d51e4a0d28ccf664da708"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a> = unsigned long</td></tr>
+<tr class="memdesc:a04d02d91073d51e4a0d28ccf664da708"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type used internally for representing vertex IDs. <br /></td></tr>
+<tr class="separator:a04d02d91073d51e4a0d28ccf664da708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18bd7a6b91a676d3f27a9ff10e4ac107"><td class="memItemLeft" align="right" valign="top"><a id="a18bd7a6b91a676d3f27a9ff10e4ac107"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a18bd7a6b91a676d3f27a9ff10e4ac107">InterfaceHash</a> = std::unordered_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a18bd7a6b91a676d3f27a9ff10e4ac107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash for storing interface information. <br /></td></tr>
+<tr class="separator:a18bd7a6b91a676d3f27a9ff10e4ac107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c4aa44789ce26820b24f1261873182"><td class="memItemLeft" align="right" valign="top"><a id="a67c4aa44789ce26820b24f1261873182"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a67c4aa44789ce26820b24f1261873182">DensePath</a> = std::deque&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> * &gt;</td></tr>
+<tr class="memdesc:a67c4aa44789ce26820b24f1261873182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal representation of a dense path. <br /></td></tr>
+<tr class="separator:a67c4aa44789ce26820b24f1261873182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59be994c281facc245b3d81842f7d7ec"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a> = boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt; boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__color__t.html">vertex_color_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd">GuardType</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__list__t.html">vertex_list_t</a>, std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a> &gt;, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__interface__list__t.html">vertex_interface_list_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a18bd7a6b91a676d3f27a9ff10e4ac107">InterfaceHash</a> &gt; &gt;&gt; &gt;&gt; &gt;, boost::property&lt; boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a59be994c281facc245b3d81842f7d7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructed roadmap spanner.  <a href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">More...</a><br /></td></tr>
+<tr class="separator:a59be994c281facc245b3d81842f7d7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7795bb56966488a5c0568dfa2a1bd888"><td class="memItemLeft" align="right" valign="top"><a id="a7795bb56966488a5c0568dfa2a1bd888"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> = boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a> &gt;::vertex_descriptor</td></tr>
+<tr class="memdesc:a7795bb56966488a5c0568dfa2a1bd888"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex in the sparse roadmap that is constructed. <br /></td></tr>
+<tr class="separator:a7795bb56966488a5c0568dfa2a1bd888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749f76cf358f16e047fbf244e985bfe1"><td class="memItemLeft" align="right" valign="top"><a id="a749f76cf358f16e047fbf244e985bfe1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a749f76cf358f16e047fbf244e985bfe1">SparseEdge</a> = boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a> &gt;::edge_descriptor</td></tr>
+<tr class="memdesc:a749f76cf358f16e047fbf244e985bfe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">An edge in the sparse roadmap that is constructed. <br /></td></tr>
+<tr class="separator:a749f76cf358f16e047fbf244e985bfe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c675e0510f608a514e962412e6ffdf8"><td class="memItemLeft" align="right" valign="top"><a id="a3c675e0510f608a514e962412e6ffdf8"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a3c675e0510f608a514e962412e6ffdf8">SparseNeighbors</a> = std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a3c675e0510f608a514e962412e6ffdf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nearest neighbor structure which works over the SpannerGraph. <br /></td></tr>
+<tr class="separator:a3c675e0510f608a514e962412e6ffdf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0822d493cd30885931fbbfcf8f5c916"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a> = boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt; boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__representative__t.html">vertex_representative_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &gt;&gt; &gt;, boost::property&lt; boost::edge_weight_t, double &gt; &gt;</td></tr>
+<tr class="memdesc:aa0822d493cd30885931fbbfcf8f5c916"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying roadmap graph.  <a href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">More...</a><br /></td></tr>
+<tr class="separator:aa0822d493cd30885931fbbfcf8f5c916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e2c9926620acd0a907ad527a4567b3"><td class="memItemLeft" align="right" valign="top"><a id="a23e2c9926620acd0a907ad527a4567b3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> = boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a> &gt;::vertex_descriptor</td></tr>
+<tr class="memdesc:a23e2c9926620acd0a907ad527a4567b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vertex in DenseGraph. <br /></td></tr>
+<tr class="separator:a23e2c9926620acd0a907ad527a4567b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d15efe666e9f9b27360bff602882c6"><td class="memItemLeft" align="right" valign="top"><a id="ae3d15efe666e9f9b27360bff602882c6"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae3d15efe666e9f9b27360bff602882c6">DenseEdge</a> = boost::graph_traits&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a> &gt;::edge_descriptor</td></tr>
+<tr class="memdesc:ae3d15efe666e9f9b27360bff602882c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">An edge in DenseGraph. <br /></td></tr>
+<tr class="separator:ae3d15efe666e9f9b27360bff602882c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a270f91d937478be19fb4a77644cf0"><td class="memItemLeft" align="right" valign="top"><a id="aa4a270f91d937478be19fb4a77644cf0"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa4a270f91d937478be19fb4a77644cf0">DenseNeighbors</a> = std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &gt;</td></tr>
+<tr class="memdesc:aa4a270f91d937478be19fb4a77644cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nearest neighbor structure which works over the DenseGraph. <br /></td></tr>
+<tr class="separator:aa4a270f91d937478be19fb4a77644cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
-<tr class="memitem:ad35ad462773b75e3f3ec411bed1bd260 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="ad35ad462773b75e3f3ec411bed1bd260"></a>
-typedef std::function&lt; std::string()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a></td></tr>
-<tr class="memdesc:ad35ad462773b75e3f3ec411bed1bd260 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a function which returns a property about the planner's progress that can be queried by a benchmarking routine. <br /></td></tr>
-<tr class="separator:ad35ad462773b75e3f3ec411bed1bd260 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a919f116d094eb88e4c877c44531c2b75"></a>
-typedef std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a></td></tr>
-<tr class="memdesc:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which maps the name of a progress property to the function to be used for querying that property. <br /></td></tr>
-<tr class="separator:a919f116d094eb88e4c877c44531c2b75 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a33c8326d45e5c1ec99edf5f964b34f61"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> = std::function&lt; std::string()&gt;</td></tr>
+<tr class="memdesc:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a function which returns a property about the planner's progress that can be queried by a benchmarking routine. <br /></td></tr>
+<tr class="separator:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="adc4df80108aec5db29373302e4b8d723"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> = std::map&lt; std::string, <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> &gt;</td></tr>
+<tr class="memdesc:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which maps the name of a progress property to the function to be used for querying that property. <br /></td></tr>
+<tr class="separator:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afe94f657ab8a846a37ae50d3501ecd0a"><td class="memItemLeft" align="right" valign="top"><a id="afe94f657ab8a846a37ae50d3501ecd0a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#afe94f657ab8a846a37ae50d3501ecd0a">SPARS</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">base::SpaceInformationPtr</a> &amp;si)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#afe94f657ab8a846a37ae50d3501ecd0a">SPARS</a> (const base::SpaceInformationPtr &amp;si)</td></tr>
 <tr class="memdesc:afe94f657ab8a846a37ae50d3501ecd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:afe94f657ab8a846a37ae50d3501ecd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a247ed5097d23da1129551ea127935b07"><td class="memItemLeft" align="right" valign="top"><a id="a247ed5097d23da1129551ea127935b07"></a>
@@ -277,12 +263,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a247ed5097d23da1129551ea127935b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:a247ed5097d23da1129551ea127935b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47d2bb3c7ba386f67c1ed587be4c79ce"><td class="memItemLeft" align="right" valign="top"><a id="a47d2bb3c7ba386f67c1ed587be4c79ce"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a47d2bb3c7ba386f67c1ed587be4c79ce">setProblemDefinition</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">base::ProblemDefinitionPtr</a> &amp;pdef) override</td></tr>
-<tr class="memdesc:a47d2bb3c7ba386f67c1ed587be4c79ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem definition for the planner. The problem needs to be set before calling <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. Note: If this problem definition replaces a previous one, it may also be necessary to call <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39a6e8e909fce6131bdefd30379ff58e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a>. <br /></td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setProblemDefinition</b> (const base::ProblemDefinitionPtr &amp;pdef) override</td></tr>
 <tr class="separator:a47d2bb3c7ba386f67c1ed587be4c79ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a393f0fff67500beca0f989a0be83d6e0"><td class="memItemLeft" align="right" valign="top"><a id="a393f0fff67500beca0f989a0be83d6e0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a393f0fff67500beca0f989a0be83d6e0">getPlannerData</a> (<a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data) const override</td></tr>
-<tr class="memdesc:a393f0fff67500beca0f989a0be83d6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current run of the motion planner. Repeated calls to this function will update <em>data</em> (only additions are made). This is useful to see what changed in the exploration datastructure, between calls to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, for example (without calling <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39a6e8e909fce6131bdefd30379ff58e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between). <br /></td></tr>
+<tr class="memdesc:a393f0fff67500beca0f989a0be83d6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current run of the motion planner. Repeated calls to this function will update <em>data</em> (only additions are made). This is useful to see what changed in the exploration datastructure, between calls to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, for example (without calling <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39a6e8e909fce6131bdefd30379ff58e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between). <br  />
+ <br /></td></tr>
 <tr class="separator:a393f0fff67500beca0f989a0be83d6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa46c8edc6d85033ea57c63f6ce41bb20"><td class="memItemLeft" align="right" valign="top"><a id="aa46c8edc6d85033ea57c63f6ce41bb20"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa46c8edc6d85033ea57c63f6ce41bb20">constructRoadmap</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
@@ -290,16 +276,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:aa46c8edc6d85033ea57c63f6ce41bb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84fd8e31fd66ca1bc891f2009287086e"><td class="memItemLeft" align="right" valign="top"><a id="a84fd8e31fd66ca1bc891f2009287086e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a84fd8e31fd66ca1bc891f2009287086e">constructRoadmap</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc, bool stopOnMaxFail)</td></tr>
-<tr class="memdesc:a84fd8e31fd66ca1bc891f2009287086e"><td class="mdescLeft">&#160;</td><td class="mdescRight">While the termination condition permits, construct the spanner graph. If <em>stopOnMaxFail</em> is true, the function also terminates when the failure limit set by <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aed716541c53dca9f22892b1a6da267b0" title="Set the maximum consecutive failures to augment the spanner before termination. In general...">setMaxFailures()</a> is reached. <br /></td></tr>
+<tr class="memdesc:a84fd8e31fd66ca1bc891f2009287086e"><td class="mdescLeft">&#160;</td><td class="mdescRight">While the termination condition permits, construct the spanner graph. If <em>stopOnMaxFail</em> is true, the function also terminates when the failure limit set by <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aed716541c53dca9f22892b1a6da267b0" title="Set the maximum consecutive failures to augment the spanner before termination. In general,...">setMaxFailures()</a> is reached. <br /></td></tr>
 <tr class="separator:a84fd8e31fd66ca1bc891f2009287086e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabce7ea56478eddefd9e3d6255362d5a"><td class="memItemLeft" align="right" valign="top"><a id="aabce7ea56478eddefd9e3d6255362d5a"></a>
 <a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a">solve</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc) override</td></tr>
-<tr class="memdesc:aabce7ea56478eddefd9e3d6255362d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39a6e8e909fce6131bdefd30379ff58e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. Start and goal states from the currently specified ProblemDefinition are cached. This means that between calls to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, input states are only added, not removed. When using <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">PRM</a> as a multi-query planner, the input states should be however cleared, without clearing the roadmap itself. This can be done using the <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a22cd80376d404ab0f6196178d8da09c1" title="Clear the query previously loaded from the ProblemDefinition. Subsequent calls to solve() will reuse ...">clearQuery()</a> function. <br /></td></tr>
+<tr class="memdesc:aabce7ea56478eddefd9e3d6255362d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39a6e8e909fce6131bdefd30379ff58e" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. Start and goal states from the currently specified ProblemDefinition are cached. This means that between calls to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, input states are only added, not removed. When using <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">PRM</a> as a multi-query planner, the input states should be however cleared, without clearing the roadmap itself. This can be done using the <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a930ec4c95f3602e8c32bd22b0f6f5f74" title="Clear the query previously loaded from the ProblemDefinition. Subsequent calls to solve() will reuse ...">clearQuery()</a> function. <br /></td></tr>
 <tr class="separator:aabce7ea56478eddefd9e3d6255362d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22cd80376d404ab0f6196178d8da09c1"><td class="memItemLeft" align="right" valign="top"><a id="a22cd80376d404ab0f6196178d8da09c1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a22cd80376d404ab0f6196178d8da09c1">clearQuery</a> ()</td></tr>
-<tr class="memdesc:a22cd80376d404ab0f6196178d8da09c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the query previously loaded from the ProblemDefinition. Subsequent calls to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will reuse the previously computed roadmap, but will clear the set of input states constructed by the previous call to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. This enables multi-query functionality for <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">PRM</a>. <br /></td></tr>
-<tr class="separator:a22cd80376d404ab0f6196178d8da09c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a930ec4c95f3602e8c32bd22b0f6f5f74"><td class="memItemLeft" align="right" valign="top"><a id="a930ec4c95f3602e8c32bd22b0f6f5f74"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a930ec4c95f3602e8c32bd22b0f6f5f74">clearQuery</a> () override</td></tr>
+<tr class="memdesc:a930ec4c95f3602e8c32bd22b0f6f5f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the query previously loaded from the ProblemDefinition. Subsequent calls to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will reuse the previously computed roadmap, but will clear the set of input states constructed by the previous call to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. This enables multi-query functionality for <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">PRM</a>. <br /></td></tr>
+<tr class="separator:a930ec4c95f3602e8c32bd22b0f6f5f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39a6e8e909fce6131bdefd30379ff58e"><td class="memItemLeft" align="right" valign="top"><a id="a39a6e8e909fce6131bdefd30379ff58e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39a6e8e909fce6131bdefd30379ff58e">clear</a> () override</td></tr>
 <tr class="memdesc:a39a6e8e909fce6131bdefd30379ff58e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aabce7ea56478eddefd9e3d6255362d5a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will ignore all previous work. <br /></td></tr>
@@ -316,7 +302,7 @@ template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
 <tr class="separator:ada846fd037a1893a91f40810a8ac9e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed716541c53dca9f22892b1a6da267b0"><td class="memItemLeft" align="right" valign="top"><a id="aed716541c53dca9f22892b1a6da267b0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aed716541c53dca9f22892b1a6da267b0">setMaxFailures</a> (unsigned int m)</td></tr>
-<tr class="memdesc:aed716541c53dca9f22892b1a6da267b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum consecutive failures to augment the spanner before termination. In general, if the algorithm fails to add to the spanner for M consecutive iterations, then we can probabilistically estimate how close to attaining the desired properties the <a class="el" href="classompl_1_1geometric_1_1SPARS.html" title=" SPArse Roadmap Spanner technique.  ">SPARS</a> spanner is. <br /></td></tr>
+<tr class="memdesc:aed716541c53dca9f22892b1a6da267b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum consecutive failures to augment the spanner before termination. In general, if the algorithm fails to add to the spanner for M consecutive iterations, then we can probabilistically estimate how close to attaining the desired properties the <a class="el" href="classompl_1_1geometric_1_1SPARS.html" title="SPArse Roadmap Spanner technique.">SPARS</a> spanner is. <br /></td></tr>
 <tr class="separator:aed716541c53dca9f22892b1a6da267b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47ae542f88f539d3356598812be62111"><td class="memItemLeft" align="right" valign="top"><a id="a47ae542f88f539d3356598812be62111"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a47ae542f88f539d3356598812be62111">setDenseDeltaFraction</a> (double d)</td></tr>
@@ -351,11 +337,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a0270eec7358f21af9cdc208f1e74a1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform extra configuration steps, if needed. This call will also issue a call to <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4" title="Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...">ompl::base::SpaceInformation::setup()</a> if needed. This must be called before solving. <br /></td></tr>
 <tr class="separator:a0270eec7358f21af9cdc208f1e74a1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed61ca9610dc3a767f47ee7574e43e8e"><td class="memItemLeft" align="right" valign="top"><a id="aed61ca9610dc3a767f47ee7574e43e8e"></a>
-const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aed61ca9610dc3a767f47ee7574e43e8e">getDenseGraph</a> () const</td></tr>
+const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aed61ca9610dc3a767f47ee7574e43e8e">getDenseGraph</a> () const</td></tr>
 <tr class="memdesc:aed61ca9610dc3a767f47ee7574e43e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the underlying dense graph structure. This is built as a PRM* and asymptotically approximates best paths through the space. <br /></td></tr>
 <tr class="separator:aed61ca9610dc3a767f47ee7574e43e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b4b2b5e76d3775851e2a0248c9c1104"><td class="memItemLeft" align="right" valign="top"><a id="a1b4b2b5e76d3775851e2a0248c9c1104"></a>
-const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a1b4b2b5e76d3775851e2a0248c9c1104">getRoadmap</a> () const</td></tr>
+const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a1b4b2b5e76d3775851e2a0248c9c1104">getRoadmap</a> () const</td></tr>
 <tr class="memdesc:a1b4b2b5e76d3775851e2a0248c9c1104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the sparse roadmap structure. This is the structure which answers given queries, and has the desired property of asymptotic near-optimality. <br /></td></tr>
 <tr class="separator:a1b4b2b5e76d3775851e2a0248c9c1104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af12e5e686dd352c2d8d573bf88b91201"><td class="memItemLeft" align="right" valign="top"><a id="af12e5e686dd352c2d8d573bf88b91201"></a>
@@ -376,7 +362,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a987fffbf7b381e4f8c1a05674d4fc1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10552803d8ca8ce0c32b2c97cf67fbaf"><td class="memItemLeft" align="right" valign="top"><a id="a10552803d8ca8ce0c32b2c97cf67fbaf"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a10552803d8ca8ce0c32b2c97cf67fbaf">reachedFailureLimit</a> () const</td></tr>
-<tr class="memdesc:a10552803d8ca8ce0c32b2c97cf67fbaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if we have reached the iteration failures limit, <em>maxFailures_</em>. <br /></td></tr>
+<tr class="memdesc:a10552803d8ca8ce0c32b2c97cf67fbaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if we have reached the iteration failures limit, <em>maxFailures_</em> <br  />
+ <br /></td></tr>
 <tr class="separator:a10552803d8ca8ce0c32b2c97cf67fbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08b29e9dafef280d8010587def1ad242"><td class="memItemLeft" align="right" valign="top"><a id="a08b29e9dafef280d8010587def1ad242"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getIterationCount</b> () const</td></tr>
@@ -415,12 +402,20 @@ const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceIn
 const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a> () const</td></tr>
 <tr class="memdesc:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve. <br /></td></tr>
 <tr class="separator:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a5891ac7a3e5a39143f87745f25d74926"></a>
+<a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a5891ac7a3e5a39143f87745f25d74926">getProblemDefinition</a> ()</td></tr>
+<tr class="memdesc:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve. <br /></td></tr>
+<tr class="separator:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a260b7d28d444b115f1356d3f96c37785"></a>
 const <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a> () const</td></tr>
 <tr class="memdesc:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the planner input states. <br /></td></tr>
 <tr class="separator:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="add968ea14f1aa3d3bffc110da3e1d031"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#add968ea14f1aa3d3bffc110da3e1d031">setProblemDefinition</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;pdef)</td></tr>
+<tr class="memdesc:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem definition for the planner. The problem needs to be set before calling <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. Note: If this problem definition replaces a previous one, it may also be necessary to call <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> or <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a>. <br /></td></tr>
+<tr class="separator:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a46d2a6941a33dbac28e6736949375e2b"></a>
-<a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a46d2a6941a33dbac28e6736949375e2b">solve</a> (const <a class="el" href="namespaceompl_1_1base.html#a47c9ced2eac48435658b52a5e42c25ad">PlannerTerminationConditionFn</a> &amp;ptc, double checkInterval)</td></tr>
+<a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a46d2a6941a33dbac28e6736949375e2b">solve</a> (const <a class="el" href="namespaceompl_1_1base.html#a5c218cde462780a4502dfc561708e903">PlannerTerminationConditionFn</a> &amp;ptc, double checkInterval)</td></tr>
 <tr class="memdesc:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is only evaluated at a specified interval. <br /></td></tr>
 <tr class="separator:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a5a61ca64b36881603af880677f6445a7"></a>
@@ -456,7 +451,7 @@ const <a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;
 <tr class="memdesc:a54cd84e228b9cd88ae88cdd10cc0712b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner. <br /></td></tr>
 <tr class="separator:a54cd84e228b9cd88ae88cdd10cc0712b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b03485fc36143f4f26718c050ddb928 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a8b03485fc36143f4f26718c050ddb928"></a>
-const <a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a> () const</td></tr>
+const <a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a8b03485fc36143f4f26718c050ddb928">getPlannerProgressProperties</a> () const</td></tr>
 <tr class="memdesc:a8b03485fc36143f4f26718c050ddb928 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a planner's planner progress property map. <br /></td></tr>
 <tr class="separator:a8b03485fc36143f4f26718c050ddb928 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab41beafb015184c8e44a899debe9b5b7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="ab41beafb015184c8e44a899debe9b5b7"></a>
@@ -471,7 +466,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:af0e41b1a4118d02fa562d8e78bbc0aaa"><td class="memItemLeft" align="right" valign="top"><a id="af0e41b1a4118d02fa562d8e78bbc0aaa"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af0e41b1a4118d02fa562d8e78bbc0aaa">addSample</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *workState, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af0e41b1a4118d02fa562d8e78bbc0aaa">addSample</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *workState, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</td></tr>
 <tr class="memdesc:af0e41b1a4118d02fa562d8e78bbc0aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to add a single sample to the roadmap. <br /></td></tr>
 <tr class="separator:af0e41b1a4118d02fa562d8e78bbc0aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d0e60ca6ccf611ef49abb23c799f50"><td class="memItemLeft" align="right" valign="top"><a id="a38d0e60ca6ccf611ef49abb23c799f50"></a>
@@ -479,81 +474,81 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a38d0e60ca6ccf611ef49abb23c799f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that the query vertex is initialized (used for internal nearest neighbor searches) <br /></td></tr>
 <tr class="separator:a38d0e60ca6ccf611ef49abb23c799f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc1867f92259c775e85f44e2e8336da0"><td class="memItemLeft" align="right" valign="top"><a id="afc1867f92259c775e85f44e2e8336da0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#afc1867f92259c775e85f44e2e8336da0">sameComponent</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> m1, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> m2)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#afc1867f92259c775e85f44e2e8336da0">sameComponent</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> m1, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> m2)</td></tr>
 <tr class="memdesc:afc1867f92259c775e85f44e2e8336da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that two vertices are in the same connected component. <br /></td></tr>
 <tr class="separator:afc1867f92259c775e85f44e2e8336da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a265196562943fea265b218d91c65f345"><td class="memItemLeft" align="right" valign="top"><a id="a265196562943fea265b218d91c65f345"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a265196562943fea265b218d91c65f345">addMilestone</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a265196562943fea265b218d91c65f345">addMilestone</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state)</td></tr>
 <tr class="memdesc:a265196562943fea265b218d91c65f345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a milestone for a given state (<em>state</em>) and store it in the nearest neighbors data structure. <br /></td></tr>
 <tr class="separator:a265196562943fea265b218d91c65f345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63e1c6fef239f3cc525fe8318403007b"><td class="memItemLeft" align="right" valign="top"><a id="a63e1c6fef239f3cc525fe8318403007b"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a63e1c6fef239f3cc525fe8318403007b">addGuard</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd">GuardType</a> type)</td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a63e1c6fef239f3cc525fe8318403007b">addGuard</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd">GuardType</a> type)</td></tr>
 <tr class="memdesc:a63e1c6fef239f3cc525fe8318403007b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a node with the given state (<em>state</em>) for the spanner and store it in the nn structure. <br /></td></tr>
 <tr class="separator:a63e1c6fef239f3cc525fe8318403007b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab94afd1ff296f91f05adf5c774fdbf1a"><td class="memItemLeft" align="right" valign="top"><a id="ab94afd1ff296f91f05adf5c774fdbf1a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab94afd1ff296f91f05adf5c774fdbf1a">connectSparsePoints</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> vp)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab94afd1ff296f91f05adf5c774fdbf1a">connectSparsePoints</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> vp)</td></tr>
 <tr class="memdesc:ab94afd1ff296f91f05adf5c774fdbf1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function for creating an edge in the Spanner Roadmap. <br /></td></tr>
 <tr class="separator:ab94afd1ff296f91f05adf5c774fdbf1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39879cdfb5770defe1b6735c3325bfae"><td class="memItemLeft" align="right" valign="top"><a id="a39879cdfb5770defe1b6735c3325bfae"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39879cdfb5770defe1b6735c3325bfae">connectDensePoints</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> vp)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a39879cdfb5770defe1b6735c3325bfae">connectDensePoints</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> vp)</td></tr>
 <tr class="memdesc:a39879cdfb5770defe1b6735c3325bfae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects points in the dense graph. <br /></td></tr>
 <tr class="separator:a39879cdfb5770defe1b6735c3325bfae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada97a57b55366f6b1a524399b99c68c4"><td class="memItemLeft" align="right" valign="top"><a id="ada97a57b55366f6b1a524399b99c68c4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ada97a57b55366f6b1a524399b99c68c4">checkAddCoverage</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *lastState, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;neigh)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ada97a57b55366f6b1a524399b99c68c4">checkAddCoverage</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *lastState, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;neigh)</td></tr>
 <tr class="memdesc:ada97a57b55366f6b1a524399b99c68c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the latest dense sample for the coverage property, and adds appropriately. <br /></td></tr>
 <tr class="separator:ada97a57b55366f6b1a524399b99c68c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cd536b31670fcc8d78d7c69ccca22e6"><td class="memItemLeft" align="right" valign="top"><a id="a7cd536b31670fcc8d78d7c69ccca22e6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7cd536b31670fcc8d78d7c69ccca22e6">checkAddConnectivity</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *lastState, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;neigh)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7cd536b31670fcc8d78d7c69ccca22e6">checkAddConnectivity</a> (const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *lastState, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;neigh)</td></tr>
 <tr class="memdesc:a7cd536b31670fcc8d78d7c69ccca22e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the latest dense sample for connectivity, and adds appropriately. <br /></td></tr>
 <tr class="separator:a7cd536b31670fcc8d78d7c69ccca22e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fe14a1f2274a806bc67b705f1821c7c"><td class="memItemLeft" align="right" valign="top"><a id="a5fe14a1f2274a806bc67b705f1821c7c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a5fe14a1f2274a806bc67b705f1821c7c">checkAddInterface</a> (const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &amp;graphNeighborhood, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &amp;visibleNeighborhood, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a5fe14a1f2274a806bc67b705f1821c7c">checkAddInterface</a> (const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &amp;graphNeighborhood, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &amp;visibleNeighborhood, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q)</td></tr>
 <tr class="memdesc:a5fe14a1f2274a806bc67b705f1821c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the latest dense sample for bridging an edge-less interface. <br /></td></tr>
 <tr class="separator:a5fe14a1f2274a806bc67b705f1821c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cf12b3bff14f346c9a62dada40f15bb"><td class="memItemLeft" align="right" valign="top"><a id="a0cf12b3bff14f346c9a62dada40f15bb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a0cf12b3bff14f346c9a62dada40f15bb">checkAddPath</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &amp;neigh)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a0cf12b3bff14f346c9a62dada40f15bb">checkAddPath</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &amp;neigh)</td></tr>
 <tr class="memdesc:a0cf12b3bff14f346c9a62dada40f15bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for adding an entire dense path to the Sparse Roadmap. <br /></td></tr>
 <tr class="separator:a0cf12b3bff14f346c9a62dada40f15bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f8315d98eeb8c4ae315cf7def77eb38"><td class="memItemLeft" align="right" valign="top"><a id="a8f8315d98eeb8c4ae315cf7def77eb38"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8f8315d98eeb8c4ae315cf7def77eb38">getInterfaceNeighbor</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> rep)</td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8f8315d98eeb8c4ae315cf7def77eb38">getInterfaceNeighbor</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> rep)</td></tr>
 <tr class="memdesc:a8f8315d98eeb8c4ae315cf7def77eb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first neighbor of q who has representative rep and is within denseDelta_. <br /></td></tr>
 <tr class="separator:a8f8315d98eeb8c4ae315cf7def77eb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf428f7ffa5a90f81f0d3495a4686e05"><td class="memItemLeft" align="right" valign="top"><a id="acf428f7ffa5a90f81f0d3495a4686e05"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#acf428f7ffa5a90f81f0d3495a4686e05">addPathToSpanner</a> (const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae5b8ca0af6ce6cefc03e81d784da732d">DensePath</a> &amp;dense_path, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> vp, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> vpp)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#acf428f7ffa5a90f81f0d3495a4686e05">addPathToSpanner</a> (const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a67c4aa44789ce26820b24f1261873182">DensePath</a> &amp;dense_path, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> vp, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> vpp)</td></tr>
 <tr class="memdesc:acf428f7ffa5a90f81f0d3495a4686e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for actually adding a dense path to the Roadmap Spanner, S. <br /></td></tr>
 <tr class="separator:acf428f7ffa5a90f81f0d3495a4686e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b95826123a856037f7d0ee74c943630"><td class="memItemLeft" align="right" valign="top"><a id="a4b95826123a856037f7d0ee74c943630"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a4b95826123a856037f7d0ee74c943630">updateRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> v)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a4b95826123a856037f7d0ee74c943630">updateRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> v)</td></tr>
 <tr class="memdesc:a4b95826123a856037f7d0ee74c943630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically updates the representatives of all dense samplse within sparseDelta_ of v. <br /></td></tr>
 <tr class="separator:a4b95826123a856037f7d0ee74c943630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a962e2d3526d358b3d4fc9015b2405d21"><td class="memItemLeft" align="right" valign="top"><a id="a962e2d3526d358b3d4fc9015b2405d21"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a962e2d3526d358b3d4fc9015b2405d21">calculateRepresentative</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a962e2d3526d358b3d4fc9015b2405d21">calculateRepresentative</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q)</td></tr>
 <tr class="memdesc:a962e2d3526d358b3d4fc9015b2405d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the representative for a dense sample. <br /></td></tr>
 <tr class="separator:a962e2d3526d358b3d4fc9015b2405d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f9dd1fc29f7dc48bb0a1c2896274a3"><td class="memItemLeft" align="right" valign="top"><a id="ad9f9dd1fc29f7dc48bb0a1c2896274a3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ad9f9dd1fc29f7dc48bb0a1c2896274a3">addToRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> rep, const std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;oreps)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ad9f9dd1fc29f7dc48bb0a1c2896274a3">addToRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> rep, const std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;oreps)</td></tr>
 <tr class="memdesc:ad9f9dd1fc29f7dc48bb0a1c2896274a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a dense sample to the appropriate lists of its representative. <br /></td></tr>
 <tr class="separator:ad9f9dd1fc29f7dc48bb0a1c2896274a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9bad238da1ed18fae83e90d4ca25fbc"><td class="memItemLeft" align="right" valign="top"><a id="af9bad238da1ed18fae83e90d4ca25fbc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af9bad238da1ed18fae83e90d4ca25fbc">removeFromRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> rep)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af9bad238da1ed18fae83e90d4ca25fbc">removeFromRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> rep)</td></tr>
 <tr class="memdesc:af9bad238da1ed18fae83e90d4ca25fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the node from its representative's lists. <br /></td></tr>
 <tr class="separator:af9bad238da1ed18fae83e90d4ca25fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeffda4d03123a688a734ef74e08c7993"><td class="memItemLeft" align="right" valign="top"><a id="aeffda4d03123a688a734ef74e08c7993"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aeffda4d03123a688a734ef74e08c7993">computeVPP</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> vp, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;VPPs)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aeffda4d03123a688a734ef74e08c7993">computeVPP</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> vp, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;VPPs)</td></tr>
 <tr class="memdesc:aeffda4d03123a688a734ef74e08c7993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes all nodes which qualify as a candidate v" for v and vp. <br /></td></tr>
 <tr class="separator:aeffda4d03123a688a734ef74e08c7993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a224b01b87deb0c0c16e14732b6a669de"><td class="memItemLeft" align="right" valign="top"><a id="a224b01b87deb0c0c16e14732b6a669de"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a224b01b87deb0c0c16e14732b6a669de">computeX</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> vp, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> vpp, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;Xs)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a224b01b87deb0c0c16e14732b6a669de">computeX</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> v, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> vp, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> vpp, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;Xs)</td></tr>
 <tr class="memdesc:a224b01b87deb0c0c16e14732b6a669de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes all nodes which qualify as a candidate x for v, v', and v". <br /></td></tr>
 <tr class="separator:a224b01b87deb0c0c16e14732b6a669de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae422eed3faaa03f793895e7412905e1d"><td class="memItemLeft" align="right" valign="top"><a id="ae422eed3faaa03f793895e7412905e1d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae422eed3faaa03f793895e7412905e1d">resetFailures</a> ()</td></tr>
 <tr class="memdesc:ae422eed3faaa03f793895e7412905e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reset function for resetting the failures count. <br /></td></tr>
 <tr class="separator:ae422eed3faaa03f793895e7412905e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe63255333497becd56880a2021fa5d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#afe63255333497becd56880a2021fa5d0">checkForSolution</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc, <a class="el" href="classompl_1_1base_1_1PathPtr.html">base::PathPtr</a> &amp;solution)</td></tr>
+<tr class="memitem:afe63255333497becd56880a2021fa5d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#afe63255333497becd56880a2021fa5d0">checkForSolution</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc, base::PathPtr &amp;solution)</td></tr>
 <tr class="separator:afe63255333497becd56880a2021fa5d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aade2eaa10fe55ce37216fa825bbd1bde"><td class="memItemLeft" align="right" valign="top"><a id="aade2eaa10fe55ce37216fa825bbd1bde"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aade2eaa10fe55ce37216fa825bbd1bde">haveSolution</a> (const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &amp;starts, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &amp;goals, <a class="el" href="classompl_1_1base_1_1PathPtr.html">base::PathPtr</a> &amp;solution)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aade2eaa10fe55ce37216fa825bbd1bde">haveSolution</a> (const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &amp;starts, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &amp;goals, base::PathPtr &amp;solution)</td></tr>
 <tr class="memdesc:aade2eaa10fe55ce37216fa825bbd1bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there exists a solution, i.e., there exists a pair of milestones such that the first is in <em>start</em> and the second is in <em>goal</em>, and the two milestones are in the same connected component. If a solution is found, the path is saved. <br /></td></tr>
 <tr class="separator:aade2eaa10fe55ce37216fa825bbd1bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f0d37ee3f6b8167f25fb2051a464c69"><td class="memItemLeft" align="right" valign="top"><a id="a3f0d37ee3f6b8167f25fb2051a464c69"></a>
@@ -561,11 +556,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a3f0d37ee3f6b8167f25fb2051a464c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if we have reached the iteration failures limit, <em>maxFailures_</em> or if a solution was added. <br /></td></tr>
 <tr class="separator:a3f0d37ee3f6b8167f25fb2051a464c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fcb7d85650540fd7bae078d4618aac8"><td class="memItemLeft" align="right" valign="top"><a id="a3fcb7d85650540fd7bae078d4618aac8"></a>
-<a class="el" href="classompl_1_1base_1_1PathPtr.html">base::PathPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a3fcb7d85650540fd7bae078d4618aac8">constructSolution</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> start, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> goal) const</td></tr>
+base::PathPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a3fcb7d85650540fd7bae078d4618aac8">constructSolution</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> start, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> goal) const</td></tr>
 <tr class="memdesc:a3fcb7d85650540fd7bae078d4618aac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two milestones from the same connected component, construct a path connecting them and set it as the solution. <br /></td></tr>
 <tr class="separator:a3fcb7d85650540fd7bae078d4618aac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b1814adf0749f8138da9403d54c8cd2"><td class="memItemLeft" align="right" valign="top"><a id="a6b1814adf0749f8138da9403d54c8cd2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a6b1814adf0749f8138da9403d54c8cd2">computeDensePath</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> start, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> goal, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae5b8ca0af6ce6cefc03e81d784da732d">DensePath</a> &amp;path) const</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a6b1814adf0749f8138da9403d54c8cd2">computeDensePath</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> start, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> goal, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a67c4aa44789ce26820b24f1261873182">DensePath</a> &amp;path) const</td></tr>
 <tr class="memdesc:a6b1814adf0749f8138da9403d54c8cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the dense path between the start and goal vertices (if connected) <br /></td></tr>
 <tr class="separator:a6b1814adf0749f8138da9403d54c8cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe82b072d388aac5650dde001cd3bc9f"><td class="memItemLeft" align="right" valign="top"><a id="abe82b072d388aac5650dde001cd3bc9f"></a>
@@ -573,31 +568,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:abe82b072d388aac5650dde001cd3bc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free all the memory allocated by the planner. <br /></td></tr>
 <tr class="separator:abe82b072d388aac5650dde001cd3bc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a165d082906ea801944422499aad42a63"><td class="memItemLeft" align="right" valign="top"><a id="a165d082906ea801944422499aad42a63"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a165d082906ea801944422499aad42a63">getSparseNeighbors</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *inState, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;graphNeighborhood)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a165d082906ea801944422499aad42a63">getSparseNeighbors</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *inState, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;graphNeighborhood)</td></tr>
 <tr class="memdesc:a165d082906ea801944422499aad42a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all nodes in the sparse graph which are within sparseDelta_ of the given state. <br /></td></tr>
 <tr class="separator:a165d082906ea801944422499aad42a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9962ed19e1b1dad746f87543323f45a"><td class="memItemLeft" align="right" valign="top"><a id="af9962ed19e1b1dad746f87543323f45a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af9962ed19e1b1dad746f87543323f45a">filterVisibleNeighbors</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *inState, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;graphNeighborhood, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;visibleNeighborhood) const</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af9962ed19e1b1dad746f87543323f45a">filterVisibleNeighbors</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *inState, const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;graphNeighborhood, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;visibleNeighborhood) const</td></tr>
 <tr class="memdesc:af9962ed19e1b1dad746f87543323f45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the visible neighbors. <br /></td></tr>
 <tr class="separator:af9962ed19e1b1dad746f87543323f45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1348206e86ac6383f4f9d98be3bb764f"><td class="memItemLeft" align="right" valign="top"><a id="a1348206e86ac6383f4f9d98be3bb764f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a1348206e86ac6383f4f9d98be3bb764f">getInterfaceNeighborRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q, std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt; &amp;interfaceRepresentatives)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a1348206e86ac6383f4f9d98be3bb764f">getInterfaceNeighborRepresentatives</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q, std::set&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt; &amp;interfaceRepresentatives)</td></tr>
 <tr class="memdesc:a1348206e86ac6383f4f9d98be3bb764f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the representatives of all interfaces that q supports. <br /></td></tr>
 <tr class="separator:a1348206e86ac6383f4f9d98be3bb764f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af84d5f12e7cfde6384adb6f4c92b335a"><td class="memItemLeft" align="right" valign="top"><a id="af84d5f12e7cfde6384adb6f4c92b335a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af84d5f12e7cfde6384adb6f4c92b335a">getInterfaceNeighborhood</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> q, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &amp;interfaceNeighborhood)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#af84d5f12e7cfde6384adb6f4c92b335a">getInterfaceNeighborhood</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> q, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &amp;interfaceNeighborhood)</td></tr>
 <tr class="memdesc:af84d5f12e7cfde6384adb6f4c92b335a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the neighbors of q who help it support an interface. <br /></td></tr>
 <tr class="separator:af84d5f12e7cfde6384adb6f4c92b335a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed8fe7b7d0711a992a2597f1247a5fa7"><td class="memItemLeft" align="right" valign="top"><a id="aed8fe7b7d0711a992a2597f1247a5fa7"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aed8fe7b7d0711a992a2597f1247a5fa7">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> a, const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> b) const</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aed8fe7b7d0711a992a2597f1247a5fa7">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> a, const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> b) const</td></tr>
 <tr class="memdesc:aed8fe7b7d0711a992a2597f1247a5fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distance between two milestones (this is simply distance between the states of the milestones) <br /></td></tr>
 <tr class="separator:aed8fe7b7d0711a992a2597f1247a5fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaeaa3934d9f29e7893f9756144b041a"><td class="memItemLeft" align="right" valign="top"><a id="aaaeaa3934d9f29e7893f9756144b041a"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aaaeaa3934d9f29e7893f9756144b041a">sparseDistanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> a, const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> b) const</td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aaaeaa3934d9f29e7893f9756144b041a">sparseDistanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> a, const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> b) const</td></tr>
 <tr class="memdesc:aaaeaa3934d9f29e7893f9756144b041a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distance between two nodes in the sparse roadmap spanner. <br /></td></tr>
 <tr class="separator:aaaeaa3934d9f29e7893f9756144b041a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3db2106a84f22f86a1d2c832c4f63ca5"><td class="memItemLeft" align="right" valign="top"><a id="a3db2106a84f22f86a1d2c832c4f63ca5"></a>
-<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a3db2106a84f22f86a1d2c832c4f63ca5">costHeuristic</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> u, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> v) const</td></tr>
+<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a3db2106a84f22f86a1d2c832c4f63ca5">costHeuristic</a> (<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> u, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> v) const</td></tr>
 <tr class="memdesc:a3db2106a84f22f86a1d2c832c4f63ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two vertices, returns a heuristic on the cost of the path connecting them. This method wraps OptimizationObjective::motionCostHeuristic. <br /></td></tr>
 <tr class="separator:a3db2106a84f22f86a1d2c832c4f63ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classompl_1_1base_1_1Planner')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
@@ -612,46 +607,46 @@ template&lt;typename T , typename PlannerType , typename SetterType &gt; </td></
 <tr class="memdesc:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter function. <br /></td></tr>
 <tr class="separator:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a3dc481539fac465497ad158e1bdac91a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a> (const std::string &amp;progressPropertyName, const <a class="el" href="classompl_1_1base_1_1Planner.html#ad35ad462773b75e3f3ec411bed1bd260">PlannerProgressProperty</a> &amp;prop)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a> (const std::string &amp;progressPropertyName, const <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> &amp;prop)</td></tr>
 <tr class="memdesc:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner progress property called <em>progressPropertyName</em> with a property querying function <em>prop</em> to this planner's progress property map. <br /></td></tr>
 <tr class="separator:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:acd50cb44ea98fdf1f2820a85838c3bb2"><td class="memItemLeft" align="right" valign="top"><a id="acd50cb44ea98fdf1f2820a85838c3bb2"></a>
-<a class="el" href="classompl_1_1base_1_1ValidStateSamplerPtr.html">base::ValidStateSamplerPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#acd50cb44ea98fdf1f2820a85838c3bb2">sampler_</a></td></tr>
+base::ValidStateSamplerPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#acd50cb44ea98fdf1f2820a85838c3bb2">sampler_</a></td></tr>
 <tr class="memdesc:acd50cb44ea98fdf1f2820a85838c3bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampler user for generating valid samples in the state space. <br /></td></tr>
 <tr class="separator:acd50cb44ea98fdf1f2820a85838c3bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48bc1a8d735608ee371e2403e862adbb"><td class="memItemLeft" align="right" valign="top"><a id="a48bc1a8d735608ee371e2403e862adbb"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7afec5a14531b80488f0886d7fc0ad3b">DenseNeighbors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a48bc1a8d735608ee371e2403e862adbb">nn_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa4a270f91d937478be19fb4a77644cf0">DenseNeighbors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a48bc1a8d735608ee371e2403e862adbb">nn_</a></td></tr>
 <tr class="memdesc:a48bc1a8d735608ee371e2403e862adbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nearest neighbors data structure. <br /></td></tr>
 <tr class="separator:a48bc1a8d735608ee371e2403e862adbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade5b67adc31063b7e60007600e50ae4a"><td class="memItemLeft" align="right" valign="top"><a id="ade5b67adc31063b7e60007600e50ae4a"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae197310fae04def0d1a8e91bfab761a1">SparseNeighbors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ade5b67adc31063b7e60007600e50ae4a">snn_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a3c675e0510f608a514e962412e6ffdf8">SparseNeighbors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ade5b67adc31063b7e60007600e50ae4a">snn_</a></td></tr>
 <tr class="memdesc:ade5b67adc31063b7e60007600e50ae4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nearest Neighbors structure for the sparse roadmap. <br /></td></tr>
 <tr class="separator:ade5b67adc31063b7e60007600e50ae4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae082222c487348b1e13d74975763a4e8"><td class="memItemLeft" align="right" valign="top"><a id="ae082222c487348b1e13d74975763a4e8"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae082222c487348b1e13d74975763a4e8">g_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae082222c487348b1e13d74975763a4e8">g_</a></td></tr>
 <tr class="memdesc:ae082222c487348b1e13d74975763a4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dense graph, D. <br /></td></tr>
 <tr class="separator:ae082222c487348b1e13d74975763a4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe54cfe52c76097b0326685293b023b1"><td class="memItemLeft" align="right" valign="top"><a id="abe54cfe52c76097b0326685293b023b1"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#abe54cfe52c76097b0326685293b023b1">s_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#abe54cfe52c76097b0326685293b023b1">s_</a></td></tr>
 <tr class="memdesc:abe54cfe52c76097b0326685293b023b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sparse roadmap, S. <br /></td></tr>
 <tr class="separator:abe54cfe52c76097b0326685293b023b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83371198a453f553f07e0ec331a74067"><td class="memItemLeft" align="right" valign="top"><a id="a83371198a453f553f07e0ec331a74067"></a>
-std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a83371198a453f553f07e0ec331a74067">startM_</a></td></tr>
+std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a83371198a453f553f07e0ec331a74067">startM_</a></td></tr>
 <tr class="memdesc:a83371198a453f553f07e0ec331a74067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of start guards. <br /></td></tr>
 <tr class="separator:a83371198a453f553f07e0ec331a74067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cee990db83fd464d4d020f6bfc9e626"><td class="memItemLeft" align="right" valign="top"><a id="a1cee990db83fd464d4d020f6bfc9e626"></a>
-std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a1cee990db83fd464d4d020f6bfc9e626">goalM_</a></td></tr>
+std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a1cee990db83fd464d4d020f6bfc9e626">goalM_</a></td></tr>
 <tr class="memdesc:a1cee990db83fd464d4d020f6bfc9e626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of goal guards. <br /></td></tr>
 <tr class="separator:a1cee990db83fd464d4d020f6bfc9e626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b374b38cac7805cc5e3371b1fcde6e"><td class="memItemLeft" align="right" valign="top"><a id="a96b374b38cac7805cc5e3371b1fcde6e"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a96b374b38cac7805cc5e3371b1fcde6e">sparseQueryVertex_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a96b374b38cac7805cc5e3371b1fcde6e">sparseQueryVertex_</a></td></tr>
 <tr class="memdesc:a96b374b38cac7805cc5e3371b1fcde6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">DenseVertex for performing nearest neighbor queries on the SPARSE roadmap. <br /></td></tr>
 <tr class="separator:a96b374b38cac7805cc5e3371b1fcde6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63c5733d408829e0e704030ad68b138a"><td class="memItemLeft" align="right" valign="top"><a id="a63c5733d408829e0e704030ad68b138a"></a>
-<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a63c5733d408829e0e704030ad68b138a">queryVertex_</a></td></tr>
+<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a63c5733d408829e0e704030ad68b138a">queryVertex_</a></td></tr>
 <tr class="memdesc:a63c5733d408829e0e704030ad68b138a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex for performing nearest neighbor queries on the DENSE graph. <br /></td></tr>
 <tr class="separator:a63c5733d408829e0e704030ad68b138a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62771ddf86a03d2a25bc4f47a8c83987"><td class="memItemLeft" align="right" valign="top"><a id="a62771ddf86a03d2a25bc4f47a8c83987"></a>
@@ -659,27 +654,27 @@ std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd
 <tr class="memdesc:a62771ddf86a03d2a25bc4f47a8c83987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geometric Path variable used for smoothing out paths. <br /></td></tr>
 <tr class="separator:a62771ddf86a03d2a25bc4f47a8c83987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a2e7d2f1abe84a909d2fc860edf21e"><td class="memItemLeft" align="right" valign="top"><a id="a83a2e7d2f1abe84a909d2fc860edf21e"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a83a2e7d2f1abe84a909d2fc860edf21e">stateProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a83a2e7d2f1abe84a909d2fc860edf21e">stateProperty_</a></td></tr>
 <tr class="memdesc:a83a2e7d2f1abe84a909d2fc860edf21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the internal base::state at each DenseVertex. <br /></td></tr>
 <tr class="separator:a83a2e7d2f1abe84a909d2fc860edf21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4730df61de7338d11f55bfdd91331f94"><td class="memItemLeft" align="right" valign="top"><a id="a4730df61de7338d11f55bfdd91331f94"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a4730df61de7338d11f55bfdd91331f94">sparseStateProperty_</a></td></tr>
-<tr class="memdesc:a4730df61de7338d11f55bfdd91331f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the internal <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state. ">base::State</a> for each SparseVertex of S. <br /></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a4730df61de7338d11f55bfdd91331f94">sparseStateProperty_</a></td></tr>
+<tr class="memdesc:a4730df61de7338d11f55bfdd91331f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the internal <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state.">base::State</a> for each SparseVertex of S. <br /></td></tr>
 <tr class="separator:a4730df61de7338d11f55bfdd91331f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca084020b77381bab083e918b417f6e6"><td class="memItemLeft" align="right" valign="top"><a id="aca084020b77381bab083e918b417f6e6"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__color__t.html">vertex_color_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aca084020b77381bab083e918b417f6e6">sparseColorProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__color__t.html">vertex_color_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#aca084020b77381bab083e918b417f6e6">sparseColorProperty_</a></td></tr>
 <tr class="memdesc:aca084020b77381bab083e918b417f6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to draw colors for the SparseVertexs of S, to indicate addition type. <br /></td></tr>
 <tr class="separator:aca084020b77381bab083e918b417f6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44350a6b9cb924c6d588b38ea2e4fa79"><td class="memItemLeft" align="right" valign="top"><a id="a44350a6b9cb924c6d588b38ea2e4fa79"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__representative__t.html">vertex_representative_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a44350a6b9cb924c6d588b38ea2e4fa79">representativesProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__representative__t.html">vertex_representative_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a44350a6b9cb924c6d588b38ea2e4fa79">representativesProperty_</a></td></tr>
 <tr class="memdesc:a44350a6b9cb924c6d588b38ea2e4fa79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the representatives of the Dense vertices. <br /></td></tr>
 <tr class="separator:a44350a6b9cb924c6d588b38ea2e4fa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1c0ad7450ceeb833395f2caffce6a2f"><td class="memItemLeft" align="right" valign="top"><a id="ad1c0ad7450ceeb833395f2caffce6a2f"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__list__t.html">vertex_list_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ad1c0ad7450ceeb833395f2caffce6a2f">nonInterfaceListsProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__list__t.html">vertex_list_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ad1c0ad7450ceeb833395f2caffce6a2f">nonInterfaceListsProperty_</a></td></tr>
 <tr class="memdesc:ad1c0ad7450ceeb833395f2caffce6a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to all non-interface supporting vertices of the sparse nodes. <br /></td></tr>
 <tr class="separator:ad1c0ad7450ceeb833395f2caffce6a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35ffa3f844aa2c6b1339d240edb885fa"><td class="memItemLeft" align="right" valign="top"><a id="a35ffa3f844aa2c6b1339d240edb885fa"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__interface__list__t.html">vertex_interface_list_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a35ffa3f844aa2c6b1339d240edb885fa">interfaceListsProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a>, <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__interface__list__t.html">vertex_interface_list_t</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a35ffa3f844aa2c6b1339d240edb885fa">interfaceListsProperty_</a></td></tr>
 <tr class="memdesc:a35ffa3f844aa2c6b1339d240edb885fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the interface-supporting vertice hashes of the sparse nodes. <br /></td></tr>
 <tr class="separator:a35ffa3f844aa2c6b1339d240edb885fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa88488f15645266e02661fe370df3a2d"><td class="memItemLeft" align="right" valign="top"><a id="aa88488f15645266e02661fe370df3a2d"></a>
@@ -687,15 +682,15 @@ boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html
 <tr class="memdesc:aa88488f15645266e02661fe370df3a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A path simplifier used to simplify dense paths added to S. <br /></td></tr>
 <tr class="separator:aa88488f15645266e02661fe370df3a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a240e9215b995a65bfc64c9684dd31c5e"><td class="memItemLeft" align="right" valign="top"><a id="a240e9215b995a65bfc64c9684dd31c5e"></a>
-boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">DenseGraph</a>, boost::edge_weight_t &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a240e9215b995a65bfc64c9684dd31c5e">weightProperty_</a></td></tr>
+boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">DenseGraph</a>, boost::edge_weight_t &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a240e9215b995a65bfc64c9684dd31c5e">weightProperty_</a></td></tr>
 <tr class="memdesc:a240e9215b995a65bfc64c9684dd31c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to the weights of each DenseEdge. <br /></td></tr>
 <tr class="separator:a240e9215b995a65bfc64c9684dd31c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac475ebd43d9ab037be2abfd27f8e674e"><td class="memItemLeft" align="right" valign="top"><a id="ac475ebd43d9ab037be2abfd27f8e674e"></a>
-boost::disjoint_sets&lt; boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a>, boost::vertex_rank_t &gt;::type, boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">SpannerGraph</a>, boost::vertex_predecessor_t &gt;::type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ac475ebd43d9ab037be2abfd27f8e674e">sparseDJSets_</a></td></tr>
+boost::disjoint_sets&lt; boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a>, boost::vertex_rank_t &gt;::type, boost::property_map&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">SpannerGraph</a>, boost::vertex_predecessor_t &gt;::type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ac475ebd43d9ab037be2abfd27f8e674e">sparseDJSets_</a></td></tr>
 <tr class="memdesc:ac475ebd43d9ab037be2abfd27f8e674e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure that maintains the connected components of S. <br /></td></tr>
 <tr class="separator:ac475ebd43d9ab037be2abfd27f8e674e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a434823162bcc08b92794257379d820a1"><td class="memItemLeft" align="right" valign="top"><a id="a434823162bcc08b92794257379d820a1"></a>
-std::function&lt; const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a> &gt; &amp;(const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a309ea6c01d2ccfd8b2c6696f2de70d6e">DenseVertex</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a434823162bcc08b92794257379d820a1">connectionStrategy_</a></td></tr>
+std::function&lt; const std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a> &gt; &amp;(const <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a23e2c9926620acd0a907ad527a4567b3">DenseVertex</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a434823162bcc08b92794257379d820a1">connectionStrategy_</a></td></tr>
 <tr class="memdesc:a434823162bcc08b92794257379d820a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns the milestones to attempt connections with. <br /></td></tr>
 <tr class="separator:a434823162bcc08b92794257379d820a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a9053596063ce65ae1469a44211ee4c"><td class="memItemLeft" align="right" valign="top"><a id="a3a9053596063ce65ae1469a44211ee4c"></a>
@@ -704,7 +699,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:a3a9053596063ce65ae1469a44211ee4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33dee098737eb963368ef74bb43cf59c"><td class="memItemLeft" align="right" valign="top"><a id="a33dee098737eb963368ef74bb43cf59c"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a33dee098737eb963368ef74bb43cf59c">stretchFactor_</a> {3.}</td></tr>
-<tr class="memdesc:a33dee098737eb963368ef74bb43cf59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stretch factor in terms of graph spanners for <a class="el" href="classompl_1_1geometric_1_1SPARS.html" title=" SPArse Roadmap Spanner technique.  ">SPARS</a> to check against. <br /></td></tr>
+<tr class="memdesc:a33dee098737eb963368ef74bb43cf59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stretch factor in terms of graph spanners for <a class="el" href="classompl_1_1geometric_1_1SPARS.html" title="SPArse Roadmap Spanner technique.">SPARS</a> to check against. <br /></td></tr>
 <tr class="separator:a33dee098737eb963368ef74bb43cf59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae402ddf68d55b16b696b478ebb8c349d"><td class="memItemLeft" align="right" valign="top"><a id="ae402ddf68d55b16b696b478ebb8c349d"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae402ddf68d55b16b696b478ebb8c349d">maxFailures_</a> {1000u}</td></tr>
@@ -716,19 +711,19 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a8f3e8537fac3946c786dfa7598268531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab906f7ac6bb9c163ea9152e7ad917357"><td class="memItemLeft" align="right" valign="top"><a id="ab906f7ac6bb9c163ea9152e7ad917357"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab906f7ac6bb9c163ea9152e7ad917357">denseDeltaFraction_</a> {.001}</td></tr>
-<tr class="memdesc:ab906f7ac6bb9c163ea9152e7ad917357"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title=" SPArse Roadmap Spanner technique.  ">SPARS</a> parameter for dense graph connection distance as a fraction of max. extent. <br /></td></tr>
+<tr class="memdesc:ab906f7ac6bb9c163ea9152e7ad917357"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title="SPArse Roadmap Spanner technique.">SPARS</a> parameter for dense graph connection distance as a fraction of max. extent. <br /></td></tr>
 <tr class="separator:ab906f7ac6bb9c163ea9152e7ad917357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad966c5db5423fd83e7ebfb22f361dce4"><td class="memItemLeft" align="right" valign="top"><a id="ad966c5db5423fd83e7ebfb22f361dce4"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ad966c5db5423fd83e7ebfb22f361dce4">sparseDeltaFraction_</a> {.25}</td></tr>
-<tr class="memdesc:ad966c5db5423fd83e7ebfb22f361dce4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title=" SPArse Roadmap Spanner technique.  ">SPARS</a> parameter for Sparse Roadmap connection distance as a fraction of max. extent. <br /></td></tr>
+<tr class="memdesc:ad966c5db5423fd83e7ebfb22f361dce4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title="SPArse Roadmap Spanner technique.">SPARS</a> parameter for Sparse Roadmap connection distance as a fraction of max. extent. <br /></td></tr>
 <tr class="separator:ad966c5db5423fd83e7ebfb22f361dce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06d059117303085093f2ac04bc0e8b60"><td class="memItemLeft" align="right" valign="top"><a id="a06d059117303085093f2ac04bc0e8b60"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a06d059117303085093f2ac04bc0e8b60">denseDelta_</a> {0.}</td></tr>
-<tr class="memdesc:a06d059117303085093f2ac04bc0e8b60"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title=" SPArse Roadmap Spanner technique.  ">SPARS</a> parameter for dense graph connection distance. <br /></td></tr>
+<tr class="memdesc:a06d059117303085093f2ac04bc0e8b60"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title="SPArse Roadmap Spanner technique.">SPARS</a> parameter for dense graph connection distance. <br /></td></tr>
 <tr class="separator:a06d059117303085093f2ac04bc0e8b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a168b6ad450d1b5100894bf4bff8e3a72"><td class="memItemLeft" align="right" valign="top"><a id="a168b6ad450d1b5100894bf4bff8e3a72"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a168b6ad450d1b5100894bf4bff8e3a72">sparseDelta_</a> {0.}</td></tr>
-<tr class="memdesc:a168b6ad450d1b5100894bf4bff8e3a72"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title=" SPArse Roadmap Spanner technique.  ">SPARS</a> parameter for Sparse Roadmap connection distance. <br /></td></tr>
+<tr class="memdesc:a168b6ad450d1b5100894bf4bff8e3a72"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title="SPArse Roadmap Spanner technique.">SPARS</a> parameter for Sparse Roadmap connection distance. <br /></td></tr>
 <tr class="separator:a168b6ad450d1b5100894bf4bff8e3a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae60003e270a038a494dcfd8b98d8743e"><td class="memItemLeft" align="right" valign="top"><a id="ae60003e270a038a494dcfd8b98d8743e"></a>
 <a class="el" href="classompl_1_1RNG.html">RNG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#ae60003e270a038a494dcfd8b98d8743e">rng_</a></td></tr>
@@ -739,8 +734,8 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <tr class="memdesc:a9bde82bf267e2f36d7548e2a1d0048c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex to guard access to the graphs. <br /></td></tr>
 <tr class="separator:a9bde82bf267e2f36d7548e2a1d0048c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a520fdf4b30e1384488af1f96e0878723"><td class="memItemLeft" align="right" valign="top"><a id="a520fdf4b30e1384488af1f96e0878723"></a>
-<a class="el" href="classompl_1_1base_1_1OptimizationObjectivePtr.html">base::OptimizationObjectivePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a520fdf4b30e1384488af1f96e0878723">opt_</a></td></tr>
-<tr class="memdesc:a520fdf4b30e1384488af1f96e0878723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objective cost function for <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">PRM</a> graph edges. <br /></td></tr>
+base::OptimizationObjectivePtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a520fdf4b30e1384488af1f96e0878723">opt_</a></td></tr>
+<tr class="memdesc:a520fdf4b30e1384488af1f96e0878723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objective cost function for <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">PRM</a> graph edges. <br /></td></tr>
 <tr class="separator:a520fdf4b30e1384488af1f96e0878723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07dcba24f9a1ab7f0d2bd0b8aead74f4"><td class="memItemLeft" align="right" valign="top"><a id="a07dcba24f9a1ab7f0d2bd0b8aead74f4"></a>
 long unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1geometric_1_1SPARS.html#a07dcba24f9a1ab7f0d2bd0b8aead74f4">iterations_</a> {0ul}</td></tr>
@@ -761,7 +756,8 @@ long unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="separator:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a1c6ac45d44026aae6df87f3295d67436"></a>
 <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a1c6ac45d44026aae6df87f3295d67436">pis_</a></td></tr>
-<tr class="memdesc:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class to extract valid input states. <br /></td></tr>
+<tr class="memdesc:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class to extract valid input states <br  />
+ <br /></td></tr>
 <tr class="separator:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="a806de82eeff9ef9231963a9851524b97"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td></tr>
@@ -776,7 +772,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map from parameter names to parameter instances for this planner. This field is populated by the <a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c" title="This function declares a parameter for this planner instance, and specifies the setter and getter fun...">declareParam()</a> function. <br /></td></tr>
 <tr class="separator:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="ab630ca0634156172daf1a2620a01caf4"></a>
-<a class="el" href="classompl_1_1base_1_1Planner.html#a919f116d094eb88e4c877c44531c2b75">PlannerProgressProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td></tr>
+<a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td></tr>
 <tr class="memdesc:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mapping between this planner's progress property names and the functions used for querying those progress properties. <br /></td></tr>
 <tr class="separator:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="memItemLeft" align="right" valign="top"><a id="adba44a4ee27079c5b258a2ebed719eed"></a>
@@ -786,19 +782,19 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><b> SPArse Roadmap Spanner technique. </b> </p>
-<p><a class="anchor" id="gSPARS"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title=" SPArse Roadmap Spanner technique.  ">SPARS</a> is an algorithm which operates similarly to the Visibility-based <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner. ">PRM</a>. It has several desirable properties, including asymptotic near-optimality, and a meaningful stopping criterion. </dd></dl>
+<p><a class="anchor" id="gSPARS"></a></p><dl class="section user"><dt>Short description</dt><dd><a class="el" href="classompl_1_1geometric_1_1SPARS.html" title="SPArse Roadmap Spanner technique.">SPARS</a> is an algorithm which operates similarly to the Visibility-based <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">PRM</a>. It has several desirable properties, including asymptotic near-optimality, and a meaningful stopping criterion. </dd></dl>
 <dl class="section user"><dt>External documentation</dt><dd>A. Dobson, A. Krontiris, K. Bekris, Sparse Roadmap Spanners, <em>Workshop on the Algorithmic Foundations of Robotics (WAFR)</em> 2012. <a href="http://www.cs.rutgers.edu/~kb572/pubs/sparse_roadmap_spanner.pdf">[PDF]</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SPARS_8h_source.html#l00077">77</a> of file <a class="el" href="SPARS_8h_source.html">SPARS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SPARS_8h_source.html#l00141">141</a> of file <a class="el" href="SPARS_8h_source.html">SPARS.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aced5413901bfab67dad3e34383b4560c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aced5413901bfab67dad3e34383b4560c">&#9670;&nbsp;</a></span>DenseGraph</h2>
+<a id="aa0822d493cd30885931fbbfcf8f5c916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0822d493cd30885931fbbfcf8f5c916">&#9670;&nbsp;</a></span>DenseGraph</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt;boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt;boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__representative__t.html">vertex_representative_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a8084fd9bf075d1248dce995175a469ab">SparseVertex</a>&gt; &gt; &gt; &gt;, boost::property&lt;boost::edge_weight_t, double&gt; &gt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aced5413901bfab67dad3e34383b4560c">ompl::geometric::SPARS::DenseGraph</a></td>
+          <td class="memname">using <a class="el" href="classompl_1_1geometric_1_1SPARS.html#aa0822d493cd30885931fbbfcf8f5c916">ompl::geometric::SPARS::DenseGraph</a> =  boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt;boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt;boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__representative__t.html">vertex_representative_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a7795bb56966488a5c0568dfa2a1bd888">SparseVertex</a>&gt; &gt;&gt; &gt;, boost::property&lt;boost::edge_weight_t, double&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -808,18 +804,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="section user"><dt>Obviously, a ompl::base::State* vertex property is required.</dt><dd>The incremental connected components algorithm requires vertex_predecessor_t and vertex_rank_t properties. If boost::vecS is not used for vertex storage, then there must also be a boost:vertex_index_t property manually added.</dd></dl>
 <dl class="section user"><dt>DenseEdges should be undirected and have a weight property.</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SPARS_8h_source.html#l00183">183</a> of file <a class="el" href="SPARS_8h_source.html">SPARS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SPARS_8h_source.html#l00270">270</a> of file <a class="el" href="SPARS_8h_source.html">SPARS.h</a>.</p>
 
 </div>
 </div>
-<a id="a57a562c36673bafb6e57133ffa06f914"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57a562c36673bafb6e57133ffa06f914">&#9670;&nbsp;</a></span>SpannerGraph</h2>
+<a id="a59be994c281facc245b3d81842f7d7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59be994c281facc245b3d81842f7d7ec">&#9670;&nbsp;</a></span>SpannerGraph</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt;boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__color__t.html">vertex_color_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd">GuardType</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__list__t.html">vertex_list_t</a>, std::set&lt;<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a790771925906ba4551b89a94be96bd7b">VertexIndexType</a>&gt;, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__interface__list__t.html">vertex_interface_list_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a81edac38a1e360515ccbb23e03bde035">InterfaceHash</a>&gt; &gt; &gt; &gt; &gt; &gt;, boost::property&lt;boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&gt; &gt; <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a57a562c36673bafb6e57133ffa06f914">ompl::geometric::SPARS::SpannerGraph</a></td>
+          <td class="memname">using <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a59be994c281facc245b3d81842f7d7ec">ompl::geometric::SPARS::SpannerGraph</a> =  boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; <a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html">vertex_state_t</a>, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, boost::property&lt; boost::vertex_predecessor_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt;boost::vertex_rank_t, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__color__t.html">vertex_color_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd">GuardType</a>, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__list__t.html">vertex_list_t</a>, std::set&lt;<a class="el" href="classompl_1_1geometric_1_1SPARS.html#a04d02d91073d51e4a0d28ccf664da708">VertexIndexType</a>&gt;, boost::property&lt;<a class="el" href="structompl_1_1geometric_1_1SPARS_1_1vertex__interface__list__t.html">vertex_interface_list_t</a>, <a class="el" href="classompl_1_1geometric_1_1SPARS.html#a18bd7a6b91a676d3f27a9ff10e4ac107">InterfaceHash</a>&gt; &gt;&gt; &gt;&gt; &gt;, boost::property&lt;boost::edge_weight_t, <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -829,7 +825,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="section user"><dt>Nodes in the spanner contain extra information needed by the</dt><dd>spanner technique, including nodes in the dense graph which nodes in the spanner represent.</dd></dl>
 <dl class="section user"><dt>SparseEdges should be undirected and have a weight property.</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SPARS_8h_source.html#l00149">149</a> of file <a class="el" href="SPARS_8h_source.html">SPARS.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SPARS_8h_source.html#l00233">233</a> of file <a class="el" href="SPARS_8h_source.html">SPARS.h</a>.</p>
 
 </div>
 </div>
@@ -852,7 +848,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1PathPtr.html">base::PathPtr</a> &amp;&#160;</td>
+          <td class="paramtype">base::PathPtr &amp;&#160;</td>
           <td class="paramname"><em>solution</em>&#160;</td>
         </tr>
         <tr>
@@ -880,13 +876,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -896,6 +892,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

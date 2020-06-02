@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Implementing a New Motion Planner</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>Implementing a New Motion Planner</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,48 +136,148 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
 
 </div><!-- top -->
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">Implementing a New Motion Planner </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Strict Requirements</h1>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md81"></a>
+Strict Requirements</h1>
 <p>Implementing a new motion planner is very simple using OMPL. There are just two strict requirements:</p>
 <ul>
-<li>Publicly derive the new class from <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. ">ompl::base::Planner</a></li>
-<li>Provide an implementation of the method solve() from <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. ">ompl::base::Planner</a>.</li>
+<li>Publicly derive the new class from <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">ompl::base::Planner</a></li>
+<li>Provide an implementation of the method solve() from <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">ompl::base::Planner</a>.</li>
 </ul>
 <p>By satisfying these requirements, the planner can be fully integrated within the existing OMPL framework.</p>
-<h1>Optional Features</h1>
+<h1><a class="anchor" id="autotoc_md82"></a>
+Optional Features</h1>
 <p>Aside from the strict requirements, there are other methods which can be implemented and practices which should be followed for ease of integration. These are not required, but are strongly recommended for simplicity and consistency:</p>
 <ul>
-<li>Update the values of the <a class="el" href="structompl_1_1base_1_1PlannerSpecs.html" title="Properties that planners may have. ">ompl::base::PlannerSpecs</a> member of <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. ">ompl::base::Planner</a> in the constructor of your planner to indicate its capabilities to the user.</li>
+<li>Update the values of the <a class="el" href="structompl_1_1base_1_1PlannerSpecs.html" title="Properties that planners may have.">ompl::base::PlannerSpecs</a> member of <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">ompl::base::Planner</a> in the constructor of your planner to indicate its capabilities to the user.</li>
 <li>Overload <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">ompl::base::Planner::setup</a> (if needed) to execute any one-time setup methods. Note that setup() is only guaranteed to be called once, and is not likely to be invoked before each call to solve().</li>
-<li>When a solution path is found in the solve() method, save it to the instance of <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html" title="Definition of a problem to be solved. This includes the start state(s) for the system and a goal spec...">ompl::base::ProblemDefinition</a> using its addSolutionPath member. <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html" title="Definition of a problem to be solved. This includes the start state(s) for the system and a goal spec...">ompl::base::ProblemDefinition</a> is a member of <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. ">ompl::base::Planner</a>.</li>
-<li>Return an informative value from <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve() ">ompl::base::PlannerStatus</a> in the implementation of solve().</li>
+<li>When a solution path is found in the solve() method, save it to the instance of <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html" title="Definition of a problem to be solved. This includes the start state(s) for the system and a goal spec...">ompl::base::ProblemDefinition</a> using its addSolutionPath member. <a class="el" href="classompl_1_1base_1_1ProblemDefinition.html" title="Definition of a problem to be solved. This includes the start state(s) for the system and a goal spec...">ompl::base::ProblemDefinition</a> is a member of <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">ompl::base::Planner</a>.</li>
+<li>Return an informative value from <a class="el" href="structompl_1_1base_1_1PlannerStatus.html" title="A class to store the exit status of Planner::solve()">ompl::base::PlannerStatus</a> in the implementation of solve().</li>
 <li>solve() should respect the <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html" title="Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...">ompl::base::PlannerTerminationCondition</a> argument passed to it. When the given condition evaluates true, solve() should return as quickly as possible.</li>
 <li>Repeated calls to solve() should not restart the planning process from scratch, but rather pick up the search where it left off previously.</li>
-<li>Provide an implementation of <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">ompl::base::Planner::clear()</a>. This method should free any memory allocated by the planner and restore the planner to a state where <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">ompl::base::Planner::solve()</a> can be called again (without passing on information from previous calls to solve() ). If necessary, clear() can set <a class="el" href="classompl_1_1base_1_1Planner.html#adba44a4ee27079c5b258a2ebed719eed" title="Flag indicating whether setup() has been called. ">ompl::base::Planner::setup_</a> to <code>false</code>, to communicate to solve() that setup() needs to be called again.</li>
-<li>Provide an implementation of ompl::bas::Planner::getPlannerData() which translates the internal planner data structure to the <a class="el" href="classompl_1_1base_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique...">ompl::base::PlannerData</a> graph implementation. This method is particularly useful for debugging purposes since it allows the user to inspect the data structure.</li>
+<li>Provide an implementation of <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">ompl::base::Planner::clear()</a>. This method should free any memory allocated by the planner and restore the planner to a state where <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">ompl::base::Planner::solve()</a> can be called again (without passing on information from previous calls to solve() ). If necessary, clear() can set <a class="el" href="classompl_1_1base_1_1Planner.html#adba44a4ee27079c5b258a2ebed719eed" title="Flag indicating whether setup() has been called.">ompl::base::Planner::setup_</a> to <code>false</code>, to communicate to solve() that setup() needs to be called again.</li>
+<li>Provide an implementation of ompl::bas::Planner::getPlannerData() which translates the internal planner data structure to the <a class="el" href="classompl_1_1base_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">ompl::base::PlannerData</a> graph implementation. This method is particularly useful for debugging purposes since it allows the user to inspect the data structure.</li>
 </ul>
-<h2>New Planner Template</h2>
-<p>The following is a template which can be used to craft a new <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner. ">ompl::base::Planner</a> object:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;ompl/base/Planner.h&gt;</span></div><div class="line"></div><div class="line"><span class="comment">// often useful headers:</span></div><div class="line"><span class="preprocessor">#include &lt;ompl/util/RandomNumbers.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;ompl/tools/config/SelfConfig.h&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div><div class="line">{</div><div class="line">    <span class="keyword">class </span>myNewPlanner : <span class="keyword">public</span> base::Planner</div><div class="line">    {</div><div class="line">    <span class="keyword">public</span>:</div><div class="line"></div><div class="line">        myNewPlanner(<span class="keyword">const</span> base::SpaceInformationPtr &amp;si) : base::Planner(si, <span class="stringliteral">&quot;the planner&#39;s name&quot;</span>)</div><div class="line">        {</div><div class="line">            <span class="comment">// the specifications of this planner (ompl::base::PlannerSpecs)</span></div><div class="line">            specs_.approximateSolutions = ...;</div><div class="line">            specs_.recognizedGoal = ...;</div><div class="line">            ...</div><div class="line">        }</div><div class="line"></div><div class="line">        <span class="keyword">virtual</span> ~myNewPlanner(<span class="keywordtype">void</span>)</div><div class="line">        {</div><div class="line">            <span class="comment">// free any allocated memory</span></div><div class="line">        }</div><div class="line"></div><div class="line">        <span class="keyword">virtual</span> base::PlannerStatus solve(<span class="keyword">const</span> base::PlannerTerminationCondition &amp;ptc)</div><div class="line">        {</div><div class="line">            <span class="comment">// make sure the planner is configured correctly; ompl::base::Planner::checkValidity</span></div><div class="line">            <span class="comment">// ensures that there is at least one input state and a ompl::base::Goal object specified</span></div><div class="line">            checkValidity();</div><div class="line"></div><div class="line">            <span class="comment">// get a handle to the Goal from the ompl::base::ProblemDefinition member, pdef_</span></div><div class="line">            base::Goal *goal = pdef_-&gt;getGoal().get();</div><div class="line"></div><div class="line">            <span class="comment">// get input states with PlannerInputStates helper, pis_</span></div><div class="line">            <span class="keywordflow">while</span> (<span class="keyword">const</span> base::State *st = pis_.nextStart())</div><div class="line">            {</div><div class="line">                <span class="comment">// st will contain a start state.  Typically this state will</span></div><div class="line">                <span class="comment">// be cloned here and inserted into the Planner&#39;s data structure.</span></div><div class="line">            }</div><div class="line"></div><div class="line">            <span class="comment">// if needed, sample states from the goal region (and wait until a state is sampled)</span></div><div class="line">            <span class="keyword">const</span> base::State *st = pis_.nextGoal(ptc);</div><div class="line">            <span class="comment">// or sample a new goal state only if available:</span></div><div class="line">            <span class="keyword">const</span> base::State *st = pis_.nextGoal();</div><div class="line"></div><div class="line">            <span class="comment">// periodically check if ptc() returns true.</span></div><div class="line">            <span class="comment">// if it does, terminate planning.</span></div><div class="line">            <span class="keywordflow">while</span> (ptc() == <span class="keyword">false</span>)</div><div class="line">            {</div><div class="line">                <span class="comment">// Start planning here.</span></div><div class="line"></div><div class="line">                <span class="comment">// call routines from SpaceInformation (si_) as needed. i.e.,</span></div><div class="line">                <span class="comment">// si_-&gt;allocStateSampler() for sampling,</span></div><div class="line">                <span class="comment">// si_-&gt;checkMotion(state1, state2) for state validity, etc...</span></div><div class="line"></div><div class="line">                <span class="comment">// use the Goal pointer to evaluate whether a sampled state satisfies the goal requirements</span></div><div class="line"></div><div class="line">                <span class="comment">// use log macros for informative messaging, i.e., logInfo(&quot;Planner found a solution!&quot;);</span></div><div class="line">            }</div><div class="line"></div><div class="line">            <span class="comment">// When a solution path is computed, save it here</span></div><div class="line">            pdef_-&gt;addSolutionPath(...);</div><div class="line"></div><div class="line">            <span class="comment">// Return a value from the PlannerStatus enumeration.</span></div><div class="line">            <span class="comment">// See ompl::base::PlannerStatus for the possible return values</span></div><div class="line">            <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28">base::PlannerStatus::EXACT_SOLUTION</a>;</div><div class="line">        }</div><div class="line"></div><div class="line">        <span class="keyword">virtual</span> <span class="keywordtype">void</span> clear(<span class="keywordtype">void</span>)</div><div class="line">        {</div><div class="line">            Planner::clear();</div><div class="line">            <span class="comment">// clear the data structures here</span></div><div class="line">        }</div><div class="line"></div><div class="line">        <span class="comment">// optional, if additional setup/configuration is needed, the setup() method can be implemented</span></div><div class="line">        <span class="keyword">virtual</span> <span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div><div class="line">        {</div><div class="line">            Planner::setup();</div><div class="line"></div><div class="line">            <span class="comment">// perhaps attempt some auto-configuration</span></div><div class="line">            SelfConfig sc(si_, getName());</div><div class="line">            sc.configure...</div><div class="line">        }</div><div class="line"></div><div class="line">        <span class="keyword">virtual</span> <span class="keywordtype">void</span> getPlannerData(base::PlannerData &amp;data)<span class="keyword"> const</span></div><div class="line"><span class="keyword">        </span>{</div><div class="line">            <span class="comment">// fill data with the states and edges that were created</span></div><div class="line">            <span class="comment">// in the exploration data structure</span></div><div class="line">            <span class="comment">// perhaps also fill control::PlannerData</span></div><div class="line">        }</div><div class="line"></div><div class="line">    };</div><div class="line">}</div></div><!-- fragment --> </div></div><!-- contents -->
+<h1><a class="anchor" id="autotoc_md83"></a>
+New Planner Template</h1>
+<p>The following is a template which can be used to craft a new <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">ompl::base::Planner</a> object:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;ompl/base/Planner.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// often useful headers:</span></div>
+<div class="line"><span class="preprocessor">#include &lt;ompl/util/RandomNumbers.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;ompl/tools/config/SelfConfig.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">class </span>myNewPlanner : <span class="keyword">public</span> base::Planner</div>
+<div class="line">    {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line"> </div>
+<div class="line">        myNewPlanner(<span class="keyword">const</span> base::SpaceInformationPtr &amp;si) : base::Planner(si, <span class="stringliteral">&quot;the planner&#39;s name&quot;</span>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// the specifications of this planner (ompl::base::PlannerSpecs)</span></div>
+<div class="line">            specs_.approximateSolutions = ...;</div>
+<div class="line">            specs_.recognizedGoal = ...;</div>
+<div class="line">            ...</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">virtual</span> ~myNewPlanner(<span class="keywordtype">void</span>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// free any allocated memory</span></div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">virtual</span> base::PlannerStatus solve(<span class="keyword">const</span> base::PlannerTerminationCondition &amp;ptc)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// make sure the planner is configured correctly; ompl::base::Planner::checkValidity</span></div>
+<div class="line">            <span class="comment">// ensures that there is at least one input state and a ompl::base::Goal object specified</span></div>
+<div class="line">            checkValidity();</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// get a handle to the Goal from the ompl::base::ProblemDefinition member, pdef_</span></div>
+<div class="line">            base::Goal *goal = pdef_-&gt;getGoal().get();</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// get input states with PlannerInputStates helper, pis_</span></div>
+<div class="line">            <span class="keywordflow">while</span> (<span class="keyword">const</span> base::State *st = pis_.nextStart())</div>
+<div class="line">            {</div>
+<div class="line">                <span class="comment">// st will contain a start state.  Typically this state will</span></div>
+<div class="line">                <span class="comment">// be cloned here and inserted into the Planner&#39;s data structure.</span></div>
+<div class="line">            }</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// if needed, sample states from the goal region (and wait until a state is sampled)</span></div>
+<div class="line">            <span class="keyword">const</span> base::State *st = pis_.nextGoal(ptc);</div>
+<div class="line">            <span class="comment">// or sample a new goal state only if available:</span></div>
+<div class="line">            <span class="keyword">const</span> base::State *st = pis_.nextGoal();</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// periodically check if ptc() returns true.</span></div>
+<div class="line">            <span class="comment">// if it does, terminate planning.</span></div>
+<div class="line">            <span class="keywordflow">while</span> (ptc() == <span class="keyword">false</span>)</div>
+<div class="line">            {</div>
+<div class="line">                <span class="comment">// Start planning here.</span></div>
+<div class="line"> </div>
+<div class="line">                <span class="comment">// call routines from SpaceInformation (si_) as needed. i.e.,</span></div>
+<div class="line">                <span class="comment">// si_-&gt;allocStateSampler() for sampling,</span></div>
+<div class="line">                <span class="comment">// si_-&gt;checkMotion(state1, state2) for state validity, etc...</span></div>
+<div class="line"> </div>
+<div class="line">                <span class="comment">// use the Goal pointer to evaluate whether a sampled state satisfies the goal requirements</span></div>
+<div class="line"> </div>
+<div class="line">                <span class="comment">// use log macros for informative messaging, i.e., logInfo(&quot;Planner found a solution!&quot;);</span></div>
+<div class="line">            }</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// When a solution path is computed, save it here</span></div>
+<div class="line">            pdef_-&gt;addSolutionPath(...);</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// Return a value from the PlannerStatus enumeration.</span></div>
+<div class="line">            <span class="comment">// See ompl::base::PlannerStatus for the possible return values</span></div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28">base::PlannerStatus::EXACT_SOLUTION</a>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">virtual</span> <span class="keywordtype">void</span> clear(<span class="keywordtype">void</span>)</div>
+<div class="line">        {</div>
+<div class="line">            Planner::clear();</div>
+<div class="line">            <span class="comment">// clear the data structures here</span></div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// optional, if additional setup/configuration is needed, the setup() method can be implemented</span></div>
+<div class="line">        <span class="keyword">virtual</span> <span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
+<div class="line">        {</div>
+<div class="line">            Planner::setup();</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// perhaps attempt some auto-configuration</span></div>
+<div class="line">            SelfConfig sc(si_, getName());</div>
+<div class="line">            sc.configure...</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">virtual</span> <span class="keywordtype">void</span> getPlannerData(base::PlannerData &amp;data)<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">        </span>{</div>
+<div class="line">            <span class="comment">// fill data with the states and edges that were created</span></div>
+<div class="line">            <span class="comment">// in the exploration data structure</span></div>
+<div class="line">            <span class="comment">// perhaps also fill control::PlannerData</span></div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">    };</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28">ompl::base::PlannerStatus::EXACT_SOLUTION</a></div><div class="ttdeci">@ EXACT_SOLUTION</div><div class="ttdoc">The planner found an exact solution.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00194">PlannerStatus.h:194</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00021">AppBase.h:22</a></div></div>
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -202,6 +287,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

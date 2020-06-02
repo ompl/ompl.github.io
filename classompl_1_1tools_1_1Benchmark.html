@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ompl::tools::Benchmark Class Reference</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.14"/>
+  <meta name="generator" content="Doxygen 1.8.18"/>
+  <title>ompl::tools::Benchmark Class Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-powertip/1.2.0/jquery.powertip.min.js"></script>
-  <script type="text/javascript" src="dynsections.js"></script>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
   <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,120 +22,106 @@
     extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <link href="doxygen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./index.html">OMPL</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="download.html">Download</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="http://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a></li>
-              <li><a href="installation.html">Installation</a></li>
-              <li><a href="tutorials.html">Tutorials</a></li>
-              <li><a href="group__demos.html">Demos</a></li>
-              <li><a href="gui.html">OMPL.app GUI</a></li><li><a href="webapp.html">OMPL web app</a></li>
-              <li><a href="python.html">Python Bindings</a></li>
-              <li><a href="planners.html">Available Planners</a></li>
-              <li><a href="benchmark.html">Benchmarking Planners</a></li>
-              <li><a href="spaces.html">Available State Spaces</a></li>
-              <li><a href="optimalPlanning.html">Optimal Planning</a></li>
-              <li><a href="constrainedPlanning.html">Constrained Planning</a></li>
-              <li><a href="FAQ.html">FAQ</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">External links</li>
-              <li><a href="http://moveit.ros.org">MoveIt!</a></li>
-              <li><a href="http://plannerarena.org">Planner Arena</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FOMPL">Japanese Introduction to OMPL</a></li>
-              <li><a href="http://robotics.naist.jp/edu/text/?Robotics%2FExercise%2FOMPLProgramming">Japanese OMPL Tutorial</a></li>
-              <li><a href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a></li>
-              <li><a href="http://kavrakilab.org/OMPLtutorial">IROS 2011 Tutorial</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="http://moveit.ros.org/wiki/Tutorials/ICRA2013">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
           </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="api_overview.html">API Overview</a></li>
-              <li><a href="annotated.html">Classes</a></li>
-              <li><a href="files.html">Files</a></li>
-              <li><a href="styleGuide.html">Style Guide</a></li>
-              <li><a href="integration.html">Use OMPL within Other Systems</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Repositories</li>
-              <li><a href="https://bitbucket.org/ompl/ompl">ompl on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://bitbucket.org/ompl/omplapp">omplapp on Bitbucket (Mercurial)</a></li>
-              <li><a href="https://github.com/ompl/ompl">ompl on GitHub</a></li>
-              <li><a href="https://github.com/ompl/omplapp">omplapp on GitHub</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Continuous Integration</li>
-              <li><a href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a></li>
-              <li><a href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
           </li>
-          <li><a href="https://github.com/ompl/ompl/issues">Issues</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="mailingLists.html">Mailing Lists</a></li>
-              <li><a href="developers.html">Developers</a></li>
-              <li><a href="thirdparty.html">Contributions</a></li>
-              <li><a href="contrib.html">Submit Contribution</a></li>
-              <li><a href="education.html">Education</a></li>
-            </ul>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="license.html">License</a></li>
-              <li><a href="citations.html">Citations</a></li>
-              <li><a href="acknowledgements.html">Acknowledgments</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
           </li>
-          <li><a href="http://ompl.kavrakilab.org/blog.html">Blog</a></li>
-                  <div id="MSearchBox" class="MSearchBoxInactive">
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
                onmouseover="return searchBox.OnSearchSelectShow()"
                onmouseout="return searchBox.OnSearchSelectHide()"
                alt=""/>
           <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)"
-               onblur="searchBox.OnSearchFieldFocus(false)"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
             <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
           </span>
         </div>
-        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
   <div class="container" role="main">
-    <div>
-<!-- Generated by Doxygen 1.8.14 -->
+    <div><!-- Generated by Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
@@ -151,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -173,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance. ">Benchmark</a> a set of planners on a problem instance.
+<p><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance.">Benchmark</a> a set of planners on a problem instance.  
  <a href="classompl_1_1tools_1_1Benchmark.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Benchmark_8h_source.html">ompl/tools/benchmark/Benchmark.h</a>&gt;</code></p>
@@ -195,21 +180,21 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a33e431d5d9eefbca8abc17e6a5fabdf4"><td class="memItemLeft" align="right" valign="top"><a id="a33e431d5d9eefbca8abc17e6a5fabdf4"></a>
-typedef std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a33e431d5d9eefbca8abc17e6a5fabdf4">RunProperties</a></td></tr>
-<tr class="memdesc:a33e431d5d9eefbca8abc17e6a5fabdf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data collected from a run of a planner is stored as key-value pairs. <br /></td></tr>
-<tr class="separator:a33e431d5d9eefbca8abc17e6a5fabdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af14e254bf67c158275fc5fc2c76f05f9"><td class="memItemLeft" align="right" valign="top"><a id="af14e254bf67c158275fc5fc2c76f05f9"></a>
-typedef std::vector&lt; std::map&lt; std::string, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RunProgressData</b></td></tr>
-<tr class="separator:af14e254bf67c158275fc5fc2c76f05f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f9b4c8aabf07c684d42686b4d7e4cac"><td class="memItemLeft" align="right" valign="top"><a id="a4f9b4c8aabf07c684d42686b4d7e4cac"></a>
-typedef std::function&lt; void(const <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::PlannerPtr</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a4f9b4c8aabf07c684d42686b4d7e4cac">PreSetupEvent</a></td></tr>
-<tr class="memdesc:a4f9b4c8aabf07c684d42686b4d7e4cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of function that can be called before a planner execution is started. <br /></td></tr>
-<tr class="separator:a4f9b4c8aabf07c684d42686b4d7e4cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a080a7685b2a5ce27116952351c770c97"><td class="memItemLeft" align="right" valign="top"><a id="a080a7685b2a5ce27116952351c770c97"></a>
-typedef std::function&lt; void(const <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::PlannerPtr</a> &amp;, <a class="el" href="classompl_1_1tools_1_1Benchmark.html#a33e431d5d9eefbca8abc17e6a5fabdf4">RunProperties</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a080a7685b2a5ce27116952351c770c97">PostSetupEvent</a></td></tr>
-<tr class="memdesc:a080a7685b2a5ce27116952351c770c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of function that can be called after a planner execution is completed. <br /></td></tr>
-<tr class="separator:a080a7685b2a5ce27116952351c770c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad660e80e710f6fd524d865bc232311e5"><td class="memItemLeft" align="right" valign="top"><a id="ad660e80e710f6fd524d865bc232311e5"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#ad660e80e710f6fd524d865bc232311e5">RunProperties</a> = std::map&lt; std::string, std::string &gt;</td></tr>
+<tr class="memdesc:ad660e80e710f6fd524d865bc232311e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data collected from a run of a planner is stored as key-value pairs. <br /></td></tr>
+<tr class="separator:ad660e80e710f6fd524d865bc232311e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4746c55b59b46863dd85a0f827b4b3"><td class="memItemLeft" align="right" valign="top"><a id="acd4746c55b59b46863dd85a0f827b4b3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>RunProgressData</b> = std::vector&lt; std::map&lt; std::string, std::string &gt; &gt;</td></tr>
+<tr class="separator:acd4746c55b59b46863dd85a0f827b4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23533c490c5ae9617b9aeff21cb3929f"><td class="memItemLeft" align="right" valign="top"><a id="a23533c490c5ae9617b9aeff21cb3929f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a23533c490c5ae9617b9aeff21cb3929f">PreSetupEvent</a> = std::function&lt; void(const base::PlannerPtr &amp;)&gt;</td></tr>
+<tr class="memdesc:a23533c490c5ae9617b9aeff21cb3929f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of function that can be called before a planner execution is started. <br /></td></tr>
+<tr class="separator:a23533c490c5ae9617b9aeff21cb3929f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b718cb770089ade746bcb12c74b832"><td class="memItemLeft" align="right" valign="top"><a id="a75b718cb770089ade746bcb12c74b832"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a75b718cb770089ade746bcb12c74b832">PostSetupEvent</a> = std::function&lt; void(const base::PlannerPtr &amp;, <a class="el" href="classompl_1_1tools_1_1Benchmark.html#ad660e80e710f6fd524d865bc232311e5">RunProperties</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:a75b718cb770089ade746bcb12c74b832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of function that can be called after a planner execution is completed. <br /></td></tr>
+<tr class="separator:a75b718cb770089ade746bcb12c74b832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -227,7 +212,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:afab48f173edc785ee005301642b1afb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a000a67ca0365cf73bb0980e2cb598"><td class="memItemLeft" align="right" valign="top"><a id="a88a000a67ca0365cf73bb0980e2cb598"></a>
 const std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a88a000a67ca0365cf73bb0980e2cb598">getExperimentParameters</a> () const</td></tr>
-<tr class="memdesc:a88a000a67ca0365cf73bb0980e2cb598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all optional benchmark parameters. The map key is 'name type'. <br /></td></tr>
+<tr class="memdesc:a88a000a67ca0365cf73bb0980e2cb598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all optional benchmark parameters. The map key is 'name type' <br  />
+ <br /></td></tr>
 <tr class="separator:a88a000a67ca0365cf73bb0980e2cb598"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96a5e5c2c1465e95ec5a5ea57c449518"><td class="memItemLeft" align="right" valign="top"><a id="a96a5e5c2c1465e95ec5a5ea57c449518"></a>
 std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a96a5e5c2c1465e95ec5a5ea57c449518">numExperimentParameters</a> () const</td></tr>
@@ -242,11 +228,11 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <tr class="memdesc:ab9d802e65eeb24b1d5f8284b866f7f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the experiment. <br /></td></tr>
 <tr class="separator:ab9d802e65eeb24b1d5f8284b866f7f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86fdc0094b39debe8ee310a9e2de8e31"><td class="memItemLeft" align="right" valign="top"><a id="a86fdc0094b39debe8ee310a9e2de8e31"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a86fdc0094b39debe8ee310a9e2de8e31">addPlanner</a> (const <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::PlannerPtr</a> &amp;planner)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a86fdc0094b39debe8ee310a9e2de8e31">addPlanner</a> (const base::PlannerPtr &amp;planner)</td></tr>
 <tr class="memdesc:a86fdc0094b39debe8ee310a9e2de8e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner to use. <br /></td></tr>
 <tr class="separator:a86fdc0094b39debe8ee310a9e2de8e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9641c6a479d33dc5e59a836bdd511fa4"><td class="memItemLeft" align="right" valign="top"><a id="a9641c6a479d33dc5e59a836bdd511fa4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a9641c6a479d33dc5e59a836bdd511fa4">addPlannerAllocator</a> (const <a class="el" href="namespaceompl_1_1base.html#a7936a159b82b45eb3d2cffeaed07b56e">base::PlannerAllocator</a> &amp;pa)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a9641c6a479d33dc5e59a836bdd511fa4">addPlannerAllocator</a> (const <a class="el" href="namespaceompl_1_1base.html#a301d8c702c92a85d73832f79cb989ee5">base::PlannerAllocator</a> &amp;pa)</td></tr>
 <tr class="memdesc:a9641c6a479d33dc5e59a836bdd511fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner allocator to use. <br /></td></tr>
 <tr class="separator:a9641c6a479d33dc5e59a836bdd511fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dd03001e2d2afb0dc209fe8f6980f58"><td class="memItemLeft" align="right" valign="top"><a id="a3dd03001e2d2afb0dc209fe8f6980f58"></a>
@@ -254,19 +240,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a3dd03001e2d2afb0dc209fe8f6980f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the set of planners to be benchmarked. <br /></td></tr>
 <tr class="separator:a3dd03001e2d2afb0dc209fe8f6980f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a641cd9b520392c02eefd1ce96ec07a4e"><td class="memItemLeft" align="right" valign="top"><a id="a641cd9b520392c02eefd1ce96ec07a4e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a641cd9b520392c02eefd1ce96ec07a4e">setPlannerSwitchEvent</a> (const <a class="el" href="classompl_1_1tools_1_1Benchmark.html#a4f9b4c8aabf07c684d42686b4d7e4cac">PreSetupEvent</a> &amp;event)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a641cd9b520392c02eefd1ce96ec07a4e">setPlannerSwitchEvent</a> (const <a class="el" href="classompl_1_1tools_1_1Benchmark.html#a23533c490c5ae9617b9aeff21cb3929f">PreSetupEvent</a> &amp;event)</td></tr>
 <tr class="memdesc:a641cd9b520392c02eefd1ce96ec07a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the event to be called before any runs of a particular planner (when the planner is switched) <br /></td></tr>
 <tr class="separator:a641cd9b520392c02eefd1ce96ec07a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a405e0a2857e17e93992ca9e642618787"><td class="memItemLeft" align="right" valign="top"><a id="a405e0a2857e17e93992ca9e642618787"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a405e0a2857e17e93992ca9e642618787">setPreRunEvent</a> (const <a class="el" href="classompl_1_1tools_1_1Benchmark.html#a4f9b4c8aabf07c684d42686b4d7e4cac">PreSetupEvent</a> &amp;event)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a405e0a2857e17e93992ca9e642618787">setPreRunEvent</a> (const <a class="el" href="classompl_1_1tools_1_1Benchmark.html#a23533c490c5ae9617b9aeff21cb3929f">PreSetupEvent</a> &amp;event)</td></tr>
 <tr class="memdesc:a405e0a2857e17e93992ca9e642618787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the event to be called before the run of a planner. <br /></td></tr>
 <tr class="separator:a405e0a2857e17e93992ca9e642618787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c97a673cf3d27b4c8d6dbc592b56ce4"><td class="memItemLeft" align="right" valign="top"><a id="a8c97a673cf3d27b4c8d6dbc592b56ce4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a8c97a673cf3d27b4c8d6dbc592b56ce4">setPostRunEvent</a> (const <a class="el" href="classompl_1_1tools_1_1Benchmark.html#a080a7685b2a5ce27116952351c770c97">PostSetupEvent</a> &amp;event)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a8c97a673cf3d27b4c8d6dbc592b56ce4">setPostRunEvent</a> (const <a class="el" href="classompl_1_1tools_1_1Benchmark.html#a75b718cb770089ade746bcb12c74b832">PostSetupEvent</a> &amp;event)</td></tr>
 <tr class="memdesc:a8c97a673cf3d27b4c8d6dbc592b56ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the event to be called after the run of a planner. <br /></td></tr>
 <tr class="separator:a8c97a673cf3d27b4c8d6dbc592b56ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3257cb8dccc15037e81c0f235c61a7e8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a3257cb8dccc15037e81c0f235c61a7e8">benchmark</a> (const <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1Request.html">Request</a> &amp;req)</td></tr>
-<tr class="memdesc:a3257cb8dccc15037e81c0f235c61a7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance. ">Benchmark</a> the added planners on the defined problem. Repeated calls clear previously gathered data.  <a href="#a3257cb8dccc15037e81c0f235c61a7e8">More...</a><br /></td></tr>
+<tr class="memdesc:a3257cb8dccc15037e81c0f235c61a7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance.">Benchmark</a> the added planners on the defined problem. Repeated calls clear previously gathered data.  <a href="classompl_1_1tools_1_1Benchmark.html#a3257cb8dccc15037e81c0f235c61a7e8">More...</a><br /></td></tr>
 <tr class="separator:a3257cb8dccc15037e81c0f235c61a7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48a9c1eadaa6e5a06e797975f89f0da5"><td class="memItemLeft" align="right" valign="top"><a id="a48a9c1eadaa6e5a06e797975f89f0da5"></a>
 const <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1Status.html">Status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a48a9c1eadaa6e5a06e797975f89f0da5">getStatus</a> () const</td></tr>
@@ -300,7 +286,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a74f68df4ca4750779c5a2d5ef202c27e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance of the problem to benchmark (if planning with controls) <br /></td></tr>
 <tr class="separator:a74f68df4ca4750779c5a2d5ef202c27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e166b0c8a0e8c935ec5b5f8627ed119"><td class="memItemLeft" align="right" valign="top"><a id="a3e166b0c8a0e8c935ec5b5f8627ed119"></a>
-std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::PlannerPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a3e166b0c8a0e8c935ec5b5f8627ed119">planners_</a></td></tr>
+std::vector&lt; base::PlannerPtr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a3e166b0c8a0e8c935ec5b5f8627ed119">planners_</a></td></tr>
 <tr class="memdesc:a3e166b0c8a0e8c935ec5b5f8627ed119"><td class="mdescLeft">&#160;</td><td class="mdescRight">The set of planners to be tested. <br /></td></tr>
 <tr class="separator:a3e166b0c8a0e8c935ec5b5f8627ed119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a7267b64dbde28d9b505ffac55c217e"><td class="memItemLeft" align="right" valign="top"><a id="a6a7267b64dbde28d9b505ffac55c217e"></a>
@@ -312,22 +298,22 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::
 <tr class="memdesc:a28b6c76500d022dba4a8bc075bdcc5d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current status of this benchmarking instance. <br /></td></tr>
 <tr class="separator:a28b6c76500d022dba4a8bc075bdcc5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bf6e6b434ae98d6d54808d5e65ded43"><td class="memItemLeft" align="right" valign="top"><a id="a1bf6e6b434ae98d6d54808d5e65ded43"></a>
-<a class="el" href="classompl_1_1tools_1_1Benchmark.html#a4f9b4c8aabf07c684d42686b4d7e4cac">PreSetupEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a1bf6e6b434ae98d6d54808d5e65ded43">plannerSwitch_</a></td></tr>
+<a class="el" href="classompl_1_1tools_1_1Benchmark.html#a23533c490c5ae9617b9aeff21cb3929f">PreSetupEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a1bf6e6b434ae98d6d54808d5e65ded43">plannerSwitch_</a></td></tr>
 <tr class="memdesc:a1bf6e6b434ae98d6d54808d5e65ded43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event to be called when the evaluated planner is switched. <br /></td></tr>
 <tr class="separator:a1bf6e6b434ae98d6d54808d5e65ded43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3b2565d2fb0362bff5fbdd0d0080159"><td class="memItemLeft" align="right" valign="top"><a id="ab3b2565d2fb0362bff5fbdd0d0080159"></a>
-<a class="el" href="classompl_1_1tools_1_1Benchmark.html#a4f9b4c8aabf07c684d42686b4d7e4cac">PreSetupEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#ab3b2565d2fb0362bff5fbdd0d0080159">preRun_</a></td></tr>
+<a class="el" href="classompl_1_1tools_1_1Benchmark.html#a23533c490c5ae9617b9aeff21cb3929f">PreSetupEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#ab3b2565d2fb0362bff5fbdd0d0080159">preRun_</a></td></tr>
 <tr class="memdesc:ab3b2565d2fb0362bff5fbdd0d0080159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event to be called before the run of a planner. <br /></td></tr>
 <tr class="separator:ab3b2565d2fb0362bff5fbdd0d0080159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48b0e489b98ae6d5801f730467430bc1"><td class="memItemLeft" align="right" valign="top"><a id="a48b0e489b98ae6d5801f730467430bc1"></a>
-<a class="el" href="classompl_1_1tools_1_1Benchmark.html#a080a7685b2a5ce27116952351c770c97">PostSetupEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a48b0e489b98ae6d5801f730467430bc1">postRun_</a></td></tr>
+<a class="el" href="classompl_1_1tools_1_1Benchmark.html#a75b718cb770089ade746bcb12c74b832">PostSetupEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a48b0e489b98ae6d5801f730467430bc1">postRun_</a></td></tr>
 <tr class="memdesc:a48b0e489b98ae6d5801f730467430bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event to be called after the run of a planner. <br /></td></tr>
 <tr class="separator:a48b0e489b98ae6d5801f730467430bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance. ">Benchmark</a> a set of planners on a problem instance. </p>
+<div class="textblock"><p><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance.">Benchmark</a> a set of planners on a problem instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="Benchmark_8h_source.html#l00048">48</a> of file <a class="el" href="Benchmark_8h_source.html">Benchmark.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Benchmark_8h_source.html#l00112">112</a> of file <a class="el" href="Benchmark_8h_source.html">Benchmark.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3257cb8dccc15037e81c0f235c61a7e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3257cb8dccc15037e81c0f235c61a7e8">&#9670;&nbsp;</a></span>benchmark()</h2>
@@ -353,7 +339,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance. ">Benchmark</a> the added planners on the defined problem. Repeated calls clear previously gathered data. </p>
+<p><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance.">Benchmark</a> the added planners on the defined problem. Repeated calls clear previously gathered data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">req</td><td>The parameters for the execution of the benchmark </td></tr>
@@ -362,7 +348,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The values returned for memory consumption may be misleading. Memory allocators often free memory in a lazy fashion, so the returned values for memory consumption indicate the increase in memory usage for each run. Since not all the memory for the previous run was freed, the increase in usage may be close to 0. To get correct averages for memory usage, use <em>req.runCount</em> = 1 and run the process multiple times. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Benchmark_8cpp_source.html#l00391">391</a> of file <a class="el" href="Benchmark_8cpp_source.html">Benchmark.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Benchmark_8cpp_source.html#l00353">353</a> of file <a class="el" href="Benchmark_8cpp_source.html">Benchmark.cpp</a>.</p>
 
 </div>
 </div>
@@ -373,13 +359,13 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::
 </div><!-- contents -->
 </div>
 <footer class="footer">
-  <div class="container"><p>
-    <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
-    <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
-    <a href="https://www.rice.edu">Rice University</a><br/>
-    Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-    Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.14
-  </p></div>
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.18
+  </div>
 </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -389,6 +375,7 @@ std::vector&lt; <a class="el" href="classompl_1_1base_1_1PlannerPtr.html">base::
   ga('create', 'UA-9156598-2', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

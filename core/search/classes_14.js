@@ -1,9 +1,20 @@
 var searchData=
 [
-  ['wall',['Wall',['../classConstrainedPlanningImplicitChain_1_1ChainConstraint_1_1Wall.html',1,'ConstrainedPlanningImplicitChain::ChainConstraint']]],
-  ['witness',['Witness',['../classompl_1_1control_1_1SST_1_1Witness.html',1,'ompl::control::SST::Witness'],['../classompl_1_1geometric_1_1SST_1_1Witness.html',1,'ompl::geometric::SST::Witness']]],
-  ['world',['World',['../classompl_1_1control_1_1World.html',1,'ompl::control']]],
-  ['wrapperprojectionevaluator',['WrapperProjectionEvaluator',['../classompl_1_1base_1_1WrapperProjectionEvaluator.html',1,'ompl::base']]],
-  ['wrapperstatesampler',['WrapperStateSampler',['../classompl_1_1base_1_1WrapperStateSampler.html',1,'ompl::base']]],
-  ['wrapperstatespace',['WrapperStateSpace',['../classompl_1_1base_1_1WrapperStateSpace.html',1,'ompl::base']]]
+  ['validstatesampler_3249',['ValidStateSampler',['../classompl_1_1base_1_1ValidStateSampler.html',1,'ompl::base']]],
+  ['validstatesamplerptr_3250',['ValidStateSamplerPtr',['../classompl_1_1base_1_1ValidStateSamplerPtr.html',1,'']]],
+  ['valuelocation_3251',['ValueLocation',['../structompl_1_1base_1_1StateSpace_1_1ValueLocation.html',1,'ompl::base::StateSpace']]],
+  ['vertex_3252',['Vertex',['../structompl_1_1control_1_1TriangularDecomposition_1_1Vertex.html',1,'ompl::control::TriangularDecomposition::Vertex'],['../classompl_1_1geometric_1_1aitstar_1_1Vertex.html',1,'ompl::geometric::aitstar::Vertex'],['../classompl_1_1geometric_1_1BITstar_1_1Vertex.html',1,'ompl::geometric::BITstar::Vertex']]],
+  ['vertex_5fcolor_5ft_3253',['vertex_color_t',['../structompl_1_1geometric_1_1SPARS_1_1vertex__color__t.html',1,'ompl::geometric::SPARS::vertex_color_t'],['../structompl_1_1geometric_1_1SPARSdb_1_1vertex__color__t.html',1,'ompl::geometric::SPARSdb::vertex_color_t'],['../structompl_1_1geometric_1_1SPARStwo_1_1vertex__color__t.html',1,'ompl::geometric::SPARStwo::vertex_color_t']]],
+  ['vertex_5fcomponent_5ft_3254',['vertex_component_t',['../structompl_1_1geometric_1_1LazyPRM_1_1vertex__component__t.html',1,'ompl::geometric::LazyPRM']]],
+  ['vertex_5fflags_5ft_3255',['vertex_flags_t',['../structompl_1_1geometric_1_1LazyPRM_1_1vertex__flags__t.html',1,'ompl::geometric::LazyPRM']]],
+  ['vertex_5finterface_5fdata_5ft_3256',['vertex_interface_data_t',['../structompl_1_1geometric_1_1SPARSdb_1_1vertex__interface__data__t.html',1,'ompl::geometric::SPARSdb::vertex_interface_data_t'],['../structompl_1_1geometric_1_1SPARStwo_1_1vertex__interface__data__t.html',1,'ompl::geometric::SPARStwo::vertex_interface_data_t']]],
+  ['vertex_5finterface_5flist_5ft_3257',['vertex_interface_list_t',['../structompl_1_1geometric_1_1SPARS_1_1vertex__interface__list__t.html',1,'ompl::geometric::SPARS']]],
+  ['vertex_5flist_5ft_3258',['vertex_list_t',['../structompl_1_1geometric_1_1SPARS_1_1vertex__list__t.html',1,'ompl::geometric::SPARS']]],
+  ['vertex_5frepresentative_5ft_3259',['vertex_representative_t',['../structompl_1_1geometric_1_1SPARS_1_1vertex__representative__t.html',1,'ompl::geometric::SPARS']]],
+  ['vertex_5fstate_5ft_3260',['vertex_state_t',['../structompl_1_1geometric_1_1LazyPRM_1_1vertex__state__t.html',1,'ompl::geometric::LazyPRM::vertex_state_t'],['../structompl_1_1geometric_1_1PRM_1_1vertex__state__t.html',1,'ompl::geometric::PRM::vertex_state_t'],['../structompl_1_1geometric_1_1SPARS_1_1vertex__state__t.html',1,'ompl::geometric::SPARS::vertex_state_t'],['../structompl_1_1geometric_1_1SPARSdb_1_1vertex__state__t.html',1,'ompl::geometric::SPARSdb::vertex_state_t'],['../structompl_1_1geometric_1_1SPARStwo_1_1vertex__state__t.html',1,'ompl::geometric::SPARStwo::vertex_state_t']]],
+  ['vertex_5fsuccessful_5fconnection_5fattempts_5ft_3261',['vertex_successful_connection_attempts_t',['../structompl_1_1geometric_1_1PRM_1_1vertex__successful__connection__attempts__t.html',1,'ompl::geometric::PRM']]],
+  ['vertex_5ftotal_5fconnection_5fattempts_5ft_3262',['vertex_total_connection_attempts_t',['../structompl_1_1geometric_1_1PRM_1_1vertex__total__connection__attempts__t.html',1,'ompl::geometric::PRM']]],
+  ['vfmechanicalworkoptimizationobjective_3263',['VFMechanicalWorkOptimizationObjective',['../classompl_1_1base_1_1VFMechanicalWorkOptimizationObjective.html',1,'ompl::base']]],
+  ['vfrrt_3264',['VFRRT',['../classompl_1_1geometric_1_1VFRRT.html',1,'ompl::geometric']]],
+  ['vfupstreamcriterionoptimizationobjective_3265',['VFUpstreamCriterionOptimizationObjective',['../classompl_1_1base_1_1VFUpstreamCriterionOptimizationObjective.html',1,'ompl::base']]]
 ];

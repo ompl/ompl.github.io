@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['teaching_20module_20on_20motion_20planning',['Teaching Module on Motion Planning',['../education.html',1,'']]],
-  ['the_20open_20motion_20planning_20library',['The Open Motion Planning Library',['../index.html',1,'']]],
-  ['thank_20you',['Thank you',['../thank-you.html',1,'']]],
-  ['todo_20list',['Todo List',['../todo.html',1,'']]],
-  ['tutorials',['Tutorials',['../tutorials.html',1,'']]]
+  ['submit_20your_20contribution_5816',['Submit Your Contribution',['../contrib.html',1,'']]],
+  ['state_20validity_20checking_5817',['State Validity Checking',['../stateValidation.html',1,'']]]
 ];
