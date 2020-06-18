@@ -73,7 +73,7 @@ install_ompl()
     if [ -z $GITHUB ]; then
         if [ -z $APP]; then
             wget -O - https://github.com/ompl/${OMPL}/archive/1.5.0.tar.gz | tar zxf -
-            cd ${OMPL}
+            cd ${OMPL}-1.5.0
         else
             wget -O - https://github.com/ompl/${OMPL}/releases/download/1.5.0/${OMPL}-1.5.0-Source.tar.gz | tar zxf -
             cd $OMPL-1.5.0-Source
