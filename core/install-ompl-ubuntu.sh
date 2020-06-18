@@ -77,6 +77,7 @@ install_ompl()
         else
             wget -O - https://github.com/ompl/${OMPL}/releases/download/1.5.0/${OMPL}-1.5.0-Source.tar.gz | tar zxf -
             cd $OMPL-1.5.0-Source
+        fi
     else
         ${SUDO} apt-get -y install git
         git clone --recurse-submodules https://github.com/ompl/${OMPL}.git
