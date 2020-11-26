@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<tagfile>
+<tagfile doxygen_version="1.8.20">
   <compound kind="file">
     <name>Koules.cpp</name>
     <path>/Users/mmoll/omplapp/ompl/demos/Koules/</path>
@@ -27081,7 +27081,7 @@
       <anchor>a747796199659bbb54b733df59fce5943</anchor>
       <arglist></arglist>
     </member>
-    <docanchor file="classompl_1_1control_1_1SyclopEST.html">cSyclopEST</docanchor>
+    <docanchor file="/Users/mmoll/omplapp/ompl/src/ompl/control/planners/syclop/SyclopEST.h">cSyclopEST</docanchor>
   </compound>
   <compound kind="class">
     <name>ompl::control::SyclopRRT</name>
@@ -27164,7 +27164,7 @@
       <anchor>a0bb7f61c9bca43a0a5124a0660c75f7c</anchor>
       <arglist></arglist>
     </member>
-    <docanchor file="classompl_1_1control_1_1SyclopRRT.html">cSyclopRRT</docanchor>
+    <docanchor file="/Users/mmoll/omplapp/ompl/src/ompl/control/planners/syclop/SyclopRRT.h">cSyclopRRT</docanchor>
   </compound>
   <compound kind="class">
     <name>ompl::control::TriangularDecomposition</name>
@@ -27693,11 +27693,11 @@
       <arglist>(bool track)</arglist>
     </member>
     <member kind="function">
-      <type>std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt;</type>
+      <type>bool</type>
       <name>addSamples</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1ImplicitGraph.html</anchorfile>
-      <anchor>a43142aed32c8f7cc523457b32870e07a</anchor>
-      <arglist>(std::size_t numNewSamples)</arglist>
+      <anchor>a73553ed7c59fa8082044a770f4c0a7a9</anchor>
+      <arglist>(std::size_t numNewSamples, const ompl::base::PlannerTerminationCondition &amp;terminationCondition)</arglist>
     </member>
     <member kind="function">
       <type>std::size_t</type>
@@ -28103,10 +28103,10 @@
       <arglist>(const std::vector&lt; std::shared_ptr&lt; Vertex &gt;&gt; &amp;neighbors) const</arglist>
     </member>
     <member kind="function">
-      <type>const std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; &amp;</type>
+      <type>const std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt;</type>
       <name>getNeighbors</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>a3bb16a3d91169246e85530111e4ae170</anchor>
+      <anchor>acdafbd0f3e60f035cbb666e56f6a19ca</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -49810,11 +49810,13 @@
     <name>acknowledgements</name>
     <title>Acknowledgements</title>
     <filename>acknowledgements.html</filename>
+    <docanchor file="acknowledgements.html">md_ompl_doc_markdown_acknowledgements</docanchor>
   </compound>
   <compound kind="page">
     <name>benchmark</name>
     <title>How to Benchmark Planners</title>
     <filename>benchmark.html</filename>
+    <docanchor file="benchmark.html">md_ompl_doc_markdown_benchmark</docanchor>
     <docanchor file="benchmark.html" title="Writing benchmarking code">benchmark_code</docanchor>
     <docanchor file="benchmark.html" title="Processing the benchmarking log file">benchmark_log</docanchor>
     <docanchor file="benchmark.html" title="Sample benchmark results">benchmark_sample_results</docanchor>
@@ -49825,56 +49827,67 @@
     <name>buildOptions</name>
     <title>Build Options</title>
     <filename>buildOptions.html</filename>
+    <docanchor file="buildOptions.html">md_ompl_doc_markdown_buildOptions</docanchor>
   </compound>
   <compound kind="page">
     <name>buildSystem</name>
     <title>Integrate Your Own Code with OMPL&apos;s Build System</title>
     <filename>buildSystem.html</filename>
+    <docanchor file="buildSystem.html">md_ompl_doc_markdown_buildSystem</docanchor>
   </compound>
   <compound kind="page">
     <name>citations</name>
     <title>Citations</title>
     <filename>citations.html</filename>
+    <docanchor file="citations.html">md_ompl_doc_markdown_citations</docanchor>
   </compound>
   <compound kind="page">
     <name>constrainedPlanning</name>
     <title>Constrained Planning</title>
     <filename>constrainedPlanning.html</filename>
+    <docanchor file="constrainedPlanning.html">md_ompl_doc_markdown_constrainedPlanning</docanchor>
   </compound>
   <compound kind="page">
     <name>constrainedPlanningTutorial</name>
     <title>Constrained Planning Tutorial</title>
     <filename>constrainedPlanningTutorial.html</filename>
+    <docanchor file="constrainedPlanningTutorial.html">md_ompl_doc_markdown_constrainedPlanningTutorial</docanchor>
   </compound>
   <compound kind="page">
     <name>contrib</name>
     <title>Submit Your Contribution</title>
     <filename>contrib.html</filename>
+    <docanchor file="contrib.html">md_ompl_doc_markdown_contrib</docanchor>
   </compound>
   <compound kind="page">
     <name>demos</name>
     <title>Demos</title>
     <filename>demos.html</filename>
+    <docanchor file="demos.html">md_ompl_doc_markdown_demos</docanchor>
   </compound>
   <compound kind="page">
     <name>developers</name>
     <title>Developers</title>
     <filename>developers.html</filename>
+    <docanchor file="developers.html">md_ompl_doc_markdown_developers</docanchor>
   </compound>
   <compound kind="page">
     <name>education</name>
     <title>Teaching Module on Motion Planning</title>
     <filename>education.html</filename>
+    <docanchor file="education.html">md_ompl_doc_markdown_education</docanchor>
   </compound>
   <compound kind="page">
     <name>FAQ</name>
     <title>Frequently Asked Questions</title>
     <filename>FAQ.html</filename>
+    <docanchor file="FAQ.html">md_ompl_doc_markdown_FAQ</docanchor>
   </compound>
   <compound kind="page">
     <name>gallery</name>
     <title>Gallery</title>
     <filename>gallery.html</filename>
+    <docanchor file="gallery.html">md_ompl_doc_markdown_gallery</docanchor>
     <docanchor file="gallery.html" title="Planning Using OMPL.app">gallery_omplapp</docanchor>
     <docanchor file="gallery.html" title="Class Project from COMP 450 on Path Optimization">gallery_comp450</docanchor>
   </compound>
@@ -49882,11 +49895,13 @@
     <name>genericPlanning</name>
     <title>Generic Instructions for Setting Up a Planning Context</title>
     <filename>genericPlanning.html</filename>
+    <docanchor file="genericPlanning.html">md_ompl_doc_markdown_genericPlanning</docanchor>
   </compound>
   <compound kind="page">
     <name>geometricPlanningSE3</name>
     <title>Geometric Planning for a Rigid Body in 3D</title>
     <filename>geometricPlanningSE3.html</filename>
+    <docanchor file="geometricPlanningSE3.html">md_ompl_doc_markdown_geometricPlanningSE3</docanchor>
     <docanchor file="geometricPlanningSE3.html" title="Using the ompl::geometric::SimpleSetup Class">geometricSimpleSetup</docanchor>
     <docanchor file="geometricPlanningSE3.html" title="Without ompl::geometric::SimpleSetup">withoutGeometricSimpleSetup</docanchor>
   </compound>
@@ -49894,26 +49909,31 @@
     <name>goalRepresentation</name>
     <title>Representing Goals in OMPL</title>
     <filename>goalRepresentation.html</filename>
+    <docanchor file="goalRepresentation.html">md_ompl_doc_markdown_goalRepresentation</docanchor>
   </compound>
   <compound kind="page">
     <name>implementingStateSpaces</name>
     <title>Implementing State Spaces</title>
     <filename>implementingStateSpaces.html</filename>
+    <docanchor file="implementingStateSpaces.html">md_ompl_doc_markdown_implementingNewStateSpaces</docanchor>
   </compound>
   <compound kind="page">
     <name>installation</name>
     <title>Installation</title>
     <filename>installation.html</filename>
+    <docanchor file="installation.html">md_ompl_doc_markdown_installation</docanchor>
   </compound>
   <compound kind="page">
     <name>installPyPlusPlus</name>
     <title>Installation of Py++</title>
     <filename>installPyPlusPlus.html</filename>
+    <docanchor file="installPyPlusPlus.html">md_ompl_doc_markdown_installPyPlusPlus</docanchor>
   </compound>
   <compound kind="page">
     <name>integration</name>
     <title>Integration of OMPL in Other Systems</title>
     <filename>integration.html</filename>
+    <docanchor file="integration.html">md_ompl_doc_markdown_integration</docanchor>
     <docanchor file="integration.html" title="MoveIt">integration_moveit</docanchor>
     <docanchor file="integration.html" title="OpenRAVE">integration_openrave</docanchor>
     <docanchor file="integration.html" title="CoppelliaSim">integration_copelliasim</docanchor>
@@ -49930,16 +49950,19 @@
     <name>license</name>
     <title>License</title>
     <filename>license.html</filename>
+    <docanchor file="license.html">md_ompl_doc_markdown_license</docanchor>
   </compound>
   <compound kind="page">
     <name>mailingLists</name>
     <title>Mailing Lists</title>
     <filename>mailingLists.html</filename>
+    <docanchor file="mailingLists.html">md_ompl_doc_markdown_mailingLists</docanchor>
   </compound>
   <compound kind="page">
     <name>morse</name>
     <title>Using OMPL with Morse</title>
     <filename>morse.html</filename>
+    <docanchor file="morse.html">md_ompl_doc_markdown_morse</docanchor>
     <docanchor file="morse.html" title="Installation">morseInstallation</docanchor>
     <docanchor file="morse.html" title="Quick Start">morseQuickstart</docanchor>
     <docanchor file="morse.html" title="Setting up an environment">morseSettingUpAnEnvironment</docanchor>
@@ -49954,41 +49977,49 @@
     <name>newPlanner</name>
     <title>Implementing a New Motion Planner</title>
     <filename>newPlanner.html</filename>
+    <docanchor file="newPlanner.html">md_ompl_doc_markdown_newPlanner</docanchor>
   </compound>
   <compound kind="page">
     <name>odeint</name>
     <title>Using the ODESolver for Planning with Controls</title>
     <filename>odeint.html</filename>
+    <docanchor file="odeint.html">md_ompl_doc_markdown_odeint</docanchor>
   </compound>
   <compound kind="page">
     <name>optimalPlanning</name>
     <title>Optimal Planning</title>
     <filename>optimalPlanning.html</filename>
+    <docanchor file="optimalPlanning.html">md_ompl_doc_markdown_optimalPlanning</docanchor>
   </compound>
   <compound kind="page">
     <name>optimalPlanningTutorial</name>
     <title>Optimal Planning Tutorial</title>
     <filename>optimalPlanningTutorial.html</filename>
+    <docanchor file="optimalPlanningTutorial.html">md_ompl_doc_markdown_optimalPlanningTutorial</docanchor>
   </compound>
   <compound kind="page">
     <name>optimizationObjectivesTutorial</name>
     <title>Optimization Objectives Tutorial</title>
     <filename>optimizationObjectivesTutorial.html</filename>
+    <docanchor file="optimizationObjectivesTutorial.html">md_ompl_doc_markdown_optimizationObjectivesTutorial</docanchor>
   </compound>
   <compound kind="page">
     <name>pathVisualization</name>
     <title>Path Visualization</title>
     <filename>pathVisualization.html</filename>
+    <docanchor file="pathVisualization.html">md_ompl_doc_markdown_pathVisualization</docanchor>
   </compound>
   <compound kind="page">
     <name>plannerarena</name>
     <title>OMPL Planner Arena</title>
     <filename>plannerarena.html</filename>
+    <docanchor file="plannerarena.html">md_ompl_doc_markdown_plannerarena</docanchor>
   </compound>
   <compound kind="page">
     <name>planners</name>
     <title>Available Planners</title>
     <filename>planners.html</filename>
+    <docanchor file="planners.html">md_ompl_doc_markdown_planners</docanchor>
     <docanchor file="planners.html" title="Geometric planners">geometric_planners</docanchor>
     <docanchor file="planners.html" title="Control-based planners">control_planners</docanchor>
   </compound>
@@ -49996,16 +50027,19 @@
     <name>plannerTerminationConditions</name>
     <title>Planner Termination Conditions</title>
     <filename>plannerTerminationConditions.html</filename>
+    <docanchor file="plannerTerminationConditions.html">md_ompl_doc_markdown_plannerTerminationConditions</docanchor>
   </compound>
   <compound kind="page">
     <name>projections</name>
     <title>Use of Projections in OMPL</title>
     <filename>projections.html</filename>
+    <docanchor file="projections.html">md_ompl_doc_markdown_projections</docanchor>
   </compound>
   <compound kind="page">
     <name>pybindingsPlanner</name>
     <title>Creating Python Bindings for a New Planner</title>
     <filename>pybindingsPlanner.html</filename>
+    <docanchor file="pybindingsPlanner.html">md_ompl_doc_markdown_pybindingsPlanner</docanchor>
     <docanchor file="pybindingsPlanner.html" title="Updating the Python binding generation code">pybinding</docanchor>
     <docanchor file="pybindingsPlanner.html" title="Planner parameters">params</docanchor>
   </compound>
@@ -50013,6 +50047,7 @@
     <name>python</name>
     <title>Python Bindings</title>
     <filename>python.html</filename>
+    <docanchor file="python.html">md_ompl_doc_markdown_python</docanchor>
     <docanchor file="python.html" title="Usage of the Python bindings: Good practices">py_good_practices</docanchor>
     <docanchor file="python.html" title="Important differences between C++ and Python">cpp_py_diffs</docanchor>
     <docanchor file="python.html" title="Differences between the C++ and Python API&apos;s">py_api_diffs</docanchor>
@@ -50027,46 +50062,55 @@
     <name>quotientSpacePlanning</name>
     <title>Quotient Space Planning Framework</title>
     <filename>quotientSpacePlanning.html</filename>
+    <docanchor file="quotientSpacePlanning.html">md_ompl_doc_markdown_quotientSpacePlanning</docanchor>
   </compound>
   <compound kind="page">
     <name>quotientSpacePlanningTutorial</name>
     <title>QuotientSpace Planning Tutorial</title>
     <filename>quotientSpacePlanningTutorial.html</filename>
+    <docanchor file="quotientSpacePlanningTutorial.html">md_ompl_doc_markdown_quotientSpacePlanningTutorial</docanchor>
   </compound>
   <compound kind="page">
     <name>register</name>
     <title>Registration</title>
     <filename>register.html</filename>
+    <docanchor file="register.html">md_ompl_doc_markdown_register</docanchor>
   </compound>
   <compound kind="page">
     <name>releaseNotes</name>
     <title>Release Notes</title>
     <filename>releaseNotes.html</filename>
+    <docanchor file="releaseNotes.html">md_ompl_doc_markdown_releaseNotes</docanchor>
   </compound>
   <compound kind="page">
     <name>samplers</name>
     <title>Available State Samplers</title>
     <filename>samplers.html</filename>
+    <docanchor file="samplers.html">md_ompl_doc_markdown_samplers</docanchor>
   </compound>
   <compound kind="page">
     <name>spaces</name>
     <title>Available Spaces</title>
     <filename>spaces.html</filename>
+    <docanchor file="spaces.html">md_ompl_doc_markdown_spaces</docanchor>
   </compound>
   <compound kind="page">
     <name>stateValidation</name>
     <title>State Validity Checking</title>
     <filename>stateValidation.html</filename>
+    <docanchor file="stateValidation.html">md_ompl_doc_markdown_stateValidation</docanchor>
   </compound>
   <compound kind="page">
     <name>styleGuide</name>
     <title>OMPL Style Guide</title>
     <filename>styleGuide.html</filename>
+    <docanchor file="styleGuide.html">md_ompl_doc_markdown_styleGuide</docanchor>
   </compound>
   <compound kind="page">
     <name>support</name>
     <title>Get Support</title>
     <filename>support.html</filename>
+    <docanchor file="support.html">md_ompl_doc_markdown_support</docanchor>
   </compound>
   <compound kind="page">
     <name>thank-you</name>
@@ -50077,16 +50121,19 @@
     <name>thirdparty</name>
     <title>Contributions</title>
     <filename>thirdparty.html</filename>
+    <docanchor file="thirdparty.html">md_ompl_doc_markdown_thirdparty</docanchor>
   </compound>
   <compound kind="page">
     <name>tutorials</name>
     <title>Tutorials</title>
     <filename>tutorials.html</filename>
+    <docanchor file="tutorials.html">md_ompl_doc_markdown_tutorials</docanchor>
   </compound>
   <compound kind="page">
     <name>workingWithStates</name>
     <title>Working with States and State Spaces</title>
     <filename>workingWithStates.html</filename>
+    <docanchor file="workingWithStates.html">md_ompl_doc_markdown_workingWithStates</docanchor>
     <docanchor file="workingWithStates.html" title="Allocating memory for states">stateAlloc</docanchor>
     <docanchor file="workingWithStates.html" title="Working with states">stateOps</docanchor>
     <docanchor file="workingWithStates.html" title="Operators for States and State Spaces">stateAndSpaceOperatorsCopy</docanchor>
@@ -50095,11 +50142,13 @@
     <name>api_overview</name>
     <title>API Overview</title>
     <filename>api_overview.html</filename>
+    <docanchor file="api_overview.html">md__Users_mmoll_build_omplapp_Release_doc_api_overview</docanchor>
   </compound>
   <compound kind="page">
     <name>CForest</name>
     <title>CForest Parallelization Framework</title>
     <filename>CForest.html</filename>
+    <docanchor file="CForest.html">md__Users_mmoll_build_omplapp_Release_doc_CForest</docanchor>
     <docanchor file="CForest.html" title="CForest in OMPL">cf_ompl</docanchor>
     <docanchor file="CForest.html" title="Main differences with the paper version">cf_diff</docanchor>
     <docanchor file="CForest.html" title="Example">cf_example</docanchor>
@@ -50113,6 +50162,7 @@
     <name>download</name>
     <title>Download</title>
     <filename>download.html</filename>
+    <docanchor file="download.html">md__Users_mmoll_build_omplapp_Release_doc_ompl_download</docanchor>
     <docanchor file="download.html" title="Repository">download_repos</docanchor>
   </compound>
   <compound kind="page">
