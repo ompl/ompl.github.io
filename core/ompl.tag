@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<tagfile doxygen_version="1.8.20">
+<tagfile doxygen_version="1.9.1">
   <compound kind="file">
     <name>Koules.cpp</name>
     <path>/Users/mmoll/omplapp/ompl/demos/Koules/</path>
@@ -3548,414 +3548,6 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>NearestNeighbors&lt; Configuration * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const Configuration * &amp;, const Configuration * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const Configuration * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; Configuration * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const Configuration * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual Configuration *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const Configuration * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const Configuration * &amp;data, std::size_t k, std::vector&lt; Configuration * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const Configuration * &amp;data, double radius, std::vector&lt; Configuration * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; Configuration * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; DenseVertex &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const DenseVertex &amp;, const DenseVertex &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const DenseVertex &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; DenseVertex &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const DenseVertex &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual DenseVertex</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const DenseVertex &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const DenseVertex &amp;data, std::size_t k, std::vector&lt; DenseVertex &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const DenseVertex &amp;data, double radius, std::vector&lt; DenseVertex &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; DenseVertex &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; Milestone &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const Milestone &amp;, const Milestone &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const Milestone &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; Milestone &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const Milestone &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual Milestone</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const Milestone &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const Milestone &amp;data, std::size_t k, std::vector&lt; Milestone &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const Milestone &amp;data, double radius, std::vector&lt; Milestone &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; Milestone &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const Motion * &amp;, const Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const Motion * &amp;data, std::size_t k, std::vector&lt; Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const Motion * &amp;data, double radius, std::vector&lt; Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>NearestNeighbors&lt; NNElement &gt;</name>
     <filename>classompl_1_1NearestNeighbors.html</filename>
     <member kind="typedef">
@@ -4058,1842 +3650,6 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::base::PlannerDataPtr &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::base::PlannerDataPtr &amp;, const ompl::base::PlannerDataPtr &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::base::PlannerDataPtr &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::base::PlannerDataPtr &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::base::PlannerDataPtr &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::base::PlannerDataPtr</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::base::PlannerDataPtr &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::base::PlannerDataPtr &amp;data, std::size_t k, std::vector&lt; ompl::base::PlannerDataPtr &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::base::PlannerDataPtr &amp;data, double radius, std::vector&lt; ompl::base::PlannerDataPtr &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::base::PlannerDataPtr &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::control::RRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::control::RRT::Motion * &amp;, const ompl::control::RRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::control::RRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::control::RRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::control::RRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::control::RRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::control::RRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::control::RRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::control::RRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::control::RRT::Motion * &amp;data, double radius, std::vector&lt; ompl::control::RRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::control::RRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::control::SST::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::control::SST::Motion * &amp;, const ompl::control::SST::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::control::SST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::control::SST::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::control::SST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::control::SST::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::control::SST::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::control::SST::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::control::SST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::control::SST::Motion * &amp;data, double radius, std::vector&lt; ompl::control::SST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::control::SST::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::BFMT::BiDirMotion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::BFMT::BiDirMotion * &amp;, const ompl::geometric::BFMT::BiDirMotion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::BFMT::BiDirMotion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::BFMT::BiDirMotion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::BFMT::BiDirMotion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::BFMT::BiDirMotion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::BFMT::BiDirMotion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::BFMT::BiDirMotion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::BFMT::BiDirMotion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::BFMT::BiDirMotion * &amp;data, double radius, std::vector&lt; ompl::geometric::BFMT::BiDirMotion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::BFMT::BiDirMotion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::BiEST::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::BiEST::Motion * &amp;, const ompl::geometric::BiEST::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::BiEST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::BiEST::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::BiEST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::BiEST::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::BiEST::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::BiEST::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::BiEST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::BiEST::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::BiEST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::BiEST::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::EST::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::EST::Motion * &amp;, const ompl::geometric::EST::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::EST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::EST::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::EST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::EST::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::EST::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::EST::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::EST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::EST::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::EST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::EST::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::FMT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::FMT::Motion * &amp;, const ompl::geometric::FMT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::FMT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::FMT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::FMT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::FMT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::FMT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::FMT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::FMT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::FMT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::FMT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::FMT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::LazyLBTRRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::LazyLBTRRT::Motion * &amp;, const ompl::geometric::LazyLBTRRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::LazyLBTRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::LazyLBTRRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::LazyLBTRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::LazyLBTRRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::LazyLBTRRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::LazyLBTRRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::LazyLBTRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::LazyLBTRRT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::LazyLBTRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::LazyLBTRRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::LazyRRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::LazyRRT::Motion * &amp;, const ompl::geometric::LazyRRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::LazyRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::LazyRRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::LazyRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::LazyRRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::LazyRRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::LazyRRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::LazyRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::LazyRRT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::LazyRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::LazyRRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::LBTRRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::LBTRRT::Motion * &amp;, const ompl::geometric::LBTRRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::LBTRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::LBTRRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::LBTRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::LBTRRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::LBTRRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::LBTRRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::LBTRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::LBTRRT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::LBTRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::LBTRRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::pRRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::pRRT::Motion * &amp;, const ompl::geometric::pRRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::pRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::pRRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::pRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::pRRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::pRRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::pRRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::pRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::pRRT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::pRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::pRRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::RRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::RRT::Motion * &amp;, const ompl::geometric::RRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::RRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::RRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::RRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::RRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::RRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::RRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::RRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::RRT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::RRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::RRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::RRTstar::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::RRTstar::Motion * &amp;, const ompl::geometric::RRTstar::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::RRTstar::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::RRTstar::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::RRTstar::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::RRTstar::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::RRTstar::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::RRTstar::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::RRTstar::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::RRTstar::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::RRTstar::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::RRTstar::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::RRTXstatic::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::RRTXstatic::Motion * &amp;, const ompl::geometric::RRTXstatic::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::RRTXstatic::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::RRTXstatic::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::RRTXstatic::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::RRTXstatic::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::RRTXstatic::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::RRTXstatic::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::SST::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::SST::Motion * &amp;, const ompl::geometric::SST::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::SST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::SST::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::SST::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::SST::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::SST::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::SST::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::SST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::SST::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::SST::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::SST::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::TRRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::TRRT::Motion * &amp;, const ompl::geometric::TRRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::TRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::TRRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::TRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::TRRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::TRRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::TRRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::TRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::TRRT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::TRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::TRRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; ompl::geometric::TSRRT::Motion * &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const ompl::geometric::TSRRT::Motion * &amp;, const ompl::geometric::TSRRT::Motion * &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const ompl::geometric::TSRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::TSRRT::Motion * &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const ompl::geometric::TSRRT::Motion * &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual ompl::geometric::TSRRT::Motion *</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const ompl::geometric::TSRRT::Motion * &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const ompl::geometric::TSRRT::Motion * &amp;data, std::size_t k, std::vector&lt; ompl::geometric::TSRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const ompl::geometric::TSRRT::Motion * &amp;data, double radius, std::vector&lt; ompl::geometric::TSRRT::Motion * &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::TSRRT::Motion * &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; SparseVertex &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const SparseVertex &amp;, const SparseVertex &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const SparseVertex &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; SparseVertex &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const SparseVertex &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual SparseVertex</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const SparseVertex &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const SparseVertex &amp;data, std::size_t k, std::vector&lt; SparseVertex &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const SparseVertex &amp;data, double radius, std::vector&lt; SparseVertex &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; SparseVertex &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>NearestNeighbors&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;</name>
     <filename>classompl_1_1NearestNeighbors.html</filename>
     <member kind="typedef">
@@ -5986,210 +3742,6 @@
       <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
       <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
       <arglist>(std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; Vertex &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const Vertex &amp;, const Vertex &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const Vertex &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; Vertex &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const Vertex &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual Vertex</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const Vertex &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const Vertex &amp;data, std::size_t k, std::vector&lt; Vertex &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const Vertex &amp;data, double radius, std::vector&lt; Vertex &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; Vertex &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; VertexPtr &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const VertexPtr &amp;, const VertexPtr &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const VertexPtr &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; VertexPtr &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const VertexPtr &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual VertexPtr</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const VertexPtr &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const VertexPtr &amp;data, std::size_t k, std::vector&lt; VertexPtr &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const VertexPtr &amp;data, double radius, std::vector&lt; VertexPtr &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; VertexPtr &gt; &amp;data) const=0</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>DistanceFunction</type>
@@ -7329,6 +4881,55 @@
       <anchor>a29464943c968c35f97761fee60121a5e</anchor>
       <arglist></arglist>
     </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>epsilon_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7e3637aef4a7b7980e753d8c8c0ba66f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>rho_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aef8f443a2f089e99ed7dbdc9adf51df0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>cos_alpha_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a3726eb53cbf41d2f5bf22c4c357a82a4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>exploration_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>ac0fdddcfbeef1fc24a16468311801214</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>rho_s_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a7fad144043cebd2fd03151620146203e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>backoff_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>aa29f947d5b2cce8fccfcd5d22519d2ad</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>maxChartsPerExtension_</name>
+      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
+      <anchor>a29464943c968c35f97761fee60121a5e</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>void</type>
       <name>setEpsilon</name>
@@ -7503,55 +5104,6 @@
       <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
       <anchor>a6ce0a08ccb4c4b7c41eb83db20f98b65</anchor>
       <arglist>(std::ostream &amp;out) const</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>epsilon_</name>
-      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>a7e3637aef4a7b7980e753d8c8c0ba66f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>rho_</name>
-      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>aef8f443a2f089e99ed7dbdc9adf51df0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>cos_alpha_</name>
-      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>a3726eb53cbf41d2f5bf22c4c357a82a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>exploration_</name>
-      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>ac0fdddcfbeef1fc24a16468311801214</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>rho_s_</name>
-      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>a7fad144043cebd2fd03151620146203e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>backoff_</name>
-      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>aa29f947d5b2cce8fccfcd5d22519d2ad</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxChartsPerExtension_</name>
-      <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>a29464943c968c35f97761fee60121a5e</anchor>
-      <arglist></arglist>
     </member>
     <docanchor file="classompl_1_1base_1_1AtlasStateSpace.html">gAtlas</docanchor>
   </compound>
@@ -17004,6 +14556,118 @@
       <anchor>a14b9e1488f71995fddacd99ecde88fa4</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="variable" protection="protected">
+      <type>StateSpacePtr</type>
+      <name>stateSpace_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>ab7d8d572b76a5899b6c3816a544abe7a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>StateValidityCheckerPtr</type>
+      <name>stateValidityChecker_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>a03cab04f748eb6637fb5a088f21cead9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>MotionValidatorPtr</type>
+      <name>motionValidator_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>ace9276cca898e91739b7e8b0b2daafb1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>setup_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>af5dd22573e611e150d15af2081dd26c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ValidStateSamplerAllocator</type>
+      <name>vssa_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>ad20bb9ec674edd4d4dbb2d13b2d89abd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ParamSet</type>
+      <name>params_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>aa9dd30fdbe4e702930f465d73f692427</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>probabilityOfValidState</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>a66c76a83cf1fbb521e0b6ed92e367f21</anchor>
+      <arglist>(unsigned int attempts) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>averageValidMotionLength</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>a8324758cb376b64cd07fe64b62ca1d45</anchor>
+      <arglist>(unsigned int attempts) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>samplesPerSecond</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>a4bf93b3b7e3f12c1b2f88fb4528ed33d</anchor>
+      <arglist>(double &amp;uniform, double &amp;near, double &amp;gaussian, unsigned int attempts) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>printSettings</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>aaafcf07fda025a0ebb21844563d8b2ef</anchor>
+      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>printProperties</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>ab2ba1de508425d3a19f7b6b1a42d683e</anchor>
+      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
+    </member>
+    <member kind="function">
+      <type>ParamSet &amp;</type>
+      <name>params</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>a879fb1ffcac0bf54aab292f2b933f881</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const ParamSet &amp;</type>
+      <name>params</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>ad09d9e9ca9f34d46edf1dcb4567176c4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>a6e8c41f946c3c04d126983e145404ad4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isSetup</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>aad514fc49811498bf56de4a3e9db7d0c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>setDefaultMotionValidator</name>
+      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
+      <anchor>a1d0c51561f5372ade7720a7e76d8546f</anchor>
+      <arglist>()</arglist>
+    </member>
     <member kind="function">
       <type>bool</type>
       <name>equalStates</name>
@@ -17234,118 +14898,6 @@
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
       <anchor>a14b9e1488f71995fddacd99ecde88fa4</anchor>
       <arglist>() const</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>StateSpacePtr</type>
-      <name>stateSpace_</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ab7d8d572b76a5899b6c3816a544abe7a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>StateValidityCheckerPtr</type>
-      <name>stateValidityChecker_</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a03cab04f748eb6637fb5a088f21cead9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>MotionValidatorPtr</type>
-      <name>motionValidator_</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ace9276cca898e91739b7e8b0b2daafb1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>bool</type>
-      <name>setup_</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>af5dd22573e611e150d15af2081dd26c8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>ValidStateSamplerAllocator</type>
-      <name>vssa_</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ad20bb9ec674edd4d4dbb2d13b2d89abd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>ParamSet</type>
-      <name>params_</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>aa9dd30fdbe4e702930f465d73f692427</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>probabilityOfValidState</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a66c76a83cf1fbb521e0b6ed92e367f21</anchor>
-      <arglist>(unsigned int attempts) const</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>averageValidMotionLength</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a8324758cb376b64cd07fe64b62ca1d45</anchor>
-      <arglist>(unsigned int attempts) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>samplesPerSecond</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a4bf93b3b7e3f12c1b2f88fb4528ed33d</anchor>
-      <arglist>(double &amp;uniform, double &amp;near, double &amp;gaussian, unsigned int attempts) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>printSettings</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>aaafcf07fda025a0ebb21844563d8b2ef</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>printProperties</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ab2ba1de508425d3a19f7b6b1a42d683e</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>ParamSet &amp;</type>
-      <name>params</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a879fb1ffcac0bf54aab292f2b933f881</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const ParamSet &amp;</type>
-      <name>params</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ad09d9e9ca9f34d46edf1dcb4567176c4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setup</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a6e8c41f946c3c04d126983e145404ad4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>isSetup</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>aad514fc49811498bf56de4a3e9db7d0c</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>setDefaultMotionValidator</name>
-      <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a1d0c51561f5372ade7720a7e76d8546f</anchor>
-      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -27081,7 +24633,7 @@
       <anchor>a747796199659bbb54b733df59fce5943</anchor>
       <arglist></arglist>
     </member>
-    <docanchor file="/Users/mmoll/omplapp/ompl/src/ompl/control/planners/syclop/SyclopEST.h">cSyclopEST</docanchor>
+    <docanchor file="classompl_1_1control_1_1SyclopEST.html">cSyclopEST</docanchor>
   </compound>
   <compound kind="class">
     <name>ompl::control::SyclopRRT</name>
@@ -27164,7 +24716,7 @@
       <anchor>a0bb7f61c9bca43a0a5124a0660c75f7c</anchor>
       <arglist></arglist>
     </member>
-    <docanchor file="/Users/mmoll/omplapp/ompl/src/ompl/control/planners/syclop/SyclopRRT.h">cSyclopRRT</docanchor>
+    <docanchor file="classompl_1_1control_1_1SyclopRRT.html">cSyclopRRT</docanchor>
   </compound>
   <compound kind="class">
     <name>ompl::control::TriangularDecomposition</name>
@@ -48404,14 +45956,6 @@
     <name>PolyWorld</name>
     <filename>classPolyWorld.html</filename>
   </compound>
-  <compound kind="class">
-    <name>SamplerSelector&lt; ompl::base::StateSampler &gt;</name>
-    <filename>structompl_1_1base_1_1SamplerSelector.html</filename>
-  </compound>
-  <compound kind="class">
-    <name>SamplerSelector&lt; ompl::base::ValidStateSampler &gt;</name>
-    <filename>structompl_1_1base_1_1SamplerSelector.html</filename>
-  </compound>
   <compound kind="struct">
     <name>Segment</name>
     <filename>structSegment.html</filename>
@@ -48561,23 +46105,23 @@
     <class kind="class">ompl::AdjacencyList</class>
     <class kind="class">ompl::BinaryHeap</class>
     <class kind="class">ompl::DynamicSSSP</class>
-    <class kind="class">ompl::Exception</class>
-    <class kind="class">ompl::FLANNDistance</class>
     <class kind="class">ompl::GreedyKCenters</class>
     <class kind="class">ompl::Grid</class>
     <class kind="class">ompl::GridB</class>
     <class kind="class">ompl::GridN</class>
     <class kind="class">ompl::LPAstarOnGraph</class>
     <class kind="class">ompl::NearestNeighbors</class>
+    <class kind="class">ompl::FLANNDistance</class>
     <class kind="class">ompl::NearestNeighborsFLANN</class>
-    <class kind="class">ompl::NearestNeighborsFLANNHierarchicalClustering</class>
     <class kind="class">ompl::NearestNeighborsFLANNLinear</class>
+    <class kind="class">ompl::NearestNeighborsFLANNHierarchicalClustering</class>
     <class kind="class">ompl::NearestNeighborsGNAT</class>
     <class kind="class">ompl::NearestNeighborsGNATNoThreadSafety</class>
     <class kind="class">ompl::NearestNeighborsLinear</class>
     <class kind="class">ompl::NearestNeighborsSqrtApprox</class>
     <class kind="class">ompl::PDF</class>
     <class kind="class">ompl::Permutation</class>
+    <class kind="class">ompl::Exception</class>
     <class kind="class">ompl::PPM</class>
     <class kind="class">ompl::ProlateHyperspheroid</class>
     <class kind="class">ompl::RNG</class>
@@ -48648,34 +46192,17 @@
   <compound kind="namespace">
     <name>ompl::base</name>
     <filename>namespaceompl_1_1base.html</filename>
-    <class kind="class">ompl::base::AllValidStateValidityChecker</class>
-    <class kind="class">ompl::base::AtlasChart</class>
-    <class kind="class">ompl::base::AtlasStateSampler</class>
-    <class kind="class">ompl::base::AtlasStateSpace</class>
-    <class kind="class">ompl::base::BridgeTestValidStateSampler</class>
-    <class kind="class">ompl::base::CForestStateSampler</class>
-    <class kind="class">ompl::base::CForestStateSpaceWrapper</class>
-    <class kind="class">ompl::base::CompoundState</class>
-    <class kind="class">ompl::base::CompoundStateSampler</class>
-    <class kind="class">ompl::base::CompoundStateSpace</class>
-    <class kind="class">ompl::base::ConstrainedMotionValidator</class>
-    <class kind="class">ompl::base::ConstrainedSpaceInformation</class>
-    <class kind="class">ompl::base::ConstrainedStateSpace</class>
     <class kind="class">ompl::base::ConstrainedValidStateSampler</class>
+    <class kind="class">ompl::base::ConstrainedSpaceInformation</class>
+    <class kind="class">ompl::base::TangentBundleSpaceInformation</class>
     <class kind="class">ompl::base::Constraint</class>
     <class kind="class">ompl::base::ConstraintIntersection</class>
     <class kind="class">ompl::base::ConstraintObjective</class>
     <class kind="class">ompl::base::Cost</class>
-    <class kind="class">ompl::base::CostConvergenceTerminationCondition</class>
-    <class kind="class">ompl::base::DeterministicSequence</class>
-    <class kind="class">ompl::base::DeterministicStateSampler</class>
     <class kind="class">ompl::base::DiscreteMotionValidator</class>
-    <class kind="class">ompl::base::DiscreteStateSampler</class>
-    <class kind="class">ompl::base::DiscreteStateSpace</class>
-    <class kind="class">ompl::base::DubinsMotionValidator</class>
-    <class kind="class">ompl::base::DubinsStateSpace</class>
-    <class kind="class">ompl::base::GaussianValidStateSampler</class>
     <class kind="class">ompl::base::GenericParam</class>
+    <class kind="class">ompl::base::SpecificParam</class>
+    <class kind="class">ompl::base::ParamSet</class>
     <class kind="class">ompl::base::Goal</class>
     <class kind="class">ompl::base::GoalLazySamples</class>
     <class kind="class">ompl::base::GoalRegion</class>
@@ -48683,97 +46210,114 @@
     <class kind="class">ompl::base::GoalSpace</class>
     <class kind="class">ompl::base::GoalState</class>
     <class kind="class">ompl::base::GoalStates</class>
-    <class kind="class">ompl::base::HaltonSequence</class>
-    <class kind="class">ompl::base::HaltonSequence1D</class>
-    <class kind="class">ompl::base::InformedSampler</class>
-    <class kind="class">ompl::base::InformedStateSampler</class>
-    <class kind="class">ompl::base::IterationTerminationCondition</class>
-    <class kind="class">ompl::base::MaximizeClearanceValidStateSampler</class>
+    <class kind="class">ompl::base::MotionValidator</class>
     <class kind="class">ompl::base::MaximizeMinClearanceObjective</class>
     <class kind="class">ompl::base::MechanicalWorkOptimizationObjective</class>
     <class kind="class">ompl::base::MinimaxObjective</class>
+    <class kind="class">ompl::base::PathLengthOptimizationObjective</class>
+    <class kind="class">ompl::base::StateCostIntegralObjective</class>
+    <class kind="class">ompl::base::VFMechanicalWorkOptimizationObjective</class>
+    <class kind="class">ompl::base::VFUpstreamCriterionOptimizationObjective</class>
+    <class kind="class">ompl::base::OptimizationObjective</class>
+    <class kind="class">ompl::base::MultiOptimizationObjective</class>
+    <class kind="class">ompl::base::Path</class>
+    <class kind="class">ompl::base::PlannerInputStates</class>
+    <class kind="struct">ompl::base::PlannerSpecs</class>
+    <class kind="class">ompl::base::Planner</class>
+    <class kind="class">ompl::base::PlannerDataVertex</class>
+    <class kind="class">ompl::base::PlannerDataEdge</class>
+    <class kind="class">ompl::base::PlannerData</class>
+    <class kind="class">ompl::base::PlannerDataStorage</class>
+    <class kind="struct">ompl::base::PlannerStatus</class>
+    <class kind="class">ompl::base::PlannerTerminationCondition</class>
+    <class kind="class">ompl::base::PrecomputedStateSampler</class>
+    <class kind="struct">ompl::base::PlannerSolution</class>
+    <class kind="class">ompl::base::ProblemDefinition</class>
+    <class kind="class">ompl::base::ProjectionMatrix</class>
+    <class kind="class">ompl::base::ProjectionEvaluator</class>
+    <class kind="class">ompl::base::SubspaceProjectionEvaluator</class>
+    <class kind="class">ompl::base::BridgeTestValidStateSampler</class>
+    <class kind="class">ompl::base::DeterministicSequence</class>
+    <class kind="class">ompl::base::HaltonSequence1D</class>
+    <class kind="class">ompl::base::HaltonSequence</class>
+    <class kind="class">ompl::base::PrecomputedSequence</class>
+    <class kind="class">ompl::base::DeterministicStateSampler</class>
+    <class kind="class">ompl::base::SO2DeterministicStateSampler</class>
+    <class kind="class">ompl::base::RealVectorDeterministicStateSampler</class>
+    <class kind="class">ompl::base::SE2DeterministicStateSampler</class>
+    <class kind="class">ompl::base::GaussianValidStateSampler</class>
+    <class kind="class">ompl::base::OrderedInfSampler</class>
+    <class kind="class">ompl::base::PathLengthDirectInfSampler</class>
+    <class kind="class">ompl::base::RejectionInfSampler</class>
+    <class kind="class">ompl::base::InformedSampler</class>
+    <class kind="class">ompl::base::InformedStateSampler</class>
+    <class kind="class">ompl::base::MaximizeClearanceValidStateSampler</class>
     <class kind="class">ompl::base::MinimumClearanceValidStateSampler</class>
+    <class kind="class">ompl::base::ObstacleBasedValidStateSampler</class>
+    <class kind="class">ompl::base::UniformValidStateSampler</class>
+    <class kind="class">ompl::base::ScopedState</class>
+    <class kind="class">ompl::base::SolutionNonExistenceProof</class>
+    <class kind="class">ompl::base::SpaceInformation</class>
+    <class kind="class">ompl::base::AtlasChart</class>
+    <class kind="class">ompl::base::AtlasStateSampler</class>
+    <class kind="class">ompl::base::AtlasStateSpace</class>
+    <class kind="class">ompl::base::ConstrainedMotionValidator</class>
+    <class kind="class">ompl::base::ConstrainedStateSpace</class>
+    <class kind="class">ompl::base::ProjectedStateSampler</class>
+    <class kind="class">ompl::base::ProjectedStateSpace</class>
+    <class kind="class">ompl::base::TangentBundleStateSpace</class>
+    <class kind="class">ompl::base::DiscreteStateSampler</class>
+    <class kind="class">ompl::base::DiscreteStateSpace</class>
+    <class kind="class">ompl::base::DubinsStateSpace</class>
+    <class kind="class">ompl::base::DubinsMotionValidator</class>
+    <class kind="class">ompl::base::RealVectorBounds</class>
+    <class kind="class">ompl::base::RealVectorLinearProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorRandomLinearProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorOrthogonalProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorIdentityProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorStateSampler</class>
+    <class kind="class">ompl::base::RealVectorStateSpace</class>
+    <class kind="class">ompl::base::ReedsSheppStateSpace</class>
+    <class kind="class">ompl::base::ReedsSheppMotionValidator</class>
+    <class kind="class">ompl::base::SE2StateSpace</class>
+    <class kind="class">ompl::base::SE3StateSpace</class>
+    <class kind="class">ompl::base::SO2StateSampler</class>
+    <class kind="class">ompl::base::SO2StateSpace</class>
+    <class kind="class">ompl::base::SO3StateSampler</class>
+    <class kind="class">ompl::base::SO3StateSpace</class>
+    <class kind="class">ompl::base::TimeStateSampler</class>
+    <class kind="class">ompl::base::TimeStateSpace</class>
+    <class kind="class">ompl::base::WrapperStateSampler</class>
+    <class kind="class">ompl::base::WrapperProjectionEvaluator</class>
+    <class kind="class">ompl::base::WrapperStateSpace</class>
+    <class kind="class">ompl::base::State</class>
+    <class kind="class">ompl::base::CompoundState</class>
+    <class kind="class">ompl::base::StateSampler</class>
+    <class kind="class">ompl::base::CompoundStateSampler</class>
+    <class kind="class">ompl::base::SubspaceStateSampler</class>
+    <class kind="struct">ompl::base::SamplerSelector</class>
+    <class kind="class">ompl::base::StateSamplerArray</class>
+    <class kind="class">ompl::base::StateSpace</class>
+    <class kind="class">ompl::base::CompoundStateSpace</class>
+    <class kind="class">ompl::base::StateStorage</class>
+    <class kind="class">ompl::base::StateStorageWithMetadata</class>
+    <class kind="struct">ompl::base::StateValidityCheckerSpecs</class>
+    <class kind="class">ompl::base::StateValidityChecker</class>
+    <class kind="class">ompl::base::AllValidStateValidityChecker</class>
+    <class kind="class">ompl::base::CostConvergenceTerminationCondition</class>
+    <class kind="class">ompl::base::IterationTerminationCondition</class>
+    <class kind="class">ompl::base::TypedSpaceInformation</class>
+    <class kind="class">ompl::base::TypedStateValidityChecker</class>
+    <class kind="class">ompl::base::ValidStateSampler</class>
     <class kind="class">ompl::base::MorseEnvironment</class>
     <class kind="class">ompl::base::MorseGoal</class>
     <class kind="class">ompl::base::MorseProjection</class>
     <class kind="class">ompl::base::MorseStateSpace</class>
     <class kind="class">ompl::base::MorseStateValidityChecker</class>
     <class kind="class">ompl::base::MorseTerminationCondition</class>
-    <class kind="class">ompl::base::MotionValidator</class>
-    <class kind="class">ompl::base::MultiOptimizationObjective</class>
-    <class kind="class">ompl::base::ObstacleBasedValidStateSampler</class>
-    <class kind="class">ompl::base::OptimizationObjective</class>
-    <class kind="class">ompl::base::OrderedInfSampler</class>
-    <class kind="class">ompl::base::ParamSet</class>
-    <class kind="class">ompl::base::Path</class>
-    <class kind="class">ompl::base::PathLengthDirectInfSampler</class>
-    <class kind="class">ompl::base::PathLengthOptimizationObjective</class>
-    <class kind="class">ompl::base::Planner</class>
-    <class kind="class">ompl::base::PlannerData</class>
-    <class kind="class">ompl::base::PlannerDataEdge</class>
-    <class kind="class">ompl::base::PlannerDataStorage</class>
-    <class kind="class">ompl::base::PlannerDataVertex</class>
+    <class kind="class">ompl::base::CForestStateSampler</class>
+    <class kind="class">ompl::base::CForestStateSpaceWrapper</class>
     <class kind="class">ompl::base::PlannerDataVertexAnnotated</class>
-    <class kind="class">ompl::base::PlannerInputStates</class>
-    <class kind="struct">ompl::base::PlannerSolution</class>
-    <class kind="struct">ompl::base::PlannerSpecs</class>
-    <class kind="struct">ompl::base::PlannerStatus</class>
-    <class kind="class">ompl::base::PlannerTerminationCondition</class>
-    <class kind="class">ompl::base::PrecomputedSequence</class>
-    <class kind="class">ompl::base::PrecomputedStateSampler</class>
-    <class kind="class">ompl::base::ProblemDefinition</class>
-    <class kind="class">ompl::base::ProjectedStateSampler</class>
-    <class kind="class">ompl::base::ProjectedStateSpace</class>
-    <class kind="class">ompl::base::ProjectionEvaluator</class>
-    <class kind="class">ompl::base::ProjectionMatrix</class>
-    <class kind="class">ompl::base::RealVectorBounds</class>
-    <class kind="class">ompl::base::RealVectorDeterministicStateSampler</class>
-    <class kind="class">ompl::base::RealVectorIdentityProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorLinearProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorOrthogonalProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorRandomLinearProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorStateSampler</class>
-    <class kind="class">ompl::base::RealVectorStateSpace</class>
-    <class kind="class">ompl::base::ReedsSheppMotionValidator</class>
-    <class kind="class">ompl::base::ReedsSheppStateSpace</class>
-    <class kind="class">ompl::base::RejectionInfSampler</class>
-    <class kind="struct">ompl::base::SamplerSelector</class>
-    <class kind="class">ompl::base::ScopedState</class>
-    <class kind="class">ompl::base::SE2DeterministicStateSampler</class>
-    <class kind="class">ompl::base::SE2StateSpace</class>
-    <class kind="class">ompl::base::SE3StateSpace</class>
-    <class kind="class">ompl::base::SO2DeterministicStateSampler</class>
-    <class kind="class">ompl::base::SO2StateSampler</class>
-    <class kind="class">ompl::base::SO2StateSpace</class>
-    <class kind="class">ompl::base::SO3StateSampler</class>
-    <class kind="class">ompl::base::SO3StateSpace</class>
-    <class kind="class">ompl::base::SolutionNonExistenceProof</class>
-    <class kind="class">ompl::base::SpaceInformation</class>
-    <class kind="class">ompl::base::SpecificParam</class>
-    <class kind="class">ompl::base::State</class>
-    <class kind="class">ompl::base::StateCostIntegralObjective</class>
-    <class kind="class">ompl::base::StateSampler</class>
-    <class kind="class">ompl::base::StateSamplerArray</class>
-    <class kind="class">ompl::base::StateSpace</class>
-    <class kind="class">ompl::base::StateStorage</class>
-    <class kind="class">ompl::base::StateStorageWithMetadata</class>
-    <class kind="class">ompl::base::StateValidityChecker</class>
-    <class kind="struct">ompl::base::StateValidityCheckerSpecs</class>
-    <class kind="class">ompl::base::SubspaceProjectionEvaluator</class>
-    <class kind="class">ompl::base::SubspaceStateSampler</class>
-    <class kind="class">ompl::base::TangentBundleSpaceInformation</class>
-    <class kind="class">ompl::base::TangentBundleStateSpace</class>
-    <class kind="class">ompl::base::TimeStateSampler</class>
-    <class kind="class">ompl::base::TimeStateSpace</class>
-    <class kind="class">ompl::base::TypedSpaceInformation</class>
-    <class kind="class">ompl::base::TypedStateValidityChecker</class>
-    <class kind="class">ompl::base::UniformValidStateSampler</class>
-    <class kind="class">ompl::base::ValidStateSampler</class>
-    <class kind="class">ompl::base::VFMechanicalWorkOptimizationObjective</class>
-    <class kind="class">ompl::base::VFUpstreamCriterionOptimizationObjective</class>
-    <class kind="class">ompl::base::WrapperProjectionEvaluator</class>
-    <class kind="class">ompl::base::WrapperStateSampler</class>
-    <class kind="class">ompl::base::WrapperStateSpace</class>
     <member kind="typedef">
       <type>std::function&lt; bool(const GoalLazySamples *, State *)&gt;</type>
       <name>GoalSamplingFn</name>
@@ -49159,58 +46703,58 @@
   <compound kind="namespace">
     <name>ompl::control</name>
     <filename>namespaceompl_1_1control.html</filename>
-    <class kind="class">ompl::control::Automaton</class>
-    <class kind="class">ompl::control::CompoundControl</class>
-    <class kind="class">ompl::control::CompoundControlSampler</class>
-    <class kind="class">ompl::control::CompoundControlSpace</class>
     <class kind="class">ompl::control::Control</class>
+    <class kind="class">ompl::control::CompoundControl</class>
     <class kind="class">ompl::control::ControlSampler</class>
+    <class kind="class">ompl::control::CompoundControlSampler</class>
     <class kind="class">ompl::control::ControlSpace</class>
-    <class kind="class">ompl::control::Decomposition</class>
+    <class kind="class">ompl::control::CompoundControlSpace</class>
     <class kind="class">ompl::control::DirectedControlSampler</class>
-    <class kind="class">ompl::control::DiscreteControlSampler</class>
-    <class kind="class">ompl::control::DiscreteControlSpace</class>
+    <class kind="class">ompl::control::ODESolver</class>
+    <class kind="class">ompl::control::ODEBasicSolver</class>
+    <class kind="class">ompl::control::ODEErrorSolver</class>
+    <class kind="class">ompl::control::ODEAdaptiveSolver</class>
+    <class kind="class">ompl::control::PathControl</class>
+    <class kind="class">ompl::control::PlannerDataEdgeControl</class>
+    <class kind="class">ompl::control::PlannerData</class>
+    <class kind="class">ompl::control::PlannerDataStorage</class>
     <class kind="class">ompl::control::EST</class>
-    <class kind="class">ompl::control::GridDecomposition</class>
     <class kind="class">ompl::control::KPIECE1</class>
+    <class kind="class">ompl::control::Automaton</class>
     <class kind="class">ompl::control::LTLPlanner</class>
     <class kind="class">ompl::control::LTLProblemDefinition</class>
     <class kind="class">ompl::control::LTLSpaceInformation</class>
+    <class kind="class">ompl::control::ProductGraph</class>
+    <class kind="class">ompl::control::PropositionalDecomposition</class>
+    <class kind="class">ompl::control::World</class>
+    <class kind="class">ompl::control::PDST</class>
+    <class kind="class">ompl::control::RRT</class>
+    <class kind="class">ompl::control::SST</class>
+    <class kind="class">ompl::control::Decomposition</class>
+    <class kind="class">ompl::control::GridDecomposition</class>
+    <class kind="class">ompl::control::Syclop</class>
+    <class kind="class">ompl::control::SyclopEST</class>
+    <class kind="class">ompl::control::SyclopRRT</class>
+    <class kind="class">ompl::control::SimpleDirectedControlSampler</class>
+    <class kind="class">ompl::control::SimpleSetup</class>
+    <class kind="class">ompl::control::SpaceInformation</class>
+    <class kind="class">ompl::control::DiscreteControlSampler</class>
+    <class kind="class">ompl::control::DiscreteControlSpace</class>
+    <class kind="class">ompl::control::RealVectorControlUniformSampler</class>
+    <class kind="class">ompl::control::RealVectorControlSpace</class>
+    <class kind="class">ompl::control::StatePropagator</class>
+    <class kind="class">ompl::control::SteeredControlSampler</class>
     <class kind="class">ompl::control::MorseControlSpace</class>
     <class kind="class">ompl::control::MorseSimpleSetup</class>
     <class kind="class">ompl::control::MorseStatePropagator</class>
-    <class kind="class">ompl::control::ODEAdaptiveSolver</class>
-    <class kind="class">ompl::control::ODEBasicSolver</class>
-    <class kind="class">ompl::control::ODEErrorSolver</class>
-    <class kind="class">ompl::control::ODESolver</class>
     <class kind="class">ompl::control::OpenDEControlSpace</class>
     <class kind="class">ompl::control::OpenDEEnvironment</class>
     <class kind="class">ompl::control::OpenDESimpleSetup</class>
     <class kind="class">ompl::control::OpenDEStatePropagator</class>
     <class kind="class">ompl::control::OpenDEStateSpace</class>
     <class kind="class">ompl::control::OpenDEStateValidityChecker</class>
-    <class kind="class">ompl::control::PathControl</class>
-    <class kind="class">ompl::control::PDST</class>
-    <class kind="class">ompl::control::PlannerData</class>
-    <class kind="class">ompl::control::PlannerDataEdgeControl</class>
-    <class kind="class">ompl::control::PlannerDataStorage</class>
-    <class kind="class">ompl::control::ProductGraph</class>
-    <class kind="class">ompl::control::PropositionalDecomposition</class>
     <class kind="class">ompl::control::PropositionalTriangularDecomposition</class>
-    <class kind="class">ompl::control::RealVectorControlSpace</class>
-    <class kind="class">ompl::control::RealVectorControlUniformSampler</class>
-    <class kind="class">ompl::control::RRT</class>
-    <class kind="class">ompl::control::SimpleDirectedControlSampler</class>
-    <class kind="class">ompl::control::SimpleSetup</class>
-    <class kind="class">ompl::control::SpaceInformation</class>
-    <class kind="class">ompl::control::SST</class>
-    <class kind="class">ompl::control::StatePropagator</class>
-    <class kind="class">ompl::control::SteeredControlSampler</class>
-    <class kind="class">ompl::control::Syclop</class>
-    <class kind="class">ompl::control::SyclopEST</class>
-    <class kind="class">ompl::control::SyclopRRT</class>
     <class kind="class">ompl::control::TriangularDecomposition</class>
-    <class kind="class">ompl::control::World</class>
     <member kind="typedef">
       <type>std::function&lt; ControlSamplerPtr(const ControlSpace *)&gt;</type>
       <name>ControlSamplerAllocator</name>
@@ -49267,69 +46811,69 @@
   <compound kind="namespace">
     <name>ompl::geometric</name>
     <filename>namespaceompl_1_1geometric.html</filename>
-    <class kind="class">ompl::geometric::ABITstar</class>
-    <class kind="class">ompl::geometric::AITstar</class>
-    <class kind="class">ompl::geometric::AnytimePathShortening</class>
-    <class kind="class">ompl::geometric::BFMT</class>
-    <class kind="class">ompl::geometric::BiEST</class>
-    <class kind="class">ompl::geometric::BiRLRT</class>
-    <class kind="class">ompl::geometric::BiTRRT</class>
-    <class kind="class">ompl::geometric::BITstar</class>
-    <class kind="class">ompl::geometric::BKPIECE1</class>
-    <class kind="class">ompl::geometric::CForest</class>
-    <class kind="class">ompl::geometric::Discretization</class>
-    <class kind="class">ompl::geometric::EST</class>
-    <class kind="class">ompl::geometric::FMT</class>
     <class kind="class">ompl::geometric::GeneticSearch</class>
     <class kind="class">ompl::geometric::HillClimbing</class>
-    <class kind="class">ompl::geometric::InformedRRTstar</class>
-    <class kind="class">ompl::geometric::KBoundedStrategy</class>
-    <class kind="class">ompl::geometric::KPIECE1</class>
-    <class kind="class">ompl::geometric::KStarStrategy</class>
-    <class kind="class">ompl::geometric::KStrategy</class>
-    <class kind="class">ompl::geometric::LazyLBTRRT</class>
-    <class kind="class">ompl::geometric::LazyPRM</class>
-    <class kind="class">ompl::geometric::LazyPRMstar</class>
-    <class kind="class">ompl::geometric::LazyRRT</class>
-    <class kind="class">ompl::geometric::LBKPIECE1</class>
-    <class kind="class">ompl::geometric::LBTRRT</class>
-    <class kind="class">ompl::geometric::LightningRetrieveRepair</class>
-    <class kind="class">ompl::geometric::MultiQuotient</class>
     <class kind="class">ompl::geometric::PathGeometric</class>
     <class kind="class">ompl::geometric::PathHybridization</class>
     <class kind="class">ompl::geometric::PathSimplifier</class>
+    <class kind="class">ompl::geometric::AnytimePathShortening</class>
+    <class kind="class">ompl::geometric::CForest</class>
+    <class kind="class">ompl::geometric::BiEST</class>
+    <class kind="class">ompl::geometric::EST</class>
+    <class kind="class">ompl::geometric::ProjEST</class>
+    <class kind="class">ompl::geometric::LightningRetrieveRepair</class>
+    <class kind="class">ompl::geometric::ThunderRetrieveRepair</class>
+    <class kind="class">ompl::geometric::BFMT</class>
+    <class kind="class">ompl::geometric::FMT</class>
+    <class kind="class">ompl::geometric::ABITstar</class>
+    <class kind="class">ompl::geometric::AITstar</class>
+    <class kind="class">ompl::geometric::BITstar</class>
+    <class kind="class">ompl::geometric::BKPIECE1</class>
+    <class kind="class">ompl::geometric::Discretization</class>
+    <class kind="class">ompl::geometric::KPIECE1</class>
+    <class kind="class">ompl::geometric::LBKPIECE1</class>
     <class kind="class">ompl::geometric::PDST</class>
+    <class kind="class">ompl::geometric::KStrategy</class>
+    <class kind="class">ompl::geometric::KStarStrategy</class>
+    <class kind="class">ompl::geometric::KBoundedStrategy</class>
+    <class kind="class">ompl::geometric::LazyPRM</class>
+    <class kind="class">ompl::geometric::LazyPRMstar</class>
     <class kind="class">ompl::geometric::PRM</class>
     <class kind="class">ompl::geometric::PRMstar</class>
-    <class kind="class">ompl::geometric::ProjEST</class>
-    <class kind="class">ompl::geometric::pRRT</class>
-    <class kind="class">ompl::geometric::pSBL</class>
+    <class kind="class">ompl::geometric::SPARS</class>
+    <class kind="class">ompl::geometric::SPARStwo</class>
+    <class kind="class">ompl::geometric::MultiQuotient</class>
     <class kind="class">ompl::geometric::QRRTImpl</class>
     <class kind="class">ompl::geometric::QuotientSpace</class>
     <class kind="class">ompl::geometric::QuotientSpaceGraph</class>
+    <class kind="class">ompl::geometric::BiRLRT</class>
     <class kind="class">ompl::geometric::RLRT</class>
+    <class kind="class">ompl::geometric::BiTRRT</class>
+    <class kind="class">ompl::geometric::InformedRRTstar</class>
+    <class kind="class">ompl::geometric::LazyLBTRRT</class>
+    <class kind="class">ompl::geometric::LazyRRT</class>
+    <class kind="class">ompl::geometric::LBTRRT</class>
+    <class kind="class">ompl::geometric::pRRT</class>
     <class kind="class">ompl::geometric::RRT</class>
     <class kind="class">ompl::geometric::RRTConnect</class>
     <class kind="class">ompl::geometric::RRTsharp</class>
     <class kind="class">ompl::geometric::RRTstar</class>
     <class kind="class">ompl::geometric::RRTXstatic</class>
-    <class kind="class">ompl::geometric::SBL</class>
-    <class kind="class">ompl::geometric::SimpleSetup</class>
     <class kind="class">ompl::geometric::SORRTstar</class>
-    <class kind="class">ompl::geometric::SPARS</class>
-    <class kind="class">ompl::geometric::SPARSdb</class>
-    <class kind="class">ompl::geometric::SPARStwo</class>
-    <class kind="class">ompl::geometric::SST</class>
-    <class kind="class">ompl::geometric::STRIDE</class>
-    <class kind="class">ompl::geometric::TaskSpaceConfig</class>
-    <class kind="class">ompl::geometric::ThunderRetrieveRepair</class>
     <class kind="class">ompl::geometric::TRRT</class>
+    <class kind="class">ompl::geometric::TaskSpaceConfig</class>
     <class kind="class">ompl::geometric::TSRRT</class>
     <class kind="class">ompl::geometric::VFRRT</class>
+    <class kind="class">ompl::geometric::pSBL</class>
+    <class kind="class">ompl::geometric::SBL</class>
+    <class kind="class">ompl::geometric::SST</class>
+    <class kind="class">ompl::geometric::STRIDE</class>
     <class kind="class">ompl::geometric::XXL</class>
     <class kind="class">ompl::geometric::XXLDecomposition</class>
     <class kind="class">ompl::geometric::XXLPlanarDecomposition</class>
     <class kind="class">ompl::geometric::XXLPositionDecomposition</class>
+    <class kind="class">ompl::geometric::SimpleSetup</class>
+    <class kind="class">ompl::geometric::SPARSdb</class>
     <member kind="typedef">
       <type>ompl::geometric::MultiQuotient&lt; ompl::geometric::QRRTImpl &gt;</type>
       <name>QRRT</name>
@@ -49519,8 +47063,8 @@
     <name>ompl::msg</name>
     <filename>namespaceompl_1_1msg.html</filename>
     <class kind="class">ompl::msg::OutputHandler</class>
-    <class kind="class">ompl::msg::OutputHandlerFile</class>
     <class kind="class">ompl::msg::OutputHandlerSTD</class>
+    <class kind="class">ompl::msg::OutputHandlerFile</class>
     <member kind="enumeration">
       <type></type>
       <name>LogLevel</name>
@@ -49629,15 +47173,15 @@
     <name>ompl::tools</name>
     <filename>namespaceompl_1_1tools.html</filename>
     <class kind="class">ompl::tools::Benchmark</class>
-    <class kind="class">ompl::tools::DynamicTimeWarp</class>
+    <class kind="class">ompl::tools::SelfConfig</class>
+    <class kind="class">ompl::tools::PlannerMonitor</class>
+    <class kind="class">ompl::tools::Profiler</class>
     <class kind="class">ompl::tools::ExperienceSetup</class>
+    <class kind="class">ompl::tools::DynamicTimeWarp</class>
     <class kind="class">ompl::tools::Lightning</class>
     <class kind="class">ompl::tools::LightningDB</class>
     <class kind="class">ompl::tools::OptimizePlan</class>
     <class kind="class">ompl::tools::ParallelPlan</class>
-    <class kind="class">ompl::tools::PlannerMonitor</class>
-    <class kind="class">ompl::tools::Profiler</class>
-    <class kind="class">ompl::tools::SelfConfig</class>
     <class kind="class">ompl::tools::Thunder</class>
     <class kind="class">ompl::tools::ThunderDB</class>
     <member kind="typedef">

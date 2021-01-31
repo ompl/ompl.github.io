@@ -87,5 +87,6 @@ var searchData=
   ['rrt_4638',['RRT',['../classompl_1_1control_1_1RRT.html#ad74aa3374c2a2ecbf29eb9462a229e19',1,'ompl::control::RRT::RRT()'],['../classompl_1_1geometric_1_1RRT.html#a9fb8d770cf42e851793a6fb9c4f11f97',1,'ompl::geometric::RRT::RRT()']]],
   ['rrtconnect_4639',['RRTConnect',['../classompl_1_1geometric_1_1RRTConnect.html#aea8a84e73c86ff415931a29be34228f5',1,'ompl::geometric::RRTConnect']]],
   ['run_4640',['run',['../classompl_1_1control_1_1Automaton.html#ae6dc792403a31bd096846ab9636fabe7',1,'ompl::control::Automaton']]],
-  ['running_4641',['Running',['../classompl_1_1tools_1_1Profiler.html#ab8afd7647ac8b228ac64c3c94963f13c',1,'ompl::tools::Profiler::Running()'],['../classompl_1_1tools_1_1Profiler.html#a724a741970f15dbb031c462db4553d64',1,'ompl::tools::Profiler::running() const']]]
+  ['running_4641',['Running',['../classompl_1_1tools_1_1Profiler.html#ab8afd7647ac8b228ac64c3c94963f13c',1,'ompl::tools::Profiler']]],
+  ['running_4642',['running',['../classompl_1_1tools_1_1Profiler.html#a724a741970f15dbb031c462db4553d64',1,'ompl::tools::Profiler']]]
 ];
