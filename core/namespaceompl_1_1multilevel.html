@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl::multilevel Namespace Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1multilevel.html">multilevel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">ompl::multilevel Namespace Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This namespace contains datastructures and planners to exploit multilevel abstractions, which you have to specify using a sequence of SpaceInformationPtr (each with their own StateValidityChecker).  
+<a href="namespaceompl_1_1multilevel.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single Bundle-space.  <a href="classompl_1_1multilevel_1_1BundleSpace.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A graph on a Bundle-space.  <a href="classompl_1_1multilevel_1_1BundleSpaceGraph.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html">BundleSpaceGraphSampler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomDegreeVertex.html">BundleSpaceGraphSamplerRandomDegreeVertex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomEdge.html">BundleSpaceGraphSamplerRandomEdge</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomVertex.html">BundleSpaceGraphSamplerRandomVertex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceImportance.html">BundleSpaceImportance</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceImportanceExponential.html">BundleSpaceImportanceExponential</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceImportanceGreedy.html">BundleSpaceImportanceGreedy</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceImportanceUniform.html">BundleSpaceImportanceUniform</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceMetric.html">BundleSpaceMetric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceMetricGeodesic.html">BundleSpaceMetricGeodesic</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpacePropagator.html">BundleSpacePropagator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpacePropagatorGeometric.html">BundleSpacePropagatorGeometric</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A planner for a sequence of BundleSpaces.  <a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1CompoundProjection.html">CompoundProjection</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1FiberedProjection.html">FiberedProjection</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1FindSection.html">FindSection</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1FindSectionSideStep.html">FindSectionSideStep</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Head.html">Head</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to a specific location on the base path of the path restriction.  <a href="classompl_1_1multilevel_1_1Head.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1HeadAnalyzer.html">HeadAnalyzer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html">PathRestriction</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of path restriction (union of fibers over a base path).  <a href="classompl_1_1multilevel_1_1PathRestriction.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathSection.html">PathSection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of a path section (not necessarily feasible).  <a href="classompl_1_1multilevel_1_1PathSection.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">PlannerDataVertexAnnotated</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An annotated vertex, adding information about its level in the multilevel hierarchy. Class has two modes: Mode 1 (baseMode), we store a reference to its base state element. In Mode 2 (totalMode), we store a deep copy of the lift of the base state into the total space (NOTE: required for PlannerData functions like decoupleFromPlanner())  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerMultiLevel.html">PlannerMultiLevel</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MultiLevel Planner Interface. Extends <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">base::Planner</a> by allowing sequences of <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">base::SpaceInformationPtr</a>.  <a href="classompl_1_1multilevel_1_1PlannerMultiLevel.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection.html">Projection</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__EmptySet.html">Projection_EmptySet</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__Identity.html">Projection_Identity</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__None.html">Projection_None</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__Relaxation.html">Projection_Relaxation</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__RN__RM.html">Projection_RN_RM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__RNSO2__RN.html">Projection_RNSO2_RN</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE2__R2.html">Projection_SE2_R2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE2RN__R2.html">Projection_SE2RN_R2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE2RN__SE2.html">Projection_SE2RN_SE2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE2RN__SE2RM.html">Projection_SE2RN_SE2RM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE3__R3.html">Projection_SE3_R3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE3RN__R3.html">Projection_SE3RN_R3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE3RN__SE3.html">Projection_SE3RN_SE3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SE3RN__SE3RM.html">Projection_SE3RN_SE3RM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SO2N__SO2M.html">Projection_SO2N_SO2M</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SO2RN__SO2.html">Projection_SO2RN_SO2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SO2RN__SO2RM.html">Projection_SO2RN_SO2RM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SO3RN__SO3.html">Projection_SO3RN_SO3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__SO3RN__SO3RM.html">Projection_SO3RN_SO3RM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__XRN__X.html">Projection_XRN_X</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1Projection__XRN__XRM.html">Projection_XRN_XRM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html">ProjectionFactory</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1QMPImpl.html">QMPImpl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of the Quotient space roadMap Planner.  <a href="classompl_1_1multilevel_1_1QMPImpl.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1QMPStarImpl.html">QMPStarImpl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1QRRTImpl.html">QRRTImpl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of <a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html" title="A single Bundle-space.">BundleSpace</a> Rapidly-Exploring Random Trees Algorithm.  <a href="classompl_1_1multilevel_1_1QRRTImpl.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1QRRTStarImpl.html">QRRTStarImpl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of <a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html" title="A single Bundle-space.">BundleSpace</a> Rapidly-Exploring Random Tree Star Algorithm.  <a href="classompl_1_1multilevel_1_1QRRTStarImpl.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0c860218896fad0b5e64467395641036"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#a0c860218896fad0b5e64467395641036">Configuration</a> = <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html">ompl::multilevel::BundleSpaceGraph::Configuration</a></td></tr>
+<tr class="separator:a0c860218896fad0b5e64467395641036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3792a446f34b5b5de6aba811f6f6815"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#aa3792a446f34b5b5de6aba811f6f6815">QMP</a> = <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt; <a class="el" href="classompl_1_1multilevel_1_1QMPImpl.html">QMPImpl</a> &gt;</td></tr>
+<tr class="memdesc:aa3792a446f34b5b5de6aba811f6f6815"><td class="mdescLeft">&#160;</td><td class="mdescRight">[Q]uotient space road[M]ap [P]lanner (QMP) Algorithm  <a href="namespaceompl_1_1multilevel.html#aa3792a446f34b5b5de6aba811f6f6815">More...</a><br /></td></tr>
+<tr class="separator:aa3792a446f34b5b5de6aba811f6f6815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8152ed417a2534f79366adc5cf97a091"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#a8152ed417a2534f79366adc5cf97a091">QMPStar</a> = <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt; <a class="el" href="classompl_1_1multilevel_1_1QMPStarImpl.html">QMPStarImpl</a> &gt;</td></tr>
+<tr class="memdesc:a8152ed417a2534f79366adc5cf97a091"><td class="mdescLeft">&#160;</td><td class="mdescRight">[Q]uotient space road[M]ap [P]lanner Star (QMP*) Algorithm  <a href="namespaceompl_1_1multilevel.html#a8152ed417a2534f79366adc5cf97a091">More...</a><br /></td></tr>
+<tr class="separator:a8152ed417a2534f79366adc5cf97a091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa51d0bfae59033012293e9b95991753b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#aa51d0bfae59033012293e9b95991753b">QRRT</a> = <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt; <a class="el" href="classompl_1_1multilevel_1_1QRRTImpl.html">QRRTImpl</a> &gt;</td></tr>
+<tr class="memdesc:aa51d0bfae59033012293e9b95991753b"><td class="mdescLeft">&#160;</td><td class="mdescRight">[Q]uotient space [R]apidly exploring [R]andom [T]rees (QRRT) Algorithm  <a href="namespaceompl_1_1multilevel.html#aa51d0bfae59033012293e9b95991753b">More...</a><br /></td></tr>
+<tr class="separator:aa51d0bfae59033012293e9b95991753b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a03b7d7dee8ba294f101af9bf0efec4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#a0a03b7d7dee8ba294f101af9bf0efec4">QRRTStar</a> = <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt; <a class="el" href="classompl_1_1multilevel_1_1QRRTStarImpl.html">QRRTStarImpl</a> &gt;</td></tr>
+<tr class="memdesc:a0a03b7d7dee8ba294f101af9bf0efec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">[Q]uotient space [R]apidly exploring [R]andom [T]rees Star (QRRT*) Algorithm  <a href="namespaceompl_1_1multilevel.html#a0a03b7d7dee8ba294f101af9bf0efec4">More...</a><br /></td></tr>
+<tr class="separator:a0a03b7d7dee8ba294f101af9bf0efec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a92d57ad69ee8795a03aa3c607310ef47"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>FindSectionType</b> { <b>NONE</b> = 0
+, <b>SIDE_STEP</b> = 1
+, <b>PATTERN_DANCE</b> = 2
+ }</td></tr>
+<tr class="separator:a92d57ad69ee8795a03aa3c607310ef47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe2958ee2827065c44ef06bab5c538e7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7">ProjectionType</a> { <br />
+&#160;&#160;<a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7ad1ef8e840194f7199366a2f47a55cc9f">PROJECTION_NONE</a> = 0
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a4f1a5b380278135d4f4e28ae943b630e">PROJECTION_EMPTY_SET</a> = 1
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a8a63aa374c80be1f936f478778c30361">PROJECTION_IDENTITY</a> = 2
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7aea5810fa645da3920b04906ca5ccc468">PROJECTION_CONSTRAINED_RELAXATION</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7afb49a35373c43b20d2f2e1a2384852d2">PROJECTION_RN_RM</a> = 4
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a3e6dda089d772ea7d655f0944a8afd53">PROJECTION_SE2_R2</a> = 5
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7acfc77a270a89a89fcc00d4bb73dac940">PROJECTION_SE2RN_R2</a> = 6
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7acd08c29b7b02900cbcf2e48245354bb5">PROJECTION_SE2RN_SE2</a> = 7
+, <br />
+&#160;&#160;<a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a5d4c5732769731f3ff3053c4401f6d10">PROJECTION_SE2RN_SE2RM</a> = 8
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a79844a5097ccb62c7f079dc7d557d217">PROJECTION_SO2RN_SO2</a> = 9
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7aec328fda12edc3eed9954804c6b83f57">PROJECTION_SO2RN_SO2RM</a> = 10
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7ae02d6d1fb5741d6c9b32ce3ad46c70e7">PROJECTION_SE3_R3</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7afcd3c0c281aae4e4fd0ac50532a45d7f">PROJECTION_SE3RN_R3</a> = 12
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7af3722a82d7aefa1dbbcad5006e7ec0d4">PROJECTION_SE3RN_SE3</a> = 13
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a52b35427ce187a2423ccf91b31130abb">PROJECTION_SE3RN_SE3RM</a> = 14
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a1fe2b3b1d0fc22d20afd3b6e9ce49ade">PROJECTION_SO3RN_SO3</a> = 15
+, <br />
+&#160;&#160;<a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a86e618ff409b30a7f823b6b74d93a8ae">PROJECTION_SO3RN_SO3RM</a> = 16
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a09434f441459f56d3aa1ddae418a872b">PROJECTION_RNSO2_RN</a> = 17
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7a2edcaed461c4e54123793c28ec5c9f11">PROJECTION_SO2N_SO2M</a> = 18
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7abbbb351fe43b2ba0281f0718e55b3fbd">PROJECTION_TASK_SPACE</a> = 19
+, <br />
+&#160;&#160;<a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7aa9ad1cdd0e3ddf9a47df0889374e15ec">PROJECTION_COMPOUND</a> = -2
+, <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7af5c398acc41358906843a5dc39b87c89">PROJECTION_UNKNOWN</a> = -1
+<br />
+ }</td></tr>
+<tr class="separator:afe2958ee2827065c44ef06bab5c538e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a614401b9e291af604ee5a19ee2f1fb18"><td class="memItemLeft" align="right" valign="top"><a id="a614401b9e291af604ee5a19ee2f1fb18" name="a614401b9e291af604ee5a19ee2f1fb18"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>OMPL_CLASS_FORWARD</b> (<a class="el" href="classompl_1_1multilevel_1_1Projection.html">Projection</a>)</td></tr>
+<tr class="separator:a614401b9e291af604ee5a19ee2f1fb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a0e4c79670b4e2bbd961a2417b3c4c"><td class="memItemLeft" align="right" valign="top"><a id="a13a0e4c79670b4e2bbd961a2417b3c4c" name="a13a0e4c79670b4e2bbd961a2417b3c4c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>OMPL_CLASS_FORWARD</b> (<a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a>)</td></tr>
+<tr class="separator:a13a0e4c79670b4e2bbd961a2417b3c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b69f561a21dd2c160b770368a770af"><td class="memItemLeft" align="right" valign="top"><a id="ae0b69f561a21dd2c160b770368a770af" name="ae0b69f561a21dd2c160b770368a770af"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>OMPL_CLASS_FORWARD</b> (<a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html">PathRestriction</a>)</td></tr>
+<tr class="separator:ae0b69f561a21dd2c160b770368a770af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2293d35502f0cc4359a2e72ceb77aee2"><td class="memItemLeft" align="right" valign="top"><a id="a2293d35502f0cc4359a2e72ceb77aee2" name="a2293d35502f0cc4359a2e72ceb77aee2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>OMPL_CLASS_FORWARD</b> (<a class="el" href="classompl_1_1multilevel_1_1FiberedProjection.html">FiberedProjection</a>)</td></tr>
+<tr class="separator:a2293d35502f0cc4359a2e72ceb77aee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8a5c8c1ad3cd9b93988399436dfb38"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#afd8a5c8c1ad3cd9b93988399436dfb38">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classompl_1_1multilevel_1_1Head.html">Head</a> &amp;h)</td></tr>
+<tr class="separator:afd8a5c8c1ad3cd9b93988399436dfb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3f1997fd131fb6eb5ea2753d15d95c"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#aae3f1997fd131fb6eb5ea2753d15d95c">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html">PathRestriction</a> &amp;r)</td></tr>
+<tr class="separator:aae3f1997fd131fb6eb5ea2753d15d95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9cf676ab6145fb4887693bcaee1bb7"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#a9a9cf676ab6145fb4887693bcaee1bb7">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classompl_1_1multilevel_1_1PathSection.html">PathSection</a> &amp;s)</td></tr>
+<tr class="separator:a9a9cf676ab6145fb4887693bcaee1bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c8e31b2313b61ff5ca39f6f7b2a149b"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#a9c8e31b2313b61ff5ca39f6f7b2a149b">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a> &amp;bundleSpace)</td></tr>
+<tr class="separator:a9c8e31b2313b61ff5ca39f6f7b2a149b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1088f80fb06f46b6970c9735c0ac35"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceompl_1_1multilevel.html#a1c1088f80fb06f46b6970c9735c0ac35">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classompl_1_1multilevel_1_1Projection.html">Projection</a> &amp;projection)</td></tr>
+<tr class="separator:a1c1088f80fb06f46b6970c9735c0ac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c0b3f0289b81949de0070670e1fb6fa"><td class="memItemLeft" align="right" valign="top"><a id="a3c0b3f0289b81949de0070670e1fb6fa" name="a3c0b3f0289b81949de0070670e1fb6fa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>OMPL_CLASS_FORWARD</b> (PathGeometric)</td></tr>
+<tr class="separator:a3c0b3f0289b81949de0070670e1fb6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >This namespace contains datastructures and planners to exploit multilevel abstractions, which you have to specify using a sequence of SpaceInformationPtr (each with their own StateValidityChecker). </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a0c860218896fad0b5e64467395641036" name="a0c860218896fad0b5e64467395641036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c860218896fad0b5e64467395641036">&#9670;&nbsp;</a></span>Configuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html">ompl::multilevel::BundleSpaceGraph::Configuration</a> <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html">ompl::multilevel::Configuration</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="FindSection_8h_source.html#l00074">74</a> of file <a class="el" href="FindSection_8h_source.html">FindSection.h</a>.</p>
+
+</div>
+</div>
+<a id="aa3792a446f34b5b5de6aba811f6f6815" name="aa3792a446f34b5b5de6aba811f6f6815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3792a446f34b5b5de6aba811f6f6815">&#9670;&nbsp;</a></span>QMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceompl_1_1multilevel.html#aa3792a446f34b5b5de6aba811f6f6815">ompl::multilevel::QMP</a> = typedef <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt;<a class="el" href="classompl_1_1multilevel_1_1QMPImpl.html">QMPImpl</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[Q]uotient space road[M]ap [P]lanner (QMP) Algorithm </p>
+<p ><a class="anchor" id="QMP"></a> </p><dl class="section user"><dt>Short description</dt><dd>The Quotient-space roadMap Planner (QMP) is a multi-query, probabilistically complete roadmap planner which generalizes PRM to bundle spaces.</dd></dl>
+<dl class="section user"><dt>External documentation</dt><dd>A. Orthey, A. Escande and E. Yoshida, Quotient-Space Motion Planning, in <em>International Conference on Intelligent Robots and Systems</em>, 2018, <a href="https://arxiv.org/abs/1807.09468">[PDF]</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="QMP_8h_source.html#l00064">64</a> of file <a class="el" href="QMP_8h_source.html">QMP.h</a>.</p>
+
+</div>
+</div>
+<a id="a8152ed417a2534f79366adc5cf97a091" name="a8152ed417a2534f79366adc5cf97a091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8152ed417a2534f79366adc5cf97a091">&#9670;&nbsp;</a></span>QMPStar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceompl_1_1multilevel.html#a8152ed417a2534f79366adc5cf97a091">ompl::multilevel::QMPStar</a> = typedef <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt;<a class="el" href="classompl_1_1multilevel_1_1QMPStarImpl.html">QMPStarImpl</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[Q]uotient space road[M]ap [P]lanner Star (QMP*) Algorithm </p>
+<p ><a class="anchor" id="QMPstar"></a> </p><dl class="section user"><dt>Short description</dt><dd>Quotient space roadMap Planner Star (QMP*) generalizes the PRM* algorithm to bundle spaces.</dd></dl>
+<dl class="section user"><dt>External documentation</dt><dd>Andreas Orthey and Sohaib Akbar and Marc Toussaint, Multilevel Motion Planning: A Fiber Bundle Formulation, in <em>arXiv:2007.09435 [cs.RO]</em>, 2020, <a href="https://arxiv.org/pdf/2007.09435.pdf">[PDF]</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="QMPStar_8h_source.html#l00061">61</a> of file <a class="el" href="QMPStar_8h_source.html">QMPStar.h</a>.</p>
+
+</div>
+</div>
+<a id="aa51d0bfae59033012293e9b95991753b" name="aa51d0bfae59033012293e9b95991753b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa51d0bfae59033012293e9b95991753b">&#9670;&nbsp;</a></span>QRRT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceompl_1_1multilevel.html#aa51d0bfae59033012293e9b95991753b">ompl::multilevel::QRRT</a> = typedef <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt;<a class="el" href="classompl_1_1multilevel_1_1QRRTImpl.html">QRRTImpl</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[Q]uotient space [R]apidly exploring [R]andom [T]rees (QRRT) Algorithm </p>
+<p ><a class="anchor" id="QRRT"></a> </p><dl class="section user"><dt>Short description</dt><dd>QRRT is a planner using different abstractions levels, each described by a quotient-space, and grows trees both sequentially and simultaneously on them. The growing of each tree is similar to the RRT algorithm, but it differs that (1) a tree is only started if there exists a solution on a lower-dimensional quotient-space, and (2) a sample is not drawn uniformly, but constraint to the tree of the lower-dimensional quotient-space. The algorithm stops if a planner terminate condition (ptc) is reached, or if a solution has been found on the last quotient-space, which is equivalent to the configuration space.</dd></dl>
+<dl class="section user"><dt>External documentation</dt><dd>A. Orthey and M. Toussaint, Rapidly-Exploring Quotient-Space Trees: Motion Planning using Sequential Simplifications, in <em>International Symposium of Robotics Research</em>, 2019, <a href="https://arxiv.org/abs/1906.01350">[PDF]</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="QRRT_8h_source.html#l00069">69</a> of file <a class="el" href="QRRT_8h_source.html">QRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a03b7d7dee8ba294f101af9bf0efec4" name="a0a03b7d7dee8ba294f101af9bf0efec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a03b7d7dee8ba294f101af9bf0efec4">&#9670;&nbsp;</a></span>QRRTStar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceompl_1_1multilevel.html#a0a03b7d7dee8ba294f101af9bf0efec4">ompl::multilevel::QRRTStar</a> = typedef <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a>&lt;<a class="el" href="classompl_1_1multilevel_1_1QRRTStarImpl.html">QRRTStarImpl</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>[Q]uotient space [R]apidly exploring [R]andom [T]rees Star (QRRT*) Algorithm </p>
+<p ><a class="anchor" id="QRRTstar"></a> </p><dl class="section user"><dt>Short description</dt><dd>QRRTstar is an almost-surely asymptotically optimal planners which generalizes RRTstar to multilevel abstractions, which we formulate using fiber bundle sequences.</dd></dl>
+<dl class="section user"><dt>External documentation</dt><dd>Andreas Orthey and Sohaib Akbar and Marc Toussaint, Multilevel Motion Planning: A Fiber Bundle Formulation, in <em>arXiv:2007.09435 [cs.RO]</em>, 2020, <a href="https://arxiv.org/pdf/2007.09435.pdf">[PDF]</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="QRRTStar_8h_source.html#l00064">64</a> of file <a class="el" href="QRRTStar_8h_source.html">QRRTStar.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a92d57ad69ee8795a03aa3c607310ef47" name="a92d57ad69ee8795a03aa3c607310ef47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d57ad69ee8795a03aa3c607310ef47">&#9670;&nbsp;</a></span>FindSectionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum ompl::multilevel::FindSectionType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="FindSectionTypes_8h_source.html#l00008">8</a> of file <a class="el" href="FindSectionTypes_8h_source.html">FindSectionTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="afe2958ee2827065c44ef06bab5c538e7" name="afe2958ee2827065c44ef06bab5c538e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe2958ee2827065c44ef06bab5c538e7">&#9670;&nbsp;</a></span>ProjectionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7">ompl::multilevel::ProjectionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7ad1ef8e840194f7199366a2f47a55cc9f" name="afe2958ee2827065c44ef06bab5c538e7ad1ef8e840194f7199366a2f47a55cc9f"></a>PROJECTION_NONE&#160;</td><td class="fielddoc"><p ><a class="el" href="classompl_1_1multilevel_1_1Projection__None.html">ompl::multilevel::Projection_None</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a4f1a5b380278135d4f4e28ae943b630e" name="afe2958ee2827065c44ef06bab5c538e7a4f1a5b380278135d4f4e28ae943b630e"></a>PROJECTION_EMPTY_SET&#160;</td><td class="fielddoc"><p ><a class="el" href="classompl_1_1multilevel_1_1Projection__EmptySet.html">ompl::multilevel::Projection_EmptySet</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a8a63aa374c80be1f936f478778c30361" name="afe2958ee2827065c44ef06bab5c538e7a8a63aa374c80be1f936f478778c30361"></a>PROJECTION_IDENTITY&#160;</td><td class="fielddoc"><p ><a class="el" href="classompl_1_1multilevel_1_1Projection__Identity.html">ompl::multilevel::Projection_Identity</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7aea5810fa645da3920b04906ca5ccc468" name="afe2958ee2827065c44ef06bab5c538e7aea5810fa645da3920b04906ca5ccc468"></a>PROJECTION_CONSTRAINED_RELAXATION&#160;</td><td class="fielddoc"><p ><a class="el" href="classompl_1_1multilevel_1_1Projection__Relaxation.html">ompl::multilevel::Projection_Relaxation</a> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7afb49a35373c43b20d2f2e1a2384852d2" name="afe2958ee2827065c44ef06bab5c538e7afb49a35373c43b20d2f2e1a2384852d2"></a>PROJECTION_RN_RM&#160;</td><td class="fielddoc"><p >RN \rightarrow RM, m &lt; n. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a3e6dda089d772ea7d655f0944a8afd53" name="afe2958ee2827065c44ef06bab5c538e7a3e6dda089d772ea7d655f0944a8afd53"></a>PROJECTION_SE2_R2&#160;</td><td class="fielddoc"><p >SE2 \rightarrow R2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7acfc77a270a89a89fcc00d4bb73dac940" name="afe2958ee2827065c44ef06bab5c538e7acfc77a270a89a89fcc00d4bb73dac940"></a>PROJECTION_SE2RN_R2&#160;</td><td class="fielddoc"><p >SE2RN \rightarrow R2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7acd08c29b7b02900cbcf2e48245354bb5" name="afe2958ee2827065c44ef06bab5c538e7acd08c29b7b02900cbcf2e48245354bb5"></a>PROJECTION_SE2RN_SE2&#160;</td><td class="fielddoc"><p >SE2RN \rightarrow SE2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a5d4c5732769731f3ff3053c4401f6d10" name="afe2958ee2827065c44ef06bab5c538e7a5d4c5732769731f3ff3053c4401f6d10"></a>PROJECTION_SE2RN_SE2RM&#160;</td><td class="fielddoc"><p >SE2RN \rightarrow SE2RM, m &lt; n. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a79844a5097ccb62c7f079dc7d557d217" name="afe2958ee2827065c44ef06bab5c538e7a79844a5097ccb62c7f079dc7d557d217"></a>PROJECTION_SO2RN_SO2&#160;</td><td class="fielddoc"><p >SO2RN \rightarrow SO2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7aec328fda12edc3eed9954804c6b83f57" name="afe2958ee2827065c44ef06bab5c538e7aec328fda12edc3eed9954804c6b83f57"></a>PROJECTION_SO2RN_SO2RM&#160;</td><td class="fielddoc"><p >SO2RN \rightarrow SO2RM, m &lt; n. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7ae02d6d1fb5741d6c9b32ce3ad46c70e7" name="afe2958ee2827065c44ef06bab5c538e7ae02d6d1fb5741d6c9b32ce3ad46c70e7"></a>PROJECTION_SE3_R3&#160;</td><td class="fielddoc"><p >SE3 \rightarrow R3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7afcd3c0c281aae4e4fd0ac50532a45d7f" name="afe2958ee2827065c44ef06bab5c538e7afcd3c0c281aae4e4fd0ac50532a45d7f"></a>PROJECTION_SE3RN_R3&#160;</td><td class="fielddoc"><p >SE3RN \rightarrow R3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7af3722a82d7aefa1dbbcad5006e7ec0d4" name="afe2958ee2827065c44ef06bab5c538e7af3722a82d7aefa1dbbcad5006e7ec0d4"></a>PROJECTION_SE3RN_SE3&#160;</td><td class="fielddoc"><p >SE3RN \rightarrow SE3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a52b35427ce187a2423ccf91b31130abb" name="afe2958ee2827065c44ef06bab5c538e7a52b35427ce187a2423ccf91b31130abb"></a>PROJECTION_SE3RN_SE3RM&#160;</td><td class="fielddoc"><p >SE3RN \rightarrow SE3RM, m &lt; n. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a1fe2b3b1d0fc22d20afd3b6e9ce49ade" name="afe2958ee2827065c44ef06bab5c538e7a1fe2b3b1d0fc22d20afd3b6e9ce49ade"></a>PROJECTION_SO3RN_SO3&#160;</td><td class="fielddoc"><p >SO3RN \rightarrow SO3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a86e618ff409b30a7f823b6b74d93a8ae" name="afe2958ee2827065c44ef06bab5c538e7a86e618ff409b30a7f823b6b74d93a8ae"></a>PROJECTION_SO3RN_SO3RM&#160;</td><td class="fielddoc"><p >SO3RN \rightarrow SO3RM, m &lt; n. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a09434f441459f56d3aa1ddae418a872b" name="afe2958ee2827065c44ef06bab5c538e7a09434f441459f56d3aa1ddae418a872b"></a>PROJECTION_RNSO2_RN&#160;</td><td class="fielddoc"><p >RNSO2 \rightarrow RN, n &gt; 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7a2edcaed461c4e54123793c28ec5c9f11" name="afe2958ee2827065c44ef06bab5c538e7a2edcaed461c4e54123793c28ec5c9f11"></a>PROJECTION_SO2N_SO2M&#160;</td><td class="fielddoc"><p >SO2N \rightarrow SO2M (N copies of SO2 onto M copies of SO2) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7abbbb351fe43b2ba0281f0718e55b3fbd" name="afe2958ee2827065c44ef06bab5c538e7abbbb351fe43b2ba0281f0718e55b3fbd"></a>PROJECTION_TASK_SPACE&#160;</td><td class="fielddoc"><p >X \rightarrow T (A mapping from state space X to a task space T) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7aa9ad1cdd0e3ddf9a47df0889374e15ec" name="afe2958ee2827065c44ef06bab5c538e7aa9ad1cdd0e3ddf9a47df0889374e15ec"></a>PROJECTION_COMPOUND&#160;</td><td class="fielddoc"><p >Compound projection. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afe2958ee2827065c44ef06bab5c538e7af5c398acc41358906843a5dc39b87c89" name="afe2958ee2827065c44ef06bab5c538e7af5c398acc41358906843a5dc39b87c89"></a>PROJECTION_UNKNOWN&#160;</td><td class="fielddoc"><p >Unknown projection. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionTypes_8h_source.html#l00046">46</a> of file <a class="el" href="ProjectionTypes_8h_source.html">ProjectionTypes.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a9c8e31b2313b61ff5ca39f6f7b2a149b" name="a9c8e31b2313b61ff5ca39f6f7b2a149b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c8e31b2313b61ff5ca39f6f7b2a149b">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; ompl::multilevel::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a> &amp;&#160;</td>
+          <td class="paramname"><em>bundleSpace</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BundleSpace_8cpp_source.html#l00478">478</a> of file <a class="el" href="BundleSpace_8cpp_source.html">BundleSpace.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afd8a5c8c1ad3cd9b93988399436dfb38" name="afd8a5c8c1ad3cd9b93988399436dfb38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8a5c8c1ad3cd9b93988399436dfb38">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; ompl::multilevel::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1Head.html">Head</a> &amp;&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Head_8cpp_source.html#l00275">275</a> of file <a class="el" href="Head_8cpp_source.html">Head.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aae3f1997fd131fb6eb5ea2753d15d95c" name="aae3f1997fd131fb6eb5ea2753d15d95c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae3f1997fd131fb6eb5ea2753d15d95c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; ompl::multilevel::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html">PathRestriction</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00245">245</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9a9cf676ab6145fb4887693bcaee1bb7" name="a9a9cf676ab6145fb4887693bcaee1bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a9cf676ab6145fb4887693bcaee1bb7">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; ompl::multilevel::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1PathSection.html">PathSection</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PathSection_8cpp_source.html#l00423">423</a> of file <a class="el" href="PathSection_8cpp_source.html">PathSection.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1c1088f80fb06f46b6970c9735c0ac35" name="a1c1088f80fb06f46b6970c9735c0ac35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1088f80fb06f46b6970c9735c0ac35">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; ompl::multilevel::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1Projection.html">Projection</a> &amp;&#160;</td>
+          <td class="paramname"><em>projection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Projection_8cpp_source.html#l00196">196</a> of file <a class="el" href="Projection_8cpp_source.html">Projection.cpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

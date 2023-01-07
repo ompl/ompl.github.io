@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl::ParameterExponentialDecay Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="classompl_1_1ParameterExponentialDecay.html">ParameterExponentialDecay</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classompl_1_1ParameterExponentialDecay-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::ParameterExponentialDecay Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="classompl_1_1ParameterExponentialDecay.html" title="ParameterExponentialDecay represents a smooth interpolation between two parameter values using an exp...">ParameterExponentialDecay</a> represents a smooth interpolation between two parameter values using an exponential decay as interpolation. This decay depends on a paramter lambda, which can be tuned to either converge slow or fast to valueTarget.  
+ <a href="classompl_1_1ParameterExponentialDecay.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ParameterExponentialDecay_8h_source.html">ompl/multilevel/datastructures/ParameterExponentialDecay.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ompl::ParameterExponentialDecay:</div>
+<div class="dyncontent">
+<div class="center"><img src="classompl_1_1ParameterExponentialDecay__inherit__graph.png" border="0" usemap="#aompl_1_1ParameterExponentialDecay_inherit__map" alt="Inheritance graph"/></div>
+<map name="aompl_1_1ParameterExponentialDecay_inherit__map" id="aompl_1_1ParameterExponentialDecay_inherit__map">
+<area shape="rect" title="ParameterExponentialDecay represents a smooth interpolation between two parameter values using an exp..." alt="" coords="5,80,192,121"/>
+<area shape="rect" href="classompl_1_1Parameter.html" title="Parameter represents a smooth interpolation between two parameter values, namely valueInit and valueT..." alt="" coords="39,5,158,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a2d5c1ffe15e650697dd4c5096a87fffa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1ParameterExponentialDecay.html#a2d5c1ffe15e650697dd4c5096a87fffa">ParameterExponentialDecay</a> (double lambda)</td></tr>
+<tr class="separator:a2d5c1ffe15e650697dd4c5096a87fffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88bc32c7c38e0734942ac8204a43f7cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1ParameterExponentialDecay.html#a88bc32c7c38e0734942ac8204a43f7cf">ParameterExponentialDecay</a> (double lambda, double valueInit)</td></tr>
+<tr class="separator:a88bc32c7c38e0734942ac8204a43f7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc41ac0e6faa458d3b803bf9fad19dc7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1ParameterExponentialDecay.html#acc41ac0e6faa458d3b803bf9fad19dc7">ParameterExponentialDecay</a> (double lambda, double valueInit, double valueTarget)</td></tr>
+<tr class="separator:acc41ac0e6faa458d3b803bf9fad19dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ddc6c9f587f98df4476d1e3a77918f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1ParameterExponentialDecay.html#a5ddc6c9f587f98df4476d1e3a77918f8">setLambda</a> (double lambda)</td></tr>
+<tr class="memdesc:a5ddc6c9f587f98df4476d1e3a77918f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set lambda decay parameter (default: 0.1)  <a href="classompl_1_1ParameterExponentialDecay.html#a5ddc6c9f587f98df4476d1e3a77918f8">More...</a><br /></td></tr>
+<tr class="separator:a5ddc6c9f587f98df4476d1e3a77918f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba2469647da04639942f8783a06e735"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1ParameterExponentialDecay.html#afba2469647da04639942f8783a06e735">operator()</a> (void)</td></tr>
+<tr class="memdesc:afba2469647da04639942f8783a06e735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate exponential decay at counter.  <a href="classompl_1_1ParameterExponentialDecay.html#afba2469647da04639942f8783a06e735">More...</a><br /></td></tr>
+<tr class="separator:afba2469647da04639942f8783a06e735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1Parameter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1Parameter')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1Parameter.html">ompl::Parameter</a></td></tr>
+<tr class="memitem:ad7096ac491a618eaa0d36d4d59f81360 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#ad7096ac491a618eaa0d36d4d59f81360">Parameter</a> (double valueInit)</td></tr>
+<tr class="separator:ad7096ac491a618eaa0d36d4d59f81360 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7595a8554fa3638166bcc491aef374 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#a7d7595a8554fa3638166bcc491aef374">Parameter</a> (double valueInit, double valueTarget)</td></tr>
+<tr class="separator:a7d7595a8554fa3638166bcc491aef374 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbd910418004040ff77cca315505dc7c inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#acbd910418004040ff77cca315505dc7c">setValueInit</a> (double valueInit)</td></tr>
+<tr class="memdesc:acbd910418004040ff77cca315505dc7c inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set initial value (default: 0.0)  <a href="classompl_1_1Parameter.html#acbd910418004040ff77cca315505dc7c">More...</a><br /></td></tr>
+<tr class="separator:acbd910418004040ff77cca315505dc7c inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84458c0d3628ca831792ef6b049ea560 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#a84458c0d3628ca831792ef6b049ea560">setValueTarget</a> (double valueTarget)</td></tr>
+<tr class="memdesc:a84458c0d3628ca831792ef6b049ea560 inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set target value (default: 1.0)  <a href="classompl_1_1Parameter.html#a84458c0d3628ca831792ef6b049ea560">More...</a><br /></td></tr>
+<tr class="separator:a84458c0d3628ca831792ef6b049ea560 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73503c02329d8a5206895e94015d47b3 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#a73503c02329d8a5206895e94015d47b3">setCounterInit</a> (unsigned long long counterInit)</td></tr>
+<tr class="memdesc:a73503c02329d8a5206895e94015d47b3 inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set counter init value (default: 0)  <a href="classompl_1_1Parameter.html#a73503c02329d8a5206895e94015d47b3">More...</a><br /></td></tr>
+<tr class="separator:a73503c02329d8a5206895e94015d47b3 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb15287e09be893f7a7a354f57510f2b inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#adb15287e09be893f7a7a354f57510f2b">setCounterTarget</a> (unsigned long long counterTarget)</td></tr>
+<tr class="memdesc:adb15287e09be893f7a7a354f57510f2b inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set counter target value (default: 100)  <a href="classompl_1_1Parameter.html#adb15287e09be893f7a7a354f57510f2b">More...</a><br /></td></tr>
+<tr class="separator:adb15287e09be893f7a7a354f57510f2b inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614fd0b911a2479425941bfa03efef8b inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#a614fd0b911a2479425941bfa03efef8b">getValueInit</a> ()</td></tr>
+<tr class="memdesc:a614fd0b911a2479425941bfa03efef8b inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get init value.  <a href="classompl_1_1Parameter.html#a614fd0b911a2479425941bfa03efef8b">More...</a><br /></td></tr>
+<tr class="separator:a614fd0b911a2479425941bfa03efef8b inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f36dc10d10cd90eface7b08c2f2be1 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#af4f36dc10d10cd90eface7b08c2f2be1">getValueTarget</a> ()</td></tr>
+<tr class="memdesc:af4f36dc10d10cd90eface7b08c2f2be1 inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get target value.  <a href="classompl_1_1Parameter.html#af4f36dc10d10cd90eface7b08c2f2be1">More...</a><br /></td></tr>
+<tr class="separator:af4f36dc10d10cd90eface7b08c2f2be1 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae369b196d761a695d96dea8eee67327e inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#ae369b196d761a695d96dea8eee67327e">getCounterInit</a> ()</td></tr>
+<tr class="memdesc:ae369b196d761a695d96dea8eee67327e inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get counter init value.  <a href="classompl_1_1Parameter.html#ae369b196d761a695d96dea8eee67327e">More...</a><br /></td></tr>
+<tr class="separator:ae369b196d761a695d96dea8eee67327e inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c5cdb7b98981f2764ea65a2b25c9e6 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#ac8c5cdb7b98981f2764ea65a2b25c9e6">getCounterTarget</a> ()</td></tr>
+<tr class="memdesc:ac8c5cdb7b98981f2764ea65a2b25c9e6 inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get counter target value.  <a href="classompl_1_1Parameter.html#ac8c5cdb7b98981f2764ea65a2b25c9e6">More...</a><br /></td></tr>
+<tr class="separator:ac8c5cdb7b98981f2764ea65a2b25c9e6 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205bb723d4d570ca6528155802cc3e1c inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#a205bb723d4d570ca6528155802cc3e1c">operator()</a> (void)</td></tr>
+<tr class="memdesc:a205bb723d4d570ca6528155802cc3e1c inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call parameter and increase counter.  <a href="classompl_1_1Parameter.html#a205bb723d4d570ca6528155802cc3e1c">More...</a><br /></td></tr>
+<tr class="separator:a205bb723d4d570ca6528155802cc3e1c inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a142cece37a16a60cf14614d3ed23188d inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#a142cece37a16a60cf14614d3ed23188d">reset</a> ()</td></tr>
+<tr class="memdesc:a142cece37a16a60cf14614d3ed23188d inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset counter to init counter.  <a href="classompl_1_1Parameter.html#a142cece37a16a60cf14614d3ed23188d">More...</a><br /></td></tr>
+<tr class="separator:a142cece37a16a60cf14614d3ed23188d inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb803162ea28e58d399805c7f44fd48 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#afeb803162ea28e58d399805c7f44fd48">getCounter</a> ()</td></tr>
+<tr class="memdesc:afeb803162ea28e58d399805c7f44fd48 inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current counter.  <a href="classompl_1_1Parameter.html#afeb803162ea28e58d399805c7f44fd48">More...</a><br /></td></tr>
+<tr class="separator:afeb803162ea28e58d399805c7f44fd48 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0fefc3386ddc64e52c6388f0bf72a8 inherit pub_methods_classompl_1_1Parameter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1Parameter.html#a4c0fefc3386ddc64e52c6388f0bf72a8">incrementCounter</a> ()</td></tr>
+<tr class="memdesc:a4c0fefc3386ddc64e52c6388f0bf72a8 inherit pub_methods_classompl_1_1Parameter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment counter.  <a href="classompl_1_1Parameter.html#a4c0fefc3386ddc64e52c6388f0bf72a8">More...</a><br /></td></tr>
+<tr class="separator:a4c0fefc3386ddc64e52c6388f0bf72a8 inherit pub_methods_classompl_1_1Parameter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p ><a class="el" href="classompl_1_1ParameterExponentialDecay.html" title="ParameterExponentialDecay represents a smooth interpolation between two parameter values using an exp...">ParameterExponentialDecay</a> represents a smooth interpolation between two parameter values using an exponential decay as interpolation. This decay depends on a paramter lambda, which can be tuned to either converge slow or fast to valueTarget. </p>
+
+<p class="definition">Definition at line <a class="el" href="ParameterExponentialDecay_8h_source.html#l00051">51</a> of file <a class="el" href="ParameterExponentialDecay_8h_source.html">ParameterExponentialDecay.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2d5c1ffe15e650697dd4c5096a87fffa" name="a2d5c1ffe15e650697dd4c5096a87fffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5c1ffe15e650697dd4c5096a87fffa">&#9670;&nbsp;</a></span>ParameterExponentialDecay() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::ParameterExponentialDecay::ParameterExponentialDecay </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lambda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ParameterExponentialDecay_8h_source.html#l00056">56</a> of file <a class="el" href="ParameterExponentialDecay_8h_source.html">ParameterExponentialDecay.h</a>.</p>
+
+</div>
+</div>
+<a id="a88bc32c7c38e0734942ac8204a43f7cf" name="a88bc32c7c38e0734942ac8204a43f7cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88bc32c7c38e0734942ac8204a43f7cf">&#9670;&nbsp;</a></span>ParameterExponentialDecay() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::ParameterExponentialDecay::ParameterExponentialDecay </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>valueInit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ParameterExponentialDecay_8h_source.html#l00061">61</a> of file <a class="el" href="ParameterExponentialDecay_8h_source.html">ParameterExponentialDecay.h</a>.</p>
+
+</div>
+</div>
+<a id="acc41ac0e6faa458d3b803bf9fad19dc7" name="acc41ac0e6faa458d3b803bf9fad19dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc41ac0e6faa458d3b803bf9fad19dc7">&#9670;&nbsp;</a></span>ParameterExponentialDecay() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::ParameterExponentialDecay::ParameterExponentialDecay </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>valueInit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>valueTarget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ParameterExponentialDecay_8h_source.html#l00066">66</a> of file <a class="el" href="ParameterExponentialDecay_8h_source.html">ParameterExponentialDecay.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afba2469647da04639942f8783a06e735" name="afba2469647da04639942f8783a06e735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba2469647da04639942f8783a06e735">&#9670;&nbsp;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::ParameterExponentialDecay::operator() </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluate exponential decay at counter. </p>
+
+<p class="definition">Definition at line <a class="el" href="ParameterExponentialDecay_8h_source.html#l00086">86</a> of file <a class="el" href="ParameterExponentialDecay_8h_source.html">ParameterExponentialDecay.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ddc6c9f587f98df4476d1e3a77918f8" name="a5ddc6c9f587f98df4476d1e3a77918f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ddc6c9f587f98df4476d1e3a77918f8">&#9670;&nbsp;</a></span>setLambda()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::ParameterExponentialDecay::setLambda </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lambda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set lambda decay parameter (default: 0.1) </p>
+
+<p class="definition">Definition at line <a class="el" href="ParameterExponentialDecay_8h_source.html#l00073">73</a> of file <a class="el" href="ParameterExponentialDecay_8h_source.html">ParameterExponentialDecay.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>ompl/multilevel/datastructures/<a class="el" href="ParameterExponentialDecay_8h_source.html">ParameterExponentialDecay.h</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

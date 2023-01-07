@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<tagfile doxygen_version="1.9.1">
+<tagfile doxygen_version="1.9.3">
   <compound kind="file">
     <name>Koules.cpp</name>
     <path>/Users/mmoll/omplapp/ompl/demos/Koules/</path>
@@ -99,1349 +99,9 @@
       <arglist>(const char *file, int line, LogLevel level, const char *m,...)</arglist>
     </member>
   </compound>
-  <compound kind="class">
-    <name>AppBase&lt; AppType::CONTROL &gt;</name>
-    <filename>classompl_1_1app_1_1AppBase.html</filename>
-    <base>ompl::geometric::SimpleSetup</base>
-    <base>ompl::app::RigidBodyGeometry</base>
-    <member kind="function">
-      <type>void</type>
-      <name>setup</name>
-      <anchorfile>classompl_1_1app_1_1AppBase.html</anchorfile>
-      <anchor>a8fb5fb05c9b2d0b6224888db32a1b6f6</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setOptimizationObjectiveAndThreshold</name>
-      <anchorfile>classompl_1_1app_1_1AppBase.html</anchorfile>
-      <anchor>a8d6e225163649e9dedf0b5543bcbc031</anchor>
-      <arglist>(const std::string &amp;objective, double threshold)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>AppBase&lt; AppType::GEOMETRIC &gt;</name>
-    <filename>classompl_1_1app_1_1AppBase.html</filename>
-    <base>ompl::geometric::SimpleSetup</base>
-    <base>ompl::app::RigidBodyGeometry</base>
-    <member kind="function">
-      <type>void</type>
-      <name>setup</name>
-      <anchorfile>classompl_1_1app_1_1AppBase.html</anchorfile>
-      <anchor>a8fb5fb05c9b2d0b6224888db32a1b6f6</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setOptimizationObjectiveAndThreshold</name>
-      <anchorfile>classompl_1_1app_1_1AppBase.html</anchorfile>
-      <anchor>a8d6e225163649e9dedf0b5543bcbc031</anchor>
-      <arglist>(const std::string &amp;objective, double threshold)</arglist>
-    </member>
-  </compound>
   <compound kind="struct">
     <name>AtlasOptions</name>
     <filename>structAtlasOptions.html</filename>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt; &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const aitstar::Edge &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; aitstar::Edge &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; aitstar::Edge &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; aitstar::Edge &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; aitstar::Edge &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt; &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; BiDirMotion *, BiDirMotionCompare &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const BiDirMotion * &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; BiDirMotion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; BiDirMotion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; BiDirMotion * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; BiDirMotion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>BiDirMotionCompare &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; CellX *, LessThanExternalCell &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const CellX * &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; CellX * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; CellX * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; CellX * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; CellX * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>LessThanExternalCell &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; CellX *, LessThanInternalCell &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const CellX * &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; CellX * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; CellX * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; CellX * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; CellX * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>LessThanInternalCell &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; KeyVertexPair, std::function&lt; bool(const KeyVertexPair &amp;, const KeyVertexPair &amp;)&gt; &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const KeyVertexPair &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; KeyVertexPair &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; KeyVertexPair &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; KeyVertexPair &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; KeyVertexPair &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::function&lt; bool(const KeyVertexPair &amp;, const KeyVertexPair &amp;)&gt; &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; Motion *, MotionCompare &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const Motion * &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; Motion * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>MotionCompare &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; ompl::control::PDST::Motion *, ompl::control::PDST::MotionCompare &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const ompl::control::PDST::Motion * &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; ompl::control::PDST::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; ompl::control::PDST::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; ompl::control::PDST::Motion * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; ompl::control::PDST::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::control::PDST::MotionCompare &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; ompl::geometric::PDST::Motion *, ompl::geometric::PDST::MotionCompare &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const ompl::geometric::PDST::Motion * &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::PDST::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::PDST::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::PDST::Motion * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::PDST::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::geometric::PDST::MotionCompare &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; ompl::geometric::RRTXstatic::Motion *, ompl::geometric::RRTXstatic::MotionCompare &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const ompl::geometric::RRTXstatic::Motion * &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::RRTXstatic::Motion * &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::geometric::RRTXstatic::MotionCompare &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>BinaryHeap&lt; SortKeyAndVertexPtrPair, EdgeComparisonFunction &gt;</name>
-    <filename>classompl_1_1BinaryHeap.html</filename>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ae2e2ef4ecd57edb2cd78e3c41a5a9dfe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Element *, void *)</type>
-      <name>EventBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a06e78b10045dc0bd8d8556c0dd95c961</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onAfterInsert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>adb5a517c064a3844a47cc873fddea796</anchor>
-      <arglist>(EventAfterInsert event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onBeforeRemove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5a6368ea8193cdbf545f8a57dbaf02f5</anchor>
-      <arglist>(EventBeforeRemove event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>addf7a2e9d0cc43dd05659686f58d695f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>top</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>pop</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a178e694e35e7864834d765a2819256f1</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a56848811174698cd9a907e1128e6ce02</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
-      <arglist>(const SortKeyAndVertexPtrPair &amp;data)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>insert</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a275aa4aab2088b38df1fa2fd2827fffe</anchor>
-      <arglist>(const std::vector&lt; SortKeyAndVertexPtrPair &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>buildFrom</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac8d1b64b5b7d50cd09380bfa14bbc45d</anchor>
-      <arglist>(const std::vector&lt; SortKeyAndVertexPtrPair &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuild</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>acb0b1a3d8a1f5e7852aec45bae1960dc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a8114dc53c4239fe0e199106386898ce3</anchor>
-      <arglist>(Element *element)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a442b00d357e3c2859c40169ed0817b92</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>af624f87ff25d2e31f08afb6b4c1b4fc4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ac7bc9e22fbcbad4ea5dfd20b34ef348f</anchor>
-      <arglist>(std::vector&lt; SortKeyAndVertexPtrPair &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>sort</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>ad782d92c652443841ebc310d778a22f0</anchor>
-      <arglist>(std::vector&lt; SortKeyAndVertexPtrPair &gt; &amp;list)</arglist>
-    </member>
-    <member kind="function">
-      <type>EdgeComparisonFunction &amp;</type>
-      <name>getComparisonOperator</name>
-      <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
-      <arglist>()</arglist>
-    </member>
   </compound>
   <compound kind="struct">
     <name>ConstrainedOptions</name>
@@ -1515,7 +175,7 @@
       <type>def</type>
       <name>jacobian</name>
       <anchorfile>classConstraintGeneration_1_1Constraint.html</anchorfile>
-      <anchor>a5bcee1c9ab76ffaaa5c4a97b1dacb9cd</anchor>
+      <anchor>ae875886f788fdf567f9f7adb9d4120c9</anchor>
       <arglist>(self)</arglist>
     </member>
   </compound>
@@ -1524,1859 +184,15 @@
     <filename>classConvexPolygon.html</filename>
   </compound>
   <compound kind="class">
-    <name>Discretization&lt; ompl::geometric::BKPIECE1::Motion &gt;</name>
-    <filename>classompl_1_1geometric_1_1Discretization.html</filename>
-    <member kind="typedef">
-      <type>GridB&lt; CellData *, OrderCellsByImportance &gt;</type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>af696d7d3f5d93dfc44975be68babdafe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid::Cell</type>
-      <name>Cell</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a86c80c67138c62e3da31dc5e42e0726b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid::Coord</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a2dac26349b7da7fe428522518dfea7dc</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename std::function&lt; void(ompl::geometric::BKPIECE1::Motion *)&gt;</type>
-      <name>FreeMotionFn</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>ae5b7df926fd3dc7f8af068808ca27f77</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setBorderFraction</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>aac6dfc7acc8db082a84b7bbdadb78e87</anchor>
-      <arglist>(double bp)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getBorderFraction</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a43a530e0a34a1d4ddb9b3534fbe6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>acfdbc5b059330490b55185dda00f0eb1</anchor>
-      <arglist>(unsigned int dim)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a43c29d951fd5206e08a33931b02c4ddc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a28df4ebd2c0d78eab8b4fc72c6f27d43</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>addMotion</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a6ac71e099d8a69dc6c2ee5ff1736a277</anchor>
-      <arglist>(ompl::geometric::BKPIECE1::Motion *motion, const Coord &amp;coord, double dist=0.0)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>selectMotion</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a8db183fa4a3231509336ffb7057805df</anchor>
-      <arglist>(ompl::geometric::BKPIECE1::Motion *&amp;smotion, Cell *&amp;scell)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Discretization&lt; ompl::geometric::KPIECE1::Motion &gt;</name>
-    <filename>classompl_1_1geometric_1_1Discretization.html</filename>
-    <member kind="typedef">
-      <type>GridB&lt; CellData *, OrderCellsByImportance &gt;</type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>af696d7d3f5d93dfc44975be68babdafe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid::Cell</type>
-      <name>Cell</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a86c80c67138c62e3da31dc5e42e0726b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid::Coord</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a2dac26349b7da7fe428522518dfea7dc</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename std::function&lt; void(ompl::geometric::KPIECE1::Motion *)&gt;</type>
-      <name>FreeMotionFn</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>ae5b7df926fd3dc7f8af068808ca27f77</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setBorderFraction</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>aac6dfc7acc8db082a84b7bbdadb78e87</anchor>
-      <arglist>(double bp)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getBorderFraction</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a43a530e0a34a1d4ddb9b3534fbe6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>acfdbc5b059330490b55185dda00f0eb1</anchor>
-      <arglist>(unsigned int dim)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a43c29d951fd5206e08a33931b02c4ddc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a28df4ebd2c0d78eab8b4fc72c6f27d43</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>addMotion</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a6ac71e099d8a69dc6c2ee5ff1736a277</anchor>
-      <arglist>(ompl::geometric::KPIECE1::Motion *motion, const Coord &amp;coord, double dist=0.0)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>selectMotion</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a8db183fa4a3231509336ffb7057805df</anchor>
-      <arglist>(ompl::geometric::KPIECE1::Motion *&amp;smotion, Cell *&amp;scell)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Discretization&lt; ompl::geometric::LBKPIECE1::Motion &gt;</name>
-    <filename>classompl_1_1geometric_1_1Discretization.html</filename>
-    <member kind="typedef">
-      <type>GridB&lt; CellData *, OrderCellsByImportance &gt;</type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>af696d7d3f5d93dfc44975be68babdafe</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid::Cell</type>
-      <name>Cell</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a86c80c67138c62e3da31dc5e42e0726b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid::Coord</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a2dac26349b7da7fe428522518dfea7dc</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename std::function&lt; void(ompl::geometric::LBKPIECE1::Motion *)&gt;</type>
-      <name>FreeMotionFn</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>ae5b7df926fd3dc7f8af068808ca27f77</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setBorderFraction</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>aac6dfc7acc8db082a84b7bbdadb78e87</anchor>
-      <arglist>(double bp)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getBorderFraction</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a43a530e0a34a1d4ddb9b3534fbe6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>acfdbc5b059330490b55185dda00f0eb1</anchor>
-      <arglist>(unsigned int dim)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a43c29d951fd5206e08a33931b02c4ddc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a28df4ebd2c0d78eab8b4fc72c6f27d43</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>addMotion</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a6ac71e099d8a69dc6c2ee5ff1736a277</anchor>
-      <arglist>(ompl::geometric::LBKPIECE1::Motion *motion, const Coord &amp;coord, double dist=0.0)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>selectMotion</name>
-      <anchorfile>classompl_1_1geometric_1_1Discretization.html</anchorfile>
-      <anchor>a8db183fa4a3231509336ffb7057805df</anchor>
-      <arglist>(ompl::geometric::LBKPIECE1::Motion *&amp;smotion, Cell *&amp;scell)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>GreedyKCenters&lt; NNElement &gt;</name>
-    <filename>classompl_1_1GreedyKCenters.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const NNElement &amp;, const NNElement &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a4efe9e669d852a90ece40527191d72bd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>Eigen::MatrixXd</type>
-      <name>Matrix</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>afaab15f295d63a4546a552647fa23c1e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>aa46b77a69db20e4c411bbb85956eab21</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a9b9bcd71e87170f731f9e48b8b6a055e</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>kcenters</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>ad8e0e7c79e810f3b3827dd8a5a8eeb01</anchor>
-      <arglist>(const std::vector&lt; NNElement &gt; &amp;data, unsigned int k, std::vector&lt; unsigned int &gt; &amp;centers, Matrix &amp;dists)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a4c617a02bb7489b3d1e32261f099f113</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>RNG</type>
-      <name>rng_</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a9f9f1e9cacc57cc0a7c1526406cc94dd</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>GreedyKCenters&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;</name>
-    <filename>classompl_1_1GreedyKCenters.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;, const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a4efe9e669d852a90ece40527191d72bd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>Eigen::MatrixXd</type>
-      <name>Matrix</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>afaab15f295d63a4546a552647fa23c1e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>aa46b77a69db20e4c411bbb85956eab21</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a9b9bcd71e87170f731f9e48b8b6a055e</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>kcenters</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>ad8e0e7c79e810f3b3827dd8a5a8eeb01</anchor>
-      <arglist>(const std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;data, unsigned int k, std::vector&lt; unsigned int &gt; &amp;centers, Matrix &amp;dists)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a4c617a02bb7489b3d1e32261f099f113</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>RNG</type>
-      <name>rng_</name>
-      <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a9f9f1e9cacc57cc0a7c1526406cc94dd</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Grid&lt; CellData * &gt;</name>
-    <filename>classompl_1_1Grid.html</filename>
-    <member kind="typedef">
-      <type>Eigen::VectorXi</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; Cell * &gt;</type>
-      <name>CellArray</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae6b4ce01d4402b29c33d33079994d378</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename CoordHash::const_iterator</type>
-      <name>iterator</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac31b9031290d6185aa15667a56511208</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa11294d2cb47b1e55bacd101b131d3c1</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>acace53abca008ae9210248cb2d54739d</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa6a94d0ecdc11fd7e60d72b24b9d1930</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a58a9f8b580a3caeed96c37dd2e5fffe4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a118373bcfe70886449d94782b0a7c783</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
+    <name>HyperCubeValidityChecker</name>
+    <filename>classHyperCubeValidityChecker.html</filename>
+    <base>ompl::base::StateValidityChecker</base>
     <member kind="function">
       <type>bool</type>
-      <name>has</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a34348b5cb9c17d8b4f2f3e762b7fa4a2</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>getCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab1a51a1006f8529095f12b412a19e859</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a20d361c71a9fd21a5d49f6330fc75367</anchor>
-      <arglist>(const Cell *cell, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a18a4496fde6782960c13a5f4c7671bae</anchor>
-      <arglist>(const Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>abfc9b5bfe3d96b5be1d0388b611cbcea</anchor>
-      <arglist>(Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; std::vector&lt; Cell * &gt; &gt;</type>
-      <name>components</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb363fa290bdac1d2812b0d068e985d4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual Cell *</type>
-      <name>createCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a1d0e09b5912dff94caa57aee681053cf</anchor>
-      <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a72386f9ffd43e98d25aa38b224541564</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac72fa046a57332c7627126e8d84fb1dc</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>destroyCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4d15cc71ece573822af0881fda220f65</anchor>
-      <arglist>(Cell *cell) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb473084ca2688e73a4a6b09ce8dd45d</anchor>
-      <arglist>(std::vector&lt; CellData * &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCoordinates</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a6d77bf0b3307bdf01a38deee198d5c3c</anchor>
-      <arglist>(std::vector&lt; Coord * &gt; &amp;coords) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCells</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a94f47f15e9ef9b3aeec5e16d6b9be8c1</anchor>
-      <arglist>(CellArray &amp;cells) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printCoord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2bec8613da9389cb118cfcd1f1015fb4</anchor>
-      <arglist>(Coord &amp;coord, std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2acee7e9fa181e1ca1335dd8a0be80c0</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a80e21fbfab2a491c65a93a1e909523bb</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>status</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a3f294fbd3352504a31c990ff2b2a43af</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>begin</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae4d082867db0a9a1f5d8d030c5f622ba</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>end</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab89fb5bcb59eeb4c2bfbeb65c9a740ab</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>std::unordered_map&lt; Coord *, Cell *, HashFunCoordPtr, EqualCoordPtr &gt;</type>
-      <name>CoordHash</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a66a7f0446cfe8842b4e642b552a8b5a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab5f51d3c4ae3f021f17d8435643cd3d0</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>dimension_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8dfdf767f8c14a15fddbdb4bc1e993f1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxNeighbors_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a826614263d30ffcc37924cecfef25471</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>CoordHash</type>
-      <name>hash_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afbf8751613b70340e9e287d3bb53650d</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Grid&lt; ompl::control::EST::MotionInfo &gt;</name>
-    <filename>classompl_1_1Grid.html</filename>
-    <member kind="typedef">
-      <type>Eigen::VectorXi</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; Cell * &gt;</type>
-      <name>CellArray</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae6b4ce01d4402b29c33d33079994d378</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename CoordHash::const_iterator</type>
-      <name>iterator</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac31b9031290d6185aa15667a56511208</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa11294d2cb47b1e55bacd101b131d3c1</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>acace53abca008ae9210248cb2d54739d</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa6a94d0ecdc11fd7e60d72b24b9d1930</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a58a9f8b580a3caeed96c37dd2e5fffe4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a118373bcfe70886449d94782b0a7c783</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>has</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a34348b5cb9c17d8b4f2f3e762b7fa4a2</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>getCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab1a51a1006f8529095f12b412a19e859</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a20d361c71a9fd21a5d49f6330fc75367</anchor>
-      <arglist>(const Cell *cell, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a18a4496fde6782960c13a5f4c7671bae</anchor>
-      <arglist>(const Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>abfc9b5bfe3d96b5be1d0388b611cbcea</anchor>
-      <arglist>(Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; std::vector&lt; Cell * &gt; &gt;</type>
-      <name>components</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb363fa290bdac1d2812b0d068e985d4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual Cell *</type>
-      <name>createCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a1d0e09b5912dff94caa57aee681053cf</anchor>
-      <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a72386f9ffd43e98d25aa38b224541564</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac72fa046a57332c7627126e8d84fb1dc</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>destroyCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4d15cc71ece573822af0881fda220f65</anchor>
-      <arglist>(Cell *cell) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb473084ca2688e73a4a6b09ce8dd45d</anchor>
-      <arglist>(std::vector&lt; ompl::control::EST::MotionInfo &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCoordinates</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a6d77bf0b3307bdf01a38deee198d5c3c</anchor>
-      <arglist>(std::vector&lt; Coord * &gt; &amp;coords) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCells</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a94f47f15e9ef9b3aeec5e16d6b9be8c1</anchor>
-      <arglist>(CellArray &amp;cells) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printCoord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2bec8613da9389cb118cfcd1f1015fb4</anchor>
-      <arglist>(Coord &amp;coord, std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2acee7e9fa181e1ca1335dd8a0be80c0</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a80e21fbfab2a491c65a93a1e909523bb</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>status</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a3f294fbd3352504a31c990ff2b2a43af</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>begin</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae4d082867db0a9a1f5d8d030c5f622ba</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>end</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab89fb5bcb59eeb4c2bfbeb65c9a740ab</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>std::unordered_map&lt; Coord *, Cell *, HashFunCoordPtr, EqualCoordPtr &gt;</type>
-      <name>CoordHash</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a66a7f0446cfe8842b4e642b552a8b5a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab5f51d3c4ae3f021f17d8435643cd3d0</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>dimension_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8dfdf767f8c14a15fddbdb4bc1e993f1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxNeighbors_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a826614263d30ffcc37924cecfef25471</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>CoordHash</type>
-      <name>hash_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afbf8751613b70340e9e287d3bb53650d</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Grid&lt; ompl::geometric::ProjEST::MotionInfo &gt;</name>
-    <filename>classompl_1_1Grid.html</filename>
-    <member kind="typedef">
-      <type>Eigen::VectorXi</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; Cell * &gt;</type>
-      <name>CellArray</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae6b4ce01d4402b29c33d33079994d378</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename CoordHash::const_iterator</type>
-      <name>iterator</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac31b9031290d6185aa15667a56511208</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa11294d2cb47b1e55bacd101b131d3c1</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>acace53abca008ae9210248cb2d54739d</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa6a94d0ecdc11fd7e60d72b24b9d1930</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a58a9f8b580a3caeed96c37dd2e5fffe4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a118373bcfe70886449d94782b0a7c783</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>has</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a34348b5cb9c17d8b4f2f3e762b7fa4a2</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>getCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab1a51a1006f8529095f12b412a19e859</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a20d361c71a9fd21a5d49f6330fc75367</anchor>
-      <arglist>(const Cell *cell, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a18a4496fde6782960c13a5f4c7671bae</anchor>
-      <arglist>(const Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>abfc9b5bfe3d96b5be1d0388b611cbcea</anchor>
-      <arglist>(Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; std::vector&lt; Cell * &gt; &gt;</type>
-      <name>components</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb363fa290bdac1d2812b0d068e985d4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual Cell *</type>
-      <name>createCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a1d0e09b5912dff94caa57aee681053cf</anchor>
-      <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a72386f9ffd43e98d25aa38b224541564</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac72fa046a57332c7627126e8d84fb1dc</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>destroyCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4d15cc71ece573822af0881fda220f65</anchor>
-      <arglist>(Cell *cell) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb473084ca2688e73a4a6b09ce8dd45d</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::ProjEST::MotionInfo &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCoordinates</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a6d77bf0b3307bdf01a38deee198d5c3c</anchor>
-      <arglist>(std::vector&lt; Coord * &gt; &amp;coords) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCells</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a94f47f15e9ef9b3aeec5e16d6b9be8c1</anchor>
-      <arglist>(CellArray &amp;cells) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printCoord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2bec8613da9389cb118cfcd1f1015fb4</anchor>
-      <arglist>(Coord &amp;coord, std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2acee7e9fa181e1ca1335dd8a0be80c0</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a80e21fbfab2a491c65a93a1e909523bb</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>status</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a3f294fbd3352504a31c990ff2b2a43af</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>begin</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae4d082867db0a9a1f5d8d030c5f622ba</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>end</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab89fb5bcb59eeb4c2bfbeb65c9a740ab</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>std::unordered_map&lt; Coord *, Cell *, HashFunCoordPtr, EqualCoordPtr &gt;</type>
-      <name>CoordHash</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a66a7f0446cfe8842b4e642b552a8b5a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab5f51d3c4ae3f021f17d8435643cd3d0</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>dimension_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8dfdf767f8c14a15fddbdb4bc1e993f1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxNeighbors_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a826614263d30ffcc37924cecfef25471</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>CoordHash</type>
-      <name>hash_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afbf8751613b70340e9e287d3bb53650d</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Grid&lt; ompl::geometric::pSBL::MotionInfo &gt;</name>
-    <filename>classompl_1_1Grid.html</filename>
-    <member kind="typedef">
-      <type>Eigen::VectorXi</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; Cell * &gt;</type>
-      <name>CellArray</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae6b4ce01d4402b29c33d33079994d378</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename CoordHash::const_iterator</type>
-      <name>iterator</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac31b9031290d6185aa15667a56511208</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa11294d2cb47b1e55bacd101b131d3c1</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>acace53abca008ae9210248cb2d54739d</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa6a94d0ecdc11fd7e60d72b24b9d1930</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a58a9f8b580a3caeed96c37dd2e5fffe4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a118373bcfe70886449d94782b0a7c783</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>has</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a34348b5cb9c17d8b4f2f3e762b7fa4a2</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>getCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab1a51a1006f8529095f12b412a19e859</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a20d361c71a9fd21a5d49f6330fc75367</anchor>
-      <arglist>(const Cell *cell, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a18a4496fde6782960c13a5f4c7671bae</anchor>
-      <arglist>(const Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>abfc9b5bfe3d96b5be1d0388b611cbcea</anchor>
-      <arglist>(Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; std::vector&lt; Cell * &gt; &gt;</type>
-      <name>components</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb363fa290bdac1d2812b0d068e985d4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual Cell *</type>
-      <name>createCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a1d0e09b5912dff94caa57aee681053cf</anchor>
-      <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a72386f9ffd43e98d25aa38b224541564</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac72fa046a57332c7627126e8d84fb1dc</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>destroyCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4d15cc71ece573822af0881fda220f65</anchor>
-      <arglist>(Cell *cell) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb473084ca2688e73a4a6b09ce8dd45d</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::pSBL::MotionInfo &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCoordinates</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a6d77bf0b3307bdf01a38deee198d5c3c</anchor>
-      <arglist>(std::vector&lt; Coord * &gt; &amp;coords) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCells</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a94f47f15e9ef9b3aeec5e16d6b9be8c1</anchor>
-      <arglist>(CellArray &amp;cells) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printCoord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2bec8613da9389cb118cfcd1f1015fb4</anchor>
-      <arglist>(Coord &amp;coord, std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2acee7e9fa181e1ca1335dd8a0be80c0</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a80e21fbfab2a491c65a93a1e909523bb</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>status</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a3f294fbd3352504a31c990ff2b2a43af</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>begin</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae4d082867db0a9a1f5d8d030c5f622ba</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>end</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab89fb5bcb59eeb4c2bfbeb65c9a740ab</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>std::unordered_map&lt; Coord *, Cell *, HashFunCoordPtr, EqualCoordPtr &gt;</type>
-      <name>CoordHash</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a66a7f0446cfe8842b4e642b552a8b5a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab5f51d3c4ae3f021f17d8435643cd3d0</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>dimension_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8dfdf767f8c14a15fddbdb4bc1e993f1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxNeighbors_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a826614263d30ffcc37924cecfef25471</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>CoordHash</type>
-      <name>hash_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afbf8751613b70340e9e287d3bb53650d</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>Grid&lt; ompl::geometric::SBL::MotionInfo &gt;</name>
-    <filename>classompl_1_1Grid.html</filename>
-    <member kind="typedef">
-      <type>Eigen::VectorXi</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4dfe6d93f717a9413f75ff0b661baee0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; Cell * &gt;</type>
-      <name>CellArray</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae6b4ce01d4402b29c33d33079994d378</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename CoordHash::const_iterator</type>
-      <name>iterator</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac31b9031290d6185aa15667a56511208</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa11294d2cb47b1e55bacd101b131d3c1</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual</type>
-      <name>~Grid</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>acace53abca008ae9210248cb2d54739d</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>aa6a94d0ecdc11fd7e60d72b24b9d1930</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a58a9f8b580a3caeed96c37dd2e5fffe4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a118373bcfe70886449d94782b0a7c783</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>has</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a34348b5cb9c17d8b4f2f3e762b7fa4a2</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>getCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab1a51a1006f8529095f12b412a19e859</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a20d361c71a9fd21a5d49f6330fc75367</anchor>
-      <arglist>(const Cell *cell, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a18a4496fde6782960c13a5f4c7671bae</anchor>
-      <arglist>(const Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>abfc9b5bfe3d96b5be1d0388b611cbcea</anchor>
-      <arglist>(Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; std::vector&lt; Cell * &gt; &gt;</type>
-      <name>components</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb363fa290bdac1d2812b0d068e985d4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual Cell *</type>
-      <name>createCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a1d0e09b5912dff94caa57aee681053cf</anchor>
-      <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a72386f9ffd43e98d25aa38b224541564</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ac72fa046a57332c7627126e8d84fb1dc</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>destroyCell</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a4d15cc71ece573822af0881fda220f65</anchor>
-      <arglist>(Cell *cell) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getContent</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb473084ca2688e73a4a6b09ce8dd45d</anchor>
-      <arglist>(std::vector&lt; ompl::geometric::SBL::MotionInfo &gt; &amp;content) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCoordinates</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a6d77bf0b3307bdf01a38deee198d5c3c</anchor>
-      <arglist>(std::vector&lt; Coord * &gt; &amp;coords) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCells</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a94f47f15e9ef9b3aeec5e16d6b9be8c1</anchor>
-      <arglist>(CellArray &amp;cells) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printCoord</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2bec8613da9389cb118cfcd1f1015fb4</anchor>
-      <arglist>(Coord &amp;coord, std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a2acee7e9fa181e1ca1335dd8a0be80c0</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a80e21fbfab2a491c65a93a1e909523bb</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>status</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a3f294fbd3352504a31c990ff2b2a43af</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>begin</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ae4d082867db0a9a1f5d8d030c5f622ba</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
-      <name>end</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab89fb5bcb59eeb4c2bfbeb65c9a740ab</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>std::unordered_map&lt; Coord *, Cell *, HashFunCoordPtr, EqualCoordPtr &gt;</type>
-      <name>CoordHash</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a66a7f0446cfe8842b4e642b552a8b5a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>freeMemory</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab5f51d3c4ae3f021f17d8435643cd3d0</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>dimension_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a8dfdf767f8c14a15fddbdb4bc1e993f1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxNeighbors_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a826614263d30ffcc37924cecfef25471</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>CoordHash</type>
-      <name>hash_</name>
-      <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afbf8751613b70340e9e287d3bb53650d</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>GridB&lt; CellData *, OrderCellsByImportance &gt;</name>
-    <filename>classompl_1_1GridB.html</filename>
-    <base>GridN&lt; CellData * &gt;</base>
-    <member kind="typedef">
-      <type>typename GridN&lt; CellData * &gt;::Cell</type>
-      <name>Cell</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a9c64100fc82be7f1dfc1b07a6669446f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename GridN&lt; CellData * &gt;::CellArray</type>
-      <name>CellArray</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a814aa9c6bd59bc0b621b193d4930dfb0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename GridN&lt; CellData * &gt;::Coord</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a89b9087b1351ab5d26785f99b1583d8b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>void(*)(Cell *, void *)</type>
-      <name>EventCellUpdate</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a54662c0d0ff21c9ab5eaa1a80e1f9244</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>GridB</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a6f51bf34a19905e875d6bdffa3246b11</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>onCellUpdate</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a89bffe3573ef977f63b4ab4ff7759705</anchor>
-      <arglist>(EventCellUpdate event, void *arg)</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>topInternal</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ad7e3648604e7e06d63c595d18edefb2e</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>topExternal</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>adcd6fd9b1cc11a49c45d6216320badda</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>countInternal</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ab053e6a30a308d9da83be70b2e742299</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>countExternal</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a78b32f15b137596941aa3cb81730a74c</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>fracExternal</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>abef554f7393a0b50adae5833743dd343</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>fracInternal</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a0168d43da878bb6557dc0255d4548974</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>aceb50d07f1b2bdb195df8ef2c06999e7</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>updateAll</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a177ec08a842589d77338095e36a3b2f6</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual Cell *</type>
-      <name>createCell</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ab5b346ddd6e6c21cc2e35a493a59f420</anchor>
-      <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a2d028cfdf6233f097ff43fd70591896b</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a35d8377f870c0e03fca9f2839d863165</anchor>
-      <arglist>(Cell *cell)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a9fc63d3a944813e04db038153e07368b</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>status</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a19374aa02670366e2d47dd2b45db0f5a</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const override</arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>BinaryHeap&lt; CellX *, LessThanInternalCell &gt;</type>
-      <name>internalBHeap</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a7a9822c91a89b8c3407c25e24c1d7c25</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>BinaryHeap&lt; CellX *, LessThanExternalCell &gt;</type>
-      <name>externalBHeap</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a52b79e7840e69d476e0cdb568ed6f03e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>setupHeaps</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a885d2d151a374acf376617019f0c4f86</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>clearHeaps</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ab332ad98c88d0ddc7c2ba9e04eaa6c65</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" protection="protected" static="yes">
-      <type>static void</type>
-      <name>noCellUpdate</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a24ba3c3dfcd76b0f7f79006252e18928</anchor>
-      <arglist>(Cell *, void *)</arglist>
-    </member>
-    <member kind="function" protection="protected" static="yes">
-      <type>static void</type>
-      <name>setHeapElementI</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a5d5d287741c00a9dba43113064f867d1</anchor>
-      <arglist>(typename internalBHeap::Element *element, void *)</arglist>
-    </member>
-    <member kind="function" protection="protected" static="yes">
-      <type>static void</type>
-      <name>setHeapElementE</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ae2fb49e37b99d8f9e224c17577f5c622</anchor>
-      <arglist>(typename externalBHeap::Element *element, void *)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>EventCellUpdate</type>
-      <name>eventCellUpdate_</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a21a662edc0904ba14495d44b2088669f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>void *</type>
-      <name>eventCellUpdateData_</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ab229dc7aca157fe152411fe75ad2f73f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>internalBHeap</type>
-      <name>internal_</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>a00fa01d1103ced09fb7ee3ebee187665</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>externalBHeap</type>
-      <name>external_</name>
-      <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>afede0d811f4f9b53abc0f1945b871516</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>GridN&lt; CellData * &gt;</name>
-    <filename>classompl_1_1GridN.html</filename>
-    <base>Grid&lt; CellData * &gt;</base>
-    <member kind="typedef">
-      <type>typename Grid&lt; CellData * &gt;::Cell</type>
-      <name>BaseCell</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a9e1067c00569afbcf615025011b266a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid&lt; CellData * &gt;::CellArray</type>
-      <name>BaseCellArray</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a96f5b11c5e35cb7144209f860805ba4d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename Grid&lt; CellData * &gt;::Coord</type>
-      <name>Coord</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a956fca906da92d20c795578e486e46f3</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; Cell * &gt;</type>
-      <name>CellArray</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ab82a159e63a146da22ed01448caad7b4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>GridN</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a19056d56c0b54dd8ef2c3c9d483f1211</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setDimension</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a8f301e691e48294e1e216d1c7971aa9d</anchor>
-      <arglist>(unsigned int dimension)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setBounds</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ae69767d44f200c28b21683ac76d1624d</anchor>
-      <arglist>(const Coord &amp;low, const Coord &amp;up)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setInteriorCellNeighborLimit</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ae5d42e023d6aa00ac1d479dad46d7144</anchor>
-      <arglist>(unsigned int count)</arglist>
-    </member>
-    <member kind="function">
-      <type>Cell *</type>
-      <name>getCell</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a7656f059f2cc09f5839147646310d091</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>aa5f609ccc4c4db2bb73c2a6d26df4ef4</anchor>
-      <arglist>(const Cell *cell, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ac741aaff4a2bc57af17d05eac207c457</anchor>
-      <arglist>(const Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>neighbors</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>aaae2a80770d9b9bea447355dbdb53623</anchor>
-      <arglist>(Coord &amp;coord, CellArray &amp;list) const</arglist>
-    </member>
-    <member kind="function">
-      <type>BaseCell *</type>
-      <name>createCell</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a705ebbeb6cb92398dffb24ea49ed34f4</anchor>
-      <arglist>(const Coord &amp;coord, BaseCellArray *nbh=nullptr) override</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ad6d7daf6ab4eee599611279d3a6635ba</anchor>
-      <arglist>(BaseCell *cell) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getCells</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ae390a456793c108f6a84bc940b709789</anchor>
-      <arglist>(CellArray &amp;cells) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>unsigned int</type>
-      <name>numberOfBoundaryDimensions</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ad4c133164404bfce4f569911c331c192</anchor>
-      <arglist>(const Coord &amp;coord) const</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>bool</type>
-      <name>hasBounds_</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>ace239cb56364f32748d8c4a66ec8b31f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>Coord</type>
-      <name>lowBound_</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>acdf65b3cd4603c5d25597e62064751d8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>Coord</type>
-      <name>upBound_</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a422a9ee23538f070a2d9704e2ca70ead</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>interiorCellNeighborsLimit_</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a035b9527b8cfd98a6e4f4d7472e668a1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>bool</type>
-      <name>overrideCellNeighborsLimit_</name>
-      <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a1e9cc38ff1df4dca6c9969f73dcad61e</anchor>
-      <arglist></arglist>
+      <name>isValid</name>
+      <anchorfile>classHyperCubeValidityChecker.html</anchorfile>
+      <anchor>a0055d6ed736787e39a6139d6e14e1b31</anchor>
+      <arglist>(const State *state) const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -3588,820 +404,13 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>NearestNeighbors&lt; NNElement &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const NNElement &amp;, const NNElement &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const NNElement &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; NNElement &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const NNElement &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual NNElement</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const NNElement &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const NNElement &amp;data, std::size_t k, std::vector&lt; NNElement &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const NNElement &amp;data, double radius, std::vector&lt; NNElement &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; NNElement &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighbors&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;</name>
-    <filename>classompl_1_1NearestNeighbors.html</filename>
-    <member kind="typedef">
-      <type>std::function&lt; double(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;, const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;)&gt;</type>
-      <name>DistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ab4474df83bbe6b2635de9bcea6da93a2</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>abb8cd1ac5b87a0a01b27aecab2094d8f</anchor>
-      <arglist>(const DistanceFunction &amp;distFun)</arglist>
-    </member>
-    <member kind="function">
-      <type>const DistanceFunction &amp;</type>
-      <name>getDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aadc6ca87a9ec140b7c488dabda079618</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aac3adbd29fa8719b399896bdb79bab3f</anchor>
-      <arglist>()=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>acdec6e843eb3e2f039df9b5b24ce0ad7</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>aae3c2592a0ef5c64f3bde107c144d70a</anchor>
-      <arglist>(const std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;data)</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af4fcf7cc39c33a4e25e2f7e00b0220c0</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data)=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt;</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>af36aec28328e97ba999c51be4f8987c9</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ae3d54c8565ec5ff4f97c31b3d60d5091</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data, std::size_t k, std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a473fbd3b00e2eb4aa6b56c767e702e9c</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data, double radius, std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;nbh) const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ad6fe9e5ebff411e8d56ef2201e25dcb3</anchor>
-      <arglist>() const=0</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac2d3971a579f748aba6ad2b10f118562</anchor>
-      <arglist>(std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;data) const=0</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>DistanceFunction</type>
-      <name>distFun_</name>
-      <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>a6f15f3b591fb69b91ca35e504723b54f</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighborsFLANN&lt; _T, FLANNDistance&lt; _T &gt; &gt;</name>
-    <filename>classompl_1_1NearestNeighborsFLANN.html</filename>
-    <base>ompl::NearestNeighbors</base>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>af9f7859744172a05482b8cf77e393ee3</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a28d01f441d81c3aa8d5558f9dd1a4a87</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a5114b0e5289f64c57bf84ae11b23f3f6</anchor>
-      <arglist>(const _T &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>ad3eb7b33f12fd8f1718f7f7487a9807f</anchor>
-      <arglist>(const std::vector&lt; _T &gt; &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a937df19373fa1e7c19392dd24eda2cb8</anchor>
-      <arglist>(const _T &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>_T</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a88da3c76feedbee4ba4319f410fa20f0</anchor>
-      <arglist>(const _T &amp;data) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>adcb05422c6525a618d3fb0af6f32f561</anchor>
-      <arglist>(const _T &amp;data, std::size_t k, std::vector&lt; _T &gt; &amp;nbh) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a117e1c9eec4da73c3383598e6276face</anchor>
-      <arglist>(const _T &amp;data, double radius, std::vector&lt; _T &gt; &amp;nbh) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>acf8b91442e6604d4d6e5c05d5b8d8fa4</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a63d9d30bb06275575a29210bb2a607f6</anchor>
-      <arglist>(std::vector&lt; _T &gt; &amp;data) const override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setIndexParams</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a8744517fb9f49287501de1e29dce0151</anchor>
-      <arglist>(const std::shared_ptr&lt; flann::IndexParams &gt; &amp;params)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual const std::shared_ptr&lt; flann::IndexParams &gt; &amp;</type>
-      <name>getIndexParams</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a3b45a436ea320688e9ea193dce3e52b8</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setSearchParams</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a61713a0d38ec52ee242d3f6b21caaf79</anchor>
-      <arglist>(const flann::SearchParams &amp;searchParams)</arglist>
-    </member>
-    <member kind="function">
-      <type>flann::SearchParams &amp;</type>
-      <name>getSearchParams</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a550e09c5d54d1f157da5385900aef93e</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const flann::SearchParams &amp;</type>
-      <name>getSearchParams</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a786a02bdcb1b41aedb761e975f067c0c</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>createIndex</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>aad212794536e6ecfddff9b281fde1e00</anchor>
-      <arglist>(const flann::Matrix&lt; _T &gt; &amp;mat)</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>rebuildIndex</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a7b935f8afe093da0397144ca500f0afc</anchor>
-      <arglist>(unsigned int capacity=0)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::vector&lt; _T &gt;</type>
-      <name>data_</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a5cff9cb3adfe57413fa7dbf17ed32c2e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>flann::Index&lt; FLANNDistance&lt; _T &gt; &gt; *</type>
-      <name>index_</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>ab3a4cee81352c5baa2526b0579bf0206</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::shared_ptr&lt; flann::IndexParams &gt;</type>
-      <name>params_</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a125e83d30f061dbd1f45f6f495de6e44</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>flann::SearchParams</type>
-      <name>searchParams_</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>ab15a612bcea206654d9ff23b36a719bd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>dimension_</name>
-      <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a64354375954f00fce065c2520ee8bba3</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighborsGNAT&lt; NNElement &gt;</name>
-    <filename>classompl_1_1NearestNeighborsGNAT.html</filename>
-    <base>NearestNeighbors&lt; NNElement &gt;</base>
-    <member kind="function">
-      <type>void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>abf9fd332568e46b173caa069cb3d7b65</anchor>
-      <arglist>(const typename NearestNeighbors&lt; NNElement &gt;::DistanceFunction &amp;distFun) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a2ae0a5855cb97c01f8def5013d351296</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a28597987114d643f33afaf1f94aeafcc</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>ac2ab166f10167e07b55a3fe5c88195bc</anchor>
-      <arglist>(const NNElement &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a42fb426d77c7f1cc6a89d6f6e06a67da</anchor>
-      <arglist>(const std::vector&lt; NNElement &gt; &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuildDataStructure</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a5a5d1ed1969d8a94096af37c2212953c</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a48879f4f40c84792378ccc4823041bbc</anchor>
-      <arglist>(const NNElement &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>NNElement</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a252bb6d2aa3ff3edf540d0b041d4e892</anchor>
-      <arglist>(const NNElement &amp;data) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>af59c70ac7e6fa37e2e555fad4915b9a9</anchor>
-      <arglist>(const NNElement &amp;data, std::size_t k, std::vector&lt; NNElement &gt; &amp;nbh) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a9e10038b16f17ae175d2cee8e43308d6</anchor>
-      <arglist>(const NNElement &amp;data, double radius, std::vector&lt; NNElement &gt; &amp;nbh) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>aca63a6fbdbe2d1938084f01d7847da5d</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a83fdc5ea599a2025a2f8e10d92e7175e</anchor>
-      <arglist>(std::vector&lt; NNElement &gt; &amp;data) const override</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>isRemoved</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a6bb84334105d10e972f3687ac00a3793</anchor>
-      <arglist>(const NNElement &amp;data) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>nearestKInternal</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a6d09afe7aa8b588270ab61f64d3026c6</anchor>
-      <arglist>(const NNElement &amp;data, std::size_t k, NearQueue &amp;nbhQueue) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>nearestRInternal</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>adbd6149cb209843d3870193e0d71654b</anchor>
-      <arglist>(const NNElement &amp;data, double radius, NearQueue &amp;nbhQueue) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>postprocessNearest</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a03bc066eb387dda356059d0690095c00</anchor>
-      <arglist>(NearQueue &amp;nbhQueue, std::vector&lt; NNElement &gt; &amp;nbh) const</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>Node *</type>
-      <name>tree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>af71f11d8395bb7ab208df7cf03351aaa</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>degree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a9d705ed546c919cd52c428255a0c1a9f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>minDegree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a0843613b6418efbb2b417c37789246c1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxDegree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a925bada72c7c7e7826acdc1581a0a920</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxNumPtsPerLeaf_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a41c47b9f460e190bfadc2dc6f07cae3a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::size_t</type>
-      <name>size_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a40bd930123e198450f10736efe73a970</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::size_t</type>
-      <name>rebuildSize_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a2da7487ea1149c183ec8560280855a9d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::size_t</type>
-      <name>removedCacheSize_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a79547bf4b75f57dcf2d736c11f612b1d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>GreedyKCenters&lt; NNElement &gt;</type>
-      <name>pivotSelector_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a36b2e4bad87ded77f629a48425156bdc</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::unordered_set&lt; const NNElement * &gt;</type>
-      <name>removed_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>accc6371f2e2fdb66b70b3b7a4cdb3a87</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="friend">
-      <type>friend std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a1e1b937c81eb1d184ffa588589bcc07f</anchor>
-      <arglist>(std::ostream &amp;out, const NearestNeighborsGNAT&lt; NNElement &gt; &amp;gnat)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>NearestNeighborsGNATNoThreadSafety&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;</name>
-    <filename>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</filename>
-    <base>NearestNeighbors&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;</base>
-    <member kind="function">
-      <type>void</type>
-      <name>setDistanceFunction</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>af003eba0a7b1c82fec1c7fd0799474c9</anchor>
-      <arglist>(const typename NearestNeighbors&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;::DistanceFunction &amp;distFun) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>af58a8ae3d74f561f0d1152a8dc259bb6</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>reportsSortedResults</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a05226daa78ba92f95ded39d45e524c51</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>ac83e682c6768608c17f91d9bfcc72730</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>aaf3551a2d81473e658adb1697b448fd6</anchor>
-      <arglist>(const std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>rebuildDataStructure</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>af3717a4ddc0fff565b500ce7a438d034</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a8842ec1f8dd7b335636a46d5b17322d5</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data) override</arglist>
-    </member>
-    <member kind="function">
-      <type>std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt;</type>
-      <name>nearest</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a8672bdf83e3093b0164fe52003e4dda5</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>nearestK</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>ac5e0af9bdd87ba19266265f321eb0c61</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data, std::size_t k, std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;nbh) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>nearestR</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a40e2410b79ba7328cb9548591ba23667</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data, double radius, std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;nbh) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>aa3a2710689996f0aadfaf6a7e576e8d3</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>list</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>af189efcf926a1df467dc7493cb5b5e42</anchor>
-      <arglist>(std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;data) const override</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>isRemoved</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>ac71112f32361dc0cb855b2a1a5e7b517</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>bool</type>
-      <name>nearestKInternal</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a7a15354a7143c3f8f61aa71a03ea9060</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data, std::size_t k) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>nearestRInternal</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a5a1d6edfdde32daa9e5c847f6981e12a</anchor>
-      <arglist>(const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &amp;data, double radius) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>void</type>
-      <name>postprocessNearest</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a29b9d2c3dc13387158b2ca97260324b1</anchor>
-      <arglist>(std::vector&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;nbh) const</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>Node *</type>
-      <name>tree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a2b49cb68c80321a951ff19756cf5191e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>degree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a8959464f3e38151e2292e4c1858f58c9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>minDegree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a4ba5298198ef2188b9e3f956462193c4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxDegree_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a4d1d3a2402968ff67980675bf78380e1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxNumPtsPerLeaf_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a77fb35650377c5917f1383a3fdc618eb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::size_t</type>
-      <name>size_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>aa458a54056dcfae4d9700220c0c31591</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::size_t</type>
-      <name>rebuildSize_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a6a9f147a6e698731e37315f647c1e19c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::size_t</type>
-      <name>removedCacheSize_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a8ef42c25ab1f81812a2ec9abee28a76a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>GreedyKCenters&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;</type>
-      <name>pivotSelector_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>aad11fc2ef17a9015c19a28ec24f3b703</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::unordered_set&lt; const std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; * &gt;</type>
-      <name>removed_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a67ba40aba48e6357bad78d022e0d7914</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>NodeQueue</type>
-      <name>nodeQueue_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a7ab94ab52946fe49dab384c7e14d0a45</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>Permutation</type>
-      <name>permutation_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>acf47844443e2f2d5a8ab3b0d5f4392d0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::vector&lt; unsigned int &gt;</type>
-      <name>pivots_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a2d085f6316b3a5c7f378d19b7765d006</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>GreedyKCenters&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;::Matrix</type>
-      <name>distances_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a925191fb1c63bcdfad0915dde2724036</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="friend">
-      <type>friend std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>aefae7627603eaea6da67d53ed3fc3ac6</anchor>
-      <arglist>(std::ostream &amp;out, const NearestNeighborsGNATNoThreadSafety&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt; &amp;gnat)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>NodeQueue</type>
-      <name>nodeQueue_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a7ab94ab52946fe49dab384c7e14d0a45</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>Permutation</type>
-      <name>permutation_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>acf47844443e2f2d5a8ab3b0d5f4392d0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::vector&lt; unsigned int &gt;</type>
-      <name>pivots_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a2d085f6316b3a5c7f378d19b7765d006</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>GreedyKCenters&lt; std::shared_ptr&lt; ompl::geometric::aitstar::Vertex &gt; &gt;::Matrix</type>
-      <name>distances_</name>
-      <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>a925191fb1c63bcdfad0915dde2724036</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>ompl::AdjacencyList</name>
     <filename>classompl_1_1AdjacencyList.html</filename>
   </compound>
   <compound kind="class">
     <name>ompl::app::AppBase</name>
     <filename>classompl_1_1app_1_1AppBase.html</filename>
-    <templarg>T</templarg>
+    <templarg>AppType T</templarg>
     <base>ompl::geometric::SimpleSetup</base>
     <base>ompl::app::RigidBodyGeometry</base>
     <member kind="function">
@@ -4422,7 +431,7 @@
   <compound kind="struct">
     <name>ompl::app::AppTypeSelector</name>
     <filename>structompl_1_1app_1_1AppTypeSelector.html</filename>
-    <templarg>T</templarg>
+    <templarg>AppType T</templarg>
   </compound>
   <compound kind="struct">
     <name>ompl::app::AppTypeSelector&lt; AppType::CONTROL &gt;</name>
@@ -4534,14 +543,14 @@
       <type>std::pair&lt; std::vector&lt; Vector3 &gt;, std::vector&lt; fcl::Triangle &gt; &gt;</type>
       <name>getFCLModelFromScene</name>
       <anchorfile>classompl_1_1app_1_1FCLMethodWrapper.html</anchorfile>
-      <anchor>a31864015c954787082c36ed1052de245</anchor>
+      <anchor>ad79e3cdcb4aab0c05a523a6ad07d165a</anchor>
       <arglist>(const aiScene *scene, const aiVector3D &amp;center) const</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>std::pair&lt; std::vector&lt; Vector3 &gt;, std::vector&lt; fcl::Triangle &gt; &gt;</type>
       <name>getFCLModelFromScene</name>
       <anchorfile>classompl_1_1app_1_1FCLMethodWrapper.html</anchorfile>
-      <anchor>aac71b4fd56d1c7523d9302e85a7ae937</anchor>
+      <anchor>a74c258dd30f078dea2cb09e6b6abde87</anchor>
       <arglist>(const std::vector&lt; const aiScene * &gt; &amp;scenes, const std::vector&lt; aiVector3D &gt; &amp;center) const</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -4583,7 +592,7 @@
   <compound kind="class">
     <name>ompl::app::FCLStateValidityChecker</name>
     <filename>classompl_1_1app_1_1FCLStateValidityChecker.html</filename>
-    <templarg>T</templarg>
+    <templarg>MotionModel T</templarg>
     <base>ompl::base::StateValidityChecker</base>
     <member kind="function">
       <type>bool</type>
@@ -4662,7 +671,7 @@
   <compound kind="class">
     <name>ompl::app::PQPStateValidityChecker</name>
     <filename>classompl_1_1app_1_1PQPStateValidityChecker.html</filename>
-    <templarg>T</templarg>
+    <templarg>MotionModel T</templarg>
     <base>ompl::base::StateValidityChecker</base>
     <member kind="function">
       <type>bool</type>
@@ -4689,14 +698,14 @@
       <type>std::pair&lt; PQPModelPtr, double &gt;</type>
       <name>getPQPModelFromScene</name>
       <anchorfile>classompl_1_1app_1_1PQPStateValidityChecker.html</anchorfile>
-      <anchor>add20c00e24a522dfe2f9f65a849db91d</anchor>
+      <anchor>aa7b91c59ba1b75456eb85430a76b40e1</anchor>
       <arglist>(const std::vector&lt; const aiScene * &gt; &amp;scenes, const std::vector&lt; aiVector3D &gt; &amp;center) const</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>std::pair&lt; PQPModelPtr, double &gt;</type>
       <name>getPQPModelFromTris</name>
       <anchorfile>classompl_1_1app_1_1PQPStateValidityChecker.html</anchorfile>
-      <anchor>ac66c94b241cfcbf8a07eecfcab94cd30</anchor>
+      <anchor>a9dac27568bea814e26fb2aefdf961586</anchor>
       <arglist>(const std::vector&lt; aiVector3D &gt; &amp;triangles) const</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -4938,7 +947,7 @@
       <type>virtual const base::StateSpacePtr &amp;</type>
       <name>getGeometricComponentStateSpace</name>
       <anchorfile>classompl_1_1app_1_1SE2MultiRigidBodyPlanning.html</anchorfile>
-      <anchor>a4dcf5326eb2b40c986d6d7acad90ccb4</anchor>
+      <anchor>ae21fbdd20bd653b468f27f5df6b33605</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -4983,7 +992,7 @@
       <type>virtual const base::StateSpacePtr &amp;</type>
       <name>getGeometricComponentStateSpace</name>
       <anchorfile>classompl_1_1app_1_1SE3MultiRigidBodyPlanning.html</anchorfile>
-      <anchor>a0889f44dbd16aa76e3322876cac16ade</anchor>
+      <anchor>a554d33649d71dd24f51dca649fe2088b</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -5060,7 +1069,7 @@
       <type>const AtlasStateSpace::StateType *</type>
       <name>getOrigin</name>
       <anchorfile>classompl_1_1base_1_1AtlasChart.html</anchorfile>
-      <anchor>a26315247f05ea09d897fd32c267006b3</anchor>
+      <anchor>ac842525b1999a803ca0b6bb395190537</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -5253,7 +1262,7 @@
       <type>State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1AtlasStateSpace.html</anchorfile>
-      <anchor>a96f753e86e24a243b97dab1b37952dba</anchor>
+      <anchor>af2191d25ff91daf7e707f341fc7cf85e</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
@@ -5770,7 +1779,7 @@
       <type>AtlasChart *</type>
       <name>getChart</name>
       <anchorfile>classompl_1_1base_1_1AtlasStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a9ee8e5973620bb16ae278eb1e4f45b3b</anchor>
+      <anchor>a9a9384de63fbb2f695c10ff00a660754</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -6086,7 +2095,7 @@
       <type>State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1CForestStateSpaceWrapper.html</anchorfile>
-      <anchor>a04ab8f8d355af47ab5f5ae0dcc94609e</anchor>
+      <anchor>a27bf872942e6df97342df8af34e319ff</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
@@ -6100,7 +2109,7 @@
       <type>double *</type>
       <name>getValueAddressAtIndex</name>
       <anchorfile>classompl_1_1base_1_1CForestStateSpaceWrapper.html</anchorfile>
-      <anchor>a4171ed1f5a8f2e963c46c8fde0dddd7f</anchor>
+      <anchor>aba8af7c104b4bec3b0be49a36e777192</anchor>
       <arglist>(State *state, const unsigned int index) const override</arglist>
     </member>
     <member kind="function">
@@ -6168,28 +2177,28 @@
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1CompoundState.html</anchorfile>
-      <anchor>a3fed804c968d7482c6147a267878614b</anchor>
+      <anchor>a1edd65b9610a66b5c7922db9e52011a9</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1CompoundState.html</anchorfile>
-      <anchor>ab5bd560f3017629a2fc4fce7c52dfbeb</anchor>
+      <anchor>a87390c2d528e0628fc399fa32fb74766</anchor>
       <arglist>(const unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const State *</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1base_1_1CompoundState.html</anchorfile>
-      <anchor>a18226fde12b3ffe67372b451fefa1c94</anchor>
+      <anchor>af19be88571ac91df983f2ca045681de7</anchor>
       <arglist>(unsigned int i) const</arglist>
     </member>
     <member kind="function">
       <type>State *</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1base_1_1CompoundState.html</anchorfile>
-      <anchor>a392d7c4afb7977b4b3026a705aab7bb0</anchor>
+      <anchor>a2edef87802b0f13e1379d93d18782be8</anchor>
       <arglist>(unsigned int i)</arglist>
     </member>
     <member kind="variable">
@@ -6290,14 +2299,14 @@
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1CompoundStateSpace.html</anchorfile>
-      <anchor>afec510def21209463e299ff5454306bd</anchor>
+      <anchor>ae6605b518edeab0ac646d4d1dcada3e2</anchor>
       <arglist>(const unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1CompoundStateSpace.html</anchorfile>
-      <anchor>a9ca3f65b67e6cb96fc2d3fc5afe4d3d1</anchor>
+      <anchor>adf91dd5feadc5d4a5a456f48781caf3a</anchor>
       <arglist>(const std::string &amp;name) const</arglist>
     </member>
     <member kind="function">
@@ -6848,6 +2857,32 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::base::ConditionalStateSampler</name>
+    <filename>classompl_1_1base_1_1ConditionalStateSampler.html</filename>
+    <base>ompl::base::ValidStateSampler</base>
+    <member kind="function">
+      <type></type>
+      <name>ConditionalStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1ConditionalStateSampler.html</anchorfile>
+      <anchor>a74d8ea75c3b60e5a62d58d6365bbf084</anchor>
+      <arglist>(const SpaceInformation *si, Motion *&amp;startMotion, std::vector&lt; Motion * &gt; &amp;goalMotions, std::vector&lt; Motion * &gt; &amp;newBatchGoalMotions, bool &amp;sampleOldBatch)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>sample</name>
+      <anchorfile>classompl_1_1base_1_1ConditionalStateSampler.html</anchorfile>
+      <anchor>a46d93a8ad934f84777f36842713f3440</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>sampleNear</name>
+      <anchorfile>classompl_1_1base_1_1ConditionalStateSampler.html</anchorfile>
+      <anchor>a0a2118e98f1d404d09de9622768fbb22</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::ConstrainedMotionValidator</name>
     <filename>classompl_1_1base_1_1ConstrainedMotionValidator.html</filename>
     <base>ompl::base::MotionValidator</base>
@@ -7336,293 +3371,6 @@
   <compound kind="class">
     <name>ompl::base::Constraint</name>
     <filename>classompl_1_1base_1_1Constraint.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>Constraint</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>aaefa1497a68c7944e146ff2811023398</anchor>
-      <arglist>(const unsigned int ambientDim, const unsigned int coDim, double tolerance=magic::CONSTRAINT_PROJECTION_TOLERANCE)</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>function</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a08882bb91416db1a604baaa61525d2cc</anchor>
-      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>function</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a22e21da4721119a35968a0cf325d8f65</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const =0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>jacobian</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a7f15239c4bbc8b1b8a36e7579d47346c</anchor>
-      <arglist>(const State *state, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>jacobian</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a4800d1f76f1d56afa1e08dab415d8bda</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>project</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a84203729cf979b398e8e59f92d136ed3</anchor>
-      <arglist>(State *state) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>project</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a27c1ecac7eb642028d58b33d6742160d</anchor>
-      <arglist>(Eigen::Ref&lt; Eigen::VectorXd &gt; x) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual double</type>
-      <name>distance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>ab19d03c6f8a491a6db1b14ea055a1c62</anchor>
-      <arglist>(const State *state) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual double</type>
-      <name>distance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>af945e8c94949a4a06a199b567c277be9</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>isSatisfied</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a0e4d9def91883487533583390fbd2281</anchor>
-      <arglist>(const State *state) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>isSatisfied</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a777dbc260073df452bf52caab80baef5</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getAmbientDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a6be267c6c9287f4833b053afde940d4a</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getManifoldDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a49338ae4a7616d5ee59c043cd86ed912</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getCoDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a7c6917b07e2177eb10ca8da014044f9d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setManifoldDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>ac22291e02a0e3f2063f0a92eac0b70e7</anchor>
-      <arglist>(unsigned int k)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getTolerance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a2634e2534e66268e0c98ac2b2d240fb1</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getMaxIterations</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>af4b8b270a79ecf467682286ad121ab63</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setTolerance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a4413eaf904a95e843b85938236a1a2ab</anchor>
-      <arglist>(const double tolerance)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setMaxIterations</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>ab907de9231aac2c08ed507ef5e626210</anchor>
-      <arglist>(const unsigned int iterations)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>const unsigned int</type>
-      <name>n_</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a865f005ecfec58fcae2f343e1620b2f7</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>k_</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a11422165236ecd753545380c892554b1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>tolerance_</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a7e8342420eb0d011c30fa3b5ae32b3dd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>maxIterations_</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>af254fc9398582ff4ced7d4a0aff62cc9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>function</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a08882bb91416db1a604baaa61525d2cc</anchor>
-      <arglist>(const State *state, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const</arglist>
-    </member>
-    <member kind="function" virtualness="pure">
-      <type>virtual void</type>
-      <name>function</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a22e21da4721119a35968a0cf325d8f65</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const =0</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>jacobian</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a7f15239c4bbc8b1b8a36e7579d47346c</anchor>
-      <arglist>(const State *state, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>jacobian</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a4800d1f76f1d56afa1e08dab415d8bda</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>project</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a84203729cf979b398e8e59f92d136ed3</anchor>
-      <arglist>(State *state) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>project</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a27c1ecac7eb642028d58b33d6742160d</anchor>
-      <arglist>(Eigen::Ref&lt; Eigen::VectorXd &gt; x) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual double</type>
-      <name>distance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>ab19d03c6f8a491a6db1b14ea055a1c62</anchor>
-      <arglist>(const State *state) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual double</type>
-      <name>distance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>af945e8c94949a4a06a199b567c277be9</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>isSatisfied</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a0e4d9def91883487533583390fbd2281</anchor>
-      <arglist>(const State *state) const</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>isSatisfied</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a777dbc260073df452bf52caab80baef5</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x) const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getAmbientDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a6be267c6c9287f4833b053afde940d4a</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getManifoldDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a49338ae4a7616d5ee59c043cd86ed912</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getCoDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a7c6917b07e2177eb10ca8da014044f9d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setManifoldDimension</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>ac22291e02a0e3f2063f0a92eac0b70e7</anchor>
-      <arglist>(unsigned int k)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getTolerance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a2634e2534e66268e0c98ac2b2d240fb1</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getMaxIterations</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>af4b8b270a79ecf467682286ad121ab63</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setTolerance</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>a4413eaf904a95e843b85938236a1a2ab</anchor>
-      <arglist>(const double tolerance)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setMaxIterations</name>
-      <anchorfile>classompl_1_1base_1_1Constraint.html</anchorfile>
-      <anchor>ab907de9231aac2c08ed507ef5e626210</anchor>
-      <arglist>(const unsigned int iterations)</arglist>
-    </member>
   </compound>
   <compound kind="class">
     <name>ompl::base::ConstraintIntersection</name>
@@ -7641,20 +3389,6 @@
       <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
       <anchor>a08c7aa88e7a485e00b97f76f4fd85ed0</anchor>
       <arglist>(const unsigned int ambientDim, std::initializer_list&lt; ConstraintPtr &gt; constraints)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>function</name>
-      <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
-      <anchor>a2ba20e752dadd20fc14515add949d026</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::VectorXd &gt; out) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>jacobian</name>
-      <anchorfile>classompl_1_1base_1_1ConstraintIntersection.html</anchorfile>
-      <anchor>af97e4babac66afa17113a16e6cd0a710</anchor>
-      <arglist>(const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;x, Eigen::Ref&lt; Eigen::MatrixXd &gt; out) const override</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::vector&lt; ConstraintPtr &gt;</type>
@@ -7693,6 +3427,46 @@
   <compound kind="class">
     <name>ompl::base::ConstraintPtr</name>
     <filename>classompl_1_1base_1_1ConstraintPtr.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::ControlDurationObjective</name>
+    <filename>classompl_1_1base_1_1ControlDurationObjective.html</filename>
+    <base>ompl::base::OptimizationObjective</base>
+    <member kind="function">
+      <type></type>
+      <name>ControlDurationObjective</name>
+      <anchorfile>classompl_1_1base_1_1ControlDurationObjective.html</anchorfile>
+      <anchor>ac65b030d118ee6be7d5a9ce35f02afba</anchor>
+      <arglist>(const control::SpaceInformationPtr &amp;si)</arglist>
+    </member>
+    <member kind="function">
+      <type>Cost</type>
+      <name>stateCost</name>
+      <anchorfile>classompl_1_1base_1_1ControlDurationObjective.html</anchorfile>
+      <anchor>a82c3dabb8a37fe8c1e064ca4485717ac</anchor>
+      <arglist>(const State *s) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>Cost</type>
+      <name>motionCost</name>
+      <anchorfile>classompl_1_1base_1_1ControlDurationObjective.html</anchorfile>
+      <anchor>ab913c2284ed800b85c40da9a8395d47d</anchor>
+      <arglist>(const State *s1, const State *s2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>Cost</type>
+      <name>controlCost</name>
+      <anchorfile>classompl_1_1base_1_1ControlDurationObjective.html</anchorfile>
+      <anchor>a20e6ba327578a4e40cb3d704479484d6</anchor>
+      <arglist>(const control::Control *c, unsigned int steps) const override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>dt_</name>
+      <anchorfile>classompl_1_1base_1_1ControlDurationObjective.html</anchorfile>
+      <anchor>a9ba373b43285e9586ce7b5a9a2d9719a</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>ompl::base::Cost</name>
@@ -7738,7 +3512,7 @@
       <type>virtual std::vector&lt; double &gt;</type>
       <name>sample</name>
       <anchorfile>classompl_1_1base_1_1DeterministicSequence.html</anchorfile>
-      <anchor>ac4e80947f97c7f18bf3bb24b091a9602</anchor>
+      <anchor>a4d591fcbcce350fbf9d0079ca7f9dcb9</anchor>
       <arglist>()=0</arglist>
     </member>
   </compound>
@@ -8184,6 +3958,39 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::base::EmptyStateSpace</name>
+    <filename>classompl_1_1base_1_1EmptyStateSpace.html</filename>
+    <base>ompl::base::RealVectorStateSpace</base>
+    <member kind="function">
+      <type>double</type>
+      <name>getMeasure</name>
+      <anchorfile>classompl_1_1base_1_1EmptyStateSpace.html</anchorfile>
+      <anchor>ac67fda8235ff99781d4f9910bd219457</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1base_1_1EmptyStateSpace.html</anchorfile>
+      <anchor>a11af4410e42c317c92bc7c2d924c3671</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getDimension</name>
+      <anchorfile>classompl_1_1base_1_1EmptyStateSpace.html</anchorfile>
+      <anchor>a82b71fbeeb6a69bc73df5441393a4e19</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getMaximumExtent</name>
+      <anchorfile>classompl_1_1base_1_1EmptyStateSpace.html</anchorfile>
+      <anchor>a289766994a6c65f50edfa2db2915e6ed</anchor>
+      <arglist>() const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::GaussianValidStateSampler</name>
     <filename>classompl_1_1base_1_1GaussianValidStateSampler.html</filename>
     <base>ompl::base::ValidStateSampler</base>
@@ -8251,7 +4058,7 @@
       <type>const std::string &amp;</type>
       <name>getName</name>
       <anchorfile>classompl_1_1base_1_1GenericParam.html</anchorfile>
-      <anchor>adc559d6be02a62ecc8b2c1bcf58515c0</anchor>
+      <anchor>ae8afb1c929678c047ccfbb79b1dc7cc6</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -8279,7 +4086,7 @@
       <type>GenericParam &amp;</type>
       <name>operator=</name>
       <anchorfile>classompl_1_1base_1_1GenericParam.html</anchorfile>
-      <anchor>a60aff425e9f64795991d6a0da3c437ad</anchor>
+      <anchor>a5c6740331e980cdc77704cc49005c787</anchor>
       <arglist>(const T &amp;value)</arglist>
     </member>
     <member kind="function">
@@ -8293,7 +4100,7 @@
       <type>const std::string &amp;</type>
       <name>getRangeSuggestion</name>
       <anchorfile>classompl_1_1base_1_1GenericParam.html</anchorfile>
-      <anchor>ae5d0c6e5545dbdf6cfb252bfc6e59493</anchor>
+      <anchor>ab93a54fbd303d10631207c0b84d8cf58</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -8332,14 +4139,14 @@
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1Goal.html</anchorfile>
-      <anchor>a79bd15b3c533dbf5c0290bfd41e1db9c</anchor>
+      <anchor>ad566ccb3c3463229c02d9491becbfea7</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1Goal.html</anchorfile>
-      <anchor>ac8fbda15a24dbc4e3e67d79908efed52</anchor>
+      <anchor>ab245a9dbe2ecf22d69c49f444efa12d2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -8360,7 +4167,7 @@
       <type>const SpaceInformationPtr &amp;</type>
       <name>getSpaceInformation</name>
       <anchorfile>classompl_1_1base_1_1Goal.html</anchorfile>
-      <anchor>aa5ff46c2697ad623a65108d86ac777b3</anchor>
+      <anchor>a844e565ed881bd1f50e3e4d68eef3d10</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -8798,8 +4605,8 @@
       <anchor>a09aa8539dda9d6ac692a7313674253b9</anchor>
       <arglist>() const override</arglist>
     </member>
-    <member kind="function">
-      <type>double</type>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
       <name>distanceGoal</name>
       <anchorfile>classompl_1_1base_1_1GoalState.html</anchorfile>
       <anchor>ab63d3552679541ba86d1745efd83f274</anchor>
@@ -9171,6 +4978,99 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::base::KleinBottleStateSampler</name>
+    <filename>classompl_1_1base_1_1KleinBottleStateSampler.html</filename>
+    <base>ompl::base::StateSampler</base>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniform</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSampler.html</anchorfile>
+      <anchor>afaaffa392142ba83ca4d939083ddf32b</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniformNear</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSampler.html</anchorfile>
+      <anchor>a06a5e8aa4911084f29fa02aae71dabbd</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleGaussian</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSampler.html</anchorfile>
+      <anchor>a75017a37da53051d13f00b5bd784ad8a</anchor>
+      <arglist>(State *state, const State *mean, double stdDev) override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::KleinBottleStateSpace</name>
+    <filename>classompl_1_1base_1_1KleinBottleStateSpace.html</filename>
+    <base>ompl::base::CompoundStateSpace</base>
+    <class kind="class">ompl::base::KleinBottleStateSpace::StateType</class>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocDefaultStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace.html</anchorfile>
+      <anchor>af082cc4160a8e0be68963159208977d4</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace.html</anchorfile>
+      <anchor>aa38c3800ab2f96e9a750fd6412f3e9fb</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolate</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace.html</anchorfile>
+      <anchor>a8418e3c59ec2a0d991e0b74c7ee39163</anchor>
+      <arglist>(const State *from, const State *to, double t, State *state) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace.html</anchorfile>
+      <anchor>a4750db3b4ded27cb0a70b9624d26ffa7</anchor>
+      <arglist>() const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::KleinBottleStateSpace::StateType</name>
+    <filename>classompl_1_1base_1_1KleinBottleStateSpace_1_1StateType.html</filename>
+    <base>ompl::base::CompoundState</base>
+    <member kind="function">
+      <type>double</type>
+      <name>getU</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a0966f70d94ff82c50adf78759190fb4b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getV</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a5bb6eba23c4801e6a6fc9998411e0957</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setU</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace_1_1StateType.html</anchorfile>
+      <anchor>a105804fe1e10d213a21fa3c1510c6313</anchor>
+      <arglist>(double u)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setV</name>
+      <anchorfile>classompl_1_1base_1_1KleinBottleStateSpace_1_1StateType.html</anchorfile>
+      <anchor>ad68cb3b260e86485cbf14eebd4755bdb</anchor>
+      <arglist>(double v)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::LightningRetrieveRepairPtr</name>
     <filename>classompl_1_1base_1_1LightningRetrieveRepairPtr.html</filename>
   </compound>
@@ -9328,6 +5228,11 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::base::MinimizeArrivalTime</name>
+    <filename>classompl_1_1base_1_1MinimizeArrivalTime.html</filename>
+    <base>ompl::base::OptimizationObjective</base>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::MinimumClearanceValidStateSampler</name>
     <filename>classompl_1_1base_1_1MinimumClearanceValidStateSampler.html</filename>
     <base>ompl::base::ValidStateSampler</base>
@@ -9380,6 +5285,38 @@
       <anchor>abb3523b75b220e58e4a8ab0759b98857</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::MobiusStateSpace</name>
+    <filename>classompl_1_1base_1_1MobiusStateSpace.html</filename>
+    <base>ompl::base::CompoundStateSpace</base>
+    <class kind="class">ompl::base::MobiusStateSpace::StateType</class>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1MobiusStateSpace.html</anchorfile>
+      <anchor>ae1e6326bf402d5ed33320a78b67f3b1d</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>interpolate</name>
+      <anchorfile>classompl_1_1base_1_1MobiusStateSpace.html</anchorfile>
+      <anchor>aa39ab93b1a563368e02af339783d40ef</anchor>
+      <arglist>(const State *from, const State *to, double t, State *state) const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1MobiusStateSpace.html</anchorfile>
+      <anchor>a27d4476507fb63eef413346f86bc3205</anchor>
+      <arglist>() const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::MobiusStateSpace::StateType</name>
+    <filename>classompl_1_1base_1_1MobiusStateSpace_1_1StateType.html</filename>
+    <base>ompl::base::CompoundState</base>
   </compound>
   <compound kind="class">
     <name>ompl::base::MorseEnvironment</name>
@@ -9597,7 +5534,7 @@
       <type>const MorseEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1base_1_1MorseStateSpace.html</anchorfile>
-      <anchor>ae4984f11ab4549b258eab564b8974708</anchor>
+      <anchor>a7830a6d77ec5bf9fa48f4486aae9ad0c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -9741,6 +5678,17 @@
     <name>ompl::base::MorseTerminationCondition</name>
     <filename>classompl_1_1base_1_1MorseTerminationCondition.html</filename>
     <base>ompl::base::PlannerTerminationCondition</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::Motion</name>
+    <filename>classompl_1_1base_1_1Motion.html</filename>
+    <member kind="variable">
+      <type>std::vector&lt; Motion * &gt;</type>
+      <name>children</name>
+      <anchorfile>classompl_1_1base_1_1Motion.html</anchorfile>
+      <anchor>a60512f97dda192831aba726a7ef7d9ae</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>ompl::base::MotionValidator</name>
@@ -10057,6 +6005,13 @@
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Cost</type>
+      <name>controlCost</name>
+      <anchorfile>classompl_1_1base_1_1OptimizationObjective.html</anchorfile>
+      <anchor>a6aaf01023193e91aadf9392eeb3da5ba</anchor>
+      <arglist>(const control::Control *c, unsigned int steps) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Cost</type>
       <name>combineCosts</name>
       <anchorfile>classompl_1_1base_1_1OptimizationObjective.html</anchorfile>
       <anchor>a61f4766a65c6e69a437bafa31a646d39</anchor>
@@ -10370,21 +6325,21 @@
       <type>const SpaceInformationPtr &amp;</type>
       <name>getSpaceInformation</name>
       <anchorfile>classompl_1_1base_1_1Path.html</anchorfile>
-      <anchor>a099b0432e85131551f490488846ee960</anchor>
+      <anchor>abe8e778742870b3218fc2fbe6335969b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1Path.html</anchorfile>
-      <anchor>af825d97785bc098aacf1aecdaf3aec45</anchor>
+      <anchor>a7c9ac073f3705f49558e370917dbc4a0</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1Path.html</anchorfile>
-      <anchor>a07b298e9c29ee82e9e2780d2d179e58d</anchor>
+      <anchor>a0b8db4c74e12c03f726990ee74e6c090</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -10543,14 +6498,14 @@
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1Planner.html</anchorfile>
-      <anchor>a2ca68a50629dd31d550632480d001c17</anchor>
+      <anchor>a0b254b9541d76d3b12889a799a864fdf</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1Planner.html</anchorfile>
-      <anchor>a7499389d5049b3eb778e841a0dfd605a</anchor>
+      <anchor>a890b3abfbd1c43fceb348c76bc2bb479</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -10676,21 +6631,21 @@
       <type>ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1Planner.html</anchorfile>
-      <anchor>a9dc98f7169ae45aa0e886376f546887a</anchor>
+      <anchor>a25006bc9e3c050eee4546e6b09d1e8f9</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1Planner.html</anchorfile>
-      <anchor>a54cd84e228b9cd88ae88cdd10cc0712b</anchor>
+      <anchor>a085d1b772a21a1ce8320e481e8b98d5d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const PlannerProgressProperties &amp;</type>
       <name>getPlannerProgressProperties</name>
       <anchorfile>classompl_1_1base_1_1Planner.html</anchorfile>
-      <anchor>a8b03485fc36143f4f26718c050ddb928</anchor>
+      <anchor>aee9dbf70684aad32fe74638995cae956</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -11634,7 +7589,7 @@
       <type>virtual PlannerDataEdge *</type>
       <name>clone</name>
       <anchorfile>classompl_1_1base_1_1PlannerDataEdge.html</anchorfile>
-      <anchor>ae7ac923824c4405fed17a25c61af149c</anchor>
+      <anchor>a0f9149deac64e99e084f5a875aa2aea2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -11815,14 +7770,14 @@
       <type>virtual const State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1base_1_1PlannerDataVertex.html</anchorfile>
-      <anchor>ac5b0bef3bc9dacf6cc11e033e770641e</anchor>
+      <anchor>aad885cb3f2098279bd372b816003efd1</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual PlannerDataVertex *</type>
       <name>clone</name>
       <anchorfile>classompl_1_1base_1_1PlannerDataVertex.html</anchorfile>
-      <anchor>ae7704df1d702f577d7de61a26ab225ff</anchor>
+      <anchor>a6c95c982ec5567c0a9cea377c3c1d673</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -11852,25 +7807,6 @@
       <anchorfile>classompl_1_1base_1_1PlannerDataVertex.html</anchorfile>
       <anchor>abf0257882aedf96fc9b67f7d6f882f04</anchor>
       <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>ompl::base::PlannerDataVertexAnnotated</name>
-    <filename>classompl_1_1base_1_1PlannerDataVertexAnnotated.html</filename>
-    <base>ompl::base::PlannerDataVertex</base>
-    <member kind="function" virtualness="virtual">
-      <type>virtual PlannerDataVertex *</type>
-      <name>clone</name>
-      <anchorfile>classompl_1_1base_1_1PlannerDataVertexAnnotated.html</anchorfile>
-      <anchor>a5b396816781cd5c64ed69734a0ea26c9</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual const ompl::base::State *</type>
-      <name>getState</name>
-      <anchorfile>classompl_1_1base_1_1PlannerDataVertexAnnotated.html</anchorfile>
-      <anchor>a2bdc1b4847e6e65788fc5846c0d064d2</anchor>
-      <arglist>() const override</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -11931,13 +7867,6 @@
       <anchorfile>classompl_1_1base_1_1PlannerInputStates.html</anchorfile>
       <anchor>acdbad81c386b7533a4990ea9020b632d</anchor>
       <arglist>(const ProblemDefinitionPtr &amp;pdef)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>use</name>
-      <anchorfile>classompl_1_1base_1_1PlannerInputStates.html</anchorfile>
-      <anchor>aa96f1be538c75a8fcd2c487a5deb65dd</anchor>
-      <arglist>(const ProblemDefinition *pdef)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -12227,6 +8156,12 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>INFEASIBLE</name>
+      <anchorfile>structompl_1_1base_1_1PlannerStatus.html</anchorfile>
+      <anchor>a5fe3825813b066b664b3dd34dd1bc8c4ade0d7f4cb23b8bc223a19faa22089f44</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>TYPE_COUNT</name>
       <anchorfile>structompl_1_1base_1_1PlannerStatus.html</anchorfile>
       <anchor>a5fe3825813b066b664b3dd34dd1bc8c4ac60ae0f04326edcd4fa202cda3dddb33</anchor>
@@ -12284,6 +8219,12 @@
       <name>ABORT</name>
       <anchorfile>structompl_1_1base_1_1PlannerStatus.html</anchorfile>
       <anchor>a5fe3825813b066b664b3dd34dd1bc8c4a0013f743bb46afbc5bf4e019de43625f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>INFEASIBLE</name>
+      <anchorfile>structompl_1_1base_1_1PlannerStatus.html</anchorfile>
+      <anchor>a5fe3825813b066b664b3dd34dd1bc8c4ade0d7f4cb23b8bc223a19faa22089f44</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
@@ -12475,7 +8416,7 @@
       <type>const SpaceInformationPtr &amp;</type>
       <name>getSpaceInformation</name>
       <anchorfile>classompl_1_1base_1_1ProblemDefinition.html</anchorfile>
-      <anchor>a992fbaad92f636fc1dc5d59a02197966</anchor>
+      <anchor>ae058126f758bc7f61d366be7878e1984</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -12517,14 +8458,14 @@
       <type>const State *</type>
       <name>getStartState</name>
       <anchorfile>classompl_1_1base_1_1ProblemDefinition.html</anchorfile>
-      <anchor>ab1f2d8fa8a3c50ddacc83aa74f05d5d0</anchor>
+      <anchor>a8049121770ebd3576b5124143def4bb0</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>State *</type>
       <name>getStartState</name>
       <anchorfile>classompl_1_1base_1_1ProblemDefinition.html</anchorfile>
-      <anchor>ad9fb68d7aab6f613645cf02fa6995c52</anchor>
+      <anchor>aa9acf994308f0e8ee912a6493ecd1de8</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
@@ -12545,7 +8486,7 @@
       <type>const GoalPtr &amp;</type>
       <name>getGoal</name>
       <anchorfile>classompl_1_1base_1_1ProblemDefinition.html</anchorfile>
-      <anchor>a71e20eb387a023333f34b6761a01c64f</anchor>
+      <anchor>a534026bb4bde2aa0ef04f72ef74b662e</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -12594,7 +8535,7 @@
       <type>const OptimizationObjectivePtr &amp;</type>
       <name>getOptimizationObjective</name>
       <anchorfile>classompl_1_1base_1_1ProblemDefinition.html</anchorfile>
-      <anchor>a7f08584141d6946545fb7cf545283e67</anchor>
+      <anchor>abc2b0218532b3c283ad8d48343766b6b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -12608,7 +8549,7 @@
       <type>const ReportIntermediateSolutionFn &amp;</type>
       <name>getIntermediateSolutionCallback</name>
       <anchorfile>classompl_1_1base_1_1ProblemDefinition.html</anchorfile>
-      <anchor>a6d1719c601dfc32613d658d33a24b3c1</anchor>
+      <anchor>a6fbde11d924b80b229188e93869534ee</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -12956,7 +8897,7 @@
       <type>const std::vector&lt; double &gt; &amp;</type>
       <name>getCellSizes</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>ae3fafba58f2c04a2cd383a679fd1feab</anchor>
+      <anchor>a95d48e834312e4249115b582ce55dfa3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -13012,7 +8953,7 @@
       <type>const RealVectorBounds &amp;</type>
       <name>getBounds</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>a4f2cd2c01deb03f2adb03f9211928b8a</anchor>
+      <anchor>aad2edc344c45a2e1620633d37474be10</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -13047,14 +8988,14 @@
       <type>ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>aa15a7ce6c94ca8fb9ea99965d7a3be9f</anchor>
+      <anchor>ae9c9acc7933e82355efc9f8a39f4058e</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1ProjectionEvaluator.html</anchorfile>
-      <anchor>add9802b3e581cb14f891361f9c7290de</anchor>
+      <anchor>ae9083063172f1a30196b9680d7f8908f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -13606,7 +9547,7 @@
       <type>const RealVectorBounds &amp;</type>
       <name>getBounds</name>
       <anchorfile>classompl_1_1base_1_1RealVectorStateSpace.html</anchorfile>
-      <anchor>aeb6e1a0d0ba39ba3cd65cd9e4f15fc91</anchor>
+      <anchor>acccf7e730237bd3e900ab93a5c3b7bb7</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -13814,7 +9755,7 @@
       <type>double &amp;</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1base_1_1RealVectorStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a8efe5303cf53d309c12fe3b406ccd97c</anchor>
+      <anchor>a35f5220387e9888a7935e0b8b70aba0a</anchor>
       <arglist>(unsigned int i)</arglist>
     </member>
     <member kind="variable">
@@ -13861,6 +9802,13 @@
       <name>distance</name>
       <anchorfile>classompl_1_1base_1_1ReedsSheppStateSpace.html</anchorfile>
       <anchor>ad4aa0dbcb96d74927ccd89860a72434c</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>validSegmentCount</name>
+      <anchorfile>classompl_1_1base_1_1ReedsSheppStateSpace.html</anchorfile>
+      <anchor>a5f3e17927a86df4cb94877e74934dcd3</anchor>
       <arglist>(const State *state1, const State *state2) const override</arglist>
     </member>
     <member kind="function">
@@ -13974,12 +9922,12 @@
   <compound kind="struct">
     <name>ompl::base::SamplerSelector</name>
     <filename>structompl_1_1base_1_1SamplerSelector.html</filename>
-    <templarg></templarg>
+    <templarg>typename T</templarg>
   </compound>
   <compound kind="class">
     <name>ompl::base::ScopedState</name>
     <filename>classompl_1_1base_1_1ScopedState.html</filename>
-    <templarg></templarg>
+    <templarg>class T</templarg>
     <member kind="typedef">
       <type>typename T::StateType</type>
       <name>StateType</name>
@@ -14033,49 +9981,49 @@
       <type>const StateSpacePtr &amp;</type>
       <name>getSpace</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>ad830e8623923b00e9135d7e12d251e69</anchor>
+      <anchor>a086ca5d33a79b3faa573860b7cad8b9e</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator=</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>ac4fb27b32ef5e413b1a2ad8cfc84f7a4</anchor>
+      <anchor>add105a904ed81d672bd194a0284146ee</anchor>
       <arglist>(const ScopedState&lt; T &gt; &amp;other)</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator=</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>af81845da48cd2995b0786c1a2135e6a6</anchor>
+      <anchor>a1b08f7377091ef6abb81fa5c8b12a0b2</anchor>
       <arglist>(const State *other)</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator=</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a2a942938fd27f567e50c882448a36249</anchor>
+      <anchor>a746a5e6bd947ad8e381de95d250d0b65</anchor>
       <arglist>(const State &amp;other)</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator=</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a8c98dd91417107ba3d116859ea430437</anchor>
+      <anchor>a8eaeba9013671601b1fdd225fe6fc35e</anchor>
       <arglist>(const ScopedState&lt; O &gt; &amp;other)</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator=</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a483e5d636b2955b73f4642e6b90cda9f</anchor>
+      <anchor>ac581abb6e51cdbfd413c9f75296772f3</anchor>
       <arglist>(const std::vector&lt; double &gt; &amp;reals)</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator=</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a50cbd5b4ee7fca852b2e6279f0980f8a</anchor>
+      <anchor>a08319c56700783031ecb302f03c28d09</anchor>
       <arglist>(const double value)</arglist>
     </member>
     <member kind="function">
@@ -14103,7 +10051,7 @@
       <type>double &amp;</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a58359e139ad823db181bc12fbcf3aafd</anchor>
+      <anchor>ac26c857db7a0ac4e3da300871b36335e</anchor>
       <arglist>(const unsigned int index)</arglist>
     </member>
     <member kind="function">
@@ -14117,7 +10065,7 @@
       <type>double &amp;</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>acf1b49e5236b3a6630322f590eb7dee0</anchor>
+      <anchor>a6e18ffaf10026e6463554b6cbe2de192</anchor>
       <arglist>(const std::string &amp;name)</arglist>
     </member>
     <member kind="function">
@@ -14166,7 +10114,7 @@
       <type>std::vector&lt; double &gt;</type>
       <name>reals</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>ae9d9cbef04113f2ff83e69743abfcf05</anchor>
+      <anchor>a98ce24aacbd599057da1a61f8a1d505c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -14180,49 +10128,49 @@
       <type>StateType &amp;</type>
       <name>operator*</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a19512f301d4e91fbd132fcf3d69b2b22</anchor>
+      <anchor>a189f2b00bd859bf8b3c1168a31de278d</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const StateType &amp;</type>
       <name>operator*</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>aed69a968eed180737332efe4b7e69017</anchor>
+      <anchor>abd1445a5cb64277a38aca49487c72ab2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>StateType *</type>
       <name>operator-&gt;</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a833278352214f2d71d40f6ef8b11895e</anchor>
+      <anchor>a306b86762afe57d84eeffb41db367a17</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const StateType *</type>
       <name>operator-&gt;</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a913cf0bba19b7d41883c6d35e7fc6011</anchor>
+      <anchor>ac4b6b6123824317032a31a23252079d3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>StateType *</type>
       <name>get</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a055e6b97092ffbc0f5e485f661db0e49</anchor>
+      <anchor>aef84ea1a81eaa6a954967ae507fdeed1</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const StateType *</type>
       <name>get</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a01d7da6bccd9693940df78105e11c46d</anchor>
+      <anchor>ad0df46445997f45dc63ee322c8e008e1</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>StateType *</type>
       <name>operator()</name>
       <anchorfile>classompl_1_1base_1_1ScopedState.html</anchorfile>
-      <anchor>a4c73b2920b2a18549dc95ce4e9f3afcc</anchor>
+      <anchor>aa10d68ebf1a1e1a7614b6cb8279d6ad5</anchor>
       <arglist>() const</arglist>
     </member>
   </compound>
@@ -14282,7 +10230,7 @@
       <type>const RealVectorBounds &amp;</type>
       <name>getBounds</name>
       <anchorfile>classompl_1_1base_1_1SE2StateSpace.html</anchorfile>
-      <anchor>a0d16f84351203cc329b5c2a02f69a85a</anchor>
+      <anchor>acd81d4e4d890a4366d43cb0db92c96b4</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -14377,7 +10325,7 @@
       <type>const RealVectorBounds &amp;</type>
       <name>getBounds</name>
       <anchorfile>classompl_1_1base_1_1SE3StateSpace.html</anchorfile>
-      <anchor>a038bf0c7f70272066c8a625294ab6a25</anchor>
+      <anchor>a8097dcdc23e2ac7129ae10e8e6565e96</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -14431,14 +10379,14 @@
       <type>const SO3StateSpace::StateType &amp;</type>
       <name>rotation</name>
       <anchorfile>classompl_1_1base_1_1SE3StateSpace_1_1StateType.html</anchorfile>
-      <anchor>a9ba67d5c6386c83ec054ed067922c7af</anchor>
+      <anchor>aeaf1a109d2118adec656cf3dd7d7e550</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>SO3StateSpace::StateType &amp;</type>
       <name>rotation</name>
       <anchorfile>classompl_1_1base_1_1SE3StateSpace_1_1StateType.html</anchorfile>
-      <anchor>a0240250e44f901f70214dce34ce4dbb6</anchor>
+      <anchor>a0d23ed025b4c2132dc1d42f5465ed01a</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -14956,7 +10904,7 @@
       <type>const StateSpacePtr &amp;</type>
       <name>getStateSpace</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a2438e5e02c579f164b58394990b99690</anchor>
+      <anchor>adc8d227d7639ae4311cdcd7244d8d97f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -15026,7 +10974,7 @@
       <type>const StateValidityCheckerPtr &amp;</type>
       <name>getStateValidityChecker</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ac6d23843c9489c59e8faad6e1d4faf29</anchor>
+      <anchor>abf53246221ab1f2874380d04878ee802</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -15040,14 +10988,14 @@
       <type>const MotionValidatorPtr &amp;</type>
       <name>getMotionValidator</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>af0258348f3cb78cddbdafde3a3d3f0c8</anchor>
+      <anchor>a987c98be4b4b12f506563c12a7385376</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>MotionValidatorPtr &amp;</type>
       <name>getMotionValidator</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a510bb9dac6417d570ed91abc3047362e</anchor>
+      <anchor>add137c8cb32e337670b17717baa24dbc</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -15068,7 +11016,7 @@
       <type>State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a9853da6c28a1a1fd5f543013546a0f4b</anchor>
+      <anchor>ae549bc791bc606201a23eaa22029570d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -15103,7 +11051,7 @@
       <type>State *</type>
       <name>cloneState</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a70b06614abf6cec4f32abf0fd638377f</anchor>
+      <anchor>adc22ccac78cd8f8f027cb7abc44a66bb</anchor>
       <arglist>(const State *source) const</arglist>
     </member>
     <member kind="function">
@@ -15285,14 +11233,14 @@
       <type>ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a879fb1ffcac0bf54aab292f2b933f881</anchor>
+      <anchor>ac73609ed9f78cc4405e143054c14e817</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ad09d9e9ca9f34d46edf1dcb4567176c4</anchor>
+      <anchor>a73e5a83063b69871f2bb342d97c19fd4</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -15369,7 +11317,7 @@
       <type>const StateValidityCheckerPtr &amp;</type>
       <name>getStateValidityChecker</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>ac6d23843c9489c59e8faad6e1d4faf29</anchor>
+      <anchor>abf53246221ab1f2874380d04878ee802</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -15383,14 +11331,14 @@
       <type>const MotionValidatorPtr &amp;</type>
       <name>getMotionValidator</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>af0258348f3cb78cddbdafde3a3d3f0c8</anchor>
+      <anchor>a987c98be4b4b12f506563c12a7385376</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>MotionValidatorPtr &amp;</type>
       <name>getMotionValidator</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a510bb9dac6417d570ed91abc3047362e</anchor>
+      <anchor>add137c8cb32e337670b17717baa24dbc</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -15411,7 +11359,7 @@
       <type>State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a9853da6c28a1a1fd5f543013546a0f4b</anchor>
+      <anchor>ae549bc791bc606201a23eaa22029570d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -15446,7 +11394,7 @@
       <type>State *</type>
       <name>cloneState</name>
       <anchorfile>classompl_1_1base_1_1SpaceInformation.html</anchorfile>
-      <anchor>a70b06614abf6cec4f32abf0fd638377f</anchor>
+      <anchor>adc22ccac78cd8f8f027cb7abc44a66bb</anchor>
       <arglist>(const State *source) const</arglist>
     </member>
     <member kind="function">
@@ -15553,9 +11501,126 @@
     <filename>classompl_1_1base_1_1SpaceInformationPtr.html</filename>
   </compound>
   <compound kind="class">
+    <name>ompl::base::SpaceTimeStateSpace</name>
+    <filename>classompl_1_1base_1_1SpaceTimeStateSpace.html</filename>
+    <base>ompl::base::CompoundStateSpace</base>
+    <member kind="function">
+      <type></type>
+      <name>SpaceTimeStateSpace</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>ad421d8f5b69a52f02a91beffcc77092d</anchor>
+      <arglist>(const StateSpacePtr &amp;spaceComponent, double vMax=1.0, double timeWeight=0.5)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a80a8c3a3b14652a2cbdc9f2a6d2e1ad8</anchor>
+      <arglist>(const ompl::base::State *state1, const ompl::base::State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>timeToCoverDistance</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a6a88ddd2f1e46e15765ac53c05470a5d</anchor>
+      <arglist>(const ompl::base::State *state1, const ompl::base::State *state2) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distanceSpace</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a4c5743d9da6590035101a78ca7fb915b</anchor>
+      <arglist>(const ompl::base::State *state1, const ompl::base::State *state2) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distanceTime</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a7c1e347c7fa6bd44103f41efd182cd9b</anchor>
+      <arglist>(const ompl::base::State *state1, const ompl::base::State *state2) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTimeBounds</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a834de0e69111acf6a28bbd97cbeaac55</anchor>
+      <arglist>(double lb, double ub)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getVMax</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a07d3f2e240e8114c93948a576aa0c182</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setVMax</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>af6baac28d88ce8d24817ce9de5f6db22</anchor>
+      <arglist>(double vMax)</arglist>
+    </member>
+    <member kind="function">
+      <type>StateSpacePtr</type>
+      <name>getSpaceComponent</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a3b7fa3ad80af9691b1a98a54c8f7100e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>TimeStateSpace *</type>
+      <name>getTimeComponent</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a5c9a15a94c64300b325759cbe4c2ba4d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isMetricSpace</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a4f7628b1b8bf35029b7c45c7488d167a</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getMaximumExtent</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a68b2014f31138ec0812ad202ad4c34de</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>updateEpsilon</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>a5f67a57c36b91261c7eea99993cc7b15</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static double</type>
+      <name>getStateTime</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>ac51d32f067306a29f1c1cef6241171a4</anchor>
+      <arglist>(const ompl::base::State *state)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>vMax_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>ada0a11d4964a9a044424f85261736207</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>eps_</name>
+      <anchorfile>classompl_1_1base_1_1SpaceTimeStateSpace.html</anchorfile>
+      <anchor>af029adf2681b175b4f4fe73808222190</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::SpecificParam</name>
     <filename>classompl_1_1base_1_1SpecificParam.html</filename>
-    <templarg></templarg>
+    <templarg>typename T</templarg>
     <base>ompl::base::GenericParam</base>
     <member kind="typedef">
       <type>std::function&lt; void(T)&gt;</type>
@@ -15610,7 +11675,7 @@
       <type>std::string</type>
       <name>getValue</name>
       <anchorfile>classompl_1_1base_1_1SpecificParam.html</anchorfile>
-      <anchor>a241f30194c11152790828a886624605f</anchor>
+      <anchor>a9890ce12ab0da02da341531cb030ec19</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -15643,20 +11708,85 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::base::SphereStateSampler</name>
+    <filename>classompl_1_1base_1_1SphereStateSampler.html</filename>
+    <base>ompl::base::StateSampler</base>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniform</name>
+      <anchorfile>classompl_1_1base_1_1SphereStateSampler.html</anchorfile>
+      <anchor>ae3352dec8de26275823158c98cd24a3f</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniformNear</name>
+      <anchorfile>classompl_1_1base_1_1SphereStateSampler.html</anchorfile>
+      <anchor>aef8a0f7e41d1476d8efb25b01aa5f82b</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleGaussian</name>
+      <anchorfile>classompl_1_1base_1_1SphereStateSampler.html</anchorfile>
+      <anchor>a235b08e0ac8a35b7504c5b370fa2485f</anchor>
+      <arglist>(State *state, const State *mean, double stdDev) override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::SphereStateSpace</name>
+    <filename>classompl_1_1base_1_1SphereStateSpace.html</filename>
+    <base>ompl::base::CompoundStateSpace</base>
+    <class kind="class">ompl::base::SphereStateSpace::StateType</class>
+    <member kind="function" virtualness="virtual">
+      <type>virtual StateSamplerPtr</type>
+      <name>allocDefaultStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1SphereStateSpace.html</anchorfile>
+      <anchor>ae722aa5d93950ac9a75c58061e5e2553</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
+      <name>getMeasure</name>
+      <anchorfile>classompl_1_1base_1_1SphereStateSpace.html</anchorfile>
+      <anchor>a1c7ab94328c5a6ac849f8ec5e415e9eb</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1SphereStateSpace.html</anchorfile>
+      <anchor>a26c31b94ab132d418ebc80cc89f4c507</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1SphereStateSpace.html</anchorfile>
+      <anchor>ac4f7e4ef298f7a8072b54b2ea3468d57</anchor>
+      <arglist>() const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::SphereStateSpace::StateType</name>
+    <filename>classompl_1_1base_1_1SphereStateSpace_1_1StateType.html</filename>
+    <base>ompl::base::CompoundState</base>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::State</name>
     <filename>classompl_1_1base_1_1State.html</filename>
     <member kind="function">
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1State.html</anchorfile>
-      <anchor>a6178474307b3f364184db9999a639af1</anchor>
+      <anchor>af1b51b919c418c1625ed42a3c36f2be2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1State.html</anchorfile>
-      <anchor>ace9774faf8793299dc105292f8557987</anchor>
+      <anchor>af55ea809435b84196c9d551525ebe550</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
@@ -15760,7 +11890,7 @@
   <compound kind="class">
     <name>ompl::base::StateSamplerArray</name>
     <filename>classompl_1_1base_1_1StateSamplerArray.html</filename>
-    <templarg></templarg>
+    <templarg>typename T</templarg>
     <member kind="typedef">
       <type>typename SamplerSelector&lt; T &gt;::SamplerPtr</type>
       <name>SamplerPtr</name>
@@ -15793,7 +11923,7 @@
       <type>Sampler *</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>ab8bf640ce48d3071435a37a9b090566c</anchor>
+      <anchor>a1dc29f75f93a937626569a03f827492a</anchor>
       <arglist>(std::size_t index) const</arglist>
     </member>
     <member kind="function">
@@ -15948,14 +12078,14 @@
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>afd88dea5b056dae47158f22edb21e562</anchor>
+      <anchor>a7236f03f05e54a740826187e4c0ffb19</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a15002af1dc7d5827a174517baf39947d</anchor>
+      <anchor>ae5b0ba19e26c6a46ef075faf8c3e8b14</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -16060,14 +12190,14 @@
       <type>ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a9d9fee742c4811d13f236aecd6b9d901</anchor>
+      <anchor>a0bc7dc9d4217772b37a52f43bc7f7dad</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a4305a944c0a18976e23f0954aef93b4c</anchor>
+      <anchor>a013125b8439d8611097f85dc543004eb</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -16242,7 +12372,7 @@
       <type>virtual State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>ae86d2a2401044774fa4de3345a29d408</anchor>
+      <anchor>ae8d3459e8b6efcdd429206edbaeb4385</anchor>
       <arglist>() const =0</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -16613,14 +12743,14 @@
       <type>ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a9d9fee742c4811d13f236aecd6b9d901</anchor>
+      <anchor>a0bc7dc9d4217772b37a52f43bc7f7dad</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>a4305a944c0a18976e23f0954aef93b4c</anchor>
+      <anchor>a013125b8439d8611097f85dc543004eb</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -16795,7 +12925,7 @@
       <type>virtual State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1StateSpace.html</anchorfile>
-      <anchor>ae86d2a2401044774fa4de3345a29d408</anchor>
+      <anchor>ae8d3459e8b6efcdd429206edbaeb4385</anchor>
       <arglist>() const =0</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -17106,7 +13236,7 @@
       <type>const StateSpacePtr &amp;</type>
       <name>getStateSpace</name>
       <anchorfile>classompl_1_1base_1_1StateStorage.html</anchorfile>
-      <anchor>af5330ea7e721095591ffad260fd18d99</anchor>
+      <anchor>a2aac2f7030c3f03d9b8d57a3c2e0c6f9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -17169,21 +13299,21 @@
       <type>const std::vector&lt; const State * &gt; &amp;</type>
       <name>getStates</name>
       <anchorfile>classompl_1_1base_1_1StateStorage.html</anchorfile>
-      <anchor>ad8004b1e6f2476bf8f474f14faa483d7</anchor>
+      <anchor>a7090b92d7ed32a35d384ddf44d39496e</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1base_1_1StateStorage.html</anchorfile>
-      <anchor>ac9bcadde6f6d98433fc67e5310439709</anchor>
+      <anchor>ada45a9473911b4690115eb9ed7cff8d2</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1base_1_1StateStorage.html</anchorfile>
-      <anchor>a549f449d9125c4e5dc26a1b610da4b5b</anchor>
+      <anchor>a9305db9ccb07ddb74a17f2e8c1170ed0</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
@@ -17327,7 +13457,7 @@
   <compound kind="class">
     <name>ompl::base::StateStorageWithMetadata</name>
     <filename>classompl_1_1base_1_1StateStorageWithMetadata.html</filename>
-    <templarg></templarg>
+    <templarg>typename M</templarg>
     <base>ompl::base::StateStorage</base>
     <member kind="typedef">
       <type>M</type>
@@ -17368,14 +13498,14 @@
       <type>const M &amp;</type>
       <name>getMetadata</name>
       <anchorfile>classompl_1_1base_1_1StateStorageWithMetadata.html</anchorfile>
-      <anchor>ac553b3ef678afa15f9cebb0a34d26661</anchor>
+      <anchor>a31cafd193fd18bc90f3a5f78c4dcb38d</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>M &amp;</type>
       <name>getMetadata</name>
       <anchorfile>classompl_1_1base_1_1StateStorageWithMetadata.html</anchorfile>
-      <anchor>a2823f12dc99173a08109600958b04efc</anchor>
+      <anchor>a316782d593bc454ad74ca5d0ca13525d</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -17456,8 +13586,15 @@
       <type>const StateValidityCheckerSpecs &amp;</type>
       <name>getSpecs</name>
       <anchorfile>classompl_1_1base_1_1StateValidityChecker.html</anchorfile>
-      <anchor>abc6607382750b389f7d40ebcd2ef417f</anchor>
+      <anchor>aeb685353be23fee3fd522c5ae9b096be</anchor>
       <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>operator==</name>
+      <anchorfile>classompl_1_1base_1_1StateValidityChecker.html</anchorfile>
+      <anchor>a1bfccaaf48e6402450d1f179622e5d6d</anchor>
+      <arglist>(const StateValidityChecker &amp;) const</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>SpaceInformation *</type>
@@ -17964,9 +14101,67 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::base::TorusStateSampler</name>
+    <filename>classompl_1_1base_1_1TorusStateSampler.html</filename>
+    <base>ompl::base::StateSampler</base>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniform</name>
+      <anchorfile>classompl_1_1base_1_1TorusStateSampler.html</anchorfile>
+      <anchor>a967a9b5704eaa896ec0e14ec4ad148d9</anchor>
+      <arglist>(State *state) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleUniformNear</name>
+      <anchorfile>classompl_1_1base_1_1TorusStateSampler.html</anchorfile>
+      <anchor>ae95f2a790916dab3b03425455003ef72</anchor>
+      <arglist>(State *state, const State *near, double distance) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sampleGaussian</name>
+      <anchorfile>classompl_1_1base_1_1TorusStateSampler.html</anchorfile>
+      <anchor>a47a5064ea1f6251bfb5be0945bd19686</anchor>
+      <arglist>(State *state, const State *mean, double stdDev) override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::TorusStateSpace</name>
+    <filename>classompl_1_1base_1_1TorusStateSpace.html</filename>
+    <base>ompl::base::CompoundStateSpace</base>
+    <class kind="class">ompl::base::TorusStateSpace::StateType</class>
+    <member kind="function">
+      <type>StateSamplerPtr</type>
+      <name>allocDefaultStateSampler</name>
+      <anchorfile>classompl_1_1base_1_1TorusStateSpace.html</anchorfile>
+      <anchor>a8eb5ba310145abc710fdb1201d72e923</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1base_1_1TorusStateSpace.html</anchorfile>
+      <anchor>a50e290e271b9fa0020270e87d5b88dee</anchor>
+      <arglist>(const State *state1, const State *state2) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>State *</type>
+      <name>allocState</name>
+      <anchorfile>classompl_1_1base_1_1TorusStateSpace.html</anchorfile>
+      <anchor>a8498704b67737a4b190422738d82bf6d</anchor>
+      <arglist>() const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::base::TorusStateSpace::StateType</name>
+    <filename>classompl_1_1base_1_1TorusStateSpace_1_1StateType.html</filename>
+    <base>ompl::base::CompoundState</base>
+  </compound>
+  <compound kind="class">
     <name>ompl::base::TypedSpaceInformation</name>
     <filename>classompl_1_1base_1_1TypedSpaceInformation.html</filename>
-    <templarg></templarg>
+    <templarg>typename SpaceType_</templarg>
     <base>ompl::base::SpaceInformation</base>
     <member kind="typedef">
       <type>SpaceType_</type>
@@ -18014,21 +14209,21 @@
       <type>const SpaceType *</type>
       <name>getTypedStateSpace</name>
       <anchorfile>classompl_1_1base_1_1TypedSpaceInformation.html</anchorfile>
-      <anchor>a501b62a337e32593903f7db3f9685e5f</anchor>
+      <anchor>aa6735334be2c9418bf70d14259f91415</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>SpaceType *</type>
       <name>getTypedStateSpace</name>
       <anchorfile>classompl_1_1base_1_1TypedSpaceInformation.html</anchorfile>
-      <anchor>ad003c54f7699e8831bd576704ebf92f5</anchor>
+      <anchor>a98b24a9583995e1f644a903fc82da972</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>StateType *</type>
       <name>allocTypedState</name>
       <anchorfile>classompl_1_1base_1_1TypedSpaceInformation.html</anchorfile>
-      <anchor>a02a788c37bf159e67bcf341bcda27cdc</anchor>
+      <anchor>a2a636f9e560319b0b63d7c71722850c2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -18063,14 +14258,14 @@
       <type>StateType *</type>
       <name>cloneTypedState</name>
       <anchorfile>classompl_1_1base_1_1TypedSpaceInformation.html</anchorfile>
-      <anchor>abde1def23149ed7ca225bff49780d6d1</anchor>
+      <anchor>a6a207cfcd15f1c29fc7d53c122c15b8c</anchor>
       <arglist>(const StateType *source) const</arglist>
     </member>
   </compound>
   <compound kind="class">
     <name>ompl::base::TypedStateValidityChecker</name>
     <filename>classompl_1_1base_1_1TypedStateValidityChecker.html</filename>
-    <templarg></templarg>
+    <templarg>typename SpaceType_</templarg>
     <base>ompl::base::StateValidityChecker</base>
   </compound>
   <compound kind="class">
@@ -18120,7 +14315,7 @@
       <type>const std::string &amp;</type>
       <name>getName</name>
       <anchorfile>classompl_1_1base_1_1ValidStateSampler.html</anchorfile>
-      <anchor>ae52a0372c786461f827cfa24e29176b0</anchor>
+      <anchor>afdfcb62b0f484e51da3a6e738465b6c6</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -18162,14 +14357,14 @@
       <type>ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1ValidStateSampler.html</anchorfile>
-      <anchor>ac634bcfcf5c61c1bae21315d298caf29</anchor>
+      <anchor>a3435947c8b5daf9e394399c13fa95435</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1ValidStateSampler.html</anchorfile>
-      <anchor>aee8d358a1a454279632681addaa014bf</anchor>
+      <anchor>ae740fdbd3b67570d31b462e0b9fa1f27</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -18409,7 +14604,7 @@
       <type>const ParamSet &amp;</type>
       <name>params</name>
       <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
-      <anchor>aa2858f74610b3a340f02e226341d6a88</anchor>
+      <anchor>a3eccc34716dc71e57758e25c132875f9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -18556,7 +14751,7 @@
       <type>State *</type>
       <name>allocState</name>
       <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
-      <anchor>a065d25987b6287515f3b88391a265db7</anchor>
+      <anchor>a960af2c0f53ac2167fe2846dc1a375a7</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
@@ -18570,7 +14765,7 @@
       <type>double *</type>
       <name>getValueAddressAtIndex</name>
       <anchorfile>classompl_1_1base_1_1WrapperStateSpace.html</anchorfile>
-      <anchor>a9b27f4b6f21ddb60520f1fe72fa50b52</anchor>
+      <anchor>a5ab4d5bd8fa8d585d60093a9848ca727</anchor>
       <arglist>(State *state, unsigned int index) const override</arglist>
     </member>
     <member kind="function">
@@ -18666,14 +14861,14 @@
       <type>const State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a7b2dac06f05dd15507197e89a46e7c0f</anchor>
+      <anchor>a893ab7966c883f0e6c667eda1213e4ca</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1base_1_1WrapperStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a961511edc9cdf1cc2e762a169731713f</anchor>
+      <anchor>a1bd17d5920f0888ecb16d03e43aa9f0b</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -18687,8 +14882,8 @@
   <compound kind="class">
     <name>ompl::BinaryHeap</name>
     <filename>classompl_1_1BinaryHeap.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
+    <templarg>class LessThan</templarg>
     <class kind="class">ompl::BinaryHeap::Element</class>
     <member kind="typedef">
       <type>void(*)(Element *, void *)</type>
@@ -18729,7 +14924,7 @@
       <type>Element *</type>
       <name>top</name>
       <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a5d1ecb7a7d154ad44df98a5109738697</anchor>
+      <anchor>ad90885d17c2b00ce9ed106ac2da29f70</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -18750,7 +14945,7 @@
       <type>Element *</type>
       <name>insert</name>
       <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a7712c8909b596a4d12e0080960bd0274</anchor>
+      <anchor>a0d677db9df51a45908fa332f450d5bd8</anchor>
       <arglist>(const _T &amp;data)</arglist>
     </member>
     <member kind="function">
@@ -18813,7 +15008,7 @@
       <type>LessThan &amp;</type>
       <name>getComparisonOperator</name>
       <anchorfile>classompl_1_1BinaryHeap.html</anchorfile>
-      <anchor>a99e2aec266c1746cf0f16aa763d00d7f</anchor>
+      <anchor>afd6520cb461c3642895f0ea95467ac99</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
@@ -19017,21 +15212,21 @@
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1CompoundControl.html</anchorfile>
-      <anchor>a4c4eb708c75618fcb1d1424b0caaabbe</anchor>
+      <anchor>aa72385de5348d8fd45d700a5c011e2a6</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1CompoundControl.html</anchorfile>
-      <anchor>ae2ac9926add8272ac1ceff098910cac8</anchor>
+      <anchor>ae8773fe5a8cd6f3e0e432c9bb780f7b1</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>Control *</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1control_1_1CompoundControl.html</anchorfile>
-      <anchor>ad76d3078c278f76412be86a7620f33c4</anchor>
+      <anchor>a83214431434efb7d6c68cfd9eaebeb8a</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="variable">
@@ -19125,7 +15320,7 @@
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1CompoundControlSpace.html</anchorfile>
-      <anchor>ada0d00ffe6a26d4ef3afce2652252a67</anchor>
+      <anchor>a6a08eb3022ef0e0fb31a27fc08e90a27</anchor>
       <arglist>(const unsigned int index) const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -19297,14 +15492,14 @@
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1Control.html</anchorfile>
-      <anchor>ad1818cadd7f02aed4c4d1948ebbca581</anchor>
+      <anchor>a66d624a6bf8a2d193e1fb85e79b43055</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1Control.html</anchorfile>
-      <anchor>a3e1865673e7705959c98315866df8ced</anchor>
+      <anchor>a088d67c351c4ca70a6014cd1c28981ca</anchor>
       <arglist>()</arglist>
     </member>
   </compound>
@@ -19375,6 +15570,13 @@
   <compound kind="class">
     <name>ompl::control::ControlSpace</name>
     <filename>classompl_1_1control_1_1ControlSpace.html</filename>
+    <member kind="typedef">
+      <type>ompl::control::Control</type>
+      <name>ControlType</name>
+      <anchorfile>classompl_1_1control_1_1ControlSpace.html</anchorfile>
+      <anchor>ac1f2d5ea7ca8066e42287338d55e3bbe</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type></type>
       <name>ControlSpace</name>
@@ -19386,14 +15588,14 @@
       <type>T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1ControlSpace.html</anchorfile>
-      <anchor>ad493371248cdfb29afd658994ed9416f</anchor>
+      <anchor>aa061c299e9a15685e494fddd4f3a35b3</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const T *</type>
       <name>as</name>
       <anchorfile>classompl_1_1control_1_1ControlSpace.html</anchorfile>
-      <anchor>a3055b0f0bcab954fa3509495ca813885</anchor>
+      <anchor>a2e5ca6e44abae7c433d78e0ba418f5fe</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -19421,7 +15623,7 @@
       <type>const base::StateSpacePtr &amp;</type>
       <name>getStateSpace</name>
       <anchorfile>classompl_1_1control_1_1ControlSpace.html</anchorfile>
-      <anchor>a0187ec3ccc38ab6ddc2dfc37107b7a62</anchor>
+      <anchor>a245051e8f5e44433c03e9478c626dee9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -19435,7 +15637,7 @@
       <type>virtual Control *</type>
       <name>allocControl</name>
       <anchorfile>classompl_1_1control_1_1ControlSpace.html</anchorfile>
-      <anchor>a68756fe8e6fc9d3d2dc48540ee4afdcd</anchor>
+      <anchor>a7e65078fbbddd0269359d040edc9fee8</anchor>
       <arglist>() const =0</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -19611,7 +15813,7 @@
       <type>virtual const base::RealVectorBounds &amp;</type>
       <name>getBounds</name>
       <anchorfile>classompl_1_1control_1_1Decomposition.html</anchorfile>
-      <anchor>a2ea56080e016fe52b59482c835207fec</anchor>
+      <anchor>a9fd3c8e650b70c0d297ceb0c940b3d72</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -19948,7 +16150,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1control_1_1EST.html</anchorfile>
-      <anchor>ac85c1a1e3d791cae65bb468d42867f67</anchor>
+      <anchor>a59f8e5c2f229e4a63e2f9777155d2b43</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -20355,7 +16557,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1control_1_1KPIECE1.html</anchorfile>
-      <anchor>af54ed28359f46a375862f83abb46d110</anchor>
+      <anchor>a6b574b27d153c0f9662e6068bd485d23</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -21014,7 +17216,7 @@
       <type>const base::MorseEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1control_1_1MorseControlSpace.html</anchorfile>
-      <anchor>ac84f37279d817a2b200c0d6a7ef9e4e5</anchor>
+      <anchor>a3fe99a6cf6ce590502b43653871dfa7e</anchor>
       <arglist>() const</arglist>
     </member>
   </compound>
@@ -21033,7 +17235,7 @@
       <type>const base::MorseEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1control_1_1MorseSimpleSetup.html</anchorfile>
-      <anchor>a6183029a926922c5b2aa49b9ec738278</anchor>
+      <anchor>a576eb7bdf15cb7069dec8492db895789</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -21129,7 +17331,7 @@
       <type>const base::MorseEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1control_1_1MorseStatePropagator.html</anchorfile>
-      <anchor>a10080637eecaf9bfe0f0f7c57bcdf7d0</anchor>
+      <anchor>a162c58b3c8b84b59d849316ecbc2094f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -21157,7 +17359,7 @@
   <compound kind="class">
     <name>ompl::control::ODEAdaptiveSolver</name>
     <filename>classompl_1_1control_1_1ODEAdaptiveSolver.html</filename>
-    <templarg></templarg>
+    <templarg>class Solver</templarg>
     <base>ompl::control::ODESolver</base>
     <member kind="function">
       <type></type>
@@ -21219,7 +17421,7 @@
   <compound kind="class">
     <name>ompl::control::ODEBasicSolver</name>
     <filename>classompl_1_1control_1_1ODEBasicSolver.html</filename>
-    <templarg></templarg>
+    <templarg>class Solver</templarg>
     <base>ompl::control::ODESolver</base>
     <member kind="function">
       <type></type>
@@ -21239,7 +17441,7 @@
   <compound kind="class">
     <name>ompl::control::ODEErrorSolver</name>
     <filename>classompl_1_1control_1_1ODEErrorSolver.html</filename>
-    <templarg></templarg>
+    <templarg>class Solver</templarg>
     <base>ompl::control::ODESolver</base>
     <member kind="function">
       <type></type>
@@ -21333,7 +17535,7 @@
       <type>const SpaceInformationPtr &amp;</type>
       <name>getSpaceInformation</name>
       <anchorfile>classompl_1_1control_1_1ODESolver.html</anchorfile>
-      <anchor>a3a1e719deac9b8e33a378a978d2ef886</anchor>
+      <anchor>a0c0c7a5207b4a895589c80b9be04f550</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" static="yes">
@@ -21391,7 +17593,7 @@
       <type>const OpenDEEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1control_1_1OpenDEControlSpace.html</anchorfile>
-      <anchor>a3309acd9b0bedd14895169e3f6e2c0ec</anchor>
+      <anchor>a0e987d21319d96cbd49f60155a963ab5</anchor>
       <arglist>() const</arglist>
     </member>
   </compound>
@@ -21565,7 +17767,7 @@
       <type>const OpenDEEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1control_1_1OpenDESimpleSetup.html</anchorfile>
-      <anchor>a70cbab0c96af50ddf2e18e1c297bc09a</anchor>
+      <anchor>afe1793d3b8b02123df4679e0436346bd</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -21668,7 +17870,7 @@
       <type>const OpenDEEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStatePropagator.html</anchorfile>
-      <anchor>a9bec0b9ef3b112f87d7c1d6966b28eb8</anchor>
+      <anchor>a861f9f0ff314d8b4cabe2fb6eec7af5f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -21757,7 +17959,7 @@
       <type>const OpenDEEnvironmentPtr &amp;</type>
       <name>getEnvironment</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace.html</anchorfile>
-      <anchor>a3c9ef3906fc16f9c0658333ae0c25082</anchor>
+      <anchor>a46a14de70ab5ce8d66fd9fbbfe5cc538</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -21881,56 +18083,56 @@
       <type>const double *</type>
       <name>getBodyPosition</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>addb8836fc8490f8784393d98af543a06</anchor>
+      <anchor>a88e56222b8755075236310f334ae6abb</anchor>
       <arglist>(unsigned int body) const</arglist>
     </member>
     <member kind="function">
       <type>double *</type>
       <name>getBodyPosition</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>acd8ea0866b9964615b7f359cea72dc42</anchor>
+      <anchor>aaf1c036a1ec1b6081606d3c1f62c069f</anchor>
       <arglist>(unsigned int body)</arglist>
     </member>
     <member kind="function">
       <type>const base::SO3StateSpace::StateType &amp;</type>
       <name>getBodyRotation</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a954b8b5b6b1597e86b0145ac066a9f5b</anchor>
+      <anchor>ae58e148351d64dc1b660a2e7235cdc21</anchor>
       <arglist>(unsigned int body) const</arglist>
     </member>
     <member kind="function">
       <type>base::SO3StateSpace::StateType &amp;</type>
       <name>getBodyRotation</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a9dddc43042fadbeee54d82579669c546</anchor>
+      <anchor>a12cbca1f6770a0d5a3f2213f30032b67</anchor>
       <arglist>(unsigned int body)</arglist>
     </member>
     <member kind="function">
       <type>const double *</type>
       <name>getBodyLinearVelocity</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>af8b7fcfedb6a9b06f012ec84d0d5c234</anchor>
+      <anchor>a4202f589ff1bc8ac4e1b13b0629f6f74</anchor>
       <arglist>(unsigned int body) const</arglist>
     </member>
     <member kind="function">
       <type>double *</type>
       <name>getBodyLinearVelocity</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a556fa8bd77fc850e6a0f9a98e086bb51</anchor>
+      <anchor>a55802926ddb4b70fb018291460e59c12</anchor>
       <arglist>(unsigned int body)</arglist>
     </member>
     <member kind="function">
       <type>const double *</type>
       <name>getBodyAngularVelocity</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>a4422e39c48bc458306f63e23d7d3caaa</anchor>
+      <anchor>a112cc4e32d56d1a972a44cd2e3c1312a</anchor>
       <arglist>(unsigned int body) const</arglist>
     </member>
     <member kind="function">
       <type>double *</type>
       <name>getBodyAngularVelocity</name>
       <anchorfile>classompl_1_1control_1_1OpenDEStateSpace_1_1StateType.html</anchorfile>
-      <anchor>ae951cfb3121caf1aea66f6938306836a</anchor>
+      <anchor>a542df703d1382a9086c498688b7f59c1</anchor>
       <arglist>(unsigned int body)</arglist>
     </member>
     <member kind="variable">
@@ -22073,49 +18275,49 @@
       <type>std::vector&lt; base::State * &gt; &amp;</type>
       <name>getStates</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a23e09dedef25b3daa148244235e45ce1</anchor>
+      <anchor>a3f924b82adac63a92ec58669d4430e27</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; Control * &gt; &amp;</type>
       <name>getControls</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>acc99539806fbd3248aa317b171ec85b7</anchor>
+      <anchor>aec6334168104437b4d9967860b2f2979</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; double &gt; &amp;</type>
       <name>getControlDurations</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a85a46abb71ed4dbc98053b8679de13b3</anchor>
+      <anchor>a9065a6d20fd03693b5ce4969caabfa35</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>acc1a559c0c2f7f913391e6cbde7c4b30</anchor>
+      <anchor>a6bb60a38cf4c474fb072b81fcd2d2d2d</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a91f60bd764cb52fb848c13ea1521fb18</anchor>
+      <anchor>a1360d52413d18f64e30c5d85b566a0f1</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>Control *</type>
       <name>getControl</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a6b34f21745348621a3d2780325e69ea9</anchor>
+      <anchor>ae016794315d4ed3fbe6574483c644086</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const Control *</type>
       <name>getControl</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a470bf74cb009e9f60e580b831bcbba14</anchor>
+      <anchor>adcf77d3dd3bcd86e72e4cd0e8a0cccae</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
@@ -22213,49 +18415,49 @@
       <type>std::vector&lt; base::State * &gt; &amp;</type>
       <name>getStates</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a23e09dedef25b3daa148244235e45ce1</anchor>
+      <anchor>a3f924b82adac63a92ec58669d4430e27</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; Control * &gt; &amp;</type>
       <name>getControls</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>acc99539806fbd3248aa317b171ec85b7</anchor>
+      <anchor>aec6334168104437b4d9967860b2f2979</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; double &gt; &amp;</type>
       <name>getControlDurations</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a85a46abb71ed4dbc98053b8679de13b3</anchor>
+      <anchor>a9065a6d20fd03693b5ce4969caabfa35</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>acc1a559c0c2f7f913391e6cbde7c4b30</anchor>
+      <anchor>a6bb60a38cf4c474fb072b81fcd2d2d2d</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a91f60bd764cb52fb848c13ea1521fb18</anchor>
+      <anchor>a1360d52413d18f64e30c5d85b566a0f1</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
       <type>Control *</type>
       <name>getControl</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a6b34f21745348621a3d2780325e69ea9</anchor>
+      <anchor>ae016794315d4ed3fbe6574483c644086</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const Control *</type>
       <name>getControl</name>
       <anchorfile>classompl_1_1control_1_1PathControl.html</anchorfile>
-      <anchor>a470bf74cb009e9f60e580b831bcbba14</anchor>
+      <anchor>adcf77d3dd3bcd86e72e4cd0e8a0cccae</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
@@ -22333,7 +18535,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1control_1_1PDST.html</anchorfile>
-      <anchor>a53215fd03e3a25c0ef8c810d13537b94</anchor>
+      <anchor>a1b1cdc2fa51ca54e883fdeb44eaf0e49</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -22471,7 +18673,7 @@
       <type>Cell *</type>
       <name>stab</name>
       <anchorfile>structompl_1_1control_1_1PDST_1_1Cell.html</anchorfile>
-      <anchor>abb7df99e766a98adc914263fd70b4eb2</anchor>
+      <anchor>a44dfd36a4dbc6aaf09cb1becb76e022b</anchor>
       <arglist>(const Eigen::Ref&lt; Eigen::VectorXd &gt; &amp;projection) const</arglist>
     </member>
     <member kind="function">
@@ -22608,7 +18810,7 @@
       <type>BinaryHeap&lt; Motion *, MotionCompare &gt;::Element *</type>
       <name>heapElement_</name>
       <anchorfile>structompl_1_1control_1_1PDST_1_1Motion.html</anchorfile>
-      <anchor>ae37f538a9ba7be9995bf440f13efa63a</anchor>
+      <anchor>aaeb1756083b26eb4d2d471a5b0cdafb3</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -22741,14 +18943,14 @@
       <type>base::PlannerDataEdge *</type>
       <name>clone</name>
       <anchorfile>classompl_1_1control_1_1PlannerDataEdgeControl.html</anchorfile>
-      <anchor>a05bc73adc9af940e9023b63684ae7206</anchor>
+      <anchor>a91b1f7f767cb7d5cd957b07e5f158ce8</anchor>
       <arglist>() const override</arglist>
     </member>
     <member kind="function">
       <type>const Control *</type>
       <name>getControl</name>
       <anchorfile>classompl_1_1control_1_1PlannerDataEdgeControl.html</anchorfile>
-      <anchor>a14af71c26e68cc4acea0c313e4013fdf</anchor>
+      <anchor>a569b81264fcd172d171af74d7a3645cb</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -22948,7 +19150,7 @@
       <type>State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1control_1_1ProductGraph.html</anchorfile>
-      <anchor>af2eb891b1b37850e965ddde3516f6aeb</anchor>
+      <anchor>a662887aee7bc73d7831ca1fe3ce0ef47</anchor>
       <arglist>(int region, int cosafe, int safe) const</arglist>
     </member>
   </compound>
@@ -23012,7 +19214,7 @@
       <type>friend std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>classompl_1_1control_1_1ProductGraph_1_1State.html</anchorfile>
-      <anchor>a5878285c4952d0c8073c5b27c4e2ce1d</anchor>
+      <anchor>aa9cff768c33df51d5ebe9a810b96fe02</anchor>
       <arglist>(std::ostream &amp;out, const State &amp;s)</arglist>
     </member>
   </compound>
@@ -23155,7 +19357,7 @@
       <type>const base::RealVectorBounds &amp;</type>
       <name>getBounds</name>
       <anchorfile>classompl_1_1control_1_1RealVectorControlSpace.html</anchorfile>
-      <anchor>aa2a46af98565c7577b3980829335a2d1</anchor>
+      <anchor>accb183bd503cb3b8e65b44b31da30ea9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23286,7 +19488,7 @@
       <type>double &amp;</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1control_1_1RealVectorControlSpace_1_1ControlType.html</anchorfile>
-      <anchor>a8a63cc6084f77a7a531bf52981f541ba</anchor>
+      <anchor>a3b5e8fabf1983f60360e548d36c6458e</anchor>
       <arglist>(unsigned int i)</arglist>
     </member>
     <member kind="variable">
@@ -23584,70 +19786,70 @@
       <type>const SpaceInformationPtr &amp;</type>
       <name>getSpaceInformation</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>ab55081f197f666e8f0e4232bedaa14e7</anchor>
+      <anchor>aeed0d0ecd93b3edc2bdd6221f8533d80</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>a381a67cc16b87553f4cfe889bcf2d49f</anchor>
+      <anchor>ab73318c1696c3234aacc3fbbe2d47117</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>ac06a23940f50a002a07c01dafa541643</anchor>
+      <anchor>a31bcb66b949c06bcccf29d479e4767e7</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const base::StateSpacePtr &amp;</type>
       <name>getStateSpace</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>aa22426021c9d852dd4401be8a8a2bd8e</anchor>
+      <anchor>aa69b13484df6f98bc9ae47c889723d29</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const ControlSpacePtr &amp;</type>
       <name>getControlSpace</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>a0e795b2d95d697f8222f9677f6d00da5</anchor>
+      <anchor>ab32d0b21399daaea7e09f72a69fef088</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::StateValidityCheckerPtr &amp;</type>
       <name>getStateValidityChecker</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>ac842ff8731bc2ffe74f100e40ae46325</anchor>
+      <anchor>a11c8cc3b56e423248c770c89e9d6c84f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const StatePropagatorPtr &amp;</type>
       <name>getStatePropagator</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>a4b2fa2d7c4b550a091df137eb5a404f1</anchor>
+      <anchor>a6ea8b176a4362b65780c908fda36fb40</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::GoalPtr &amp;</type>
       <name>getGoal</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>aa3899bbc87ec6ccfd11b202f7baee131</anchor>
+      <anchor>a6d856da6748c450fd95c1b7cfa07af2b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::PlannerPtr &amp;</type>
       <name>getPlanner</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>a3169ff43dfc205dedf4080718d6e29ed</anchor>
+      <anchor>ac47f91bd3f1239382a583e8e1ec2db34</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::PlannerAllocator &amp;</type>
       <name>getPlannerAllocator</name>
       <anchorfile>classompl_1_1control_1_1SimpleSetup.html</anchorfile>
-      <anchor>ae01049fbc728f90c8baef6e2988e097f</anchor>
+      <anchor>afd42374ab4b5b3a9f963c3eb196f7ad5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23887,7 +20089,7 @@
       <type>const ControlSpacePtr &amp;</type>
       <name>getControlSpace</name>
       <anchorfile>classompl_1_1control_1_1SpaceInformation.html</anchorfile>
-      <anchor>a9d7ac0a63e4b7ab3ed20b78e0dfb4153</anchor>
+      <anchor>a42d61cea4e0cecfd01bab3d41a038da6</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23908,7 +20110,7 @@
       <type>Control *</type>
       <name>allocControl</name>
       <anchorfile>classompl_1_1control_1_1SpaceInformation.html</anchorfile>
-      <anchor>a5624207742ed134bbaf894ad1d5cc9f2</anchor>
+      <anchor>a8dc4ac369224a348a7539635b5c51cc7</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -23929,7 +20131,7 @@
       <type>Control *</type>
       <name>cloneControl</name>
       <anchorfile>classompl_1_1control_1_1SpaceInformation.html</anchorfile>
-      <anchor>a302a772abd7356756089f7b4d4fe16ee</anchor>
+      <anchor>a39b38a38b3927f9a59508f92a6a3f37c</anchor>
       <arglist>(const Control *source) const</arglist>
     </member>
     <member kind="function">
@@ -24020,7 +20222,7 @@
       <type>const StatePropagatorPtr &amp;</type>
       <name>getStatePropagator</name>
       <anchorfile>classompl_1_1control_1_1SpaceInformation.html</anchorfile>
-      <anchor>ada47e8e91423541c3c91edfbc8ec15b0</anchor>
+      <anchor>a96c60c537243c7fd1ac99a35ef3b8d48</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -24139,7 +20341,7 @@
       <type>Control *</type>
       <name>allocControl</name>
       <anchorfile>classompl_1_1control_1_1SpaceInformation.html</anchorfile>
-      <anchor>a5624207742ed134bbaf894ad1d5cc9f2</anchor>
+      <anchor>a8dc4ac369224a348a7539635b5c51cc7</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -24160,7 +20362,7 @@
       <type>Control *</type>
       <name>cloneControl</name>
       <anchorfile>classompl_1_1control_1_1SpaceInformation.html</anchorfile>
-      <anchor>a302a772abd7356756089f7b4d4fe16ee</anchor>
+      <anchor>a39b38a38b3927f9a59508f92a6a3f37c</anchor>
       <arglist>(const Control *source) const</arglist>
     </member>
     <member kind="function">
@@ -24251,7 +20453,7 @@
       <type>const StatePropagatorPtr &amp;</type>
       <name>getStatePropagator</name>
       <anchorfile>classompl_1_1control_1_1SpaceInformation.html</anchorfile>
-      <anchor>ada47e8e91423541c3c91edfbc8ec15b0</anchor>
+      <anchor>a96c60c537243c7fd1ac99a35ef3b8d48</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -24829,7 +21031,7 @@
       <type>virtual Motion *</type>
       <name>addRoot</name>
       <anchorfile>classompl_1_1control_1_1Syclop.html</anchorfile>
-      <anchor>a3c2cd9b1827418a0064eb7d5a7aa6435</anchor>
+      <anchor>a81f418a6e2e3edb4da1daa4d06f157d4</anchor>
       <arglist>(const base::State *s)=0</arglist>
     </member>
     <member kind="function" protection="protected" virtualness="pure">
@@ -24843,7 +21045,7 @@
       <type>const Region &amp;</type>
       <name>getRegionFromIndex</name>
       <anchorfile>classompl_1_1control_1_1Syclop.html</anchorfile>
-      <anchor>a69e71bc7fc2d9de03c977a81c78b7e26</anchor>
+      <anchor>a0bc1c52b70205a82ade4421026f2060b</anchor>
       <arglist>(const int rid) const</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -25542,7 +21744,7 @@
   <compound kind="class">
     <name>ompl::FLANNDistance</name>
     <filename>classompl_1_1FLANNDistance.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
   </compound>
   <compound kind="class">
     <name>ompl::geometric::ABITstar</name>
@@ -25630,6 +21832,20 @@
       <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
       <anchor>ac0e524e03c585a05b18a2531728d9f6c</anchor>
       <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::PlannerStatus::StatusType</type>
+      <name>ensureSetup</name>
+      <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
+      <anchor>ac8eee478e7c2e8ffecd94915f00f61bf</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::PlannerStatus::StatusType</type>
+      <name>ensureStartAndGoalStates</name>
+      <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
+      <anchor>a62685b6e67ffd9fa813ba7be9a8efcdc</anchor>
+      <arglist>(const ompl::base::PlannerTerminationCondition &amp;terminationCondition)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -25731,44 +21947,51 @@
     </member>
     <member kind="function">
       <type>void</type>
-      <name>setRepairReverseSearch</name>
+      <name>setMaxNumberOfGoals</name>
       <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
-      <anchor>ab5ab579d0ddb1afed10d661f24f9cf14</anchor>
-      <arglist>(bool repairReverseSearch)</arglist>
+      <anchor>a32d4aff593a4f4e7f5f364700b218db1</anchor>
+      <arglist>(unsigned int numberOfGoals)</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMaxNumberOfGoals</name>
+      <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
+      <anchor>a84d104447bc332421b3050226877f25e</anchor>
+      <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; aitstar::Edge &gt;</type>
       <name>getEdgesInQueue</name>
       <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
-      <anchor>a17eceec4dc811b6fb865484a8284c241</anchor>
+      <anchor>aec409c0ca511804323a352242724115d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; std::shared_ptr&lt; aitstar::Vertex &gt; &gt;</type>
       <name>getVerticesInQueue</name>
       <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
-      <anchor>a0603a723281f85b9a056b28a54faa165</anchor>
+      <anchor>a8ad338a1eef68fb7697a24c5789665e8</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>aitstar::Edge</type>
       <name>getNextEdgeInQueue</name>
       <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
-      <anchor>a3ebae00f6ae4ce840aba95a50d90c90d</anchor>
+      <anchor>a9c7cbe5393f341034cc568ddd520569d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>std::shared_ptr&lt; aitstar::Vertex &gt;</type>
       <name>getNextVertexInQueue</name>
       <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
-      <anchor>ab9b5d182c8fbdb7ce1eddbb73816d120</anchor>
+      <anchor>a1a09de2c4eda92ce52aabdd580371ac3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; std::shared_ptr&lt; aitstar::Vertex &gt; &gt;</type>
       <name>getVerticesInReverseSearchTree</name>
       <anchorfile>classompl_1_1geometric_1_1AITstar.html</anchorfile>
-      <anchor>a578a14c4ee67bd192efefb6226e41164</anchor>
+      <anchor>ad00faccadc59ac77c09a9ab77f6e89c4</anchor>
       <arglist>() const</arglist>
     </member>
     <docanchor file="classompl_1_1geometric_1_1AITstar.html">gAITstar</docanchor>
@@ -25869,6 +22092,20 @@
       <name>getRewireFactor</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1ImplicitGraph.html</anchorfile>
       <anchor>a2b60d7b45db920951d40f17b3fb47f3a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxNumberOfGoals</name>
+      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1ImplicitGraph.html</anchorfile>
+      <anchor>a285255315d97d3272a42ac83346a12ca</anchor>
+      <arglist>(unsigned int maxNumberOfGoals)</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getMaxNumberOfGoals</name>
+      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1ImplicitGraph.html</anchorfile>
+      <anchor>ae75781c1cd4d89417d577ee581ecc90a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -26036,6 +22273,13 @@
       <anchor>a33866f03b8d30c1ddbaaba310c308e0f</anchor>
       <arglist>(const ompl::base::SpaceInformationPtr &amp;spaceInformation, const ompl::base::ProblemDefinitionPtr &amp;problemDefinition, const std::size_t &amp;batchId)</arglist>
     </member>
+    <member kind="function">
+      <type></type>
+      <name>Vertex</name>
+      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
+      <anchor>ad43897be247b472d536185a39954e2ee</anchor>
+      <arglist>(const std::shared_ptr&lt; Vertex &gt; &amp;other)</arglist>
+    </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
       <name>~Vertex</name>
@@ -26058,7 +22302,7 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>ompl::base::State const  *</type>
+      <type>ompl::base::State const *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
       <anchor>a7f6ebd45282e6ca52343643db9725230</anchor>
@@ -26185,6 +22429,20 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>resetCostToComeFromGoal</name>
+      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
+      <anchor>aec111b5aa88a71a24d7b4bd9f8115cf7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>resetExpandedCostToComeFromGoal</name>
+      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
+      <anchor>a572f215c9d1b42dee9f9517a45b77d11</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>setExpandedCostToComeFromGoal</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
       <anchor>a739be588ca82d87a6315bcd7986534ef</anchor>
@@ -26205,14 +22463,14 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>std::vector&lt; std::weak_ptr&lt; aitstar::Vertex &gt; &gt;</type>
+      <type>std::vector&lt; std::weak_ptr&lt; Vertex &gt; &gt;</type>
       <name>invalidateReverseBranch</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
       <anchor>acd1e077d6ccde8624cdc0c137c5f88bb</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>std::vector&lt; std::weak_ptr&lt; aitstar::Vertex &gt; &gt;</type>
+      <type>std::vector&lt; std::weak_ptr&lt; Vertex &gt; &gt;</type>
       <name>invalidateForwardBranch</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
       <anchor>a13cf5ba4429b5b3878ee1cf141693557</anchor>
@@ -26299,8 +22557,8 @@
       <type>void</type>
       <name>cacheNeighbors</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>ae4515b0cbbe5284707a919b7ad816738</anchor>
-      <arglist>(const std::vector&lt; std::shared_ptr&lt; Vertex &gt;&gt; &amp;neighbors) const</arglist>
+      <anchor>aaef0ba160232b92def985c7eb3705f52</anchor>
+      <arglist>(const std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; &amp;neighbors) const</arglist>
     </member>
     <member kind="function">
       <type>const std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt;</type>
@@ -26310,66 +22568,24 @@
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>void</type>
-      <name>registerPoppedOutgoingEdgeDuringForwardSearch</name>
-      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>a29d1a02dbc86132630fa3d1e0de16d9e</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>registerExpansionDuringReverseSearch</name>
-      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>ab9a8f8354ca1f00680a19b5cf849403e</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>unregisterExpansionDuringReverseSearch</name>
-      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>aad5d751340069a30e01fd8252f95816d</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>registerInsertionIntoQueueDuringReverseSearch</name>
-      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>adda32fd81a707d37112893ee0d12fd98</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
       <type>bool</type>
-      <name>hasHadOutgoingEdgePoppedDuringCurrentForwardSearch</name>
+      <name>isConsistent</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>a2f65e77acd4a5866b53b2bca464b88d3</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>hasBeenExpandedDuringCurrentReverseSearch</name>
-      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>a451831d2465b46f62e494cf0c52ca8af</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>hasBeenInsertedIntoQueueDuringCurrentReverseSearch</name>
-      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>aed4a0cc16ef58194b737136ae1665a76</anchor>
+      <anchor>a62e90d3679ca1c6434389b174c05c831</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setReverseQueuePointer</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>a4fb120dd389290c6b3ba0b7987179072</anchor>
-      <arglist>(typename ompl::BinaryHeap&lt; std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt;, std::function&lt; bool(const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;, const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;)&gt;&gt;::Element *pointer)</arglist>
+      <anchor>ad911cac1c30d494c755fe2cc2442adb7</anchor>
+      <arglist>(typename VertexQueue::Element *pointer)</arglist>
     </member>
     <member kind="function">
-      <type>ompl::BinaryHeap&lt; std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt; &gt;, std::function&lt; bool(const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;, const std::pair&lt; std::array&lt; ompl::base::Cost, 2u &gt;, std::shared_ptr&lt; Vertex &gt;&gt; &amp;)&gt; &gt;::Element *</type>
+      <type>VertexQueue::Element *</type>
       <name>getReverseQueuePointer</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>a6a87d3600207bb245855f7ed30e96d52</anchor>
+      <anchor>a902fa62481aaddc36fbff1251acf8394</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -26383,25 +22599,25 @@
       <type>void</type>
       <name>addToForwardQueueIncomingLookup</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>ae54e399d0140657384e1dcb4daac8ba5</anchor>
-      <arglist>(typename ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *pointer)</arglist>
+      <anchor>ac9aab40dde2239849312c5fcaeb3385e</anchor>
+      <arglist>(typename EdgeQueue::Element *pointer)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>addToForwardQueueOutgoingLookup</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>ab058469b6c69ad79c0ddb772175e5a4c</anchor>
-      <arglist>(typename ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *pointer)</arglist>
+      <anchor>a3381f2f35f9fc275da6ed72e7ee2c261</anchor>
+      <arglist>(typename EdgeQueue::Element *pointer)</arglist>
     </member>
     <member kind="function">
-      <type>std::vector&lt; ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt; &gt;::Element * &gt;</type>
+      <type>std::vector&lt; EdgeQueue::Element * &gt;</type>
       <name>getForwardQueueIncomingLookup</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
       <anchor>a16c3d66f17cb19c5ce5c8d81540a186b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
-      <type>std::vector&lt; ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt; &gt;::Element * &gt;</type>
+      <type>std::vector&lt; EdgeQueue::Element * &gt;</type>
       <name>getForwardQueueOutgoingLookup</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
       <anchor>a56e21a5ba7348ee92aaf6574c319ad64</anchor>
@@ -26411,15 +22627,15 @@
       <type>void</type>
       <name>removeFromForwardQueueIncomingLookup</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>abc1b602d70a2376ca4905ad2b25b062e</anchor>
-      <arglist>(ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *element)</arglist>
+      <anchor>acfcbc8303d33714601ead209cc6b5692</anchor>
+      <arglist>(typename EdgeQueue::Element *element)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>removeFromForwardQueueOutgoingLookup</name>
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
-      <anchor>a9a466214ef6ed61cd4719157cbf4fb4a</anchor>
-      <arglist>(ompl::BinaryHeap&lt; aitstar::Edge, std::function&lt; bool(const aitstar::Edge &amp;, const aitstar::Edge &amp;)&gt;&gt;::Element *element)</arglist>
+      <anchor>a1aa0e9c2fd8a853a6927b8b46f93271d</anchor>
+      <arglist>(typename EdgeQueue::Element *element)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -26434,6 +22650,20 @@
       <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
       <anchor>a297e624120d40744676ec64e6885e691</anchor>
       <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>callOnForwardBranch</name>
+      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
+      <anchor>a92f294b0a4ac25e8d7c08be3e9d25250</anchor>
+      <arglist>(const std::function&lt; void(const std::shared_ptr&lt; Vertex &gt; &amp;)&gt; &amp;function)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>callOnReverseBranch</name>
+      <anchorfile>classompl_1_1geometric_1_1aitstar_1_1Vertex.html</anchorfile>
+      <anchor>a4d37723c991691e134fd74f59e1484b0</anchor>
+      <arglist>(const std::function&lt; void(const std::shared_ptr&lt; Vertex &gt; &amp;)&gt; &amp;function)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -26605,14 +22835,14 @@
       <type>static std::shared_ptr&lt; AnytimePathShortening &gt;</type>
       <name>createPlanner</name>
       <anchorfile>classompl_1_1geometric_1_1AnytimePathShortening.html</anchorfile>
-      <anchor>a91b49e966e07da56a0b624b4615603be</anchor>
+      <anchor>a7da816144f331dcee392e1ee5412fcf6</anchor>
       <arglist>(const base::SpaceInformationPtr &amp;si, unsigned int numPlanners=std::max(1u, std::thread::hardware_concurrency()))</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static std::shared_ptr&lt; AnytimePathShortening &gt;</type>
       <name>createPlanner</name>
       <anchorfile>classompl_1_1geometric_1_1AnytimePathShortening.html</anchorfile>
-      <anchor>a908c9bcd71d1d49db47923e655b5ae1b</anchor>
+      <anchor>a5b6d4e88a4c520bbc1c50026218bbe99</anchor>
       <arglist>(const base::SpaceInformationPtr &amp;si)</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -26936,8 +23166,8 @@
       <type>void</type>
       <name>sampleFree</name>
       <anchorfile>classompl_1_1geometric_1_1BFMT.html</anchorfile>
-      <anchor>a7714fef9dc34c186c51360711b3eb11e</anchor>
-      <arglist>(const std::shared_ptr&lt; NearestNeighbors&lt; BiDirMotion * &gt;&gt; &amp;nn, const base::PlannerTerminationCondition &amp;ptc)</arglist>
+      <anchor>abd929dacbd80e9a220f81316f94614d4</anchor>
+      <arglist>(const std::shared_ptr&lt; NearestNeighbors&lt; BiDirMotion * &gt; &gt; &amp;nn, const base::PlannerTerminationCondition &amp;ptc)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>void</type>
@@ -27193,7 +23423,7 @@
       <type>BiDirMotion *</type>
       <name>getParent</name>
       <anchorfile>classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html</anchorfile>
-      <anchor>aebad985f06405e213256745474a6d510</anchor>
+      <anchor>a20d05305ef4a974efcaa4bcbb2f06b76</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -27256,7 +23486,7 @@
       <type>base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1geometric_1_1BFMT_1_1BiDirMotion.html</anchorfile>
-      <anchor>a496d5366758c9b5808b273d4cbd370fa</anchor>
+      <anchor>aa91f9a3b7dc40d3d8a74f6218293e50a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -27424,8 +23654,8 @@
       <type>void</type>
       <name>addMotion</name>
       <anchorfile>classompl_1_1geometric_1_1BiEST.html</anchorfile>
-      <anchor>a5ed8a8a6f7fa62b89edf134028d5bc05</anchor>
-      <arglist>(Motion *motion, std::vector&lt; Motion * &gt; &amp;motions, PDF&lt; Motion * &gt; &amp;pdf, const std::shared_ptr&lt; NearestNeighbors&lt; Motion * &gt;&gt; &amp;nn, const std::vector&lt; Motion * &gt; &amp;neighbors)</arglist>
+      <anchor>a1d0bf3ea5c8ef2393fceeb628216ebac</anchor>
+      <arglist>(Motion *motion, std::vector&lt; Motion * &gt; &amp;motions, PDF&lt; Motion * &gt; &amp;pdf, const std::shared_ptr&lt; NearestNeighbors&lt; Motion * &gt; &gt; &amp;nn, const std::vector&lt; Motion * &gt; &amp;neighbors)</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>std::shared_ptr&lt; NearestNeighbors&lt; Motion * &gt; &gt;</type>
@@ -27513,7 +23743,7 @@
       <type>PDF&lt; Motion * &gt;::Element *</type>
       <name>element</name>
       <anchorfile>classompl_1_1geometric_1_1BiEST_1_1Motion.html</anchorfile>
-      <anchor>ad16af76a3d0aa6e326fa6dac487c1789</anchor>
+      <anchor>ac63617b085ed09981db13da281cf2639</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -28204,8 +24434,8 @@
       <type></type>
       <name>BITstar</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar.html</anchorfile>
-      <anchor>ab43b1c4ff95b39b5525ebdf8d53a76d7</anchor>
-      <arglist>(const base::SpaceInformationPtr &amp;spaceInfo, const std::string &amp;name=&quot;BITstar&quot;)</arglist>
+      <anchor>aa0dc941b1746d8a412a81561296e8bdf</anchor>
+      <arglist>(const base::SpaceInformationPtr &amp;spaceInfo, const std::string &amp;name=&quot;kBITstar&quot;)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
@@ -29405,7 +25635,7 @@
       <arglist>()</arglist>
     </member>
     <member kind="function">
-      <type>ompl::base::State const  *</type>
+      <type>ompl::base::State const *</type>
       <name>state</name>
       <anchorfile>classompl_1_1geometric_1_1BITstar_1_1Vertex.html</anchorfile>
       <anchor>afcf66fbda69f8f22a8b2b7283d0a0758</anchor>
@@ -29751,7 +25981,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1BKPIECE1.html</anchorfile>
-      <anchor>afc5552c48fac02e4e96de32bf2b5aa56</anchor>
+      <anchor>a87fd532f94cc18476c3ff892d11b9f1c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -29985,7 +26215,7 @@
       <type>base::PlannerPtr &amp;</type>
       <name>getPlannerInstance</name>
       <anchorfile>classompl_1_1geometric_1_1CForest.html</anchorfile>
-      <anchor>a07715853f17ce077692818f47ea654f5</anchor>
+      <anchor>a7210a372fe8f775723b51e93f3898ba4</anchor>
       <arglist>(const std::size_t idx)</arglist>
     </member>
     <member kind="function">
@@ -30140,7 +26370,7 @@
   <compound kind="class">
     <name>ompl::geometric::Discretization</name>
     <filename>classompl_1_1geometric_1_1Discretization.html</filename>
-    <templarg></templarg>
+    <templarg>typename Motion</templarg>
     <class kind="struct">ompl::geometric::Discretization::CellData</class>
     <class kind="struct">ompl::geometric::Discretization::OrderCellsByImportance</class>
     <member kind="typedef">
@@ -30464,7 +26694,7 @@
       <type>PDF&lt; Motion * &gt;::Element *</type>
       <name>element</name>
       <anchorfile>classompl_1_1geometric_1_1EST_1_1Motion.html</anchorfile>
-      <anchor>a01950b8cb010ec9e4ff3385374559c93</anchor>
+      <anchor>a18a67ffa58e074538ec7e2db7cc094d0</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -30842,7 +27072,7 @@
       <type>base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1geometric_1_1FMT_1_1Motion.html</anchorfile>
-      <anchor>aa7fe35ae65f4d0b8f7f51d5ea083d4c1</anchor>
+      <anchor>a46e986c77c681e070c23845b64d801d8</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -30856,7 +27086,7 @@
       <type>Motion *</type>
       <name>getParent</name>
       <anchorfile>classompl_1_1geometric_1_1FMT_1_1Motion.html</anchorfile>
-      <anchor>af66cfa3192edff6f2b937dfdfe816ba4</anchor>
+      <anchor>af79e50290fb5bb32a13e497b20b97561</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -30919,7 +27149,7 @@
       <type>std::vector&lt; Motion * &gt; &amp;</type>
       <name>getChildren</name>
       <anchorfile>classompl_1_1geometric_1_1FMT_1_1Motion.html</anchorfile>
-      <anchor>a7b4d1adeacf43d4e5cfd1513215c6500</anchor>
+      <anchor>ab14dc562e5fad85866d993fda99e8651</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -31163,14 +27393,14 @@
   <compound kind="class">
     <name>ompl::geometric::KBoundedStrategy</name>
     <filename>classompl_1_1geometric_1_1KBoundedStrategy.html</filename>
-    <templarg></templarg>
+    <templarg>class Milestone</templarg>
     <base>ompl::geometric::KStrategy</base>
     <member kind="function">
       <type></type>
       <name>KBoundedStrategy</name>
       <anchorfile>classompl_1_1geometric_1_1KBoundedStrategy.html</anchorfile>
-      <anchor>a65b4a003542ae6221a1a1c9b0d93a0f1</anchor>
-      <arglist>(const unsigned int k, const double bound, const std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt;&gt; &amp;nn)</arglist>
+      <anchor>aebfcb632b1235d72432cbd164e21cf37</anchor>
+      <arglist>(const unsigned int k, const double bound, const std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt; &gt; &amp;nn)</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>const double</type>
@@ -31294,7 +27524,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1KPIECE1.html</anchorfile>
-      <anchor>a38926b315b3eb51de7e51a106117fc5a</anchor>
+      <anchor>ab956155a06556fd1b33a8012a616d12d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -31411,14 +27641,14 @@
   <compound kind="class">
     <name>ompl::geometric::KStarStrategy</name>
     <filename>classompl_1_1geometric_1_1KStarStrategy.html</filename>
-    <templarg></templarg>
+    <templarg>class Milestone</templarg>
     <base>ompl::geometric::KStrategy</base>
     <member kind="function">
       <type></type>
       <name>KStarStrategy</name>
       <anchorfile>classompl_1_1geometric_1_1KStarStrategy.html</anchorfile>
-      <anchor>a5e807ea21a7e9b3d9fbf07661826bb1a</anchor>
-      <arglist>(const NumNeighborsFn &amp;n, const std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt;&gt; &amp;nn, const unsigned int d=1)</arglist>
+      <anchor>a44cd5500c81d9277c1e2d5104973535c</anchor>
+      <arglist>(const NumNeighborsFn &amp;n, const std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt; &gt; &amp;nn, const unsigned int d=1)</arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>const NumNeighborsFn</type>
@@ -31431,26 +27661,26 @@
   <compound kind="class">
     <name>ompl::geometric::KStrategy</name>
     <filename>classompl_1_1geometric_1_1KStrategy.html</filename>
-    <templarg></templarg>
+    <templarg>class Milestone</templarg>
     <member kind="function">
       <type></type>
       <name>KStrategy</name>
       <anchorfile>classompl_1_1geometric_1_1KStrategy.html</anchorfile>
-      <anchor>a544421871709d8e6c37cc038accf511f</anchor>
-      <arglist>(const unsigned int k, std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt;&gt; nn)</arglist>
+      <anchor>ada51287989c46e422044e93d013cd54d</anchor>
+      <arglist>(const unsigned int k, std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt; &gt; nn)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>setNearestNeighbors</name>
       <anchorfile>classompl_1_1geometric_1_1KStrategy.html</anchorfile>
-      <anchor>afbeee96b0cec8e05c0281f87c8a3d9dd</anchor>
-      <arglist>(const std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt;&gt; &amp;nn)</arglist>
+      <anchor>a1f2a3e83d00f2a2b1443e2d182e6b6ce</anchor>
+      <arglist>(const std::shared_ptr&lt; NearestNeighbors&lt; Milestone &gt; &gt; &amp;nn)</arglist>
     </member>
     <member kind="function">
       <type>const std::vector&lt; Milestone &gt; &amp;</type>
       <name>operator()</name>
       <anchorfile>classompl_1_1geometric_1_1KStrategy.html</anchorfile>
-      <anchor>ad0f6f3289047f520643ff557628b0d3b</anchor>
+      <anchor>aa3a7744a472e33993b55a513cbf5a9e5</anchor>
       <arglist>(const Milestone &amp;m)</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -31700,7 +27930,7 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>boost::adjacency_list&lt; boost::vecS, boost::listS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_index_t, unsigned long int, boost::property&lt; vertex_flags_t, unsigned int, boost::property&lt; vertex_component_t, unsigned long int, boost::property&lt; boost::vertex_predecessor_t, Vertex, boost::property&lt; boost::vertex_rank_t, unsigned long int &gt; &gt;&gt; &gt;&gt; &gt;, boost::property&lt; boost::edge_weight_t, base::Cost, boost::property&lt; edge_flags_t, unsigned int &gt; &gt;&gt;</type>
+      <type>boost::adjacency_list&lt; boost::vecS, boost::listS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_index_t, unsigned long int, boost::property&lt; vertex_flags_t, unsigned int, boost::property&lt; vertex_component_t, unsigned long int, boost::property&lt; boost::vertex_predecessor_t, Vertex, boost::property&lt; boost::vertex_rank_t, unsigned long int &gt; &gt; &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, base::Cost, boost::property&lt; edge_flags_t, unsigned int &gt; &gt; &gt;</type>
       <name>Graph</name>
       <anchorfile>classompl_1_1geometric_1_1LazyPRM.html</anchorfile>
       <anchor>a98dd9d439eec42797973cf6a945603d9</anchor>
@@ -31969,42 +28199,42 @@
       <type>boost::property_map&lt; Graph, boost::vertex_index_t &gt;::type</type>
       <name>indexProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1LazyPRM.html</anchorfile>
-      <anchor>ac6883f39c60bace14e1ad799a34ecd97</anchor>
+      <anchor>aebed69e93f0c24025e7ab2f06de853a5</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_state_t &gt;::type</type>
       <name>stateProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1LazyPRM.html</anchorfile>
-      <anchor>afcd49e46180b5049341e6933a9de1b0a</anchor>
+      <anchor>ab865c1b257289375695724de1dac26f5</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, boost::edge_weight_t &gt;::type</type>
       <name>weightProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1LazyPRM.html</anchorfile>
-      <anchor>a661d990a47db9f64ff51d93020037584</anchor>
+      <anchor>a7f6925f1e967a370cd4533f7de2ce697</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_component_t &gt;::type</type>
       <name>vertexComponentProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1LazyPRM.html</anchorfile>
-      <anchor>a62769ed475cd1e37ff07ec407a0c6474</anchor>
+      <anchor>a53e7073f45e4aa6a63764bee9e377bd9</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_flags_t &gt;::type</type>
       <name>vertexValidityProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1LazyPRM.html</anchorfile>
-      <anchor>a37d00831d96da1a1be102bddefbea94e</anchor>
+      <anchor>a95c5662ca382e96015aa15af5aaa3bc9</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, edge_flags_t &gt;::type</type>
       <name>edgeValidityProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1LazyPRM.html</anchorfile>
-      <anchor>a150ec69782ce5334c8c7c4ab016ec820</anchor>
+      <anchor>aecddc9a3c3f72acb1e1fd44af7774fb1</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -32289,7 +28519,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1LBKPIECE1.html</anchorfile>
-      <anchor>a548fb9b4611a4ff138e8021930c4bf6c</anchor>
+      <anchor>ab1a5587ea02a95b92cdcfa0b235da3c0</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -32638,7 +28868,7 @@
       <type>Motion *</type>
       <name>getMotion</name>
       <anchorfile>classompl_1_1geometric_1_1LBTRRT.html</anchorfile>
-      <anchor>a5470b0c0d9ab1ca44ff5ece305df32ca</anchor>
+      <anchor>adceb996d633c0da719fc82ce2019b7be</anchor>
       <arglist>(std::size_t i)</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -32973,136 +29203,6 @@
     <docanchor file="classompl_1_1geometric_1_1LightningRetrieveRepair.html">LightningRetrieveRepair</docanchor>
   </compound>
   <compound kind="class">
-    <name>ompl::geometric::MultiQuotient</name>
-    <filename>classompl_1_1geometric_1_1MultiQuotient.html</filename>
-    <templarg></templarg>
-    <base>ompl::base::Planner</base>
-    <class kind="struct">ompl::geometric::MultiQuotient::CmpQuotientSpacePtrs</class>
-    <member kind="function">
-      <type></type>
-      <name>MultiQuotient</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>ad93c6dc42768f867182edde4f8f03110</anchor>
-      <arglist>(std::vector&lt; ompl::base::SpaceInformationPtr &gt; &amp;siVec, std::string type=&quot;QuotientPlanner&quot;)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>getPlannerData</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>ae718b8c5556a468501a0364d82ac8da9</anchor>
-      <arglist>(ompl::base::PlannerData &amp;data) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::base::PlannerStatus</type>
-      <name>solve</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>af9d9fd12adcac413f3e8ae4a40d22389</anchor>
-      <arglist>(const ompl::base::PlannerTerminationCondition &amp;ptc) override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setup</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>ac0ee9db4804bc298cdb5c101cf207b44</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a12dbcbf99da65d23b64c1f7d0af6dcf9</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setProblemDefinition</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>ae06b01d501a5b0c867e8ce9eb3890451</anchor>
-      <arglist>(const ompl::base::ProblemDefinitionPtr &amp;pdef) override</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>getLevels</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>aa4225e29ba1eefc417b2b2272ec37f11</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; int &gt;</type>
-      <name>getFeasibleNodes</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a0dcfdcc1bcba953e5e885170584dcbe4</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; int &gt;</type>
-      <name>getNodes</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>ad11719ea7ace9386a664080d5cf415f2</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>std::vector&lt; int &gt;</type>
-      <name>getDimensionsPerLevel</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a0610ca7eb928be4aefbf7af7e3c6cf2f</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="typedef" protection="protected">
-      <type>std::priority_queue&lt; QuotientSpace *, std::vector&lt; QuotientSpace * &gt;, CmpQuotientSpacePtrs &gt;</type>
-      <name>QuotientSpacePriorityQueue</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>afa6e2f21acc934b61f8ece57be8a8cfc</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::vector&lt; ompl::base::PathPtr &gt;</type>
-      <name>solutions_</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>af5cfca9a6af76d02f8871fc010748052</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::vector&lt; QuotientSpace * &gt;</type>
-      <name>quotientSpaces_</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a752a3a6b9b3d8f45fd487095a33eefeb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>bool</type>
-      <name>foundKLevelSolution_</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a95aa7513480a17bbfc42faaa12978f5b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>currentQuotientLevel_</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a2719be13fdd72bfb0bc7cec2b2559ff3</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>stopAtLevel_</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a886a8ac216214b081bcc9e4dda80b6ba</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::vector&lt; ompl::base::SpaceInformationPtr &gt;</type>
-      <name>siVec_</name>
-      <anchorfile>classompl_1_1geometric_1_1MultiQuotient.html</anchorfile>
-      <anchor>a4d70aea987dbd17dfa67c11dcb9a501c</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="struct">
-    <name>ompl::geometric::MultiQuotient::CmpQuotientSpacePtrs</name>
-    <filename>structompl_1_1geometric_1_1MultiQuotient_1_1CmpQuotientSpacePtrs.html</filename>
-  </compound>
-  <compound kind="class">
     <name>ompl::geometric::PathGeometric</name>
     <filename>classompl_1_1geometric_1_1PathGeometric.html</filename>
     <base>ompl::base::Path</base>
@@ -33133,6 +29233,13 @@
       <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
       <anchor>aa61a7877241c63468398fa82d9021957</anchor>
       <arglist>(const base::SpaceInformationPtr &amp;si, const base::State *state1, const base::State *state2)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>PathGeometric</name>
+      <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
+      <anchor>a146080919f86a9685df1436bd0ca6c72</anchor>
+      <arglist>(const base::SpaceInformationPtr &amp;si, std::vector&lt; const base::State * &gt; &amp;states)</arglist>
     </member>
     <member kind="function">
       <type>PathGeometric &amp;</type>
@@ -33292,21 +29399,21 @@
       <type>std::vector&lt; base::State * &gt; &amp;</type>
       <name>getStates</name>
       <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
-      <anchor>ae124d24520b2d20635ec22805a252c8c</anchor>
+      <anchor>adc72e4552007a78358e183aa60ef08b6</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
-      <anchor>acea7c8dc9b28e6bb81ec62d4c0b4730b</anchor>
+      <anchor>a9b033221cdaad0c54630f7ae33435b3e</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
-      <anchor>a449eb02c6c80e6647710db64b247036c</anchor>
+      <anchor>a18e1149b11e5282f34f6c19fc31f9327</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
@@ -33446,21 +29553,21 @@
       <type>std::vector&lt; base::State * &gt; &amp;</type>
       <name>getStates</name>
       <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
-      <anchor>ae124d24520b2d20635ec22805a252c8c</anchor>
+      <anchor>adc72e4552007a78358e183aa60ef08b6</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
-      <anchor>acea7c8dc9b28e6bb81ec62d4c0b4730b</anchor>
+      <anchor>a9b033221cdaad0c54630f7ae33435b3e</anchor>
       <arglist>(unsigned int index)</arglist>
     </member>
     <member kind="function">
       <type>const base::State *</type>
       <name>getState</name>
       <anchorfile>classompl_1_1geometric_1_1PathGeometric.html</anchorfile>
-      <anchor>a449eb02c6c80e6647710db64b247036c</anchor>
+      <anchor>a18e1149b11e5282f34f6c19fc31f9327</anchor>
       <arglist>(unsigned int index) const</arglist>
     </member>
     <member kind="function">
@@ -33743,7 +29850,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1PDST.html</anchorfile>
-      <anchor>a7bcc6714672e1936d5e17523f7a39c41</anchor>
+      <anchor>a2e4a0f2b2d77072350118306d303e75a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -33860,7 +29967,7 @@
       <type>Cell *</type>
       <name>stab</name>
       <anchorfile>structompl_1_1geometric_1_1PDST_1_1Cell.html</anchorfile>
-      <anchor>a3fb64e792b31a967c391f2d28aca601c</anchor>
+      <anchor>a7d2132e63bcdf64350271581508d681f</anchor>
       <arglist>(const Eigen::Ref&lt; Eigen::VectorXd &gt; &amp;projection) const</arglist>
     </member>
     <member kind="function">
@@ -33983,7 +30090,7 @@
       <type>ompl::BinaryHeap&lt; Motion *, MotionCompare &gt;::Element *</type>
       <name>heapElement_</name>
       <anchorfile>structompl_1_1geometric_1_1PDST_1_1Motion.html</anchorfile>
-      <anchor>a83997c3097c04f4dbbcaabcdb253871b</anchor>
+      <anchor>a378c27b4900d34956a25f41e9df63fc8</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -34013,7 +30120,7 @@
     <class kind="struct">ompl::geometric::PRM::vertex_successful_connection_attempts_t</class>
     <class kind="struct">ompl::geometric::PRM::vertex_total_connection_attempts_t</class>
     <member kind="typedef">
-      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; vertex_total_connection_attempts_t, unsigned long int, boost::property&lt; vertex_successful_connection_attempts_t, unsigned long int, boost::property&lt; boost::vertex_predecessor_t, unsigned long int, boost::property&lt; boost::vertex_rank_t, unsigned long int &gt; &gt;&gt; &gt;&gt;, boost::property&lt; boost::edge_weight_t, base::Cost &gt; &gt;</type>
+      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; vertex_total_connection_attempts_t, unsigned long int, boost::property&lt; vertex_successful_connection_attempts_t, unsigned long int, boost::property&lt; boost::vertex_predecessor_t, unsigned long int, boost::property&lt; boost::vertex_rank_t, unsigned long int &gt; &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, base::Cost &gt; &gt;</type>
       <name>Graph</name>
       <anchorfile>classompl_1_1geometric_1_1PRM.html</anchorfile>
       <anchor>a49dc45e1ad4aadfe75cd729590104c6a</anchor>
@@ -34338,28 +30445,28 @@
       <type>boost::property_map&lt; Graph, vertex_state_t &gt;::type</type>
       <name>stateProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1PRM.html</anchorfile>
-      <anchor>ad88ed69d1ac8d376f91639eb5b0b638c</anchor>
+      <anchor>ae8e5a657d79f77c7fd91162673ce3c77</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_total_connection_attempts_t &gt;::type</type>
       <name>totalConnectionAttemptsProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1PRM.html</anchorfile>
-      <anchor>ad279ee7f7070426d6835dd03a970f3a8</anchor>
+      <anchor>afa26bbae0540c84ebc8f928b72b47dbe</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_successful_connection_attempts_t &gt;::type</type>
       <name>successfulConnectionAttemptsProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1PRM.html</anchorfile>
-      <anchor>aa2bbda9d19b0cb3c4b848bdebdfeecb1</anchor>
+      <anchor>a9711ebed4d6fdc981f8d62fc0e9880cf</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, boost::edge_weight_t &gt;::type</type>
       <name>weightProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1PRM.html</anchorfile>
-      <anchor>aef27444f5bb1cd1735a6653a00232f18</anchor>
+      <anchor>a92795ef34fabc03597fb6e6bf0912d4f</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -34540,7 +30647,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1ProjEST.html</anchorfile>
-      <anchor>a3a11c0fa685684285668707a1015b0bb</anchor>
+      <anchor>a61d45b15b32f72732290944d92c2f49c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -34818,7 +30925,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1pSBL.html</anchorfile>
-      <anchor>aedaf217cfed4b426cdaeab1b5eacc779</anchor>
+      <anchor>a3e96b35bd9764c5bdf6867ce960e1497</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -34923,449 +31030,6 @@
   <compound kind="struct">
     <name>ompl::geometric::pSBL::TreeData</name>
     <filename>structompl_1_1geometric_1_1pSBL_1_1TreeData.html</filename>
-  </compound>
-  <compound kind="class">
-    <name>ompl::geometric::QRRTImpl</name>
-    <filename>classompl_1_1geometric_1_1QRRTImpl.html</filename>
-    <base>ompl::geometric::QuotientSpaceGraph</base>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>grow</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>ad07f6130b3dff05ced6f912be2a5abc0</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getImportance</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>a40fabcfc627d86d412a05b71ef93444e</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>ad3ea2e2a3bb6f9d1c22626353bb11c66</anchor>
-      <arglist>(ompl::base::State *q_random) override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual bool</type>
-      <name>sampleQuotient</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>a729caf47e7cfbdf9a258bfe5bbbe289a</anchor>
-      <arglist>(ompl::base::State *) override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setup</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>aed8c895f00f46ac96c041de2f3970dc6</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>ad17f00e3b26496c067317b30a6979d8b</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>Configuration *</type>
-      <name>qRandom_</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>a87e5da8e31b7aa6cebb87585e754ef91</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>std::vector&lt; Vertex &gt;</type>
-      <name>shortestPathVertices_</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>ac68caca723e0cbf8485dab4195764ef1</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>maxDistance_</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>a972da7414f9563cc8c4b614bb1a2455e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>goalBias_</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>a710862e65f6efd9889f90a0c5446c147</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>ompl::base::Goal *</type>
-      <name>goal_</name>
-      <anchorfile>classompl_1_1geometric_1_1QRRTImpl.html</anchorfile>
-      <anchor>a94aadeaae063ee9e6ec15ee3d619e745</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>ompl::geometric::QuotientSpace</name>
-    <filename>classompl_1_1geometric_1_1QuotientSpace.html</filename>
-    <base>ompl::base::Planner</base>
-    <member kind="function">
-      <type></type>
-      <name>QuotientSpace</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a848b53b479d5503839751ef2f4271c1a</anchor>
-      <arglist>(const ompl::base::SpaceInformationPtr &amp;si, QuotientSpace *parent_=nullptr)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::base::PlannerStatus</type>
-      <name>solve</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a6bc76e330783a3b88027bcc2a3b34ed3</anchor>
-      <arglist>(const ompl::base::PlannerTerminationCondition &amp;ptc) override final</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setProblemDefinition</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a29fce162c75b30f55980d800e3a40078</anchor>
-      <arglist>(const ompl::base::ProblemDefinitionPtr &amp;pdef) override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a0dcb3f3ddaee662e3658a0458c6c18af</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setup</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a5bd21c316557447ab799160b9809a8e4</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::base::SpaceInformationPtr &amp;</type>
-      <name>getX1</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>af139b6e44633ea63171f55608db1a886</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::base::SpaceInformationPtr &amp;</type>
-      <name>getQ1</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>af9656c636034debb39909b7231525c51</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::base::SpaceInformationPtr &amp;</type>
-      <name>getQ0</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a38e68735a5a05304636166c2ff3d019d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getX1Dimension</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>aa3ec8deba271ce02277576aef99fdf31</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getQ1Dimension</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a008a5edff3926ab9496e0ee6cc885cce</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getQ0Dimension</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>ac7274cc26fb2b07cc2cd8efb4c4b493f</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getDimension</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>acbb130bcf637e9b8ec1ce81137d1bfca</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>QuotientSpace *</type>
-      <name>getParent</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>ab329205e0261422c618de98d679ffe14</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>QuotientSpace *</type>
-      <name>getChild</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a64224741aa0453fdf4d41b3c12e4d01f</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getLevel</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a702420eef1efc660f247f89b24a1021d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setLevel</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>abb3ece4778acde3afe14afcecc07e700</anchor>
-      <arglist>(unsigned int)</arglist>
-    </member>
-    <member kind="function">
-      <type>QuotientSpaceType</type>
-      <name>getType</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>af92ca8d852023b436396945991951421</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setChild</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a693a802370f1e631d0b89b5804bacf72</anchor>
-      <arglist>(QuotientSpace *child_)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>setParent</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>aaaf15828b4166b44e236803de2c716e9</anchor>
-      <arglist>(QuotientSpace *parent_)</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getTotalNumberOfSamples</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a6c80d53d8f3977fcb40353d20ef1556e</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>unsigned int</type>
-      <name>getTotalNumberOfFeasibleSamples</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>abc4c4ba06b2a8b7bb1aa28bd5ab696c6</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>projectX1</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>ab093ef45748eefe75b734ba2e6f107d0</anchor>
-      <arglist>(const ompl::base::State *q, ompl::base::State *qX1) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>projectQ0</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>af4321baf5fbf4864f13f455c07280dda</anchor>
-      <arglist>(const ompl::base::State *q, ompl::base::State *qQ0) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>mergeStates</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a12a533d02d38314cd5f546a42c105dba</anchor>
-      <arglist>(const ompl::base::State *qQ0, const ompl::base::State *qX1, ompl::base::State *qQ1) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>checkSpaceHasFiniteMeasure</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>ae5c2c5764557a8de0bf6f3f9e7ea8e68</anchor>
-      <arglist>(const ompl::base::StateSpacePtr space) const</arglist>
-    </member>
-    <member kind="function" static="yes">
-      <type>static void</type>
-      <name>resetCounter</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a38e3f8dc39507189dbeff075d8fcd9b8</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" protection="protected" virtualness="virtual">
-      <type>virtual void</type>
-      <name>print</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>aa99aaea36bd438209ee2a5ee11726c33</anchor>
-      <arglist>(std::ostream &amp;out) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>const ompl::base::StateSpacePtr</type>
-      <name>computeQuotientSpace</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a7ca4c244d1993f0dddf6485cfd447021</anchor>
-      <arglist>(const ompl::base::StateSpacePtr Q1, const ompl::base::StateSpacePtr Q0)</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>QuotientSpaceType</type>
-      <name>identifyQuotientSpaceType</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a76983671dfef3fe3278f19d43d082809</anchor>
-      <arglist>(const ompl::base::StateSpacePtr Q1, const ompl::base::StateSpacePtr Q0)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>ompl::base::State *</type>
-      <name>s_Q0_tmp_</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a57e8b114376a2de30d1f3f5388c8f4b4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>ompl::base::State *</type>
-      <name>s_X1_tmp_</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>ae069b1a5608613239aa9cd895647c6f6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>id_</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a3ce76844a581a921af5a9765e1147336</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>unsigned int</type>
-      <name>level_</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>aeb019ba3717f5f36e8ef63039be1faa3</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="friend">
-      <type>friend std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpace.html</anchorfile>
-      <anchor>a4ca12006a72348516f8c0147cf3d5365</anchor>
-      <arglist>(std::ostream &amp;out, const QuotientSpace &amp;qtnt)</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>ompl::geometric::QuotientSpaceGraph</name>
-    <filename>classompl_1_1geometric_1_1QuotientSpaceGraph.html</filename>
-    <base>ompl::geometric::QuotientSpace</base>
-    <class kind="class">ompl::geometric::QuotientSpaceGraph::Configuration</class>
-    <class kind="class">ompl::geometric::QuotientSpaceGraph::EdgeInternalState</class>
-    <class kind="struct">ompl::geometric::QuotientSpaceGraph::GraphBundle</class>
-    <member kind="typedef">
-      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, Configuration *, EdgeInternalState, GraphBundle &gt;</type>
-      <name>Graph</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a858db50b2aa56c12d412f37ce28654c9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>getPlannerData</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a007697ffd8b0bd82ff863d80601a4a80</anchor>
-      <arglist>(ompl::base::PlannerData &amp;data) const override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual double</type>
-      <name>getImportance</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a43ca455fe2152bdbca4cc7bbbb85e65f</anchor>
-      <arglist>() const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>init</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a662a86b441d1bb5f5a077db48c95f981</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>setup</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a4907a904a003d56c0c8c249f51317f01</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>af300583bdd52c7b7bc3729a448574850</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clearQuery</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>aac7e44840657d1efe278aa3fe84548be</anchor>
-      <arglist>() override</arglist>
-    </member>
-    <member kind="function" virtualness="virtual">
-      <type>virtual void</type>
-      <name>print</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a4a3863560eb576d83c9e5d08cdf5d6c8</anchor>
-      <arglist>(std::ostream &amp;out) const override</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printConfiguration</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a4a4a870601caf2590c35d28c99fba49b</anchor>
-      <arglist>(const Configuration *) const</arglist>
-    </member>
-    <member kind="function" protection="protected">
-      <type>ompl::base::PathPtr</type>
-      <name>getPath</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a02a4d4e8ec5342a2bd66af3670997431</anchor>
-      <arglist>(const Vertex &amp;start, const Vertex &amp;goal)</arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>RoadmapNeighborsPtr</type>
-      <name>nearestDatastructure_</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>aa4afb90450aee8152f783f12a93a3490</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable" protection="protected">
-      <type>double</type>
-      <name>graphLength_</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph.html</anchorfile>
-      <anchor>a9da0560292e41298945ce0d754705a77</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>ompl::geometric::QuotientSpaceGraph::Configuration</name>
-    <filename>classompl_1_1geometric_1_1QuotientSpaceGraph_1_1Configuration.html</filename>
-    <member kind="variable">
-      <type>void *</type>
-      <name>pdf_element</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph_1_1Configuration.html</anchorfile>
-      <anchor>a92208d4cb1a8d9489d479a208d5b706c</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>normalized_index_type</type>
-      <name>index</name>
-      <anchorfile>classompl_1_1geometric_1_1QuotientSpaceGraph_1_1Configuration.html</anchorfile>
-      <anchor>a4efcee0751120bd6a3510c8ff3a9faea</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>ompl::geometric::QuotientSpaceGraph::EdgeInternalState</name>
-    <filename>classompl_1_1geometric_1_1QuotientSpaceGraph_1_1EdgeInternalState.html</filename>
-  </compound>
-  <compound kind="struct">
-    <name>ompl::geometric::QuotientSpaceGraph::GraphBundle</name>
-    <filename>structompl_1_1geometric_1_1QuotientSpaceGraph_1_1GraphBundle.html</filename>
   </compound>
   <compound kind="class">
     <name>ompl::geometric::RLRT</name>
@@ -35866,6 +31530,13 @@
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>startTree_</name>
+      <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
+      <anchor>a0f0d4fb0ba0a0fa4826f81cb9e4d323c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
       <type>double</type>
       <name>maxDistance_</name>
       <anchorfile>classompl_1_1geometric_1_1RRTConnect.html</anchorfile>
@@ -36255,8 +31926,8 @@
       <type>void</type>
       <name>addChildrenToList</name>
       <anchorfile>classompl_1_1geometric_1_1RRTstar.html</anchorfile>
-      <anchor>a846bbf34344d62b0716832a6fa8f0094</anchor>
-      <arglist>(std::queue&lt; Motion *, std::deque&lt; Motion * &gt;&gt; *motionList, Motion *motion)</arglist>
+      <anchor>ab9331edc37ced21d90248936e3346b19</anchor>
+      <arglist>(std::queue&lt; Motion *, std::deque&lt; Motion * &gt; &gt; *motionList, Motion *motion)</arglist>
     </member>
     <member kind="function" protection="protected">
       <type>bool</type>
@@ -37032,7 +32703,7 @@
       <type>BinaryHeap&lt; Motion *, MotionCompare &gt;::Element *</type>
       <name>handle</name>
       <anchorfile>classompl_1_1geometric_1_1RRTXstatic_1_1Motion.html</anchorfile>
-      <anchor>aab2616be308ca7e1a5354f08a65d3aaa</anchor>
+      <anchor>a237450cccbe21879c44c7ffad69bcea6</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -37114,7 +32785,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1SBL.html</anchorfile>
-      <anchor>a474354b5d1f1387d1442ccfeb07e6a61</anchor>
+      <anchor>addfcd1570fae46749fea94ad4ae06321</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -37376,77 +33047,77 @@
       <type>const base::SpaceInformationPtr &amp;</type>
       <name>getSpaceInformation</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>afe30e53db85384c036c8b9a58895a1c1</anchor>
+      <anchor>a9ebe2998088b4a653275137419a1800c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>aa520304e2c0b0c6574404f7045bacb85</anchor>
+      <anchor>a1b1d4b905f072aab9ec2dd3ca2c0638a</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>a3935d6f098c9f7429b691207db82f469</anchor>
+      <anchor>ac8a58ff2f9a9fab78051a1a92cc5dd04</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const base::StateSpacePtr &amp;</type>
       <name>getStateSpace</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>aa2c3731d645925949b46aa7994a8df01</anchor>
+      <anchor>a9f6a19750cd822e40cf50d825d30347c</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::StateValidityCheckerPtr &amp;</type>
       <name>getStateValidityChecker</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>ad8c8d2305ea06c82eb9f60df180a8e5b</anchor>
+      <anchor>a2f2b76ef62fec59ef66e49d4bd386229</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::GoalPtr &amp;</type>
       <name>getGoal</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>af5d911ec7ad62ba316ac177a2f2602f9</anchor>
+      <anchor>a995a305594e80a737cdf28e880c51079</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::PlannerPtr &amp;</type>
       <name>getPlanner</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>a05587edc31468f85fb4128740820479d</anchor>
+      <anchor>a020d1ec6d9ba9b4feeaebd181b07e9ab</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const base::PlannerAllocator &amp;</type>
       <name>getPlannerAllocator</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>a7c3cadb5e54a6b2a5c3defb067e56c20</anchor>
+      <anchor>ab34b42f062729a46b26845e212712c0f</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const PathSimplifierPtr &amp;</type>
       <name>getPathSimplifier</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>a74ce1eb0e50c7005fef029e6a1b067d0</anchor>
+      <anchor>a5024f0d56aa1e9a2f41c1ba6c2878e54</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>PathSimplifierPtr &amp;</type>
       <name>getPathSimplifier</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>aed52ed9ae614cab6fa843975b8b3c60f</anchor>
+      <anchor>a9207a15cf88abaebfaa0a06b8e4f6450</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const base::OptimizationObjectivePtr &amp;</type>
       <name>getOptimizationObjective</name>
       <anchorfile>classompl_1_1geometric_1_1SimpleSetup.html</anchorfile>
-      <anchor>a89dfe1f2357fd794486e1e4ddc3fa0b0</anchor>
+      <anchor>a6994eccee288527b60a51370c9746368</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -37750,7 +33421,7 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_color_t, GuardType, boost::property&lt; vertex_list_t, std::set&lt; VertexIndexType &gt;, boost::property&lt; vertex_interface_list_t, InterfaceHash &gt; &gt;&gt; &gt;&gt; &gt;, boost::property&lt; boost::edge_weight_t, base::Cost &gt; &gt;</type>
+      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_color_t, GuardType, boost::property&lt; vertex_list_t, std::set&lt; VertexIndexType &gt;, boost::property&lt; vertex_interface_list_t, InterfaceHash &gt; &gt; &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, base::Cost &gt; &gt;</type>
       <name>SpannerGraph</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
       <anchor>a59be994c281facc245b3d81842f7d7ec</anchor>
@@ -37778,7 +33449,7 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_representative_t, SparseVertex &gt; &gt;&gt; &gt;, boost::property&lt; boost::edge_weight_t, double &gt; &gt;</type>
+      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_representative_t, SparseVertex &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, double &gt; &gt;</type>
       <name>DenseGraph</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
       <anchor>aa0822d493cd30885931fbbfcf8f5c916</anchor>
@@ -37942,14 +33613,14 @@
       <type>const DenseGraph &amp;</type>
       <name>getDenseGraph</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>aed61ca9610dc3a767f47ee7574e43e8e</anchor>
+      <anchor>acbbf63a9afe60b91f3fd3fe80b7c961d</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const SpannerGraph &amp;</type>
       <name>getRoadmap</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>a1b4b2b5e76d3775851e2a0248c9c1104</anchor>
+      <anchor>afa59bfd1012f4299190d9e2ca0b8e666</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -38292,42 +33963,42 @@
       <type>boost::property_map&lt; DenseGraph, vertex_state_t &gt;::type</type>
       <name>stateProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>a83a2e7d2f1abe84a909d2fc860edf21e</anchor>
+      <anchor>a8fe26ce544a2b91217b37851010fe8ee</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; SpannerGraph, vertex_state_t &gt;::type</type>
       <name>sparseStateProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>a4730df61de7338d11f55bfdd91331f94</anchor>
+      <anchor>a144544ef976bee2b45172a65b475b539</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; SpannerGraph, vertex_color_t &gt;::type</type>
       <name>sparseColorProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>aca084020b77381bab083e918b417f6e6</anchor>
+      <anchor>a9ccbeec9826a9db592f5c5c81bd97536</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; DenseGraph, vertex_representative_t &gt;::type</type>
       <name>representativesProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>a44350a6b9cb924c6d588b38ea2e4fa79</anchor>
+      <anchor>a936cc43924ffe13b3cbbfe31f8e6c673</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; SpannerGraph, vertex_list_t &gt;::type</type>
       <name>nonInterfaceListsProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>ad1c0ad7450ceeb833395f2caffce6a2f</anchor>
+      <anchor>ac95db8a61cc8b6265410e9e96904d686</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; SpannerGraph, vertex_interface_list_t &gt;::type</type>
       <name>interfaceListsProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>a35ffa3f844aa2c6b1339d240edb885fa</anchor>
+      <anchor>a8dcb81b2c0215f532ec99d6ff04d6c8d</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -38341,7 +34012,7 @@
       <type>boost::property_map&lt; DenseGraph, boost::edge_weight_t &gt;::type</type>
       <name>weightProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARS.html</anchorfile>
-      <anchor>a240e9215b995a65bfc64c9684dd31c5e</anchor>
+      <anchor>acf9feb8f66c58409cc96e249914253cd</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -38521,7 +34192,7 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_color_t, GuardType, boost::property&lt; vertex_interface_data_t, InterfaceHashStruct &gt; &gt;&gt; &gt;&gt;</type>
+      <type>boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_color_t, GuardType, boost::property&lt; vertex_interface_data_t, InterfaceHashStruct &gt; &gt; &gt; &gt; &gt;</type>
       <name>VertexProperties</name>
       <anchorfile>classompl_1_1geometric_1_1SPARSdb.html</anchorfile>
       <anchor>aaf62fddcfd1dca5eafdd57d59fec3706</anchor>
@@ -38685,7 +34356,7 @@
       <type>const Graph &amp;</type>
       <name>getRoadmap</name>
       <anchorfile>classompl_1_1geometric_1_1SPARSdb.html</anchorfile>
-      <anchor>aee93442353a0ab4055361c4ea2565c1c</anchor>
+      <anchor>ac70b7758702fd6e33270147db83d8844</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -39063,7 +34734,7 @@
       <type>boost::property_map&lt; Graph, boost::edge_weight_t &gt;::type</type>
       <name>edgeWeightProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARSdb.html</anchorfile>
-      <anchor>a9dc9ed65b66365898ee7926f25595945</anchor>
+      <anchor>a70554cbacfaf6f6e6cfcb3872bb37570</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -39077,21 +34748,21 @@
       <type>boost::property_map&lt; Graph, vertex_state_t &gt;::type</type>
       <name>stateProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARSdb.html</anchorfile>
-      <anchor>af09c4c672b30f62dca76f8cbce6d20c9</anchor>
+      <anchor>aeed3fee29d436ec2e8ddc6ccba695de0</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_color_t &gt;::type</type>
       <name>colorProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARSdb.html</anchorfile>
-      <anchor>ab9f3b46d7b1c640a8ff5da4b31a919df</anchor>
+      <anchor>a79fe4205710e8104e70dc17c337a564e</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_interface_data_t &gt;::type</type>
       <name>interfaceDataProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARSdb.html</anchorfile>
-      <anchor>a34b18aa4f0a86f1b265e7d86d1e20872</anchor>
+      <anchor>a6e793eb7f99de39702777692c00da70e</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -39341,7 +35012,7 @@
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_color_t, GuardType, boost::property&lt; vertex_interface_data_t, InterfaceHash &gt; &gt;&gt; &gt;&gt;, boost::property&lt; boost::edge_weight_t, base::Cost &gt; &gt;</type>
+      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, boost::property&lt; vertex_state_t, base::State *, boost::property&lt; boost::vertex_predecessor_t, VertexIndexType, boost::property&lt; boost::vertex_rank_t, VertexIndexType, boost::property&lt; vertex_color_t, GuardType, boost::property&lt; vertex_interface_data_t, InterfaceHash &gt; &gt; &gt; &gt; &gt;, boost::property&lt; boost::edge_weight_t, base::Cost &gt; &gt;</type>
       <name>Graph</name>
       <anchorfile>classompl_1_1geometric_1_1SPARStwo.html</anchorfile>
       <anchor>adfa2ab51ee1834dc1b955327a4f769ad</anchor>
@@ -39484,7 +35155,7 @@
       <type>const Graph &amp;</type>
       <name>getRoadmap</name>
       <anchorfile>classompl_1_1geometric_1_1SPARStwo.html</anchorfile>
-      <anchor>a36988beec9eeb9650674ce07990b4ab6</anchor>
+      <anchor>a1b320c6ec49aa9116d59e50bc0c467ad</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -39785,7 +35456,7 @@
       <type>boost::property_map&lt; Graph, vertex_state_t &gt;::type</type>
       <name>stateProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARStwo.html</anchorfile>
-      <anchor>a80fd4594a8a95d4214e12799f14d71df</anchor>
+      <anchor>a787a3011f2042dedcf9e82971234e4da</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -39799,21 +35470,21 @@
       <type>boost::property_map&lt; Graph, boost::edge_weight_t &gt;::type</type>
       <name>weightProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARStwo.html</anchorfile>
-      <anchor>a85a319c98729874690eee9f7719bdce4</anchor>
+      <anchor>ad18292dc5d13a71a9bbf6183ecdb51a9</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_color_t &gt;::type</type>
       <name>colorProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARStwo.html</anchorfile>
-      <anchor>a3b6c81f7671da3764d55b929c627fb26</anchor>
+      <anchor>a086ba03a3b685f1b220b6ff3d5bcad23</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
       <type>boost::property_map&lt; Graph, vertex_interface_data_t &gt;::type</type>
       <name>interfaceDataProperty_</name>
       <anchorfile>classompl_1_1geometric_1_1SPARStwo.html</anchorfile>
-      <anchor>a1b997b15c2e49651cfd5b1eebff4512a</anchor>
+      <anchor>a1b5e13185290adabda285e177216de4a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -40399,7 +36070,7 @@
       <type>const base::ProjectionEvaluatorPtr &amp;</type>
       <name>getProjectionEvaluator</name>
       <anchorfile>classompl_1_1geometric_1_1STRIDE.html</anchorfile>
-      <anchor>a5f4296fabae677ad5b7bb7ea49a4240d</anchor>
+      <anchor>ad9211ff71fd307e6c5133ab9f7cd8e77</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -40568,6 +36239,487 @@
       <anchor>aaa5a30775df6b14f5ac8f4b37194a9bb</anchor>
       <arglist></arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::geometric::STRRTstar</name>
+    <filename>classompl_1_1geometric_1_1STRRTstar.html</filename>
+    <base>ompl::base::Planner</base>
+    <class kind="struct">ompl::geometric::STRRTstar::TreeGrowingInfo</class>
+    <member kind="function">
+      <type></type>
+      <name>STRRTstar</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>aa314b8a6b2adf9a15120a2258a3dd2a9</anchor>
+      <arglist>(const ompl::base::SpaceInformationPtr &amp;si)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a937f06d2a3f97505fd4af0e3e5e06d02</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getPlannerData</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a9a509e14be51d134fdb9609ae5a24f39</anchor>
+      <arglist>(base::PlannerData &amp;data) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>base::PlannerStatus</type>
+      <name>solve</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a3f64b6043fbcada306aafdf017de4641</anchor>
+      <arglist>(const base::PlannerTerminationCondition &amp;ptc) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRange</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>af70bd027a4cf2230429772c0f15faae2</anchor>
+      <arglist>(double distance)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getRange</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a6da1c26188b60f0f9f721a69d3ead83d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getOptimumApproxFactor</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a4b78f30519dfc092b13ee7736ac6e097</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setOptimumApproxFactor</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a260507c648d4ef4ef73dc73f5ba30a33</anchor>
+      <arglist>(double optimumApproxFactor)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRewiringToOff</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>ab07b2945bb6a00fdcf344fee815c09fd</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRewiringToRadius</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>adf162eb55844599aab075387555d8d6c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setRewiringToKNearest</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>ae28d1a38e12bfec16c7f2f4cb9a9632a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getBatchSize</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>af9c9a6d607ff5de9cc3470cfb0480d8f</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTimeBoundFactorIncrease</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a72dd173b861f3062ddd0c8fdbf2903bd</anchor>
+      <arglist>(double f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setInitialTimeBoundFactor</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a864ab0081e27106cfc15450c51796e84</anchor>
+      <arglist>(double f)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setSampleUniformForUnboundedTime</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a4730be331c0bf062862a778c17e62b0e</anchor>
+      <arglist>(bool uniform)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>aa48be5e94121b8ef7ab1a68453ab97c6</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="enumeration" protection="protected">
+      <type></type>
+      <name>GrowState</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a416b50c588fe6c37e76cf9e44787647f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue" protection="protected">
+      <name>TRAPPED</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a416b50c588fe6c37e76cf9e44787647fa709c04d237d16e342586fe1037809f9b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue" protection="protected">
+      <name>ADVANCED</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a416b50c588fe6c37e76cf9e44787647fa1c8ecb616ef7a99ef0a66311820912eb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue" protection="protected">
+      <name>REACHED</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a416b50c588fe6c37e76cf9e44787647fa846d167a55c494412b8d607d05edfdf8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef" protection="protected">
+      <type>std::shared_ptr&lt; ompl::NearestNeighbors&lt; base::Motion * &gt; &gt;</type>
+      <name>TreeData</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a00cc20625391504c725c388337520d41</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue" protection="protected">
+      <name>TRAPPED</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a416b50c588fe6c37e76cf9e44787647fa709c04d237d16e342586fe1037809f9b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue" protection="protected">
+      <name>ADVANCED</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a416b50c588fe6c37e76cf9e44787647fa1c8ecb616ef7a99ef0a66311820912eb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue" protection="protected">
+      <name>REACHED</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a416b50c588fe6c37e76cf9e44787647fa846d167a55c494412b8d607d05edfdf8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>GrowState</type>
+      <name>growTreeSingle</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a3e2f9c6f9337903b6463b60a52e48322</anchor>
+      <arglist>(TreeData &amp;tree, TreeGrowingInfo &amp;tgi, base::Motion *rmotion, base::Motion *nmotion)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>GrowState</type>
+      <name>growTree</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a2618f51640bb1bb2cdfd9a0cd20c3582</anchor>
+      <arglist>(TreeData &amp;tree, TreeGrowingInfo &amp;tgi, base::Motion *rmotion, std::vector&lt; base::Motion * &gt; &amp;nbh, bool connect)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>increaseTimeBound</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>ac3823623cdd630890bcd4365e96bf766</anchor>
+      <arglist>(bool hasEqualBounds, double &amp;oldBatchTimeBoundFactor, double &amp;newBatchTimeBoundFactor, bool &amp;startTree, unsigned int &amp;batchSize, int &amp;numBatchSamples)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>getNeighbors</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>abdd7f4e3374c93a57e8d4b7bfb4e7851</anchor>
+      <arglist>(TreeData &amp;tree, base::Motion *motion, std::vector&lt; base::Motion * &gt; &amp;nbh) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>freeMemory</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a308f432e6772f7ff4db4731943633faf</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>double</type>
+      <name>distanceFunction</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a98b5863bd89df669315f964f4835e286</anchor>
+      <arglist>(const base::Motion *a, const base::Motion *b) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>pruneStartTree</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a8c275c2386cc45214057ad2ed67caa22</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>base::Motion *</type>
+      <name>pruneGoalTree</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a98abcc760cc6c7e7775c3144d006c87c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>removeInvalidGoals</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>ac049a9212d1832261ca4da8dd0fda5c1</anchor>
+      <arglist>(const std::vector&lt; base::Motion * &gt; &amp;invalidGoals)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>base::State *</type>
+      <name>nextGoal</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>abf293df863a31335a1c928b218af0109</anchor>
+      <arglist>(int n, double oldBatchTimeBoundFactor, double newBatchTimeBoundFactor)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>base::State *</type>
+      <name>nextGoal</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a0ba0ef41a94f4dbc94434076e342eed1</anchor>
+      <arglist>(const base::PlannerTerminationCondition &amp;ptc, double oldBatchTimeBoundFactor, double newBatchTimeBoundFactor)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>base::State *</type>
+      <name>nextGoal</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a542d15e9180c77e8ced3347c24f2031d</anchor>
+      <arglist>(const base::PlannerTerminationCondition &amp;ptc, int n, double oldBatchTimeBoundFactor, double newBatchTimeBoundFactor)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>sampleGoalTime</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>ab3335bc4cf51391228d0d6f080305fb6</anchor>
+      <arglist>(base::State *goal, double oldBatchTimeBoundFactor, double newBatchTimeBoundFactor)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>calculateRewiringLowerBounds</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a422a24b307aef55f4f7212812b5125e9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static base::Motion *</type>
+      <name>computeSolutionMotion</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>aeb505d7cbb72a61e9c7b28d6b001a073</anchor>
+      <arglist>(base::Motion *motion)</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static void</type>
+      <name>removeFromParent</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a306954dd1e4aee00e4f4844711d74efc</anchor>
+      <arglist>(base::Motion *m)</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static void</type>
+      <name>addDescendants</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a05fcd9f53e52f627e43aaa4e56726451</anchor>
+      <arglist>(base::Motion *m, const TreeData &amp;tree)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>base::ConditionalStateSampler</type>
+      <name>sampler_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>accb135ea184d1ae8a53d58d8ff07d1ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>TreeData</type>
+      <name>tStart_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a40d07273144f6ba74e77d17993c00ba7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>TreeData</type>
+      <name>tGoal_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a1014c5ce677387788e44a6589927e5e8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>maxDistance_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a8ac59fd2fe5d2b15c369dbda8bc28b85</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>distanceBetweenTrees_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a7e451e5dc34caba64e3ce202384b6cc6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>base::PathPtr</type>
+      <name>bestSolution_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a8a5a951f322942959991ddd64050b42b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>bestTime_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a3708317707a3874a74544384d9199f77</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>numIterations_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a5796ccedd09f848b5ebf871f96ece385</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>int</type>
+      <name>numSolutions_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a97ec0e9e653501b3d4ac7f13f9b25ece</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>minimumTime_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>adaf8ff2ff45816049c629a7cb9ca4356</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>upperTimeBound_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a5aa754aeab8eeb6b4fe7034e17b920bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>optimumApproxFactor_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a644a6801714f5eba8a9a44210b3a1c11</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>base::Motion *</type>
+      <name>startMotion_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a207dc9d60b9dcde47500d54abb176f9b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; base::Motion * &gt;</type>
+      <name>goalMotions_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a79bb38f3af24dcb728f3f2f5eb1c20e8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; base::Motion * &gt;</type>
+      <name>newBatchGoalMotions_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a2662d9e50645e383da5e769eed2be1ff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>base::State *</type>
+      <name>tempState_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>aa12bf8d6a04bac14967dd8f8b2332c1f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>rewireFactor_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a64a9380c5c589e95d278aed3b69fc8ed</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>k_rrt_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a145aa9cea91ac05493dde64448f9324c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>r_rrt_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a4a578dbae9d2232e5859c7b8cc68e0f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>isTimeBounded_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>aeeb925e3a4674d78f0b0ddbd85a2a876</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>initialTimeBound_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>afba052932a2da18c3bb8c16e3d49aa6d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>initialBatchSize_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a2657ca06e4c80c051ed4bacd52c2627e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>initialTimeBoundFactor_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>ace839ee3e08f11f9afee7ce9807e5f4d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>timeBoundFactorIncrease_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a6bf4d750b4a8f750ed008251c4a451ed</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>sampleUniformForUnboundedTime_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a6d2e03cb6b4fd84eab7e918e1b47eb00</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>int</type>
+      <name>goalStateSampleRatio_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>a4b218260e3017b10f6f00c99374ac8ff</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ompl::RNG</type>
+      <name>rng_</name>
+      <anchorfile>classompl_1_1geometric_1_1STRRTstar.html</anchorfile>
+      <anchor>ab7e269bae2f399f236918246c46be2d2</anchor>
+      <arglist></arglist>
+    </member>
+    <docanchor file="classompl_1_1geometric_1_1STRRTstar.html">gSTRRTstar</docanchor>
+  </compound>
+  <compound kind="struct">
+    <name>ompl::geometric::STRRTstar::TreeGrowingInfo</name>
+    <filename>structompl_1_1geometric_1_1STRRTstar_1_1TreeGrowingInfo.html</filename>
   </compound>
   <compound kind="class">
     <name>ompl::geometric::TaskSpaceConfig</name>
@@ -41734,7 +37886,7 @@
   <compound kind="class">
     <name>ompl::GreedyKCenters</name>
     <filename>classompl_1_1GreedyKCenters.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <member kind="typedef">
       <type>std::function&lt; double(const _T &amp;, const _T &amp;)&gt;</type>
       <name>DistanceFunction</name>
@@ -41760,7 +37912,7 @@
       <type>const DistanceFunction &amp;</type>
       <name>getDistanceFunction</name>
       <anchorfile>classompl_1_1GreedyKCenters.html</anchorfile>
-      <anchor>a9b9bcd71e87170f731f9e48b8b6a055e</anchor>
+      <anchor>ad2fe5704bf438076effaf3c76fd3a845</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -41788,7 +37940,7 @@
   <compound kind="class">
     <name>ompl::Grid</name>
     <filename>classompl_1_1Grid.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <class kind="struct">ompl::Grid::Cell</class>
     <class kind="struct">ompl::Grid::EqualCoordPtr</class>
     <class kind="struct">ompl::Grid::HashFunCoordPtr</class>
@@ -41860,7 +38012,7 @@
       <type>Cell *</type>
       <name>getCell</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>ab1a51a1006f8529095f12b412a19e859</anchor>
+      <anchor>a710a89ff1e3b526e96d61cd607947dd4</anchor>
       <arglist>(const Coord &amp;coord) const</arglist>
     </member>
     <member kind="function">
@@ -41888,14 +38040,14 @@
       <type>std::vector&lt; std::vector&lt; Cell * &gt; &gt;</type>
       <name>components</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>afb363fa290bdac1d2812b0d068e985d4</anchor>
+      <anchor>a99de152da4a57280781000b0bb6d4240</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual Cell *</type>
       <name>createCell</name>
       <anchorfile>classompl_1_1Grid.html</anchorfile>
-      <anchor>a1d0e09b5912dff94caa57aee681053cf</anchor>
+      <anchor>afbd3e26d53ad4d45db7c09558d4c4671</anchor>
       <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -42072,9 +38224,9 @@
   <compound kind="class">
     <name>ompl::GridB</name>
     <filename>classompl_1_1GridB.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
+    <templarg>class LessThanExternal</templarg>
+    <templarg>class LessThanInternal</templarg>
     <base>ompl::GridN</base>
     <class kind="struct">ompl::GridB::LessThanExternalCell</class>
     <class kind="struct">ompl::GridB::LessThanInternalCell</class>
@@ -42124,14 +38276,14 @@
       <type>Cell *</type>
       <name>topInternal</name>
       <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ad7e3648604e7e06d63c595d18edefb2e</anchor>
+      <anchor>ac99b8d6389a3443fb65c04b10c1beba2</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>Cell *</type>
       <name>topExternal</name>
       <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>adcd6fd9b1cc11a49c45d6216320badda</anchor>
+      <anchor>a6926704271dd22869fa550e293692183</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -42180,7 +38332,7 @@
       <type>virtual Cell *</type>
       <name>createCell</name>
       <anchorfile>classompl_1_1GridB.html</anchorfile>
-      <anchor>ab5b346ddd6e6c21cc2e35a493a59f420</anchor>
+      <anchor>aedc4b17ed9f772867a5cba3ed41fcb70</anchor>
       <arglist>(const Coord &amp;coord, CellArray *nbh=nullptr)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -42300,7 +38452,7 @@
   <compound kind="class">
     <name>ompl::GridN</name>
     <filename>classompl_1_1GridN.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <base>ompl::Grid</base>
     <class kind="struct">ompl::GridN::Cell</class>
     <member kind="typedef">
@@ -42363,7 +38515,7 @@
       <type>Cell *</type>
       <name>getCell</name>
       <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a7656f059f2cc09f5839147646310d091</anchor>
+      <anchor>a142dc15b05eb2fc439b386b44a4b0cb9</anchor>
       <arglist>(const Coord &amp;coord) const</arglist>
     </member>
     <member kind="function">
@@ -42391,7 +38543,7 @@
       <type>BaseCell *</type>
       <name>createCell</name>
       <anchorfile>classompl_1_1GridN.html</anchorfile>
-      <anchor>a705ebbeb6cb92398dffb24ea49ed34f4</anchor>
+      <anchor>ab90aeb78481215290915711bc2a3e514</anchor>
       <arglist>(const Coord &amp;coord, BaseCellArray *nbh=nullptr) override</arglist>
     </member>
     <member kind="function">
@@ -42472,8 +38624,8 @@
   <compound kind="class">
     <name>ompl::LPAstarOnGraph</name>
     <filename>classompl_1_1LPAstarOnGraph.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename Graph</templarg>
+    <templarg>typename Heuristic</templarg>
     <member kind="function">
       <type>double</type>
       <name>operator()</name>
@@ -42525,9 +38677,1919 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::multilevel::BundleSpace</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpace.html</filename>
+    <base>ompl::base::Planner</base>
+    <member kind="function">
+      <type></type>
+      <name>BundleSpace</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a6ea3b8ddd219e7827a78a81962ecc872</anchor>
+      <arglist>(const ompl::base::SpaceInformationPtr &amp;si, BundleSpace *baseSpace_=nullptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>const ompl::base::SpaceInformationPtr &amp;</type>
+      <name>getBundle</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a8a014cc299498f875efa2acafab5ce5d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const ompl::base::SpaceInformationPtr &amp;</type>
+      <name>getBase</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>ad73cb9a191ea10d3e8db62ec0c3fbfc5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>ProjectionPtr</type>
+      <name>getProjection</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a1a70b5329364077bf6ba12e7a1061714</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>makeProjection</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a96f6bee45ab1ac1c3fd9b176bfa3864a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setProjection</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a454fb6c609dae1165257746519e374a0</anchor>
+      <arglist>(ProjectionPtr projection)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setProblemDefinition</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>ab5942a757c6f9c570862c915ae590b06</anchor>
+      <arglist>(const ompl::base::ProblemDefinitionPtr &amp;pdef) override</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual void</type>
+      <name>grow</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a4f3ce74ab9e38119a662705ed0559bf2</anchor>
+      <arglist>()=0</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual bool</type>
+      <name>getSolution</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a59b0dd36930d0e1b6c418188b802a8c5</anchor>
+      <arglist>(ompl::base::PathPtr &amp;solution)=0</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>isInfeasible</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a428add084ed48c68645ee58cdc802f04</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>hasConverged</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>ab617487432aef17eb637116caefded54</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a17bc273d461af6a05f9f5716dba47c24</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a37874b2ca0ca976b61da46c8e0f47e44</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>virtual double</type>
+      <name>getImportance</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a807045e4cab90d6afd2a33069ba8efd4</anchor>
+      <arglist>() const =0</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::State *</type>
+      <name>allocIdentityStateBundle</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>aa217a6f17d9fdc6c56c36ba4d6007f62</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getBaseDimension</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a4134d7b54077ac0ef2d900e00016c4fa</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getBundleDimension</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>aad021dc8123f1f11e21a52c6d59ccd38</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getCoDimension</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a4f4b5a549278c0142c85722a6e3c9070</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>BundleSpace *</type>
+      <name>getChild</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a84a9b3481d9f8a285f932d4e7fbb97a5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setChild</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>acc7c2e44883e7bd04de3d9da59c2a19f</anchor>
+      <arglist>(BundleSpace *child)</arglist>
+    </member>
+    <member kind="function">
+      <type>BundleSpace *</type>
+      <name>getParent</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>aa7e322a2fb1cc44b5e511af0c307b5bf</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setParent</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a4f51c437052d6760abc9f3736ab19749</anchor>
+      <arglist>(BundleSpace *parent)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasParent</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a216568fc1c5fd366af120660eeb96f98</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasBaseSpace</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>aaa343d7c86e2debc5cad8ba3e4936587</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getLevel</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>afed3a77b33d3e6d24016f06b0b577feb</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLevel</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a1e714523e61a75bd7c993cad7e0a9c8a</anchor>
+      <arglist>(unsigned int)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>project</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>affd71932618b2f38873e9501c312d2b7</anchor>
+      <arglist>(const ompl::base::State *xBundle, ompl::base::State *xBase) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>lift</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a099f6d159a5c7367cfcd249091d1689f</anchor>
+      <arglist>(const ompl::base::State *xBase, ompl::base::State *xBundle) const</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>resetCounter</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a91bf5b33ea846104f518823a8cc5fc12</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>checkBundleSpaceMeasure</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>ad177a04e74804b84ea405c10b7b3d62d</anchor>
+      <arglist>(std::string name, const ompl::base::StateSpacePtr space) const</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>sanityChecks</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>accfc2324063c811f90fe48f848e3adff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" protection="protected" virtualness="virtual">
+      <type>virtual void</type>
+      <name>print</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>aba53eb10bda696ee9ae962b5ff7a5bcb</anchor>
+      <arglist>(std::ostream &amp;out) const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ompl::base::State *</type>
+      <name>xBaseTmp_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a6cc3d599af788bdffa7f8237a845cd9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ompl::base::State *</type>
+      <name>xBundleTmp_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>ad2a30b7eb53ad4831b2399d0584cbb65</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>id_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a599e4b58a5ac98b67453352f263cb268</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>hasSolution_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a5ea7396973afee88972122c4afabac6b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>firstRun_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>ac7cd7fdb6f7bbca9a2e299e6ab46b463</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>isDynamic_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a1ba01182e7dfdbb61d69ee9496ac777e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>BundleSpaceMetricPtr</type>
+      <name>metric_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a7925713a683b52c73e9e1a7fe759afe2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>BundleSpacePropagatorPtr</type>
+      <name>propagator_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a22850e71cfbbb5ce900ab21b74d25921</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected" static="yes">
+      <type>static unsigned int</type>
+      <name>counter_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>a08a0f9b8ac0beef5e112739f5f555f91</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpace.html</anchorfile>
+      <anchor>aa54ef1bcc4bb9253aea3ce484f54f042</anchor>
+      <arglist>(std::ostream &amp;, const BundleSpace &amp;)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceGraph</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceGraph.html</filename>
+    <base>ompl::multilevel::BundleSpace</base>
+    <class kind="class">ompl::multilevel::BundleSpaceGraph::Configuration</class>
+    <class kind="class">ompl::multilevel::BundleSpaceGraph::EdgeInternalState</class>
+    <class kind="struct">ompl::multilevel::BundleSpaceGraph::GraphMetaData</class>
+    <member kind="typedef">
+      <type>boost::adjacency_list&lt; boost::vecS, boost::vecS, boost::undirectedS, Configuration *, EdgeInternalState, GraphMetaData &gt;</type>
+      <name>Graph</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a8297847c10b1e8fde38b1da21086f11f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" virtualness="pure">
+      <type>void</type>
+      <name>grow</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a9537072ddd641cfb51d4cc9f594fffc7</anchor>
+      <arglist>() override=0</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>getSolution</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a0dba6b9849b1297dd0905ced2e5910b9</anchor>
+      <arglist>(ompl::base::PathPtr &amp;solution) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>getPlannerData</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>ae6ecd9f14713bc1e10f0861850ce3630</anchor>
+      <arglist>(ompl::base::PlannerData &amp;data) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getImportance</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a508896ae80998fd7d6d55e35ed6a5bf2</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>init</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a64c5ecaccc7e38fbc0e80deabafb7e82</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>aea0627bc0ebdff95891bb194b0dd0bd4</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a28fa657a77354663740fc808ce370a45</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Graph &amp;</type>
+      <name>getGraphNonConst</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a9d6d602ce41aad13816d921f614f475b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual const Graph &amp;</type>
+      <name>getGraph</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>abc285cc6e0ec45d14b382fd1f024c0e6</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>print</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>ac6c48f0bd45ba92bc2329620049352eb</anchor>
+      <arglist>(std::ostream &amp;out) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>writeToGraphviz</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a4a4fa56792faf06ff5b7a2a02f518b8e</anchor>
+      <arglist>(std::string filename) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>printConfiguration</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a98a915de831599f05406e62c225b7445</anchor>
+      <arglist>(const Configuration *) const</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::PathPtr</type>
+      <name>getPath</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a56aa7888ea79fe9bdb049a33956d283c</anchor>
+      <arglist>(const Vertex &amp;start, const Vertex &amp;goal)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual double</type>
+      <name>distance</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>aabdbde642d2e9c07bd5abbaaa09d6058</anchor>
+      <arglist>(const Configuration *a, const Configuration *b) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>checkMotion</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>aac5d62baa6a151b402c363487623a2f9</anchor>
+      <arglist>(const Configuration *a, const Configuration *b) const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>connect</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a04603eff11e06b615d7ece0e1f02fad9</anchor>
+      <arglist>(const Configuration *from, const Configuration *to)</arglist>
+    </member>
+    <member kind="function">
+      <type>Configuration *</type>
+      <name>steerTowards</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a5d867386251dcea98f1ebd941f7be7dd</anchor>
+      <arglist>(const Configuration *from, const Configuration *to)</arglist>
+    </member>
+    <member kind="function">
+      <type>Configuration *</type>
+      <name>steerTowards_Range</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a50904fba20f43ac7bc233f3ffde8eb16</anchor>
+      <arglist>(const Configuration *from, Configuration *to)</arglist>
+    </member>
+    <member kind="function">
+      <type>Configuration *</type>
+      <name>extendGraphTowards_Range</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a184184689569610b0976bca91a5ef09e</anchor>
+      <arglist>(const Configuration *from, Configuration *to)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>interpolate</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a88dbfeb26a7eaf4116cf50b6e4c87727</anchor>
+      <arglist>(const Configuration *a, const Configuration *b, Configuration *dest) const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Configuration *</type>
+      <name>addBundleConfiguration</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a960aec96f564afb73a395cd4e7bbb747</anchor>
+      <arglist>(base::State *)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Vertex</type>
+      <name>addConfiguration</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a2e30391590cc20b303bf132a94f414e5</anchor>
+      <arglist>(Configuration *q)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>addGoalConfiguration</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>ac55d7bd5c6a1ff55ed26df900d6aea16</anchor>
+      <arglist>(Configuration *x)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>addBundleEdge</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>aa9a011d8547380113d1fb2c2b414489d</anchor>
+      <arglist>(const Configuration *a, const Configuration *b)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual const std::pair&lt; Edge, bool &gt;</type>
+      <name>addEdge</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a55c5d6431a21d6c8b772b81cdc8a67fa</anchor>
+      <arglist>(const Vertex a, const Vertex b)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Vertex</type>
+      <name>getStartIndex</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a86e04bdab5ff70826b5926c554de0b97</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Vertex</type>
+      <name>getGoalIndex</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>af899f7a961475698d38406d09e9f7765</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setStartIndex</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a5d797eae0df850b19da56dde23c7b76a</anchor>
+      <arglist>(Vertex)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>findSection</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>acea8da5111cfdeeb3e22abbd2e739bb8</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="variable">
+      <type>base::Cost</type>
+      <name>bestCost_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a6137b49fdfdd7b1fa78c4062f5134779</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>RoadmapNeighborsPtr</type>
+      <name>nearestDatastructure_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a3699099d20c7e1a24e6be5b1a671f4b8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>graphLength_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>aeb851be0a372c930fcb4e49cc3b7c63a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>maxDistance_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a2913b5a94a515284f1d083d21d687d94</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>goalBias_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a4df8b0de73fc4288c525d83eae82c03b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>Configuration *</type>
+      <name>xRandom_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a4be6d823b2f6505f431f81371da21b71</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>BundleSpaceImportancePtr</type>
+      <name>importanceCalculator_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a0ff33279b454b1b78eb68f136b8d4b63</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>BundleSpaceGraphSamplerPtr</type>
+      <name>graphSampler_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a0d9698226aaed8c3b3224da08820a30e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>PathRestrictionPtr</type>
+      <name>pathRestriction_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a12496e82768deed7d92ab381215f17f7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ompl::geometric::PathSimplifierPtr</type>
+      <name>optimizer_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>ac873a6ed1b139ec1924367e6a1664eea</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>Configuration *</type>
+      <name>qStart_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>ad31a65e949a577f98d7ca68edb6a2016</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>Configuration *</type>
+      <name>qGoal_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a479b71d3dbd5b64fe6d01f7bfd4960cd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; Configuration * &gt;</type>
+      <name>startConfigurations_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a72948dc2cf1723e52cc691c2ef7a3119</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; Configuration * &gt;</type>
+      <name>goalConfigurations_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph.html</anchorfile>
+      <anchor>a5fee2947400efeac2fb731299f331079</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceGraph::Configuration</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</filename>
+    <member kind="variable">
+      <type>void *</type>
+      <name>pdf_element</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a12b864cb560e7c3923fff460819e2469</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>Configuration *</type>
+      <name>parent</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a3499c7e7e85ebb5cf9d1ffb6d86adc68</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>base::Cost</type>
+      <name>cost</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a3e5eccb4cc1508d9822bd246f83c6316</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>base::Cost</type>
+      <name>lineCost</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a4874cdec19c07754ceca0863e751066a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::vector&lt; Configuration * &gt;</type>
+      <name>children</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>ad7e21d890591a5f424f91d7bd3eff87f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>normalized_index_type</type>
+      <name>index</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a21747759c6e5715675df75abd5decaa2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>normalized_index_type</type>
+      <name>representativeIndex</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a41f15026dceabe5b51ac1c7ab390325c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::set&lt; normalized_index_type &gt;</type>
+      <name>nonInterfaceIndexList</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a96dd7e84cdbe7480dba8c1f2faf3f6f3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>std::unordered_map&lt; normalized_index_type, std::set&lt; normalized_index_type &gt; &gt;</type>
+      <name>interfaceIndexList</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html</anchorfile>
+      <anchor>a6a1b48173ded3503453fb3d926fabb88</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceGraph::EdgeInternalState</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceGraph_1_1EdgeInternalState.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>ompl::multilevel::BundleSpaceGraph::GraphMetaData</name>
+    <filename>structompl_1_1multilevel_1_1BundleSpaceGraph_1_1GraphMetaData.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceGraphSampler</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceGraphSamplerRandomDegreeVertex</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomDegreeVertex.html</filename>
+    <base>ompl::multilevel::BundleSpaceGraphSampler</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceGraphSamplerRandomEdge</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomEdge.html</filename>
+    <base>ompl::multilevel::BundleSpaceGraphSampler</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceGraphSamplerRandomVertex</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomVertex.html</filename>
+    <base>ompl::multilevel::BundleSpaceGraphSampler</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceImportance</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceImportance.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceImportanceExponential</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceImportanceExponential.html</filename>
+    <base>ompl::multilevel::BundleSpaceImportance</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceImportanceGreedy</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceImportanceGreedy.html</filename>
+    <base>ompl::multilevel::BundleSpaceImportance</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceImportanceUniform</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceImportanceUniform.html</filename>
+    <base>ompl::multilevel::BundleSpaceImportance</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceMetric</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceMetric.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceMetricGeodesic</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceMetricGeodesic.html</filename>
+    <base>ompl::multilevel::BundleSpaceMetric</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpacePropagator</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpacePropagator.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpacePropagatorGeometric</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpacePropagatorGeometric.html</filename>
+    <base>ompl::multilevel::BundleSpacePropagator</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::BundleSpaceSequence</name>
+    <filename>classompl_1_1multilevel_1_1BundleSpaceSequence.html</filename>
+    <templarg>class T</templarg>
+    <base>ompl::multilevel::PlannerMultiLevel</base>
+    <class kind="struct">ompl::multilevel::BundleSpaceSequence::CmpBundleSpacePtrs</class>
+    <member kind="function">
+      <type></type>
+      <name>BundleSpaceSequence</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>af51f65f30042705ea11d04c13d3ba192</anchor>
+      <arglist>(ompl::base::SpaceInformationPtr si, std::string type=&quot;BundleSpacePlannerNonMultilevel&quot;)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>BundleSpaceSequence</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a7dba19f4dcc5564d301c8da54d69f528</anchor>
+      <arglist>(std::vector&lt; ompl::base::SpaceInformationPtr &gt; &amp;siVec, std::string type=&quot;BundleSpacePlanner&quot;)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>BundleSpaceSequence</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a2a81941e817768931f6d309700b9b1c0</anchor>
+      <arglist>(std::vector&lt; ompl::base::SpaceInformationPtr &gt; &amp;siVec, std::vector&lt; ompl::multilevel::ProjectionPtr &gt; &amp;projVec, std::string type=&quot;BundleSpacePlannerCustomProjection&quot;)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>getPlannerData</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>ad26803bb97bb3886b96c14ede76b70c5</anchor>
+      <arglist>(ompl::base::PlannerData &amp;data) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::PlannerStatus</type>
+      <name>solve</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a9294456febfb4d0b5e83797a81d736d7</anchor>
+      <arglist>(const ompl::base::PlannerTerminationCondition &amp;ptc) override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setup</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a0846c460d25a61fc9adbfb62ef85aed5</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>aa005dad76ecddd6af0ade0164540ce0b</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>setProblemDefinition</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a56698b76ec788a8fb130e24b6beb3a6e</anchor>
+      <arglist>(const ompl::base::ProblemDefinitionPtr &amp;pdef) override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFindSectionStrategy</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a06eeb65b76d15ca166ed92fdac721f9d</anchor>
+      <arglist>(FindSectionType type)</arglist>
+    </member>
+    <member kind="typedef" protection="protected">
+      <type>std::priority_queue&lt; BundleSpace *, std::vector&lt; BundleSpace * &gt;, CmpBundleSpacePtrs &gt;</type>
+      <name>BundleSpacePriorityQueue</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a79de5875d73bb9f44d5efecfbff6e7bb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>ompl::base::State *</type>
+      <name>getTotalState</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>aec055660b5dadbed3d827fa78dc9ac75</anchor>
+      <arglist>(int baseLevel, const base::State *baseState) const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; T * &gt;</type>
+      <name>bundleSpaces_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a7a45134c9fb9d99963be8a2f0896d093</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>foundKLevelSolution_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>aa5dc011288f3fdd2df399afe08c4e67e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>currentBundleSpaceLevel_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>a2f46e5035435a3b3804b1f37c9c471bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>stopAtLevel_</name>
+      <anchorfile>classompl_1_1multilevel_1_1BundleSpaceSequence.html</anchorfile>
+      <anchor>adde170cd45f6ccc5f204152c3ff198b5</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>ompl::multilevel::BundleSpaceSequence::CmpBundleSpacePtrs</name>
+    <filename>structompl_1_1multilevel_1_1BundleSpaceSequence_1_1CmpBundleSpacePtrs.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::CompoundProjection</name>
+    <filename>classompl_1_1multilevel_1_1CompoundProjection.html</filename>
+    <base>ompl::multilevel::Projection</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>print</name>
+      <anchorfile>classompl_1_1multilevel_1_1CompoundProjection.html</anchorfile>
+      <anchor>aa576edf6524dcf7253106e1055a3bba5</anchor>
+      <arglist>(std::ostream &amp;out) const override</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getBaseDimension</name>
+      <anchorfile>classompl_1_1multilevel_1_1CompoundProjection.html</anchorfile>
+      <anchor>ac7f15ca83c31179d576ff56f6a365a4d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getDimension</name>
+      <anchorfile>classompl_1_1multilevel_1_1CompoundProjection.html</anchorfile>
+      <anchor>aece5fb49b19680a7d5b38a863eff9ec4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getCoDimension</name>
+      <anchorfile>classompl_1_1multilevel_1_1CompoundProjection.html</anchorfile>
+      <anchor>a9b51477a4addad5e892c838ba1dce777</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>isFibered</name>
+      <anchorfile>classompl_1_1multilevel_1_1CompoundProjection.html</anchorfile>
+      <anchor>ac2bdbc95e5e3a9a47b75c472f5c8092f</anchor>
+      <arglist>() const override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::FiberedProjection</name>
+    <filename>classompl_1_1multilevel_1_1FiberedProjection.html</filename>
+    <base>ompl::multilevel::Projection</base>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>getFiberDimension</name>
+      <anchorfile>classompl_1_1multilevel_1_1FiberedProjection.html</anchorfile>
+      <anchor>acce4ea34f8c9ff651c3b37754b347004</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::FindSection</name>
+    <filename>classompl_1_1multilevel_1_1FindSection.html</filename>
+    <member kind="function">
+      <type>bool</type>
+      <name>findFeasibleStateOnFiber</name>
+      <anchorfile>classompl_1_1multilevel_1_1FindSection.html</anchorfile>
+      <anchor>a28c28f2a971b5d21e027c2b128364077</anchor>
+      <arglist>(const base::State *xBase, base::State *xBundle)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>tripleStep</name>
+      <anchorfile>classompl_1_1multilevel_1_1FindSection.html</anchorfile>
+      <anchor>a00e3fb9748c74ccd6ae3b27e455fb162</anchor>
+      <arglist>(HeadPtr &amp;head, const base::State *sBundleGoal, double locationOnBasePathGoal)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>PathRestriction *</type>
+      <name>restriction_</name>
+      <anchorfile>classompl_1_1multilevel_1_1FindSection.html</anchorfile>
+      <anchor>ac7d3c8847578fc29200d00b683cdad5c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ParameterExponentialDecay</type>
+      <name>neighborhoodRadiusBaseSpace_</name>
+      <anchorfile>classompl_1_1multilevel_1_1FindSection.html</anchorfile>
+      <anchor>a8846bd83565f68bbfad5c6c9193037bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>validBaseSpaceSegmentLength_</name>
+      <anchorfile>classompl_1_1multilevel_1_1FindSection.html</anchorfile>
+      <anchor>a6ce327f8a2ed72a0bd93432b7aeeaf2c</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::FindSectionSideStep</name>
+    <filename>classompl_1_1multilevel_1_1FindSectionSideStep.html</filename>
+    <base>ompl::multilevel::FindSection</base>
+    <docanchor file="classompl_1_1multilevel_1_1FindSectionSideStep.html">FindSectionSideStep</docanchor>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Head</name>
+    <filename>classompl_1_1multilevel_1_1Head.html</filename>
+    <member kind="function">
+      <type>const base::State *</type>
+      <name>getState</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a3ec76a43b3e3b879fc27c1bb78d79c2d</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const base::State *</type>
+      <name>getStateFiber</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a7a49fa2b2187b9320f5d38007a53641a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const base::State *</type>
+      <name>getStateBase</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>af646aae6a913899e8e0f479eee2da323</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>base::State *</type>
+      <name>getStateFiberNonConst</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a5b003eac8dee5e22b81357df37ebef0c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>base::State *</type>
+      <name>getStateBaseNonConst</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a7fc97dc9086b3b4cda720d2335784162</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>Configuration *</type>
+      <name>getConfiguration</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a9dc1b9ed58a37b95aca0fbe7045decd4</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setCurrent</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a258b79fc8ed5ddce9f53c82428a49209</anchor>
+      <arglist>(Configuration *, double)</arglist>
+    </member>
+    <member kind="function">
+      <type>Configuration *</type>
+      <name>getTargetConfiguration</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a099815efd697bbe392b66696220cd7f5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const base::State *</type>
+      <name>getStateTargetFiber</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>ad30304e43717ec174f3cb0bd98df0c7b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>base::State *</type>
+      <name>getStateTargetFiberNonConst</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>ae33a7a14219869fe36b3ac2429adfa15</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getNumberOfRemainingStates</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a7b395b767ab7b5776859b8b8e473f546</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>const base::State *</type>
+      <name>getBaseStateAt</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a6dc463b9fe85578222c759f79af50288</anchor>
+      <arglist>(int k) const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getBaseStateIndexAt</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>acf50e4d544ae8e9475db3dbb5f01022c</anchor>
+      <arglist>(int k) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLocationOnBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a5505364e2d2f645fd90e637bf83574ab</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLocationOnBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a018686bb040300c4647327a8e8bd1b0b</anchor>
+      <arglist>(double d)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getNextValidBasePathIndex</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a2d7346e77212edc1de339c6503467e5b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getLastValidBasePathIndex</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a34c6cbe11fdc12d4db61003094958d82</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>PathRestriction *</type>
+      <name>getRestriction</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>ab96d15a4ed1a24d3dcb00ab6dea006da</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>classompl_1_1multilevel_1_1Head.html</anchorfile>
+      <anchor>a36a67f59b6508447a9789fb9046b9bba</anchor>
+      <arglist>(std::ostream &amp;, const Head &amp;)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::HeadAnalyzer</name>
+    <filename>classompl_1_1multilevel_1_1HeadAnalyzer.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>HeadAnalyzer</name>
+      <anchorfile>classompl_1_1multilevel_1_1HeadAnalyzer.html</anchorfile>
+      <anchor>aa5c5d85a1fee3b53bbbbe6593859c0ed</anchor>
+      <arglist>(HeadPtr &amp;head)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::PathRestriction</name>
+    <filename>classompl_1_1multilevel_1_1PathRestriction.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>setBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a5636d322e3241cf4e46170b2bd7fccb6</anchor>
+      <arglist>(base::PathPtr)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a0f3affc886e64778fea195e21b48f8b9</anchor>
+      <arglist>(std::vector&lt; base::State * &gt;)</arglist>
+    </member>
+    <member kind="function">
+      <type>const std::vector&lt; base::State * &gt; &amp;</type>
+      <name>getBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>adced9668c87edac300a6c2824b91b8d5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setFindSectionStrategy</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>af9f997b9d5dd4715aadca32dad782fee</anchor>
+      <arglist>(FindSectionType type)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>hasFeasibleSection</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>acd79a4ce0b39b185446adc730f11e734</anchor>
+      <arglist>(Configuration *const, Configuration *const)</arglist>
+    </member>
+    <member kind="function">
+      <type>BundleSpaceGraph *</type>
+      <name>getBundleSpaceGraph</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a6596b76f31a0e22b587321383b5d0df8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLengthBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a1bf960114a1a0deaa7eb84c830845d21</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>size</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>adaac15c5e8e197df9583e6fdb64938ed</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const base::State *</type>
+      <name>getBaseStateAt</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a1ea802102a1ccdcc293fd12eb248b1cc</anchor>
+      <arglist>(int k) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLengthIntermediateBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>aa01119e323cd4bcbb66c1b804ee698a5</anchor>
+      <arglist>(int k)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getLengthBasePathUntil</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>abb8f85ea495724ccb7ed2cf0a180c6f6</anchor>
+      <arglist>(int k)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getBasePathLastIndexFromLocation</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a71a1c06c3f9d946b7303956eeca75bd3</anchor>
+      <arglist>(double d)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolateBasePath</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>aa8ef767dee8ace6c00c324b2ac2f861d</anchor>
+      <arglist>(double t, base::State *&amp;state) const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>BundleSpaceGraph *</type>
+      <name>bundleSpaceGraph_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a1047958ddc34a87a85329f9bbd4f44bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; base::State * &gt;</type>
+      <name>basePath_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a8a0a5b693be0b5ef1f7e4d429b047217</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>double</type>
+      <name>lengthBasePath_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a3c4485795f9d7de06cd6c1b9bf0772cd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; double &gt;</type>
+      <name>lengthsIntermediateBasePath_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>a4c1f2e4d9adf12156f5167d775e63610</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; double &gt;</type>
+      <name>lengthsCumulativeBasePath_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>af1541e504c15f862018a7d2408e0516f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>FindSectionPtr</type>
+      <name>findSection_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathRestriction.html</anchorfile>
+      <anchor>aa1c9dbf7a84ae58a61721e89614714be</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::PathSection</name>
+    <filename>classompl_1_1multilevel_1_1PathSection.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolateL2</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>a815af84b58c6456940a5c063f88b84ed</anchor>
+      <arglist>(HeadPtr &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolateL1FiberFirst</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>a24dd6a9c0dbf84b1e65da41149877f7d</anchor>
+      <arglist>(HeadPtr &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>interpolateL1FiberLast</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>a40b837a89a9c2090d0e8619b5b6af2f9</anchor>
+      <arglist>(HeadPtr &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>checkMotion</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>a0e2b06762dd58aa46844a561908e2e4c</anchor>
+      <arglist>(HeadPtr &amp;)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>sanityCheck</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>a9751ffa919a74b15e850abc09011f748</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>base::State *</type>
+      <name>at</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>a5cd73649705c66469293afabb6b828b8</anchor>
+      <arglist>(int k) const</arglist>
+    </member>
+    <member kind="function">
+      <type>Configuration *</type>
+      <name>addFeasibleSegment</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>af3986a21577b58d83b8c84bdb1503aef</anchor>
+      <arglist>(Configuration *xLast, base::State *sNext)</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; base::State * &gt;</type>
+      <name>section_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>a824a00063a8b0cdfba561470603321b8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::pair&lt; base::State *, double &gt;</type>
+      <name>lastValid_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PathSection.html</anchorfile>
+      <anchor>aa4474fb39701340bc0103c037d0aaf65</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::PlannerDataVertexAnnotated</name>
+    <filename>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</filename>
+    <base>ompl::base::PlannerDataVertex</base>
+    <member kind="function">
+      <type></type>
+      <name>PlannerDataVertexAnnotated</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a570858d48c1a1e739594ccdce83e3965</anchor>
+      <arglist>(const ompl::base::State *state)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual PlannerDataVertex *</type>
+      <name>clone</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a01f5c2da52d4b3bf1a659769d30ceeb6</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setLevel</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>ae6311141b886a0a5f05ea9f6832ef6e2</anchor>
+      <arglist>(unsigned int level_)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setMaxLevel</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>ad48a0db5d5d4f8ef57091c75dd3a2ca1</anchor>
+      <arglist>(unsigned int level_)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setComponent</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a67db01b468d19ffbb9104e5a51525833</anchor>
+      <arglist>(unsigned int component_)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setTotalState</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a27850ed68cae9fc2f5f83559d36fbe7d</anchor>
+      <arglist>(ompl::base::State *s, ompl::base::SpaceInformationPtr si)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setBaseState</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a0b7811ae33251ff415f94486b6fd458f</anchor>
+      <arglist>(const ompl::base::State *s)</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual const ompl::base::State *</type>
+      <name>getState</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a447d4a91a84b093e3cbc44a1283b9c63</anchor>
+      <arglist>() const override</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::State *</type>
+      <name>getStateNonConst</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a36f7dfc1cebbe611168d6042e7a9e6c0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const ompl::base::State *</type>
+      <name>getBaseState</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>aaa0bb497bd86ef39a433ee7362bec799</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>operator==</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>ac490e5749cbc7da11d5439e0277dff86</anchor>
+      <arglist>(const PlannerDataVertex &amp;rhs) const override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>level_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>aea183094112a1d4c9faeb75a0d43b50a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>maxLevel_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a38b02cc1d43d0991cb837ea0d1a21d54</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>component_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a492a4be03fd371da17dfdcaef55c1b5c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>bool</type>
+      <name>totalStateIsSet</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a382a6da1f980dd8cda37a8b8f2e806af</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>const ompl::base::State *</type>
+      <name>stateBase_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>ab09de9d6a58f511cd0bead774ad79a48</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ompl::base::State *</type>
+      <name>stateTotal_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>abe49ab5945c88ace55e655d912ea812e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>ompl::base::SpaceInformationPtr</type>
+      <name>si_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html</anchorfile>
+      <anchor>a1cc444e7ecc857d152ad35da4408b5a5</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::PlannerMultiLevel</name>
+    <filename>classompl_1_1multilevel_1_1PlannerMultiLevel.html</filename>
+    <base>ompl::base::Planner</base>
+    <member kind="function">
+      <type></type>
+      <name>PlannerMultiLevel</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>ac64672701c4597a36a765fc58e08a782</anchor>
+      <arglist>(std::vector&lt; ompl::base::SpaceInformationPtr &gt; &amp;siVec, std::string type=&quot;PlannerMultiLevel&quot;)</arglist>
+    </member>
+    <member kind="function">
+      <type>const ompl::base::ProblemDefinitionPtr &amp;</type>
+      <name>getProblemDefinition</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>a337f50c90b9dd825095c1618daed53f9</anchor>
+      <arglist>(int level) const</arglist>
+    </member>
+    <member kind="function">
+      <type>ompl::base::ProblemDefinitionPtr &amp;</type>
+      <name>getProblemDefinitionNonConst</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>ad4b298497b86f8f09aca037ddc76b2e9</anchor>
+      <arglist>(int level)</arglist>
+    </member>
+    <member kind="function">
+      <type>const std::vector&lt; ompl::base::ProblemDefinitionPtr &gt; &amp;</type>
+      <name>getProblemDefinitionVector</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>ae10d2b6c5bc21700e6f7cd3d7cdb41b9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>a90938bd43089718410a5672fdaa0fa6d</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>getLevels</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>a14407004170d95c409be393d15e6f2ec</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::vector&lt; int &gt;</type>
+      <name>getDimensionsPerLevel</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>aac4a74dc65e8229dde753328fb98852c</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; ompl::base::PathPtr &gt;</type>
+      <name>solutions_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>ae6da02d9e0730e697303f99891adc457</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; ompl::base::ProblemDefinitionPtr &gt;</type>
+      <name>pdefVec_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>a15c665fc0a2ba0de16c68e49e40da0ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>std::vector&lt; ompl::base::SpaceInformationPtr &gt;</type>
+      <name>siVec_</name>
+      <anchorfile>classompl_1_1multilevel_1_1PlannerMultiLevel.html</anchorfile>
+      <anchor>a2c71431f3281a7a8886c66415d1d7827</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection</name>
+    <filename>classompl_1_1multilevel_1_1Projection.html</filename>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>print</name>
+      <anchorfile>classompl_1_1multilevel_1_1Projection.html</anchorfile>
+      <anchor>a53dff231694681ea9984c6e505650763</anchor>
+      <arglist>(std::ostream &amp;out) const</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>stateTypeToString</name>
+      <anchorfile>classompl_1_1multilevel_1_1Projection.html</anchorfile>
+      <anchor>a2ac9bcc6e7607deb0ecec50d9c570967</anchor>
+      <arglist>(base::StateSpacePtr) const</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend std::ostream &amp;</type>
+      <name>operator&lt;&lt;</name>
+      <anchorfile>classompl_1_1multilevel_1_1Projection.html</anchorfile>
+      <anchor>afee87672e223d78e9d45d6b015da974e</anchor>
+      <arglist>(std::ostream &amp;out, const Projection &amp;)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_EmptySet</name>
+    <filename>classompl_1_1multilevel_1_1Projection__EmptySet.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+    <docanchor file="classompl_1_1multilevel_1_1Projection__EmptySet.html">EmptySet</docanchor>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_Identity</name>
+    <filename>classompl_1_1multilevel_1_1Projection__Identity.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_None</name>
+    <filename>classompl_1_1multilevel_1_1Projection__None.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_Relaxation</name>
+    <filename>classompl_1_1multilevel_1_1Projection__Relaxation.html</filename>
+    <base>ompl::multilevel::Projection_Identity</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_RN_RM</name>
+    <filename>classompl_1_1multilevel_1_1Projection__RN__RM.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_RNSO2_RN</name>
+    <filename>classompl_1_1multilevel_1_1Projection__RNSO2__RN.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE2_R2</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE2__R2.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE2RN_R2</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE2RN__R2.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE2RN_SE2</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE2RN__SE2.html</filename>
+    <base>ompl::multilevel::Projection_XRN_X</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE2RN_SE2RM</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE2RN__SE2RM.html</filename>
+    <base>ompl::multilevel::Projection_XRN_XRM</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE3_R3</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE3__R3.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE3RN_R3</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE3RN__R3.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE3RN_SE3</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE3RN__SE3.html</filename>
+    <base>ompl::multilevel::Projection_XRN_X</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SE3RN_SE3RM</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SE3RN__SE3RM.html</filename>
+    <base>ompl::multilevel::Projection_XRN_XRM</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SO2N_SO2M</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SO2N__SO2M.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SO2RN_SO2</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SO2RN__SO2.html</filename>
+    <base>ompl::multilevel::Projection_XRN_X</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SO2RN_SO2RM</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SO2RN__SO2RM.html</filename>
+    <base>ompl::multilevel::Projection_XRN_XRM</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SO3RN_SO3</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SO3RN__SO3.html</filename>
+    <base>ompl::multilevel::Projection_XRN_X</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_SO3RN_SO3RM</name>
+    <filename>classompl_1_1multilevel_1_1Projection__SO3RN__SO3RM.html</filename>
+    <base>ompl::multilevel::Projection_XRN_XRM</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_XRN_X</name>
+    <filename>classompl_1_1multilevel_1_1Projection__XRN__X.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::Projection_XRN_XRM</name>
+    <filename>classompl_1_1multilevel_1_1Projection__XRN__XRM.html</filename>
+    <base>ompl::multilevel::FiberedProjection</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::ProjectionFactory</name>
+    <filename>classompl_1_1multilevel_1_1ProjectionFactory.html</filename>
+    <member kind="function">
+      <type>ProjectionPtr</type>
+      <name>makeProjection</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>addde2f3b26c4e7d673efb467577f6ec8</anchor>
+      <arglist>(const base::SpaceInformationPtr &amp;Bundle, const base::SpaceInformationPtr &amp;Base)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>ProjectionType</type>
+      <name>identifyProjectionType</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a846a092bd89b0187c140505d9e70c16f</anchor>
+      <arglist>(const base::StateSpacePtr &amp;BundleSpace, const base::StateSpacePtr &amp;BaseSpace)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_Identity</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>ab00056074a9f43feecefbb7161375274</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_EmptyProjection</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a567bc3695038ee30dde85abd66b7a873</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_RN_to_RM</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>abd12259fe33c0c658b0ae4620eeee105</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE2_to_R2</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a09707afa2c9654f04b0a91aad3690b6a</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE2RN_to_R2</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>afe6bf7b473a8f1a90bc498dfa69d9ad6</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE2RN_to_SE2</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a58e2703b2f6f5d73fb1de7b08e01721a</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE2RN_to_SE2RM</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a7bafff31fed07790957e5e6fb9e8b164</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE3_to_R3</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a39dd29e180bb1ee4bc0356beb0166f33</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE3RN_to_R3</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>add4983350979244f5493ae23a69f85d6</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE3RN_to_SE3</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>ae1eabed02af12f9d3d20ab13dd0dc5ae</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SE3RN_to_SE3RM</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a370135d03918e7a13a81ceca74be614a</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SO2RN_to_SO2</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a7f397ec75a8a84576f0fb7cedf2d2621</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SO2RN_to_SO2RM</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a46d0390ec9565cdd8d0c7203d4197909</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SO2N_to_SO2M</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>af9079f8a7d86843b78e807b640b05678</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SO3RN_to_SO3</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>ab95a28943f04f7f6055a7a7b30b472f7</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_SO3RN_to_SO3RM</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a1e11bbf3623e77c231230a691ca636d4</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_RNSO2_to_RN</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a8849e49e03c9274fc474844bd76ed0c0</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_XRN_to_XRM</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>ace17017c286ddb0bf60ac4303913ebad</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;, const base::StateSpaceType)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>bool</type>
+      <name>isMapping_XRN_to_X</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a92d2fb047f3c0fad71fe3fb2cc5132bd</anchor>
+      <arglist>(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;, const base::StateSpaceType)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>int</type>
+      <name>GetNumberOfComponents</name>
+      <anchorfile>classompl_1_1multilevel_1_1ProjectionFactory.html</anchorfile>
+      <anchor>a7832b944080bef2fe5d3cac4de011aa1</anchor>
+      <arglist>(const base::StateSpacePtr &amp;space)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::QMPImpl</name>
+    <filename>classompl_1_1multilevel_1_1QMPImpl.html</filename>
+    <base>ompl::multilevel::BundleSpaceGraph</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>grow</name>
+      <anchorfile>classompl_1_1multilevel_1_1QMPImpl.html</anchorfile>
+      <anchor>aa39eafb62a8a331fa9a5c81a4049bdbf</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>clear</name>
+      <anchorfile>classompl_1_1multilevel_1_1QMPImpl.html</anchorfile>
+      <anchor>a21d50beb855aa5cbccd08a3f0b63f08c</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>expand</name>
+      <anchorfile>classompl_1_1multilevel_1_1QMPImpl.html</anchorfile>
+      <anchor>af784610b7f55b8944b62e20cd78ed568</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" virtualness="virtual">
+      <type>virtual Vertex</type>
+      <name>addConfiguration</name>
+      <anchorfile>classompl_1_1multilevel_1_1QMPImpl.html</anchorfile>
+      <anchor>ae0d2c48c63b0a858e88e47ce73876d5b</anchor>
+      <arglist>(Configuration *q) override</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>unsigned int</type>
+      <name>k_NearestNeighbors_</name>
+      <anchorfile>classompl_1_1multilevel_1_1QMPImpl.html</anchorfile>
+      <anchor>a2c7b16137b3f70ee5075dc285f4ffa61</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::QMPStarImpl</name>
+    <filename>classompl_1_1multilevel_1_1QMPStarImpl.html</filename>
+    <base>ompl::multilevel::QMPImpl</base>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::QRRTImpl</name>
+    <filename>classompl_1_1multilevel_1_1QRRTImpl.html</filename>
+    <base>ompl::multilevel::BundleSpaceGraph</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>grow</name>
+      <anchorfile>classompl_1_1multilevel_1_1QRRTImpl.html</anchorfile>
+      <anchor>a395fdfb0d46d71472c40de101e666108</anchor>
+      <arglist>() override</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::multilevel::QRRTStarImpl</name>
+    <filename>classompl_1_1multilevel_1_1QRRTStarImpl.html</filename>
+    <base>ompl::multilevel::BundleSpaceGraph</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual void</type>
+      <name>grow</name>
+      <anchorfile>classompl_1_1multilevel_1_1QRRTStarImpl.html</anchorfile>
+      <anchor>a852b87f0bfcb3c49ab141ecfac2fcb9c</anchor>
+      <arglist>() override</arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>k_rrt_Constant_</name>
+      <anchorfile>classompl_1_1multilevel_1_1QRRTStarImpl.html</anchorfile>
+      <anchor>a2fce584c31ee5bb190cde77b911b22f1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>r_rrt_Constant_</name>
+      <anchorfile>classompl_1_1multilevel_1_1QRRTStarImpl.html</anchorfile>
+      <anchor>a2b7b554b1203ba27372dc4dd30ea32d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>symmetric_</name>
+      <anchorfile>classompl_1_1multilevel_1_1QRRTStarImpl.html</anchorfile>
+      <anchor>a07e7aca174ac146792afabfe721959a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>useKNearest_</name>
+      <anchorfile>classompl_1_1multilevel_1_1QRRTStarImpl.html</anchorfile>
+      <anchor>adef7cedf51b0e3a7ccb5e9cccdef5ac0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>double</type>
+      <name>d_</name>
+      <anchorfile>classompl_1_1multilevel_1_1QRRTStarImpl.html</anchorfile>
+      <anchor>ad5f4b3b0dc1280f56d16e689a610d34f</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>ompl::NearestNeighbors</name>
     <filename>classompl_1_1NearestNeighbors.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <member kind="typedef">
       <type>std::function&lt; double(const _T &amp;, const _T &amp;)&gt;</type>
       <name>DistanceFunction</name>
@@ -42546,7 +40608,7 @@
       <type>const DistanceFunction &amp;</type>
       <name>getDistanceFunction</name>
       <anchorfile>classompl_1_1NearestNeighbors.html</anchorfile>
-      <anchor>ac6f8e15588dbd628417afbd6cd7d9593</anchor>
+      <anchor>aa89b8cfb398f261acb3f4bf8ed72a456</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="pure">
@@ -42630,8 +40692,8 @@
   <compound kind="class">
     <name>ompl::NearestNeighborsFLANN</name>
     <filename>classompl_1_1NearestNeighborsFLANN.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
+    <templarg>typename _Dist</templarg>
     <base>ompl::NearestNeighbors</base>
     <member kind="function">
       <type>void</type>
@@ -42714,7 +40776,7 @@
       <type>virtual const std::shared_ptr&lt; flann::IndexParams &gt; &amp;</type>
       <name>getIndexParams</name>
       <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a3b45a436ea320688e9ea193dce3e52b8</anchor>
+      <anchor>a44b0ee8364c9f2a61aaa8ae741a8f148</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -42728,14 +40790,14 @@
       <type>flann::SearchParams &amp;</type>
       <name>getSearchParams</name>
       <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a550e09c5d54d1f157da5385900aef93e</anchor>
+      <anchor>a638cf95d4f0c8e9c21c953f0b0ba9321</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const flann::SearchParams &amp;</type>
       <name>getSearchParams</name>
       <anchorfile>classompl_1_1NearestNeighborsFLANN.html</anchorfile>
-      <anchor>a786a02bdcb1b41aedb761e975f067c0c</anchor>
+      <anchor>a26ac800b5b7374b5642f8ae84062e631</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -42791,21 +40853,21 @@
   <compound kind="class">
     <name>ompl::NearestNeighborsFLANNHierarchicalClustering</name>
     <filename>classompl_1_1NearestNeighborsFLANNHierarchicalClustering.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
+    <templarg>typename _Dist</templarg>
     <base>NearestNeighborsFLANN&lt; _T, FLANNDistance&lt; _T &gt; &gt;</base>
   </compound>
   <compound kind="class">
     <name>ompl::NearestNeighborsFLANNLinear</name>
     <filename>classompl_1_1NearestNeighborsFLANNLinear.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
+    <templarg>typename _Dist</templarg>
     <base>NearestNeighborsFLANN&lt; _T, FLANNDistance&lt; _T &gt; &gt;</base>
   </compound>
   <compound kind="class">
     <name>ompl::NearestNeighborsGNAT</name>
     <filename>classompl_1_1NearestNeighborsGNAT.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <base>ompl::NearestNeighbors</base>
     <class kind="class">ompl::NearestNeighborsGNAT::Node</class>
     <member kind="function">
@@ -42994,7 +41056,7 @@
       <type>friend std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>classompl_1_1NearestNeighborsGNAT.html</anchorfile>
-      <anchor>a1e1b937c81eb1d184ffa588589bcc07f</anchor>
+      <anchor>a0d7a611b6436f1a09685398d2c762800</anchor>
       <arglist>(std::ostream &amp;out, const NearestNeighborsGNAT&lt; _T &gt; &amp;gnat)</arglist>
     </member>
   </compound>
@@ -43131,7 +41193,7 @@
   <compound kind="class">
     <name>ompl::NearestNeighborsGNATNoThreadSafety</name>
     <filename>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <base>ompl::NearestNeighbors</base>
     <class kind="class">ompl::NearestNeighborsGNATNoThreadSafety::Node</class>
     <member kind="function">
@@ -43348,7 +41410,7 @@
       <type>friend std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>classompl_1_1NearestNeighborsGNATNoThreadSafety.html</anchorfile>
-      <anchor>aefae7627603eaea6da67d53ed3fc3ac6</anchor>
+      <anchor>a6c1144e3613e79a6f5387ef99600b4e6</anchor>
       <arglist>(std::ostream &amp;out, const NearestNeighborsGNATNoThreadSafety&lt; _T &gt; &amp;gnat)</arglist>
     </member>
     <member kind="variable" protection="protected">
@@ -43520,7 +41582,7 @@
   <compound kind="class">
     <name>ompl::NearestNeighborsLinear</name>
     <filename>classompl_1_1NearestNeighborsLinear.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <base>ompl::NearestNeighbors</base>
     <member kind="function">
       <type>void</type>
@@ -43603,7 +41665,7 @@
   <compound kind="class">
     <name>ompl::NearestNeighborsSqrtApprox</name>
     <filename>classompl_1_1NearestNeighborsSqrtApprox.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <base>ompl::NearestNeighborsLinear</base>
     <member kind="function">
       <type>void</type>
@@ -43663,9 +41725,128 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>ompl::Parameter</name>
+    <filename>classompl_1_1Parameter.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>setValueInit</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>acbd910418004040ff77cca315505dc7c</anchor>
+      <arglist>(double valueInit)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setValueTarget</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>a84458c0d3628ca831792ef6b049ea560</anchor>
+      <arglist>(double valueTarget)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setCounterInit</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>a73503c02329d8a5206895e94015d47b3</anchor>
+      <arglist>(unsigned long long counterInit)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>setCounterTarget</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>adb15287e09be893f7a7a354f57510f2b</anchor>
+      <arglist>(unsigned long long counterTarget)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getValueInit</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>a614fd0b911a2479425941bfa03efef8b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>getValueTarget</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>af4f36dc10d10cd90eface7b08c2f2be1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned long long</type>
+      <name>getCounterInit</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>ae369b196d761a695d96dea8eee67327e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned long long</type>
+      <name>getCounterTarget</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>ac8c5cdb7b98981f2764ea65a2b25c9e6</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>operator()</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>a205bb723d4d570ca6528155802cc3e1c</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>reset</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>a142cece37a16a60cf14614d3ed23188d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned long long</type>
+      <name>getCounter</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>afeb803162ea28e58d399805c7f44fd48</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>incrementCounter</name>
+      <anchorfile>classompl_1_1Parameter.html</anchorfile>
+      <anchor>a4c0fefc3386ddc64e52c6388f0bf72a8</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::ParameterExponentialDecay</name>
+    <filename>classompl_1_1ParameterExponentialDecay.html</filename>
+    <base>ompl::Parameter</base>
+    <member kind="function">
+      <type>void</type>
+      <name>setLambda</name>
+      <anchorfile>classompl_1_1ParameterExponentialDecay.html</anchorfile>
+      <anchor>a5ddc6c9f587f98df4476d1e3a77918f8</anchor>
+      <arglist>(double lambda)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>operator()</name>
+      <anchorfile>classompl_1_1ParameterExponentialDecay.html</anchorfile>
+      <anchor>afba2469647da04639942f8783a06e735</anchor>
+      <arglist>(void)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ompl::ParameterSmoothStep</name>
+    <filename>classompl_1_1ParameterSmoothStep.html</filename>
+    <base>ompl::Parameter</base>
+    <member kind="function">
+      <type>double</type>
+      <name>operator()</name>
+      <anchorfile>classompl_1_1ParameterSmoothStep.html</anchorfile>
+      <anchor>aa0e73b3e451dba4757c1235012715acd</anchor>
+      <arglist>(void)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>ompl::PDF</name>
     <filename>classompl_1_1PDF.html</filename>
-    <templarg></templarg>
+    <templarg>typename _T</templarg>
     <class kind="class">ompl::PDF::Element</class>
     <member kind="function">
       <type></type>
@@ -43692,21 +41873,21 @@
       <type>const std::vector&lt; Element * &gt; &amp;</type>
       <name>getElements</name>
       <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
+      <anchor>a8193799c22e282ad9b8bb57c6c1deac8</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>Element *</type>
       <name>add</name>
       <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
+      <anchor>a41ae87da48831975e4de487c6a0d103e</anchor>
       <arglist>(const _T &amp;d, const double w)</arglist>
     </member>
     <member kind="function">
       <type>_T &amp;</type>
       <name>sample</name>
       <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
+      <anchor>a40256a8cdbb6ef743e9767c04230d6bb</anchor>
       <arglist>(double r) const</arglist>
     </member>
     <member kind="function">
@@ -43748,7 +41929,7 @@
       <type>const _T &amp;</type>
       <name>operator[]</name>
       <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
+      <anchor>a6d55d29f5ca1cd5df554addd9a22410c</anchor>
       <arglist>(unsigned int i) const</arglist>
     </member>
     <member kind="function">
@@ -43845,28 +42026,28 @@
       <type>const std::vector&lt; Color &gt; &amp;</type>
       <name>getPixels</name>
       <anchorfile>classompl_1_1PPM.html</anchorfile>
-      <anchor>a54f9fb14c2fc5fc6abfcee5d2be51567</anchor>
+      <anchor>a430e3f4074a6114c1bb07d3c3b45eeb5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>std::vector&lt; Color &gt; &amp;</type>
       <name>getPixels</name>
       <anchorfile>classompl_1_1PPM.html</anchorfile>
-      <anchor>a52b6aad2f738e99847153c9600c573fb</anchor>
+      <anchor>a2cc58cd5ea1b8c271c34af340c865ed2</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>const Color &amp;</type>
       <name>getPixel</name>
       <anchorfile>classompl_1_1PPM.html</anchorfile>
-      <anchor>a972eabc38c3706da7adab9a3cc95dc3f</anchor>
+      <anchor>a8d64ed6b4aa1d0db1dd795022552fc77</anchor>
       <arglist>(const int row, const int col) const</arglist>
     </member>
     <member kind="function">
       <type>Color &amp;</type>
       <name>getPixel</name>
       <anchorfile>classompl_1_1PPM.html</anchorfile>
-      <anchor>a13896ca755f07d350a3d7a4d95f16674</anchor>
+      <anchor>a65b590e528b6317315dd66567d76d9d9</anchor>
       <arglist>(const int row, const int col)</arglist>
     </member>
   </compound>
@@ -44163,7 +42344,7 @@
       <type>const std::map&lt; std::string, std::string &gt; &amp;</type>
       <name>getExperimentParameters</name>
       <anchorfile>classompl_1_1tools_1_1Benchmark.html</anchorfile>
-      <anchor>a88a000a67ca0365cf73bb0980e2cb598</anchor>
+      <anchor>a2e407791f8baa54b2e7d491f20c4b3f5</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -44184,7 +42365,7 @@
       <type>const std::string &amp;</type>
       <name>getExperimentName</name>
       <anchorfile>classompl_1_1tools_1_1Benchmark.html</anchorfile>
-      <anchor>ab9d802e65eeb24b1d5f8284b866f7f75</anchor>
+      <anchor>a4adb9f2da67bbb9074aadd0af4dde9ef</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -44240,14 +42421,14 @@
       <type>const Status &amp;</type>
       <name>getStatus</name>
       <anchorfile>classompl_1_1tools_1_1Benchmark.html</anchorfile>
-      <anchor>a48a9c1eadaa6e5a06e797975f89f0da5</anchor>
+      <anchor>a3ac8d115ba57652b83e646576c782ee3</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>const CompleteExperiment &amp;</type>
       <name>getRecordedExperimentData</name>
       <anchorfile>classompl_1_1tools_1_1Benchmark.html</anchorfile>
-      <anchor>a5556df8df0b7026667042b384e09e42a</anchor>
+      <anchor>ac9199ad908b6996bdf3fcd30e3209a96</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -44687,7 +42868,7 @@
       <type>const ExperienceStats &amp;</type>
       <name>getStats</name>
       <anchorfile>classompl_1_1tools_1_1ExperienceSetup.html</anchorfile>
-      <anchor>a8add1e41d7fa89cead2793d3ffabe09a</anchor>
+      <anchor>a703af18ad67609fb227a9194dcef4df0</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -44770,7 +42951,7 @@
       <type>ompl::geometric::LightningRetrieveRepair &amp;</type>
       <name>getLightningRetrieveRepairPlanner</name>
       <anchorfile>classompl_1_1tools_1_1Lightning.html</anchorfile>
-      <anchor>abeb6f425c04af5c07cc0dc123da12670</anchor>
+      <anchor>a3daf873b594511e86ab7598da6d811bf</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -44861,7 +43042,7 @@
       <type>const ompl::tools::DynamicTimeWarpPtr &amp;</type>
       <name>getDynamicTimeWarp</name>
       <anchorfile>classompl_1_1tools_1_1Lightning.html</anchorfile>
-      <anchor>a9ccd7eb9c66d02c04f12036770f9fad9</anchor>
+      <anchor>ae1e062360a83a2e51e0d5f6e5a3acd91</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -45037,14 +43218,14 @@
       <type>const base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1tools_1_1OptimizePlan.html</anchorfile>
-      <anchor>a099dbb94dced7b495d5a03b7988bd238</anchor>
+      <anchor>a5d53cd109ed7c55724a6493ad494230b</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1tools_1_1OptimizePlan.html</anchorfile>
-      <anchor>ad0259133a424bff7fb9efc302f6710aa</anchor>
+      <anchor>a7d6465fb61900f587848d5ef592ac93d</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -45111,14 +43292,14 @@
       <type>const base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1tools_1_1ParallelPlan.html</anchorfile>
-      <anchor>a2692de35cb2459ef8bcd07b447bc3108</anchor>
+      <anchor>a461beca01184815b845d2f0a343d2b35</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
       <type>base::ProblemDefinitionPtr &amp;</type>
       <name>getProblemDefinition</name>
       <anchorfile>classompl_1_1tools_1_1ParallelPlan.html</anchorfile>
-      <anchor>aeab0815cca49ec777011b5aabd4937eb</anchor>
+      <anchor>acf57779ae13356308096eadf10d7358a</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -45469,7 +43650,7 @@
       <type>static NearestNeighbors&lt; _T &gt; *</type>
       <name>getDefaultNearestNeighbors</name>
       <anchorfile>classompl_1_1tools_1_1SelfConfig.html</anchorfile>
-      <anchor>a6234444fd75f10224dff2e1a342998ea</anchor>
+      <anchor>a23f1fef30af80542eeb4709465a06148</anchor>
       <arglist>(const base::Planner *planner)</arglist>
     </member>
     <member kind="function" static="yes">
@@ -45516,14 +43697,14 @@
       <type>ompl::base::PlannerPtr &amp;</type>
       <name>getPlanner</name>
       <anchorfile>classompl_1_1tools_1_1Thunder.html</anchorfile>
-      <anchor>af4eddbcd0610d3c84b192e76081144a9</anchor>
+      <anchor>a95d2138ea6fce791a201a9f7495907fc</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>ompl::geometric::ThunderRetrieveRepair &amp;</type>
       <name>getRetrieveRepairPlanner</name>
       <anchorfile>classompl_1_1tools_1_1Thunder.html</anchorfile>
-      <anchor>af0e0e9fbfe5956169be1ef37ab63d4ff</anchor>
+      <anchor>aa7f33a3ae06a4c3cad5d9c1e06bc3191</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -45798,720 +43979,6 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>PDF&lt; GridCell * &gt;</name>
-    <filename>classompl_1_1PDF.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
-      <arglist>(const std::vector&lt; GridCell * &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const std::vector&lt; Element * &gt; &amp;</type>
-      <name>getElements</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
-      <arglist>(const GridCell * &amp;d, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>GridCell * &amp;</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
-      <arglist>(double r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
-      <arglist>(Element *elem, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getWeight</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
-      <arglist>(const Element *elem) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
-      <arglist>(Element *elem)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const GridCell * &amp;</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
-      <arglist>(unsigned int i) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printTree</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>PDF&lt; int &gt;</name>
-    <filename>classompl_1_1PDF.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
-      <arglist>(const std::vector&lt; int &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const std::vector&lt; Element * &gt; &amp;</type>
-      <name>getElements</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
-      <arglist>(const int &amp;d, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>int &amp;</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
-      <arglist>(double r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
-      <arglist>(Element *elem, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getWeight</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
-      <arglist>(const Element *elem) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
-      <arglist>(Element *elem)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const int &amp;</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
-      <arglist>(unsigned int i) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printTree</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>PDF&lt; ompl::base::AtlasChart * &gt;</name>
-    <filename>classompl_1_1PDF.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
-      <arglist>(const std::vector&lt; ompl::base::AtlasChart * &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const std::vector&lt; Element * &gt; &amp;</type>
-      <name>getElements</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
-      <arglist>(const ompl::base::AtlasChart * &amp;d, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::base::AtlasChart * &amp;</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
-      <arglist>(double r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
-      <arglist>(Element *elem, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getWeight</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
-      <arglist>(const Element *elem) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
-      <arglist>(Element *elem)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::base::AtlasChart * &amp;</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
-      <arglist>(unsigned int i) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printTree</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>PDF&lt; ompl::control::LTLPlanner::Motion * &gt;</name>
-    <filename>classompl_1_1PDF.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
-      <arglist>(const std::vector&lt; ompl::control::LTLPlanner::Motion * &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const std::vector&lt; Element * &gt; &amp;</type>
-      <name>getElements</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
-      <arglist>(const ompl::control::LTLPlanner::Motion * &amp;d, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::control::LTLPlanner::Motion * &amp;</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
-      <arglist>(double r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
-      <arglist>(Element *elem, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getWeight</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
-      <arglist>(const Element *elem) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
-      <arglist>(Element *elem)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::control::LTLPlanner::Motion * &amp;</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
-      <arglist>(unsigned int i) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printTree</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>PDF&lt; ompl::control::ProductGraph::State * &gt;</name>
-    <filename>classompl_1_1PDF.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
-      <arglist>(const std::vector&lt; ompl::control::ProductGraph::State * &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const std::vector&lt; Element * &gt; &amp;</type>
-      <name>getElements</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
-      <arglist>(const ompl::control::ProductGraph::State * &amp;d, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::control::ProductGraph::State * &amp;</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
-      <arglist>(double r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
-      <arglist>(Element *elem, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getWeight</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
-      <arglist>(const Element *elem) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
-      <arglist>(Element *elem)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::control::ProductGraph::State * &amp;</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
-      <arglist>(unsigned int i) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printTree</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>PDF&lt; ompl::geometric::BiEST::Motion * &gt;</name>
-    <filename>classompl_1_1PDF.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::BiEST::Motion * &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const std::vector&lt; Element * &gt; &amp;</type>
-      <name>getElements</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
-      <arglist>(const ompl::geometric::BiEST::Motion * &amp;d, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::geometric::BiEST::Motion * &amp;</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
-      <arglist>(double r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
-      <arglist>(Element *elem, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getWeight</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
-      <arglist>(const Element *elem) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
-      <arglist>(Element *elem)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::geometric::BiEST::Motion * &amp;</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
-      <arglist>(unsigned int i) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printTree</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>PDF&lt; ompl::geometric::EST::Motion * &gt;</name>
-    <filename>classompl_1_1PDF.html</filename>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae06cfb65d4f89b2addffc958db09dd82</anchor>
-      <arglist>()=default</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5b46002df3734b53e8340a031ec081cc</anchor>
-      <arglist>(const std::vector&lt; ompl::geometric::EST::Motion * &gt; &amp;d, const std::vector&lt; double &gt; &amp;weights)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~PDF</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a9f6f99197d8379496126a1a48021d149</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>const std::vector&lt; Element * &gt; &amp;</type>
-      <name>getElements</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a29fb4c88ce0dee0d6bc4b409fe2898ec</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>Element *</type>
-      <name>add</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ae0e20ec9697abbbff4eb5ca7f06c04f7</anchor>
-      <arglist>(const ompl::geometric::EST::Motion * &amp;d, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>ompl::geometric::EST::Motion * &amp;</type>
-      <name>sample</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>aaafdcee8b5e225bcc81006fe5d960440</anchor>
-      <arglist>(double r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>update</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a5a6869bcc93cf5b5483048cd26dcb635</anchor>
-      <arglist>(Element *elem, const double w)</arglist>
-    </member>
-    <member kind="function">
-      <type>double</type>
-      <name>getWeight</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a298671738fdadeecf4c5aa4ba3c947ab</anchor>
-      <arglist>(const Element *elem) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>remove</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>abb42f3f0ae997173f6d4368c5d5aec6e</anchor>
-      <arglist>(Element *elem)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>acaa1582a3143b6d282186d6c75dd8cf4</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad590bf20b34d4e87a5d220ff52d6973d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>const ompl::geometric::EST::Motion * &amp;</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ad8be9b35371beadd6a8d5cd636d44039</anchor>
-      <arglist>(unsigned int i) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>empty</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>a2f35456fba983f70cd62e1d75174662d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>printTree</name>
-      <anchorfile>classompl_1_1PDF.html</anchorfile>
-      <anchor>ac1c19cac51e316a6db3266686c794d41</anchor>
-      <arglist>(std::ostream &amp;out=std::cout) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>PlanarManipTaskSpaceConfig</name>
     <filename>classPlanarManipTaskSpaceConfig.html</filename>
     <base>ompl::geometric::TaskSpaceConfig</base>
@@ -46604,140 +44071,44 @@
     <name>PolyWorld</name>
     <filename>classPolyWorld.html</filename>
   </compound>
+  <compound kind="class">
+    <name>R2CollisionChecker</name>
+    <filename>classR2CollisionChecker.html</filename>
+    <base>ompl::base::StateValidityChecker</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>isValid</name>
+      <anchorfile>classR2CollisionChecker.html</anchorfile>
+      <anchor>a868a33874009927867e787de3579db34</anchor>
+      <arglist>(const ompl::base::State *state) const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SE2CollisionChecker</name>
+    <filename>classSE2CollisionChecker.html</filename>
+    <base>ompl::base::StateValidityChecker</base>
+    <member kind="function" virtualness="virtual">
+      <type>virtual bool</type>
+      <name>isValid</name>
+      <anchorfile>classSE2CollisionChecker.html</anchorfile>
+      <anchor>a49869010955b0218868106ad2ff5bb00</anchor>
+      <arglist>(const ompl::base::State *state) const</arglist>
+    </member>
+  </compound>
   <compound kind="struct">
     <name>Segment</name>
     <filename>structSegment.html</filename>
   </compound>
-  <compound kind="class">
-    <name>StateSamplerArray&lt; ompl::base::StateSampler &gt;</name>
-    <filename>classompl_1_1base_1_1StateSamplerArray.html</filename>
-    <member kind="typedef">
-      <type>typename SamplerSelector&lt; ompl::base::StateSampler &gt;::SamplerPtr</type>
-      <name>SamplerPtr</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a7a9d75d8d7b40996bde5642fea18dc29</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename SamplerSelector&lt; ompl::base::StateSampler &gt;::Sampler</type>
-      <name>Sampler</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>aca7f99bda51091573e4eaf377f867d49</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>StateSamplerArray</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a5d9c7fc2ef129b81f4f4b350b4c1faf8</anchor>
-      <arglist>(const SpaceInformationPtr &amp;si)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>StateSamplerArray</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a4b2695cf7992fe63c9364b7df8ef18d3</anchor>
-      <arglist>(const SpaceInformation *si)</arglist>
-    </member>
-    <member kind="function">
-      <type>Sampler *</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>ab8bf640ce48d3071435a37a9b090566c</anchor>
-      <arglist>(std::size_t index) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>resize</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>aee87211c80826b2fddf610bf213f0a9e</anchor>
-      <arglist>(std::size_t count)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>ab524ec36b8574db4d1dde92496974a28</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a8d28df7c315cfec6047dc60dcb78b8f7</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>StateSamplerArray&lt; ompl::base::ValidStateSampler &gt;</name>
-    <filename>classompl_1_1base_1_1StateSamplerArray.html</filename>
-    <member kind="typedef">
-      <type>typename SamplerSelector&lt; ompl::base::ValidStateSampler &gt;::SamplerPtr</type>
-      <name>SamplerPtr</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a7a9d75d8d7b40996bde5642fea18dc29</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>typename SamplerSelector&lt; ompl::base::ValidStateSampler &gt;::Sampler</type>
-      <name>Sampler</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>aca7f99bda51091573e4eaf377f867d49</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>StateSamplerArray</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a5d9c7fc2ef129b81f4f4b350b4c1faf8</anchor>
-      <arglist>(const SpaceInformationPtr &amp;si)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>StateSamplerArray</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a4b2695cf7992fe63c9364b7df8ef18d3</anchor>
-      <arglist>(const SpaceInformation *si)</arglist>
-    </member>
-    <member kind="function">
-      <type>Sampler *</type>
-      <name>operator[]</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>ab8bf640ce48d3071435a37a9b090566c</anchor>
-      <arglist>(std::size_t index) const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>resize</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>aee87211c80826b2fddf610bf213f0a9e</anchor>
-      <arglist>(std::size_t count)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::size_t</type>
-      <name>size</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>ab524ec36b8574db4d1dde92496974a28</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>clear</name>
-      <anchorfile>classompl_1_1base_1_1StateSamplerArray.html</anchorfile>
-      <anchor>a8d28df7c315cfec6047dc60dcb78b8f7</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
   <compound kind="struct">
     <name>std::hash&lt; std::pair&lt; U, V &gt; &gt;</name>
     <filename>structstd_1_1hash_3_01std_1_1pair_3_01U_00_01V_01_4_01_4.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>class U</templarg>
+    <templarg>class V</templarg>
   </compound>
   <compound kind="struct">
     <name>std::hash&lt; std::vector&lt; T &gt; &gt;</name>
     <filename>structstd_1_1hash_3_01std_1_1vector_3_01T_01_4_01_4.html</filename>
-    <templarg></templarg>
+    <templarg>class T</templarg>
   </compound>
   <compound kind="namespace">
     <name>ompl</name>
@@ -46749,28 +44120,32 @@
     <namespace>ompl::machine</namespace>
     <namespace>ompl::magic</namespace>
     <namespace>ompl::msg</namespace>
+    <namespace>ompl::multilevel</namespace>
     <namespace>ompl::time</namespace>
     <namespace>ompl::tools</namespace>
     <class kind="class">ompl::AdjacencyList</class>
     <class kind="class">ompl::BinaryHeap</class>
     <class kind="class">ompl::DynamicSSSP</class>
+    <class kind="class">ompl::Exception</class>
+    <class kind="class">ompl::FLANNDistance</class>
     <class kind="class">ompl::GreedyKCenters</class>
     <class kind="class">ompl::Grid</class>
     <class kind="class">ompl::GridB</class>
     <class kind="class">ompl::GridN</class>
     <class kind="class">ompl::LPAstarOnGraph</class>
     <class kind="class">ompl::NearestNeighbors</class>
-    <class kind="class">ompl::FLANNDistance</class>
     <class kind="class">ompl::NearestNeighborsFLANN</class>
-    <class kind="class">ompl::NearestNeighborsFLANNLinear</class>
     <class kind="class">ompl::NearestNeighborsFLANNHierarchicalClustering</class>
+    <class kind="class">ompl::NearestNeighborsFLANNLinear</class>
     <class kind="class">ompl::NearestNeighborsGNAT</class>
     <class kind="class">ompl::NearestNeighborsGNATNoThreadSafety</class>
     <class kind="class">ompl::NearestNeighborsLinear</class>
     <class kind="class">ompl::NearestNeighborsSqrtApprox</class>
+    <class kind="class">ompl::Parameter</class>
+    <class kind="class">ompl::ParameterExponentialDecay</class>
+    <class kind="class">ompl::ParameterSmoothStep</class>
     <class kind="class">ompl::PDF</class>
     <class kind="class">ompl::Permutation</class>
-    <class kind="class">ompl::Exception</class>
     <class kind="class">ompl::PPM</class>
     <class kind="class">ompl::ProlateHyperspheroid</class>
     <class kind="class">ompl::RNG</class>
@@ -46841,30 +44216,30 @@
   <compound kind="namespace">
     <name>ompl::app</name>
     <filename>namespaceompl_1_1app.html</filename>
+    <class kind="class">ompl::app::AppBase</class>
     <class kind="struct">ompl::app::AppTypeSelector</class>
     <class kind="struct">ompl::app::AppTypeSelector&lt; AppType::CONTROL &gt;</class>
-    <class kind="class">ompl::app::AppBase</class>
     <class kind="class">ompl::app::BlimpPlanning</class>
     <class kind="class">ompl::app::DynamicCarPlanning</class>
+    <class kind="class">ompl::app::FCLContinuousMotionValidator</class>
+    <class kind="class">ompl::app::FCLMethodWrapper</class>
+    <class kind="class">ompl::app::FCLStateValidityChecker</class>
     <class kind="class">ompl::app::GBlimpPlanning</class>
     <class kind="class">ompl::app::GDynamicCarPlanning</class>
+    <class kind="class">ompl::app::GeometrySpecification</class>
     <class kind="class">ompl::app::GKinematicCarPlanning</class>
     <class kind="class">ompl::app::GQuadrotorPlanning</class>
     <class kind="class">ompl::app::GSE2RigidBodyPlanning</class>
     <class kind="class">ompl::app::GSE3RigidBodyPlanning</class>
     <class kind="class">ompl::app::KinematicCarPlanning</class>
+    <class kind="class">ompl::app::PQPStateValidityChecker</class>
     <class kind="class">ompl::app::QuadrotorPlanning</class>
+    <class kind="class">ompl::app::RenderGeometry</class>
+    <class kind="class">ompl::app::RigidBodyGeometry</class>
     <class kind="class">ompl::app::SE2MultiRigidBodyPlanning</class>
     <class kind="class">ompl::app::SE2RigidBodyPlanning</class>
     <class kind="class">ompl::app::SE3MultiRigidBodyPlanning</class>
     <class kind="class">ompl::app::SE3RigidBodyPlanning</class>
-    <class kind="class">ompl::app::FCLContinuousMotionValidator</class>
-    <class kind="class">ompl::app::FCLMethodWrapper</class>
-    <class kind="class">ompl::app::FCLStateValidityChecker</class>
-    <class kind="class">ompl::app::PQPStateValidityChecker</class>
-    <class kind="class">ompl::app::GeometrySpecification</class>
-    <class kind="class">ompl::app::RigidBodyGeometry</class>
-    <class kind="class">ompl::app::RenderGeometry</class>
     <member kind="enumeration">
       <type></type>
       <name>MotionModel</name>
@@ -46904,17 +44279,37 @@
   <compound kind="namespace">
     <name>ompl::base</name>
     <filename>namespaceompl_1_1base.html</filename>
-    <class kind="class">ompl::base::ConstrainedValidStateSampler</class>
+    <class kind="class">ompl::base::AllValidStateValidityChecker</class>
+    <class kind="class">ompl::base::AtlasChart</class>
+    <class kind="class">ompl::base::AtlasStateSampler</class>
+    <class kind="class">ompl::base::AtlasStateSpace</class>
+    <class kind="class">ompl::base::BridgeTestValidStateSampler</class>
+    <class kind="class">ompl::base::CForestStateSampler</class>
+    <class kind="class">ompl::base::CForestStateSpaceWrapper</class>
+    <class kind="class">ompl::base::CompoundState</class>
+    <class kind="class">ompl::base::CompoundStateSampler</class>
+    <class kind="class">ompl::base::CompoundStateSpace</class>
+    <class kind="class">ompl::base::ConditionalStateSampler</class>
+    <class kind="class">ompl::base::ConstrainedMotionValidator</class>
     <class kind="class">ompl::base::ConstrainedSpaceInformation</class>
-    <class kind="class">ompl::base::TangentBundleSpaceInformation</class>
+    <class kind="class">ompl::base::ConstrainedStateSpace</class>
+    <class kind="class">ompl::base::ConstrainedValidStateSampler</class>
     <class kind="class">ompl::base::Constraint</class>
     <class kind="class">ompl::base::ConstraintIntersection</class>
     <class kind="class">ompl::base::ConstraintObjective</class>
+    <class kind="class">ompl::base::ControlDurationObjective</class>
     <class kind="class">ompl::base::Cost</class>
+    <class kind="class">ompl::base::CostConvergenceTerminationCondition</class>
+    <class kind="class">ompl::base::DeterministicSequence</class>
+    <class kind="class">ompl::base::DeterministicStateSampler</class>
     <class kind="class">ompl::base::DiscreteMotionValidator</class>
+    <class kind="class">ompl::base::DiscreteStateSampler</class>
+    <class kind="class">ompl::base::DiscreteStateSpace</class>
+    <class kind="class">ompl::base::DubinsMotionValidator</class>
+    <class kind="class">ompl::base::DubinsStateSpace</class>
+    <class kind="class">ompl::base::EmptyStateSpace</class>
+    <class kind="class">ompl::base::GaussianValidStateSampler</class>
     <class kind="class">ompl::base::GenericParam</class>
-    <class kind="class">ompl::base::SpecificParam</class>
-    <class kind="class">ompl::base::ParamSet</class>
     <class kind="class">ompl::base::Goal</class>
     <class kind="class">ompl::base::GoalLazySamples</class>
     <class kind="class">ompl::base::GoalRegion</class>
@@ -46922,114 +44317,106 @@
     <class kind="class">ompl::base::GoalSpace</class>
     <class kind="class">ompl::base::GoalState</class>
     <class kind="class">ompl::base::GoalStates</class>
-    <class kind="class">ompl::base::MotionValidator</class>
+    <class kind="class">ompl::base::HaltonSequence</class>
+    <class kind="class">ompl::base::HaltonSequence1D</class>
+    <class kind="class">ompl::base::InformedSampler</class>
+    <class kind="class">ompl::base::InformedStateSampler</class>
+    <class kind="class">ompl::base::IterationTerminationCondition</class>
+    <class kind="class">ompl::base::KleinBottleStateSampler</class>
+    <class kind="class">ompl::base::KleinBottleStateSpace</class>
+    <class kind="class">ompl::base::MaximizeClearanceValidStateSampler</class>
     <class kind="class">ompl::base::MaximizeMinClearanceObjective</class>
     <class kind="class">ompl::base::MechanicalWorkOptimizationObjective</class>
     <class kind="class">ompl::base::MinimaxObjective</class>
-    <class kind="class">ompl::base::PathLengthOptimizationObjective</class>
-    <class kind="class">ompl::base::StateCostIntegralObjective</class>
-    <class kind="class">ompl::base::VFMechanicalWorkOptimizationObjective</class>
-    <class kind="class">ompl::base::VFUpstreamCriterionOptimizationObjective</class>
-    <class kind="class">ompl::base::OptimizationObjective</class>
-    <class kind="class">ompl::base::MultiOptimizationObjective</class>
-    <class kind="class">ompl::base::Path</class>
-    <class kind="class">ompl::base::PlannerInputStates</class>
-    <class kind="struct">ompl::base::PlannerSpecs</class>
-    <class kind="class">ompl::base::Planner</class>
-    <class kind="class">ompl::base::PlannerDataVertex</class>
-    <class kind="class">ompl::base::PlannerDataEdge</class>
-    <class kind="class">ompl::base::PlannerData</class>
-    <class kind="class">ompl::base::PlannerDataStorage</class>
-    <class kind="struct">ompl::base::PlannerStatus</class>
-    <class kind="class">ompl::base::PlannerTerminationCondition</class>
-    <class kind="class">ompl::base::PrecomputedStateSampler</class>
-    <class kind="struct">ompl::base::PlannerSolution</class>
-    <class kind="class">ompl::base::ProblemDefinition</class>
-    <class kind="class">ompl::base::ProjectionMatrix</class>
-    <class kind="class">ompl::base::ProjectionEvaluator</class>
-    <class kind="class">ompl::base::SubspaceProjectionEvaluator</class>
-    <class kind="class">ompl::base::BridgeTestValidStateSampler</class>
-    <class kind="class">ompl::base::DeterministicSequence</class>
-    <class kind="class">ompl::base::HaltonSequence1D</class>
-    <class kind="class">ompl::base::HaltonSequence</class>
-    <class kind="class">ompl::base::PrecomputedSequence</class>
-    <class kind="class">ompl::base::DeterministicStateSampler</class>
-    <class kind="class">ompl::base::SO2DeterministicStateSampler</class>
-    <class kind="class">ompl::base::RealVectorDeterministicStateSampler</class>
-    <class kind="class">ompl::base::SE2DeterministicStateSampler</class>
-    <class kind="class">ompl::base::GaussianValidStateSampler</class>
-    <class kind="class">ompl::base::OrderedInfSampler</class>
-    <class kind="class">ompl::base::PathLengthDirectInfSampler</class>
-    <class kind="class">ompl::base::RejectionInfSampler</class>
-    <class kind="class">ompl::base::InformedSampler</class>
-    <class kind="class">ompl::base::InformedStateSampler</class>
-    <class kind="class">ompl::base::MaximizeClearanceValidStateSampler</class>
+    <class kind="class">ompl::base::MinimizeArrivalTime</class>
     <class kind="class">ompl::base::MinimumClearanceValidStateSampler</class>
-    <class kind="class">ompl::base::ObstacleBasedValidStateSampler</class>
-    <class kind="class">ompl::base::UniformValidStateSampler</class>
-    <class kind="class">ompl::base::ScopedState</class>
-    <class kind="class">ompl::base::SolutionNonExistenceProof</class>
-    <class kind="class">ompl::base::SpaceInformation</class>
-    <class kind="class">ompl::base::AtlasChart</class>
-    <class kind="class">ompl::base::AtlasStateSampler</class>
-    <class kind="class">ompl::base::AtlasStateSpace</class>
-    <class kind="class">ompl::base::ConstrainedMotionValidator</class>
-    <class kind="class">ompl::base::ConstrainedStateSpace</class>
-    <class kind="class">ompl::base::ProjectedStateSampler</class>
-    <class kind="class">ompl::base::ProjectedStateSpace</class>
-    <class kind="class">ompl::base::TangentBundleStateSpace</class>
-    <class kind="class">ompl::base::DiscreteStateSampler</class>
-    <class kind="class">ompl::base::DiscreteStateSpace</class>
-    <class kind="class">ompl::base::DubinsStateSpace</class>
-    <class kind="class">ompl::base::DubinsMotionValidator</class>
-    <class kind="class">ompl::base::RealVectorBounds</class>
-    <class kind="class">ompl::base::RealVectorLinearProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorRandomLinearProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorOrthogonalProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorIdentityProjectionEvaluator</class>
-    <class kind="class">ompl::base::RealVectorStateSampler</class>
-    <class kind="class">ompl::base::RealVectorStateSpace</class>
-    <class kind="class">ompl::base::ReedsSheppStateSpace</class>
-    <class kind="class">ompl::base::ReedsSheppMotionValidator</class>
-    <class kind="class">ompl::base::SE2StateSpace</class>
-    <class kind="class">ompl::base::SE3StateSpace</class>
-    <class kind="class">ompl::base::SO2StateSampler</class>
-    <class kind="class">ompl::base::SO2StateSpace</class>
-    <class kind="class">ompl::base::SO3StateSampler</class>
-    <class kind="class">ompl::base::SO3StateSpace</class>
-    <class kind="class">ompl::base::TimeStateSampler</class>
-    <class kind="class">ompl::base::TimeStateSpace</class>
-    <class kind="class">ompl::base::WrapperStateSampler</class>
-    <class kind="class">ompl::base::WrapperProjectionEvaluator</class>
-    <class kind="class">ompl::base::WrapperStateSpace</class>
-    <class kind="class">ompl::base::State</class>
-    <class kind="class">ompl::base::CompoundState</class>
-    <class kind="class">ompl::base::StateSampler</class>
-    <class kind="class">ompl::base::CompoundStateSampler</class>
-    <class kind="class">ompl::base::SubspaceStateSampler</class>
-    <class kind="struct">ompl::base::SamplerSelector</class>
-    <class kind="class">ompl::base::StateSamplerArray</class>
-    <class kind="class">ompl::base::StateSpace</class>
-    <class kind="class">ompl::base::CompoundStateSpace</class>
-    <class kind="class">ompl::base::StateStorage</class>
-    <class kind="class">ompl::base::StateStorageWithMetadata</class>
-    <class kind="struct">ompl::base::StateValidityCheckerSpecs</class>
-    <class kind="class">ompl::base::StateValidityChecker</class>
-    <class kind="class">ompl::base::AllValidStateValidityChecker</class>
-    <class kind="class">ompl::base::CostConvergenceTerminationCondition</class>
-    <class kind="class">ompl::base::IterationTerminationCondition</class>
-    <class kind="class">ompl::base::TypedSpaceInformation</class>
-    <class kind="class">ompl::base::TypedStateValidityChecker</class>
-    <class kind="class">ompl::base::ValidStateSampler</class>
+    <class kind="class">ompl::base::MobiusStateSpace</class>
     <class kind="class">ompl::base::MorseEnvironment</class>
     <class kind="class">ompl::base::MorseGoal</class>
     <class kind="class">ompl::base::MorseProjection</class>
     <class kind="class">ompl::base::MorseStateSpace</class>
     <class kind="class">ompl::base::MorseStateValidityChecker</class>
     <class kind="class">ompl::base::MorseTerminationCondition</class>
-    <class kind="class">ompl::base::CForestStateSampler</class>
-    <class kind="class">ompl::base::CForestStateSpaceWrapper</class>
-    <class kind="class">ompl::base::PlannerDataVertexAnnotated</class>
+    <class kind="class">ompl::base::Motion</class>
+    <class kind="class">ompl::base::MotionValidator</class>
+    <class kind="class">ompl::base::MultiOptimizationObjective</class>
+    <class kind="class">ompl::base::ObstacleBasedValidStateSampler</class>
+    <class kind="class">ompl::base::OptimizationObjective</class>
+    <class kind="class">ompl::base::OrderedInfSampler</class>
+    <class kind="class">ompl::base::ParamSet</class>
+    <class kind="class">ompl::base::Path</class>
+    <class kind="class">ompl::base::PathLengthDirectInfSampler</class>
+    <class kind="class">ompl::base::PathLengthOptimizationObjective</class>
+    <class kind="class">ompl::base::Planner</class>
+    <class kind="class">ompl::base::PlannerData</class>
+    <class kind="class">ompl::base::PlannerDataEdge</class>
+    <class kind="class">ompl::base::PlannerDataStorage</class>
+    <class kind="class">ompl::base::PlannerDataVertex</class>
+    <class kind="class">ompl::base::PlannerInputStates</class>
+    <class kind="struct">ompl::base::PlannerSolution</class>
+    <class kind="struct">ompl::base::PlannerSpecs</class>
+    <class kind="struct">ompl::base::PlannerStatus</class>
+    <class kind="class">ompl::base::PlannerTerminationCondition</class>
+    <class kind="class">ompl::base::PrecomputedSequence</class>
+    <class kind="class">ompl::base::PrecomputedStateSampler</class>
+    <class kind="class">ompl::base::ProblemDefinition</class>
+    <class kind="class">ompl::base::ProjectedStateSampler</class>
+    <class kind="class">ompl::base::ProjectedStateSpace</class>
+    <class kind="class">ompl::base::ProjectionEvaluator</class>
+    <class kind="class">ompl::base::ProjectionMatrix</class>
+    <class kind="class">ompl::base::RealVectorBounds</class>
+    <class kind="class">ompl::base::RealVectorDeterministicStateSampler</class>
+    <class kind="class">ompl::base::RealVectorIdentityProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorLinearProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorOrthogonalProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorRandomLinearProjectionEvaluator</class>
+    <class kind="class">ompl::base::RealVectorStateSampler</class>
+    <class kind="class">ompl::base::RealVectorStateSpace</class>
+    <class kind="class">ompl::base::ReedsSheppMotionValidator</class>
+    <class kind="class">ompl::base::ReedsSheppStateSpace</class>
+    <class kind="class">ompl::base::RejectionInfSampler</class>
+    <class kind="struct">ompl::base::SamplerSelector</class>
+    <class kind="class">ompl::base::ScopedState</class>
+    <class kind="class">ompl::base::SE2DeterministicStateSampler</class>
+    <class kind="class">ompl::base::SE2StateSpace</class>
+    <class kind="class">ompl::base::SE3StateSpace</class>
+    <class kind="class">ompl::base::SO2DeterministicStateSampler</class>
+    <class kind="class">ompl::base::SO2StateSampler</class>
+    <class kind="class">ompl::base::SO2StateSpace</class>
+    <class kind="class">ompl::base::SO3StateSampler</class>
+    <class kind="class">ompl::base::SO3StateSpace</class>
+    <class kind="class">ompl::base::SolutionNonExistenceProof</class>
+    <class kind="class">ompl::base::SpaceInformation</class>
+    <class kind="class">ompl::base::SpaceTimeStateSpace</class>
+    <class kind="class">ompl::base::SpecificParam</class>
+    <class kind="class">ompl::base::SphereStateSampler</class>
+    <class kind="class">ompl::base::SphereStateSpace</class>
+    <class kind="class">ompl::base::State</class>
+    <class kind="class">ompl::base::StateCostIntegralObjective</class>
+    <class kind="class">ompl::base::StateSampler</class>
+    <class kind="class">ompl::base::StateSamplerArray</class>
+    <class kind="class">ompl::base::StateSpace</class>
+    <class kind="class">ompl::base::StateStorage</class>
+    <class kind="class">ompl::base::StateStorageWithMetadata</class>
+    <class kind="class">ompl::base::StateValidityChecker</class>
+    <class kind="struct">ompl::base::StateValidityCheckerSpecs</class>
+    <class kind="class">ompl::base::SubspaceProjectionEvaluator</class>
+    <class kind="class">ompl::base::SubspaceStateSampler</class>
+    <class kind="class">ompl::base::TangentBundleSpaceInformation</class>
+    <class kind="class">ompl::base::TangentBundleStateSpace</class>
+    <class kind="class">ompl::base::TimeStateSampler</class>
+    <class kind="class">ompl::base::TimeStateSpace</class>
+    <class kind="class">ompl::base::TorusStateSampler</class>
+    <class kind="class">ompl::base::TorusStateSpace</class>
+    <class kind="class">ompl::base::TypedSpaceInformation</class>
+    <class kind="class">ompl::base::TypedStateValidityChecker</class>
+    <class kind="class">ompl::base::UniformValidStateSampler</class>
+    <class kind="class">ompl::base::ValidStateSampler</class>
+    <class kind="class">ompl::base::VFMechanicalWorkOptimizationObjective</class>
+    <class kind="class">ompl::base::VFUpstreamCriterionOptimizationObjective</class>
+    <class kind="class">ompl::base::WrapperProjectionEvaluator</class>
+    <class kind="class">ompl::base::WrapperStateSampler</class>
+    <class kind="class">ompl::base::WrapperStateSpace</class>
     <member kind="typedef">
       <type>std::function&lt; bool(const GoalLazySamples *, State *)&gt;</type>
       <name>GoalSamplingFn</name>
@@ -47224,6 +44611,42 @@
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
+      <name>STATE_SPACE_DUBINS</name>
+      <anchorfile>namespaceompl_1_1base.html</anchorfile>
+      <anchor>a056b022e14fe04a75f81789947353920a6d2776a07db75fd59bae72447a30eb30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STATE_SPACE_REEDS_SHEPP</name>
+      <anchorfile>namespaceompl_1_1base.html</anchorfile>
+      <anchor>a056b022e14fe04a75f81789947353920aed8c724f62acd2331cff212c0d0b198b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STATE_SPACE_MOBIUS</name>
+      <anchorfile>namespaceompl_1_1base.html</anchorfile>
+      <anchor>a056b022e14fe04a75f81789947353920abb8fd8dfab9d0c4170ee92b440cb5d10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STATE_SPACE_SPHERE</name>
+      <anchorfile>namespaceompl_1_1base.html</anchorfile>
+      <anchor>a056b022e14fe04a75f81789947353920aea1fa7d95919b7ab4c1f105e40d857d0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STATE_SPACE_TORUS</name>
+      <anchorfile>namespaceompl_1_1base.html</anchorfile>
+      <anchor>a056b022e14fe04a75f81789947353920a55122ba4698e9ac16fd50125c1d73890</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STATE_SPACE_KLEIN_BOTTLE</name>
+      <anchorfile>namespaceompl_1_1base.html</anchorfile>
+      <anchor>a056b022e14fe04a75f81789947353920a9fe6bd77d4db7f4e19bfc90efab4f0c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
       <name>STATE_SPACE_TYPE_COUNT</name>
       <anchorfile>namespaceompl_1_1base.html</anchorfile>
       <anchor>a056b022e14fe04a75f81789947353920aa011308faae02860d3e6fe26be28c167</anchor>
@@ -47268,7 +44691,7 @@
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>namespaceompl_1_1base.html</anchorfile>
-      <anchor>aec89bfe00ba3673d7488252b4267ed0d</anchor>
+      <anchor>a45fbac24f8ef7d613e0da4d14edccf8a</anchor>
       <arglist>(std::ostream &amp;out, const PlannerStatus &amp;status)</arglist>
     </member>
     <member kind="function">
@@ -47331,21 +44754,21 @@
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>group__stateAndSpaceOperators.html</anchorfile>
-      <anchor>ga7e6a8dfe3e0d56f11807e7817cf1c8c9</anchor>
+      <anchor>ga8c987a5def8279f211bc78881d64aec9</anchor>
       <arglist>(std::ostream &amp;out, const ScopedState&lt; T &gt; &amp;state)</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>group__stateAndSpaceOperators.html</anchorfile>
-      <anchor>ga5e5f40dc3239b5a4306609f8df5b8240</anchor>
+      <anchor>ga3c10b3d1a9f6039b29db1c56d2b8af36</anchor>
       <arglist>(ScopedState&lt; T &gt; &amp;to, const ScopedState&lt; Y &gt; &amp;from)</arglist>
     </member>
     <member kind="function">
       <type>const ScopedState&lt; T &gt; &amp;</type>
       <name>operator&gt;&gt;</name>
       <anchorfile>group__stateAndSpaceOperators.html</anchorfile>
-      <anchor>gaaf35354f70335067bcea8695958f2867</anchor>
+      <anchor>ga5f927b98e04d7df8218edcaf7dd05eeb</anchor>
       <arglist>(const ScopedState&lt; T &gt; &amp;from, ScopedState&lt; Y &gt; &amp;to)</arglist>
     </member>
     <member kind="function">
@@ -47415,58 +44838,58 @@
   <compound kind="namespace">
     <name>ompl::control</name>
     <filename>namespaceompl_1_1control.html</filename>
-    <class kind="class">ompl::control::Control</class>
-    <class kind="class">ompl::control::CompoundControl</class>
-    <class kind="class">ompl::control::ControlSampler</class>
-    <class kind="class">ompl::control::CompoundControlSampler</class>
-    <class kind="class">ompl::control::ControlSpace</class>
-    <class kind="class">ompl::control::CompoundControlSpace</class>
-    <class kind="class">ompl::control::DirectedControlSampler</class>
-    <class kind="class">ompl::control::ODESolver</class>
-    <class kind="class">ompl::control::ODEBasicSolver</class>
-    <class kind="class">ompl::control::ODEErrorSolver</class>
-    <class kind="class">ompl::control::ODEAdaptiveSolver</class>
-    <class kind="class">ompl::control::PathControl</class>
-    <class kind="class">ompl::control::PlannerDataEdgeControl</class>
-    <class kind="class">ompl::control::PlannerData</class>
-    <class kind="class">ompl::control::PlannerDataStorage</class>
-    <class kind="class">ompl::control::EST</class>
-    <class kind="class">ompl::control::KPIECE1</class>
     <class kind="class">ompl::control::Automaton</class>
+    <class kind="class">ompl::control::CompoundControl</class>
+    <class kind="class">ompl::control::CompoundControlSampler</class>
+    <class kind="class">ompl::control::CompoundControlSpace</class>
+    <class kind="class">ompl::control::Control</class>
+    <class kind="class">ompl::control::ControlSampler</class>
+    <class kind="class">ompl::control::ControlSpace</class>
+    <class kind="class">ompl::control::Decomposition</class>
+    <class kind="class">ompl::control::DirectedControlSampler</class>
+    <class kind="class">ompl::control::DiscreteControlSampler</class>
+    <class kind="class">ompl::control::DiscreteControlSpace</class>
+    <class kind="class">ompl::control::EST</class>
+    <class kind="class">ompl::control::GridDecomposition</class>
+    <class kind="class">ompl::control::KPIECE1</class>
     <class kind="class">ompl::control::LTLPlanner</class>
     <class kind="class">ompl::control::LTLProblemDefinition</class>
     <class kind="class">ompl::control::LTLSpaceInformation</class>
-    <class kind="class">ompl::control::ProductGraph</class>
-    <class kind="class">ompl::control::PropositionalDecomposition</class>
-    <class kind="class">ompl::control::World</class>
-    <class kind="class">ompl::control::PDST</class>
-    <class kind="class">ompl::control::RRT</class>
-    <class kind="class">ompl::control::SST</class>
-    <class kind="class">ompl::control::Decomposition</class>
-    <class kind="class">ompl::control::GridDecomposition</class>
-    <class kind="class">ompl::control::Syclop</class>
-    <class kind="class">ompl::control::SyclopEST</class>
-    <class kind="class">ompl::control::SyclopRRT</class>
-    <class kind="class">ompl::control::SimpleDirectedControlSampler</class>
-    <class kind="class">ompl::control::SimpleSetup</class>
-    <class kind="class">ompl::control::SpaceInformation</class>
-    <class kind="class">ompl::control::DiscreteControlSampler</class>
-    <class kind="class">ompl::control::DiscreteControlSpace</class>
-    <class kind="class">ompl::control::RealVectorControlUniformSampler</class>
-    <class kind="class">ompl::control::RealVectorControlSpace</class>
-    <class kind="class">ompl::control::StatePropagator</class>
-    <class kind="class">ompl::control::SteeredControlSampler</class>
     <class kind="class">ompl::control::MorseControlSpace</class>
     <class kind="class">ompl::control::MorseSimpleSetup</class>
     <class kind="class">ompl::control::MorseStatePropagator</class>
+    <class kind="class">ompl::control::ODEAdaptiveSolver</class>
+    <class kind="class">ompl::control::ODEBasicSolver</class>
+    <class kind="class">ompl::control::ODEErrorSolver</class>
+    <class kind="class">ompl::control::ODESolver</class>
     <class kind="class">ompl::control::OpenDEControlSpace</class>
     <class kind="class">ompl::control::OpenDEEnvironment</class>
     <class kind="class">ompl::control::OpenDESimpleSetup</class>
     <class kind="class">ompl::control::OpenDEStatePropagator</class>
     <class kind="class">ompl::control::OpenDEStateSpace</class>
     <class kind="class">ompl::control::OpenDEStateValidityChecker</class>
+    <class kind="class">ompl::control::PathControl</class>
+    <class kind="class">ompl::control::PDST</class>
+    <class kind="class">ompl::control::PlannerData</class>
+    <class kind="class">ompl::control::PlannerDataEdgeControl</class>
+    <class kind="class">ompl::control::PlannerDataStorage</class>
+    <class kind="class">ompl::control::ProductGraph</class>
+    <class kind="class">ompl::control::PropositionalDecomposition</class>
     <class kind="class">ompl::control::PropositionalTriangularDecomposition</class>
+    <class kind="class">ompl::control::RealVectorControlSpace</class>
+    <class kind="class">ompl::control::RealVectorControlUniformSampler</class>
+    <class kind="class">ompl::control::RRT</class>
+    <class kind="class">ompl::control::SimpleDirectedControlSampler</class>
+    <class kind="class">ompl::control::SimpleSetup</class>
+    <class kind="class">ompl::control::SpaceInformation</class>
+    <class kind="class">ompl::control::SST</class>
+    <class kind="class">ompl::control::StatePropagator</class>
+    <class kind="class">ompl::control::SteeredControlSampler</class>
+    <class kind="class">ompl::control::Syclop</class>
+    <class kind="class">ompl::control::SyclopEST</class>
+    <class kind="class">ompl::control::SyclopRRT</class>
     <class kind="class">ompl::control::TriangularDecomposition</class>
+    <class kind="class">ompl::control::World</class>
     <member kind="typedef">
       <type>std::function&lt; ControlSamplerPtr(const ControlSpace *)&gt;</type>
       <name>ControlSamplerAllocator</name>
@@ -47523,77 +44946,66 @@
   <compound kind="namespace">
     <name>ompl::geometric</name>
     <filename>namespaceompl_1_1geometric.html</filename>
+    <class kind="class">ompl::geometric::ABITstar</class>
+    <class kind="class">ompl::geometric::AITstar</class>
+    <class kind="class">ompl::geometric::AnytimePathShortening</class>
+    <class kind="class">ompl::geometric::BFMT</class>
+    <class kind="class">ompl::geometric::BiEST</class>
+    <class kind="class">ompl::geometric::BiRLRT</class>
+    <class kind="class">ompl::geometric::BiTRRT</class>
+    <class kind="class">ompl::geometric::BITstar</class>
+    <class kind="class">ompl::geometric::BKPIECE1</class>
+    <class kind="class">ompl::geometric::CForest</class>
+    <class kind="class">ompl::geometric::Discretization</class>
+    <class kind="class">ompl::geometric::EST</class>
+    <class kind="class">ompl::geometric::FMT</class>
     <class kind="class">ompl::geometric::GeneticSearch</class>
     <class kind="class">ompl::geometric::HillClimbing</class>
+    <class kind="class">ompl::geometric::InformedRRTstar</class>
+    <class kind="class">ompl::geometric::KBoundedStrategy</class>
+    <class kind="class">ompl::geometric::KPIECE1</class>
+    <class kind="class">ompl::geometric::KStarStrategy</class>
+    <class kind="class">ompl::geometric::KStrategy</class>
+    <class kind="class">ompl::geometric::LazyLBTRRT</class>
+    <class kind="class">ompl::geometric::LazyPRM</class>
+    <class kind="class">ompl::geometric::LazyPRMstar</class>
+    <class kind="class">ompl::geometric::LazyRRT</class>
+    <class kind="class">ompl::geometric::LBKPIECE1</class>
+    <class kind="class">ompl::geometric::LBTRRT</class>
+    <class kind="class">ompl::geometric::LightningRetrieveRepair</class>
     <class kind="class">ompl::geometric::PathGeometric</class>
     <class kind="class">ompl::geometric::PathHybridization</class>
     <class kind="class">ompl::geometric::PathSimplifier</class>
-    <class kind="class">ompl::geometric::AnytimePathShortening</class>
-    <class kind="class">ompl::geometric::CForest</class>
-    <class kind="class">ompl::geometric::BiEST</class>
-    <class kind="class">ompl::geometric::EST</class>
-    <class kind="class">ompl::geometric::ProjEST</class>
-    <class kind="class">ompl::geometric::LightningRetrieveRepair</class>
-    <class kind="class">ompl::geometric::ThunderRetrieveRepair</class>
-    <class kind="class">ompl::geometric::BFMT</class>
-    <class kind="class">ompl::geometric::FMT</class>
-    <class kind="class">ompl::geometric::ABITstar</class>
-    <class kind="class">ompl::geometric::AITstar</class>
-    <class kind="class">ompl::geometric::BITstar</class>
-    <class kind="class">ompl::geometric::BKPIECE1</class>
-    <class kind="class">ompl::geometric::Discretization</class>
-    <class kind="class">ompl::geometric::KPIECE1</class>
-    <class kind="class">ompl::geometric::LBKPIECE1</class>
     <class kind="class">ompl::geometric::PDST</class>
-    <class kind="class">ompl::geometric::KStrategy</class>
-    <class kind="class">ompl::geometric::KStarStrategy</class>
-    <class kind="class">ompl::geometric::KBoundedStrategy</class>
-    <class kind="class">ompl::geometric::LazyPRM</class>
-    <class kind="class">ompl::geometric::LazyPRMstar</class>
     <class kind="class">ompl::geometric::PRM</class>
     <class kind="class">ompl::geometric::PRMstar</class>
-    <class kind="class">ompl::geometric::SPARS</class>
-    <class kind="class">ompl::geometric::SPARStwo</class>
-    <class kind="class">ompl::geometric::MultiQuotient</class>
-    <class kind="class">ompl::geometric::QRRTImpl</class>
-    <class kind="class">ompl::geometric::QuotientSpace</class>
-    <class kind="class">ompl::geometric::QuotientSpaceGraph</class>
-    <class kind="class">ompl::geometric::BiRLRT</class>
-    <class kind="class">ompl::geometric::RLRT</class>
-    <class kind="class">ompl::geometric::BiTRRT</class>
-    <class kind="class">ompl::geometric::InformedRRTstar</class>
-    <class kind="class">ompl::geometric::LazyLBTRRT</class>
-    <class kind="class">ompl::geometric::LazyRRT</class>
-    <class kind="class">ompl::geometric::LBTRRT</class>
+    <class kind="class">ompl::geometric::ProjEST</class>
     <class kind="class">ompl::geometric::pRRT</class>
+    <class kind="class">ompl::geometric::pSBL</class>
+    <class kind="class">ompl::geometric::RLRT</class>
     <class kind="class">ompl::geometric::RRT</class>
     <class kind="class">ompl::geometric::RRTConnect</class>
     <class kind="class">ompl::geometric::RRTsharp</class>
     <class kind="class">ompl::geometric::RRTstar</class>
     <class kind="class">ompl::geometric::RRTXstatic</class>
-    <class kind="class">ompl::geometric::SORRTstar</class>
-    <class kind="class">ompl::geometric::TRRT</class>
-    <class kind="class">ompl::geometric::TaskSpaceConfig</class>
-    <class kind="class">ompl::geometric::TSRRT</class>
-    <class kind="class">ompl::geometric::VFRRT</class>
-    <class kind="class">ompl::geometric::pSBL</class>
     <class kind="class">ompl::geometric::SBL</class>
+    <class kind="class">ompl::geometric::SimpleSetup</class>
+    <class kind="class">ompl::geometric::SORRTstar</class>
+    <class kind="class">ompl::geometric::SPARS</class>
+    <class kind="class">ompl::geometric::SPARSdb</class>
+    <class kind="class">ompl::geometric::SPARStwo</class>
     <class kind="class">ompl::geometric::SST</class>
     <class kind="class">ompl::geometric::STRIDE</class>
+    <class kind="class">ompl::geometric::STRRTstar</class>
+    <class kind="class">ompl::geometric::TaskSpaceConfig</class>
+    <class kind="class">ompl::geometric::ThunderRetrieveRepair</class>
+    <class kind="class">ompl::geometric::TRRT</class>
+    <class kind="class">ompl::geometric::TSRRT</class>
+    <class kind="class">ompl::geometric::VFRRT</class>
     <class kind="class">ompl::geometric::XXL</class>
     <class kind="class">ompl::geometric::XXLDecomposition</class>
     <class kind="class">ompl::geometric::XXLPlanarDecomposition</class>
     <class kind="class">ompl::geometric::XXLPositionDecomposition</class>
-    <class kind="class">ompl::geometric::SimpleSetup</class>
-    <class kind="class">ompl::geometric::SPARSdb</class>
-    <member kind="typedef">
-      <type>ompl::geometric::MultiQuotient&lt; ompl::geometric::QRRTImpl &gt;</type>
-      <name>QRRT</name>
-      <anchorfile>namespaceompl_1_1geometric.html</anchorfile>
-      <anchor>aa11c6b0727b8ff657011cd4a772d8cdc</anchor>
-      <arglist></arglist>
-      <docanchor file="namespaceompl_1_1geometric.html">QRRT</docanchor>
-    </member>
   </compound>
   <compound kind="namespace">
     <name>ompl::machine</name>
@@ -47775,8 +45187,8 @@
     <name>ompl::msg</name>
     <filename>namespaceompl_1_1msg.html</filename>
     <class kind="class">ompl::msg::OutputHandler</class>
-    <class kind="class">ompl::msg::OutputHandlerSTD</class>
     <class kind="class">ompl::msg::OutputHandlerFile</class>
+    <class kind="class">ompl::msg::OutputHandlerSTD</class>
     <member kind="enumeration">
       <type></type>
       <name>LogLevel</name>
@@ -47835,6 +45247,233 @@
     </member>
   </compound>
   <compound kind="namespace">
+    <name>ompl::multilevel</name>
+    <filename>namespaceompl_1_1multilevel.html</filename>
+    <class kind="class">ompl::multilevel::BundleSpace</class>
+    <class kind="class">ompl::multilevel::BundleSpaceGraph</class>
+    <class kind="class">ompl::multilevel::BundleSpaceGraphSampler</class>
+    <class kind="class">ompl::multilevel::BundleSpaceGraphSamplerRandomDegreeVertex</class>
+    <class kind="class">ompl::multilevel::BundleSpaceGraphSamplerRandomEdge</class>
+    <class kind="class">ompl::multilevel::BundleSpaceGraphSamplerRandomVertex</class>
+    <class kind="class">ompl::multilevel::BundleSpaceImportance</class>
+    <class kind="class">ompl::multilevel::BundleSpaceImportanceExponential</class>
+    <class kind="class">ompl::multilevel::BundleSpaceImportanceGreedy</class>
+    <class kind="class">ompl::multilevel::BundleSpaceImportanceUniform</class>
+    <class kind="class">ompl::multilevel::BundleSpaceMetric</class>
+    <class kind="class">ompl::multilevel::BundleSpaceMetricGeodesic</class>
+    <class kind="class">ompl::multilevel::BundleSpacePropagator</class>
+    <class kind="class">ompl::multilevel::BundleSpacePropagatorGeometric</class>
+    <class kind="class">ompl::multilevel::BundleSpaceSequence</class>
+    <class kind="class">ompl::multilevel::CompoundProjection</class>
+    <class kind="class">ompl::multilevel::FiberedProjection</class>
+    <class kind="class">ompl::multilevel::FindSection</class>
+    <class kind="class">ompl::multilevel::FindSectionSideStep</class>
+    <class kind="class">ompl::multilevel::Head</class>
+    <class kind="class">ompl::multilevel::HeadAnalyzer</class>
+    <class kind="class">ompl::multilevel::PathRestriction</class>
+    <class kind="class">ompl::multilevel::PathSection</class>
+    <class kind="class">ompl::multilevel::PlannerDataVertexAnnotated</class>
+    <class kind="class">ompl::multilevel::PlannerMultiLevel</class>
+    <class kind="class">ompl::multilevel::Projection</class>
+    <class kind="class">ompl::multilevel::Projection_EmptySet</class>
+    <class kind="class">ompl::multilevel::Projection_Identity</class>
+    <class kind="class">ompl::multilevel::Projection_None</class>
+    <class kind="class">ompl::multilevel::Projection_Relaxation</class>
+    <class kind="class">ompl::multilevel::Projection_RN_RM</class>
+    <class kind="class">ompl::multilevel::Projection_RNSO2_RN</class>
+    <class kind="class">ompl::multilevel::Projection_SE2_R2</class>
+    <class kind="class">ompl::multilevel::Projection_SE2RN_R2</class>
+    <class kind="class">ompl::multilevel::Projection_SE2RN_SE2</class>
+    <class kind="class">ompl::multilevel::Projection_SE2RN_SE2RM</class>
+    <class kind="class">ompl::multilevel::Projection_SE3_R3</class>
+    <class kind="class">ompl::multilevel::Projection_SE3RN_R3</class>
+    <class kind="class">ompl::multilevel::Projection_SE3RN_SE3</class>
+    <class kind="class">ompl::multilevel::Projection_SE3RN_SE3RM</class>
+    <class kind="class">ompl::multilevel::Projection_SO2N_SO2M</class>
+    <class kind="class">ompl::multilevel::Projection_SO2RN_SO2</class>
+    <class kind="class">ompl::multilevel::Projection_SO2RN_SO2RM</class>
+    <class kind="class">ompl::multilevel::Projection_SO3RN_SO3</class>
+    <class kind="class">ompl::multilevel::Projection_SO3RN_SO3RM</class>
+    <class kind="class">ompl::multilevel::Projection_XRN_X</class>
+    <class kind="class">ompl::multilevel::Projection_XRN_XRM</class>
+    <class kind="class">ompl::multilevel::ProjectionFactory</class>
+    <class kind="class">ompl::multilevel::QMPImpl</class>
+    <class kind="class">ompl::multilevel::QMPStarImpl</class>
+    <class kind="class">ompl::multilevel::QRRTImpl</class>
+    <class kind="class">ompl::multilevel::QRRTStarImpl</class>
+    <member kind="typedef">
+      <type>BundleSpaceSequence&lt; QMPImpl &gt;</type>
+      <name>QMP</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>aa3792a446f34b5b5de6aba811f6f6815</anchor>
+      <arglist></arglist>
+      <docanchor file="namespaceompl_1_1multilevel.html">QMP</docanchor>
+    </member>
+    <member kind="typedef">
+      <type>BundleSpaceSequence&lt; QMPStarImpl &gt;</type>
+      <name>QMPStar</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>a8152ed417a2534f79366adc5cf97a091</anchor>
+      <arglist></arglist>
+      <docanchor file="namespaceompl_1_1multilevel.html">QMPstar</docanchor>
+    </member>
+    <member kind="typedef">
+      <type>BundleSpaceSequence&lt; QRRTImpl &gt;</type>
+      <name>QRRT</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>aa51d0bfae59033012293e9b95991753b</anchor>
+      <arglist></arglist>
+      <docanchor file="namespaceompl_1_1multilevel.html">QRRT</docanchor>
+    </member>
+    <member kind="typedef">
+      <type>BundleSpaceSequence&lt; QRRTStarImpl &gt;</type>
+      <name>QRRTStar</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>a0a03b7d7dee8ba294f101af9bf0efec4</anchor>
+      <arglist></arglist>
+      <docanchor file="namespaceompl_1_1multilevel.html">QRRTstar</docanchor>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>ProjectionType</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_NONE</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7ad1ef8e840194f7199366a2f47a55cc9f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_EMPTY_SET</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a4f1a5b380278135d4f4e28ae943b630e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_IDENTITY</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a8a63aa374c80be1f936f478778c30361</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_CONSTRAINED_RELAXATION</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7aea5810fa645da3920b04906ca5ccc468</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_RN_RM</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7afb49a35373c43b20d2f2e1a2384852d2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE2_R2</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a3e6dda089d772ea7d655f0944a8afd53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE2RN_R2</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7acfc77a270a89a89fcc00d4bb73dac940</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE2RN_SE2</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7acd08c29b7b02900cbcf2e48245354bb5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE2RN_SE2RM</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a5d4c5732769731f3ff3053c4401f6d10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SO2RN_SO2</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a79844a5097ccb62c7f079dc7d557d217</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SO2RN_SO2RM</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7aec328fda12edc3eed9954804c6b83f57</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE3_R3</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7ae02d6d1fb5741d6c9b32ce3ad46c70e7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE3RN_R3</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7afcd3c0c281aae4e4fd0ac50532a45d7f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE3RN_SE3</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7af3722a82d7aefa1dbbcad5006e7ec0d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SE3RN_SE3RM</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a52b35427ce187a2423ccf91b31130abb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SO3RN_SO3</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a1fe2b3b1d0fc22d20afd3b6e9ce49ade</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SO3RN_SO3RM</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a86e618ff409b30a7f823b6b74d93a8ae</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_RNSO2_RN</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a09434f441459f56d3aa1ddae418a872b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_SO2N_SO2M</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7a2edcaed461c4e54123793c28ec5c9f11</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_TASK_SPACE</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7abbbb351fe43b2ba0281f0718e55b3fbd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_COMPOUND</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7aa9ad1cdd0e3ddf9a47df0889374e15ec</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PROJECTION_UNKNOWN</name>
+      <anchorfile>namespaceompl_1_1multilevel.html</anchorfile>
+      <anchor>afe2958ee2827065c44ef06bab5c538e7af5c398acc41358906843a5dc39b87c89</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
     <name>ompl::time</name>
     <filename>namespaceompl_1_1time.html</filename>
     <class kind="class">ompl::time::ProgressDisplay</class>
@@ -47885,15 +45524,15 @@
     <name>ompl::tools</name>
     <filename>namespaceompl_1_1tools.html</filename>
     <class kind="class">ompl::tools::Benchmark</class>
-    <class kind="class">ompl::tools::SelfConfig</class>
-    <class kind="class">ompl::tools::PlannerMonitor</class>
-    <class kind="class">ompl::tools::Profiler</class>
-    <class kind="class">ompl::tools::ExperienceSetup</class>
     <class kind="class">ompl::tools::DynamicTimeWarp</class>
+    <class kind="class">ompl::tools::ExperienceSetup</class>
     <class kind="class">ompl::tools::Lightning</class>
     <class kind="class">ompl::tools::LightningDB</class>
     <class kind="class">ompl::tools::OptimizePlan</class>
     <class kind="class">ompl::tools::ParallelPlan</class>
+    <class kind="class">ompl::tools::PlannerMonitor</class>
+    <class kind="class">ompl::tools::Profiler</class>
+    <class kind="class">ompl::tools::SelfConfig</class>
     <class kind="class">ompl::tools::Thunder</class>
     <class kind="class">ompl::tools::ThunderDB</class>
     <member kind="typedef">
@@ -47904,6 +45543,12 @@
       <arglist></arglist>
       <docanchor file="namespaceompl_1_1tools.html">ThunderDB</docanchor>
     </member>
+  </compound>
+  <compound kind="namespace">
+    <name>std</name>
+    <filename>namespacestd.html</filename>
+    <class kind="struct">std::hash&lt; std::pair&lt; U, V &gt; &gt;</class>
+    <class kind="struct">std::hash&lt; std::vector&lt; T &gt; &gt;</class>
   </compound>
   <compound kind="group">
     <name>demos</name>
@@ -48009,21 +45654,21 @@
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>group__stateAndSpaceOperators.html</anchorfile>
-      <anchor>ga7e6a8dfe3e0d56f11807e7817cf1c8c9</anchor>
+      <anchor>ga8c987a5def8279f211bc78881d64aec9</anchor>
       <arglist>(std::ostream &amp;out, const ScopedState&lt; T &gt; &amp;state)</arglist>
     </member>
     <member kind="function">
       <type>ScopedState&lt; T &gt; &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>group__stateAndSpaceOperators.html</anchorfile>
-      <anchor>ga5e5f40dc3239b5a4306609f8df5b8240</anchor>
+      <anchor>ga3c10b3d1a9f6039b29db1c56d2b8af36</anchor>
       <arglist>(ScopedState&lt; T &gt; &amp;to, const ScopedState&lt; Y &gt; &amp;from)</arglist>
     </member>
     <member kind="function">
       <type>const ScopedState&lt; T &gt; &amp;</type>
       <name>operator&gt;&gt;</name>
       <anchorfile>group__stateAndSpaceOperators.html</anchorfile>
-      <anchor>gaaf35354f70335067bcea8695958f2867</anchor>
+      <anchor>ga5f927b98e04d7df8218edcaf7dd05eeb</anchor>
       <arglist>(const ScopedState&lt; T &gt; &amp;from, ScopedState&lt; Y &gt; &amp;to)</arglist>
     </member>
     <member kind="function">
@@ -48231,7 +45876,7 @@
     <docanchor file="integration.html">md_ompl_doc_markdown_integration</docanchor>
     <docanchor file="integration.html" title="MoveIt">integration_moveit</docanchor>
     <docanchor file="integration.html" title="OpenRAVE">integration_openrave</docanchor>
-    <docanchor file="integration.html" title="CoppelliaSim">integration_copelliasim</docanchor>
+    <docanchor file="integration.html" title="CoppeliaSim">integration_copelliasim</docanchor>
     <docanchor file="integration.html" title="MORSE">integration_morse</docanchor>
     <docanchor file="integration.html" title="The Kautham Project">integration_kautham</docanchor>
     <docanchor file="integration.html" title="VEROSIM">integration_verosim</docanchor>
@@ -48261,6 +45906,18 @@
     <docanchor file="morse.html" title="Playback and animation saving">morsePlayback</docanchor>
     <docanchor file="morse.html" title="Rendering animation videos">morseRendering</docanchor>
     <docanchor file="morse.html" title="Advanced tweaks">morseAdvancedTweaks</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>multiLevelPlanning</name>
+    <title>Multilevel Planning Framework</title>
+    <filename>multiLevelPlanning.html</filename>
+    <docanchor file="multiLevelPlanning.html">md_ompl_doc_markdown_multiLevelPlanning</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>multiLevelPlanningTutorial</name>
+    <title>Multilevel Planning Tutorial</title>
+    <filename>multiLevelPlanningTutorial.html</filename>
+    <docanchor file="multiLevelPlanningTutorial.html">md_ompl_doc_markdown_multiLevelPlanningTutorial</docanchor>
   </compound>
   <compound kind="page">
     <name>newPlanner</name>
@@ -48311,6 +45968,7 @@
     <docanchor file="planners.html">md_ompl_doc_markdown_planners</docanchor>
     <docanchor file="planners.html" title="Geometric planners">geometric_planners</docanchor>
     <docanchor file="planners.html" title="Control-based planners">control_planners</docanchor>
+    <docanchor file="planners.html" title="Multilevel-based planners">multilevel_planners</docanchor>
   </compound>
   <compound kind="page">
     <name>plannerTerminationConditions</name>
@@ -48346,18 +46004,6 @@
     <docanchor file="python.html" title="Code generation">binding_code_generation</docanchor>
     <docanchor file="python.html" title="Compiling the Python modules">compile_bindings</docanchor>
     <docanchor file="python.html" title="Forcing CMake to do The Right Thing">bindings_cmake</docanchor>
-  </compound>
-  <compound kind="page">
-    <name>quotientSpacePlanning</name>
-    <title>Quotient Space Planning Framework</title>
-    <filename>quotientSpacePlanning.html</filename>
-    <docanchor file="quotientSpacePlanning.html">md_ompl_doc_markdown_quotientSpacePlanning</docanchor>
-  </compound>
-  <compound kind="page">
-    <name>quotientSpacePlanningTutorial</name>
-    <title>QuotientSpace Planning Tutorial</title>
-    <filename>quotientSpacePlanningTutorial.html</filename>
-    <docanchor file="quotientSpacePlanningTutorial.html">md_ompl_doc_markdown_quotientSpacePlanningTutorial</docanchor>
   </compound>
   <compound kind="page">
     <name>register</name>

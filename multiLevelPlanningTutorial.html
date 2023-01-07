@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>Multilevel Planning Tutorial</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Multilevel Planning Tutorial </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p ><a class="anchor" id="md_ompl_doc_markdown_multiLevelPlanningTutorial"></a> We show in this tutorial how to setup a multilevel planning task for a 2D rigid body in the plane.</p>
+<h2><a class="anchor" id="autotoc_md91"></a>
+Classical Planning</h2>
+<p >We assume that you know how to setup a classical planning problem in OMPL. To recap, we need to define <br  />
+</p><ul>
+<li><code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code>, the state space</li>
+<li><code><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html" title="A shared pointer wrapper for ompl::base::ProblemDefinition.">ompl::base::ProblemDefinitionPtr</a></code>, the start and goal state</li>
+<li><code><a class="el" href="classompl_1_1base_1_1PlannerPtr.html" title="A shared pointer wrapper for ompl::base::Planner.">ompl::base::PlannerPtr</a></code>, the planner used</li>
+</ul>
+<p >We then construct and solve a planning problem as</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> si;</div>
+<div class="line"><a class="code hl_class" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> pdef; </div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//...</span></div>
+<div class="line"><span class="comment">// Set start and goal states to pdef</span></div>
+<div class="line"><span class="comment">//...</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="classompl_1_1base_1_1PlannerPtr.html">ompl::base::PlannerPtr</a> planner = std::make_shared&lt;geometric::RRT&gt;(si);</div>
+<div class="line">planner-&gt;setProblemDefinition(pdef);</div>
+<div class="line">planner-&gt;setup();</div>
+<div class="line">planner-&gt;solve();</div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerPtr.html">PlannerPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::Planner.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1ProblemDefinitionPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::ProblemDefinition.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformationPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::SpaceInformation.</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md92"></a>
+Multilevel Planning</h2>
+<p >In a Multilevel planning setting, we change this routine to add a finite number of levels of abstraction, which can be exploited by an algorithm (if it supports it).</p>
+<p >While the <code><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html" title="A shared pointer wrapper for ompl::base::ProblemDefinition.">ompl::base::ProblemDefinitionPtr</a></code> remains the same, we change the <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code> to a vector and the <code><a class="el" href="classompl_1_1base_1_1PlannerPtr.html" title="A shared pointer wrapper for ompl::base::Planner.">ompl::base::PlannerPtr</a></code> to a multilevel planner. This means we define the following structures:</p>
+<ul>
+<li><code>std::vector&lt;<a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a>&gt;</code>, a vector of SpaceInformationPtr, sorted in ascending order depending on number of dimensions. Last element has to be the original state space.</li>
+<li><code><a class="el" href="namespaceompl_1_1multilevel.html#aa51d0bfae59033012293e9b95991753b" title="[Q]uotient space [R]apidly exploring [R]andom [T]rees (QRRT) Algorithm">ompl::multilevel::QRRT</a></code>, a specific multilevel planner, has to inherit from <code>ompl::multilevel::BundleSpaceSequence.h</code></li>
+</ul>
+<p >A planning problem can then be solved as</p>
+<div class="fragment"><div class="line">std::vector&lt;ompl::base::SpaceInformationPtr&gt; siVec; </div>
+<div class="line"><a class="code hl_class" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> pdef; </div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//...</span></div>
+<div class="line"><span class="comment">// Build siVec (see below), set start and goal states to pdef</span></div>
+<div class="line"><span class="comment">//...</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> planner = std::make_shared&lt;ompl::multilevel::QRRT&gt;(siVec);</div>
+<div class="line"> </div>
+<div class="line">planner-&gt;setProblemDefinition(pdef);</div>
+<div class="line">planner-&gt;setup();</div>
+<div class="line">planner-&gt;solve();</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md93"></a>
+Building multiple levels of abstraction</h2>
+<p >Let us build a small sequence of two levels for a rigid body in 2D with configuration space \(SE(2)\). You can find this example <a href="MultiLevelPlanningRigidBody2D_8cpp_source.html">here</a></p>
+<p >First, we need to construct the <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code> for each level. In this case we use spaces \(\{\mathbb{R}^2, SE(2)\}\), corresponding to an abstraction by projecting onto the position of the rigid body. The space is bounded to be in the unit square \([0,1]^2\)</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> SE2(std::make_shared&lt;ompl::base::SE2StateSpace&gt;());</div>
+<div class="line"><a class="code hl_class" href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a> bounds(2);</div>
+<div class="line">bounds.setLow(0);</div>
+<div class="line">bounds.setHigh(1);</div>
+<div class="line">SE2-&gt;setBounds(bounds);</div>
+<div class="line"><a class="code hl_class" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> si_SE2(std::make_shared&lt;ompl::base::SpaceInformation&gt;(SE2));</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> R2(std::make_shared&lt;ompl::base::RealVectorStateSpace&gt;(2));</div>
+<div class="line">R2-&gt;setBounds(0, 1);</div>
+<div class="line"><a class="code hl_class" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> si_R2(std::make_shared&lt;ompl::base::SpaceInformation&gt;(R2));</div>
+<div class="ttc" id="aclassompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space.</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorBounds_8h_source.html#l00047">RealVectorBounds.h:48</a></div></div>
+</div><!-- fragment --><p >Second, we need to set the <code><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html" title="Abstract definition for a class checking the validity of states. The implementation of this class mus...">ompl::base::StateValidityChecker</a></code> for each <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code>. This is done by defining a validity function which evaluates to true if a state is feasible and false if it is infeasible.</p>
+<p >For the \(SE(2)\) constraint, we declare all configurations feasible where the rotation is smaller than \(\frac{\pi}{2}\) and where the position is not in a circle of radius \(0.2\) located at \((0.5,0.5)\).</p>
+<div class="fragment"><div class="line"><span class="keywordtype">bool</span> boxConstraint(<span class="keyword">const</span> <span class="keywordtype">double</span> values[])</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;x = values[0]-0.5;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;y = values[1]-0.5;</div>
+<div class="line">    <span class="keywordtype">double</span> pos_cnstr = sqrt(x*x + y*y);</div>
+<div class="line">    <span class="keywordflow">return</span> (pos_cnstr &gt; 0.2);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordtype">bool</span> isStateValid_SE2(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state) </div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> *SE2state = state-&gt;<a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as</a>&lt;<a class="code hl_class" href="classompl_1_1base_1_1SE2StateSpace_1_1StateType.html">ompl::base::SE2StateSpace::StateType</a>&gt;();</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> *R2 = SE2state-&gt;as&lt;<a class="code hl_class" href="classompl_1_1base_1_1RealVectorStateSpace_1_1StateType.html">ompl::base::RealVectorStateSpace::StateType</a>&gt;(0);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> *SO2 = SE2state-&gt;<a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as</a>&lt;<a class="code hl_class" href="classompl_1_1base_1_1SO2StateSpace_1_1StateType.html">ompl::base::SO2StateSpace::StateType</a>&gt;(1);</div>
+<div class="line">    <span class="keywordflow">return</span> boxConstraint(R2-&gt;values) &amp;&amp; (SO2-&gt;value &lt; boost::math::constants::pi&lt;double&gt;() / 2.0);</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassompl_1_1base_1_1RealVectorStateSpace_1_1StateType_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorStateSpace_1_1StateType.html">ompl::base::RealVectorStateSpace::StateType</a></div><div class="ttdoc">The definition of a state in Rn</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorStateSpace_8h_source.html#l00077">RealVectorStateSpace.h:78</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SE2StateSpace_1_1StateType_html"><div class="ttname"><a href="classompl_1_1base_1_1SE2StateSpace_1_1StateType.html">ompl::base::SE2StateSpace::StateType</a></div><div class="ttdoc">A state in SE(2): (x, y, yaw)</div><div class="ttdef"><b>Definition:</b> <a href="SE2StateSpace_8h_source.html#l00053">SE2StateSpace.h:54</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SO2StateSpace_1_1StateType_html"><div class="ttname"><a href="classompl_1_1base_1_1SO2StateSpace_1_1StateType.html">ompl::base::SO2StateSpace::StateType</a></div><div class="ttdoc">The definition of a state in SO(2)</div><div class="ttdef"><b>Definition:</b> <a href="SO2StateSpace_8h_source.html#l00067">SO2StateSpace.h:68</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html_af1b51b919c418c1625ed42a3c36f2be2"><div class="ttname"><a href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">ompl::base::State::as</a></div><div class="ttdeci">const T * as() const</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00066">State.h:66</a></div></div>
+</div><!-- fragment --><p >The validity function for the simplified robot can be constructed by removing some of the constraints. In real experiments, we often remove links or parts of links from a robot, which implicitly removes the constraints. We choose the following constraint</p>
+<div class="fragment"><div class="line"><span class="keywordtype">bool</span> isStateValid_R2(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state) </div>
+<div class="line">{ </div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> *R2 = state-&gt;<a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as</a>&lt;<a class="code hl_class" href="classompl_1_1base_1_1RealVectorStateSpace_1_1StateType.html">ompl::base::RealVectorStateSpace::StateType</a>&gt;();</div>
+<div class="line">    <span class="keywordflow">return</span> boxConstraint(R2-&gt;values);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p >Finally, we set the validity function and push the <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code> into siVec. Note that the <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code> have to be sorted in ascending order depending on number of dimensions.</p>
+<div class="fragment"><div class="line">si_SE2-&gt;setStateValidityChecker(isStateValid_SE2);</div>
+<div class="line">si_R2-&gt;setStateValidityChecker(isStateValid_R2);</div>
+<div class="line"> </div>
+<div class="line">siVec.push_back(si_R2);</div>
+<div class="line">siVec.push_back(si_SE2);</div>
+</div><!-- fragment --><p >NOTE: The runtime of a multilevel planner depends crucially on the sequence of defined. For some spaces, planning time can be very fast, while for others it is can still be outperformed by classical planner such as <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees.">ompl::geometric::RRT</a> (which is equivalent to running <a class="el" href="namespaceompl_1_1multilevel.html#aa51d0bfae59033012293e9b95991753b" title="[Q]uotient space [R]apidly exploring [R]andom [T]rees (QRRT) Algorithm">ompl::multilevel::QRRT</a> with a single configuration space). Which spaces work best is still an open research question. A good heuristic is to use more levels the more narrow passages we have in an environment. More information can be found in the <a href="https://arxiv.org/abs/1906.01350">QRRT paper</a>.</p>
+<h2><a class="anchor" id="autotoc_md94"></a>
+AnnotatedPlannerDataVertex</h2>
+<p >Having defined a Multilevel planner, we can utilize it similar to a usual <a class="el" href="classompl_1_1base_1_1PlannerPtr.html" title="A shared pointer wrapper for ompl::base::Planner.">ompl::base::PlannerPtr</a>, i.e. it can be added to any benchmark, and we can get the planner data.</p>
+<p >However, the classical PlannerData structure does not know about multiple levels of abstraction. To add this information, we wrote the class <code><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html" title="An annotated vertex, adding information about its level in the multilevel hierarchy....">ompl::multilevel::PlannerDataVertexAnnotated</a></code>, which inherits from PlannerDataVertex. PlannerDataVertexAnnotated adds new functionalities, including</p>
+<ul>
+<li><code>getLevel()</code>, returns the level the current vertex is on</li>
+<li><code>getMaxLevel()</code>, returns the number of levels</li>
+<li><code>getBaseState()</code>, returns a state on the current vertex level</li>
+<li><code>getState()</code>, returns a state in the original configuration space (this way the behavior is the same as for the classical PlannerData class).</li>
+</ul>
+<p >You can use this in your code in the following way:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">    #include &lt;ompl/multilevel/datastructures/PlannerDataVertexAnnotated.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_class" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">ompl::multilevel::PlannerDataVertexAnnotated</a> *v = </div>
+<div class="line">    <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">ompl::multilevel::PlannerDataVertexAnnotated</a>*<span class="keyword">&gt;</span>(&amp;pd-&gt;getVertex(0));</div>
+<div class="line"><span class="keywordflow">if</span>(v!=<span class="keyword">nullptr</span>){</div>
+<div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> level = v-&gt;getLevel();</div>
+<div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxLevel = v-&gt;getMaxLevel();</div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *s_BaseState = v-&gt;<a class="code hl_function" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aaa0bb497bd86ef39a433ee7362bec799">getBaseState</a>();</div>
+<div class="line">    <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *s_ConfigurationState = v-&gt;<a class="code hl_function" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63">getState</a>();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1PlannerDataVertexAnnotated_html"><div class="ttname"><a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">ompl::multilevel::PlannerDataVertexAnnotated</a></div><div class="ttdoc">An annotated vertex, adding information about its level in the multilevel hierarchy....</div><div class="ttdef"><b>Definition:</b> <a href="PlannerDataVertexAnnotated_8h_source.html#l00055">PlannerDataVertexAnnotated.h:56</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1PlannerDataVertexAnnotated_html_a447d4a91a84b093e3cbc44a1283b9c63"><div class="ttname"><a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63">ompl::multilevel::PlannerDataVertexAnnotated::getState</a></div><div class="ttdeci">virtual const ompl::base::State * getState() const override</div><div class="ttdoc">Returns base state in baseMode and total state in totalMode. The total space here is the last element...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerDataVertexAnnotated_8cpp_source.html#l00107">PlannerDataVertexAnnotated.cpp:107</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1PlannerDataVertexAnnotated_html_aaa0bb497bd86ef39a433ee7362bec799"><div class="ttname"><a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aaa0bb497bd86ef39a433ee7362bec799">ompl::multilevel::PlannerDataVertexAnnotated::getBaseState</a></div><div class="ttdeci">const ompl::base::State * getBaseState() const</div><div class="ttdoc">Returns base state, indepent of mode.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerDataVertexAnnotated_8cpp_source.html#l00120">PlannerDataVertexAnnotated.cpp:120</a></div></div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md95"></a>
+Further Information</h2>
+<p >For more information, please refer to either the general introduction to <a href="multiLevelPlanning.html">Multilevel Planning</a> or the <a href="group__demos.html">demos</a>. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl/multilevel/datastructures/ProjectionFactory.h Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_17c48f595f6f0fa6f2d85f97530691ab.html">ompl</a></li><li class="navelem"><a class="el" href="dir_5d826f152daee46f62684f7db6276aa2.html">multilevel</a></li><li class="navelem"><a class="el" href="dir_eb975f4df820edcceda1a67d26c2a71f.html">datastructures</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ProjectionFactory.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Copyright (c) 2020,</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  Max Planck Institute for Intelligent Systems (MPI-IS).</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *  are met:</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *   * Neither the name of the MPI-IS nor the names</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *     of its contributors may be used to endorse or promote products</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *     derived from this software without specific prior written</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *     permission.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/* Author: Andreas Orthey */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#ifndef OMPL_MULTILEVEL_PLANNERS_BUNDLESPACE_BUNDLE_SUBSPACE_FACTORY__</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define OMPL_MULTILEVEL_PLANNERS_BUNDLESPACE_BUNDLE_SUBSPACE_FACTORY__</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;ompl/multilevel/datastructures/ProjectionTypes.h&gt;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &lt;ompl/base/State.h&gt;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;ompl/base/StateSpace.h&gt;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;ompl/base/SpaceInformation.h&gt;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">namespace </span>multilevel</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        OMPL_CLASS_FORWARD(Projection);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">namespace </span>multilevel</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="comment">/* \brief If no projection operator is provided, you can invoke this</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">         * projection component factory, which tries to guess the projection</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">         * mapping. For example, if you specify SE3 and R3 as bundle and base,</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">         * this factory would return the projection onto the R3 subspace in SE3. */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1ProjectionFactory.html">   61</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classompl_1_1multilevel_1_1ProjectionFactory.html">ProjectionFactory</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <a class="code hl_class" href="classompl_1_1multilevel_1_1ProjectionFactory.html">ProjectionFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="comment">// std::vector&lt;ProjectionPtr&gt; MakeProjections(const base::SpaceInformationPtr &amp;Bundle,</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="comment">//                                            const base::SpaceInformationPtr &amp;Base);</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="comment">// std::vector&lt;ProjectionPtr&gt; MakeProjections(const base::SpaceInformationPtr &amp;Bundle);</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1ProjectionFactory.html#addde2f3b26c4e7d673efb467577f6ec8">   72</a></span>            ProjectionPtr <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#addde2f3b26c4e7d673efb467577f6ec8">makeProjection</a>(<span class="keyword">const</span> base::SpaceInformationPtr &amp;Bundle,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                         <span class="keyword">const</span> base::SpaceInformationPtr &amp;Base);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            ProjectionPtr <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#addde2f3b26c4e7d673efb467577f6ec8">makeProjection</a>(<span class="keyword">const</span> base::SpaceInformationPtr &amp;Bundle);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="comment">// ProjectionPtr MakeProjections(const base::SpaceInformationPtr &amp;Bundle);</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            ProjectionPtr <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#addde2f3b26c4e7d673efb467577f6ec8">makeProjection</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;<a class="code hl_class" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a>, <span class="keyword">const</span> base::StateSpacePtr &amp;BaseSpace,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                                         <span class="keywordtype">bool</span> areValidityCheckersEquivalent);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            ProjectionPtr <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#addde2f3b26c4e7d673efb467577f6ec8">makeProjection</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;<a class="code hl_class" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <a class="code hl_enumeration" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7">ProjectionType</a> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a846a092bd89b0187c140505d9e70c16f">identifyProjectionType</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;<a class="code hl_class" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a>,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                                                  <span class="keyword">const</span> base::StateSpacePtr &amp;BaseSpace);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab00056074a9f43feecefbb7161375274">isMapping_Identity</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a567bc3695038ee30dde85abd66b7a873">isMapping_EmptyProjection</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#abd12259fe33c0c658b0ae4620eeee105">isMapping_RN_to_RM</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a09707afa2c9654f04b0a91aad3690b6a">isMapping_SE2_to_R2</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#afe6bf7b473a8f1a90bc498dfa69d9ad6">isMapping_SE2RN_to_R2</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a58e2703b2f6f5d73fb1de7b08e01721a">isMapping_SE2RN_to_SE2</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7bafff31fed07790957e5e6fb9e8b164">isMapping_SE2RN_to_SE2RM</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a39dd29e180bb1ee4bc0356beb0166f33">isMapping_SE3_to_R3</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#add4983350979244f5493ae23a69f85d6">isMapping_SE3RN_to_R3</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ae1eabed02af12f9d3d20ab13dd0dc5ae">isMapping_SE3RN_to_SE3</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a370135d03918e7a13a81ceca74be614a">isMapping_SE3RN_to_SE3RM</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7f397ec75a8a84576f0fb7cedf2d2621">isMapping_SO2RN_to_SO2</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a46d0390ec9565cdd8d0c7203d4197909">isMapping_SO2RN_to_SO2RM</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#af9079f8a7d86843b78e807b640b05678">isMapping_SO2N_to_SO2M</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab95a28943f04f7f6055a7a7b30b472f7">isMapping_SO3RN_to_SO3</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a1e11bbf3623e77c231230a691ca636d4">isMapping_SO3RN_to_SO3RM</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a8849e49e03c9274fc474844bd76ed0c0">isMapping_RNSO2_to_RN</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ace17017c286ddb0bf60ac4303913ebad">isMapping_XRN_to_XRM</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                                      <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceompl_1_1base.html#a056b022e14fe04a75f81789947353920">base::StateSpaceType</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a92d2fb047f3c0fad71fe3fb2cc5132bd">isMapping_XRN_to_X</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;, <span class="keyword">const</span> base::StateSpacePtr &amp;,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                                    <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceompl_1_1base.html#a056b022e14fe04a75f81789947353920">base::StateSpaceType</a>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordtype">int</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7832b944080bef2fe5d3cac4de011aa1">GetNumberOfComponents</a>(<span class="keyword">const</span> base::StateSpacePtr &amp;space);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        };</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpace_html"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpace.html">ompl::multilevel::BundleSpace</a></div><div class="ttdoc">A single Bundle-space.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpace_8h_source.html#l00063">BundleSpace.h:64</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html">ompl::multilevel::ProjectionFactory</a></div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8h_source.html#l00061">ProjectionFactory.h:62</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a09707afa2c9654f04b0a91aad3690b6a"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a09707afa2c9654f04b0a91aad3690b6a">ompl::multilevel::ProjectionFactory::isMapping_SE2_to_R2</a></div><div class="ttdeci">bool isMapping_SE2_to_R2(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00448">ProjectionFactory.cpp:448</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a1e11bbf3623e77c231230a691ca636d4"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a1e11bbf3623e77c231230a691ca636d4">ompl::multilevel::ProjectionFactory::isMapping_SO3RN_to_SO3RM</a></div><div class="ttdeci">bool isMapping_SO3RN_to_SO3RM(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00554">ProjectionFactory.cpp:554</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a370135d03918e7a13a81ceca74be614a"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a370135d03918e7a13a81ceca74be614a">ompl::multilevel::ProjectionFactory::isMapping_SE3RN_to_SE3RM</a></div><div class="ttdeci">bool isMapping_SE3RN_to_SE3RM(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00544">ProjectionFactory.cpp:544</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a39dd29e180bb1ee4bc0356beb0166f33"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a39dd29e180bb1ee4bc0356beb0166f33">ompl::multilevel::ProjectionFactory::isMapping_SE3_to_R3</a></div><div class="ttdeci">bool isMapping_SE3_to_R3(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00405">ProjectionFactory.cpp:405</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a46d0390ec9565cdd8d0c7203d4197909"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a46d0390ec9565cdd8d0c7203d4197909">ompl::multilevel::ProjectionFactory::isMapping_SO2RN_to_SO2RM</a></div><div class="ttdeci">bool isMapping_SO2RN_to_SO2RM(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00549">ProjectionFactory.cpp:549</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a567bc3695038ee30dde85abd66b7a873"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a567bc3695038ee30dde85abd66b7a873">ompl::multilevel::ProjectionFactory::isMapping_EmptyProjection</a></div><div class="ttdeci">bool isMapping_EmptyProjection(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if the mapping is an empty projection.</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00659">ProjectionFactory.cpp:659</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a58e2703b2f6f5d73fb1de7b08e01721a"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a58e2703b2f6f5d73fb1de7b08e01721a">ompl::multilevel::ProjectionFactory::isMapping_SE2RN_to_SE2</a></div><div class="ttdeci">bool isMapping_SE2RN_to_SE2(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00519">ProjectionFactory.cpp:519</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a7832b944080bef2fe5d3cac4de011aa1"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7832b944080bef2fe5d3cac4de011aa1">ompl::multilevel::ProjectionFactory::GetNumberOfComponents</a></div><div class="ttdeci">int GetNumberOfComponents(const base::StateSpacePtr &amp;space)</div><div class="ttdoc">Estimate number of components on state space.</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00668">ProjectionFactory.cpp:668</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a7bafff31fed07790957e5e6fb9e8b164"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7bafff31fed07790957e5e6fb9e8b164">ompl::multilevel::ProjectionFactory::isMapping_SE2RN_to_SE2RM</a></div><div class="ttdeci">bool isMapping_SE2RN_to_SE2RM(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00539">ProjectionFactory.cpp:539</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a7f397ec75a8a84576f0fb7cedf2d2621"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7f397ec75a8a84576f0fb7cedf2d2621">ompl::multilevel::ProjectionFactory::isMapping_SO2RN_to_SO2</a></div><div class="ttdeci">bool isMapping_SO2RN_to_SO2(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00529">ProjectionFactory.cpp:529</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a846a092bd89b0187c140505d9e70c16f"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a846a092bd89b0187c140505d9e70c16f">ompl::multilevel::ProjectionFactory::identifyProjectionType</a></div><div class="ttdeci">ProjectionType identifyProjectionType(const base::StateSpacePtr &amp;BundleSpace, const base::StateSpacePtr &amp;BaseSpace)</div><div class="ttdoc">Guess the projection type from the list of projections in ompl::multilevel::ProjectionTypes.</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00260">ProjectionFactory.cpp:260</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a8849e49e03c9274fc474844bd76ed0c0"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a8849e49e03c9274fc474844bd76ed0c0">ompl::multilevel::ProjectionFactory::isMapping_RNSO2_to_RN</a></div><div class="ttdeci">bool isMapping_RNSO2_to_RN(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00466">ProjectionFactory.cpp:466</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_a92d2fb047f3c0fad71fe3fb2cc5132bd"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a92d2fb047f3c0fad71fe3fb2cc5132bd">ompl::multilevel::ProjectionFactory::isMapping_XRN_to_X</a></div><div class="ttdeci">bool isMapping_XRN_to_X(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;, const base::StateSpaceType)</div><div class="ttdoc">Check if mapping is  to  whereby .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00600">ProjectionFactory.cpp:600</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_ab00056074a9f43feecefbb7161375274"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab00056074a9f43feecefbb7161375274">ompl::multilevel::ProjectionFactory::isMapping_Identity</a></div><div class="ttdeci">bool isMapping_Identity(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if the mapping is an identity mapping.</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00351">ProjectionFactory.cpp:351</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_ab95a28943f04f7f6055a7a7b30b472f7"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab95a28943f04f7f6055a7a7b30b472f7">ompl::multilevel::ProjectionFactory::isMapping_SO3RN_to_SO3</a></div><div class="ttdeci">bool isMapping_SO3RN_to_SO3(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00534">ProjectionFactory.cpp:534</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_abd12259fe33c0c658b0ae4620eeee105"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#abd12259fe33c0c658b0ae4620eeee105">ompl::multilevel::ProjectionFactory::isMapping_RN_to_RM</a></div><div class="ttdeci">bool isMapping_RN_to_RM(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00385">ProjectionFactory.cpp:385</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_ace17017c286ddb0bf60ac4303913ebad"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ace17017c286ddb0bf60ac4303913ebad">ompl::multilevel::ProjectionFactory::isMapping_XRN_to_XRM</a></div><div class="ttdeci">bool isMapping_XRN_to_XRM(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;, const base::StateSpaceType)</div><div class="ttdoc">Check if mapping is  to  whereby .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00623">ProjectionFactory.cpp:623</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_add4983350979244f5493ae23a69f85d6"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#add4983350979244f5493ae23a69f85d6">ompl::multilevel::ProjectionFactory::isMapping_SE3RN_to_R3</a></div><div class="ttdeci">bool isMapping_SE3RN_to_R3(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00422">ProjectionFactory.cpp:422</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_addde2f3b26c4e7d673efb467577f6ec8"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#addde2f3b26c4e7d673efb467577f6ec8">ompl::multilevel::ProjectionFactory::makeProjection</a></div><div class="ttdeci">ProjectionPtr makeProjection(const base::SpaceInformationPtr &amp;Bundle, const base::SpaceInformationPtr &amp;Base)</div><div class="ttdoc">Guess projection(s) between two SpaceInformationPtr Bundle and Base.</div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_ae1eabed02af12f9d3d20ab13dd0dc5ae"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ae1eabed02af12f9d3d20ab13dd0dc5ae">ompl::multilevel::ProjectionFactory::isMapping_SE3RN_to_SE3</a></div><div class="ttdeci">bool isMapping_SE3RN_to_SE3(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00524">ProjectionFactory.cpp:524</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_af9079f8a7d86843b78e807b640b05678"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#af9079f8a7d86843b78e807b640b05678">ompl::multilevel::ProjectionFactory::isMapping_SO2N_to_SO2M</a></div><div class="ttdeci">bool isMapping_SO2N_to_SO2M(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00559">ProjectionFactory.cpp:559</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1ProjectionFactory_html_afe6bf7b473a8f1a90bc498dfa69d9ad6"><div class="ttname"><a href="classompl_1_1multilevel_1_1ProjectionFactory.html#afe6bf7b473a8f1a90bc498dfa69d9ad6">ompl::multilevel::ProjectionFactory::isMapping_SE2RN_to_R2</a></div><div class="ttdeci">bool isMapping_SE2RN_to_R2(const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</div><div class="ttdoc">Check if mapping is  to .</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionFactory_8cpp_source.html#l00493">ProjectionFactory.cpp:493</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1base_html_a056b022e14fe04a75f81789947353920"><div class="ttname"><a href="namespaceompl_1_1base.html#a056b022e14fe04a75f81789947353920">ompl::base::StateSpaceType</a></div><div class="ttdeci">StateSpaceType</div><div class="ttdoc">The type of a state space.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpaceTypes_8h_source.html#l00045">StateSpaceTypes.h:46</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1multilevel_html_afe2958ee2827065c44ef06bab5c538e7"><div class="ttname"><a href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7">ompl::multilevel::ProjectionType</a></div><div class="ttdeci">ProjectionType</div><div class="ttdef"><b>Definition:</b> <a href="ProjectionTypes_8h_source.html#l00046">ProjectionTypes.h:47</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:66</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl/multilevel/datastructures/BundleSpaceSequence.h Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_17c48f595f6f0fa6f2d85f97530691ab.html">ompl</a></li><li class="navelem"><a class="el" href="dir_5d826f152daee46f62684f7db6276aa2.html">multilevel</a></li><li class="navelem"><a class="el" href="dir_eb975f4df820edcceda1a67d26c2a71f.html">datastructures</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">BundleSpaceSequence.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Copyright (c) 2019, University of Stuttgart</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  are met:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *   * Neither the name of the University of Stuttgart nor the names</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *     of its contributors may be used to endorse or promote products</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *     derived from this software without specific prior written</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *     permission.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/* Author: Andreas Orthey */</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#ifndef OMPL_MULTILEVEL_PLANNERS_BUNDLESPACE_BUNDLESPACESEQUENCE_</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define OMPL_MULTILEVEL_PLANNERS_BUNDLESPACE_BUNDLESPACESEQUENCE_</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;ompl/multilevel/datastructures/BundleSpace.h&gt;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;ompl/multilevel/datastructures/PlannerMultiLevel.h&gt;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &lt;ompl/multilevel/datastructures/pathrestriction/FindSectionTypes.h&gt;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">namespace </span>base</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        OMPL_CLASS_FORWARD(GoalState);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        OMPL_CLASS_FORWARD(GoalStates);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">namespace </span>multilevel</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">   70</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">BundleSpaceSequence</a> : <span class="keyword">public</span> <a class="code hl_class" href="classompl_1_1multilevel_1_1PlannerMultiLevel.html">PlannerMultiLevel</a></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keyword">using</span> <a class="code hl_class" href="classompl_1_1multilevel_1_1PlannerMultiLevel.html">BaseT</a> = <a class="code hl_class" href="classompl_1_1multilevel_1_1PlannerMultiLevel.html">ompl::multilevel::PlannerMultiLevel</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keyword">static_assert</span>(std::is_base_of&lt;BundleSpace, T&gt;::value, <span class="stringliteral">&quot;Template must inherit from BundleSpace&quot;</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#af51f65f30042705ea11d04c13d3ba192">BundleSpaceSequence</a>(<a class="code hl_class" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> si,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                                std::string type = <span class="stringliteral">&quot;BundleSpacePlannerNonMultilevel&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#af51f65f30042705ea11d04c13d3ba192">BundleSpaceSequence</a>(std::vector&lt;ompl::base::SpaceInformationPtr&gt; &amp;siVec,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                                std::string type = <span class="stringliteral">&quot;BundleSpacePlanner&quot;</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#af51f65f30042705ea11d04c13d3ba192">BundleSpaceSequence</a>(std::vector&lt;ompl::base::SpaceInformationPtr&gt; &amp;siVec,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                                std::vector&lt;ompl::multilevel::ProjectionPtr&gt; &amp;projVec,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                std::string type = <span class="stringliteral">&quot;BundleSpacePlannerCustomProjection&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keyword">virtual</span> <a class="code hl_class" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">~BundleSpaceSequence</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordtype">void</span> declareBundleSpaces(<span class="keywordtype">bool</span> guessProjection = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#ad26803bb97bb3886b96c14ede76b70c5">getPlannerData</a>(<a class="code hl_class" href="classompl_1_1base_1_1PlannerData.html">ompl::base::PlannerData</a> &amp;data) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <a class="code hl_struct" href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a> <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a9294456febfb4d0b5e83797a81d736d7">solve</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a> &amp;ptc) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a0846c460d25a61fc9adbfb62ef85aed5">setup</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#aa005dad76ecddd6af0ade0164540ce0b">clear</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a56698b76ec788a8fb130e24b6beb3a6e">setProblemDefinition</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> &amp;pdef) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordtype">void</span> setStopLevel(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> level_);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a06eeb65b76d15ca166ed92fdac721f9d">setFindSectionStrategy</a>(FindSectionType type);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *<a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#aec055660b5dadbed3d827fa78dc9ac75">getTotalState</a>(<span class="keywordtype">int</span> baseLevel, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *baseState) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a7a45134c9fb9d99963be8a2f0896d093">  121</a></span>            std::vector&lt;T *&gt; <a class="code hl_variable" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a7a45134c9fb9d99963be8a2f0896d093">bundleSpaces_</a>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#aa5dc011288f3fdd2df399afe08c4e67e">  124</a></span>            <span class="keywordtype">bool</span> <a class="code hl_variable" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#aa5dc011288f3fdd2df399afe08c4e67e">foundKLevelSolution_</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a2f46e5035435a3b3804b1f37c9c471bd">  127</a></span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a2f46e5035435a3b3804b1f37c9c471bd">currentBundleSpaceLevel_</a>{0};</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#adde170cd45f6ccc5f204152c3ff198b5">  132</a></span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#adde170cd45f6ccc5f204152c3ff198b5">stopAtLevel_</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="structompl_1_1multilevel_1_1BundleSpaceSequence_1_1CmpBundleSpacePtrs.html">  135</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="structompl_1_1multilevel_1_1BundleSpaceSequence_1_1CmpBundleSpacePtrs.html">CmpBundleSpacePtrs</a></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                <span class="comment">// &quot;&gt;&quot; operator: smallest value is top in queue</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                <span class="comment">// &quot;&lt;&quot; operator: largest value is top in queue (default)</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a> *lhs, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a> *rhs)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">                </span>{</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                    <span class="keywordflow">return</span> lhs-&gt;<a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpace.html#a807045e4cab90d6afd2a33069ba8efd4">getImportance</a>() &lt; rhs-&gt;<a class="code hl_function" href="classompl_1_1multilevel_1_1BundleSpace.html#a807045e4cab90d6afd2a33069ba8efd4">getImportance</a>();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            };</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keyword">typedef</span> std::priority_queue&lt;BundleSpace *, std::vector&lt;BundleSpace *&gt;, <a class="code hl_struct" href="structompl_1_1multilevel_1_1BundleSpaceSequence_1_1CmpBundleSpacePtrs.html">CmpBundleSpacePtrs</a>&gt;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a79de5875d73bb9f44d5efecfbff6e7bb">  147</a></span>                <a class="code hl_typedef" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a79de5875d73bb9f44d5efecfbff6e7bb">BundleSpacePriorityQueue</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <a class="code hl_typedef" href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a79de5875d73bb9f44d5efecfbff6e7bb">BundleSpacePriorityQueue</a> priorityQueue_;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        };</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }  <span class="comment">// namespace multilevel</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}  <span class="comment">// namespace ompl</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">#include &quot;BundleSpaceSequenceImpl.h&quot;</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html">ompl::base::PlannerData</a></div><div class="ttdoc">Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...</div><div class="ttdef"><b>Definition:</b> <a href="base_2PlannerData_8h_source.html#l00174">PlannerData.h:175</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00063">PlannerTerminationCondition.h:64</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1ProblemDefinitionPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::ProblemDefinition.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformationPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::SpaceInformation.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html">ompl::multilevel::BundleSpaceSequence</a></div><div class="ttdoc">A planner for a sequence of BundleSpaces.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequence_8h_source.html#l00070">BundleSpaceSequence.h:71</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_a06eeb65b76d15ca166ed92fdac721f9d"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a06eeb65b76d15ca166ed92fdac721f9d">ompl::multilevel::BundleSpaceSequence::setFindSectionStrategy</a></div><div class="ttdeci">void setFindSectionStrategy(FindSectionType type)</div><div class="ttdoc">Set strategy to use to solve the find section problem.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00138">BundleSpaceSequenceImpl.h:138</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_a0846c460d25a61fc9adbfb62ef85aed5"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a0846c460d25a61fc9adbfb62ef85aed5">ompl::multilevel::BundleSpaceSequence::setup</a></div><div class="ttdeci">virtual void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00151">BundleSpaceSequenceImpl.h:151</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_a2f46e5035435a3b3804b1f37c9c471bd"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a2f46e5035435a3b3804b1f37c9c471bd">ompl::multilevel::BundleSpaceSequence::currentBundleSpaceLevel_</a></div><div class="ttdeci">unsigned int currentBundleSpaceLevel_</div><div class="ttdoc">Current level on which we have not yet found a path.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequence_8h_source.html#l00127">BundleSpaceSequence.h:127</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_a56698b76ec788a8fb130e24b6beb3a6e"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a56698b76ec788a8fb130e24b6beb3a6e">ompl::multilevel::BundleSpaceSequence::setProblemDefinition</a></div><div class="ttdeci">virtual void setProblemDefinition(const ompl::base::ProblemDefinitionPtr &amp;pdef) override</div><div class="ttdoc">Set the problem definition for the planner. The problem needs to be set before calling solve()....</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00257">BundleSpaceSequenceImpl.h:257</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_a79de5875d73bb9f44d5efecfbff6e7bb"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a79de5875d73bb9f44d5efecfbff6e7bb">ompl::multilevel::BundleSpaceSequence::BundleSpacePriorityQueue</a></div><div class="ttdeci">std::priority_queue&lt; BundleSpace *, std::vector&lt; BundleSpace * &gt;, CmpBundleSpacePtrs &gt; BundleSpacePriorityQueue</div><div class="ttdoc">Priority queue of BundleSpaces which keeps track of how often every graph on each space has been expa...</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequence_8h_source.html#l00147">BundleSpaceSequence.h:147</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_a7a45134c9fb9d99963be8a2f0896d093"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a7a45134c9fb9d99963be8a2f0896d093">ompl::multilevel::BundleSpaceSequence::bundleSpaces_</a></div><div class="ttdeci">std::vector&lt; T * &gt; bundleSpaces_</div><div class="ttdoc">Sequence of BundleSpaces.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequence_8h_source.html#l00121">BundleSpaceSequence.h:121</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_a9294456febfb4d0b5e83797a81d736d7"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#a9294456febfb4d0b5e83797a81d736d7">ompl::multilevel::BundleSpaceSequence::solve</a></div><div class="ttdeci">ompl::base::PlannerStatus solve(const ompl::base::PlannerTerminationCondition &amp;ptc) override</div><div class="ttdoc">Function that can solve the motion planning problem. This function can be called multiple times on th...</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00180">BundleSpaceSequenceImpl.h:180</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_aa005dad76ecddd6af0ade0164540ce0b"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#aa005dad76ecddd6af0ade0164540ce0b">ompl::multilevel::BundleSpaceSequence::clear</a></div><div class="ttdeci">virtual void clear() override</div><div class="ttdoc">Clear multilevel planner by clearing all levels.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00162">BundleSpaceSequenceImpl.h:162</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_aa5dc011288f3fdd2df399afe08c4e67e"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#aa5dc011288f3fdd2df399afe08c4e67e">ompl::multilevel::BundleSpaceSequence::foundKLevelSolution_</a></div><div class="ttdeci">bool foundKLevelSolution_</div><div class="ttdoc">Indicator if a solution has been found on the current BundleSpaces.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequence_8h_source.html#l00124">BundleSpaceSequence.h:124</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_ad26803bb97bb3886b96c14ede76b70c5"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#ad26803bb97bb3886b96c14ede76b70c5">ompl::multilevel::BundleSpaceSequence::getPlannerData</a></div><div class="ttdeci">virtual void getPlannerData(ompl::base::PlannerData &amp;data) const override</div><div class="ttdoc">Return annotated vertices (with information about BundleSpace level)</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00376">BundleSpaceSequenceImpl.h:376</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_adde170cd45f6ccc5f204152c3ff198b5"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#adde170cd45f6ccc5f204152c3ff198b5">ompl::multilevel::BundleSpaceSequence::stopAtLevel_</a></div><div class="ttdeci">unsigned int stopAtLevel_</div><div class="ttdoc">Sometimes we only want to plan until a certain BundleSpace level (for debugging for example)....</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequence_8h_source.html#l00132">BundleSpaceSequence.h:132</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_aec055660b5dadbed3d827fa78dc9ac75"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#aec055660b5dadbed3d827fa78dc9ac75">ompl::multilevel::BundleSpaceSequence::getTotalState</a></div><div class="ttdeci">ompl::base::State * getTotalState(int baseLevel, const base::State *baseState) const</div><div class="ttdoc">Starting from a baseState on baseLevel, we lift it iteratively upwards into the total space of the se...</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00347">BundleSpaceSequenceImpl.h:347</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpaceSequence_html_af51f65f30042705ea11d04c13d3ba192"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpaceSequence.html#af51f65f30042705ea11d04c13d3ba192">ompl::multilevel::BundleSpaceSequence::BundleSpaceSequence</a></div><div class="ttdeci">BundleSpaceSequence(ompl::base::SpaceInformationPtr si, std::string type=&quot;BundleSpacePlannerNonMultilevel&quot;)</div><div class="ttdoc">Non-multilevel Mode: Calling with a single ompl::base::SpaceInformationPtr will revert to standard pl...</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequenceImpl_8h_source.html#l00048">BundleSpaceSequenceImpl.h:48</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpace_html"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpace.html">ompl::multilevel::BundleSpace</a></div><div class="ttdoc">A single Bundle-space.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpace_8h_source.html#l00063">BundleSpace.h:64</a></div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1BundleSpace_html_a807045e4cab90d6afd2a33069ba8efd4"><div class="ttname"><a href="classompl_1_1multilevel_1_1BundleSpace.html#a807045e4cab90d6afd2a33069ba8efd4">ompl::multilevel::BundleSpace::getImportance</a></div><div class="ttdeci">virtual double getImportance() const =0</div><div class="ttdoc">Compute importance of bundle space (to decide where to.</div></div>
+<div class="ttc" id="aclassompl_1_1multilevel_1_1PlannerMultiLevel_html"><div class="ttname"><a href="classompl_1_1multilevel_1_1PlannerMultiLevel.html">ompl::multilevel::PlannerMultiLevel</a></div><div class="ttdoc">MultiLevel Planner Interface. Extends base::Planner by allowing sequences of base::SpaceInformationPt...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerMultiLevel_8h_source.html#l00051">PlannerMultiLevel.h:52</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:66</a></div></div>
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a></div><div class="ttdoc">A class to store the exit status of Planner::solve()</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00048">PlannerStatus.h:49</a></div></div>
+<div class="ttc" id="astructompl_1_1multilevel_1_1BundleSpaceSequence_1_1CmpBundleSpacePtrs_html"><div class="ttname"><a href="structompl_1_1multilevel_1_1BundleSpaceSequence_1_1CmpBundleSpacePtrs.html">ompl::multilevel::BundleSpaceSequence::CmpBundleSpacePtrs</a></div><div class="ttdoc">Compare function for priority queue.</div><div class="ttdef"><b>Definition:</b> <a href="BundleSpaceSequence_8h_source.html#l00135">BundleSpaceSequence.h:136</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl::multilevel::PlannerDataVertexAnnotated Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1multilevel.html">multilevel</a></li><li class="navelem"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">PlannerDataVertexAnnotated</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::multilevel::PlannerDataVertexAnnotated Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>An annotated vertex, adding information about its level in the multilevel hierarchy. Class has two modes: Mode 1 (baseMode), we store a reference to its base state element. In Mode 2 (totalMode), we store a deep copy of the lift of the base state into the total space (NOTE: required for PlannerData functions like decoupleFromPlanner())  
+ <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="PlannerDataVertexAnnotated_8h_source.html">ompl/multilevel/datastructures/PlannerDataVertexAnnotated.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ompl::multilevel::PlannerDataVertexAnnotated:</div>
+<div class="dyncontent">
+<div class="center"><img src="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated__inherit__graph.png" border="0" usemap="#aompl_1_1multilevel_1_1PlannerDataVertexAnnotated_inherit__map" alt="Inheritance graph"/></div>
+<map name="aompl_1_1multilevel_1_1PlannerDataVertexAnnotated_inherit__map" id="aompl_1_1multilevel_1_1PlannerDataVertexAnnotated_inherit__map">
+<area shape="rect" title="An annotated vertex, adding information about its level in the multilevel hierarchy...." alt="" coords="25,80,190,121"/>
+<area shape="rect" href="classompl_1_1base_1_1PlannerDataVertex.html" title="Base class for a vertex in the PlannerData structure. All derived classes must implement the clone an..." alt="" coords="5,5,209,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a570858d48c1a1e739594ccdce83e3965"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a570858d48c1a1e739594ccdce83e3965">PlannerDataVertexAnnotated</a> (const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state)</td></tr>
+<tr class="memdesc:a570858d48c1a1e739594ccdce83e3965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for base state. Set mode to baseMode.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a570858d48c1a1e739594ccdce83e3965">More...</a><br /></td></tr>
+<tr class="separator:a570858d48c1a1e739594ccdce83e3965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50706e240f74283351cd29cb3f18cd06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a50706e240f74283351cd29cb3f18cd06">PlannerDataVertexAnnotated</a> (const <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">PlannerDataVertexAnnotated</a> &amp;rhs)</td></tr>
+<tr class="separator:a50706e240f74283351cd29cb3f18cd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f5c2da52d4b3bf1a659769d30ceeb6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a612f975106d9cb289702f758dabf3214">PlannerDataVertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a01f5c2da52d4b3bf1a659769d30ceeb6">clone</a> () const override</td></tr>
+<tr class="memdesc:a01f5c2da52d4b3bf1a659769d30ceeb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a clone of this object, allocated from the heap.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a01f5c2da52d4b3bf1a659769d30ceeb6">More...</a><br /></td></tr>
+<tr class="separator:a01f5c2da52d4b3bf1a659769d30ceeb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6311141b886a0a5f05ea9f6832ef6e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ae6311141b886a0a5f05ea9f6832ef6e2">setLevel</a> (unsigned int <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aea183094112a1d4c9faeb75a0d43b50a">level_</a>)</td></tr>
+<tr class="memdesc:ae6311141b886a0a5f05ea9f6832ef6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The level of vertex in the bundle space hierarchy.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ae6311141b886a0a5f05ea9f6832ef6e2">More...</a><br /></td></tr>
+<tr class="separator:ae6311141b886a0a5f05ea9f6832ef6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf6fae7e10f2a2d7a1005da1ca39772"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aaaf6fae7e10f2a2d7a1005da1ca39772">getLevel</a> () const</td></tr>
+<tr class="separator:aaaf6fae7e10f2a2d7a1005da1ca39772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48a0db5d5d4f8ef57091c75dd3a2ca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ad48a0db5d5d4f8ef57091c75dd3a2ca1">setMaxLevel</a> (unsigned int <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aea183094112a1d4c9faeb75a0d43b50a">level_</a>)</td></tr>
+<tr class="memdesc:ad48a0db5d5d4f8ef57091c75dd3a2ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum level in the bundle space hierarchy.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ad48a0db5d5d4f8ef57091c75dd3a2ca1">More...</a><br /></td></tr>
+<tr class="separator:ad48a0db5d5d4f8ef57091c75dd3a2ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9f3c73f84ec9b984a60286cd5fedec"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a4d9f3c73f84ec9b984a60286cd5fedec">getMaxLevel</a> () const</td></tr>
+<tr class="separator:a4d9f3c73f84ec9b984a60286cd5fedec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67db01b468d19ffbb9104e5a51525833"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a67db01b468d19ffbb9104e5a51525833">setComponent</a> (unsigned int <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a492a4be03fd371da17dfdcaef55c1b5c">component_</a>)</td></tr>
+<tr class="memdesc:a67db01b468d19ffbb9104e5a51525833"><td class="mdescLeft">&#160;</td><td class="mdescRight">The component of vertex in the graph (start, goal or other component)  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a67db01b468d19ffbb9104e5a51525833">More...</a><br /></td></tr>
+<tr class="separator:a67db01b468d19ffbb9104e5a51525833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f943481c865e709a5edf9e9ba20d34"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a28f943481c865e709a5edf9e9ba20d34">getComponent</a> () const</td></tr>
+<tr class="separator:a28f943481c865e709a5edf9e9ba20d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27850ed68cae9fc2f5f83559d36fbe7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a27850ed68cae9fc2f5f83559d36fbe7d">setTotalState</a> (<a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *s, <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> si)</td></tr>
+<tr class="memdesc:a27850ed68cae9fc2f5f83559d36fbe7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set total state, i.e. the lift of the base state to the total space (last Spaceinformationptr in sequence). NOTE: Changes mode to totalMode. NOTE: requires Spaceinformationptr (of total space) to free state.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a27850ed68cae9fc2f5f83559d36fbe7d">More...</a><br /></td></tr>
+<tr class="separator:a27850ed68cae9fc2f5f83559d36fbe7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7811ae33251ff415f94486b6fd458f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a0b7811ae33251ff415f94486b6fd458f">setBaseState</a> (const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *s)</td></tr>
+<tr class="memdesc:a0b7811ae33251ff415f94486b6fd458f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly changes base state (does not change mode)  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a0b7811ae33251ff415f94486b6fd458f">More...</a><br /></td></tr>
+<tr class="separator:a0b7811ae33251ff415f94486b6fd458f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a447d4a91a84b093e3cbc44a1283b9c63"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63">getState</a> () const override</td></tr>
+<tr class="memdesc:a447d4a91a84b093e3cbc44a1283b9c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns base state in baseMode and total state in totalMode. The total space here is the last element of space sequence.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63">More...</a><br /></td></tr>
+<tr class="separator:a447d4a91a84b093e3cbc44a1283b9c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f7dfc1cebbe611168d6042e7a9e6c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a36f7dfc1cebbe611168d6042e7a9e6c0">getStateNonConst</a> () const</td></tr>
+<tr class="memdesc:a36f7dfc1cebbe611168d6042e7a9e6c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63" title="Returns base state in baseMode and total state in totalMode. The total space here is the last element...">getState()</a>, but state can be changed.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a36f7dfc1cebbe611168d6042e7a9e6c0">More...</a><br /></td></tr>
+<tr class="separator:a36f7dfc1cebbe611168d6042e7a9e6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0bb497bd86ef39a433ee7362bec799"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aaa0bb497bd86ef39a433ee7362bec799">getBaseState</a> () const</td></tr>
+<tr class="memdesc:aaa0bb497bd86ef39a433ee7362bec799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns base state, indepent of mode.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aaa0bb497bd86ef39a433ee7362bec799">More...</a><br /></td></tr>
+<tr class="separator:aaa0bb497bd86ef39a433ee7362bec799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa890ec6402065e9f25eed0f9a128b6a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aa890ec6402065e9f25eed0f9a128b6a9">getSpaceInformationPtr</a> () const</td></tr>
+<tr class="separator:aa890ec6402065e9f25eed0f9a128b6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac490e5749cbc7da11d5439e0277dff86"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ac490e5749cbc7da11d5439e0277dff86">operator==</a> (const <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a612f975106d9cb289702f758dabf3214">PlannerDataVertex</a> &amp;rhs) const override</td></tr>
+<tr class="memdesc:ac490e5749cbc7da11d5439e0277dff86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies equality by checking level and base state (mode independent)  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ac490e5749cbc7da11d5439e0277dff86">More...</a><br /></td></tr>
+<tr class="separator:ac490e5749cbc7da11d5439e0277dff86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classompl_1_1base_1_1PlannerDataVertex')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">ompl::base::PlannerDataVertex</a></td></tr>
+<tr class="memitem:a612f975106d9cb289702f758dabf3214 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a612f975106d9cb289702f758dabf3214">PlannerDataVertex</a> (const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *st, int tag=0)</td></tr>
+<tr class="memdesc:a612f975106d9cb289702f758dabf3214 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Takes a state pointer and an optional integer tag.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#a612f975106d9cb289702f758dabf3214">More...</a><br /></td></tr>
+<tr class="separator:a612f975106d9cb289702f758dabf3214 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa546857237ac782b156004b18e9e6af8 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top"><a id="aa546857237ac782b156004b18e9e6af8" name="aa546857237ac782b156004b18e9e6af8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PlannerDataVertex</b> (const <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">PlannerDataVertex</a> &amp;rhs)=default</td></tr>
+<tr class="memdesc:aa546857237ac782b156004b18e9e6af8 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br /></td></tr>
+<tr class="separator:aa546857237ac782b156004b18e9e6af8 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a130651b42f06d4147b809fe85e0da586 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a130651b42f06d4147b809fe85e0da586">getTag</a> () const</td></tr>
+<tr class="memdesc:a130651b42f06d4147b809fe85e0da586 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the integer tag associated with this vertex.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#a130651b42f06d4147b809fe85e0da586">More...</a><br /></td></tr>
+<tr class="separator:a130651b42f06d4147b809fe85e0da586 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6d6a6ecf6fdff4c4c74410be5c3596 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a4e6d6a6ecf6fdff4c4c74410be5c3596">setTag</a> (int tag)</td></tr>
+<tr class="memdesc:a4e6d6a6ecf6fdff4c4c74410be5c3596 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the integer tag associated with this vertex.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#a4e6d6a6ecf6fdff4c4c74410be5c3596">More...</a><br /></td></tr>
+<tr class="separator:a4e6d6a6ecf6fdff4c4c74410be5c3596 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad885cb3f2098279bd372b816003efd1 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#aad885cb3f2098279bd372b816003efd1">getState</a> () const</td></tr>
+<tr class="memdesc:aad885cb3f2098279bd372b816003efd1 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the state associated with this vertex.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#aad885cb3f2098279bd372b816003efd1">More...</a><br /></td></tr>
+<tr class="separator:aad885cb3f2098279bd372b816003efd1 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c95c982ec5567c0a9cea377c3c1d673 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">PlannerDataVertex</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a6c95c982ec5567c0a9cea377c3c1d673">clone</a> () const</td></tr>
+<tr class="memdesc:a6c95c982ec5567c0a9cea377c3c1d673 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a clone of this object, allocated from the heap.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#a6c95c982ec5567c0a9cea377c3c1d673">More...</a><br /></td></tr>
+<tr class="separator:a6c95c982ec5567c0a9cea377c3c1d673 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf893b4187acd123f587d7a805f80a8d inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#abf893b4187acd123f587d7a805f80a8d">operator==</a> (const <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">PlannerDataVertex</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:abf893b4187acd123f587d7a805f80a8d inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalence operator. Return true if the state pointers are equal.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#abf893b4187acd123f587d7a805f80a8d">More...</a><br /></td></tr>
+<tr class="separator:abf893b4187acd123f587d7a805f80a8d inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022418e77679b9906d418b35ae4d8385 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a022418e77679b9906d418b35ae4d8385">operator!=</a> (const <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">PlannerDataVertex</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a022418e77679b9906d418b35ae4d8385 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this vertex is not equal to the argument. This is the complement of the == operator.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#a022418e77679b9906d418b35ae4d8385">More...</a><br /></td></tr>
+<tr class="separator:a022418e77679b9906d418b35ae4d8385 inherit pub_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aea183094112a1d4c9faeb75a0d43b50a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aea183094112a1d4c9faeb75a0d43b50a">level_</a> {0}</td></tr>
+<tr class="memdesc:aea183094112a1d4c9faeb75a0d43b50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The level for the base state.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aea183094112a1d4c9faeb75a0d43b50a">More...</a><br /></td></tr>
+<tr class="separator:aea183094112a1d4c9faeb75a0d43b50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b02cc1d43d0991cb837ea0d1a21d54"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a38b02cc1d43d0991cb837ea0d1a21d54">maxLevel_</a> {1}</td></tr>
+<tr class="memdesc:a38b02cc1d43d0991cb837ea0d1a21d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many spaces exists in the multilevel structure.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a38b02cc1d43d0991cb837ea0d1a21d54">More...</a><br /></td></tr>
+<tr class="separator:a38b02cc1d43d0991cb837ea0d1a21d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492a4be03fd371da17dfdcaef55c1b5c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a492a4be03fd371da17dfdcaef55c1b5c">component_</a> {0}</td></tr>
+<tr class="memdesc:a492a4be03fd371da17dfdcaef55c1b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Optional:) which component in roadmap does vertex belong to  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a492a4be03fd371da17dfdcaef55c1b5c">More...</a><br /></td></tr>
+<tr class="separator:a492a4be03fd371da17dfdcaef55c1b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382a6da1f980dd8cda37a8b8f2e806af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a382a6da1f980dd8cda37a8b8f2e806af">totalStateIsSet</a> {false}</td></tr>
+<tr class="memdesc:a382a6da1f980dd8cda37a8b8f2e806af"><td class="mdescLeft">&#160;</td><td class="mdescRight">There are two modes. Mode 1 is the normal mode where this class contains a reference to the base state. In that case <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63" title="Returns base state in baseMode and total state in totalMode. The total space here is the last element...">getState()</a> returns the base state. Mode 2 is the total space mode, where we set a total state, in which case <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63" title="Returns base state in baseMode and total state in totalMode. The total space here is the last element...">getState()</a> returns the total state. Note that we require the class to be in Mode 2 for methods like PlannerData::decoupleFromPlanner(). You can put the class into Mode 2 by calling <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a27850ed68cae9fc2f5f83559d36fbe7d" title="Set total state, i.e. the lift of the base state to the total space (last Spaceinformationptr in sequ...">setTotalState()</a>  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a382a6da1f980dd8cda37a8b8f2e806af">More...</a><br /></td></tr>
+<tr class="separator:a382a6da1f980dd8cda37a8b8f2e806af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09de9d6a58f511cd0bead774ad79a48"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ab09de9d6a58f511cd0bead774ad79a48">stateBase_</a> {nullptr}</td></tr>
+<tr class="memdesc:ab09de9d6a58f511cd0bead774ad79a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal reference to base state. Same as state_ in normal Mode to avoid confusion.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#ab09de9d6a58f511cd0bead774ad79a48">More...</a><br /></td></tr>
+<tr class="separator:ab09de9d6a58f511cd0bead774ad79a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe49ab5945c88ace55e655d912ea812e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#abe49ab5945c88ace55e655d912ea812e">stateTotal_</a> {nullptr}</td></tr>
+<tr class="memdesc:abe49ab5945c88ace55e655d912ea812e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage of total state.  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#abe49ab5945c88ace55e655d912ea812e">More...</a><br /></td></tr>
+<tr class="separator:abe49ab5945c88ace55e655d912ea812e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc444e7ecc857d152ad35da4408b5a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a1cc444e7ecc857d152ad35da4408b5a5">si_</a> {nullptr}</td></tr>
+<tr class="memdesc:a1cc444e7ecc857d152ad35da4408b5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to total space (to free total space element upon deletion)  <a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a1cc444e7ecc857d152ad35da4408b5a5">More...</a><br /></td></tr>
+<tr class="separator:a1cc444e7ecc857d152ad35da4408b5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classompl_1_1base_1_1PlannerDataVertex"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classompl_1_1base_1_1PlannerDataVertex')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">ompl::base::PlannerDataVertex</a></td></tr>
+<tr class="memitem:a4f805017e2eadb495ca95f9c1d6b7177 inherit pro_attribs_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classompl_1_1base_1_1State.html">State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a4f805017e2eadb495ca95f9c1d6b7177">state_</a></td></tr>
+<tr class="memdesc:a4f805017e2eadb495ca95f9c1d6b7177 inherit pro_attribs_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state represented by this vertex.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#a4f805017e2eadb495ca95f9c1d6b7177">More...</a><br /></td></tr>
+<tr class="separator:a4f805017e2eadb495ca95f9c1d6b7177 inherit pro_attribs_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0257882aedf96fc9b67f7d6f882f04 inherit pro_attribs_classompl_1_1base_1_1PlannerDataVertex"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#abf0257882aedf96fc9b67f7d6f882f04">tag_</a></td></tr>
+<tr class="memdesc:abf0257882aedf96fc9b67f7d6f882f04 inherit pro_attribs_classompl_1_1base_1_1PlannerDataVertex"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic integer tag for this state. Not used for equivalence checking.  <a href="classompl_1_1base_1_1PlannerDataVertex.html#abf0257882aedf96fc9b67f7d6f882f04">More...</a><br /></td></tr>
+<tr class="separator:abf0257882aedf96fc9b67f7d6f882f04 inherit pro_attribs_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:abed87368bc5695373996043715dd4785"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#abed87368bc5695373996043715dd4785">operator&lt;&lt;</a> (std::ostream &amp;, const <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">PlannerDataVertexAnnotated</a> &amp;)</td></tr>
+<tr class="separator:abed87368bc5695373996043715dd4785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classompl_1_1base_1_1PlannerDataVertex"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classompl_1_1base_1_1PlannerDataVertex')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">ompl::base::PlannerDataVertex</a></td></tr>
+<tr class="memitem:aeabe7ff6c238a5ac8b58e929d31c191a inherit pro_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
+<tr class="memitem:aeabe7ff6c238a5ac8b58e929d31c191a inherit pro_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#aeabe7ff6c238a5ac8b58e929d31c191a">serialize</a> (Archive &amp;ar, const unsigned int)</td></tr>
+<tr class="separator:aeabe7ff6c238a5ac8b58e929d31c191a inherit pro_methods_classompl_1_1base_1_1PlannerDataVertex"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An annotated vertex, adding information about its level in the multilevel hierarchy. Class has two modes: Mode 1 (baseMode), we store a reference to its base state element. In Mode 2 (totalMode), we store a deep copy of the lift of the base state into the total space (NOTE: required for PlannerData functions like decoupleFromPlanner()) </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00055">55</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a570858d48c1a1e739594ccdce83e3965" name="a570858d48c1a1e739594ccdce83e3965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570858d48c1a1e739594ccdce83e3965">&#9670;&nbsp;</a></span>PlannerDataVertexAnnotated() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlannerDataVertexAnnotated::PlannerDataVertexAnnotated </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for base state. Set mode to baseMode. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00042">42</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a50706e240f74283351cd29cb3f18cd06" name="a50706e240f74283351cd29cb3f18cd06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50706e240f74283351cd29cb3f18cd06">&#9670;&nbsp;</a></span>PlannerDataVertexAnnotated() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlannerDataVertexAnnotated::PlannerDataVertexAnnotated </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">PlannerDataVertexAnnotated</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00048">48</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab7d071a327e0580887f8df17c97af4c1" name="ab7d071a327e0580887f8df17c97af4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d071a327e0580887f8df17c97af4c1">&#9670;&nbsp;</a></span>~PlannerDataVertexAnnotated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlannerDataVertexAnnotated::~PlannerDataVertexAnnotated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00059">59</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a01f5c2da52d4b3bf1a659769d30ceeb6" name="a01f5c2da52d4b3bf1a659769d30ceeb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f5c2da52d4b3bf1a659769d30ceeb6">&#9670;&nbsp;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html">ompl::base::PlannerDataVertex</a> * PlannerDataVertexAnnotated::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a clone of this object, allocated from the heap. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a6c95c982ec5567c0a9cea377c3c1d673">ompl::base::PlannerDataVertex</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00067">67</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aaa0bb497bd86ef39a433ee7362bec799" name="aaa0bb497bd86ef39a433ee7362bec799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa0bb497bd86ef39a433ee7362bec799">&#9670;&nbsp;</a></span>getBaseState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> * PlannerDataVertexAnnotated::getBaseState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns base state, indepent of mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00120">120</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a28f943481c865e709a5edf9e9ba20d34" name="a28f943481c865e709a5edf9e9ba20d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f943481c865e709a5edf9e9ba20d34">&#9670;&nbsp;</a></span>getComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int PlannerDataVertexAnnotated::getComponent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00082">82</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aaaf6fae7e10f2a2d7a1005da1ca39772" name="aaaf6fae7e10f2a2d7a1005da1ca39772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf6fae7e10f2a2d7a1005da1ca39772">&#9670;&nbsp;</a></span>getLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int PlannerDataVertexAnnotated::getLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00092">92</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4d9f3c73f84ec9b984a60286cd5fedec" name="a4d9f3c73f84ec9b984a60286cd5fedec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d9f3c73f84ec9b984a60286cd5fedec">&#9670;&nbsp;</a></span>getMaxLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int PlannerDataVertexAnnotated::getMaxLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00102">102</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa890ec6402065e9f25eed0f9a128b6a9" name="aa890ec6402065e9f25eed0f9a128b6a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa890ec6402065e9f25eed0f9a128b6a9">&#9670;&nbsp;</a></span>getSpaceInformationPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> PlannerDataVertexAnnotated::getSpaceInformationPtr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00077">77</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a447d4a91a84b093e3cbc44a1283b9c63" name="a447d4a91a84b093e3cbc44a1283b9c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a447d4a91a84b093e3cbc44a1283b9c63">&#9670;&nbsp;</a></span>getState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> * PlannerDataVertexAnnotated::getState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns base state in baseMode and total state in totalMode. The total space here is the last element of space sequence. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#aad885cb3f2098279bd372b816003efd1">ompl::base::PlannerDataVertex</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00107">107</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a36f7dfc1cebbe611168d6042e7a9e6c0" name="a36f7dfc1cebbe611168d6042e7a9e6c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f7dfc1cebbe611168d6042e7a9e6c0">&#9670;&nbsp;</a></span>getStateNonConst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> * PlannerDataVertexAnnotated::getStateNonConst </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63" title="Returns base state in baseMode and total state in totalMode. The total space here is the last element...">getState()</a>, but state can be changed. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00115">115</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac490e5749cbc7da11d5439e0277dff86" name="ac490e5749cbc7da11d5439e0277dff86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac490e5749cbc7da11d5439e0277dff86">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PlannerDataVertexAnnotated::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1PlannerDataVertex.html#a612f975106d9cb289702f758dabf3214">PlannerDataVertex</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifies equality by checking level and base state (mode independent) </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00137">137</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0b7811ae33251ff415f94486b6fd458f" name="a0b7811ae33251ff415f94486b6fd458f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7811ae33251ff415f94486b6fd458f">&#9670;&nbsp;</a></span>setBaseState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlannerDataVertexAnnotated::setBaseState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Explicitly changes base state (does not change mode) </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00125">125</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a67db01b468d19ffbb9104e5a51525833" name="a67db01b468d19ffbb9104e5a51525833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67db01b468d19ffbb9104e5a51525833">&#9670;&nbsp;</a></span>setComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlannerDataVertexAnnotated::setComponent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>component_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The component of vertex in the graph (start, goal or other component) </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00072">72</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae6311141b886a0a5f05ea9f6832ef6e2" name="ae6311141b886a0a5f05ea9f6832ef6e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6311141b886a0a5f05ea9f6832ef6e2">&#9670;&nbsp;</a></span>setLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlannerDataVertexAnnotated::setLevel </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>level_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The level of vertex in the bundle space hierarchy. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00087">87</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad48a0db5d5d4f8ef57091c75dd3a2ca1" name="ad48a0db5d5d4f8ef57091c75dd3a2ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48a0db5d5d4f8ef57091c75dd3a2ca1">&#9670;&nbsp;</a></span>setMaxLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlannerDataVertexAnnotated::setMaxLevel </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>level_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The maximum level in the bundle space hierarchy. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00097">97</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a27850ed68cae9fc2f5f83559d36fbe7d" name="a27850ed68cae9fc2f5f83559d36fbe7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27850ed68cae9fc2f5f83559d36fbe7d">&#9670;&nbsp;</a></span>setTotalState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlannerDataVertexAnnotated::setTotalState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a>&#160;</td>
+          <td class="paramname"><em>si</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set total state, i.e. the lift of the base state to the total space (last Spaceinformationptr in sequence). NOTE: Changes mode to totalMode. NOTE: requires Spaceinformationptr (of total space) to free state. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00130">130</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="abed87368bc5695373996043715dd4785" name="abed87368bc5695373996043715dd4785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed87368bc5695373996043715dd4785">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">PlannerDataVertexAnnotated</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html#l00144">144</a> of file <a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a492a4be03fd371da17dfdcaef55c1b5c" name="a492a4be03fd371da17dfdcaef55c1b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492a4be03fd371da17dfdcaef55c1b5c">&#9670;&nbsp;</a></span>component_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::multilevel::PlannerDataVertexAnnotated::component_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>(Optional:) which component in roadmap does vertex belong to </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00119">119</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+
+</div>
+</div>
+<a id="aea183094112a1d4c9faeb75a0d43b50a" name="aea183094112a1d4c9faeb75a0d43b50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea183094112a1d4c9faeb75a0d43b50a">&#9670;&nbsp;</a></span>level_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::multilevel::PlannerDataVertexAnnotated::level_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The level for the base state. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00112">112</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+
+</div>
+</div>
+<a id="a38b02cc1d43d0991cb837ea0d1a21d54" name="a38b02cc1d43d0991cb837ea0d1a21d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b02cc1d43d0991cb837ea0d1a21d54">&#9670;&nbsp;</a></span>maxLevel_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::multilevel::PlannerDataVertexAnnotated::maxLevel_ {1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How many spaces exists in the multilevel structure. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00115">115</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+
+</div>
+</div>
+<a id="a1cc444e7ecc857d152ad35da4408b5a5" name="a1cc444e7ecc857d152ad35da4408b5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cc444e7ecc857d152ad35da4408b5a5">&#9670;&nbsp;</a></span>si_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> ompl::multilevel::PlannerDataVertexAnnotated::si_ {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to total space (to free total space element upon deletion) </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00141">141</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+
+</div>
+</div>
+<a id="ab09de9d6a58f511cd0bead774ad79a48" name="ab09de9d6a58f511cd0bead774ad79a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09de9d6a58f511cd0bead774ad79a48">&#9670;&nbsp;</a></span>stateBase_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a>* ompl::multilevel::PlannerDataVertexAnnotated::stateBase_ {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Internal reference to base state. Same as state_ in normal Mode to avoid confusion. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00134">134</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+
+</div>
+</div>
+<a id="abe49ab5945c88ace55e655d912ea812e" name="abe49ab5945c88ace55e655d912ea812e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe49ab5945c88ace55e655d912ea812e">&#9670;&nbsp;</a></span>stateTotal_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a>* ompl::multilevel::PlannerDataVertexAnnotated::stateTotal_ {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Storage of total state. </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00137">137</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+
+</div>
+</div>
+<a id="a382a6da1f980dd8cda37a8b8f2e806af" name="a382a6da1f980dd8cda37a8b8f2e806af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382a6da1f980dd8cda37a8b8f2e806af">&#9670;&nbsp;</a></span>totalStateIsSet</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::multilevel::PlannerDataVertexAnnotated::totalStateIsSet {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>There are two modes. Mode 1 is the normal mode where this class contains a reference to the base state. In that case <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63" title="Returns base state in baseMode and total state in totalMode. The total space here is the last element...">getState()</a> returns the base state. Mode 2 is the total space mode, where we set a total state, in which case <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63" title="Returns base state in baseMode and total state in totalMode. The total space here is the last element...">getState()</a> returns the total state. Note that we require the class to be in Mode 2 for methods like PlannerData::decoupleFromPlanner(). You can put the class into Mode 2 by calling <a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a27850ed68cae9fc2f5f83559d36fbe7d" title="Set total state, i.e. the lift of the base state to the total space (last Spaceinformationptr in sequ...">setTotalState()</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="PlannerDataVertexAnnotated_8h_source.html#l00130">130</a> of file <a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/multilevel/datastructures/<a class="el" href="PlannerDataVertexAnnotated_8h_source.html">PlannerDataVertexAnnotated.h</a></li>
+<li>ompl/multilevel/datastructures/src/<a class="el" href="PlannerDataVertexAnnotated_8cpp_source.html">PlannerDataVertexAnnotated.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

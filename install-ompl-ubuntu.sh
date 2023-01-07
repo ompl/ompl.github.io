@@ -72,11 +72,11 @@ install_ompl()
     fi
     if [ -z $GITHUB ]; then
         if [ -z $APP]; then
-            wget -O - https://github.com/ompl/${OMPL}/archive/1.5.2.tar.gz | tar zxf -
-            cd ${OMPL}-1.5.2
+            wget -O - https://github.com/ompl/${OMPL}/archive/1.6.0.tar.gz | tar zxf -
+            cd ${OMPL}-1.6.0
         else
-            wget -O - https://github.com/ompl/${OMPL}/releases/download/1.5.2/${OMPL}-1.5.2-Source.tar.gz | tar zxf -
-            cd $OMPL-1.5.2-Source
+            wget -O - https://github.com/ompl/${OMPL}/releases/download/1.6.0/${OMPL}-1.6.0-Source.tar.gz | tar zxf -
+            cd $OMPL-1.6.0-Source
         fi
     else
         ${SUDO} apt-get -y install git
@@ -121,7 +121,7 @@ case $i in
         echo "Usage: `basename $0` [-p] [-a]"
         echo "  -p: enable Python bindings"
         echo "  -a: enable OMPL.app (implies '-p')"
-        echo "  -g: install latest commit from master branch on GitHub"
+        echo "  -g: install latest commit from main branch on GitHub"
     ;;
 esac
 done

@@ -1153,7 +1153,7 @@ To show that this can indeed be done, I have developed bindings for <a href="htt
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">void</span> <span class="n">ODE</span><span class="p">(</span><span class="k">const</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">q</span><span class="p">,</span> <span class="k">const</span> <span class="n">Control</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="n">ODESolver</span><span class="o">::</span><span class="n">StateType</span> <span class="o">&amp;</span><span class="n">qdot</span><span class="p">)</span>
     <span class="cm">/* Insert code here */</span>
-<span class="err">}</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
 <p>This method takes the input state q and a control c, and computes the change in the value of q, storing the differential into <code class="language-plaintext highlighter-rouge">qdot</code>.  The <a href="http://ompl.kavrakilab.org/classompl_1_1control_1_1ODESolver.html">ODESolver</a> wraps around the open-source <a href="http://odeint.org">ODEInt library</a>, which provides methods for high-order numerical integration.  Gone are the days of worrying about the numerical instability and potential large error of quick and dirty Euler integration.  A StatePropagator object can be extracted from the ODESolver class which encapsulates the entire integration and update process.</p>
 

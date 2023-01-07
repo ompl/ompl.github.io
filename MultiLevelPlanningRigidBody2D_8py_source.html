@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl/demos/multilevel/MultiLevelPlanningRigidBody2D.py Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d82d6b49cf46ae47a2b31a99c3fc68f6.html">demos</a></li><li class="navelem"><a class="el" href="dir_3f8786833f5651d7b04578a9061cab06.html">multilevel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">MultiLevelPlanningRigidBody2D.py</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">#!/usr/bin/env python</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"># Author: Mark Moll</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">from</span> os.path <span class="keyword">import</span> abspath, dirname, join</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">import</span> sys</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordflow">try</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">from</span> ompl <span class="keyword">import</span> util <span class="keyword">as</span> ou</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">from</span> ompl <span class="keyword">import</span> base <span class="keyword">as</span> ob</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">from</span> ompl <span class="keyword">import</span> geometric <span class="keyword">as</span> og</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordflow">except</span> ImportError:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment"># if the ompl module is not in the PYTHONPATH assume it is installed in a</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment"># subdirectory of the parent directory called &quot;py-bindings.&quot;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    sys.path.insert(0, join(dirname(dirname(dirname(abspath(__file__)))), <span class="stringliteral">&#39;py-bindings&#39;</span>))</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">from</span> ompl <span class="keyword">import</span> util <span class="keyword">as</span> ou</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">from</span> ompl <span class="keyword">import</span> base <span class="keyword">as</span> ob</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">from</span> ompl <span class="keyword">import</span> geometric <span class="keyword">as</span> og</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">from</span> math <span class="keyword">import</span> sqrt, pi</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"># Path Planning in SE2 = R2 \times SO2</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"># using quotient-spaces R2 and SE2</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">def </span>boxConstraint(x, y):</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    x = x - 0.5</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    y = y - 0.5</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    pos_cnstr = sqrt(x * x + y * y)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> pos_cnstr &gt; 0.2</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">def </span>isStateValid_SE2(state):</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> boxConstraint(state.getX(), state.getY()) <span class="keywordflow">and</span> state.getYaw() &lt; pi / 2.0</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">def </span>isStateValid_R2(state):</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">return</span> boxConstraint(state[0], state[1])</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment"># Setup SE2</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    SE2 = <a class="code hl_class" href="classompl_1_1base_1_1SE2StateSpace.html">ob.SE2StateSpace</a>()</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    bounds = <a class="code hl_class" href="classompl_1_1base_1_1RealVectorBounds.html">ob.RealVectorBounds</a>(2)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    bounds.setLow(0)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    bounds.setHigh(1)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    SE2.setBounds(bounds)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    si_SE2 = <a class="code hl_class" href="classompl_1_1base_1_1SpaceInformation.html">ob.SpaceInformation</a>(SE2)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    si_SE2.setStateValidityChecker(<a class="code hl_typedef" href="namespaceompl_1_1base.html#a7cd31d19ef5b789b0bff97bf6e249ebf">ob.StateValidityCheckerFn</a>(isStateValid_SE2))</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment"># Setup Quotient-Space R2</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    R2 = <a class="code hl_class" href="classompl_1_1base_1_1RealVectorStateSpace.html">ob.RealVectorStateSpace</a>(2)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    R2.setBounds(0, 1)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    si_R2 = <a class="code hl_class" href="classompl_1_1base_1_1SpaceInformation.html">ob.SpaceInformation</a>(R2)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    si_R2.setStateValidityChecker(<a class="code hl_typedef" href="namespaceompl_1_1base.html#a7cd31d19ef5b789b0bff97bf6e249ebf">ob.StateValidityCheckerFn</a>(isStateValid_R2))</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment"># Create vector of spaceinformationptr</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    si_vec = og.vectorSpaceInformation()</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    si_vec.append(si_R2)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    si_vec.append(si_SE2)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment"># Define Planning Problem</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    start_SE2 = <a class="code hl_class" href="classompl_1_1base_1_1State.html">ob.State</a>(SE2)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    goal_SE2 = <a class="code hl_class" href="classompl_1_1base_1_1State.html">ob.State</a>(SE2)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    start_SE2().setXY(0, 0)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    start_SE2().setYaw(0)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    goal_SE2().setXY(1, 1)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    goal_SE2().setYaw(0)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    pdef = <a class="code hl_class" href="classompl_1_1base_1_1ProblemDefinition.html">ob.ProblemDefinition</a>(si_SE2)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    pdef.setStartAndGoalStates(start_SE2, goal_SE2)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment"># Setup Planner using vector of spaceinformationptr</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    planner = og.QRRT(si_vec)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment"># Planner can be used as any other OMPL algorithm</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    planner.setProblemDefinition(pdef)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    planner.setup()</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    solved = planner.solve(1.0)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> solved:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        print(<span class="stringliteral">&#39;-&#39;</span> * 80)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        print(<span class="stringliteral">&#39;Configuration-Space Path (SE2):&#39;</span>)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        print(<span class="stringliteral">&#39;-&#39;</span> * 80)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        print(pdef.getSolutionPath())</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        print(<span class="stringliteral">&#39;-&#39;</span> * 80)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        print(<span class="stringliteral">&#39;Quotient-Space Path (R2):&#39;</span>)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        print(<span class="stringliteral">&#39;-&#39;</span> * 80)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        print(planner.getProblemDefinition(0).getSolutionPath())</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        nodes = planner.getFeasibleNodes()</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        print(<span class="stringliteral">&#39;-&#39;</span> * 80)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">for</span> (i, node) <span class="keywordflow">in</span> enumerate(nodes):</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            print(<span class="stringliteral">&#39;QuotientSpace%d has %d nodes.&#39;</span> % (i, node))</div>
+<div class="ttc" id="aclassompl_1_1base_1_1ProblemDefinition_html"><div class="ttname"><a href="classompl_1_1base_1_1ProblemDefinition.html">ompl::base::ProblemDefinition</a></div><div class="ttdoc">Definition of a problem to be solved. This includes the start state(s) for the system and a goal spec...</div><div class="ttdef"><b>Definition:</b> <a href="ProblemDefinition_8h_source.html#l00152">ProblemDefinition.h:153</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space.</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorBounds_8h_source.html#l00047">RealVectorBounds.h:48</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1RealVectorStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorStateSpace.html">ompl::base::RealVectorStateSpace</a></div><div class="ttdoc">A state space representing Rn. The distance function is the L2 norm.</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorStateSpace_8h_source.html#l00073">RealVectorStateSpace.h:74</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SE2StateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1SE2StateSpace.html">ompl::base::SE2StateSpace</a></div><div class="ttdoc">A state space representing SE(2)</div><div class="ttdef"><b>Definition:</b> <a href="SE2StateSpace_8h_source.html#l00049">SE2StateSpace.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformation_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformation.html">ompl::base::SpaceInformation</a></div><div class="ttdoc">The base class for space information. This contains all the information about the space planning is d...</div><div class="ttdef"><b>Definition:</b> <a href="base_2SpaceInformation_8h_source.html#l00081">SpaceInformation.h:82</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1base_html_a7cd31d19ef5b789b0bff97bf6e249ebf"><div class="ttname"><a href="namespaceompl_1_1base.html#a7cd31d19ef5b789b0bff97bf6e249ebf">ompl::base::StateValidityCheckerFn</a></div><div class="ttdeci">std::function&lt; bool(const State *)&gt; StateValidityCheckerFn</div><div class="ttdoc">If no state validity checking class is specified (StateValidityChecker), a std::function can be speci...</div><div class="ttdef"><b>Definition:</b> <a href="base_2SpaceInformation_8h_source.html#l00076">SpaceInformation.h:76</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

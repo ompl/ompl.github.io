@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reedsshepppathsegmenttype_5861',['ReedsSheppPathSegmentType',['../classompl_1_1base_1_1ReedsSheppStateSpace.html#a2b3e89dd4d89098fc1cfc2e38c27827d',1,'ompl::base::ReedsSheppStateSpace']]]
+  ['projectiontype_0',['ProjectionType',['../namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7',1,'ompl::multilevel']]]
 ];

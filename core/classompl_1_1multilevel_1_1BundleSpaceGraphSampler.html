@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl::multilevel::BundleSpaceGraphSampler Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1multilevel.html">multilevel</a></li><li class="navelem"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html">BundleSpaceGraphSampler</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::multilevel::BundleSpaceGraphSampler Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Inheritance diagram for ompl::multilevel::BundleSpaceGraphSampler:</div>
+<div class="dyncontent">
+<div class="center"><img src="classompl_1_1multilevel_1_1BundleSpaceGraphSampler__inherit__graph.png" border="0" usemap="#aompl_1_1multilevel_1_1BundleSpaceGraphSampler_inherit__map" alt="Inheritance graph"/></div>
+<map name="aompl_1_1multilevel_1_1BundleSpaceGraphSampler_inherit__map" id="aompl_1_1multilevel_1_1BundleSpaceGraphSampler_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,86,167,127"/>
+<area shape="rect" href="classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomDegreeVertex.html" title=" " alt="" coords="215,5,448,61"/>
+<area shape="rect" href="classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomEdge.html" title=" " alt="" coords="221,86,442,127"/>
+<area shape="rect" href="classompl_1_1multilevel_1_1BundleSpaceGraphSamplerRandomVertex.html" title=" " alt="" coords="217,151,446,193"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a2b1eb7e63d1af4c212be1da6f7d409e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a2b1eb7e63d1af4c212be1da6f7d409e8">BundleSpaceGraphSampler</a> (<a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> *)</td></tr>
+<tr class="separator:a2b1eb7e63d1af4c212be1da6f7d409e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0a2149342cfc2e9a61e9539fd10bde"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#adf0a2149342cfc2e9a61e9539fd10bde">sample</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *xRandom)</td></tr>
+<tr class="separator:adf0a2149342cfc2e9a61e9539fd10bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7655cc0149c87837e6b296528be42ec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a7655cc0149c87837e6b296528be42ec8">setPathBiasStartSegment</a> (double)</td></tr>
+<tr class="separator:a7655cc0149c87837e6b296528be42ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7756de9151e3ae8023b1c4ca1ae741c2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a7756de9151e3ae8023b1c4ca1ae741c2">getPathBiasStartSegment</a> ()</td></tr>
+<tr class="separator:a7756de9151e3ae8023b1c4ca1ae741c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d726d21069044c0f2ff190a1dd6231c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a5d726d21069044c0f2ff190a1dd6231c">disableSegmentBias</a> ()</td></tr>
+<tr class="separator:a5d726d21069044c0f2ff190a1dd6231c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f420e8c571d12ec3e0c54d337698e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a77f420e8c571d12ec3e0c54d337698e3">disablePathBias</a> ()</td></tr>
+<tr class="separator:a77f420e8c571d12ec3e0c54d337698e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48a78f926fe4a80239c8caf46650731"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#ad48a78f926fe4a80239c8caf46650731">clear</a> ()</td></tr>
+<tr class="separator:ad48a78f926fe4a80239c8caf46650731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a2c0b323287dbc94e8583903cc09ae586"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a2c0b323287dbc94e8583903cc09ae586">Vertex</a> = ompl::multilevel::BundleSpaceGraph::Vertex</td></tr>
+<tr class="separator:a2c0b323287dbc94e8583903cc09ae586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5b9659867f10c6ac597a3df7b6e679"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a1f5b9659867f10c6ac597a3df7b6e679">RNGType</a> = boost::minstd_rand</td></tr>
+<tr class="separator:a1f5b9659867f10c6ac597a3df7b6e679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ad17155dd340e8ac4c0e56179d7b0c20c"><td class="memItemLeft" align="right" valign="top"><a id="ad17155dd340e8ac4c0e56179d7b0c20c" name="ad17155dd340e8ac4c0e56179d7b0c20c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>sampleImplementation</b> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *xRandom)=0</td></tr>
+<tr class="separator:ad17155dd340e8ac4c0e56179d7b0c20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a4aa6f7f7b98e30fc622059956902c41d"><td class="memItemLeft" align="right" valign="top">RNGType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a4aa6f7f7b98e30fc622059956902c41d">rng_boost</a></td></tr>
+<tr class="separator:a4aa6f7f7b98e30fc622059956902c41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01e654b25c50e000416074ede4142d6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1RNG.html">RNG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a01e654b25c50e000416074ede4142d6f">rng_</a></td></tr>
+<tr class="separator:a01e654b25c50e000416074ede4142d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec6154efe5b48cb7516af883ee516af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a7ec6154efe5b48cb7516af883ee516af">bundleSpaceGraph_</a></td></tr>
+<tr class="separator:a7ec6154efe5b48cb7516af883ee516af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64b0bb451982031ec3ee202e052dfc1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#af64b0bb451982031ec3ee202e052dfc1">epsilonGraphThickening_</a> {0.0}</td></tr>
+<tr class="separator:af64b0bb451982031ec3ee202e052dfc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2414aac8274e2628f80613c804d932"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#afa2414aac8274e2628f80613c804d932">epsilonGraphThickeningFraction_</a> {1e-3}</td></tr>
+<tr class="separator:afa2414aac8274e2628f80613c804d932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3aa2e0c3095979e3e504ee74dd1fdb8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#af3aa2e0c3095979e3e504ee74dd1fdb8">pathBiasFixed_</a> {0.1}</td></tr>
+<tr class="separator:af3aa2e0c3095979e3e504ee74dd1fdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae261e489c43853c8af65c5688526737e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#ae261e489c43853c8af65c5688526737e">pathBiasStartSegment_</a> {0.0}</td></tr>
+<tr class="separator:ae261e489c43853c8af65c5688526737e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f99b57e45e64a6bffb2cac0b1e01e77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a0f99b57e45e64a6bffb2cac0b1e01e77">segmentBias_</a> {true}</td></tr>
+<tr class="separator:a0f99b57e45e64a6bffb2cac0b1e01e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c60fcb81f16618fba32b25df44f3b24"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a5c60fcb81f16618fba32b25df44f3b24">exponentialDecayLambda_</a> {1e-5}</td></tr>
+<tr class="separator:a5c60fcb81f16618fba32b25df44f3b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebbf3603b8e24a547cc8ac5dc2581ff9"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#aebbf3603b8e24a547cc8ac5dc2581ff9">counterPathSampling_</a> {0}</td></tr>
+<tr class="separator:aebbf3603b8e24a547cc8ac5dc2581ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a868eaf325a86c246879678c4a24381"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a2a868eaf325a86c246879678c4a24381">counterGraphSampling_</a> {0}</td></tr>
+<tr class="separator:a2a868eaf325a86c246879678c4a24381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6833e49d68a57a99b903cbeb12e34e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1ParameterExponentialDecay.html">ParameterExponentialDecay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#afb6833e49d68a57a99b903cbeb12e34e">pathBiasDecay_</a></td></tr>
+<tr class="separator:afb6833e49d68a57a99b903cbeb12e34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3797297647583110d78b7ad057a08ec4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1ParameterExponentialDecay.html">ParameterExponentialDecay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a3797297647583110d78b7ad057a08ec4">graphThickeningGrowth_</a></td></tr>
+<tr class="separator:a3797297647583110d78b7ad057a08ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e8f451ef816820ff4ff7864b3fec23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1ParameterExponentialDecay.html">ParameterExponentialDecay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraphSampler.html#a35e8f451ef816820ff4ff7864b3fec23">pathThickeningGrowth_</a></td></tr>
+<tr class="separator:a35e8f451ef816820ff4ff7864b3fec23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00050">50</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1f5b9659867f10c6ac597a3df7b6e679" name="a1f5b9659867f10c6ac597a3df7b6e679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f5b9659867f10c6ac597a3df7b6e679">&#9670;&nbsp;</a></span>RNGType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using ompl::multilevel::BundleSpaceGraphSampler::RNGType =  boost::minstd_rand</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00075">75</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c0b323287dbc94e8583903cc09ae586" name="a2c0b323287dbc94e8583903cc09ae586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c0b323287dbc94e8583903cc09ae586">&#9670;&nbsp;</a></span>Vertex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using ompl::multilevel::BundleSpaceGraphSampler::Vertex =  ompl::multilevel::BundleSpaceGraph::Vertex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00053">53</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2b1eb7e63d1af4c212be1da6f7d409e8" name="a2b1eb7e63d1af4c212be1da6f7d409e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1eb7e63d1af4c212be1da6f7d409e8">&#9670;&nbsp;</a></span>BundleSpaceGraphSampler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::multilevel::BundleSpaceGraphSampler::BundleSpaceGraphSampler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> *&#160;</td>
+          <td class="paramname"><em>bundleSpaceGraph</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8cpp_source.html#l00041">41</a> of file <a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad48a78f926fe4a80239c8caf46650731" name="ad48a78f926fe4a80239c8caf46650731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48a78f926fe4a80239c8caf46650731">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::multilevel::BundleSpaceGraphSampler::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8cpp_source.html#l00060">60</a> of file <a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a77f420e8c571d12ec3e0c54d337698e3" name="a77f420e8c571d12ec3e0c54d337698e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f420e8c571d12ec3e0c54d337698e3">&#9670;&nbsp;</a></span>disablePathBias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::multilevel::BundleSpaceGraphSampler::disablePathBias </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8cpp_source.html#l00075">75</a> of file <a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5d726d21069044c0f2ff190a1dd6231c" name="a5d726d21069044c0f2ff190a1dd6231c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d726d21069044c0f2ff190a1dd6231c">&#9670;&nbsp;</a></span>disableSegmentBias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::multilevel::BundleSpaceGraphSampler::disableSegmentBias </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8cpp_source.html#l00070">70</a> of file <a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7756de9151e3ae8023b1c4ca1ae741c2" name="a7756de9151e3ae8023b1c4ca1ae741c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7756de9151e3ae8023b1c4ca1ae741c2">&#9670;&nbsp;</a></span>getPathBiasStartSegment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::multilevel::BundleSpaceGraphSampler::getPathBiasStartSegment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8cpp_source.html#l00104">104</a> of file <a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adf0a2149342cfc2e9a61e9539fd10bde" name="adf0a2149342cfc2e9a61e9539fd10bde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf0a2149342cfc2e9a61e9539fd10bde">&#9670;&nbsp;</a></span>sample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::multilevel::BundleSpaceGraphSampler::sample </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&#160;</td>
+          <td class="paramname"><em>xRandom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8cpp_source.html#l00109">109</a> of file <a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7655cc0149c87837e6b296528be42ec8" name="a7655cc0149c87837e6b296528be42ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7655cc0149c87837e6b296528be42ec8">&#9670;&nbsp;</a></span>setPathBiasStartSegment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::multilevel::BundleSpaceGraphSampler::setPathBiasStartSegment </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8cpp_source.html#l00082">82</a> of file <a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7ec6154efe5b48cb7516af883ee516af" name="a7ec6154efe5b48cb7516af883ee516af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec6154efe5b48cb7516af883ee516af">&#9670;&nbsp;</a></span>bundleSpaceGraph_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a>* ompl::multilevel::BundleSpaceGraphSampler::bundleSpaceGraph_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00079">79</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a868eaf325a86c246879678c4a24381" name="a2a868eaf325a86c246879678c4a24381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a868eaf325a86c246879678c4a24381">&#9670;&nbsp;</a></span>counterGraphSampling_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long ompl::multilevel::BundleSpaceGraphSampler::counterGraphSampling_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00095">95</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="aebbf3603b8e24a547cc8ac5dc2581ff9" name="aebbf3603b8e24a547cc8ac5dc2581ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebbf3603b8e24a547cc8ac5dc2581ff9">&#9670;&nbsp;</a></span>counterPathSampling_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long ompl::multilevel::BundleSpaceGraphSampler::counterPathSampling_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00093">93</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="af64b0bb451982031ec3ee202e052dfc1" name="af64b0bb451982031ec3ee202e052dfc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64b0bb451982031ec3ee202e052dfc1">&#9670;&nbsp;</a></span>epsilonGraphThickening_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::multilevel::BundleSpaceGraphSampler::epsilonGraphThickening_ {0.0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00081">81</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="afa2414aac8274e2628f80613c804d932" name="afa2414aac8274e2628f80613c804d932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2414aac8274e2628f80613c804d932">&#9670;&nbsp;</a></span>epsilonGraphThickeningFraction_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::multilevel::BundleSpaceGraphSampler::epsilonGraphThickeningFraction_ {1e-3}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00083">83</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c60fcb81f16618fba32b25df44f3b24" name="a5c60fcb81f16618fba32b25df44f3b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c60fcb81f16618fba32b25df44f3b24">&#9670;&nbsp;</a></span>exponentialDecayLambda_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::multilevel::BundleSpaceGraphSampler::exponentialDecayLambda_ {1e-5}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00091">91</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a3797297647583110d78b7ad057a08ec4" name="a3797297647583110d78b7ad057a08ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3797297647583110d78b7ad057a08ec4">&#9670;&nbsp;</a></span>graphThickeningGrowth_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1ParameterExponentialDecay.html">ParameterExponentialDecay</a> ompl::multilevel::BundleSpaceGraphSampler::graphThickeningGrowth_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00098">98</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="afb6833e49d68a57a99b903cbeb12e34e" name="afb6833e49d68a57a99b903cbeb12e34e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6833e49d68a57a99b903cbeb12e34e">&#9670;&nbsp;</a></span>pathBiasDecay_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1ParameterExponentialDecay.html">ParameterExponentialDecay</a> ompl::multilevel::BundleSpaceGraphSampler::pathBiasDecay_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00097">97</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="af3aa2e0c3095979e3e504ee74dd1fdb8" name="af3aa2e0c3095979e3e504ee74dd1fdb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3aa2e0c3095979e3e504ee74dd1fdb8">&#9670;&nbsp;</a></span>pathBiasFixed_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::multilevel::BundleSpaceGraphSampler::pathBiasFixed_ {0.1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00085">85</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="ae261e489c43853c8af65c5688526737e" name="ae261e489c43853c8af65c5688526737e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae261e489c43853c8af65c5688526737e">&#9670;&nbsp;</a></span>pathBiasStartSegment_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::multilevel::BundleSpaceGraphSampler::pathBiasStartSegment_ {0.0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00087">87</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a35e8f451ef816820ff4ff7864b3fec23" name="a35e8f451ef816820ff4ff7864b3fec23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e8f451ef816820ff4ff7864b3fec23">&#9670;&nbsp;</a></span>pathThickeningGrowth_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1ParameterExponentialDecay.html">ParameterExponentialDecay</a> ompl::multilevel::BundleSpaceGraphSampler::pathThickeningGrowth_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00099">99</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a01e654b25c50e000416074ede4142d6f" name="a01e654b25c50e000416074ede4142d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01e654b25c50e000416074ede4142d6f">&#9670;&nbsp;</a></span>rng_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1RNG.html">RNG</a> ompl::multilevel::BundleSpaceGraphSampler::rng_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00077">77</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a4aa6f7f7b98e30fc622059956902c41d" name="a4aa6f7f7b98e30fc622059956902c41d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa6f7f7b98e30fc622059956902c41d">&#9670;&nbsp;</a></span>rng_boost</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RNGType ompl::multilevel::BundleSpaceGraphSampler::rng_boost</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00076">76</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<a id="a0f99b57e45e64a6bffb2cac0b1e01e77" name="a0f99b57e45e64a6bffb2cac0b1e01e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f99b57e45e64a6bffb2cac0b1e01e77">&#9670;&nbsp;</a></span>segmentBias_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::multilevel::BundleSpaceGraphSampler::segmentBias_ {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GraphSampler_8h_source.html#l00089">89</a> of file <a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/multilevel/datastructures/graphsampler/<a class="el" href="GraphSampler_8h_source.html">GraphSampler.h</a></li>
+<li>ompl/multilevel/datastructures/graphsampler/src/<a class="el" href="GraphSampler_8cpp_source.html">GraphSampler.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

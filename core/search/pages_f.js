@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['teaching_20module_20on_20motion_20planning_5822',['Teaching Module on Motion Planning',['../education.html',1,'']]],
-  ['thank_20you_5823',['Thank you',['../thank-you.html',1,'']]],
-  ['the_20open_20motion_20planning_20library_5824',['The Open Motion Planning Library',['../index.html',1,'']]],
-  ['todo_20list_5825',['Todo List',['../todo.html',1,'']]],
-  ['tutorials_5826',['Tutorials',['../tutorials.html',1,'']]]
+  ['use_20of_20projections_20in_20ompl_0',['Use of Projections in OMPL',['../projections.html',1,'']]],
+  ['using_20ompl_20with_20morse_1',['Using OMPL with Morse',['../morse.html',1,'']]],
+  ['using_20the_20odesolver_20for_20planning_20with_20controls_2',['Using the ODESolver for Planning with Controls',['../odeint.html',1,'']]]
 ];

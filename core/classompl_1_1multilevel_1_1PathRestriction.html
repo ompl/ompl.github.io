@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl::multilevel::PathRestriction Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1multilevel.html">multilevel</a></li><li class="navelem"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html">PathRestriction</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classompl_1_1multilevel_1_1PathRestriction-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::multilevel::PathRestriction Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Representation of path restriction (union of fibers over a base path).  
+ <a href="classompl_1_1multilevel_1_1PathRestriction.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="PathRestriction_8h_source.html">ompl/multilevel/datastructures/pathrestriction/PathRestriction.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9de88946c588ba1e699c7c7b39e3a571"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a9de88946c588ba1e699c7c7b39e3a571">PathRestriction</a> (<a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> *)</td></tr>
+<tr class="separator:a9de88946c588ba1e699c7c7b39e3a571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740499098f8e47d7f34c2bc4df6d2424"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a740499098f8e47d7f34c2bc4df6d2424">clear</a> ()</td></tr>
+<tr class="separator:a740499098f8e47d7f34c2bc4df6d2424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5636d322e3241cf4e46170b2bd7fccb6"><td class="memItemLeft" align="right" valign="top"><a id="a5636d322e3241cf4e46170b2bd7fccb6" name="a5636d322e3241cf4e46170b2bd7fccb6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setBasePath</b> (base::PathPtr)</td></tr>
+<tr class="memdesc:a5636d322e3241cf4e46170b2bd7fccb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set base path over which restriction is defined. <br /></td></tr>
+<tr class="separator:a5636d322e3241cf4e46170b2bd7fccb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f3affc886e64778fea195e21b48f8b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a0f3affc886e64778fea195e21b48f8b9">setBasePath</a> (std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> * &gt;)</td></tr>
+<tr class="memdesc:a0f3affc886e64778fea195e21b48f8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set base path over which restriction is defined.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a0f3affc886e64778fea195e21b48f8b9">More...</a><br /></td></tr>
+<tr class="separator:a0f3affc886e64778fea195e21b48f8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adced9668c87edac300a6c2824b91b8d5"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#adced9668c87edac300a6c2824b91b8d5">getBasePath</a> () const</td></tr>
+<tr class="memdesc:adced9668c87edac300a6c2824b91b8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return discrete states representation of base path.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#adced9668c87edac300a6c2824b91b8d5">More...</a><br /></td></tr>
+<tr class="separator:adced9668c87edac300a6c2824b91b8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f997b9d5dd4715aadca32dad782fee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#af9f997b9d5dd4715aadca32dad782fee">setFindSectionStrategy</a> (FindSectionType type)</td></tr>
+<tr class="memdesc:af9f997b9d5dd4715aadca32dad782fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose algorithm to find sections over restriction.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#af9f997b9d5dd4715aadca32dad782fee">More...</a><br /></td></tr>
+<tr class="separator:af9f997b9d5dd4715aadca32dad782fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd79a4ce0b39b185446adc730f11e734"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#acd79a4ce0b39b185446adc730f11e734">hasFeasibleSection</a> (<a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html">Configuration</a> *const, <a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html">Configuration</a> *const)</td></tr>
+<tr class="memdesc:acd79a4ce0b39b185446adc730f11e734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if feasible section exists between xStart and xGoal.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#acd79a4ce0b39b185446adc730f11e734">More...</a><br /></td></tr>
+<tr class="separator:acd79a4ce0b39b185446adc730f11e734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6596b76f31a0e22b587321383b5d0df8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a6596b76f31a0e22b587321383b5d0df8">getBundleSpaceGraph</a> ()</td></tr>
+<tr class="memdesc:a6596b76f31a0e22b587321383b5d0df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return pointer to underlying bundle space graph.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a6596b76f31a0e22b587321383b5d0df8">More...</a><br /></td></tr>
+<tr class="separator:a6596b76f31a0e22b587321383b5d0df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bf960114a1a0deaa7eb84c830845d21"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a1bf960114a1a0deaa7eb84c830845d21">getLengthBasePath</a> () const</td></tr>
+<tr class="memdesc:a1bf960114a1a0deaa7eb84c830845d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of base path.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a1bf960114a1a0deaa7eb84c830845d21">More...</a><br /></td></tr>
+<tr class="separator:a1bf960114a1a0deaa7eb84c830845d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaac15c5e8e197df9583e6fdb64938ed"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#adaac15c5e8e197df9583e6fdb64938ed">size</a> () const</td></tr>
+<tr class="memdesc:adaac15c5e8e197df9583e6fdb64938ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return number of discrete states in base path.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#adaac15c5e8e197df9583e6fdb64938ed">More...</a><br /></td></tr>
+<tr class="separator:adaac15c5e8e197df9583e6fdb64938ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea802102a1ccdcc293fd12eb248b1cc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a1ea802102a1ccdcc293fd12eb248b1cc">getBaseStateAt</a> (int k) const</td></tr>
+<tr class="memdesc:a1ea802102a1ccdcc293fd12eb248b1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return State at index k on base path.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a1ea802102a1ccdcc293fd12eb248b1cc">More...</a><br /></td></tr>
+<tr class="separator:a1ea802102a1ccdcc293fd12eb248b1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01119e323cd4bcbb66c1b804ee698a5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#aa01119e323cd4bcbb66c1b804ee698a5">getLengthIntermediateBasePath</a> (int k)</td></tr>
+<tr class="memdesc:aa01119e323cd4bcbb66c1b804ee698a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length between base state indices k and k+1.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#aa01119e323cd4bcbb66c1b804ee698a5">More...</a><br /></td></tr>
+<tr class="separator:aa01119e323cd4bcbb66c1b804ee698a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8f85ea495724ccb7ed2cf0a180c6f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#abb8f85ea495724ccb7ed2cf0a180c6f6">getLengthBasePathUntil</a> (int k)</td></tr>
+<tr class="memdesc:abb8f85ea495724ccb7ed2cf0a180c6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cumulative length until base state index k.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#abb8f85ea495724ccb7ed2cf0a180c6f6">More...</a><br /></td></tr>
+<tr class="separator:abb8f85ea495724ccb7ed2cf0a180c6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a1c06c3f9d946b7303956eeca75bd3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a71a1c06c3f9d946b7303956eeca75bd3">getBasePathLastIndexFromLocation</a> (double d)</td></tr>
+<tr class="memdesc:a71a1c06c3f9d946b7303956eeca75bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a position d in [0, lengthbasepath_], return the index of the nearest state on base path before d.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a71a1c06c3f9d946b7303956eeca75bd3">More...</a><br /></td></tr>
+<tr class="separator:a71a1c06c3f9d946b7303956eeca75bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ef767dee8ace6c00c324b2ac2f861d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#aa8ef767dee8ace6c00c324b2ac2f861d">interpolateBasePath</a> (double t, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&amp;state) const</td></tr>
+<tr class="memdesc:aa8ef767dee8ace6c00c324b2ac2f861d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate state on base path at position t in [0, lengthbasepath_] (using discrete state representation)  <a href="classompl_1_1multilevel_1_1PathRestriction.html#aa8ef767dee8ace6c00c324b2ac2f861d">More...</a><br /></td></tr>
+<tr class="separator:aa8ef767dee8ace6c00c324b2ac2f861d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad834beedfab9c86adde57a69a163f2e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#ad834beedfab9c86adde57a69a163f2e9">print</a> (std::ostream &amp;) const</td></tr>
+<tr class="separator:ad834beedfab9c86adde57a69a163f2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a1047958ddc34a87a85329f9bbd4f44bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a1047958ddc34a87a85329f9bbd4f44bf">bundleSpaceGraph_</a></td></tr>
+<tr class="memdesc:a1047958ddc34a87a85329f9bbd4f44bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to associated bundle space.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a1047958ddc34a87a85329f9bbd4f44bf">More...</a><br /></td></tr>
+<tr class="separator:a1047958ddc34a87a85329f9bbd4f44bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0a5b693be0b5ef1f7e4d429b047217"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a8a0a5b693be0b5ef1f7e4d429b047217">basePath_</a></td></tr>
+<tr class="memdesc:a8a0a5b693be0b5ef1f7e4d429b047217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base path over which we define the restriction.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a8a0a5b693be0b5ef1f7e4d429b047217">More...</a><br /></td></tr>
+<tr class="separator:a8a0a5b693be0b5ef1f7e4d429b047217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4485795f9d7de06cd6c1b9bf0772cd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a3c4485795f9d7de06cd6c1b9bf0772cd">lengthBasePath_</a> {0.0}</td></tr>
+<tr class="memdesc:a3c4485795f9d7de06cd6c1b9bf0772cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of set base path.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a3c4485795f9d7de06cd6c1b9bf0772cd">More...</a><br /></td></tr>
+<tr class="separator:a3c4485795f9d7de06cd6c1b9bf0772cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1f2e4d9adf12156f5167d775e63610"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#a4c1f2e4d9adf12156f5167d775e63610">lengthsIntermediateBasePath_</a></td></tr>
+<tr class="memdesc:a4c1f2e4d9adf12156f5167d775e63610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intermediate lengths between states on base path.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#a4c1f2e4d9adf12156f5167d775e63610">More...</a><br /></td></tr>
+<tr class="separator:a4c1f2e4d9adf12156f5167d775e63610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1541e504c15f862018a7d2408e0516f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#af1541e504c15f862018a7d2408e0516f">lengthsCumulativeBasePath_</a></td></tr>
+<tr class="memdesc:af1541e504c15f862018a7d2408e0516f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cumulative lengths between states on base path.  <a href="classompl_1_1multilevel_1_1PathRestriction.html#af1541e504c15f862018a7d2408e0516f">More...</a><br /></td></tr>
+<tr class="separator:af1541e504c15f862018a7d2408e0516f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c9dbf7a84ae58a61721e89614714be"><td class="memItemLeft" align="right" valign="top">FindSectionPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#aa1c9dbf7a84ae58a61721e89614714be">findSection_</a></td></tr>
+<tr class="memdesc:aa1c9dbf7a84ae58a61721e89614714be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strategy to find a feasible section (between specific elements on fiber at first base path index and fiber at last base path index)  <a href="classompl_1_1multilevel_1_1PathRestriction.html#aa1c9dbf7a84ae58a61721e89614714be">More...</a><br /></td></tr>
+<tr class="separator:aa1c9dbf7a84ae58a61721e89614714be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac8b7a330f53c2538fee82eed2ecbbba5"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html#ac8b7a330f53c2538fee82eed2ecbbba5">operator&lt;&lt;</a> (std::ostream &amp;, const <a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html">PathRestriction</a> &amp;)</td></tr>
+<tr class="separator:ac8b7a330f53c2538fee82eed2ecbbba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Representation of path restriction (union of fibers over a base path). </p>
+<p >Class represents path restriction by keeping a set of discrete base path states. To access states inbetween, we use the interpolateBasePath method. To find a feasible section over a path restriction, we use the strategy pattern <a class="el" href="classompl_1_1multilevel_1_1FindSection.html">FindSection</a>, which has different implementations.</p>
+<p >To use this class, you need to set a base path (setBasePath), then you can search for sections over this base path (using hasFeasibleSection). Internally, this calls the <a class="el" href="classompl_1_1multilevel_1_1FindSection.html">FindSection</a> algorithm, which can be changed in Constructor method. Please see the class <a class="el" href="classompl_1_1multilevel_1_1FindSection.html">ompl::multilevel::FindSection</a> for details on finding feasible sections.</p>
+<dl class="section user"><dt>External documentation</dt><dd>A. Orthey and M. Toussaint, Section Patterns: Efficiently Solving Narrow Passage Problems using Multilevel Motion Planning, <em>arXiv:2010.14524 [cs.RO]</em>, 2020 <a href="https://arxiv.org/pdf/2010.14524.pdf">[PDF]</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8h_source.html#l00098">98</a> of file <a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9de88946c588ba1e699c7c7b39e3a571" name="a9de88946c588ba1e699c7c7b39e3a571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de88946c588ba1e699c7c7b39e3a571">&#9670;&nbsp;</a></span>PathRestriction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PathRestriction::PathRestriction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> *&#160;</td>
+          <td class="paramname"><em>bundleSpaceGraph</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00053">53</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6401a24d0c0c440a5da7a5cdaad956b3" name="a6401a24d0c0c440a5da7a5cdaad956b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6401a24d0c0c440a5da7a5cdaad956b3">&#9670;&nbsp;</a></span>~PathRestriction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PathRestriction::~PathRestriction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00075">75</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a740499098f8e47d7f34c2bc4df6d2424" name="a740499098f8e47d7f34c2bc4df6d2424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740499098f8e47d7f34c2bc4df6d2424">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PathRestriction::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00079">79</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adced9668c87edac300a6c2824b91b8d5" name="adced9668c87edac300a6c2824b91b8d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adced9668c87edac300a6c2824b91b8d5">&#9670;&nbsp;</a></span>getBasePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> * &gt; &amp; PathRestriction::getBasePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return discrete states representation of base path. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00150">150</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a71a1c06c3f9d946b7303956eeca75bd3" name="a71a1c06c3f9d946b7303956eeca75bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a1c06c3f9d946b7303956eeca75bd3">&#9670;&nbsp;</a></span>getBasePathLastIndexFromLocation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PathRestriction::getBasePathLastIndexFromLocation </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Given a position d in [0, lengthbasepath_], return the index of the nearest state on base path before d. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00191">191</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ea802102a1ccdcc293fd12eb248b1cc" name="a1ea802102a1ccdcc293fd12eb248b1cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea802102a1ccdcc293fd12eb248b1cc">&#9670;&nbsp;</a></span>getBaseStateAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> * PathRestriction::getBaseStateAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return State at index k on base path. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00165">165</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6596b76f31a0e22b587321383b5d0df8" name="a6596b76f31a0e22b587321383b5d0df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6596b76f31a0e22b587321383b5d0df8">&#9670;&nbsp;</a></span>getBundleSpaceGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a> * PathRestriction::getBundleSpaceGraph </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return pointer to underlying bundle space graph. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00087">87</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1bf960114a1a0deaa7eb84c830845d21" name="a1bf960114a1a0deaa7eb84c830845d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bf960114a1a0deaa7eb84c830845d21">&#9670;&nbsp;</a></span>getLengthBasePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PathRestriction::getLengthBasePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Length of base path. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00155">155</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abb8f85ea495724ccb7ed2cf0a180c6f6" name="abb8f85ea495724ccb7ed2cf0a180c6f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8f85ea495724ccb7ed2cf0a180c6f6">&#9670;&nbsp;</a></span>getLengthBasePathUntil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PathRestriction::getLengthBasePathUntil </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cumulative length until base state index k. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00176">176</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa01119e323cd4bcbb66c1b804ee698a5" name="aa01119e323cd4bcbb66c1b804ee698a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa01119e323cd4bcbb66c1b804ee698a5">&#9670;&nbsp;</a></span>getLengthIntermediateBasePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PathRestriction::getLengthIntermediateBasePath </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Length between base state indices k and k+1. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00171">171</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acd79a4ce0b39b185446adc730f11e734" name="acd79a4ce0b39b185446adc730f11e734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd79a4ce0b39b185446adc730f11e734">&#9670;&nbsp;</a></span>hasFeasibleSection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PathRestriction::hasFeasibleSection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html">Configuration</a> * const&#160;</td>
+          <td class="paramname"><em>xStart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph_1_1Configuration.html">Configuration</a> * const&#160;</td>
+          <td class="paramname"><em>xGoal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if feasible section exists between xStart and xGoal. </p>
+<p >NOTE: "const ptr*" means that the pointer itself is const "ptr* const" means that the content of the pointer is const (but ptr can change) </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00205">205</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa8ef767dee8ace6c00c324b2ac2f861d" name="aa8ef767dee8ace6c00c324b2ac2f861d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ef767dee8ace6c00c324b2ac2f861d">&#9670;&nbsp;</a></span>interpolateBasePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PathRestriction::interpolateBasePath </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interpolate state on base path at position t in [0, lengthbasepath_] (using discrete state representation) </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00119">119</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad834beedfab9c86adde57a69a163f2e9" name="ad834beedfab9c86adde57a69a163f2e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad834beedfab9c86adde57a69a163f2e9">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PathRestriction::print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00222">222</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0f3affc886e64778fea195e21b48f8b9" name="a0f3affc886e64778fea195e21b48f8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f3affc886e64778fea195e21b48f8b9">&#9670;&nbsp;</a></span>setBasePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PathRestriction::setBasePath </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> * &gt;&#160;</td>
+          <td class="paramname"><em>basePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set base path over which restriction is defined. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00100">100</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af9f997b9d5dd4715aadca32dad782fee" name="af9f997b9d5dd4715aadca32dad782fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f997b9d5dd4715aadca32dad782fee">&#9670;&nbsp;</a></span>setFindSectionStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PathRestriction::setFindSectionStrategy </td>
+          <td>(</td>
+          <td class="paramtype">FindSectionType&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Choose algorithm to find sections over restriction. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00058">58</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adaac15c5e8e197df9583e6fdb64938ed" name="adaac15c5e8e197df9583e6fdb64938ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaac15c5e8e197df9583e6fdb64938ed">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int PathRestriction::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return number of discrete states in base path. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00160">160</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ac8b7a330f53c2538fee82eed2ecbbba5" name="ac8b7a330f53c2538fee82eed2ecbbba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b7a330f53c2538fee82eed2ecbbba5">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1multilevel_1_1PathRestriction.html">PathRestriction</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8cpp_source.html#l00245">245</a> of file <a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8a0a5b693be0b5ef1f7e4d429b047217" name="a8a0a5b693be0b5ef1f7e4d429b047217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0a5b693be0b5ef1f7e4d429b047217">&#9670;&nbsp;</a></span>basePath_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *&gt; ompl::multilevel::PathRestriction::basePath_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Base path over which we define the restriction. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8h_source.html#l00163">163</a> of file <a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a>.</p>
+
+</div>
+</div>
+<a id="a1047958ddc34a87a85329f9bbd4f44bf" name="a1047958ddc34a87a85329f9bbd4f44bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1047958ddc34a87a85329f9bbd4f44bf">&#9670;&nbsp;</a></span>bundleSpaceGraph_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1multilevel_1_1BundleSpaceGraph.html">BundleSpaceGraph</a>* ompl::multilevel::PathRestriction::bundleSpaceGraph_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to associated bundle space. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8h_source.html#l00160">160</a> of file <a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1c9dbf7a84ae58a61721e89614714be" name="aa1c9dbf7a84ae58a61721e89614714be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c9dbf7a84ae58a61721e89614714be">&#9670;&nbsp;</a></span>findSection_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FindSectionPtr ompl::multilevel::PathRestriction::findSection_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Strategy to find a feasible section (between specific elements on fiber at first base path index and fiber at last base path index) </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8h_source.html#l00177">177</a> of file <a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a>.</p>
+
+</div>
+</div>
+<a id="a3c4485795f9d7de06cd6c1b9bf0772cd" name="a3c4485795f9d7de06cd6c1b9bf0772cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c4485795f9d7de06cd6c1b9bf0772cd">&#9670;&nbsp;</a></span>lengthBasePath_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::multilevel::PathRestriction::lengthBasePath_ {0.0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Length of set base path. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8h_source.html#l00166">166</a> of file <a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a>.</p>
+
+</div>
+</div>
+<a id="af1541e504c15f862018a7d2408e0516f" name="af1541e504c15f862018a7d2408e0516f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1541e504c15f862018a7d2408e0516f">&#9670;&nbsp;</a></span>lengthsCumulativeBasePath_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; ompl::multilevel::PathRestriction::lengthsCumulativeBasePath_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cumulative lengths between states on base path. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8h_source.html#l00172">172</a> of file <a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c1f2e4d9adf12156f5167d775e63610" name="a4c1f2e4d9adf12156f5167d775e63610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1f2e4d9adf12156f5167d775e63610">&#9670;&nbsp;</a></span>lengthsIntermediateBasePath_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; ompl::multilevel::PathRestriction::lengthsIntermediateBasePath_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Intermediate lengths between states on base path. </p>
+
+<p class="definition">Definition at line <a class="el" href="PathRestriction_8h_source.html#l00169">169</a> of file <a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/multilevel/datastructures/pathrestriction/<a class="el" href="PathRestriction_8h_source.html">PathRestriction.h</a></li>
+<li>ompl/multilevel/datastructures/pathrestriction/src/<a class="el" href="PathRestriction_8cpp_source.html">PathRestriction.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

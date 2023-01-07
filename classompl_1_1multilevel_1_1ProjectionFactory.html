@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.9.3"/>
+  <title>ompl::multilevel::ProjectionFactory Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="integration.html">Use OMPL within Other Systems</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Search','.html');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceompl.html">ompl</a></li><li class="navelem"><a class="el" href="namespaceompl_1_1multilevel.html">multilevel</a></li><li class="navelem"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html">ProjectionFactory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="classompl_1_1multilevel_1_1ProjectionFactory-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::multilevel::ProjectionFactory Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:addde2f3b26c4e7d673efb467577f6ec8"><td class="memItemLeft" align="right" valign="top"><a id="addde2f3b26c4e7d673efb467577f6ec8" name="addde2f3b26c4e7d673efb467577f6ec8"></a>
+ProjectionPtr&#160;</td><td class="memItemRight" valign="bottom"><b>makeProjection</b> (const base::SpaceInformationPtr &amp;Bundle, const base::SpaceInformationPtr &amp;Base)</td></tr>
+<tr class="memdesc:addde2f3b26c4e7d673efb467577f6ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guess projection(s) between two SpaceInformationPtr Bundle and Base. <br /></td></tr>
+<tr class="separator:addde2f3b26c4e7d673efb467577f6ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33fcdae9b38435e40defc135d8afded9"><td class="memItemLeft" align="right" valign="top"><a id="a33fcdae9b38435e40defc135d8afded9" name="a33fcdae9b38435e40defc135d8afded9"></a>
+ProjectionPtr&#160;</td><td class="memItemRight" valign="bottom"><b>makeProjection</b> (const base::SpaceInformationPtr &amp;Bundle)</td></tr>
+<tr class="separator:a33fcdae9b38435e40defc135d8afded9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a677a518170fe49aabea4050d6dc508c6"><td class="memItemLeft" align="right" valign="top"><a id="a677a518170fe49aabea4050d6dc508c6" name="a677a518170fe49aabea4050d6dc508c6"></a>
+ProjectionPtr&#160;</td><td class="memItemRight" valign="bottom"><b>makeProjection</b> (const base::StateSpacePtr &amp;<a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a>, const base::StateSpacePtr &amp;BaseSpace, bool areValidityCheckersEquivalent)</td></tr>
+<tr class="separator:a677a518170fe49aabea4050d6dc508c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e101044adcfb1fe912f4c5d99bb142"><td class="memItemLeft" align="right" valign="top"><a id="a18e101044adcfb1fe912f4c5d99bb142" name="a18e101044adcfb1fe912f4c5d99bb142"></a>
+ProjectionPtr&#160;</td><td class="memItemRight" valign="bottom"><b>makeProjection</b> (const base::StateSpacePtr &amp;<a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a>)</td></tr>
+<tr class="separator:a18e101044adcfb1fe912f4c5d99bb142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846a092bd89b0187c140505d9e70c16f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7">ProjectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a846a092bd89b0187c140505d9e70c16f">identifyProjectionType</a> (const base::StateSpacePtr &amp;<a class="el" href="classompl_1_1multilevel_1_1BundleSpace.html">BundleSpace</a>, const base::StateSpacePtr &amp;BaseSpace)</td></tr>
+<tr class="memdesc:a846a092bd89b0187c140505d9e70c16f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guess the projection type from the list of projections in ompl::multilevel::ProjectionTypes.  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a846a092bd89b0187c140505d9e70c16f">More...</a><br /></td></tr>
+<tr class="separator:a846a092bd89b0187c140505d9e70c16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab00056074a9f43feecefbb7161375274"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab00056074a9f43feecefbb7161375274">isMapping_Identity</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:ab00056074a9f43feecefbb7161375274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the mapping is an identity mapping.  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab00056074a9f43feecefbb7161375274">More...</a><br /></td></tr>
+<tr class="separator:ab00056074a9f43feecefbb7161375274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567bc3695038ee30dde85abd66b7a873"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a567bc3695038ee30dde85abd66b7a873">isMapping_EmptyProjection</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a567bc3695038ee30dde85abd66b7a873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the mapping is an empty projection.  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a567bc3695038ee30dde85abd66b7a873">More...</a><br /></td></tr>
+<tr class="separator:a567bc3695038ee30dde85abd66b7a873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd12259fe33c0c658b0ae4620eeee105"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#abd12259fe33c0c658b0ae4620eeee105">isMapping_RN_to_RM</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:abd12259fe33c0c658b0ae4620eeee105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathbb{R}^N \) to \( \mathbb{R}^M \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#abd12259fe33c0c658b0ae4620eeee105">More...</a><br /></td></tr>
+<tr class="separator:abd12259fe33c0c658b0ae4620eeee105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09707afa2c9654f04b0a91aad3690b6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a09707afa2c9654f04b0a91aad3690b6a">isMapping_SE2_to_R2</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a09707afa2c9654f04b0a91aad3690b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(2) \) to \( \mathbb{R}^2 \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a09707afa2c9654f04b0a91aad3690b6a">More...</a><br /></td></tr>
+<tr class="separator:a09707afa2c9654f04b0a91aad3690b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6bf7b473a8f1a90bc498dfa69d9ad6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#afe6bf7b473a8f1a90bc498dfa69d9ad6">isMapping_SE2RN_to_R2</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:afe6bf7b473a8f1a90bc498dfa69d9ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(2)\times \mathbb{R}^N \) to \( \mathbb{R}^2 \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#afe6bf7b473a8f1a90bc498dfa69d9ad6">More...</a><br /></td></tr>
+<tr class="separator:afe6bf7b473a8f1a90bc498dfa69d9ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58e2703b2f6f5d73fb1de7b08e01721a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a58e2703b2f6f5d73fb1de7b08e01721a">isMapping_SE2RN_to_SE2</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a58e2703b2f6f5d73fb1de7b08e01721a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(2)\times \mathbb{R}^N \) to \( \mathrm{SE}(2) \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a58e2703b2f6f5d73fb1de7b08e01721a">More...</a><br /></td></tr>
+<tr class="separator:a58e2703b2f6f5d73fb1de7b08e01721a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bafff31fed07790957e5e6fb9e8b164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7bafff31fed07790957e5e6fb9e8b164">isMapping_SE2RN_to_SE2RM</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a7bafff31fed07790957e5e6fb9e8b164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(2)\times \mathbb{R}^N \) to \( \mathrm{SE}(2)\times \mathbb{R}^M \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7bafff31fed07790957e5e6fb9e8b164">More...</a><br /></td></tr>
+<tr class="separator:a7bafff31fed07790957e5e6fb9e8b164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39dd29e180bb1ee4bc0356beb0166f33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a39dd29e180bb1ee4bc0356beb0166f33">isMapping_SE3_to_R3</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a39dd29e180bb1ee4bc0356beb0166f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(3) \) to \( \mathbb{R}^3 \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a39dd29e180bb1ee4bc0356beb0166f33">More...</a><br /></td></tr>
+<tr class="separator:a39dd29e180bb1ee4bc0356beb0166f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4983350979244f5493ae23a69f85d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#add4983350979244f5493ae23a69f85d6">isMapping_SE3RN_to_R3</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:add4983350979244f5493ae23a69f85d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(3)\times \mathbb{R}^N \) to \( \mathbb{R}^3 \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#add4983350979244f5493ae23a69f85d6">More...</a><br /></td></tr>
+<tr class="separator:add4983350979244f5493ae23a69f85d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1eabed02af12f9d3d20ab13dd0dc5ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ae1eabed02af12f9d3d20ab13dd0dc5ae">isMapping_SE3RN_to_SE3</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:ae1eabed02af12f9d3d20ab13dd0dc5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(3)\times \mathbb{R}^N \) to \( \mathrm{SE}(3) \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ae1eabed02af12f9d3d20ab13dd0dc5ae">More...</a><br /></td></tr>
+<tr class="separator:ae1eabed02af12f9d3d20ab13dd0dc5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a370135d03918e7a13a81ceca74be614a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a370135d03918e7a13a81ceca74be614a">isMapping_SE3RN_to_SE3RM</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a370135d03918e7a13a81ceca74be614a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SE}(3)\times \mathbb{R}^N \) to \( \mathrm{SE}(3)\times \mathbb{R}^M \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a370135d03918e7a13a81ceca74be614a">More...</a><br /></td></tr>
+<tr class="separator:a370135d03918e7a13a81ceca74be614a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f397ec75a8a84576f0fb7cedf2d2621"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7f397ec75a8a84576f0fb7cedf2d2621">isMapping_SO2RN_to_SO2</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a7f397ec75a8a84576f0fb7cedf2d2621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SO}(2)\times \mathbb{R}^N \) to \( \mathrm{SO}(2) \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7f397ec75a8a84576f0fb7cedf2d2621">More...</a><br /></td></tr>
+<tr class="separator:a7f397ec75a8a84576f0fb7cedf2d2621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d0390ec9565cdd8d0c7203d4197909"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a46d0390ec9565cdd8d0c7203d4197909">isMapping_SO2RN_to_SO2RM</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a46d0390ec9565cdd8d0c7203d4197909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SO}(2)\times \mathbb{R}^N \) to \( \mathrm{SO}(2)\times \mathbb{R}^M \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a46d0390ec9565cdd8d0c7203d4197909">More...</a><br /></td></tr>
+<tr class="separator:a46d0390ec9565cdd8d0c7203d4197909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9079f8a7d86843b78e807b640b05678"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#af9079f8a7d86843b78e807b640b05678">isMapping_SO2N_to_SO2M</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:af9079f8a7d86843b78e807b640b05678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SO}^N(2) \) to \( \mathrm{SO}^M(2) \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#af9079f8a7d86843b78e807b640b05678">More...</a><br /></td></tr>
+<tr class="separator:af9079f8a7d86843b78e807b640b05678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95a28943f04f7f6055a7a7b30b472f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab95a28943f04f7f6055a7a7b30b472f7">isMapping_SO3RN_to_SO3</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:ab95a28943f04f7f6055a7a7b30b472f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SO}(3)\times \mathbb{R}^N \) to \( \mathrm{SO}(3) \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ab95a28943f04f7f6055a7a7b30b472f7">More...</a><br /></td></tr>
+<tr class="separator:ab95a28943f04f7f6055a7a7b30b472f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e11bbf3623e77c231230a691ca636d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a1e11bbf3623e77c231230a691ca636d4">isMapping_SO3RN_to_SO3RM</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a1e11bbf3623e77c231230a691ca636d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathrm{SO}(3)\times \mathbb{R}^N \) to \( \mathrm{SO}(3)\times \mathbb{R}^M \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a1e11bbf3623e77c231230a691ca636d4">More...</a><br /></td></tr>
+<tr class="separator:a1e11bbf3623e77c231230a691ca636d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8849e49e03c9274fc474844bd76ed0c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a8849e49e03c9274fc474844bd76ed0c0">isMapping_RNSO2_to_RN</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;)</td></tr>
+<tr class="memdesc:a8849e49e03c9274fc474844bd76ed0c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( \mathbb{R}^N \times \mathrm{SO}(2) \) to \( \mathbb{R}^N \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a8849e49e03c9274fc474844bd76ed0c0">More...</a><br /></td></tr>
+<tr class="separator:a8849e49e03c9274fc474844bd76ed0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace17017c286ddb0bf60ac4303913ebad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#ace17017c286ddb0bf60ac4303913ebad">isMapping_XRN_to_XRM</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;, const <a class="el" href="namespaceompl_1_1base.html#a056b022e14fe04a75f81789947353920">base::StateSpaceType</a>)</td></tr>
+<tr class="memdesc:ace17017c286ddb0bf60ac4303913ebad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( X\times \mathbb{R}^N \) to \( X \times \mathbb{R}^M \) whereby \( X = \{\mathrm{SO}(2),\mathrm{SO}(3),\mathrm{SE}(2),\mathrm{SE}(3)\} \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#ace17017c286ddb0bf60ac4303913ebad">More...</a><br /></td></tr>
+<tr class="separator:ace17017c286ddb0bf60ac4303913ebad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d2fb047f3c0fad71fe3fb2cc5132bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a92d2fb047f3c0fad71fe3fb2cc5132bd">isMapping_XRN_to_X</a> (const base::StateSpacePtr &amp;, const base::StateSpacePtr &amp;, const <a class="el" href="namespaceompl_1_1base.html#a056b022e14fe04a75f81789947353920">base::StateSpaceType</a>)</td></tr>
+<tr class="memdesc:a92d2fb047f3c0fad71fe3fb2cc5132bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if mapping is \( X\times \mathbb{R}^N \) to \( X \) whereby \( X = \{\mathrm{SO}(2),\mathrm{SO}(3),\mathrm{SE}(2),\mathrm{SE}(3)\} \).  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a92d2fb047f3c0fad71fe3fb2cc5132bd">More...</a><br /></td></tr>
+<tr class="separator:a92d2fb047f3c0fad71fe3fb2cc5132bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7832b944080bef2fe5d3cac4de011aa1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7832b944080bef2fe5d3cac4de011aa1">GetNumberOfComponents</a> (const base::StateSpacePtr &amp;space)</td></tr>
+<tr class="memdesc:a7832b944080bef2fe5d3cac4de011aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate number of components on state space.  <a href="classompl_1_1multilevel_1_1ProjectionFactory.html#a7832b944080bef2fe5d3cac4de011aa1">More...</a><br /></td></tr>
+<tr class="separator:a7832b944080bef2fe5d3cac4de011aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8h_source.html#l00061">61</a> of file <a class="el" href="ProjectionFactory_8h_source.html">ProjectionFactory.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7832b944080bef2fe5d3cac4de011aa1" name="a7832b944080bef2fe5d3cac4de011aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7832b944080bef2fe5d3cac4de011aa1">&#9670;&nbsp;</a></span>GetNumberOfComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProjectionFactory::GetNumberOfComponents </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estimate number of components on state space. </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00668">668</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a846a092bd89b0187c140505d9e70c16f" name="a846a092bd89b0187c140505d9e70c16f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846a092bd89b0187c140505d9e70c16f">&#9670;&nbsp;</a></span>identifyProjectionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceompl_1_1multilevel.html#afe2958ee2827065c44ef06bab5c538e7">ProjectionType</a> ProjectionFactory::identifyProjectionType </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname"><em>BundleSpace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname"><em>BaseSpace</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Guess the projection type from the list of projections in ompl::multilevel::ProjectionTypes. </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00260">260</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a567bc3695038ee30dde85abd66b7a873" name="a567bc3695038ee30dde85abd66b7a873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a567bc3695038ee30dde85abd66b7a873">&#9670;&nbsp;</a></span>isMapping_EmptyProjection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_EmptyProjection </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the mapping is an empty projection. </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00659">659</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab00056074a9f43feecefbb7161375274" name="ab00056074a9f43feecefbb7161375274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab00056074a9f43feecefbb7161375274">&#9670;&nbsp;</a></span>isMapping_Identity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_Identity </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the mapping is an identity mapping. </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00351">351</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abd12259fe33c0c658b0ae4620eeee105" name="abd12259fe33c0c658b0ae4620eeee105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd12259fe33c0c658b0ae4620eeee105">&#9670;&nbsp;</a></span>isMapping_RN_to_RM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_RN_to_RM </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathbb{R}^N \) to \( \mathbb{R}^M \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00385">385</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8849e49e03c9274fc474844bd76ed0c0" name="a8849e49e03c9274fc474844bd76ed0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8849e49e03c9274fc474844bd76ed0c0">&#9670;&nbsp;</a></span>isMapping_RNSO2_to_RN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_RNSO2_to_RN </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathbb{R}^N \times \mathrm{SO}(2) \) to \( \mathbb{R}^N \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00466">466</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a09707afa2c9654f04b0a91aad3690b6a" name="a09707afa2c9654f04b0a91aad3690b6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09707afa2c9654f04b0a91aad3690b6a">&#9670;&nbsp;</a></span>isMapping_SE2_to_R2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE2_to_R2 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(2) \) to \( \mathbb{R}^2 \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00448">448</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afe6bf7b473a8f1a90bc498dfa69d9ad6" name="afe6bf7b473a8f1a90bc498dfa69d9ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6bf7b473a8f1a90bc498dfa69d9ad6">&#9670;&nbsp;</a></span>isMapping_SE2RN_to_R2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE2RN_to_R2 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(2)\times \mathbb{R}^N \) to \( \mathbb{R}^2 \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00493">493</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a58e2703b2f6f5d73fb1de7b08e01721a" name="a58e2703b2f6f5d73fb1de7b08e01721a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58e2703b2f6f5d73fb1de7b08e01721a">&#9670;&nbsp;</a></span>isMapping_SE2RN_to_SE2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE2RN_to_SE2 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(2)\times \mathbb{R}^N \) to \( \mathrm{SE}(2) \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00519">519</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7bafff31fed07790957e5e6fb9e8b164" name="a7bafff31fed07790957e5e6fb9e8b164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bafff31fed07790957e5e6fb9e8b164">&#9670;&nbsp;</a></span>isMapping_SE2RN_to_SE2RM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE2RN_to_SE2RM </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(2)\times \mathbb{R}^N \) to \( \mathrm{SE}(2)\times \mathbb{R}^M \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00539">539</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a39dd29e180bb1ee4bc0356beb0166f33" name="a39dd29e180bb1ee4bc0356beb0166f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39dd29e180bb1ee4bc0356beb0166f33">&#9670;&nbsp;</a></span>isMapping_SE3_to_R3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE3_to_R3 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(3) \) to \( \mathbb{R}^3 \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00405">405</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="add4983350979244f5493ae23a69f85d6" name="add4983350979244f5493ae23a69f85d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add4983350979244f5493ae23a69f85d6">&#9670;&nbsp;</a></span>isMapping_SE3RN_to_R3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE3RN_to_R3 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(3)\times \mathbb{R}^N \) to \( \mathbb{R}^3 \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00422">422</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae1eabed02af12f9d3d20ab13dd0dc5ae" name="ae1eabed02af12f9d3d20ab13dd0dc5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1eabed02af12f9d3d20ab13dd0dc5ae">&#9670;&nbsp;</a></span>isMapping_SE3RN_to_SE3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE3RN_to_SE3 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(3)\times \mathbb{R}^N \) to \( \mathrm{SE}(3) \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00524">524</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a370135d03918e7a13a81ceca74be614a" name="a370135d03918e7a13a81ceca74be614a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a370135d03918e7a13a81ceca74be614a">&#9670;&nbsp;</a></span>isMapping_SE3RN_to_SE3RM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SE3RN_to_SE3RM </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SE}(3)\times \mathbb{R}^N \) to \( \mathrm{SE}(3)\times \mathbb{R}^M \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00544">544</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af9079f8a7d86843b78e807b640b05678" name="af9079f8a7d86843b78e807b640b05678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9079f8a7d86843b78e807b640b05678">&#9670;&nbsp;</a></span>isMapping_SO2N_to_SO2M()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SO2N_to_SO2M </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SO}^N(2) \) to \( \mathrm{SO}^M(2) \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00559">559</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7f397ec75a8a84576f0fb7cedf2d2621" name="a7f397ec75a8a84576f0fb7cedf2d2621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f397ec75a8a84576f0fb7cedf2d2621">&#9670;&nbsp;</a></span>isMapping_SO2RN_to_SO2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SO2RN_to_SO2 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SO}(2)\times \mathbb{R}^N \) to \( \mathrm{SO}(2) \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00529">529</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a46d0390ec9565cdd8d0c7203d4197909" name="a46d0390ec9565cdd8d0c7203d4197909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d0390ec9565cdd8d0c7203d4197909">&#9670;&nbsp;</a></span>isMapping_SO2RN_to_SO2RM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SO2RN_to_SO2RM </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SO}(2)\times \mathbb{R}^N \) to \( \mathrm{SO}(2)\times \mathbb{R}^M \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00549">549</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab95a28943f04f7f6055a7a7b30b472f7" name="ab95a28943f04f7f6055a7a7b30b472f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab95a28943f04f7f6055a7a7b30b472f7">&#9670;&nbsp;</a></span>isMapping_SO3RN_to_SO3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SO3RN_to_SO3 </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SO}(3)\times \mathbb{R}^N \) to \( \mathrm{SO}(3) \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00534">534</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1e11bbf3623e77c231230a691ca636d4" name="a1e11bbf3623e77c231230a691ca636d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e11bbf3623e77c231230a691ca636d4">&#9670;&nbsp;</a></span>isMapping_SO3RN_to_SO3RM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_SO3RN_to_SO3RM </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( \mathrm{SO}(3)\times \mathbb{R}^N \) to \( \mathrm{SO}(3)\times \mathbb{R}^M \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00554">554</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a92d2fb047f3c0fad71fe3fb2cc5132bd" name="a92d2fb047f3c0fad71fe3fb2cc5132bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d2fb047f3c0fad71fe3fb2cc5132bd">&#9670;&nbsp;</a></span>isMapping_XRN_to_X()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_XRN_to_X </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceompl_1_1base.html#a056b022e14fe04a75f81789947353920">base::StateSpaceType</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( X\times \mathbb{R}^N \) to \( X \) whereby \( X = \{\mathrm{SO}(2),\mathrm{SO}(3),\mathrm{SE}(2),\mathrm{SE}(3)\} \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00600">600</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ace17017c286ddb0bf60ac4303913ebad" name="ace17017c286ddb0bf60ac4303913ebad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace17017c286ddb0bf60ac4303913ebad">&#9670;&nbsp;</a></span>isMapping_XRN_to_XRM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProjectionFactory::isMapping_XRN_to_XRM </td>
+          <td>(</td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const base::StateSpacePtr &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceompl_1_1base.html#a056b022e14fe04a75f81789947353920">base::StateSpaceType</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if mapping is \( X\times \mathbb{R}^N \) to \( X \times \mathbb{R}^M \) whereby \( X = \{\mathrm{SO}(2),\mathrm{SO}(3),\mathrm{SE}(2),\mathrm{SE}(3)\} \). </p>
+
+<p class="definition">Definition at line <a class="el" href="ProjectionFactory_8cpp_source.html#l00623">623</a> of file <a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/multilevel/datastructures/<a class="el" href="ProjectionFactory_8h_source.html">ProjectionFactory.h</a></li>
+<li>ompl/multilevel/datastructures/src/<a class="el" href="ProjectionFactory_8cpp_source.html">ProjectionFactory.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.9.3
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
