@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.17"/>
+  <title>ompl/geometric/planners/informedtrees/eitstar/ForwardQueue.h Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_efdc19d105c21b1223d5f8dc524071be.html">ompl</a></li><li class="navelem"><a class="el" href="dir_1f57d97647ebda1e28cc730ac7313960.html">geometric</a></li><li class="navelem"><a class="el" href="dir_955a6a93aceef09599971796437d173a.html">planners</a></li><li class="navelem"><a class="el" href="dir_efc272713926b2de5ae7b55e29402045.html">informedtrees</a></li><li class="navelem"><a class="el" href="dir_34206abf56a0e9237427cc9b242e0b2d.html">eitstar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ForwardQueue.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Copyright (c) 2019, University of Oxford</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  are met:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   * Neither the name of the University of Toronto nor the names of its</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Authors: Marlin Strub</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_EITSTAR_FORWARD_QUEUE_</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_EITSTAR_FORWARD_QUEUE_</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;ompl/base/Cost.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;ompl/base/samplers/InformedStateSampler.h&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/BinaryHeap.h&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighbors.h&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/informedtrees/eitstar/Direction.h&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/informedtrees/eitstar/Edge.h&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/informedtrees/eitstar/Vertex.h&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">namespace </span>geometric</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">namespace </span>eitstar</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">struct </span>pair_hash</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                std::size_t operator()(<span class="keyword">const</span> std::pair&lt;std::size_t, std::size_t&gt; &amp;k)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">                </span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="comment">// This method to combine hashes is the same as boost::hash_combine</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="comment">// https://www.boost.org/doc/libs/1_67_0/boost/container_hash/hash.hpp</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="comment">// For a discussion see e.g. https://stackoverflow.com/a/35991300</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    std::hash&lt;std::size_t&gt; hasher;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    std::size_t seed = hasher(k.first);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    seed ^= hasher(k.second) + 0x9e3779b9 + (seed &lt;&lt; 6) + (seed &gt;&gt; 2);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keywordflow">return</span> seed;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            };</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">class </span>ForwardQueue</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#af07cbeb6ac7e4fb58b76ff3d2ca5cb31">ForwardQueue</a>(<span class="keyword">const</span> std::shared_ptr&lt;const ompl::base::OptimizationObjective&gt; &amp;objective,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                             <span class="keyword">const</span> std::shared_ptr&lt;const ompl::base::StateSpace&gt; &amp;space);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#afd37ac63f53e684956b0820ffe10ddca">~ForwardQueue</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a1255ac27a424375d1c9037aedc4e6dd8">empty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                std::size_t <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a82e37cea13d4205c7281bfb1d409aaa4">size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a8d29a41e912162471998e5df15a51cf3">insertOrUpdate</a>(<span class="keyword">const</span> Edge &amp;edge);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a8d29a41e912162471998e5df15a51cf3">insertOrUpdate</a>(<span class="keyword">const</span> std::vector&lt;Edge&gt; &amp;edges);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a54a781fb323d8d4ce697967e89e07e5c">remove</a>(<span class="keyword">const</span> Edge &amp;edge);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a063d014b215481fe6f581366add1d0eb">updateIfExists</a>(<span class="keyword">const</span> Edge &amp;edge);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                Edge <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#aaea8c90990f46440dd7e454c2d7ce794">peek</a>(<span class="keywordtype">double</span> suboptimalityFactor);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                Edge <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#abfe27bef9c8d866a28ff9b23bb31c6a0">pop</a>(<span class="keywordtype">double</span> suboptimalityFactor);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a52236fa13b7e18242c8e21e433fb7b96">getLowerBoundOnOptimalSolutionCost</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a3f3e378b1cbf7f20095f209b6f0cc8a2">containsOpenTargets</a>(std::size_t reverseSearchTag) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a03a0cec9389bb60f2e78f6d77be3c3f0">clear</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                std::vector&lt;Edge&gt; <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a1acf0bc46c4117a440a463c42003e5e0">getEdges</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#adee826bf2a8b1da573412989e6c8cd63">rebuild</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#aaf5503e9fc9a871672753b894b087eb1">getMinEffortToCome</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                std::size_t <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a6d0a6eda608a547bec6c4f48bcf07e8b">estimateEffort</a>(<span class="keyword">const</span> Edge &amp;edge) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keyword">struct </span>EdgeKeys</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    EdgeKeys(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;lowerBound, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;estimated,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                             <span class="keyword">const</span> std::size_t effort)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                      : lowerBoundCost(lowerBound), estimatedCost(estimated), estimatedEffort(effort){};</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> lowerBoundCost;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> estimatedCost;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    std::size_t estimatedEffort;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                };</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                std::pair&lt;EdgeKeys, Edge&gt; makeElement(<span class="keyword">const</span> Edge &amp;edge) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keyword">using</span> Container =</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    std::unordered_map&lt;std::pair&lt;std::size_t, std::size_t&gt;, std::pair&lt;EdgeKeys, Edge&gt;, pair_hash&gt;;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                Container::const_iterator getFrontIter(<span class="keywordtype">double</span> suboptimalityFactor);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keyword">inline</span> std::pair&lt;EdgeKeys, Edge&gt; &amp;get(Container::iterator &amp;it)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">                </span>{</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="structompl_1_1geometric_1_1eitstar_1_1pair__hash.html">  158</a></span>&#160;                    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keyword">inline</span> <span class="keyword">const</span> std::pair&lt;EdgeKeys, Edge&gt; &amp;get(Container::const_iterator &amp;it)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">                </span>{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                Container::iterator getBestCostEstimateEdge();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                Container::iterator getLowerBoundCostEdge();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html">  174</a></span>&#160;                Container::const_iterator getLowerBoundCostEdge() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                Container::const_iterator getBestCostEstimateEdge() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> inflateCost(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;cost, <span class="keywordtype">double</span> factor) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> estimateCost(<span class="keyword">const</span> <a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html">Edge</a> &amp;edge) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> lowerBoundCost(<span class="keyword">const</span> <a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html">Edge</a> &amp;edge) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                std::shared_ptr&lt;const ompl::base::OptimizationObjective&gt; objective_;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                std::shared_ptr&lt;const ompl::base::StateSpace&gt; space_;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                Container queue_{};</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                Container::const_iterator front_;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> cacheQueueLookup_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keywordtype">bool</span> modifiedQueue_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <span class="keyword">mutable</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cachedMinEdgeEffort_{0u};</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            };</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        }  <span class="comment">// namespace eitstar</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }  <span class="comment">// namespace geometric</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}  <span class="comment">// namespace ompl</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif  // OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_EITSTAR_FORWARD_QUEUE_</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a1acf0bc46c4117a440a463c42003e5e0"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a1acf0bc46c4117a440a463c42003e5e0">ompl::geometric::eitstar::ForwardQueue::getEdges</a></div><div class="ttdeci">std::vector&lt; Edge &gt; getEdges() const</div><div class="ttdoc">Copies all edges into a vector and returns the vector.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00396">ForwardQueue.cpp:396</a></div></div>
+<div class="ttc" id="astructompl_1_1geometric_1_1eitstar_1_1Edge_html"><div class="ttname"><a href="structompl_1_1geometric_1_1eitstar_1_1Edge.html">ompl::geometric::eitstar::Edge</a></div><div class="ttdoc">A struct for basic edge data.</div><div class="ttdef"><b>Definition:</b> <a href="eitstar_2Edge_8h_source.html#l00152">Edge.h:152</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Cost_html"><div class="ttname"><a href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a></div><div class="ttdoc">Definition of a cost value. Can represent the cost of a motion or the cost of a state.</div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00111">Cost.h:111</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a8d29a41e912162471998e5df15a51cf3"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a8d29a41e912162471998e5df15a51cf3">ompl::geometric::eitstar::ForwardQueue::insertOrUpdate</a></div><div class="ttdeci">void insertOrUpdate(const Edge &amp;edge)</div><div class="ttdoc">Inserts or updates an edge in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00164">ForwardQueue.cpp:164</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_abfe27bef9c8d866a28ff9b23bb31c6a0"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#abfe27bef9c8d866a28ff9b23bb31c6a0">ompl::geometric::eitstar::ForwardQueue::pop</a></div><div class="ttdeci">Edge pop(double suboptimalityFactor)</div><div class="ttdoc">Returns and deletes the top element of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00311">ForwardQueue.cpp:311</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a3f3e378b1cbf7f20095f209b6f0cc8a2"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a3f3e378b1cbf7f20095f209b6f0cc8a2">ompl::geometric::eitstar::ForwardQueue::containsOpenTargets</a></div><div class="ttdeci">bool containsOpenTargets(std::size_t reverseSearchTag) const</div><div class="ttdoc">Returns whether the queue contains edges with targets that are open or unconnected in the reverse sea...</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00375">ForwardQueue.cpp:375</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a82e37cea13d4205c7281bfb1d409aaa4"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a82e37cea13d4205c7281bfb1d409aaa4">ompl::geometric::eitstar::ForwardQueue::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdoc">Returns how many elements are in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00159">ForwardQueue.cpp:159</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a063d014b215481fe6f581366add1d0eb"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a063d014b215481fe6f581366add1d0eb">ompl::geometric::eitstar::ForwardQueue::updateIfExists</a></div><div class="ttdeci">void updateIfExists(const Edge &amp;edge)</div><div class="ttdoc">Update an edge in the queue. Does nothing if the edge is not in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00296">ForwardQueue.cpp:296</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_aaea8c90990f46440dd7e454c2d7ce794"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#aaea8c90990f46440dd7e454c2d7ce794">ompl::geometric::eitstar::ForwardQueue::peek</a></div><div class="ttdeci">Edge peek(double suboptimalityFactor)</div><div class="ttdoc">Returns a copy to the next edge.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00278">ForwardQueue.cpp:278</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_af07cbeb6ac7e4fb58b76ff3d2ca5cb31"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#af07cbeb6ac7e4fb58b76ff3d2ca5cb31">ompl::geometric::eitstar::ForwardQueue::ForwardQueue</a></div><div class="ttdeci">ForwardQueue(const std::shared_ptr&lt; const ompl::base::OptimizationObjective &gt; &amp;objective, const std::shared_ptr&lt; const ompl::base::StateSpace &gt; &amp;space)</div><div class="ttdoc">Constructs the queue given the objective and state space.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00147">ForwardQueue.cpp:147</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_aaf5503e9fc9a871672753b894b087eb1"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#aaf5503e9fc9a871672753b894b087eb1">ompl::geometric::eitstar::ForwardQueue::getMinEffortToCome</a></div><div class="ttdeci">unsigned int getMinEffortToCome() const</div><div class="ttdoc">Returns the minimum effort that remains.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00324">ForwardQueue.cpp:324</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a6d0a6eda608a547bec6c4f48bcf07e8b"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a6d0a6eda608a547bec6c4f48bcf07e8b">ompl::geometric::eitstar::ForwardQueue::estimateEffort</a></div><div class="ttdeci">std::size_t estimateEffort(const Edge &amp;edge) const</div><div class="ttdoc">Estimates the effort that remains to validate a solution through an edge.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00492">ForwardQueue.cpp:492</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a03a0cec9389bb60f2e78f6d77be3c3f0"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a03a0cec9389bb60f2e78f6d77be3c3f0">ompl::geometric::eitstar::ForwardQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the queue, i.e., deletes all elements from it.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00385">ForwardQueue.cpp:385</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_afd37ac63f53e684956b0820ffe10ddca"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#afd37ac63f53e684956b0820ffe10ddca">ompl::geometric::eitstar::ForwardQueue::~ForwardQueue</a></div><div class="ttdeci">~ForwardQueue()=default</div><div class="ttdoc">Destructs the queue.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a52236fa13b7e18242c8e21e433fb7b96"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a52236fa13b7e18242c8e21e433fb7b96">ompl::geometric::eitstar::ForwardQueue::getLowerBoundOnOptimalSolutionCost</a></div><div class="ttdeci">ompl::base::Cost getLowerBoundOnOptimalSolutionCost() const</div><div class="ttdoc">Returns a lower bound on the resolution-optimal solution cost.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00369">ForwardQueue.cpp:369</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a1255ac27a424375d1c9037aedc4e6dd8"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a1255ac27a424375d1c9037aedc4e6dd8">ompl::geometric::eitstar::ForwardQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Returns whether the queue is empty.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00154">ForwardQueue.cpp:154</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_a54a781fb323d8d4ce697967e89e07e5c"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#a54a781fb323d8d4ce697967e89e07e5c">ompl::geometric::eitstar::ForwardQueue::remove</a></div><div class="ttdeci">void remove(const Edge &amp;edge)</div><div class="ttdoc">Removes an edge from the queue. Throws if the edge is not in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00196">ForwardQueue.cpp:196</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ForwardQueue_html_adee826bf2a8b1da573412989e6c8cd63"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ForwardQueue.html#adee826bf2a8b1da573412989e6c8cd63">ompl::geometric::eitstar::ForwardQueue::rebuild</a></div><div class="ttdeci">void rebuild()</div><div class="ttdoc">Rebuilds the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ForwardQueue_8cpp_source.html#l00408">ForwardQueue.cpp:408</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:65</a></div></div>
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.17
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

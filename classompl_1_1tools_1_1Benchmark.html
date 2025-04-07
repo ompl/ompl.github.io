@@ -176,16 +176,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structompl_1_1tools_1_1Benchmark_1_1Request.html">Request</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of a benchmark request.  <a href="structompl_1_1tools_1_1Benchmark_1_1Request.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structompl_1_1tools_1_1Benchmark_1_1RunProperties.html">RunProperties</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data collected from a run of a planner is stored as key-value pairs.  <a href="structompl_1_1tools_1_1Benchmark_1_1RunProperties.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structompl_1_1tools_1_1Benchmark_1_1Status.html">Status</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This structure contains information about the activity of a benchmark instance. If the instance is running, it is possible to find out information such as which planner is currently being tested or how much.  <a href="structompl_1_1tools_1_1Benchmark_1_1Status.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ad660e80e710f6fd524d865bc232311e5"><td class="memItemLeft" align="right" valign="top"><a id="ad660e80e710f6fd524d865bc232311e5"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#ad660e80e710f6fd524d865bc232311e5">RunProperties</a> = std::map&lt; std::string, std::string &gt;</td></tr>
-<tr class="memdesc:ad660e80e710f6fd524d865bc232311e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data collected from a run of a planner is stored as key-value pairs. <br /></td></tr>
-<tr class="separator:ad660e80e710f6fd524d865bc232311e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd4746c55b59b46863dd85a0f827b4b3"><td class="memItemLeft" align="right" valign="top"><a id="acd4746c55b59b46863dd85a0f827b4b3"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>RunProgressData</b> = std::vector&lt; std::map&lt; std::string, std::string &gt; &gt;</td></tr>
 <tr class="separator:acd4746c55b59b46863dd85a0f827b4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,7 +193,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <tr class="memdesc:a23533c490c5ae9617b9aeff21cb3929f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of function that can be called before a planner execution is started. <br /></td></tr>
 <tr class="separator:a23533c490c5ae9617b9aeff21cb3929f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75b718cb770089ade746bcb12c74b832"><td class="memItemLeft" align="right" valign="top"><a id="a75b718cb770089ade746bcb12c74b832"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a75b718cb770089ade746bcb12c74b832">PostSetupEvent</a> = std::function&lt; void(const base::PlannerPtr &amp;, <a class="el" href="classompl_1_1tools_1_1Benchmark.html#ad660e80e710f6fd524d865bc232311e5">RunProperties</a> &amp;)&gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a75b718cb770089ade746bcb12c74b832">PostSetupEvent</a> = std::function&lt; void(const base::PlannerPtr &amp;, <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1RunProperties.html">RunProperties</a> &amp;)&gt;</td></tr>
 <tr class="memdesc:a75b718cb770089ade746bcb12c74b832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of function that can be called after a planner execution is completed. <br /></td></tr>
 <tr class="separator:a75b718cb770089ade746bcb12c74b832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -212,11 +211,11 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#afab48f173edc785ee005301642b1afb1">addExperimentParameter</a> (const std::string &amp;name, const std::string &amp;type, const std::string &amp;value)</td></tr>
 <tr class="memdesc:afab48f173edc785ee005301642b1afb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an optional parameter's information to the benchmark output. Useful for aggregating results over different benchmark instances, e.g., parameter sweep. <em>type</em> is typically "BOOLEAN", "INTEGER", or "REAL". <br /></td></tr>
 <tr class="separator:afab48f173edc785ee005301642b1afb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88a000a67ca0365cf73bb0980e2cb598"><td class="memItemLeft" align="right" valign="top"><a id="a88a000a67ca0365cf73bb0980e2cb598"></a>
-const std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a88a000a67ca0365cf73bb0980e2cb598">getExperimentParameters</a> () const</td></tr>
-<tr class="memdesc:a88a000a67ca0365cf73bb0980e2cb598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all optional benchmark parameters. The map key is 'name type' <br  />
+<tr class="memitem:a2e407791f8baa54b2e7d491f20c4b3f5"><td class="memItemLeft" align="right" valign="top"><a id="a2e407791f8baa54b2e7d491f20c4b3f5"></a>
+const std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a2e407791f8baa54b2e7d491f20c4b3f5">getExperimentParameters</a> () const</td></tr>
+<tr class="memdesc:a2e407791f8baa54b2e7d491f20c4b3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all optional benchmark parameters. The map key is 'name type' <br  />
  <br /></td></tr>
-<tr class="separator:a88a000a67ca0365cf73bb0980e2cb598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a2e407791f8baa54b2e7d491f20c4b3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96a5e5c2c1465e95ec5a5ea57c449518"><td class="memItemLeft" align="right" valign="top"><a id="a96a5e5c2c1465e95ec5a5ea57c449518"></a>
 std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a96a5e5c2c1465e95ec5a5ea57c449518">numExperimentParameters</a> () const</td></tr>
 <tr class="memdesc:a96a5e5c2c1465e95ec5a5ea57c449518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of optional benchmark parameters. <br /></td></tr>
@@ -225,10 +224,10 @@ std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a5cd270d95be4b130654bb6f3b978badf">setExperimentName</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a5cd270d95be4b130654bb6f3b978badf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the experiment. <br /></td></tr>
 <tr class="separator:a5cd270d95be4b130654bb6f3b978badf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9d802e65eeb24b1d5f8284b866f7f75"><td class="memItemLeft" align="right" valign="top"><a id="ab9d802e65eeb24b1d5f8284b866f7f75"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#ab9d802e65eeb24b1d5f8284b866f7f75">getExperimentName</a> () const</td></tr>
-<tr class="memdesc:ab9d802e65eeb24b1d5f8284b866f7f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the experiment. <br /></td></tr>
-<tr class="separator:ab9d802e65eeb24b1d5f8284b866f7f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4adb9f2da67bbb9074aadd0af4dde9ef"><td class="memItemLeft" align="right" valign="top"><a id="a4adb9f2da67bbb9074aadd0af4dde9ef"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a4adb9f2da67bbb9074aadd0af4dde9ef">getExperimentName</a> () const</td></tr>
+<tr class="memdesc:a4adb9f2da67bbb9074aadd0af4dde9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the experiment. <br /></td></tr>
+<tr class="separator:a4adb9f2da67bbb9074aadd0af4dde9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86fdc0094b39debe8ee310a9e2de8e31"><td class="memItemLeft" align="right" valign="top"><a id="a86fdc0094b39debe8ee310a9e2de8e31"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a86fdc0094b39debe8ee310a9e2de8e31">addPlanner</a> (const base::PlannerPtr &amp;planner)</td></tr>
 <tr class="memdesc:a86fdc0094b39debe8ee310a9e2de8e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner to use. <br /></td></tr>
@@ -256,14 +255,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a3257cb8dccc15037e81c0f235c61a7e8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a3257cb8dccc15037e81c0f235c61a7e8">benchmark</a> (const <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1Request.html">Request</a> &amp;req)</td></tr>
 <tr class="memdesc:a3257cb8dccc15037e81c0f235c61a7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance.">Benchmark</a> the added planners on the defined problem. Repeated calls clear previously gathered data.  <a href="classompl_1_1tools_1_1Benchmark.html#a3257cb8dccc15037e81c0f235c61a7e8">More...</a><br /></td></tr>
 <tr class="separator:a3257cb8dccc15037e81c0f235c61a7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48a9c1eadaa6e5a06e797975f89f0da5"><td class="memItemLeft" align="right" valign="top"><a id="a48a9c1eadaa6e5a06e797975f89f0da5"></a>
-const <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1Status.html">Status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a48a9c1eadaa6e5a06e797975f89f0da5">getStatus</a> () const</td></tr>
-<tr class="memdesc:a48a9c1eadaa6e5a06e797975f89f0da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status of the benchmarking code. This function can be called in a separate thread to check how much progress has been made. <br /></td></tr>
-<tr class="separator:a48a9c1eadaa6e5a06e797975f89f0da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5556df8df0b7026667042b384e09e42a"><td class="memItemLeft" align="right" valign="top"><a id="a5556df8df0b7026667042b384e09e42a"></a>
-const <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment.html">CompleteExperiment</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a5556df8df0b7026667042b384e09e42a">getRecordedExperimentData</a> () const</td></tr>
-<tr class="memdesc:a5556df8df0b7026667042b384e09e42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all the experiment data that would be written to the results file. The data should not be changed, but it could be useful to quickly extract cartain statistics. <br /></td></tr>
-<tr class="separator:a5556df8df0b7026667042b384e09e42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37b5881fa63f93377e88766f6c25d88a"><td class="memItemLeft" align="right" valign="top"><a id="a37b5881fa63f93377e88766f6c25d88a"></a>
+const <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1Status.html">Status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a37b5881fa63f93377e88766f6c25d88a">getStatus</a> () const</td></tr>
+<tr class="memdesc:a37b5881fa63f93377e88766f6c25d88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the status of the benchmarking code. This function can be called in a separate thread to check how much progress has been made. <br /></td></tr>
+<tr class="separator:a37b5881fa63f93377e88766f6c25d88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5706f2fed0ed94583f9e39377cc89e3"><td class="memItemLeft" align="right" valign="top"><a id="aa5706f2fed0ed94583f9e39377cc89e3"></a>
+const <a class="el" href="structompl_1_1tools_1_1Benchmark_1_1CompleteExperiment.html">CompleteExperiment</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#aa5706f2fed0ed94583f9e39377cc89e3">getRecordedExperimentData</a> () const</td></tr>
+<tr class="memdesc:aa5706f2fed0ed94583f9e39377cc89e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all the experiment data that would be written to the results file. The data should not be changed, but it could be useful to quickly extract cartain statistics. <br /></td></tr>
+<tr class="separator:aa5706f2fed0ed94583f9e39377cc89e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f63b0b4e3de67b937bfa3022caf7348"><td class="memItemLeft" align="right" valign="top"><a id="a9f63b0b4e3de67b937bfa3022caf7348"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classompl_1_1tools_1_1Benchmark.html#a9f63b0b4e3de67b937bfa3022caf7348">saveResultsToStream</a> (std::ostream &amp;out=std::cout) const</td></tr>
 <tr class="memdesc:a9f63b0b4e3de67b937bfa3022caf7348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the results of the benchmark to a stream. <br /></td></tr>
@@ -350,7 +349,7 @@ std::vector&lt; base::PlannerPtr &gt;&#160;</td><td class="memItemRight" valign=
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The values returned for memory consumption may be misleading. Memory allocators often free memory in a lazy fashion, so the returned values for memory consumption indicate the increase in memory usage for each run. Since not all the memory for the previous run was freed, the increase in usage may be close to 0. To get correct averages for memory usage, use <em>req.runCount</em> = 1 and run the process multiple times. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Benchmark_8cpp_source.html#l00353">353</a> of file <a class="el" href="Benchmark_8cpp_source.html">Benchmark.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Benchmark_8cpp_source.html#l00432">432</a> of file <a class="el" href="Benchmark_8cpp_source.html">Benchmark.cpp</a>.</p>
 
 </div>
 </div>

@@ -192,72 +192,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef OMPL_TOOLS_SELF_CONFIG_</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OMPL_TOOLS_SELF_CONFIG_</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;ompl/config.h&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;ompl/base/Goal.h&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;ompl/base/Planner.h&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;ompl/base/SpaceInformation.h&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighborsSqrtApprox.h&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighborsGNAT.h&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighborsGNATNoThreadSafety.h&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">namespace </span>tools</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">class </span>SelfConfig</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#ad0dca5fbc79a2687b39aa2c8bb15143b">SelfConfig</a>(<span class="keyword">const</span> base::SpaceInformationPtr &amp;si, <span class="keyword">const</span> std::string &amp;context = std::string());</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            ~<a class="code" href="classompl_1_1tools_1_1SelfConfig.html#ad0dca5fbc79a2687b39aa2c8bb15143b">SelfConfig</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a67305a8d57f0737733c25f4fb32b13ee">getProbabilityOfValidState</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a9bb25d080de0eaaaaad1600eda88ee26">getAverageValidMotionLength</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a2af548317b0f4784dd862de0274cfa74">configureValidStateSamplingAttempts</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;attempts);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a65bff53ea4bc6f158342a856175ab9a6">configurePlannerRange</a>(<span class="keywordtype">double</span> &amp;range);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a6af441eace888354bcc5afe172561d62">configureProjectionEvaluator</a>(base::ProjectionEvaluatorPtr &amp;proj);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#aa5fa54e33a69be0f136c91d89f3b1feb">print</a>(std::ostream &amp;out = std::cout) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> _T&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">static</span> NearestNeighbors&lt;_T&gt; *<a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a6234444fd75f10224dff2e1a342998ea">getDefaultNearestNeighbors</a>(<span class="keyword">const</span> base::Planner *planner)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keyword">const</span> base::StateSpacePtr &amp;space = planner-&gt;getSpaceInformation()-&gt;getStateSpace();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keyword">const</span> base::PlannerSpecs &amp;specs = planner-&gt;getSpecs();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span> (space-&gt;isMetricSpace())</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordflow">if</span> (specs.multithreaded)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> NearestNeighborsGNAT&lt;_T&gt;();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">new</span> NearestNeighborsGNATNoThreadSafety&lt;_T&gt;();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> NearestNeighborsSqrtApprox&lt;_T&gt;();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keyword">static</span> base::PlannerPtr <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#ae9f747585a0c3fdc50667d9f8a39095d">getDefaultPlanner</a>(<span class="keyword">const</span> base::GoalPtr &amp;goal);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keyword">class </span>SelfConfigImpl;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            SelfConfigImpl *impl_;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            std::string context_;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keyword">static</span> std::mutex staticConstructorLock_;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        };</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;ompl/base/Goal.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;ompl/base/Planner.h&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;ompl/base/SpaceInformation.h&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighborsSqrtApprox.h&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighborsGNAT.h&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighborsGNATNoThreadSafety.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">namespace </span>tools</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">class </span>SelfConfig</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#ad0dca5fbc79a2687b39aa2c8bb15143b">SelfConfig</a>(<span class="keyword">const</span> base::SpaceInformationPtr &amp;si, <span class="keyword">const</span> std::string &amp;context = std::string());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            ~<a class="code" href="classompl_1_1tools_1_1SelfConfig.html#ad0dca5fbc79a2687b39aa2c8bb15143b">SelfConfig</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a67305a8d57f0737733c25f4fb32b13ee">getProbabilityOfValidState</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a9bb25d080de0eaaaaad1600eda88ee26">getAverageValidMotionLength</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a2af548317b0f4784dd862de0274cfa74">configureValidStateSamplingAttempts</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;attempts);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a65bff53ea4bc6f158342a856175ab9a6">configurePlannerRange</a>(<span class="keywordtype">double</span> &amp;range);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a6af441eace888354bcc5afe172561d62">configureProjectionEvaluator</a>(base::ProjectionEvaluatorPtr &amp;proj);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#aa5fa54e33a69be0f136c91d89f3b1feb">print</a>(std::ostream &amp;out = std::cout) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> _T&gt;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">static</span> NearestNeighbors&lt;_T&gt; *<a class="code" href="classompl_1_1tools_1_1SelfConfig.html#a6234444fd75f10224dff2e1a342998ea">getDefaultNearestNeighbors</a>(<span class="keyword">const</span> base::Planner *planner)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keyword">const</span> base::StateSpacePtr &amp;space = planner-&gt;getSpaceInformation()-&gt;getStateSpace();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keyword">const</span> base::PlannerSpecs &amp;specs = planner-&gt;getSpecs();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">if</span> (space-&gt;isMetricSpace())</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <span class="keywordflow">if</span> (specs.multithreaded)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> NearestNeighborsGNAT&lt;_T&gt;();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">new</span> NearestNeighborsGNATNoThreadSafety&lt;_T&gt;();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> NearestNeighborsSqrtApprox&lt;_T&gt;();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">static</span> base::PlannerPtr <a class="code" href="classompl_1_1tools_1_1SelfConfig.html#ae9f747585a0c3fdc50667d9f8a39095d">getDefaultPlanner</a>(<span class="keyword">const</span> base::GoalPtr &amp;goal);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keyword">class </span>SelfConfigImpl;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            SelfConfigImpl *impl_;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            std::string context_;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">static</span> std::mutex staticConstructorLock_;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        };</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_a65bff53ea4bc6f158342a856175ab9a6"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a65bff53ea4bc6f158342a856175ab9a6">ompl::tools::SelfConfig::configurePlannerRange</a></div><div class="ttdeci">void configurePlannerRange(double &amp;range)</div><div class="ttdoc">Compute what a good length for motion segments is.</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00225">SelfConfig.cpp:225</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_a2af548317b0f4784dd862de0274cfa74"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a2af548317b0f4784dd862de0274cfa74">ompl::tools::SelfConfig::configureValidStateSamplingAttempts</a></div><div class="ttdeci">void configureValidStateSamplingAttempts(unsigned int &amp;attempts)</div><div class="ttdoc">Instances of base::ValidStateSampler need a number of attempts to be specified – the maximum number o...</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00219">SelfConfig.cpp:219</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_ad0dca5fbc79a2687b39aa2c8bb15143b"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#ad0dca5fbc79a2687b39aa2c8bb15143b">ompl::tools::SelfConfig::SelfConfig</a></div><div class="ttdeci">SelfConfig(const base::SpaceInformationPtr &amp;si, const std::string &amp;context=std::string())</div><div class="ttdoc">Construct an instance that can configure the space encapsulated by si. Any information printed to the...</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00173">SelfConfig.cpp:173</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_a6234444fd75f10224dff2e1a342998ea"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a6234444fd75f10224dff2e1a342998ea">ompl::tools::SelfConfig::getDefaultNearestNeighbors</a></div><div class="ttdeci">static NearestNeighbors&lt; _T &gt; * getDefaultNearestNeighbors(const base::Planner *planner)</div><div class="ttdoc">Select a default nearest neighbor datastructure for the given space.</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8h_source.html#l00202">SelfConfig.h:202</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_a6234444fd75f10224dff2e1a342998ea"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a6234444fd75f10224dff2e1a342998ea">ompl::tools::SelfConfig::getDefaultNearestNeighbors</a></div><div class="ttdeci">static NearestNeighbors&lt; _T &gt; * getDefaultNearestNeighbors(const base::Planner *planner)</div><div class="ttdoc">Select a default nearest neighbor datastructure for the given space.</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8h_source.html#l00201">SelfConfig.h:201</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_a6af441eace888354bcc5afe172561d62"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a6af441eace888354bcc5afe172561d62">ompl::tools::SelfConfig::configureProjectionEvaluator</a></div><div class="ttdeci">void configureProjectionEvaluator(base::ProjectionEvaluatorPtr &amp;proj)</div><div class="ttdoc">If proj is undefined, it is set to the default projection reported by base::StateSpace::getDefaultPro...</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00231">SelfConfig.cpp:231</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_a67305a8d57f0737733c25f4fb32b13ee"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a67305a8d57f0737733c25f4fb32b13ee">ompl::tools::SelfConfig::getProbabilityOfValidState</a></div><div class="ttdeci">double getProbabilityOfValidState()</div><div class="ttdoc">Get the probability of a sampled state being valid (calls base::SpaceInformation::probabilityOfValidS...</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00207">SelfConfig.cpp:207</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_aa5fa54e33a69be0f136c91d89f3b1feb"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#aa5fa54e33a69be0f136c91d89f3b1feb">ompl::tools::SelfConfig::print</a></div><div class="ttdeci">void print(std::ostream &amp;out=std::cout) const</div><div class="ttdoc">Print the computed configuration parameters.</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00237">SelfConfig.cpp:237</a></div></div>

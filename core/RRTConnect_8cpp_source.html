@@ -309,277 +309,291 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> count = si_-&gt;getStateSpace()-&gt;validSegmentCount(astate, bstate);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> (si_-&gt;getMotionStates(astate, bstate, states, count, <span class="keyword">true</span>, <span class="keyword">true</span>))</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            si_-&gt;freeState(states[0]);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">for</span> (std::size_t i = 1; i &lt; states.size(); ++i)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            motion-&gt;state = states[i];</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            motion-&gt;parent = nmotion;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            motion-&gt;root = nmotion-&gt;root;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            tree-&gt;add(motion);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            nmotion = motion;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        tgi.xmotion = nmotion;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        si_-&gt;copyState(motion-&gt;state, dstate);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        motion-&gt;parent = nmotion;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        motion-&gt;root = nmotion-&gt;root;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        tree-&gt;add(motion);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        tgi.xmotion = motion;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">return</span> reach ? REACHED : ADVANCED;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1RRTConnect.html#aa1171c6ad33dca3806a8a4df42e4f6b8">  186</a></span>&#160;<a class="code" href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a> <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#aa1171c6ad33dca3806a8a4df42e4f6b8">ompl::geometric::RRTConnect::solve</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    checkValidity();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">auto</span> *goal = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classompl_1_1base_1_1GoalSampleableRegion.html">base::GoalSampleableRegion</a> *<span class="keyword">&gt;</span>(pdef_-&gt;getGoal().get());</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> (goal == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Unknown type of goal&quot;</span>, getName().c_str());</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a47d769205044efa345184a640bd863ff">base::PlannerStatus::UNRECOGNIZED_GOAL_TYPE</a>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *st = pis_.nextStart())</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        si_-&gt;copyState(motion-&gt;state, st);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        motion-&gt;root = motion-&gt;state;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        tStart_-&gt;add(motion);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> (tStart_-&gt;size() == 0)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Motion planning start tree could not be initialized!&quot;</span>, getName().c_str());</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a1f20d012b563fc223902e24a8bcd7547">base::PlannerStatus::INVALID_START</a>;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (!goal-&gt;couldSample())</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Insufficient states in sampleable goal region&quot;</span>, getName().c_str());</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637">base::PlannerStatus::INVALID_GOAL</a>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="comment">// if coming from start, don&#39;t add the start state (start-&gt;goal)</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">if</span> (tgi.start)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                si_-&gt;freeState(states[0]);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="comment">// if coming from the goal, don&#39;t add the start state (goal-&gt;start)</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                si_-&gt;freeState(states[states.size() - 1]);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment">// Add states forwards if from start, backwards if from goal</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;add_state = [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;state)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            motion-&gt;state = state;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            motion-&gt;parent = nmotion;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            motion-&gt;root = nmotion-&gt;root;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            tree-&gt;add(motion);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            nmotion = motion;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        };</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">if</span> (tgi.start)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            std::for_each(++std::begin(states), std::end(states), add_state);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            std::for_each(++std::rbegin(states), std::rend(states), add_state);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        tgi.xmotion = nmotion;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        si_-&gt;copyState(motion-&gt;state, dstate);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        motion-&gt;parent = nmotion;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        motion-&gt;root = nmotion-&gt;root;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        tree-&gt;add(motion);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        tgi.xmotion = motion;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> reach ? REACHED : ADVANCED;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1RRTConnect.html#aa1171c6ad33dca3806a8a4df42e4f6b8">  198</a></span>&#160;<a class="code" href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a> <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#aa1171c6ad33dca3806a8a4df42e4f6b8">ompl::geometric::RRTConnect::solve</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    checkValidity();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">auto</span> *goal = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classompl_1_1base_1_1GoalSampleableRegion.html">base::GoalSampleableRegion</a> *<span class="keyword">&gt;</span>(pdef_-&gt;getGoal().get());</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> (goal == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Unknown type of goal&quot;</span>, getName().c_str());</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a47d769205044efa345184a640bd863ff">base::PlannerStatus::UNRECOGNIZED_GOAL_TYPE</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *st = pis_.nextStart())</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        si_-&gt;copyState(motion-&gt;state, st);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        motion-&gt;root = motion-&gt;state;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        tStart_-&gt;add(motion);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> (!sampler_)</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        sampler_ = si_-&gt;allocStateSampler();</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;%s: Starting planning with %d states already in datastructure&quot;</span>, getName().c_str(),</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                (<span class="keywordtype">int</span>)(tStart_-&gt;size() + tGoal_-&gt;size()));</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> (tStart_-&gt;size() == 0)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Motion planning start tree could not be initialized!&quot;</span>, getName().c_str());</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a1f20d012b563fc223902e24a8bcd7547">base::PlannerStatus::INVALID_START</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="structompl_1_1geometric_1_1RRTConnect_1_1TreeGrowingInfo.html">TreeGrowingInfo</a> tgi;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    tgi.xstate = si_-&gt;allocState();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *approxsol = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">double</span> approxdif = std::numeric_limits&lt;double&gt;::infinity();</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">auto</span> *rmotion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *rstate = rmotion-&gt;state;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">bool</span> solved = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">if</span> (!goal-&gt;couldSample())</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Insufficient states in sampleable goal region&quot;</span>, getName().c_str());</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637">base::PlannerStatus::INVALID_GOAL</a>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (!sampler_)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        sampler_ = si_-&gt;allocStateSampler();</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">while</span> (!ptc)</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#af482977ca67a836f2d3e4bbdbc95323f">TreeData</a> &amp;tree = startTree_ ? tStart_ : tGoal_;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        tgi.start = startTree_;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        startTree_ = !startTree_;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#af482977ca67a836f2d3e4bbdbc95323f">TreeData</a> &amp;otherTree = startTree_ ? tStart_ : tGoal_;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">if</span> (tGoal_-&gt;size() == 0 || pis_.getSampledGoalsCount() &lt; tGoal_-&gt;size() / 2)</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *st = tGoal_-&gt;size() == 0 ? pis_.nextGoal(ptc) : pis_.nextGoal();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">if</span> (st != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                si_-&gt;copyState(motion-&gt;state, st);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                motion-&gt;root = motion-&gt;state;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                tGoal_-&gt;add(motion);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">if</span> (tGoal_-&gt;size() == 0)</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Unable to sample any valid states for goal tree&quot;</span>, getName().c_str());</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">/* sample random state */</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        sampler_-&gt;sampleUniform(rstate);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4b">GrowState</a> gs = growTree(tree, tgi, rmotion);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">if</span> (gs != TRAPPED)</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="comment">/* remember which motion was just added */</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *addedMotion = tgi.xmotion;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="comment">/* attempt to connect trees */</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="comment">/* if reached, it means we used rstate directly, no need to copy again */</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordflow">if</span> (gs != REACHED)</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                si_-&gt;copyState(rstate, tgi.xstate);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            tgi.start = startTree_;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="comment">/* if initial progress cannot be done from the otherTree, restore tgi.start */</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4b">GrowState</a> gsc = growTree(otherTree, tgi, rmotion);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">if</span> (gsc == TRAPPED)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                tgi.start = !tgi.start;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordflow">while</span> (gsc == ADVANCED)</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                gsc = growTree(otherTree, tgi, rmotion);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;%s: Starting planning with %d states already in datastructure&quot;</span>, getName().c_str(),</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                (<span class="keywordtype">int</span>)(tStart_-&gt;size() + tGoal_-&gt;size()));</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <a class="code" href="structompl_1_1geometric_1_1RRTConnect_1_1TreeGrowingInfo.html">TreeGrowingInfo</a> tgi;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    tgi.xstate = si_-&gt;allocState();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *approxsol = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">double</span> approxdif = std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">auto</span> *rmotion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *rstate = rmotion-&gt;state;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">bool</span> solved = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4">base::PlannerStatus::StatusType</a> status = <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a620a03eebe49aa307140d6a4763278fd">base::PlannerStatus::TIMEOUT</a>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">while</span> (!ptc)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#af482977ca67a836f2d3e4bbdbc95323f">TreeData</a> &amp;tree = startTree_ ? tStart_ : tGoal_;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        tgi.start = startTree_;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        startTree_ = !startTree_;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#af482977ca67a836f2d3e4bbdbc95323f">TreeData</a> &amp;otherTree = startTree_ ? tStart_ : tGoal_;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">if</span> (tGoal_-&gt;size() == 0 || pis_.getSampledGoalsCount() &lt; tGoal_-&gt;size() / 2)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *st = tGoal_-&gt;size() == 0 ? pis_.nextGoal(ptc) : pis_.nextGoal();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">if</span> (st != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keyword">auto</span> *motion = <span class="keyword">new</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a>(si_);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                si_-&gt;copyState(motion-&gt;state, st);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                motion-&gt;root = motion-&gt;state;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                tGoal_-&gt;add(motion);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">if</span> (tGoal_-&gt;size() == 0)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;%s: Unable to sample any valid states for goal tree&quot;</span>, getName().c_str());</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                status = <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637">base::PlannerStatus::INVALID_GOAL</a>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="comment">/* sample random state */</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        sampler_-&gt;sampleUniform(rstate);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4b">GrowState</a> gs = growTree(tree, tgi, rmotion);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">if</span> (gs != TRAPPED)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="comment">/* remember which motion was just added */</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *addedMotion = tgi.xmotion;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="comment">/* attempt to connect trees */</span></div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="comment">/* update distance between trees */</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">double</span> newDist = tree-&gt;getDistanceFunction()(addedMotion, otherTree-&gt;nearest(addedMotion));</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">if</span> (newDist &lt; distanceBetweenTrees_)</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                distanceBetweenTrees_ = newDist;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="comment">// OMPL_INFORM(&quot;Estimated distance to go: %f&quot;, distanceBetweenTrees_);</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *startMotion = tgi.start ? tgi.xmotion : addedMotion;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *goalMotion = tgi.start ? addedMotion : tgi.xmotion;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="comment">/* if reached, it means we used rstate directly, no need to copy again */</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">if</span> (gs != REACHED)</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                si_-&gt;copyState(rstate, tgi.xstate);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            tgi.start = startTree_;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="comment">/* if initial progress cannot be done from the otherTree, restore tgi.start */</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4b">GrowState</a> gsc = growTree(otherTree, tgi, rmotion);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordflow">if</span> (gsc == TRAPPED)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                tgi.start = !tgi.start;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="comment">/* if we connected the trees in a valid way (start and goal pair is valid)*/</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">if</span> (gsc == REACHED &amp;&amp; goal-&gt;isStartGoalPairValid(startMotion-&gt;root, goalMotion-&gt;root))</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                <span class="comment">// it must be the case that either the start tree or the goal tree has made some progress</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <span class="comment">// so one of the parents is not nullptr. We go one step &#39;back&#39; to avoid having a duplicate state</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <span class="comment">// on the solution path</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                <span class="keywordflow">if</span> (startMotion-&gt;parent != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    startMotion = startMotion-&gt;parent;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    goalMotion = goalMotion-&gt;parent;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">while</span> (gsc == ADVANCED)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                gsc = growTree(otherTree, tgi, rmotion);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="comment">/* update distance between trees */</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">double</span> newDist = tree-&gt;getDistanceFunction()(addedMotion, otherTree-&gt;nearest(addedMotion));</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordflow">if</span> (newDist &lt; distanceBetweenTrees_)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                distanceBetweenTrees_ = newDist;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="comment">// OMPL_INFORM(&quot;Estimated distance to go: %f&quot;, distanceBetweenTrees_);</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            }</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                connectionPoint_ = std::make_pair(startMotion-&gt;state, goalMotion-&gt;state);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="comment">/* construct the solution path */</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *solution = startMotion;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                std::vector&lt;Motion *&gt; mpath1;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="keywordflow">while</span> (solution != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    mpath1.push_back(solution);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                    solution = solution-&gt;parent;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                }</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                solution = goalMotion;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                std::vector&lt;Motion *&gt; mpath2;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                <span class="keywordflow">while</span> (solution != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    mpath2.push_back(solution);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    solution = solution-&gt;parent;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="keyword">auto</span> path(std::make_shared&lt;PathGeometric&gt;(si_));</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                path-&gt;getStates().reserve(mpath1.size() + mpath2.size());</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = mpath1.size() - 1; i &gt;= 0; --i)</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    path-&gt;append(mpath1[i]-&gt;state);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;i : mpath2)</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    path-&gt;append(i-&gt;state);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                pdef_-&gt;addSolutionPath(path, <span class="keyword">false</span>, 0.0, getName());</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                solved = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            {</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <span class="comment">// We didn&#39;t reach the goal, but if we were extending the start</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <span class="comment">// tree, then we can mark/improve the approximate path so far.</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">if</span> (tgi.start)</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                    <span class="comment">// We were working from the startTree.</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                    <span class="keywordtype">double</span> dist = 0.0;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    goal-&gt;isSatisfied(tgi.xmotion-&gt;state, &amp;dist);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                    <span class="keywordflow">if</span> (dist &lt; approxdif)</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                        approxdif = dist;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                        approxsol = tgi.xmotion;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                    }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                }</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            }</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        }</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    si_-&gt;freeState(tgi.xstate);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    si_-&gt;freeState(rstate);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keyword">delete</span> rmotion;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;%s: Created %u states (%u start + %u goal)&quot;</span>, getName().c_str(), tStart_-&gt;size() + tGoal_-&gt;size(),</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                tStart_-&gt;size(), tGoal_-&gt;size());</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">if</span> (approxsol &amp;&amp; !solved)</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    {</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">/* construct the solution path */</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        std::vector&lt;Motion *&gt; mpath;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">while</span> (approxsol != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        {</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            mpath.push_back(approxsol);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            approxsol = approxsol-&gt;parent;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keyword">auto</span> path(std::make_shared&lt;PathGeometric&gt;(si_));</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = mpath.size() - 1; i &gt;= 0; --i)</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            path-&gt;append(mpath[i]-&gt;state);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        pdef_-&gt;addSolutionPath(path, <span class="keyword">true</span>, approxdif, getName());</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a5fade5f3ded9dd85ce1693c1912edaa8">base::PlannerStatus::APPROXIMATE_SOLUTION</a>;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">return</span> solved ? <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28">base::PlannerStatus::EXACT_SOLUTION</a> : <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a620a03eebe49aa307140d6a4763278fd">base::PlannerStatus::TIMEOUT</a>;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">  381</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">ompl::geometric::RRTConnect::getPlannerData</a>(<a class="code" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    Planner::getPlannerData(data);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *startMotion = tgi.start ? tgi.xmotion : addedMotion;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *goalMotion = tgi.start ? addedMotion : tgi.xmotion;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="comment">/* if we connected the trees in a valid way (start and goal pair is valid)*/</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="keywordflow">if</span> (gsc == REACHED &amp;&amp; goal-&gt;isStartGoalPairValid(startMotion-&gt;root, goalMotion-&gt;root))</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="comment">// it must be the case that either the start tree or the goal tree has made some progress</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                <span class="comment">// so one of the parents is not nullptr. We go one step &#39;back&#39; to avoid having a duplicate state</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="comment">// on the solution path</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="keywordflow">if</span> (startMotion-&gt;parent != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    startMotion = startMotion-&gt;parent;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    goalMotion = goalMotion-&gt;parent;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                connectionPoint_ = std::make_pair(startMotion-&gt;state, goalMotion-&gt;state);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                <span class="comment">/* construct the solution path */</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1RRTConnect_1_1Motion.html">Motion</a> *solution = startMotion;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                std::vector&lt;Motion *&gt; mpath1;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="keywordflow">while</span> (solution != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                    mpath1.push_back(solution);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    solution = solution-&gt;parent;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                solution = goalMotion;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                std::vector&lt;Motion *&gt; mpath2;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <span class="keywordflow">while</span> (solution != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    mpath2.push_back(solution);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                    solution = solution-&gt;parent;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <span class="keyword">auto</span> path(std::make_shared&lt;PathGeometric&gt;(si_));</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                path-&gt;getStates().reserve(mpath1.size() + mpath2.size());</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = mpath1.size() - 1; i &gt;= 0; --i)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                    path-&gt;append(mpath1[i]-&gt;state);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;i : mpath2)</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    path-&gt;append(i-&gt;state);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                pdef_-&gt;addSolutionPath(path, <span class="keyword">false</span>, 0.0, getName());</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                solved = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                <span class="comment">// We didn&#39;t reach the goal, but if we were extending the start</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <span class="comment">// tree, then we can mark/improve the approximate path so far.</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <span class="keywordflow">if</span> (tgi.start)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    <span class="comment">// We were working from the startTree.</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    <span class="keywordtype">double</span> dist = 0.0;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    goal-&gt;isSatisfied(tgi.xmotion-&gt;state, &amp;dist);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    <span class="keywordflow">if</span> (dist &lt; approxdif)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    {</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                        approxdif = dist;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                        approxsol = tgi.xmotion;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    si_-&gt;freeState(tgi.xstate);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    si_-&gt;freeState(rstate);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keyword">delete</span> rmotion;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;%s: Created %u states (%u start + %u goal)&quot;</span>, getName().c_str(), tStart_-&gt;size() + tGoal_-&gt;size(),</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                tStart_-&gt;size(), tGoal_-&gt;size());</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (approxsol &amp;&amp; !solved)</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="comment">/* construct the solution path */</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        std::vector&lt;Motion *&gt; mpath;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">while</span> (approxsol != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            mpath.push_back(approxsol);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            approxsol = approxsol-&gt;parent;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    std::vector&lt;Motion *&gt; motions;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">if</span> (tStart_)</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        tStart_-&gt;list(motions);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;motion : motions)</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span> (motion-&gt;parent == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a2eea84456784452486aa0065af391f47">addStartVertex</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 1));</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        {</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">addEdge</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;parent-&gt;state, 1), <a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 1));</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keyword">auto</span> path(std::make_shared&lt;PathGeometric&gt;(si_));</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = mpath.size() - 1; i &gt;= 0; --i)</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            path-&gt;append(mpath[i]-&gt;state);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        pdef_-&gt;addSolutionPath(path, <span class="keyword">true</span>, approxdif, getName());</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a5fade5f3ded9dd85ce1693c1912edaa8">base::PlannerStatus::APPROXIMATE_SOLUTION</a>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">return</span> solved ? <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28">base::PlannerStatus::EXACT_SOLUTION</a> : status;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">  395</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">ompl::geometric::RRTConnect::getPlannerData</a>(<a class="code" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    Planner::getPlannerData(data);</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    motions.clear();</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">if</span> (tGoal_)</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        tGoal_-&gt;list(motions);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    std::vector&lt;Motion *&gt; motions;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">if</span> (tStart_)</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        tStart_-&gt;list(motions);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;motion : motions)</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    {</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">if</span> (motion-&gt;parent == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a3604cb85b0402b09b319c5f1df02b12e">addGoalVertex</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 2));</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a2eea84456784452486aa0065af391f47">addStartVertex</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 1));</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        {</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <span class="comment">// The edges in the goal tree are reversed to be consistent with start tree</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">addEdge</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 2), <a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;parent-&gt;state, 2));</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        }</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="comment">// Add the edge connecting the two trees</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">addEdge</a>(data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a06792592713e6463c4b9814f2a715b4c">vertexIndex</a>(connectionPoint_.first), data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a06792592713e6463c4b9814f2a715b4c">vertexIndex</a>(connectionPoint_.second));</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">addEdge</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;parent-&gt;state, 1), <a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 1));</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    }</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    motions.clear();</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">if</span> (tGoal_)</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        tGoal_-&gt;list(motions);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment">// Add some info.</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#aca9e2da9d9a46e42c516fc8b926ab65c">properties</a>[<span class="stringliteral">&quot;approx goal distance REAL&quot;</span>] = <a class="code" href="namespaceompl.html#a6e6c38ce80fbb8f10d826bb19b64735a">ompl::toString</a>(distanceBetweenTrees_);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;motion : motions)</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">if</span> (motion-&gt;parent == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a3604cb85b0402b09b319c5f1df02b12e">addGoalVertex</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 2));</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        {</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="comment">// The edges in the goal tree are reversed to be consistent with start tree</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">addEdge</a>(<a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;state, 2), <a class="code" href="classompl_1_1base_1_1PlannerDataVertex.html">base::PlannerDataVertex</a>(motion-&gt;parent-&gt;state, 2));</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        }</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="comment">// Add the edge connecting the two trees</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">addEdge</a>(data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a06792592713e6463c4b9814f2a715b4c">vertexIndex</a>(connectionPoint_.first), data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#a06792592713e6463c4b9814f2a715b4c">vertexIndex</a>(connectionPoint_.second));</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment">// Add some info.</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    data.<a class="code" href="classompl_1_1base_1_1PlannerData.html#aca9e2da9d9a46e42c516fc8b926ab65c">properties</a>[<span class="stringliteral">&quot;approx goal distance REAL&quot;</span>] = <a class="code" href="namespaceompl.html#a6e6c38ce80fbb8f10d826bb19b64735a">ompl::toString</a>(distanceBetweenTrees_);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_a6df5b0ed7234e4a70f82fd84f3e83c4b"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#a6df5b0ed7234e4a70f82fd84f3e83c4b">ompl::geometric::RRTConnect::GrowState</a></div><div class="ttdeci">GrowState</div><div class="ttdoc">The state of the tree after an attempt to extend it.</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8h_source.html#l00245">RRTConnect.h:245</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a47d769205044efa345184a640bd863ff"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a47d769205044efa345184a640bd863ff">ompl::base::PlannerStatus::UNRECOGNIZED_GOAL_TYPE</a></div><div class="ttdeci">@ UNRECOGNIZED_GOAL_TYPE</div><div class="ttdoc">The goal is of a type that a planner does not recognize.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00188">PlannerStatus.h:188</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html_a65bff53ea4bc6f158342a856175ab9a6"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html#a65bff53ea4bc6f158342a856175ab9a6">ompl::tools::SelfConfig::configurePlannerRange</a></div><div class="ttdeci">void configurePlannerRange(double &amp;range)</div><div class="ttdoc">Compute what a good length for motion segments is.</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8cpp_source.html#l00225">SelfConfig.cpp:225</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a5fade5f3ded9dd85ce1693c1912edaa8"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a5fade5f3ded9dd85ce1693c1912edaa8">ompl::base::PlannerStatus::APPROXIMATE_SOLUTION</a></div><div class="ttdeci">@ APPROXIMATE_SOLUTION</div><div class="ttdoc">The planner found an approximate solution.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00192">PlannerStatus.h:192</a></div></div>
-<div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_aa1171c6ad33dca3806a8a4df42e4f6b8"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#aa1171c6ad33dca3806a8a4df42e4f6b8">ompl::geometric::RRTConnect::solve</a></div><div class="ttdeci">base::PlannerStatus solve(const base::PlannerTerminationCondition &amp;ptc) override</div><div class="ttdoc">Function that can solve the motion planning problem. This function can be called multiple times on th...</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8cpp_source.html#l00186">RRTConnect.cpp:186</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00113">State.h:113</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html">ompl::tools::SelfConfig</a></div><div class="ttdoc">This class contains methods that automatically configure various parameters for motion planning....</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8h_source.html#l00123">SelfConfig.h:123</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_aa1171c6ad33dca3806a8a4df42e4f6b8"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#aa1171c6ad33dca3806a8a4df42e4f6b8">ompl::geometric::RRTConnect::solve</a></div><div class="ttdeci">base::PlannerStatus solve(const base::PlannerTerminationCondition &amp;ptc) override</div><div class="ttdoc">Function that can solve the motion planning problem. This function can be called multiple times on th...</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8cpp_source.html#l00198">RRTConnect.cpp:198</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00113">State.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1SelfConfig_html"><div class="ttname"><a href="classompl_1_1tools_1_1SelfConfig.html">ompl::tools::SelfConfig</a></div><div class="ttdoc">This class contains methods that automatically configure various parameters for motion planning....</div><div class="ttdef"><b>Definition:</b> <a href="SelfConfig_8h_source.html#l00122">SelfConfig.h:122</a></div></div>
 <div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_a07527c14eb0e9e9c2eaf3133728de501"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#a07527c14eb0e9e9c2eaf3133728de501">ompl::geometric::RRTConnect::connectionPoint_</a></div><div class="ttdeci">std::pair&lt; base::State *, base::State * &gt; connectionPoint_</div><div class="ttdoc">The pair of states in each tree connected during planning. Used for PlannerData computation.</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8h_source.html#l00289">RRTConnect.h:289</a></div></div>
 <div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_a6d672e3b8c4e5f09719a5db74c75ca41"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#a6d672e3b8c4e5f09719a5db74c75ca41">ompl::geometric::RRTConnect::setRange</a></div><div class="ttdeci">void setRange(double distance)</div><div class="ttdoc">Set the range the planner is supposed to use.</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8h_source.html#l00190">RRTConnect.h:190</a></div></div>
 <div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_af482977ca67a836f2d3e4bbdbc95323f"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#af482977ca67a836f2d3e4bbdbc95323f">ompl::geometric::RRTConnect::TreeData</a></div><div class="ttdeci">std::shared_ptr&lt; NearestNeighbors&lt; Motion * &gt; &gt; TreeData</div><div class="ttdoc">A nearest-neighbor datastructure representing a tree of motions.</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8h_source.html#l00234">RRTConnect.h:234</a></div></div>
@@ -592,7 +606,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="aclassompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00127">PlannerTerminationCondition.h:127</a></div></div>
 <div class="ttc" id="aclassompl_1_1base_1_1Planner_html_a4311ea7a0470f0e0f76cb1656d63e365"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html#a4311ea7a0470f0e0f76cb1656d63e365">ompl::base::Planner::specs_</a></div><div class="ttdeci">PlannerSpecs specs_</div><div class="ttdoc">The specifications of the planner (its capabilities)</div><div class="ttdef"><b>Definition:</b> <a href="Planner_8h_source.html#l00486">Planner.h:486</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637">ompl::base::PlannerStatus::INVALID_GOAL</a></div><div class="ttdeci">@ INVALID_GOAL</div><div class="ttdoc">Invalid goal state.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00186">PlannerStatus.h:186</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_a06792592713e6463c4b9814f2a715b4c"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#a06792592713e6463c4b9814f2a715b4c">ompl::base::PlannerData::vertexIndex</a></div><div class="ttdeci">unsigned int vertexIndex(const PlannerDataVertex &amp;v) const</div><div class="ttdoc">Return the index for the vertex associated with the given data. INVALID_INDEX is returned if this ver...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00315">PlannerData.cpp:315</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_a06792592713e6463c4b9814f2a715b4c"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#a06792592713e6463c4b9814f2a715b4c">ompl::base::PlannerData::vertexIndex</a></div><div class="ttdeci">unsigned int vertexIndex(const PlannerDataVertex &amp;v) const</div><div class="ttdoc">Return the index for the vertex associated with the given data. INVALID_INDEX is returned if this ver...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00313">PlannerData.cpp:313</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerSpecs_html_abe3ce1c340ba64c14644b0cace72907d"><div class="ttname"><a href="structompl_1_1base_1_1PlannerSpecs.html#abe3ce1c340ba64c14644b0cace72907d">ompl::base::PlannerSpecs::directed</a></div><div class="ttdeci">bool directed</div><div class="ttdoc">Flag indicating whether the planner is able to account for the fact that the validity of a motion fro...</div><div class="ttdef"><b>Definition:</b> <a href="Planner_8h_source.html#l00269">Planner.h:269</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a></div><div class="ttdoc">A class to store the exit status of Planner::solve()</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00112">PlannerStatus.h:112</a></div></div>
 <div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_ab82fb331140caa1d5c9c929db8df1c08"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#ab82fb331140caa1d5c9c929db8df1c08">ompl::geometric::RRTConnect::distanceBetweenTrees_</a></div><div class="ttdeci">double distanceBetweenTrees_</div><div class="ttdoc">Distance between the nearest pair of start tree and goal tree nodes.</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8h_source.html#l00292">RRTConnect.h:292</a></div></div>
@@ -602,12 +616,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_aca9e2da9d9a46e42c516fc8b926ab65c"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#aca9e2da9d9a46e42c516fc8b926ab65c">ompl::base::PlannerData::properties</a></div><div class="ttdeci">std::map&lt; std::string, std::string &gt; properties</div><div class="ttdoc">Any extra properties (key-value pairs) the planner can set.</div><div class="ttdef"><b>Definition:</b> <a href="base_2PlannerData_8h_source.html#l00474">PlannerData.h:474</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a20f8c901516c72e258d43d7156fe8e28">ompl::base::PlannerStatus::EXACT_SOLUTION</a></div><div class="ttdeci">@ EXACT_SOLUTION</div><div class="ttdoc">The planner found an exact solution.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00194">PlannerStatus.h:194</a></div></div>
 <div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_a140a2bf524fe7c39dfbe1e8d5f55fe80"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#a140a2bf524fe7c39dfbe1e8d5f55fe80">ompl::geometric::RRTConnect::growTree</a></div><div class="ttdeci">GrowState growTree(TreeData &amp;tree, TreeGrowingInfo &amp;tgi, Motion *rmotion)</div><div class="ttdoc">Grow a tree towards a random state.</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8cpp_source.html#l00116">RRTConnect.cpp:116</a></div></div>
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4">ompl::base::PlannerStatus::StatusType</a></div><div class="ttdeci">StatusType</div><div class="ttdoc">The possible values of the status returned by a planner.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00147">PlannerStatus.h:147</a></div></div>
 <div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_a66c8c7bea15161438a8a23ef733c9340"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#a66c8c7bea15161438a8a23ef733c9340">ompl::geometric::RRTConnect::getRange</a></div><div class="ttdeci">double getRange() const</div><div class="ttdoc">Get the range the planner is using.</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8h_source.html#l00196">RRTConnect.h:196</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_a2eea84456784452486aa0065af391f47"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#a2eea84456784452486aa0065af391f47">ompl::base::PlannerData::addStartVertex</a></div><div class="ttdeci">unsigned int addStartVertex(const PlannerDataVertex &amp;v)</div><div class="ttdoc">Adds the given vertex to the graph data, and marks it as a start vertex. The vertex index is returned...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00413">PlannerData.cpp:413</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_a2eea84456784452486aa0065af391f47"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#a2eea84456784452486aa0065af391f47">ompl::base::PlannerData::addStartVertex</a></div><div class="ttdeci">unsigned int addStartVertex(const PlannerDataVertex &amp;v)</div><div class="ttdoc">Adds the given vertex to the graph data, and marks it as a start vertex. The vertex index is returned...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00411">PlannerData.cpp:411</a></div></div>
 <div class="ttc" id="agroup__logging_html_ga05ad3ae88188e7f248748785afd2b882"><div class="ttname"><a href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a></div><div class="ttdeci">#define OMPL_ERROR(fmt,...)</div><div class="ttdoc">Log a formatted error string.</div><div class="ttdef"><b>Definition:</b> <a href="Console_8h_source.html#l00064">Console.h:64</a></div></div>
-<div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_a8bf803eefd912be271ee4aba109dbe82"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">ompl::geometric::RRTConnect::getPlannerData</a></div><div class="ttdeci">void getPlannerData(base::PlannerData &amp;data) const override</div><div class="ttdoc">Get information about the current run of the motion planner. Repeated calls to this function will upd...</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8cpp_source.html#l00381">RRTConnect.cpp:381</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_ac09c21494a8c7db500ef1a66bbbb1aa7"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">ompl::base::PlannerData::addEdge</a></div><div class="ttdeci">virtual bool addEdge(unsigned int v1, unsigned int v2, const PlannerDataEdge &amp;edge=PlannerDataEdge(), Cost weight=Cost(1.0))</div><div class="ttdoc">Adds a directed edge between the given vertex indexes. An optional edge structure and weight can be s...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00432">PlannerData.cpp:432</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_a3604cb85b0402b09b319c5f1df02b12e"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#a3604cb85b0402b09b319c5f1df02b12e">ompl::base::PlannerData::addGoalVertex</a></div><div class="ttdeci">unsigned int addGoalVertex(const PlannerDataVertex &amp;v)</div><div class="ttdoc">Adds the given vertex to the graph data, and marks it as a start vertex. The vertex index is returned...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00422">PlannerData.cpp:422</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1RRTConnect_html_a8bf803eefd912be271ee4aba109dbe82"><div class="ttname"><a href="classompl_1_1geometric_1_1RRTConnect.html#a8bf803eefd912be271ee4aba109dbe82">ompl::geometric::RRTConnect::getPlannerData</a></div><div class="ttdeci">void getPlannerData(base::PlannerData &amp;data) const override</div><div class="ttdoc">Get information about the current run of the motion planner. Repeated calls to this function will upd...</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8cpp_source.html#l00395">RRTConnect.cpp:395</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_ac09c21494a8c7db500ef1a66bbbb1aa7"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#ac09c21494a8c7db500ef1a66bbbb1aa7">ompl::base::PlannerData::addEdge</a></div><div class="ttdeci">virtual bool addEdge(unsigned int v1, unsigned int v2, const PlannerDataEdge &amp;edge=PlannerDataEdge(), Cost weight=Cost(1.0))</div><div class="ttdoc">Adds a directed edge between the given vertex indexes. An optional edge structure and weight can be s...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00430">PlannerData.cpp:430</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html_a3604cb85b0402b09b319c5f1df02b12e"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html#a3604cb85b0402b09b319c5f1df02b12e">ompl::base::PlannerData::addGoalVertex</a></div><div class="ttdeci">unsigned int addGoalVertex(const PlannerDataVertex &amp;v)</div><div class="ttdoc">Adds the given vertex to the graph data, and marks it as a start vertex. The vertex index is returned...</div><div class="ttdef"><b>Definition:</b> <a href="src_2ompl_2base_2src_2PlannerData_8cpp_source.html#l00420">PlannerData.cpp:420</a></div></div>
 <div class="ttc" id="aclassompl_1_1base_1_1GoalSampleableRegion_html"><div class="ttname"><a href="classompl_1_1base_1_1GoalSampleableRegion.html">ompl::base::GoalSampleableRegion</a></div><div class="ttdoc">Abstract definition of a goal region that can be sampled.</div><div class="ttdef"><b>Definition:</b> <a href="GoalSampleableRegion_8h_source.html#l00111">GoalSampleableRegion.h:111</a></div></div>
 <div class="ttc" id="astructompl_1_1geometric_1_1RRTConnect_1_1TreeGrowingInfo_html"><div class="ttname"><a href="structompl_1_1geometric_1_1RRTConnect_1_1TreeGrowingInfo.html">ompl::geometric::RRTConnect::TreeGrowingInfo</a></div><div class="ttdoc">Information attached to growing a tree of motions (used internally)</div><div class="ttdef"><b>Definition:</b> <a href="RRTConnect_8h_source.html#l00237">RRTConnect.h:237</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a1f20d012b563fc223902e24a8bcd7547"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a1f20d012b563fc223902e24a8bcd7547">ompl::base::PlannerStatus::INVALID_START</a></div><div class="ttdeci">@ INVALID_START</div><div class="ttdoc">Invalid start state or no start state specified.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00184">PlannerStatus.h:184</a></div></div>

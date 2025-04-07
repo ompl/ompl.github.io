@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ol>
 <p>You can specify a path quality metric using the <code><a class="el" href="classompl_1_1base_1_1OptimizationObjective.html" title="Abstract definition of optimization objectives.">ompl::base::OptimizationObjective</a></code> class. As for the optimizing planner, OMPL currently provides several planners that guarantee <em>asymptotic optimality</em> of returned solutions (see the <a href="planners.html">list of available planners</a>). You can find out more about asymptotic optimality in motion planning by checking out <a href="http://sertac.scripts.mit.edu/web/wp-content/papercite-data/pdf/karaman.frazzoli-ijrr11.pdf">this paper</a> by Karaman and Frazzoli.</p>
 <dl class="section note"><dt>Note</dt><dd>OMPL includes support for the CForest parallelization framework, boosting the convergence of optimal planners. <a href="CForest.html">Learn more about CForest.</a></dd></dl>
-<h1><a class="anchor" id="autotoc_md68"></a>
+<h1><a class="anchor" id="autotoc_md67"></a>
 Optimization Objectives</h1>
 <p>OMPL comes with several predefined optimization objectives:</p>
 <ul>
@@ -168,7 +168,7 @@ Optimization Objectives</h1>
 </ul>
 <p>Each of these optimization objectives defines a notion of the <em>cost</em> of a path. In OMPL we define cost as a value accrued over a motion in the robot's configuration space. In geometric planning, a motion is fully defined by a start state and an end state. By default, these objectives attempt to minimize the path cost, but this behavior can be customized. We also assume that the cost of an entire path can be broken down into an accumulation of the costs of the smaller motions that make up the path; the method of accumulation (e.g. summation, multiplication, etc.) can be customized.</p>
 <p>OMPL also provides users with the ability to combine objectives for multi-objective optimal planning problems by using the <code><a class="el" href="classompl_1_1base_1_1MultiOptimizationObjective.html" title="This class allows for the definition of multiobjective optimal planning problems. Objectives are adde...">ompl::base::MultiOptimizationObjective</a></code> class.</p>
-<h1><a class="anchor" id="autotoc_md69"></a>
+<h1><a class="anchor" id="autotoc_md68"></a>
 Limitations</h1>
 <p>To maximize computational efficiency, OMPL assumes that the cost of a path can be represented with one <code>double</code> value. In many problems one value will suffice to fully define the optimization objective, even if we're working with a multi-objective problem. In these cases, the cost of a path can be represented as a weighted sum of the costs of the path under each of the individual objectives which make up the multi-objective.</p>
 <p>However, there are problems that cannot be exactly represented with this assumption. For instance, OMPL cannot represent a multi-objective which combines the following two objectives:</p>
@@ -177,7 +177,7 @@ Limitations</h1>
 <li>maximizing minimum clearance</li>
 </ul>
 <p>The reason why these two objectives cannot be combined is because we need more than one value to perform the accumulation of the path cost. We need one value to hold the accumulation of length along the path, and another value to hold the the minimum clearance value encountered so far in the path. Therefore, <em>the multi-objective problems that cannot be represented in OMPL are those where the individual objectives do not share a cost accumulation function</em>. We note that the above objective can be approximated by combining a path length objective with a state cost integral objective where state cost is a function of clearance.</p>
-<h1><a class="anchor" id="autotoc_md70"></a>
+<h1><a class="anchor" id="autotoc_md69"></a>
 Want to learn more?</h1>
 <p>Check out these tutorials:</p>
 <ul>

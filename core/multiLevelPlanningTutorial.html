@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>We show in this tutorial how to setup a multilevel planning task for a 2D rigid body in the plane.</p>
-<h2><a class="anchor" id="autotoc_md55"></a>
+<h2><a class="anchor" id="autotoc_md54"></a>
 Classical Planning</h2>
 <p>We assume that you know how to setup a classical planning problem in OMPL. To recap, we need to define <br  />
 </p><ul>
@@ -170,7 +170,7 @@ Classical Planning</h2>
 <div class="line">planner-&gt;setProblemDefinition(pdef);</div>
 <div class="line">planner-&gt;setup();</div>
 <div class="line">planner-&gt;solve();</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md55"></a>
 Multilevel Planning</h2>
 <p>In a Multilevel planning setting, we change this routine to add a finite number of levels of abstraction, which can be exploited by an algorithm (if it supports it).</p>
 <p>While the <code><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html" title="A shared pointer wrapper for ompl::base::ProblemDefinition.">ompl::base::ProblemDefinitionPtr</a></code> remains the same, we change the <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code> to a vector and the <code><a class="el" href="classompl_1_1base_1_1PlannerPtr.html" title="A shared pointer wrapper for ompl::base::Planner.">ompl::base::PlannerPtr</a></code> to a multilevel planner. This means we define the following structures:</p>
@@ -191,7 +191,7 @@ Multilevel Planning</h2>
 <div class="line">planner-&gt;setProblemDefinition(pdef);</div>
 <div class="line">planner-&gt;setup();</div>
 <div class="line">planner-&gt;solve();</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md57"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
 Building multiple levels of abstraction</h2>
 <p>Let us build a small sequence of two levels for a rigid body in 2D with configuration space \(SE(2)\). You can find this example <a href="MultiLevelPlanningRigidBody2D_8cpp_source.html">here</a></p>
 <p>First, we need to construct the <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code> for each level. In this case we use spaces \(\{\mathbb{R}^2, SE(2)\}\), corresponding to an abstraction by projecting onto the position of the rigid body. The space is bounded to be in the unit square \([0,1]^2\)</p>
@@ -234,7 +234,7 @@ Building multiple levels of abstraction</h2>
 <div class="line">siVec.push_back(si_R2);</div>
 <div class="line">siVec.push_back(si_SE2);</div>
 </div><!-- fragment --><p>NOTE: The runtime of a multilevel planner depends crucially on the sequence of defined. For some spaces, planning time can be very fast, while for others it is can still be outperformed by classical planner such as <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees.">ompl::geometric::RRT</a> (which is equivalent to running <a class="el" href="namespaceompl_1_1multilevel.html#aa51d0bfae59033012293e9b95991753b" title="[Q]uotient space [R]apidly exploring [R]andom [T]rees (QRRT) Algorithm">ompl::multilevel::QRRT</a> with a single configuration space). Which spaces work best is still an open research question. A good heuristic is to use more levels the more narrow passages we have in an environment. More information can be found in the <a href="https://arxiv.org/abs/1906.01350">QRRT paper</a>.</p>
-<h2><a class="anchor" id="autotoc_md58"></a>
+<h2><a class="anchor" id="autotoc_md57"></a>
 AnnotatedPlannerDataVertex</h2>
 <p>Having defined a Multilevel planner, we can utilize it similar to a usual <a class="el" href="classompl_1_1base_1_1PlannerPtr.html" title="A shared pointer wrapper for ompl::base::Planner.">ompl::base::PlannerPtr</a>, i.e. it can be added to any benchmark, and we can get the planner data.</p>
 <p>However, the classical PlannerData structure does not know about multiple levels of abstraction. To add this information, we wrote the class <code><a class="el" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html" title="An annotated vertex, adding information about its level in the multilevel hierarchy....">ompl::multilevel::PlannerDataVertexAnnotated</a></code>, which inherits from PlannerDataVertex. PlannerDataVertexAnnotated adds new functionalities, including</p>
@@ -255,17 +255,17 @@ AnnotatedPlannerDataVertex</h2>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *s_BaseState = v-&gt;<a class="code" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aaa0bb497bd86ef39a433ee7362bec799">getBaseState</a>();</div>
 <div class="line">    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *s_ConfigurationState = v-&gt;<a class="code" href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63">getState</a>();</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md59"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md58"></a>
 Further Information</h2>
 <p>For more information, please refer to either the general introduction to <a href="multiLevelPlanning.html">Multilevel Planning</a> or the <a href="group__demos.html">demos</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <div class="ttc" id="aclassompl_1_1base_1_1SpaceInformationPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::SpaceInformation.</div></div>
 <div class="ttc" id="aclassompl_1_1multilevel_1_1PlannerDataVertexAnnotated_html_aaa0bb497bd86ef39a433ee7362bec799"><div class="ttname"><a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#aaa0bb497bd86ef39a433ee7362bec799">ompl::multilevel::PlannerDataVertexAnnotated::getBaseState</a></div><div class="ttdeci">const ompl::base::State * getBaseState() const</div><div class="ttdoc">Returns base state, indepent of mode.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerDataVertexAnnotated_8cpp_source.html#l00120">PlannerDataVertexAnnotated.cpp:120</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00113">State.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00113">State.h:113</a></div></div>
 <div class="ttc" id="aclassompl_1_1multilevel_1_1PlannerDataVertexAnnotated_html_a447d4a91a84b093e3cbc44a1283b9c63"><div class="ttname"><a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html#a447d4a91a84b093e3cbc44a1283b9c63">ompl::multilevel::PlannerDataVertexAnnotated::getState</a></div><div class="ttdeci">virtual const ompl::base::State * getState() const override</div><div class="ttdoc">Returns base state in baseMode and total state in totalMode. The total space here is the last element...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerDataVertexAnnotated_8cpp_source.html#l00107">PlannerDataVertexAnnotated.cpp:107</a></div></div>
 <div class="ttc" id="aclassompl_1_1multilevel_1_1PlannerDataVertexAnnotated_html"><div class="ttname"><a href="classompl_1_1multilevel_1_1PlannerDataVertexAnnotated.html">ompl::multilevel::PlannerDataVertexAnnotated</a></div><div class="ttdoc">An annotated vertex, adding information about its level in the multilevel hierarchy....</div><div class="ttdef"><b>Definition:</b> <a href="PlannerDataVertexAnnotated_8h_source.html#l00121">PlannerDataVertexAnnotated.h:121</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1State_html_a6178474307b3f364184db9999a639af1"><div class="ttname"><a href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">ompl::base::State::as</a></div><div class="ttdeci">const T * as() const</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00162">State.h:162</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html_a6178474307b3f364184db9999a639af1"><div class="ttname"><a href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">ompl::base::State::as</a></div><div class="ttdeci">const T * as() const</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00162">State.h:162</a></div></div>
 <div class="ttc" id="aclassompl_1_1base_1_1PlannerPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerPtr.html">PlannerPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::Planner.</div></div>
 <div class="ttc" id="aclassompl_1_1base_1_1RealVectorStateSpace_1_1StateType_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorStateSpace_1_1StateType.html">ompl::base::RealVectorStateSpace::StateType</a></div><div class="ttdoc">The definition of a state in Rn</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorStateSpace_8h_source.html#l00141">RealVectorStateSpace.h:141</a></div></div>
 <div class="ttc" id="aclassompl_1_1base_1_1ProblemDefinitionPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::ProblemDefinition.</div></div>

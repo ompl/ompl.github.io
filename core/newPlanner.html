@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Implementing a New Motion Planner </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md60"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md59"></a>
 Strict Requirements</h1>
 <p>Implementing a new motion planner is very simple using OMPL. There are just two strict requirements:</p>
 <ul>
@@ -157,7 +157,7 @@ Strict Requirements</h1>
 <li>Provide an implementation of the method solve() from <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">ompl::base::Planner</a>.</li>
 </ul>
 <p>By satisfying these requirements, the planner can be fully integrated within the existing OMPL framework.</p>
-<h1><a class="anchor" id="autotoc_md61"></a>
+<h1><a class="anchor" id="autotoc_md60"></a>
 Optional Features</h1>
 <p>Aside from the strict requirements, there are other methods which can be implemented and practices which should be followed for ease of integration. These are not required, but are strongly recommended for simplicity and consistency:</p>
 <ul>
@@ -170,7 +170,7 @@ Optional Features</h1>
 <li>Provide an implementation of <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">ompl::base::Planner::clear()</a>. This method should free any memory allocated by the planner and restore the planner to a state where <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">ompl::base::Planner::solve()</a> can be called again (without passing on information from previous calls to solve() ). If necessary, clear() can set <a class="el" href="classompl_1_1base_1_1Planner.html#adba44a4ee27079c5b258a2ebed719eed" title="Flag indicating whether setup() has been called.">ompl::base::Planner::setup_</a> to <code>false</code>, to communicate to solve() that setup() needs to be called again.</li>
 <li>Provide an implementation of ompl::bas::Planner::getPlannerData() which translates the internal planner data structure to the <a class="el" href="classompl_1_1base_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">ompl::base::PlannerData</a> graph implementation. This method is particularly useful for debugging purposes since it allows the user to inspect the data structure.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md62"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 New Planner Template</h1>
 <p>The following is a template which can be used to craft a new <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">ompl::base::Planner</a> object:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;ompl/base/Planner.h&gt;</span></div>

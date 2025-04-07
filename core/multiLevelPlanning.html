@@ -150,18 +150,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md48">High-level introduction</a></li>
-<li class="level1"><a href="#autotoc_md49">Why Use Multilevel Planning</a></li>
-<li class="level1"><a href="#autotoc_md50">100-dimensional Hypercube Benchmark</a></li>
-<li class="level1"><a href="#autotoc_md51">Want to learn more?</a><ul><li class="level2"><a href="#autotoc_md52">Tutorials</a></li>
-<li class="level2"><a href="#autotoc_md53">Demos</a></li>
-<li class="level2"><a href="#autotoc_md54">Papers</a></li>
+<ul><li class="level1"><a href="#autotoc_md47">High-level introduction</a></li>
+<li class="level1"><a href="#autotoc_md48">Why Use Multilevel Planning</a></li>
+<li class="level1"><a href="#autotoc_md49">100-dimensional Hypercube Benchmark</a></li>
+<li class="level1"><a href="#autotoc_md50">Want to learn more?</a><ul><li class="level2"><a href="#autotoc_md51">Tutorials</a></li>
+<li class="level2"><a href="#autotoc_md52">Demos</a></li>
+<li class="level2"><a href="#autotoc_md53">Papers</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="textblock"><p>When dealing with high-dimensional motion planning problems, we often cannot solve them directly because our algorithms either run out of memory or the runtime quickly blows up. To combat this <a href="https://en.wikipedia.org/wiki/Curse_of_dimensionality">curse of dimensionality</a>, we can instead plan on different levels of abstractions. To plan on different levels of abstractions, we develop the multilevel planning framework. In this framework we use internally the language of <a href="https://en.wikipedia.org/wiki/Fiber_bundle">Fiber Bundles</a> to model abstractions as sequences of admissible lower-dimensional projections of the state space.</p>
-<h1><a class="anchor" id="autotoc_md48"></a>
+<h1><a class="anchor" id="autotoc_md47"></a>
 High-level introduction</h1>
 <p>Instead of planning on a single state space, we instead use a sequence of state spaces, which allows a planner to exploit those spaces to quickly find solutions. To use the multilevel planning framework, you only need to specify a sequence of <code><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html" title="A shared pointer wrapper for ompl::base::SpaceInformation.">ompl::base::SpaceInformationPtr</a></code> together with corresponding <code><a class="el" href="classompl_1_1base_1_1StateValidityChecker.html" title="Abstract definition for a class checking the validity of states. The implementation of this class mus...">ompl::base::StateValidityChecker</a></code> functions. You can use any sequence and any validiy checker you like. However, if you want to be sure that the algorithm finds a solution, you need to make sure that those functions are admissible. Admissible here means that if there exists a valid solution on the original state space, and you project this solution onto a lower-dimensional space in your sequence, then this solution must be feasible. In practice, you can achieve admissibility by constraint relaxation operations, like shrinking obstacles, shrinking links, removing non-holonomic constraints, removing links, removing subsystems or removing robots (from a set of robots).</p>
 <p>Some examples of admissible projections are shown in the Figure below. We show three examples. In the first example, we remove the arms of PR2 (which might be irrelevant when moving through long corridors). In the second example, we remove some fingers of the Shadow hand which might not be relevant for a particular grasp. In the third example, we nest an inscribed sphere in an airplane. While the airplane might have non-holonomic constraints, the sphere is holonomic. The validity checker in each case corresponds to checking collision of the lower-dimensional robot.</p>
@@ -173,7 +173,7 @@ High-level introduction</h1>
 </div>
 </div>
 </p>
-<h1><a class="anchor" id="autotoc_md49"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
 Why Use Multilevel Planning</h1>
 <ul>
 <li>If you supply admissible projections, we can guarantee probabilistic completeness and asymptotical (near-) optimality</li>
@@ -185,7 +185,7 @@ Why Use Multilevel Planning</h1>
 </li>
 <li>It can be much faster compared to other planning algorithms (on the order of several magnitudes)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="autotoc_md49"></a>
 100-dimensional Hypercube Benchmark</h1>
 <p>To see how much faster multilevel planning can be, we provide a 100 dimensional hypercube demo, which you can run yourself using <a href="MultiLevelPlanningHyperCube_8cpp_source.html">Multilevel HyperCube</a> and <a href="MultiLevelPlanningHyperCubeBenchmark_8cpp_source.html">Multilevel HyperCube Benchmark</a>.</p>
 <p>The abstractions in this scenario are \(99\) projections, where each projection removes a dimension from the problem and reduces the problem from an \(N\)-dimensional cube to an \(N-1\) dimensional cube. We compare several multilevel planning algorithms (QRRT, QRRT*, QMP, QMP*, SPQR) to all other algorithms currently implemented in the library (as of May 2020). Note that we had to remove planners <code><a class="el" href="classompl_1_1geometric_1_1SST.html">ompl::geometric::SST</a></code> and <code><a class="el" href="classompl_1_1geometric_1_1PDST.html" title="Path-Directed Subdivision Tree.">ompl::geometric::PDST</a></code> due to memory issues. We observe that QRRT, QRRT*, QMP and QMP* all terminate in under one second (note that <code>ompl::multilevel::SPQR</code> and <code><a class="el" href="classompl_1_1geometric_1_1SPARStwo.html" title="SPArse Roadmap Spanner Version 2.0">ompl::geometric::SPARStwo</a></code> terminate while declaring the problem to be infeasible). Thus the multilevel planner significantly outperforms classical planner. Note that this problem is really hard, and classical planner can often only solve this problem with up to $25$ dimensions in reasonable time. It seems using multilevel planning is the only option to solve such challenging environments.</p>
@@ -195,15 +195,15 @@ Why Use Multilevel Planning</h1>
 </div>
 </div>
 </p>
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md50"></a>
 Want to learn more?</h1>
-<h2><a class="anchor" id="autotoc_md52"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 Tutorials</h2>
 <p>Check out the <a href="multiLevelPlanningTutorial.html">tutorial</a>.</p>
-<h2><a class="anchor" id="autotoc_md53"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 Demos</h2>
 <p>Check out the <a href="group__demos.html">demos</a>.</p>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 Papers</h2>
 <ul>
 <li>A Orthey, S Akbar and M Toussaint, <em>Multilevel Motion Planning: A Fiber Bundle Formulation</em>, 2020. Preprint. Also available at <a href="https://arxiv.org/abs/2007.09435">https://arxiv.org/abs/2007.09435</a>.</li>

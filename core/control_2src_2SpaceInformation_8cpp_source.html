@@ -298,207 +298,209 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#abd3baaca5129e90713aa9912242f9071">  144</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#abd3baaca5129e90713aa9912242f9071">ompl::control::SpaceInformation::canPropagateBackward</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> statePropagator_-&gt;canPropagateBackward();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">  149</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">ompl::control::SpaceInformation::propagate</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control, <span class="keywordtype">int</span> steps,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *result)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (steps == 0)</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (result != state)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            copyState(result, state);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        steps = abs(steps);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        statePropagator_-&gt;propagate(state, control, signedStepSize, result);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; steps; ++i)</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            statePropagator_-&gt;propagate(result, control, signedStepSize, result);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">  168</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">ompl::control::SpaceInformation::propagateWhileValid</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                                                  <span class="keywordtype">int</span> steps, <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *result)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span> (steps == 0)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span> (result != state)</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            copyState(result, state);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    steps = abs(steps);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// perform the first step of propagation</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    statePropagator_-&gt;propagate(state, control, signedStepSize, result);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// if we found a valid state after one step, we can go on</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (isValid(result))</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *temp1 = result;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *temp2 = allocState();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *toDelete = temp2;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> r = steps;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// for the remaining number of steps</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; steps; ++i)</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            statePropagator_-&gt;propagate(temp1, control, signedStepSize, temp2);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">if</span> (isValid(temp2))</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                std::swap(temp1, temp2);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="comment">// the last valid state is temp1;</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                r = i;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">// if we finished the for-loop without finding an invalid state, the last valid state is temp1</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">// make sure result contains that information</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (result != temp1)</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            copyState(result, temp1);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// free the temporary memory</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        freeState(toDelete);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// if the first propagation step produced an invalid step, return 0 steps</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// the last valid state is the starting one (assumed to be valid)</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">if</span> (result != state)</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        copyState(result, state);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#a64afad5f0a2332ac18ba2fed1446fa2f">  223</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">ompl::control::SpaceInformation::propagate</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control, <span class="keywordtype">int</span> steps,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                                std::vector&lt;base::State *&gt; &amp;result, <span class="keywordtype">bool</span> alloc)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    steps = abs(steps);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">if</span> (alloc)</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        result.resize(steps);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;i : result)</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            i = allocState();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordflow">if</span> (result.empty())</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        steps = std::min(steps, (<span class="keywordtype">int</span>)result.size());</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">int</span> st = 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (statePropagator_)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> statePropagator_-&gt;canPropagateBackward();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">  151</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">ompl::control::SpaceInformation::propagate</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control, <span class="keywordtype">int</span> steps,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *result)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span> (steps == 0)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> (result != state)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            copyState(result, state);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        steps = abs(steps);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        statePropagator_-&gt;propagate(state, control, signedStepSize, result);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; steps; ++i)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            statePropagator_-&gt;propagate(result, control, signedStepSize, result);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">  170</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">ompl::control::SpaceInformation::propagateWhileValid</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                                                  <span class="keywordtype">int</span> steps, <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *result)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (steps == 0)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> (result != state)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            copyState(result, state);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    steps = abs(steps);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// perform the first step of propagation</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    statePropagator_-&gt;propagate(state, control, signedStepSize, result);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// if we found a valid state after one step, we can go on</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">if</span> (isValid(result))</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *temp1 = result;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *temp2 = allocState();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *toDelete = temp2;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> r = steps;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="comment">// for the remaining number of steps</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; steps; ++i)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            statePropagator_-&gt;propagate(temp1, control, signedStepSize, temp2);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">if</span> (isValid(temp2))</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                std::swap(temp1, temp2);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="comment">// the last valid state is temp1;</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                r = i;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="comment">// if we finished the for-loop without finding an invalid state, the last valid state is temp1</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">// make sure result contains that information</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">if</span> (result != temp1)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            copyState(result, temp1);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="comment">// free the temporary memory</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        freeState(toDelete);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">// if the first propagation step produced an invalid step, return 0 steps</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// the last valid state is the starting one (assumed to be valid)</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (result != state)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        copyState(result, state);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#a64afad5f0a2332ac18ba2fed1446fa2f">  225</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">ompl::control::SpaceInformation::propagate</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control, <span class="keywordtype">int</span> steps,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                                std::vector&lt;base::State *&gt; &amp;result, <span class="keywordtype">bool</span> alloc)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    steps = abs(steps);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">if</span> (alloc)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        result.resize(steps);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;i : result)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            i = allocState();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">if</span> (result.empty())</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        steps = std::min(steps, (<span class="keywordtype">int</span>)result.size());</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span> (st &lt; steps)</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        statePropagator_-&gt;propagate(state, control, signedStepSize, result[st]);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        ++st;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">while</span> (st &lt; steps)</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            statePropagator_-&gt;propagate(result[st - 1], control, signedStepSize, result[st]);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            ++st;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#a19bb9052369da55d2b8bf112c2abf69b">  257</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">ompl::control::SpaceInformation::propagateWhileValid</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control,</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                                                  <span class="keywordtype">int</span> steps, std::vector&lt;base::State *&gt; &amp;result,</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                                                                  <span class="keywordtype">bool</span> alloc)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    steps = abs(steps);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">if</span> (alloc)</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        result.resize(steps);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span> (result.empty())</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        steps = std::min(steps, (<span class="keywordtype">int</span>)result.size());</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordtype">int</span> st = 0;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">int</span> st = 0;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (st &lt; steps)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        statePropagator_-&gt;propagate(state, control, signedStepSize, result[st]);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        ++st;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">while</span> (st &lt; steps)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            statePropagator_-&gt;propagate(result[st - 1], control, signedStepSize, result[st]);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            ++st;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#a19bb9052369da55d2b8bf112c2abf69b">  259</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">ompl::control::SpaceInformation::propagateWhileValid</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">Control</a> *control,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                                                  <span class="keywordtype">int</span> steps, std::vector&lt;base::State *&gt; &amp;result,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                                                  <span class="keywordtype">bool</span> alloc)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">double</span> signedStepSize = steps &gt; 0 ? stepSize_ : -stepSize_;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    steps = abs(steps);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">if</span> (alloc)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        result.resize(steps);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">if</span> (result.empty())</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        steps = std::min(steps, (<span class="keywordtype">int</span>)result.size());</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (st &lt; steps)</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordflow">if</span> (alloc)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            result[st] = allocState();</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        statePropagator_-&gt;propagate(state, control, signedStepSize, result[st]);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">if</span> (isValid(result[st]))</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            ++st;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">while</span> (st &lt; steps)</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="keywordflow">if</span> (alloc)</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    result[st] = allocState();</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                statePropagator_-&gt;propagate(result[st - 1], control, signedStepSize, result[st]);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keywordflow">if</span> (!isValid(result[st]))</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <span class="keywordflow">if</span> (alloc)</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        freeState(result[st]);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                        result.resize(st);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                    }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                ++st;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            }</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keywordflow">if</span> (alloc)</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                freeState(result[st]);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                result.resize(st);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> st;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#a381807f067fd010cd98b1d9ed94035f0">  315</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#a381807f067fd010cd98b1d9ed94035f0">ompl::control::SpaceInformation::printSettings</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="classompl_1_1base_1_1SpaceInformation.html#aaafcf07fda025a0ebb21844563d8b2ef">base::SpaceInformation::printSettings</a>(out);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - control space:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    controlSpace_-&gt;printSettings(out);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - can propagate backward: &quot;</span> &lt;&lt; (canPropagateBackward() ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - propagation step size: &quot;</span> &lt;&lt; stepSize_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - propagation duration: [&quot;</span> &lt;&lt; minSteps_ &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; maxSteps_ &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordtype">int</span> st = 0;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> (st &lt; steps)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">if</span> (alloc)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            result[st] = allocState();</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        statePropagator_-&gt;propagate(state, control, signedStepSize, result[st]);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">if</span> (isValid(result[st]))</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            ++st;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">while</span> (st &lt; steps)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="keywordflow">if</span> (alloc)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    result[st] = allocState();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                statePropagator_-&gt;propagate(result[st - 1], control, signedStepSize, result[st]);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">if</span> (!isValid(result[st]))</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    <span class="keywordflow">if</span> (alloc)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                        freeState(result[st]);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                        result.resize(st);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                ++st;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordflow">if</span> (alloc)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                freeState(result[st]);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                result.resize(st);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> st;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1SpaceInformation.html#a381807f067fd010cd98b1d9ed94035f0">  317</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1control_1_1SpaceInformation.html#a381807f067fd010cd98b1d9ed94035f0">ompl::control::SpaceInformation::printSettings</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <a class="code" href="classompl_1_1base_1_1SpaceInformation.html#aaafcf07fda025a0ebb21844563d8b2ef">base::SpaceInformation::printSettings</a>(out);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - control space:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    controlSpace_-&gt;printSettings(out);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - can propagate backward: &quot;</span> &lt;&lt; (canPropagateBackward() ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - propagation step size: &quot;</span> &lt;&lt; stepSize_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  - propagation duration: [&quot;</span> &lt;&lt; minSteps_ &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; maxSteps_ &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassompl_1_1control_1_1Control_html"><div class="ttname"><a href="classompl_1_1control_1_1Control.html">ompl::control::Control</a></div><div class="ttdoc">Definition of an abstract control.</div><div class="ttdef"><b>Definition:</b> <a href="Control_8h_source.html#l00111">Control.h:111</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_a701c9be56b69d156708f3f05aa580389"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#a701c9be56b69d156708f3f05aa580389">ompl::control::SpaceInformation::setStatePropagator</a></div><div class="ttdeci">void setStatePropagator(const StatePropagatorFn &amp;fn)</div><div class="ttdoc">Set the function that performs state propagation.</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00117">SpaceInformation.cpp:117</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_a124d7fdd14374f47a3003174e1e651e5"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#a124d7fdd14374f47a3003174e1e651e5">ompl::control::SpaceInformation::SpaceInformation</a></div><div class="ttdeci">SpaceInformation(const base::StateSpacePtr &amp;stateSpace, ControlSpacePtr controlSpace)</div><div class="ttdoc">Constructor. Sets the instance of the state and control spaces to plan with.</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00045">SpaceInformation.cpp:45</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1ControlSpacePtr_html"><div class="ttname"><a href="classompl_1_1control_1_1ControlSpacePtr.html">ControlSpacePtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::control::ControlSpace.</div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_a31e8e80c279b150006411f2c25909137"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#a31e8e80c279b150006411f2c25909137">ompl::control::SpaceInformation::allocDirectedControlSampler</a></div><div class="ttdeci">DirectedControlSamplerPtr allocDirectedControlSampler() const</div><div class="ttdoc">Allocate an instance of the DirectedControlSampler to use. This will be the default (SimpleDirectedCo...</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00095">SpaceInformation.cpp:95</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00113">State.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00113">State.h:113</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1StatePropagator_html"><div class="ttname"><a href="classompl_1_1control_1_1StatePropagator.html">ompl::control::StatePropagator</a></div><div class="ttdoc">Model the effect of controls on system states.</div><div class="ttdef"><b>Definition:</b> <a href="StatePropagator_8h_source.html#l00125">StatePropagator.h:125</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_ab70ba4f5a01d80b3ba56b0ad05fd0bd8"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#ab70ba4f5a01d80b3ba56b0ad05fd0bd8">ompl::control::SpaceInformation::setDirectedControlSamplerAllocator</a></div><div class="ttdeci">void setDirectedControlSamplerAllocator(const DirectedControlSamplerAllocator &amp;dcsa)</div><div class="ttdoc">Set the allocator to use for the DirectedControlSampler.</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00105">SpaceInformation.cpp:105</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1control_html_a18cd0b32021fd69410637ee90b49dc5a"><div class="ttname"><a href="namespaceompl_1_1control.html#a18cd0b32021fd69410637ee90b49dc5a">ompl::control::DirectedControlSamplerAllocator</a></div><div class="ttdeci">std::function&lt; DirectedControlSamplerPtr(const SpaceInformation *)&gt; DirectedControlSamplerAllocator</div><div class="ttdoc">Definition of a function that can allocate a directed control sampler.</div><div class="ttdef"><b>Definition:</b> <a href="DirectedControlSampler_8h_source.html#l00167">DirectedControlSampler.h:167</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_af2cb6a23bd9b9f9e6997761d100b062c"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#af2cb6a23bd9b9f9e6997761d100b062c">ompl::control::SpaceInformation::declareParams</a></div><div class="ttdeci">void declareParams()</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00052">SpaceInformation.cpp:52</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1control_html_a702e001a3d98ffee40360fbf28ff3a78"><div class="ttname"><a href="namespaceompl_1_1control.html#a702e001a3d98ffee40360fbf28ff3a78">ompl::control::StatePropagatorFn</a></div><div class="ttdeci">std::function&lt; void(const base::State *, const Control *, const double, base::State *)&gt; StatePropagatorFn</div><div class="ttdoc">A function that achieves state propagation.</div><div class="ttdef"><b>Definition:</b> <a href="control_2SpaceInformation_8h_source.html#l00130">SpaceInformation.h:130</a></div></div>
-<div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_a381807f067fd010cd98b1d9ed94035f0"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#a381807f067fd010cd98b1d9ed94035f0">ompl::control::SpaceInformation::printSettings</a></div><div class="ttdeci">void printSettings(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Print information about the current instance of the state space.</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00315">SpaceInformation.cpp:315</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_a381807f067fd010cd98b1d9ed94035f0"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#a381807f067fd010cd98b1d9ed94035f0">ompl::control::SpaceInformation::printSettings</a></div><div class="ttdeci">void printSettings(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Print information about the current instance of the state space.</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00317">SpaceInformation.cpp:317</a></div></div>
 <div class="ttc" id="agroup__logging_html_gab76357dced39cb468d2061d3358f80a6"><div class="ttname"><a href="group__logging.html#gab76357dced39cb468d2061d3358f80a6">OMPL_WARN</a></div><div class="ttdeci">#define OMPL_WARN(fmt,...)</div><div class="ttdoc">Log a formatted warning string.</div><div class="ttdef"><b>Definition:</b> <a href="Console_8h_source.html#l00066">Console.h:66</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html">ompl::control::SpaceInformation</a></div><div class="ttdoc">Space information containing necessary information for planning with controls. setup() needs to be ca...</div><div class="ttdef"><b>Definition:</b> <a href="control_2SpaceInformation_8h_source.html#l00134">SpaceInformation.h:134</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformation_html_aaafcf07fda025a0ebb21844563d8b2ef"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformation.html#aaafcf07fda025a0ebb21844563d8b2ef">ompl::base::SpaceInformation::printSettings</a></div><div class="ttdeci">virtual void printSettings(std::ostream &amp;out=std::cout) const</div><div class="ttdoc">Print information about the current instance of the state space.</div><div class="ttdef"><b>Definition:</b> <a href="base_2src_2SpaceInformation_8cpp_source.html#l00429">SpaceInformation.cpp:429</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformation_html_aaafcf07fda025a0ebb21844563d8b2ef"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformation.html#aaafcf07fda025a0ebb21844563d8b2ef">ompl::base::SpaceInformation::printSettings</a></div><div class="ttdeci">virtual void printSettings(std::ostream &amp;out=std::cout) const</div><div class="ttdoc">Print information about the current instance of the state space.</div><div class="ttdef"><b>Definition:</b> <a href="base_2src_2SpaceInformation_8cpp_source.html#l00439">SpaceInformation.cpp:439</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1DirectedControlSamplerPtr_html"><div class="ttname"><a href="classompl_1_1control_1_1DirectedControlSamplerPtr.html">DirectedControlSamplerPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::control::DirectedControlSampler.</div></div>
-<div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_ac782275d5da2a32fe7a769b836d60353"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">ompl::control::SpaceInformation::propagate</a></div><div class="ttdeci">void propagate(const base::State *state, const Control *control, int steps, base::State *result) const</div><div class="ttdoc">Propagate the model of the system forward, starting a a given state, with a given control,...</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00149">SpaceInformation.cpp:149</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_ac782275d5da2a32fe7a769b836d60353"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#ac782275d5da2a32fe7a769b836d60353">ompl::control::SpaceInformation::propagate</a></div><div class="ttdeci">void propagate(const base::State *state, const Control *control, int steps, base::State *result) const</div><div class="ttdoc">Propagate the model of the system forward, starting a a given state, with a given control,...</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00151">SpaceInformation.cpp:151</a></div></div>
 <div class="ttc" id="aclassompl_1_1base_1_1StatePropagatorPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1StatePropagatorPtr.html">StatePropagatorPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::control::StatePropagator.</div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_ad29d60161e2ffd3956c9ee5992a55d38"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#ad29d60161e2ffd3956c9ee5992a55d38">ompl::control::SpaceInformation::clearDirectedSamplerAllocator</a></div><div class="ttdeci">void clearDirectedSamplerAllocator()</div><div class="ttdoc">Reset the DirectedControlSampler to be the default one.</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00111">SpaceInformation.cpp:111</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformation_html_a6e8c41f946c3c04d126983e145404ad4"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4">ompl::base::SpaceInformation::setup</a></div><div class="ttdeci">virtual void setup()</div><div class="ttdoc">Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...</div><div class="ttdef"><b>Definition:</b> <a href="base_2src_2SpaceInformation_8cpp_source.html#l00058">SpaceInformation.cpp:58</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SpaceInformation_html_a6e8c41f946c3c04d126983e145404ad4"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4">ompl::base::SpaceInformation::setup</a></div><div class="ttdeci">virtual void setup()</div><div class="ttdoc">Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...</div><div class="ttdef"><b>Definition:</b> <a href="base_2src_2SpaceInformation_8cpp_source.html#l00062">SpaceInformation.cpp:62</a></div></div>
 <div class="ttc" id="aclassompl_1_1Exception_html"><div class="ttname"><a href="classompl_1_1Exception.html">ompl::Exception</a></div><div class="ttdoc">The exception type for ompl.</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00078">Exception.h:78</a></div></div>
-<div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_af3d87a18ce94425b34d49dee6d5f0d98"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">ompl::control::SpaceInformation::propagateWhileValid</a></div><div class="ttdeci">unsigned int propagateWhileValid(const base::State *state, const Control *control, int steps, base::State *result) const</div><div class="ttdoc">Propagate the model of the system forward, starting at a given state, with a given control,...</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00168">SpaceInformation.cpp:168</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_af3d87a18ce94425b34d49dee6d5f0d98"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#af3d87a18ce94425b34d49dee6d5f0d98">ompl::control::SpaceInformation::propagateWhileValid</a></div><div class="ttdeci">unsigned int propagateWhileValid(const base::State *state, const Control *control, int steps, base::State *result) const</div><div class="ttdoc">Propagate the model of the system forward, starting at a given state, with a given control,...</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00170">SpaceInformation.cpp:170</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_abd3baaca5129e90713aa9912242f9071"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#abd3baaca5129e90713aa9912242f9071">ompl::control::SpaceInformation::canPropagateBackward</a></div><div class="ttdeci">bool canPropagateBackward() const</div><div class="ttdoc">Some systems can only propagate forward in time (i.e., the steps argument for the propagate() functio...</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00144">SpaceInformation.cpp:144</a></div></div>
 <div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html_a751a2b6c7f36ab5763ee269fb9f48f50"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html#a751a2b6c7f36ab5763ee269fb9f48f50">ompl::control::SpaceInformation::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Perform additional setup tasks (run once, before use)</div><div class="ttdef"><b>Definition:</b> <a href="control_2src_2SpaceInformation_8cpp_source.html#l00065">SpaceInformation.cpp:65</a></div></div>
 </div>

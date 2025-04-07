@@ -154,7 +154,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><p class="startli"><b>Install OMPL and use your own build system:</b> First, if you are installing OMPL “by hand” (i.e., not through your package manager), run the following commands in your OMPL build directory: </p><pre class="fragment">cmake -DCMAKE_INSTALL_PREFIX=/some/path
 make install
 </pre><p class="startli">See <a href="buildOptions.html">Build Options</a> for details on how to enable/disable different OMPL-specific features. Below are the specifics for different build systems:</p><ul>
-<li><b>CMake:</b> For ease of use with CMake, we have included a CMake module. This normally gets installed in the CMake module path, so if you use CMake in your own project, you can simply use this command in your CMakeLists.txt: <code>find_package(ompl)</code>. This will define the following variables:<ul>
+<li><p class="startli"><b>CMake:</b> For ease of use with CMake, we have included a CMake module for finding in <code>CONFIG</code>` mode. If you use CMake in your own project, you can simply use the following commands in your CMakeLists.txt to find and link to the OMPL target.</p>
+<p class="startli">```cmake find_package(ompl CONFIG) target_link_libraries(your_library PUBLIC ompl::ompl) ```</p>
+<p class="startli">To support the previous CMake module behavior, the following variables are defined. These are for backwards compatability, but not recommended anymore. These variables are NOT portable if these libraries exist at a different place than where ompl was built.</p><ul>
 <li><code>OMPL_FOUND</code> - <code>TRUE</code></li>
 <li><code>OMPL_INCLUDE_DIRS</code> - The OMPL include directory</li>
 <li><code>OMPL_LIBRARIES</code> - The OMPL library</li>

@@ -314,311 +314,327 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;timedout&quot;</span>;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;not_saved&quot;</span>;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!lastStatus_)</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment">// Skip further processing if absolutely no path is available</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;Lightning Solve: Unknown failure, planner status: %s&quot;</span>, lastStatus_.asString().c_str());</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        stats_.numSolutionsFailed_++;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.planner = <span class="stringliteral">&quot;neither_planner&quot;</span>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;failed&quot;</span>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;not_saved&quot;</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Lightning Solve: Possible solution found in %f seconds&quot;</span>, planTime_);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// Smooth the result</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        simplifySolution(ptc);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> solutionPath = getSolutionPath();  <span class="comment">// copied so that it is non-const</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Solution path has %d states and was generated from planner %s&quot;</span>, solutionPath.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>(),</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    getSolutionPlannerName().c_str());</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.planner = getSolutionPlannerName();</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// Do not save if approximate</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">if</span> (!haveExactSolutionPath())</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;not_exact_solution&quot;</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;not_saved&quot;</span>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.approximate = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="comment">// Stats</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            stats_.numSolutionsApproximate_++;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="comment">// not sure what to do here, use case not tested</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because the solution is APPROXIMATE&quot;</span>);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// Use dynamic time warping to see if the repaired path is too similar to the original</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (getSolutionPlannerName() == rrPlanner_-&gt;getName())</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="comment">// Stats</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            stats_.numSolutionsFromRecall_++;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;from_recall&quot;</span>;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="comment">// Make sure solution has at least 2 states</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">if</span> (solutionPath.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() &lt; 2)</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because solution is less than 2 states long&quot;</span>);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                stats_.numSolutionsTooShort_++;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;less_2_states&quot;</span>;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.too_short = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="comment">// Benchmark runtime</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <a class="code" href="namespaceompl_1_1time.html#a4bbc20223e0b408d4a59f453a1ae7a25">time::point</a> startTime = <a class="code" href="namespaceompl_1_1time.html#a5da903c529cfbbce79900b7c1cbc6cc3">time::now</a>();</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="comment">// Convert the original recalled path to PathGeometric</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                ob::PlannerDataPtr chosenRecallPathData = getLightningRetrieveRepairPlanner().getChosenRecallPath();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> chosenRecallPath(si_);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                convertPlannerData(chosenRecallPathData, chosenRecallPath);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="comment">// Reverse path2 if necessary so that it matches path1 better</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                reversePathIfNecessary(solutionPath, chosenRecallPath);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordtype">double</span> score = dtw_-&gt;getPathsScore(solutionPath, chosenRecallPath);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.score = score;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">if</span> (score &lt; 4)</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because best solution was from database and is too similar &quot;</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                <span class="stringliteral">&quot;(score %f)&quot;</span>,</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                score);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.insertion_failed = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;score_too_similar&quot;</span>;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Adding path to database because repaired path is different enough from original &quot;</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                <span class="stringliteral">&quot;recalled path (score %f)&quot;</span>,</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                score);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.insertion_failed = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;score_different_enough&quot;</span>;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    <span class="comment">// Stats</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    stats_.numSolutionsFromRecallSaved_++;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <span class="comment">// Save to database</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    <span class="keywordtype">double</span> dummyInsertionTime;  <span class="comment">// unused because does not include scoring function</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    experienceDB_-&gt;addPath(solutionPath, dummyInsertionTime);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                insertionTime += <a class="code" href="namespaceompl_1_1time.html#acac374ab4374adb207edb38cedb7fbb1">time::seconds</a>(<a class="code" href="namespaceompl_1_1time.html#a5da903c529cfbbce79900b7c1cbc6cc3">time::now</a>() - startTime);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;from_scratch&quot;</span>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="comment">// Stats</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            stats_.numSolutionsFromScratch_++;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="comment">// Make sure solution has at least 2 states</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">if</span> (solutionPath.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() &lt; 2)</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because solution is less than 2 states long&quot;</span>);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;less_2_states&quot;</span>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.too_short = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="comment">// Stats</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                stats_.numSolutionsTooShort_++;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Adding path to database because best solution was not from database&quot;</span>);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="comment">// Logging</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;from_scratch&quot;</span>;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;saving&quot;</span>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <span class="comment">// Save to database</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                experienceDB_-&gt;addPath(solutionPath, insertionTime);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    stats_.totalInsertionTime_ += insertionTime;  <span class="comment">// used for averaging</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// Final log data</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.insertion_time = insertionTime;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.num_vertices = experienceDB_-&gt;getStatesCount();</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.num_edges = 0;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.num_connected_components = 0;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// Flush the log to buffer</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    convertLogToString(<a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">return</span> lastStatus_;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#ae9f63edb08b438985f476fac39544c70">  314</a></span>&#160;<a class="code" href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a> <a class="code" href="classompl_1_1tools_1_1Lightning.html#ae9f63edb08b438985f476fac39544c70">ompl::tools::Lightning::solve</a>(<span class="keywordtype">double</span> time)</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <a class="code" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ob::PlannerTerminationCondition</a> ptc = ob::timedPlannerTerminationCondition(time);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">return</span> solve(ptc);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a7a609a9e8089cfdfc41d22c887ff2dc5">  320</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a7a609a9e8089cfdfc41d22c887ff2dc5">ompl::tools::Lightning::save</a>()</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span> (filePath_.empty())</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;No file path has been specified, unable to save experience DB&quot;</span>);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">return</span> experienceDB_-&gt;save(filePath_);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a6501a1a4bc14a44ddf25969ac7de37b8">  330</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a6501a1a4bc14a44ddf25969ac7de37b8">ompl::tools::Lightning::saveIfChanged</a>()</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span> (filePath_.empty())</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;No file path has been specified, unable to save experience DB&quot;</span>);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">return</span> experienceDB_-&gt;saveIfChanged(filePath_);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#aa50d17d7f5ded255ab0d9165507a2658">  340</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#aa50d17d7f5ded255ab0d9165507a2658">ompl::tools::Lightning::printResultsInfo</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; pdef_-&gt;getSolutionCount(); ++i)</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Solution &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; | Length: &quot;</span> &lt;&lt; pdef_-&gt;getSolutions()[i].length_</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; | Approximate: &quot;</span> &lt;&lt; (pdef_-&gt;getSolutions()[i].approximate_ ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>)</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; | Planner: &quot;</span> &lt;&lt; pdef_-&gt;getSolutions()[i].plannerName_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#aeb33b1779560e5b49c5c6e7cecdafc44">  350</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#aeb33b1779560e5b49c5c6e7cecdafc44">ompl::tools::Lightning::print</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span> (si_)</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        si_-&gt;printProperties(out);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        si_-&gt;printSettings(out);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> (planner_)</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        planner_-&gt;printProperties(out);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        planner_-&gt;printSettings(out);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">if</span> (rrPlanner_)</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        rrPlanner_-&gt;printProperties(out);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        rrPlanner_-&gt;printSettings(out);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">if</span> (pdef_)</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        pdef_-&gt;print(out);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;}</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a5c80dc456d37d58c062c9d04b2919561">  371</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a5c80dc456d37d58c062c9d04b2919561">ompl::tools::Lightning::printLogs</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Lightning Framework Logging Results&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  Solutions Attempted:           &quot;</span> &lt;&lt; stats_.numProblems_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Solved from scratch:        &quot;</span> &lt;&lt; stats_.numSolutionsFromScratch_ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        &lt;&lt; stats_.numSolutionsFromScratch_ / stats_.numProblems_ * 100.0 &lt;&lt; <span class="stringliteral">&quot;%)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Solved from recall:         &quot;</span> &lt;&lt; stats_.numSolutionsFromRecall_ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        &lt;&lt; stats_.numSolutionsFromRecall_ / stats_.numProblems_ * 100.0 &lt;&lt; <span class="stringliteral">&quot;%)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;        That were saved:         &quot;</span> &lt;&lt; stats_.numSolutionsFromRecallSaved_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;        That were discarded:     &quot;</span> &lt;&lt; stats_.numSolutionsFromRecall_ - stats_.numSolutionsFromRecallSaved_</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;        Less than 2 states:      &quot;</span> &lt;&lt; stats_.numSolutionsTooShort_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Failed:                     &quot;</span> &lt;&lt; stats_.numSolutionsFailed_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Timedout:                   &quot;</span> &lt;&lt; stats_.numSolutionsTimedout_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Approximate:                &quot;</span> &lt;&lt; stats_.numSolutionsApproximate_ &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  LightningDb                    &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Total paths:                &quot;</span> &lt;&lt; experienceDB_-&gt;getExperiencesCount() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Vertices (states):          &quot;</span> &lt;&lt; experienceDB_-&gt;getStatesCount() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Unsaved solutions:          &quot;</span> &lt;&lt; experienceDB_-&gt;getNumUnsavedPaths() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  Average planning time:         &quot;</span> &lt;&lt; stats_.getAveragePlanningTime() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  Average insertion time:        &quot;</span> &lt;&lt; stats_.getAverageInsertionTime() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;}</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
-<div class="line"><a name="l00394"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a22474031bf9399074d0f52014351b3a6">  394</a></span>&#160;std::size_t <a class="code" href="classompl_1_1tools_1_1Lightning.html#a22474031bf9399074d0f52014351b3a6">ompl::tools::Lightning::getExperiencesCount</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">return</span> experienceDB_-&gt;getExperiencesCount();</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a95e9eb5ffa291abd95412c7ef89905b3">  399</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a95e9eb5ffa291abd95412c7ef89905b3">ompl::tools::Lightning::getAllPlannerDatas</a>(std::vector&lt;ob::PlannerDataPtr&gt; &amp;plannerDatas)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    experienceDB_-&gt;getAllPlannerDatas(plannerDatas);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#ad0add8a9901cfccc90a0207cc9e2b583">  404</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#ad0add8a9901cfccc90a0207cc9e2b583">ompl::tools::Lightning::convertPlannerData</a>(<span class="keyword">const</span> ob::PlannerDataPtr &amp;plannerData, <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> &amp;path)</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="comment">// Convert the planner data vertices into a vector of states</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; plannerData-&gt;numVertices(); ++i)</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        path.append(plannerData-&gt;getVertex(i).getState());</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;}</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#aae1345dd7412346e8c35bc92151e4759">  411</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#aae1345dd7412346e8c35bc92151e4759">ompl::tools::Lightning::reversePathIfNecessary</a>(<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> &amp;path1, <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> &amp;path2)</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;{</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="comment">// Reverse path2 if it matches better</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *s1 = path1.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(0);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *s2 = path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(0);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *g1 = path1.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(path1.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() - 1);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *g2 = path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() - 1);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordtype">double</span> regularDistance = si_-&gt;distance(s1, s2) + si_-&gt;distance(g1, g2);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordtype">double</span> reversedDistance = si_-&gt;distance(s1, g2) + si_-&gt;distance(s2, g1);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="comment">// Check if path is reversed from normal [start-&gt;goal] direction</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordflow">if</span> (regularDistance &gt; reversedDistance)</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    {</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="comment">// needs to be reversed</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a68e0627b7957b35e2723f9434ace5a95">reverse</a>();</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    }</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((lastStatus_ == <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a1f20d012b563fc223902e24a8bcd7547">ompl::base::PlannerStatus::INVALID_START</a>)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            || (lastStatus_ == <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637">ompl::base::PlannerStatus::INVALID_GOAL</a>)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            || (lastStatus_ == <a class="code" href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a47d769205044efa345184a640bd863ff">ompl::base::PlannerStatus::UNRECOGNIZED_GOAL_TYPE</a>))</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment">// Skip further processing if absolutely no path is available</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;Lightning Solve: invalid start or goal, planner status: %s&quot;</span>, lastStatus_.asString().c_str());</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        stats_.numSolutionsFailed_++;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.planner = <span class="stringliteral">&quot;neither_planner&quot;</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;failed&quot;</span>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;not_saved&quot;</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!lastStatus_)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// Skip further processing if absolutely no path is available</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;Lightning Solve: Unknown failure, planner status: %s&quot;</span>, lastStatus_.asString().c_str());</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        stats_.numSolutionsFailed_++;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.planner = <span class="stringliteral">&quot;neither_planner&quot;</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;failed&quot;</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;not_saved&quot;</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Lightning Solve: Possible solution found in %f seconds&quot;</span>, planTime_);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">// Smooth the result</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        simplifySolution(ptc);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> solutionPath = getSolutionPath();  <span class="comment">// copied so that it is non-const</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Solution path has %d states and was generated from planner %s&quot;</span>, solutionPath.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>(),</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    getSolutionPlannerName().c_str());</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.planner = getSolutionPlannerName();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="comment">// Do not save if approximate</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> (!haveExactSolutionPath())</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;not_exact_solution&quot;</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;not_saved&quot;</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.approximate = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="comment">// Stats</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            stats_.numSolutionsApproximate_++;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="comment">// not sure what to do here, use case not tested</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because the solution is APPROXIMATE&quot;</span>);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="comment">// Use dynamic time warping to see if the repaired path is too similar to the original</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (getSolutionPlannerName() == rrPlanner_-&gt;getName())</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="comment">// Stats</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            stats_.numSolutionsFromRecall_++;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;from_recall&quot;</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="comment">// Make sure solution has at least 2 states</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> (solutionPath.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() &lt; 2)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because solution is less than 2 states long&quot;</span>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                stats_.numSolutionsTooShort_++;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;less_2_states&quot;</span>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.too_short = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <span class="comment">// Benchmark runtime</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <a class="code" href="namespaceompl_1_1time.html#a4bbc20223e0b408d4a59f453a1ae7a25">time::point</a> startTime = <a class="code" href="namespaceompl_1_1time.html#a5da903c529cfbbce79900b7c1cbc6cc3">time::now</a>();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="comment">// Convert the original recalled path to PathGeometric</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                ob::PlannerDataPtr chosenRecallPathData = getLightningRetrieveRepairPlanner().getChosenRecallPath();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> chosenRecallPath(si_);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                convertPlannerData(chosenRecallPathData, chosenRecallPath);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="comment">// Reverse path2 if necessary so that it matches path1 better</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                reversePathIfNecessary(solutionPath, chosenRecallPath);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordtype">double</span> score = dtw_-&gt;getPathsScore(solutionPath, chosenRecallPath);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.score = score;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordflow">if</span> (score &lt; 4)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because best solution was from database and is too similar &quot;</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                <span class="stringliteral">&quot;(score %f)&quot;</span>,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                score);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.insertion_failed = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;score_too_similar&quot;</span>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Adding path to database because repaired path is different enough from original &quot;</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                                <span class="stringliteral">&quot;recalled path (score %f)&quot;</span>,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                score);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.insertion_failed = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;score_different_enough&quot;</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    <span class="comment">// Stats</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    stats_.numSolutionsFromRecallSaved_++;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    <span class="comment">// Save to database</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    <span class="keywordtype">double</span> dummyInsertionTime;  <span class="comment">// unused because does not include scoring function</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                    experienceDB_-&gt;addPath(solutionPath, dummyInsertionTime);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                insertionTime += <a class="code" href="namespaceompl_1_1time.html#acac374ab4374adb207edb38cedb7fbb1">time::seconds</a>(<a class="code" href="namespaceompl_1_1time.html#a5da903c529cfbbce79900b7c1cbc6cc3">time::now</a>() - startTime);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;from_scratch&quot;</span>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="comment">// Stats</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            stats_.numSolutionsFromScratch_++;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="comment">// Make sure solution has at least 2 states</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="keywordflow">if</span> (solutionPath.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() &lt; 2)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;NOT saving to database because solution is less than 2 states long&quot;</span>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;less_2_states&quot;</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.too_short = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="comment">// Stats</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                stats_.numSolutionsTooShort_++;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <a class="code" href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a>(<span class="stringliteral">&quot;Adding path to database because best solution was not from database&quot;</span>);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                <span class="comment">// Logging</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.result = <span class="stringliteral">&quot;from_scratch&quot;</span>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.is_saved = <span class="stringliteral">&quot;saving&quot;</span>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="comment">// Save to database</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                experienceDB_-&gt;addPath(solutionPath, insertionTime);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    stats_.totalInsertionTime_ += insertionTime;  <span class="comment">// used for averaging</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="comment">// Final log data</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.insertion_time = insertionTime;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.num_vertices = experienceDB_-&gt;getStatesCount();</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.num_edges = 0;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>.num_connected_components = 0;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="comment">// Flush the log to buffer</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    convertLogToString(<a class="code" href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">log</a>);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> lastStatus_;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#ae9f63edb08b438985f476fac39544c70">  327</a></span>&#160;<a class="code" href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a> <a class="code" href="classompl_1_1tools_1_1Lightning.html#ae9f63edb08b438985f476fac39544c70">ompl::tools::Lightning::solve</a>(<span class="keywordtype">double</span> time)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <a class="code" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ob::PlannerTerminationCondition</a> ptc = ob::timedPlannerTerminationCondition(time);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">return</span> solve(ptc);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a7a609a9e8089cfdfc41d22c887ff2dc5">  333</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a7a609a9e8089cfdfc41d22c887ff2dc5">ompl::tools::Lightning::save</a>()</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span> (filePath_.empty())</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;No file path has been specified, unable to save experience DB&quot;</span>);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">return</span> experienceDB_-&gt;save(filePath_);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a6501a1a4bc14a44ddf25969ac7de37b8">  343</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a6501a1a4bc14a44ddf25969ac7de37b8">ompl::tools::Lightning::saveIfChanged</a>()</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">if</span> (filePath_.empty())</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <a class="code" href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a>(<span class="stringliteral">&quot;No file path has been specified, unable to save experience DB&quot;</span>);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">return</span> experienceDB_-&gt;saveIfChanged(filePath_);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#aa50d17d7f5ded255ab0d9165507a2658">  353</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#aa50d17d7f5ded255ab0d9165507a2658">ompl::tools::Lightning::printResultsInfo</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; pdef_-&gt;getSolutionCount(); ++i)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Solution &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; | Length: &quot;</span> &lt;&lt; pdef_-&gt;getSolutions()[i].length_</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; | Approximate: &quot;</span> &lt;&lt; (pdef_-&gt;getSolutions()[i].approximate_ ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            &lt;&lt; <span class="stringliteral">&quot; | Planner: &quot;</span> &lt;&lt; pdef_-&gt;getSolutions()[i].plannerName_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#aeb33b1779560e5b49c5c6e7cecdafc44">  363</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#aeb33b1779560e5b49c5c6e7cecdafc44">ompl::tools::Lightning::print</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span> (si_)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        si_-&gt;printProperties(out);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        si_-&gt;printSettings(out);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">if</span> (planner_)</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        planner_-&gt;printProperties(out);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        planner_-&gt;printSettings(out);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (rrPlanner_)</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        rrPlanner_-&gt;printProperties(out);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        rrPlanner_-&gt;printSettings(out);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">if</span> (pdef_)</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        pdef_-&gt;print(out);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;}</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a5c80dc456d37d58c062c9d04b2919561">  384</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a5c80dc456d37d58c062c9d04b2919561">ompl::tools::Lightning::printLogs</a>(std::ostream &amp;out)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;Lightning Framework Logging Results&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  Solutions Attempted:           &quot;</span> &lt;&lt; stats_.numProblems_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Solved from scratch:        &quot;</span> &lt;&lt; stats_.numSolutionsFromScratch_ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        &lt;&lt; stats_.numSolutionsFromScratch_ / stats_.numProblems_ * 100.0 &lt;&lt; <span class="stringliteral">&quot;%)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Solved from recall:         &quot;</span> &lt;&lt; stats_.numSolutionsFromRecall_ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        &lt;&lt; stats_.numSolutionsFromRecall_ / stats_.numProblems_ * 100.0 &lt;&lt; <span class="stringliteral">&quot;%)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;        That were saved:         &quot;</span> &lt;&lt; stats_.numSolutionsFromRecallSaved_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;        That were discarded:     &quot;</span> &lt;&lt; stats_.numSolutionsFromRecall_ - stats_.numSolutionsFromRecallSaved_</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;        Less than 2 states:      &quot;</span> &lt;&lt; stats_.numSolutionsTooShort_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Failed:                     &quot;</span> &lt;&lt; stats_.numSolutionsFailed_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Timedout:                   &quot;</span> &lt;&lt; stats_.numSolutionsTimedout_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Approximate:                &quot;</span> &lt;&lt; stats_.numSolutionsApproximate_ &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  LightningDb                    &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Total paths:                &quot;</span> &lt;&lt; experienceDB_-&gt;getExperiencesCount() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Vertices (states):          &quot;</span> &lt;&lt; experienceDB_-&gt;getStatesCount() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;     Unsaved solutions:          &quot;</span> &lt;&lt; experienceDB_-&gt;getNumUnsavedPaths() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  Average planning time:         &quot;</span> &lt;&lt; stats_.getAveragePlanningTime() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    out &lt;&lt; <span class="stringliteral">&quot;  Average insertion time:        &quot;</span> &lt;&lt; stats_.getAverageInsertionTime() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a22474031bf9399074d0f52014351b3a6">  407</a></span>&#160;std::size_t <a class="code" href="classompl_1_1tools_1_1Lightning.html#a22474031bf9399074d0f52014351b3a6">ompl::tools::Lightning::getExperiencesCount</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordflow">return</span> experienceDB_-&gt;getExperiencesCount();</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#a95e9eb5ffa291abd95412c7ef89905b3">  412</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#a95e9eb5ffa291abd95412c7ef89905b3">ompl::tools::Lightning::getAllPlannerDatas</a>(std::vector&lt;ob::PlannerDataPtr&gt; &amp;plannerDatas)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    experienceDB_-&gt;getAllPlannerDatas(plannerDatas);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#ad0add8a9901cfccc90a0207cc9e2b583">  417</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#ad0add8a9901cfccc90a0207cc9e2b583">ompl::tools::Lightning::convertPlannerData</a>(<span class="keyword">const</span> ob::PlannerDataPtr &amp;plannerData, <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> &amp;path)</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;{</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="comment">// Convert the planner data vertices into a vector of states</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; plannerData-&gt;numVertices(); ++i)</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        path.append(plannerData-&gt;getVertex(i).getState());</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;}</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno"><a class="line" href="classompl_1_1tools_1_1Lightning.html#aae1345dd7412346e8c35bc92151e4759">  424</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classompl_1_1tools_1_1Lightning.html#aae1345dd7412346e8c35bc92151e4759">ompl::tools::Lightning::reversePathIfNecessary</a>(<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> &amp;path1, <a class="code" href="classompl_1_1geometric_1_1PathGeometric.html">og::PathGeometric</a> &amp;path2)</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;{</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="comment">// Reverse path2 if it matches better</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *s1 = path1.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(0);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *s2 = path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(0);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *g1 = path1.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(path1.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() - 1);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ob::State</a> *g2 = path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">getState</a>(path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">getStateCount</a>() - 1);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">double</span> regularDistance = si_-&gt;distance(s1, s2) + si_-&gt;distance(g1, g2);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">double</span> reversedDistance = si_-&gt;distance(s1, g2) + si_-&gt;distance(s2, g1);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="comment">// Check if path is reversed from normal [start-&gt;goal] direction</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">if</span> (regularDistance &gt; reversedDistance)</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="comment">// needs to be reversed</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        path2.<a class="code" href="classompl_1_1geometric_1_1PathGeometric.html#a68e0627b7957b35e2723f9434ace5a95">reverse</a>();</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    }</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassompl_1_1geometric_1_1PathGeometric_html_a68e0627b7957b35e2723f9434ace5a95"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#a68e0627b7957b35e2723f9434ace5a95">ompl::geometric::PathGeometric::reverse</a></div><div class="ttdeci">void reverse()</div><div class="ttdoc">Reverse the path.</div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8cpp_source.html#l00399">PathGeometric.cpp:399</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1PathGeometric_html_a68e0627b7957b35e2723f9434ace5a95"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#a68e0627b7957b35e2723f9434ace5a95">ompl::geometric::PathGeometric::reverse</a></div><div class="ttdeci">void reverse()</div><div class="ttdoc">Reverse the path.</div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8cpp_source.html#l00410">PathGeometric.cpp:410</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_af148743f9ddd1ab99bf6eeb994b4fd1b"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#af148743f9ddd1ab99bf6eeb994b4fd1b">ompl::tools::Lightning::Lightning</a></div><div class="ttdeci">Lightning(const base::SpaceInformationPtr &amp;si)</div><div class="ttdoc">Constructor needs the state space used for planning.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00044">Lightning.cpp:44</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1tools_html"><div class="ttname"><a href="namespaceompl_1_1tools.html">ompl::tools</a></div><div class="ttdoc">Includes various tools such as self config, benchmarking, etc.</div><div class="ttdef"><b>Definition:</b> <a href="LightningRetrieveRepair_8h_source.html#l00079">LightningRetrieveRepair.h:79</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a5c80dc456d37d58c062c9d04b2919561"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a5c80dc456d37d58c062c9d04b2919561">ompl::tools::Lightning::printLogs</a></div><div class="ttdeci">void printLogs(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Display debug data about overall results from Lightning since being loaded.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00371">Lightning.cpp:371</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a6501a1a4bc14a44ddf25969ac7de37b8"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a6501a1a4bc14a44ddf25969ac7de37b8">ompl::tools::Lightning::saveIfChanged</a></div><div class="ttdeci">bool saveIfChanged() override</div><div class="ttdoc">Save the experience database to file if there has been a change.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00330">Lightning.cpp:330</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a5c80dc456d37d58c062c9d04b2919561"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a5c80dc456d37d58c062c9d04b2919561">ompl::tools::Lightning::printLogs</a></div><div class="ttdeci">void printLogs(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Display debug data about overall results from Lightning since being loaded.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00384">Lightning.cpp:384</a></div></div>
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a47d769205044efa345184a640bd863ff"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a47d769205044efa345184a640bd863ff">ompl::base::PlannerStatus::UNRECOGNIZED_GOAL_TYPE</a></div><div class="ttdeci">@ UNRECOGNIZED_GOAL_TYPE</div><div class="ttdoc">The goal is of a type that a planner does not recognize.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00188">PlannerStatus.h:188</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a6501a1a4bc14a44ddf25969ac7de37b8"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a6501a1a4bc14a44ddf25969ac7de37b8">ompl::tools::Lightning::saveIfChanged</a></div><div class="ttdeci">bool saveIfChanged() override</div><div class="ttdoc">Save the experience database to file if there has been a change.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00343">Lightning.cpp:343</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1time_html_a4bbc20223e0b408d4a59f453a1ae7a25"><div class="ttname"><a href="namespaceompl_1_1time.html#a4bbc20223e0b408d4a59f453a1ae7a25">ompl::time::point</a></div><div class="ttdeci">std::chrono::system_clock::time_point point</div><div class="ttdoc">Representation of a point in time.</div><div class="ttdef"><b>Definition:</b> <a href="Time_8h_source.html#l00116">Time.h:116</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1geometric_html"><div class="ttname"><a href="namespaceompl_1_1geometric.html">ompl::geometric</a></div><div class="ttdoc">This namespace contains code that is specific to planning under geometric constraints.</div><div class="ttdef"><b>Definition:</b> <a href="GeneticSearch_8h_source.html#l00079">GeneticSearch.h:79</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="State_8h_source.html#l00113">State.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00113">State.h:113</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1base_html"><div class="ttname"><a href="namespaceompl_1_1base.html">ompl::base</a></div><div class="ttdoc">This namespace contains sampling based planning routines shared by both planning under geometric cons...</div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedSpaceInformation_8h_source.html#l00086">ConstrainedSpaceInformation.h:86</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a22474031bf9399074d0f52014351b3a6"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a22474031bf9399074d0f52014351b3a6">ompl::tools::Lightning::getExperiencesCount</a></div><div class="ttdeci">std::size_t getExperiencesCount() const override</div><div class="ttdoc">Get the total number of paths stored in the database.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00394">Lightning.cpp:394</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_ad0add8a9901cfccc90a0207cc9e2b583"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#ad0add8a9901cfccc90a0207cc9e2b583">ompl::tools::Lightning::convertPlannerData</a></div><div class="ttdeci">void convertPlannerData(const ompl::base::PlannerDataPtr &amp;plannerData, ompl::geometric::PathGeometric &amp;path)</div><div class="ttdoc">Convert PlannerData to PathGeometric. Assume ordering of vertices is order of path.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00404">Lightning.cpp:404</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a22474031bf9399074d0f52014351b3a6"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a22474031bf9399074d0f52014351b3a6">ompl::tools::Lightning::getExperiencesCount</a></div><div class="ttdeci">std::size_t getExperiencesCount() const override</div><div class="ttdoc">Get the total number of paths stored in the database.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00407">Lightning.cpp:407</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_ad0add8a9901cfccc90a0207cc9e2b583"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#ad0add8a9901cfccc90a0207cc9e2b583">ompl::tools::Lightning::convertPlannerData</a></div><div class="ttdeci">void convertPlannerData(const ompl::base::PlannerDataPtr &amp;plannerData, ompl::geometric::PathGeometric &amp;path)</div><div class="ttdoc">Convert PlannerData to PathGeometric. Assume ordering of vertices is order of path.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00417">Lightning.cpp:417</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_ac829824a189de69ce5704de0a794f550"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#ac829824a189de69ce5704de0a794f550">ompl::tools::Lightning::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">This method will create the necessary classes for planning. The solve() method will call this functio...</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00068">Lightning.cpp:68</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1time_html_a5da903c529cfbbce79900b7c1cbc6cc3"><div class="ttname"><a href="namespaceompl_1_1time.html#a5da903c529cfbbce79900b7c1cbc6cc3">ompl::time::now</a></div><div class="ttdeci">point now()</div><div class="ttdoc">Get the current time point.</div><div class="ttdef"><b>Definition:</b> <a href="Time_8h_source.html#l00122">Time.h:122</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1msg_html_affe7852f27c06f98af7eb2579f1e5350"><div class="ttname"><a href="namespaceompl_1_1msg.html#affe7852f27c06f98af7eb2579f1e5350">ompl::msg::log</a></div><div class="ttdeci">void log(const char *file, int line, LogLevel level, const char *m,...)</div><div class="ttdoc">Root level logging function. This should not be invoked directly, but rather used via a logging macro...</div><div class="ttdef"><b>Definition:</b> <a href="Console_8cpp_source.html#l00120">Console.cpp:120</a></div></div>
 <div class="ttc" id="agroup__logging_html_ga04bc36d1b8c57ad7e13a8a48451a3a05"><div class="ttname"><a href="group__logging.html#ga04bc36d1b8c57ad7e13a8a48451a3a05">OMPL_INFORM</a></div><div class="ttdeci">#define OMPL_INFORM(fmt,...)</div><div class="ttdoc">Log a formatted information string.</div><div class="ttdef"><b>Definition:</b> <a href="Console_8h_source.html#l00068">Console.h:68</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a620a03eebe49aa307140d6a4763278fd"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a620a03eebe49aa307140d6a4763278fd">ompl::base::PlannerStatus::TIMEOUT</a></div><div class="ttdeci">@ TIMEOUT</div><div class="ttdoc">The planner failed to find a solution.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00190">PlannerStatus.h:190</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a95e9eb5ffa291abd95412c7ef89905b3"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a95e9eb5ffa291abd95412c7ef89905b3">ompl::tools::Lightning::getAllPlannerDatas</a></div><div class="ttdeci">void getAllPlannerDatas(std::vector&lt; ompl::base::PlannerDataPtr &gt; &amp;plannerDatas) const override</div><div class="ttdoc">Get a vector of all the planning data in the database.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00399">Lightning.cpp:399</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a95e9eb5ffa291abd95412c7ef89905b3"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a95e9eb5ffa291abd95412c7ef89905b3">ompl::tools::Lightning::getAllPlannerDatas</a></div><div class="ttdeci">void getAllPlannerDatas(std::vector&lt; ompl::base::PlannerDataPtr &gt; &amp;plannerDatas) const override</div><div class="ttdoc">Get a vector of all the planning data in the database.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00412">Lightning.cpp:412</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a3e314d4d2530f206cae0ab27f7e5b44f"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a3e314d4d2530f206cae0ab27f7e5b44f">ompl::tools::Lightning::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all planning data. This only includes data generated by motion plan computation....</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00109">Lightning.cpp:109</a></div></div>
 <div class="ttc" id="aclassompl_1_1geometric_1_1PathGeometric_html"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html">ompl::geometric::PathGeometric</a></div><div class="ttdoc">Definition of a geometric path.</div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00097">PathGeometric.h:97</a></div></div>
 <div class="ttc" id="aclassompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition:</b> <a href="PlannerTerminationCondition_8h_source.html#l00127">PlannerTerminationCondition.h:127</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_aa50d17d7f5ded255ab0d9165507a2658"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#aa50d17d7f5ded255ab0d9165507a2658">ompl::tools::Lightning::printResultsInfo</a></div><div class="ttdeci">void printResultsInfo(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Display debug data about potential available solutions.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00340">Lightning.cpp:340</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a7a609a9e8089cfdfc41d22c887ff2dc5"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a7a609a9e8089cfdfc41d22c887ff2dc5">ompl::tools::Lightning::save</a></div><div class="ttdeci">bool save() override</div><div class="ttdoc">Save the experience database to file.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00320">Lightning.cpp:320</a></div></div>
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a2e2b2b7e02900c4417af0ecea272c637">ompl::base::PlannerStatus::INVALID_GOAL</a></div><div class="ttdeci">@ INVALID_GOAL</div><div class="ttdoc">Invalid goal state.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00186">PlannerStatus.h:186</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_aa50d17d7f5ded255ab0d9165507a2658"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#aa50d17d7f5ded255ab0d9165507a2658">ompl::tools::Lightning::printResultsInfo</a></div><div class="ttdeci">void printResultsInfo(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Display debug data about potential available solutions.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00353">Lightning.cpp:353</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_a7a609a9e8089cfdfc41d22c887ff2dc5"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#a7a609a9e8089cfdfc41d22c887ff2dc5">ompl::tools::Lightning::save</a></div><div class="ttdeci">bool save() override</div><div class="ttdoc">Save the experience database to file.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00333">Lightning.cpp:333</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a></div><div class="ttdoc">A class to store the exit status of Planner::solve()</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00112">PlannerStatus.h:112</a></div></div>
-<div class="ttc" id="aclassompl_1_1geometric_1_1PathGeometric_html_a06b50a8e39a60ab2ad96aa9e63ae752f"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">ompl::geometric::PathGeometric::getStateCount</a></div><div class="ttdeci">std::size_t getStateCount() const</div><div class="ttdoc">Get the number of states (way-points) that make up this path.</div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00292">PathGeometric.h:292</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_aeb33b1779560e5b49c5c6e7cecdafc44"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#aeb33b1779560e5b49c5c6e7cecdafc44">ompl::tools::Lightning::print</a></div><div class="ttdeci">void print(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Print information about the current setup.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00350">Lightning.cpp:350</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1PathGeometric_html_a06b50a8e39a60ab2ad96aa9e63ae752f"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#a06b50a8e39a60ab2ad96aa9e63ae752f">ompl::geometric::PathGeometric::getStateCount</a></div><div class="ttdeci">std::size_t getStateCount() const</div><div class="ttdoc">Get the number of states (way-points) that make up this path.</div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00291">PathGeometric.h:291</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_aeb33b1779560e5b49c5c6e7cecdafc44"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#aeb33b1779560e5b49c5c6e7cecdafc44">ompl::tools::Lightning::print</a></div><div class="ttdeci">void print(std::ostream &amp;out=std::cout) const override</div><div class="ttdoc">Print information about the current setup.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00363">Lightning.cpp:363</a></div></div>
 <div class="ttc" id="astructompl_1_1tools_1_1ExperienceSetup_1_1ExperienceLog_html"><div class="ttname"><a href="structompl_1_1tools_1_1ExperienceSetup_1_1ExperienceLog.html">ompl::tools::ExperienceSetup::ExperienceLog</a></div><div class="ttdoc">Single entry for the csv data logging file.</div><div class="ttdef"><b>Definition:</b> <a href="ExperienceSetup_8h_source.html#l00165">ExperienceSetup.h:165</a></div></div>
 <div class="ttc" id="aclassompl_1_1tools_1_1ExperienceSetup_html"><div class="ttname"><a href="classompl_1_1tools_1_1ExperienceSetup.html">ompl::tools::ExperienceSetup</a></div><div class="ttdoc">Create the set of classes typically needed to solve a geometric problem.</div><div class="ttdef"><b>Definition:</b> <a href="ExperienceSetup_8h_source.html#l00120">ExperienceSetup.h:120</a></div></div>
 <div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a69ef0526165cef29fd59ed5b08b03fc0"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a69ef0526165cef29fd59ed5b08b03fc0">ompl::base::PlannerStatus::UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div><div class="ttdoc">Uninitialized status.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00182">PlannerStatus.h:182</a></div></div>
 <div class="ttc" id="agroup__logging_html_ga05ad3ae88188e7f248748785afd2b882"><div class="ttname"><a href="group__logging.html#ga05ad3ae88188e7f248748785afd2b882">OMPL_ERROR</a></div><div class="ttdeci">#define OMPL_ERROR(fmt,...)</div><div class="ttdoc">Log a formatted error string.</div><div class="ttdef"><b>Definition:</b> <a href="Console_8h_source.html#l00064">Console.h:64</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_ae9f63edb08b438985f476fac39544c70"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#ae9f63edb08b438985f476fac39544c70">ompl::tools::Lightning::solve</a></div><div class="ttdeci">base::PlannerStatus solve(double time=1.0) override</div><div class="ttdoc">Run the planner for up to a specified amount of time (default is 1 second)</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00314">Lightning.cpp:314</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_ae9f63edb08b438985f476fac39544c70"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#ae9f63edb08b438985f476fac39544c70">ompl::tools::Lightning::solve</a></div><div class="ttdeci">base::PlannerStatus solve(double time=1.0) override</div><div class="ttdoc">Run the planner for up to a specified amount of time (default is 1 second)</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00327">Lightning.cpp:327</a></div></div>
 <div class="ttc" id="aclassompl_1_1Exception_html"><div class="ttname"><a href="classompl_1_1Exception.html">ompl::Exception</a></div><div class="ttdoc">The exception type for ompl.</div><div class="ttdef"><b>Definition:</b> <a href="Exception_8h_source.html#l00078">Exception.h:78</a></div></div>
-<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_aae1345dd7412346e8c35bc92151e4759"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#aae1345dd7412346e8c35bc92151e4759">ompl::tools::Lightning::reversePathIfNecessary</a></div><div class="ttdeci">bool reversePathIfNecessary(ompl::geometric::PathGeometric &amp;path1, ompl::geometric::PathGeometric &amp;path2)</div><div class="ttdoc">If path1 and path2 have a better start/goal match when reverse, then reverse path2.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00411">Lightning.cpp:411</a></div></div>
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html_a5fe3825813b066b664b3dd34dd1bc8c4a1f20d012b563fc223902e24a8bcd7547"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html#a5fe3825813b066b664b3dd34dd1bc8c4a1f20d012b563fc223902e24a8bcd7547">ompl::base::PlannerStatus::INVALID_START</a></div><div class="ttdeci">@ INVALID_START</div><div class="ttdoc">Invalid start state or no start state specified.</div><div class="ttdef"><b>Definition:</b> <a href="PlannerStatus_8h_source.html#l00184">PlannerStatus.h:184</a></div></div>
+<div class="ttc" id="aclassompl_1_1tools_1_1Lightning_html_aae1345dd7412346e8c35bc92151e4759"><div class="ttname"><a href="classompl_1_1tools_1_1Lightning.html#aae1345dd7412346e8c35bc92151e4759">ompl::tools::Lightning::reversePathIfNecessary</a></div><div class="ttdeci">bool reversePathIfNecessary(ompl::geometric::PathGeometric &amp;path1, ompl::geometric::PathGeometric &amp;path2)</div><div class="ttdoc">If path1 and path2 have a better start/goal match when reverse, then reverse path2.</div><div class="ttdef"><b>Definition:</b> <a href="Lightning_8cpp_source.html#l00424">Lightning.cpp:424</a></div></div>
 <div class="ttc" id="anamespaceompl_1_1time_html_acac374ab4374adb207edb38cedb7fbb1"><div class="ttname"><a href="namespaceompl_1_1time.html#acac374ab4374adb207edb38cedb7fbb1">ompl::time::seconds</a></div><div class="ttdeci">duration seconds(double sec)</div><div class="ttdoc">Return the time duration representing a given number of seconds.</div><div class="ttdef"><b>Definition:</b> <a href="Time_8h_source.html#l00128">Time.h:128</a></div></div>
-<div class="ttc" id="aclassompl_1_1geometric_1_1PathGeometric_html_acea7c8dc9b28e6bb81ec62d4c0b4730b"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">ompl::geometric::PathGeometric::getState</a></div><div class="ttdeci">base::State * getState(unsigned int index)</div><div class="ttdoc">Get the state located at index along the path.</div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00280">PathGeometric.h:280</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1PathGeometric_html_acea7c8dc9b28e6bb81ec62d4c0b4730b"><div class="ttname"><a href="classompl_1_1geometric_1_1PathGeometric.html#acea7c8dc9b28e6bb81ec62d4c0b4730b">ompl::geometric::PathGeometric::getState</a></div><div class="ttdeci">base::State * getState(unsigned int index)</div><div class="ttdoc">Get the state located at index along the path.</div><div class="ttdef"><b>Definition:</b> <a href="PathGeometric_8h_source.html#l00279">PathGeometric.h:279</a></div></div>
 <div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:65</a></div></div>
 </div>
 <footer class="footer">

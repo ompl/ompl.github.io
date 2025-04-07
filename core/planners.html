@@ -257,6 +257,8 @@ Geometric planners</h1>
  An extension to BIT* that uses advanced graph-search techniques to find initial solutions faster. <em>It uses the general cost framework.</em></li>
 <li><a class="el" href="classompl_1_1geometric_1_1AITstar.html#gAITstar">Adaptively Informed Trees (AIT*)</a><br  />
  An anytime asymptotically optimal algorithm that simultaneously estimates and exploits problem-specific heuristics. <em>It uses the general cost framework.</em></li>
+<li><a class="el" href="classompl_1_1geometric_1_1EITstar.html#gEITstar">Effort Informed Trees (EIT*)</a><br  />
+ An anytime asymptotically optimal algorithm that leverages multiple sources of information to improve performance. <em>It uses the general cost framework.</em></li>
 <li><a class="el" href="classompl_1_1geometric_1_1LBTRRT.html#gLBTRRT">Lower Bound Tree RRT (LBTRRT)</a><br  />
  An asymptotically near-optimal version of RRT.</li>
 <li><a class="el" href="classompl_1_1geometric_1_1SST.html#gSST">Sparse Stable RRT</a><br  />
@@ -283,7 +285,7 @@ Geometric planners</h1>
 <dd>
 Feasibility and Optimality<br  />
  The line between feasible and optimal planners is not so black and white in practice. The line between them can be blurred with an appropriate <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html" title="Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...">ompl::base::PlannerTerminationCondition</a>. For instance, the <a class="el" href="namespaceompl_1_1base.html#a71261936b94c44c59a9f26168b30ea1f" title="Return a termination condition that will become true as soon as the problem definition has an exact s...">ompl::base::exactSolnPlannerTerminationCondition</a> function returns a termination condition that causes optimizing planners to terminate once the first solution is found. As another example, using a <a class="el" href="classompl_1_1base_1_1CostConvergenceTerminationCondition.html" title=": A termination condition for stopping an optimizing planner based on cost convergence">ompl::base::CostConvergenceTerminationCondition</a> with parameters <code>solutionsWindow=10</code> and <code>epsilon=1</code>, causes an optimizing planner to terminate when <em>exactly</em> 10 solutions have been found. You can use <a class="el" href="namespaceompl_1_1base.html#a743743b4754208eb83ecb3ab20e4df4c" title="Combine two termination conditions into one. If either termination condition returns true,...">ompl::base::plannerOrTerminationCondition</a> and <a class="el" href="namespaceompl_1_1base.html#a6fe113eda8e4fb7306a5849f392db50b" title="Combine two termination conditions into one. Both termination conditions need to return true for this...">ompl::base::plannerAndTerminationCondition</a> to combine planner termination conditions (e.g., “terminate when either 10 solutions have been found <b>or</b> a time limit of 10 seconds is exceeded”). See <a class="el" href="plannerTerminationConditions.html">Planner Termination Conditions</a> for details.</dd></dl>
-</div> <div></div><div></div><h2><a class="anchor" id="autotoc_md83"></a>
+</div> <div></div><div></div><h2><a class="anchor" id="autotoc_md82"></a>
 Other tools:</h2>
 <div><ul>
 <li><a class="el" href="classompl_1_1geometric_1_1HillClimbing.html#HillClimbing">Hill Climbing</a></li>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.17"/>
+  <title>ompl/base/spaces/VanaOwenStateSpace.h Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_efdc19d105c21b1223d5f8dc524071be.html">ompl</a></li><li class="navelem"><a class="el" href="dir_06e181af1f5888faac16991b57afb430.html">base</a></li><li class="navelem"><a class="el" href="dir_657904b0a08228494dbd1c9b23b24ab9.html">spaces</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">VanaOwenStateSpace.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Copyright (c) 2024, Metron, Inc.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  are met:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   * Neither the name of the Metron, Inc. nor the names of its</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Author: Mark Moll */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef OMPL_BASE_SPACES_VANAOWEN_STATE_SPACE_</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OMPL_BASE_SPACES_VANAOWEN_STATE_SPACE_</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;ompl/base/spaces/DubinsStateSpace.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl_1_1base.html">ompl::base</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">class </span>VanaOwenStateSpace : <span class="keyword">public</span> CompoundStateSpace</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">enum</span> PathCategory : <span class="keywordtype">char</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            LOW_ALTITUDE = <span class="charliteral">&#39;L&#39;</span>,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            MEDIUM_ALTITUDE = <span class="charliteral">&#39;M&#39;</span>,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            HIGH_ALTITUDE = <span class="charliteral">&#39;H&#39;</span>,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            UNKNOWN = <span class="charliteral">&#39;?&#39;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">class </span>PathType</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            PathType();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            PathType(<span class="keyword">const</span> PathType &amp;path);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            ~PathType();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">double</span> length() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            PathType &amp;operator=(<span class="keyword">const</span> PathType &amp;path);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            PathCategory category() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">friend</span> std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> PathType &amp;path);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            DubinsStateSpace::DubinsPath pathXY_;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            DubinsStateSpace::DubinsPath pathSZ_;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">DubinsStateSpace::StateType</a> *startSZ_{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">double</span> horizontalRadius_{1.};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">double</span> verticalRadius_{1.};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordtype">double</span> deltaZ_{0.};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordtype">double</span> phi_{0.};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numTurns_{0};</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1VanaOwenStateSpace.html">   90</a></span>&#160;        };</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">class </span><a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">StateType</a> : <span class="keyword">public</span> <a class="code" href="classompl_1_1base_1_1CompoundState.html">CompoundStateSpace::StateType</a></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            StateType() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordtype">double</span> operator[](<span class="keywordtype">unsigned</span> index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">return</span> as&lt;RealVectorStateSpace::StateType&gt;(0)-&gt;values[index];</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">double</span> &amp;operator[](<span class="keywordtype">unsigned</span> index)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">return</span> as&lt;RealVectorStateSpace::StateType&gt;(0)-&gt;values[index];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordtype">double</span> yaw()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">return</span> as&lt;SO2StateSpace::StateType&gt;(1)-&gt;value;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">double</span> &amp;yaw()</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">return</span> as&lt;SO2StateSpace::StateType&gt;(1)-&gt;value;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordtype">double</span> pitch()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">return</span> as&lt;RealVectorStateSpace::StateType&gt;(0)-&gt;values[3];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordtype">double</span> &amp;pitch()</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">return</span> as&lt;RealVectorStateSpace::StateType&gt;(0)-&gt;values[3];</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        };</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        VanaOwenStateSpace(<span class="keywordtype">double</span> turningRadius = 1.0, <span class="keywordtype">double</span> maxPitch = boost::math::double_constants::sixth_pi);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        VanaOwenStateSpace(<span class="keywordtype">double</span> turningRadius, std::pair&lt;double, double&gt; pitchRange);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        ~VanaOwenStateSpace() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a5d797825496db0c995a557c69d50e06f">isMetricSpace</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a18002f3456a20bd0cab662bc23506f7b">hasSymmetricDistance</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1VanaOwenStateSpace_1_1PathType.html">  133</a></span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#afca81a659b06da83b990495a38c2d33d">hasSymmetricInterpolate</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#abf462e3a84cd6c0a9f16b5d1f59d9bc6">sanityChecks</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordtype">double</span> zero = std::numeric_limits&lt;double&gt;::epsilon();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordtype">double</span> eps = std::numeric_limits&lt;float&gt;::epsilon();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordtype">int</span> flags = ~(<a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">STATESPACE_INTERPOLATION</a> | <a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">STATESPACE_TRIANGLE_INEQUALITY</a> | <a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">STATESPACE_DISTANCE_BOUND</a> |</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                          <a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">STATESPACE_DISTANCE_SYMMETRIC</a>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="classompl_1_1base_1_1StateSpace.html#a800eb71d641ffb4e5354a9f09a11f1dd">StateSpace::sanityChecks</a>(zero, eps, flags);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a83f154a7a3cae6f697755b3c84ee8ae5">setBounds</a>(<span class="keyword">const</span> RealVectorBounds &amp;bounds)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            RealVectorBounds b(bounds);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> (bounds.low.size() &lt; 4)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                b.resize(4);</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1VanaOwenStateSpace_1_1StateType.html">  157</a></span>&#160;                b.low[3] = <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#aa916521ab3803b5dde3eb9e512d4b4af">minPitch_</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                b.high[3] = <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#ac5c97445b6e44c56903e518cb6827dff">maxPitch_</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            as&lt;RealVectorStateSpace&gt;(0)-&gt;setBounds(b);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1RealVectorBounds.html">RealVectorBounds</a> &amp;<a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#aea4611db527b09c95638db74a6a81658">getBounds</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">return</span> as&lt;RealVectorStateSpace&gt;(0)-&gt;getBounds();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#aa1eac53307524bcf5b281c23d381fe61">setTolerance</a>(<span class="keywordtype">double</span> tolerance)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a872b50210cd13bc97ab914f248d41b60">tolerance_</a> = tolerance;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a9932d883f8337ccf4a5e76283be587fa">getTolerance</a>()</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a872b50210cd13bc97ab914f248d41b60">tolerance_</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        State *<a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a4b0b675d351327125f4597664eafc9af">allocState</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a71f7a2eb21ced39fa063e1c5551f590d">registerProjections</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#ad6ebb544af7d9e1374c52ba2ddb567f8">distance</a>(<span class="keyword">const</span> State *state1, <span class="keyword">const</span> State *state2) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#abf51a18a29c74ab76bc1a9959809379c">validSegmentCount</a>(<span class="keyword">const</span> State *state1, <span class="keyword">const</span> State *state2) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a45b500ea035860ff063ae63c9471b4e3">interpolate</a>(<span class="keyword">const</span> State *from, <span class="keyword">const</span> State *to, <span class="keywordtype">double</span> t, State *state) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1VanaOwenStateSpace.html#afca81a659b06da83b990495a38c2d33d">  200</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a45b500ea035860ff063ae63c9471b4e3">interpolate</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *from, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *to, <span class="keywordtype">double</span> t, <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace_1_1PathType.html">PathType</a> &amp;path, <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        std::optional&lt;PathType&gt; <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a9db464eb0126499b02caab41d2b67884">getPath</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state1, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state2) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#ae83611aa8404ee8931adf105a29332e3">decoupled</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace_1_1StateType.html">StateType</a> *state1, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace_1_1StateType.html">StateType</a> *state2, <span class="keywordtype">double</span> radius, <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace_1_1PathType.html">PathType</a> &amp;path,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                       std::array&lt;DubinsStateSpace::StateType *, 3&gt; &amp;scratch) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="classompl_1_1base_1_1SE2StateSpace_1_1StateType.html">DubinsStateSpace::StateType</a> *<a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#af53cd1d9f8e1b022e24d657ffc6374b6">get2DPose</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> yaw) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1VanaOwenStateSpace.html#aa1eac53307524bcf5b281c23d381fe61">  234</a></span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a9932d883f8337ccf4a5e76283be587fa">  239</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a2ed7c115d50586dbf24688e76c785368">isValid</a>(<a class="code" href="classompl_1_1base_1_1DubinsStateSpace_1_1DubinsPath.html">DubinsStateSpace::DubinsPath</a> <span class="keyword">const</span> &amp;path, <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace_1_1StateType.html">StateType</a> <span class="keyword">const</span> *state) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#ab85873403369de5b80e700d6ea93570a">rho_</a>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#aa916521ab3803b5dde3eb9e512d4b4af">minPitch_</a>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#ac5c97445b6e44c56903e518cb6827dff">maxPitch_</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#a872b50210cd13bc97ab914f248d41b60">tolerance_</a>{1e-8};</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="classompl_1_1base_1_1DubinsStateSpace.html">DubinsStateSpace</a> <a class="code" href="classompl_1_1base_1_1VanaOwenStateSpace.html#aeeb72ab671517b2cc74e9444c07a647c">dubinsSpace_</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    };</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}  <span class="comment">// namespace ompl::base</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">ompl::base::StateSpace::STATESPACE_DISTANCE_SYMMETRIC</a></div><div class="ttdeci">@ STATESPACE_DISTANCE_SYMMETRIC</div><div class="ttdoc">Check whether the distance function is symmetric (StateSpace::distance())</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00206">StateSpace.h:206</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundState_html"><div class="ttname"><a href="classompl_1_1base_1_1CompoundState.html">ompl::base::CompoundState</a></div><div class="ttdoc">Definition of a compound state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00150">State.h:150</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a18002f3456a20bd0cab662bc23506f7b"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a18002f3456a20bd0cab662bc23506f7b">ompl::base::VanaOwenStateSpace::hasSymmetricDistance</a></div><div class="ttdeci">bool hasSymmetricDistance() const override</div><div class="ttdoc">Check if the distance function on this state space is symmetric, i.e. distance(s1,...</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00195">VanaOwenStateSpace.h:195</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a9db464eb0126499b02caab41d2b67884"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a9db464eb0126499b02caab41d2b67884">ompl::base::VanaOwenStateSpace::getPath</a></div><div class="ttdeci">std::optional&lt; PathType &gt; getPath(const State *state1, const State *state2) const</div><div class="ttdoc">Compute a 3D Dubins path using the model and algorithm proposed by VanaOwen et al.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00285">VanaOwenStateSpace.cpp:285</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a83f154a7a3cae6f697755b3c84ee8ae5"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a83f154a7a3cae6f697755b3c84ee8ae5">ompl::base::VanaOwenStateSpace::setBounds</a></div><div class="ttdeci">void setBounds(const RealVectorBounds &amp;bounds)</div><div class="ttdoc">Set the bounds of this state space. This defines the range of the space in which sampling is performe...</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00215">VanaOwenStateSpace.h:215</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a9932d883f8337ccf4a5e76283be587fa"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a9932d883f8337ccf4a5e76283be587fa">ompl::base::VanaOwenStateSpace::getTolerance</a></div><div class="ttdeci">double getTolerance()</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00239">VanaOwenStateSpace.h:239</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00113">State.h:113</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1base_html"><div class="ttname"><a href="namespaceompl_1_1base.html">ompl::base</a></div><div class="ttdoc">This namespace contains sampling based planning routines shared by both planning under geometric cons...</div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedSpaceInformation_8h_source.html#l00086">ConstrainedSpaceInformation.h:86</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a800eb71d641ffb4e5354a9f09a11f1dd"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a800eb71d641ffb4e5354a9f09a11f1dd">ompl::base::StateSpace::sanityChecks</a></div><div class="ttdeci">virtual void sanityChecks() const</div><div class="ttdoc">Convenience function that allows derived state spaces to choose which checks should pass (see SanityC...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l00603">StateSpace.cpp:603</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a2ed7c115d50586dbf24688e76c785368"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a2ed7c115d50586dbf24688e76c785368">ompl::base::VanaOwenStateSpace::isValid</a></div><div class="ttdeci">bool isValid(DubinsStateSpace::DubinsPath const &amp;path, StateType const *state) const</div><div class="ttdoc">Whether a path in SZ space satisfies Dubins path type and pitch constraints.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00137">VanaOwenStateSpace.cpp:137</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_abf51a18a29c74ab76bc1a9959809379c"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#abf51a18a29c74ab76bc1a9959809379c">ompl::base::VanaOwenStateSpace::validSegmentCount</a></div><div class="ttdeci">unsigned int validSegmentCount(const State *state1, const State *state2) const override</div><div class="ttdoc">Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00337">VanaOwenStateSpace.cpp:337</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">ompl::base::StateSpace::STATESPACE_DISTANCE_BOUND</a></div><div class="ttdeci">@ STATESPACE_DISTANCE_BOUND</div><div class="ttdoc">Check whether the StateSpace::distance() is bounded by StateSpace::getExtent()</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00216">StateSpace.h:216</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_ae83611aa8404ee8931adf105a29332e3"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#ae83611aa8404ee8931adf105a29332e3">ompl::base::VanaOwenStateSpace::decoupled</a></div><div class="ttdeci">bool decoupled(const StateType *state1, const StateType *state2, double radius, PathType &amp;path, std::array&lt; DubinsStateSpace::StateType *, 3 &gt; &amp;scratch) const</div><div class="ttdoc">Helper function used by getPath.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00153">VanaOwenStateSpace.cpp:153</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a872b50210cd13bc97ab914f248d41b60"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a872b50210cd13bc97ab914f248d41b60">ompl::base::VanaOwenStateSpace::tolerance_</a></div><div class="ttdeci">double tolerance_</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00312">VanaOwenStateSpace.h:312</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_afca81a659b06da83b990495a38c2d33d"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#afca81a659b06da83b990495a38c2d33d">ompl::base::VanaOwenStateSpace::hasSymmetricInterpolate</a></div><div class="ttdeci">bool hasSymmetricInterpolate() const override</div><div class="ttdoc">Check if the interpolation function on this state space is symmetric, i.e. interpolate(from,...</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00200">VanaOwenStateSpace.h:200</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_aea4611db527b09c95638db74a6a81658"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#aea4611db527b09c95638db74a6a81658">ompl::base::VanaOwenStateSpace::getBounds</a></div><div class="ttdeci">const RealVectorBounds &amp; getBounds() const</div><div class="ttdoc">Get the bounds for this state space.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00228">VanaOwenStateSpace.h:228</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_1_1StateType_html"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace_1_1StateType.html">ompl::base::VanaOwenStateSpace::StateType</a></div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00157">VanaOwenStateSpace.h:157</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_aeeb72ab671517b2cc74e9444c07a647c"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#aeeb72ab671517b2cc74e9444c07a647c">ompl::base::VanaOwenStateSpace::dubinsSpace_</a></div><div class="ttdeci">DubinsStateSpace dubinsSpace_</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00314">VanaOwenStateSpace.h:314</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_aa1eac53307524bcf5b281c23d381fe61"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#aa1eac53307524bcf5b281c23d381fe61">ompl::base::VanaOwenStateSpace::setTolerance</a></div><div class="ttdeci">void setTolerance(double tolerance)</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00234">VanaOwenStateSpace.h:234</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">ompl::base::StateSpace::STATESPACE_TRIANGLE_INEQUALITY</a></div><div class="ttdeci">@ STATESPACE_TRIANGLE_INEQUALITY</div><div class="ttdoc">Check whether the triangle inequality holds when using StateSpace::interpolate() and StateSpace::dist...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00213">StateSpace.h:213</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1DubinsStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1DubinsStateSpace.html">ompl::base::DubinsStateSpace</a></div><div class="ttdoc">An SE(2) state space where distance is measured by the length of Dubins curves.</div><div class="ttdef"><b>Definition:</b> <a href="DubinsStateSpace_8h_source.html#l00126">DubinsStateSpace.h:126</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_aa916521ab3803b5dde3eb9e512d4b4af"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#aa916521ab3803b5dde3eb9e512d4b4af">ompl::base::VanaOwenStateSpace::minPitch_</a></div><div class="ttdeci">double minPitch_</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00308">VanaOwenStateSpace.h:308</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_ad6ebb544af7d9e1374c52ba2ddb567f8"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#ad6ebb544af7d9e1374c52ba2ddb567f8">ompl::base::VanaOwenStateSpace::distance</a></div><div class="ttdeci">double distance(const State *state1, const State *state2) const override</div><div class="ttdoc">Computes distance between two states. This function satisfies the properties of a metric if isMetricS...</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00330">VanaOwenStateSpace.cpp:330</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a71f7a2eb21ced39fa063e1c5551f590d"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a71f7a2eb21ced39fa063e1c5551f590d">ompl::base::VanaOwenStateSpace::registerProjections</a></div><div class="ttdeci">void registerProjections() override</div><div class="ttdoc">Register the projections for this state space. Usually, this is at least the default projection....</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00095">VanaOwenStateSpace.cpp:95</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_1_1PathType_html"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace_1_1PathType.html">ompl::base::VanaOwenStateSpace::PathType</a></div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00133">VanaOwenStateSpace.h:133</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a1edbb5159328ff529b9c4e1a2e569247"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">ompl::base::CompoundStateSpace::StateType</a></div><div class="ttdeci">ompl::base::CompoundState StateType</div><div class="ttdoc">Define the type of state allocated by this state space.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00641">StateSpace.h:641</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_ac5c97445b6e44c56903e518cb6827dff"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#ac5c97445b6e44c56903e518cb6827dff">ompl::base::VanaOwenStateSpace::maxPitch_</a></div><div class="ttdeci">double maxPitch_</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00310">VanaOwenStateSpace.h:310</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1DubinsStateSpace_1_1DubinsPath_html"><div class="ttname"><a href="classompl_1_1base_1_1DubinsStateSpace_1_1DubinsPath.html">ompl::base::DubinsStateSpace::DubinsPath</a></div><div class="ttdoc">Complete description of a Dubins path.</div><div class="ttdef"><b>Definition:</b> <a href="DubinsStateSpace_8h_source.html#l00172">DubinsStateSpace.h:172</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_af53cd1d9f8e1b022e24d657ffc6374b6"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#af53cd1d9f8e1b022e24d657ffc6374b6">ompl::base::VanaOwenStateSpace::get2DPose</a></div><div class="ttdeci">DubinsStateSpace::StateType * get2DPose(double x, double y, double yaw) const</div><div class="ttdoc">Allocate a DubinsSpace state and initialize it.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00129">VanaOwenStateSpace.cpp:129</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SE2StateSpace_1_1StateType_html"><div class="ttname"><a href="classompl_1_1base_1_1SE2StateSpace_1_1StateType.html">ompl::base::SE2StateSpace::StateType</a></div><div class="ttdoc">A state in SE(2): (x, y, yaw)</div><div class="ttdef"><b>Definition:</b> <a href="SE2StateSpace_8h_source.html#l00149">SE2StateSpace.h:149</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a5d797825496db0c995a557c69d50e06f"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a5d797825496db0c995a557c69d50e06f">ompl::base::VanaOwenStateSpace::isMetricSpace</a></div><div class="ttdeci">bool isMetricSpace() const override</div><div class="ttdoc">Return true if the distance function associated with the space is a metric.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00191">VanaOwenStateSpace.h:191</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">ompl::base::StateSpace::STATESPACE_INTERPOLATION</a></div><div class="ttdeci">@ STATESPACE_INTERPOLATION</div><div class="ttdoc">Check whether calling StateSpace::interpolate() works as expected.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00209">StateSpace.h:209</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_ab85873403369de5b80e700d6ea93570a"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#ab85873403369de5b80e700d6ea93570a">ompl::base::VanaOwenStateSpace::rho_</a></div><div class="ttdeci">double rho_</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00306">VanaOwenStateSpace.h:306</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a45b500ea035860ff063ae63c9471b4e3"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a45b500ea035860ff063ae63c9471b4e3">ompl::base::VanaOwenStateSpace::interpolate</a></div><div class="ttdeci">void interpolate(const State *from, const State *to, double t, State *state) const override</div><div class="ttdoc">Computes the state that lies at time t in [0, 1] on the segment that connects from state to to state....</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00342">VanaOwenStateSpace.cpp:342</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_abf462e3a84cd6c0a9f16b5d1f59d9bc6"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#abf462e3a84cd6c0a9f16b5d1f59d9bc6">ompl::base::VanaOwenStateSpace::sanityChecks</a></div><div class="ttdeci">void sanityChecks() const override</div><div class="ttdoc">Convenience function that allows derived state spaces to choose which checks should pass (see SanityC...</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8h_source.html#l00205">VanaOwenStateSpace.h:205</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaOwenStateSpace_html_a4b0b675d351327125f4597664eafc9af"><div class="ttname"><a href="classompl_1_1base_1_1VanaOwenStateSpace.html#a4b0b675d351327125f4597664eafc9af">ompl::base::VanaOwenStateSpace::allocState</a></div><div class="ttdeci">State * allocState() const override</div><div class="ttdoc">Allocate a state that can store a point in the described space.</div><div class="ttdef"><b>Definition:</b> <a href="VanaOwenStateSpace_8cpp_source.html#l00088">VanaOwenStateSpace.cpp:88</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space.</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorBounds_8h_source.html#l00111">RealVectorBounds.h:111</a></div></div>
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.17
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -150,28 +150,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md63">A Bit of Theory</a></li>
-<li class="level1"><a href="#autotoc_md64">Using OMPL&#39;s ODESolver</a><ul><li class="level2"><a href="#autotoc_md65">Define the ODE</a></li>
-<li class="level2"><a href="#autotoc_md66">A Basic Example</a></li>
-<li class="level2"><a href="#autotoc_md67">Selecting an ODESolver</a></li>
+<ul><li class="level1"><a href="#autotoc_md62">A Bit of Theory</a></li>
+<li class="level1"><a href="#autotoc_md63">Using OMPL&#39;s ODESolver</a><ul><li class="level2"><a href="#autotoc_md64">Define the ODE</a></li>
+<li class="level2"><a href="#autotoc_md65">A Basic Example</a></li>
+<li class="level2"><a href="#autotoc_md66">Selecting an ODESolver</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="textblock"><p>OMPL provides a wrapper class for numerically solving differential equations using the <a href="https://www.boost.org/libs/numeric/odeint">boost::numeric::odeint</a> package. A number of other software packages exist to perform numerical integration (e.g., GSL, ALGLIB, Scipy), but the odeint library is specifically chosen due to its feature-rich and easy-to-use implementation, as well as its lack of external dependencies.</p>
 <p>The ODESolver class is particularly suited for motion planning problems. It provides the user with an object capable of solving equations of the form \(\dot{q} = f(q,u)\), where \(q\) is the current state of the system and \(u\) is a control applied to the system at state \(q\). Using the ODESolver removes the need for the user to implement numerical integration in their own code, and allows advanced users the ability to customize the method used for integration.</p>
-<h1><a class="anchor" id="autotoc_md63"></a>
+<h1><a class="anchor" id="autotoc_md62"></a>
 A Bit of Theory</h1>
 <p>Assume that you are planning for a simplified car-like system where the velocity \(v\) and steering angle \(\phi\) can be directly controlled. Let the position of the car be described by (x,y, \(\theta\)). Then the dynamics of the system can be described by:</p>
 <p>\( \left( \begin{array}{c} \dot{x}\\ \dot{y}\\ \dot{\theta} \end{array} \right) = \left( \begin{array}{c} v \cos(\theta)\\ v \sin(\theta)\\ v \tan(\phi) \end{array} \right) \)</p>
 <p>This shows how a given state of the car model (x,y, \(\theta\)) will evolve over time with a single control ( \(v, \phi\)). Note that the equations above yield a delta (the differential) from the current state, i.e., they compute the change in the state values rather than the new state itself. Therefore, the equations must be integrated to find the new state of the system after applying the control for a given amount of time.</p>
 <p>Computing the exact solution for the majority of non-linear differential equations is infeasible, if not impossible. However, it is easy to approximate solutions to these equations by discretizing time into small increments and reevaluating the system during each increment. This discretization, however, introduces error into the computation. Intuitively, a smaller time step generally results in a smaller error value, but takes longer to compute because there are more discrete steps. Without going into detail on the various numerical methods used to approximate solutions, suffice it to say that the "order" of a numerical method indicates the precision of the approach; the higher the order the better. For example, classical <a href="https://mathworld.wolfram.com/EulerForwardMethod.html">Euler integration</a> is 1st order, indicating that the error during each time step is \(O(t^2)\) and the global error is \(O(t)\), where \(t\) is the size of a single time step. For more information, <a href="https://en.wikipedia.org/wiki/ Numerical_ordinary_differential_equations">Wikipedia</a> provides a thorough discussion on the theory of numerical integration for ordinary differential equations.</p>
-<h1><a class="anchor" id="autotoc_md64"></a>
+<h1><a class="anchor" id="autotoc_md63"></a>
 Using OMPL's ODESolver</h1>
 <p>To use the ODESolver, a function describing the ODE of your system must be implemented. This function must have the following signature:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> ODE(<span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1ODESolver.html#a5503d6e71f840329e7ffc905d1b1436b">oc::ODESolver::StateType</a>&amp; q, <span class="keyword">const</span> <a class="code" href="classompl_1_1control_1_1Control.html">oc::Control</a>* u, <a class="code" href="classompl_1_1control_1_1ODESolver.html#a5503d6e71f840329e7ffc905d1b1436b">oc::ODESolver::StateType</a>&amp; qdot)</div>
 </div><!-- fragment --><p>This function takes a vector q (StateType is a std::vector) that describes the current state of the system, a control u that defines the inputs applied to the system at state q, and a vector qdot to store the output of the computation. ODESolver utilizes <a href="https://www.boost.org/libs/numeric/odeint">boost::numeric::odeint</a> to perform the numerical integration, and it is necessary to translate the <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state.">ompl::base::State</a> values into an iterable container of real values. Therefore, values in the vector q directly correspond to the real valued state parameters in the <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state.">ompl::base::State</a>. This data is analogous to the result of calling <a class="el" href="classompl_1_1base_1_1ScopedState.html#ae9d9cbef04113f2ff83e69743abfcf05" title="Return the real values corresponding to this state. If a conversion is not possible,...">ompl::base::ScopedState::reals</a>.</p>
-<h2><a class="anchor" id="autotoc_md65"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
 Define the ODE</h2>
 <p>Assume that you are planning for the simple car-like system described above. The state space of the car is <a href="https://en.wikipedia.org/wiki/Euclidean_group">SE(2)</a> (x and y position with one angle for orientation). An implementation of this space already exists in OMPL (<a class="el" href="classompl_1_1base_1_1SE2StateSpace.html" title="A state space representing SE(2)">ompl::base::SE2StateSpace</a>), so it is not necessary to define a new space for the car. The <a class="el" href="classompl_1_1control_1_1ControlSpace.html" title="A control space representing the space of applicable controls.">ompl::control::ControlSpace</a> for this simple car model consists of the velocity and steering angle, both real valued. Given these definitions, the ODE defined for the ODESolver then has the following structure:</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code" href="namespaceompl_1_1control.html">oc</a> = <a class="code" href="namespaceompl_1_1control.html">ompl::control</a>;</div>
@@ -196,7 +196,7 @@ Define the ODE</h2>
 <div class="line">    qdot[1] = velocity * sin(theta);            <span class="comment">// y-dot</span></div>
 <div class="line">    qdot[2] = velocity * tan(steeringAngle);    <span class="comment">// theta-dot</span></div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md66"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md65"></a>
 A Basic Example</h2>
 <p>When planning with the ODESolver, the user must instantiate the derived solver. All of the solvers require a SpaceInformationPtr that the system operates in to be supplied in the constructor. This is used to extract the values of <a class="el" href="classompl_1_1base_1_1State.html" title="Definition of an abstract state.">ompl::base::State</a> into a container for integration via the StateSpace. The ODE itself must also be given to the solver. The simplest solver is the <a class="el" href="classompl_1_1control_1_1ODEBasicSolver.html" title="Basic solver for ordinary differential equations of the type q&#39; = f(q, u), where q is the current sta...">ompl::control::ODEBasicSolver</a>, which uses fourth order <a href="https://mathworld.wolfram.com/Runge-KuttaMethod.html">Runge-Kutta</a> integration. Given the car-like system and ODE described above, the solver can be instantiated with the following code snippet:</p>
 <div class="fragment"><div class="line"><span class="comment">// SpaceInformationPtr is defined as the variable si.</span></div>
@@ -215,7 +215,7 @@ A Basic Example</h2>
 </div><!-- fragment --><p>There is one final note about ODESolver and the postPropagate method. If your system has other state-space components that are not changed in the ODE (i.e. the current gear of a car's transmission), these values must be explicitly copied into the resulting state. ODESolver will only update the real-values of the state space. For state spaces with components that are not real-valued, the post-integration event can be used to transfer this information from the initial state to the resulting state.</p>
 <p>Once your postPropagate method is implemented, a StatePropagator can then be created which automatically invokes the postPropagate method using a function pointer after each state is propagated:</p>
 <div class="fragment"><div class="line">si-&gt;setStatePropagator(<a class="code" href="classompl_1_1control_1_1ODESolver.html#a78bf19ebd7fe10d724db7d22d51e5ec5">ompl::control::ODESolver::getStatePropagator</a>(odeSolver, &amp;postPropagate));</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md67"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md66"></a>
 Selecting an ODESolver</h2>
 <p>There are three derived classes from ODESolver that use <a href="https://www.boost.org/libs/numeric/odeint">boost::numeric::odeint</a> to solve systems of ordinary differential equations. Each of the solvers is templated with a default argument corresponding to the numerical method used for integration.</p>
 <ul>

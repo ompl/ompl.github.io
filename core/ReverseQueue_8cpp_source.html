@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.17"/>
+  <title>ompl/geometric/planners/informedtrees/eitstar/src/ReverseQueue.cpp Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_efdc19d105c21b1223d5f8dc524071be.html">ompl</a></li><li class="navelem"><a class="el" href="dir_1f57d97647ebda1e28cc730ac7313960.html">geometric</a></li><li class="navelem"><a class="el" href="dir_955a6a93aceef09599971796437d173a.html">planners</a></li><li class="navelem"><a class="el" href="dir_efc272713926b2de5ae7b55e29402045.html">informedtrees</a></li><li class="navelem"><a class="el" href="dir_34206abf56a0e9237427cc9b242e0b2d.html">eitstar</a></li><li class="navelem"><a class="el" href="dir_73fee748ba53fc0e1603d1cba9e260fd.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ReverseQueue.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Copyright (c) 2019, University of Oxford</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  are met:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   * Neither the name of the University of Toronto nor the names of its</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Authors: Marlin Strub</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/informedtrees/eitstar/ReverseQueue.h&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/informedtrees/eitstar/Direction.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;ompl/geometric/planners/informedtrees/eitstar/State.h&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">namespace </span>geometric</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">namespace </span>eitstar</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a039af72dab77d75524da367124a28ebe">ReverseQueue::ReverseQueue</a>(<span class="keyword">const</span> std::shared_ptr&lt;const ompl::base::OptimizationObjective&gt; &amp;objective,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                       <span class="keyword">const</span> std::shared_ptr&lt;const ompl::base::StateSpace&gt; &amp;space,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">bool</span> isQueueCostOrdered)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;              : isQueueCostOrdered_(isQueueCostOrdered)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;              , objective_(objective)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;              , space_(space)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;              , queue_(isQueueCostOrdered_ ? getCostComparisonOperator() : getEffortComparisonOperator())</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5ee057f0b9bb97ad55a9cfadd11ceee4">ReverseQueue::empty</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#adf4e42f5e3aa1d238ded78a652a42599">size</a>() == 0u;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::size_t <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#adf4e42f5e3aa1d238ded78a652a42599">ReverseQueue::size</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">return</span> queue_.<a class="code" href="classompl_1_1BinaryHeap.html#af624f87ff25d2e31f08afb6b4c1b4fc4">size</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a241d64fb49fc9db40f253e299bc5f13a">ReverseQueue::insertOrUpdate</a>(<span class="keyword">const</span> Edge &amp;edge)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">if</span> (!updateIfExists(edge))</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="comment">// Compute the keys.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> key1 = <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#aa773a28d750e766f99c743d4ae86325f">computeAdmissibleSolutionCost</a>(edge);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> key2 = computeAdmissibleCostToComeToTarget(edge);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> key3 = <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5af896afe530d75ed043b5060967bf62">computeAdmissibleSolutionEffort</a>(edge);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> key4 = computeInadmissibleSolutionEffort(edge);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="comment">// Create the heap element.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> element = std::make_tuple(key1, key2, key3, key4, edge);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="comment">// Insert the edge with the key in the queue.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> elementPointer = queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a7712c8909b596a4d12e0080960bd0274">insert</a>(element);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    <span class="comment">// Remember the element.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    edge.source-&gt;asReverseVertex()-&gt;outgoingReverseQueueLookup_.emplace_back(elementPointer);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a241d64fb49fc9db40f253e299bc5f13a">ReverseQueue::insertOrUpdate</a>(<span class="keyword">const</span> std::vector&lt;Edge&gt; &amp;edges)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="comment">// Let&#39;s do this naively.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;edge : edges)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a241d64fb49fc9db40f253e299bc5f13a">insertOrUpdate</a>(edge);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a98513a1b63616c97f166ce21443bc544">ReverseQueue::setCostQueueOrder</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> isQueueCostOrdered)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                isQueueCostOrdered_ = isQueueCostOrdered;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5ee057f0b9bb97ad55a9cfadd11ceee4">empty</a>())</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Can&#39;t update ordering of queue if there are elements in it.&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">if</span> (isQueueCostOrdered_)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a99e2aec266c1746cf0f16aa763d00d7f">getComparisonOperator</a>() = getCostComparisonOperator();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a99e2aec266c1746cf0f16aa763d00d7f">getComparisonOperator</a>() = getEffortComparisonOperator();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keyword">const</span> Edge &amp;<a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#ab07173d0a902c720f64b9a1e9adb233f">ReverseQueue::peek</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">auto</span> element = queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a5d1ecb7a7d154ad44df98a5109738697">top</a>())</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="keywordflow">return</span> std::get&lt;4&gt;(element-&gt;data);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;There are no elements to peek in the reverse queue.&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a840a02c176f97b4f6fcc0e97f752d845">ReverseQueue::peekEffort</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">auto</span> element = queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a5d1ecb7a7d154ad44df98a5109738697">top</a>())</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    <span class="keywordflow">return</span> std::get&lt;2&gt;(element-&gt;data);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;There are no elements to peek in the reverse queue.&quot;</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordtype">bool</span> ReverseQueue::updateIfExists(<span class="keyword">const</span> Edge &amp;edge)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="comment">// Check if the edge is in the queue via the reverse queue pointers.</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> &amp;lookup = edge.source-&gt;asReverseVertex()-&gt;outgoingReverseQueueLookup_;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a039af72dab77d75524da367124a28ebe">  145</a></span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> it = std::find_if(lookup.cbegin(), lookup.cend(), [&amp;edge](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;p) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    return std::get&lt;4&gt;(p-&gt;data).target-&gt;getId() == edge.target-&gt;getId();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                });</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="comment">// Indicate that the edge is not in the queue by returning false.</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">if</span> (it == lookup.cend())</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5ee057f0b9bb97ad55a9cfadd11ceee4">  155</a></span>&#160;                <span class="comment">// Update the cost and effort and the position of the edge in the queue.</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                std::get&lt;0&gt;((*it)-&gt;data) = <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#aa773a28d750e766f99c743d4ae86325f">computeAdmissibleSolutionCost</a>(edge);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                std::get&lt;1&gt;((*it)-&gt;data) = computeAdmissibleCostToComeToTarget(edge);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                std::get&lt;2&gt;((*it)-&gt;data) = <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5af896afe530d75ed043b5060967bf62">computeAdmissibleSolutionEffort</a>(edge);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                std::get&lt;3&gt;((*it)-&gt;data) = computeInadmissibleSolutionEffort(edge);</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#adf4e42f5e3aa1d238ded78a652a42599">  160</a></span>&#160;                queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a8114dc53c4239fe0e199106386898ce3">update</a>(*it);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="comment">// Indicate that the edge was updated by returning true.</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            }</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a241d64fb49fc9db40f253e299bc5f13a">  165</a></span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#aa773a28d750e766f99c743d4ae86325f">ReverseQueue::computeAdmissibleSolutionCost</a>(<span class="keyword">const</span> <a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html">Edge</a> &amp;edge)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">return</span> objective_-&gt;combineCosts(</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    objective_-&gt;combineCosts(edge.<a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#a32d6df8b0c88585642070bec3b38c8cd">source</a>-&gt;getAdmissibleCostToGo(),</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                             objective_-&gt;motionCostHeuristic(edge.<a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#adc3c4cc50c603ae85703b1e232ae3f3f">target</a>-&gt;raw(), edge.<a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#a32d6df8b0c88585642070bec3b38c8cd">source</a>-&gt;raw())),</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    edge.<a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#adc3c4cc50c603ae85703b1e232ae3f3f">target</a>-&gt;getLowerBoundCostToCome());</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> ReverseQueue::computeAdmissibleCostToComeToTarget(<span class="keyword">const</span> <a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html">Edge</a> &amp;edge)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="keywordflow">return</span> objective_-&gt;combineCosts(</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    edge.<a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#a32d6df8b0c88585642070bec3b38c8cd">source</a>-&gt;getAdmissibleCostToGo(),</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    objective_-&gt;motionCostHeuristic(edge.<a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#adc3c4cc50c603ae85703b1e232ae3f3f">target</a>-&gt;raw(), edge.<a class="code" href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#a32d6df8b0c88585642070bec3b38c8cd">source</a>-&gt;raw()));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5af896afe530d75ed043b5060967bf62">ReverseQueue::computeAdmissibleSolutionEffort</a>(<span class="keyword">const</span> Edge &amp;edge)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                std::size_t edgeEffort = 0u;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordflow">if</span> (edge.source-&gt;isWhitelisted(edge.target))</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                {</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a249eff02a90b31e224715658e268a27c">  186</a></span>&#160;                    edgeEffort = 0u;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="keyword">const</span> std::size_t fullSegmentCount =</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                        space_-&gt;validSegmentCount(edge.source-&gt;raw(), edge.target-&gt;raw());</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="comment">// Get the number of checks already performed on this edge.</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="keyword">const</span> std::size_t performedChecks = edge.target-&gt;getIncomingCollisionCheckResolution(edge.source);</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a98513a1b63616c97f166ce21443bc544">  195</a></span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <span class="comment">// Sanity check for the number of performed collision checks.</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    assert(fullSegmentCount &gt;= performedChecks);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="comment">// The estimated effort is the remaining number of collision checks.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    edgeEffort = fullSegmentCount - performedChecks;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> totalEffort =</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    edge.source-&gt;getEstimatedEffortToGo() + edgeEffort + edge.target-&gt;getLowerBoundEffortToCome();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keywordflow">if</span> (std::numeric_limits&lt;unsigned int&gt;::max() - edgeEffort - edge.source-&gt;getEstimatedEffortToGo() &lt;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    edge.target-&gt;getLowerBoundEffortToCome())</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    <span class="keywordflow">return</span> std::numeric_limits&lt;unsigned int&gt;::max();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keywordflow">return</span> totalEffort;</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#ab07173d0a902c720f64b9a1e9adb233f">  213</a></span>&#160;            }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            std::function&lt;bool(<span class="keyword">const</span> ReverseQueue::HeapElement &amp;, <span class="keyword">const</span> ReverseQueue::HeapElement &amp;)&gt;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            ReverseQueue::getCostComparisonOperator()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <span class="keywordflow">return</span> [&amp;objective = objective_](<span class="keyword">const</span> HeapElement &amp;lhs, <span class="keyword">const</span> HeapElement &amp;rhs) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    <span class="keywordflow">if</span> (objective-&gt;isCostEquivalentTo(std::get&lt;0&gt;(lhs), std::get&lt;0&gt;(rhs)))</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        <span class="keywordflow">if</span> (objective-&gt;isCostEquivalentTo(std::get&lt;1&gt;(lhs), std::get&lt;1&gt;(rhs)))</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                            <span class="keywordflow">return</span> std::get&lt;2&gt;(lhs) &lt; std::get&lt;2&gt;(rhs);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        }</div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a840a02c176f97b4f6fcc0e97f752d845">  225</a></span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                        {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                            <span class="keywordflow">return</span> objective-&gt;isCostBetterThan(std::get&lt;1&gt;(lhs), std::get&lt;1&gt;(rhs));</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                        }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        <span class="keywordflow">return</span> objective-&gt;isCostBetterThan(std::get&lt;0&gt;(lhs), std::get&lt;0&gt;(rhs));</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                };</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            std::function&lt;bool(<span class="keyword">const</span> ReverseQueue::HeapElement &amp;, <span class="keyword">const</span> ReverseQueue::HeapElement &amp;)&gt;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            ReverseQueue::getEffortComparisonOperator()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="keywordflow">return</span> [&amp;objective = objective_](<span class="keyword">const</span> HeapElement &amp;lhs, <span class="keyword">const</span> HeapElement &amp;rhs) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    <span class="keywordflow">if</span> (std::get&lt;2&gt;(lhs) == std::get&lt;2&gt;(rhs))</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        <span class="keywordflow">if</span> (std::get&lt;3&gt;(lhs) == std::get&lt;3&gt;(rhs))</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                            <span class="keywordflow">if</span> (objective-&gt;isCostEquivalentTo(std::get&lt;0&gt;(lhs), std::get&lt;0&gt;(rhs)))</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                            {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                <span class="keywordflow">return</span> objective-&gt;isCostBetterThan(std::get&lt;1&gt;(lhs), std::get&lt;1&gt;(rhs));</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                            }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                            {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                <span class="keywordflow">return</span> objective-&gt;isCostBetterThan(std::get&lt;0&gt;(lhs), std::get&lt;0&gt;(rhs));</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                            }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                        {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                            <span class="keywordflow">return</span> std::get&lt;3&gt;(lhs) &lt; std::get&lt;3&gt;(rhs);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                        }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                        <span class="keywordflow">return</span> std::get&lt;2&gt;(lhs) &lt; std::get&lt;2&gt;(rhs);</div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#aa773a28d750e766f99c743d4ae86325f">  262</a></span>&#160;                    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                };</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ReverseQueue::computeInadmissibleSolutionEffort(<span class="keyword">const</span> Edge &amp;edge)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                std::size_t edgeEffort = 0u;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                <span class="keywordflow">if</span> (edge.source-&gt;isWhitelisted(edge.target))</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    edgeEffort = 0u;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    <span class="keyword">const</span> std::size_t fullSegmentCount =</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                        space_-&gt;validSegmentCount(edge.source-&gt;raw(), edge.target-&gt;raw());</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5af896afe530d75ed043b5060967bf62">  277</a></span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    <span class="comment">// Get the number of checks already performed on this edge.</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    <span class="keyword">const</span> std::size_t performedChecks = edge.target-&gt;getIncomingCollisionCheckResolution(edge.source);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    <span class="comment">// Sanity check for the number of performed collision checks.</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    assert(fullSegmentCount &gt;= performedChecks);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    <span class="comment">// The estimated effort is the remaining number of collision checks.</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    edgeEffort = fullSegmentCount - performedChecks;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="keywordflow">if</span> (std::numeric_limits&lt;unsigned int&gt;::max() - edgeEffort - edge.source-&gt;getEstimatedEffortToGo() &lt;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    edge.target-&gt;getInadmissibleEffortToCome())</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    <span class="keywordflow">return</span> std::numeric_limits&lt;unsigned int&gt;::max();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <span class="comment">// return total effort</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="keywordflow">return</span> edge.source-&gt;getEstimatedEffortToGo() + edgeEffort + edge.target-&gt;getInadmissibleEffortToCome();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            Edge <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#af242a2bca2cefad62df6151f404f6e14">ReverseQueue::pop</a>()</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                assert(!queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a442b00d357e3c2859c40169ed0817b92">empty</a>());</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="comment">// Get the top element, i.e., a pair that holds the key and the edge.</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> element = queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a5d1ecb7a7d154ad44df98a5109738697">top</a>();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <span class="comment">// Copy the data of the top edge.</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                <span class="keyword">auto</span> edge = std::get&lt;4&gt;(element-&gt;data);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="comment">// If the source state of the edge does not have an associated vertex, it&#39;s a bug.</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                assert(edge.source-&gt;hasReverseVertex());</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="comment">// Pop the element from the queue.</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a178e694e35e7864834d765a2819256f1">pop</a>();</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="comment">// Get a reference to the outgoing edge queue lookup of the parent vertex.</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                <span class="keyword">auto</span> &amp;lookup = edge.source-&gt;asReverseVertex()-&gt;outgoingReverseQueueLookup_;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                <span class="comment">// Remove the edge from the lookup.</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                <span class="keyword">auto</span> it = std::find(lookup.begin(), lookup.end(), element);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="comment">// If the edge is not in the lookup, it&#39;s a bug.</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                assert(it != lookup.end());</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="comment">// Swappedy pop.</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                std::iter_swap(it, lookup.rbegin());</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                lookup.pop_back();</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <span class="comment">// Return the element.</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="keywordflow">return</span> edge;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <a class="code" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a1b8a572a0267cc4d1fac035c427c78c3">ReverseQueue::getLowerBoundOnOptimalSolutionCost</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <span class="keywordflow">return</span> std::get&lt;0&gt;(queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a5d1ecb7a7d154ad44df98a5109738697">top</a>()-&gt;data);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a37886f8da8811c50f15f7266fb49c545">ReverseQueue::clear</a>()</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <span class="comment">// We need to ensure the reverse queue lookup is cleared for all edges in the queue.</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                std::vector&lt;HeapElement&gt; contents;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                queue_.<a class="code" href="classompl_1_1BinaryHeap.html#ac7bc9e22fbcbad4ea5dfd20b34ef348f">getContent</a>(contents);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> element : contents)</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    std::get&lt;4&gt;(element).source-&gt;asReverseVertex()-&gt;outgoingReverseQueueLookup_.clear();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                queue_.<a class="code" href="classompl_1_1BinaryHeap.html#addf7a2e9d0cc43dd05659686f58d695f">clear</a>();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            std::vector&lt;Edge&gt; <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#ab96304a1fb6e8d867cfd7a10a18c8d92">ReverseQueue::getEdges</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword">            </span>{</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                std::vector&lt;HeapElement&gt; contents;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                queue_.<a class="code" href="classompl_1_1BinaryHeap.html#ac7bc9e22fbcbad4ea5dfd20b34ef348f">getContent</a>(contents);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                std::vector&lt;Edge&gt; edges;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                edges.reserve(contents.size());</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;element : contents)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    edges.push_back(std::get&lt;4&gt;(element));</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="keywordflow">return</span> edges;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5b6ecd2b8974e5caecd42b3a0476833f">ReverseQueue::rebuild</a>()</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> edges = <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#ab96304a1fb6e8d867cfd7a10a18c8d92">getEdges</a>();</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a37886f8da8811c50f15f7266fb49c545">clear</a>();</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a241d64fb49fc9db40f253e299bc5f13a">insertOrUpdate</a>(edges);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a935c020dcadf880234d0b808b151ef38">ReverseQueue::removeOutgoingEdges</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                <span class="comment">// Remove all elements from the queue.</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> element : vertex-&gt;outgoingReverseQueueLookup_)</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                    queue_.<a class="code" href="classompl_1_1BinaryHeap.html#a56848811174698cd9a907e1128e6ce02">remove</a>(element);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                <span class="comment">// Remove all elements from the lookup.</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                vertex-&gt;outgoingReverseQueueLookup_.clear();</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            }</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        }  <span class="comment">// namespace eitstar</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    }  <span class="comment">// namespace geometric</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;}  <span class="comment">// namespace ompl</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructompl_1_1geometric_1_1eitstar_1_1Edge_html_a32d6df8b0c88585642070bec3b38c8cd"><div class="ttname"><a href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#a32d6df8b0c88585642070bec3b38c8cd">ompl::geometric::eitstar::Edge::source</a></div><div class="ttdeci">std::shared_ptr&lt; State &gt; source</div><div class="ttdoc">The parent state of this edge.</div><div class="ttdef"><b>Definition:</b> <a href="eitstar_2Edge_8h_source.html#l00165">Edge.h:165</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a1b8a572a0267cc4d1fac035c427c78c3"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a1b8a572a0267cc4d1fac035c427c78c3">ompl::geometric::eitstar::ReverseQueue::getLowerBoundOnOptimalSolutionCost</a></div><div class="ttdeci">ompl::base::Cost getLowerBoundOnOptimalSolutionCost() const</div><div class="ttdoc">Returns a lower bound on the resolution-optimal solution cost.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00427">ReverseQueue.cpp:427</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_ab96304a1fb6e8d867cfd7a10a18c8d92"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#ab96304a1fb6e8d867cfd7a10a18c8d92">ompl::geometric::eitstar::ReverseQueue::getEdges</a></div><div class="ttdeci">std::vector&lt; Edge &gt; getEdges() const</div><div class="ttdoc">Copies all edges into a vector and returns the vector.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00444">ReverseQueue.cpp:444</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a37886f8da8811c50f15f7266fb49c545"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a37886f8da8811c50f15f7266fb49c545">ompl::geometric::eitstar::ReverseQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the queue, i.e., deletes all elements from it.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00432">ReverseQueue.cpp:432</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_a99e2aec266c1746cf0f16aa763d00d7f"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#a99e2aec266c1746cf0f16aa763d00d7f">ompl::BinaryHeap::getComparisonOperator</a></div><div class="ttdeci">LessThan &amp; getComparisonOperator()</div><div class="ttdoc">Return a reference to the comparison operator.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00298">BinaryHeap.h:298</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_a5d1ecb7a7d154ad44df98a5109738697"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#a5d1ecb7a7d154ad44df98a5109738697">ompl::BinaryHeap::top</a></div><div class="ttdeci">Element * top() const</div><div class="ttdoc">Return the top element. nullptr for an empty heap.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00184">BinaryHeap.h:184</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_a178e694e35e7864834d765a2819256f1"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#a178e694e35e7864834d765a2819256f1">ompl::BinaryHeap::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdoc">Remove the top element.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00190">BinaryHeap.h:190</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a98513a1b63616c97f166ce21443bc544"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a98513a1b63616c97f166ce21443bc544">ompl::geometric::eitstar::ReverseQueue::setCostQueueOrder</a></div><div class="ttdeci">void setCostQueueOrder(const bool isQueueCostOrdered)</div><div class="ttdoc">Updates the queue ordering depending on the given suboptimality factor.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00195">ReverseQueue.cpp:195</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_af242a2bca2cefad62df6151f404f6e14"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#af242a2bca2cefad62df6151f404f6e14">ompl::geometric::eitstar::ReverseQueue::pop</a></div><div class="ttdeci">Edge pop()</div><div class="ttdoc">Returns and deletes the top element of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00394">ReverseQueue.cpp:394</a></div></div>
+<div class="ttc" id="astructompl_1_1geometric_1_1eitstar_1_1Edge_html"><div class="ttname"><a href="structompl_1_1geometric_1_1eitstar_1_1Edge.html">ompl::geometric::eitstar::Edge</a></div><div class="ttdoc">A struct for basic edge data.</div><div class="ttdef"><b>Definition:</b> <a href="eitstar_2Edge_8h_source.html#l00152">Edge.h:152</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Cost_html"><div class="ttname"><a href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a></div><div class="ttdoc">Definition of a cost value. Can represent the cost of a motion or the cost of a state.</div><div class="ttdef"><b>Definition:</b> <a href="Cost_8h_source.html#l00111">Cost.h:111</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_addf7a2e9d0cc43dd05659686f58d695f"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#addf7a2e9d0cc43dd05659686f58d695f">ompl::BinaryHeap::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the heap.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00176">BinaryHeap.h:176</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_a442b00d357e3c2859c40169ed0817b92"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#a442b00d357e3c2859c40169ed0817b92">ompl::BinaryHeap::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Check if the heap is empty.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00259">BinaryHeap.h:259</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a840a02c176f97b4f6fcc0e97f752d845"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a840a02c176f97b4f6fcc0e97f752d845">ompl::geometric::eitstar::ReverseQueue::peekEffort</a></div><div class="ttdeci">unsigned int peekEffort() const</div><div class="ttdoc">Get the effort corresponding to the top edge of the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00225">ReverseQueue.cpp:225</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_ac7bc9e22fbcbad4ea5dfd20b34ef348f"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#ac7bc9e22fbcbad4ea5dfd20b34ef348f">ompl::BinaryHeap::getContent</a></div><div class="ttdeci">void getContent(std::vector&lt; _T &gt; &amp;content) const</div><div class="ttdoc">Get the data stored in this heap.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00271">BinaryHeap.h:271</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a935c020dcadf880234d0b808b151ef38"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a935c020dcadf880234d0b808b151ef38">ompl::geometric::eitstar::ReverseQueue::removeOutgoingEdges</a></div><div class="ttdeci">void removeOutgoingEdges(const std::shared_ptr&lt; Vertex &gt; &amp;vertex)</div><div class="ttdoc">Removes the outgoing edges of a vertex from the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00464">ReverseQueue.cpp:464</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_aa773a28d750e766f99c743d4ae86325f"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#aa773a28d750e766f99c743d4ae86325f">ompl::geometric::eitstar::ReverseQueue::computeAdmissibleSolutionCost</a></div><div class="ttdeci">ompl::base::Cost computeAdmissibleSolutionCost(const Edge &amp;edge) const</div><div class="ttdoc">Returns the admissible total potential solution cost of an edge.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00262">ReverseQueue.cpp:262</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a241d64fb49fc9db40f253e299bc5f13a"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a241d64fb49fc9db40f253e299bc5f13a">ompl::geometric::eitstar::ReverseQueue::insertOrUpdate</a></div><div class="ttdeci">void insertOrUpdate(const Edge &amp;edge)</div><div class="ttdoc">Inserts or updates an element in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00165">ReverseQueue.cpp:165</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_a7712c8909b596a4d12e0080960bd0274"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#a7712c8909b596a4d12e0080960bd0274">ompl::BinaryHeap::insert</a></div><div class="ttdeci">Element * insert(const _T &amp;data)</div><div class="ttdoc">Add a new element.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00204">BinaryHeap.h:204</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_a56848811174698cd9a907e1128e6ce02"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#a56848811174698cd9a907e1128e6ce02">ompl::BinaryHeap::remove</a></div><div class="ttdeci">void remove(Element *element)</div><div class="ttdoc">Remove a specific element.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00196">BinaryHeap.h:196</a></div></div>
+<div class="ttc" id="astructompl_1_1geometric_1_1eitstar_1_1Edge_html_adc3c4cc50c603ae85703b1e232ae3f3f"><div class="ttname"><a href="structompl_1_1geometric_1_1eitstar_1_1Edge.html#adc3c4cc50c603ae85703b1e232ae3f3f">ompl::geometric::eitstar::Edge::target</a></div><div class="ttdeci">std::shared_ptr&lt; State &gt; target</div><div class="ttdoc">The child state of this edge.</div><div class="ttdef"><b>Definition:</b> <a href="eitstar_2Edge_8h_source.html#l00168">Edge.h:168</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_ab07173d0a902c720f64b9a1e9adb233f"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#ab07173d0a902c720f64b9a1e9adb233f">ompl::geometric::eitstar::ReverseQueue::peek</a></div><div class="ttdeci">const Edge &amp; peek() const</div><div class="ttdoc">Get a reference to the top edge in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00213">ReverseQueue.cpp:213</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a5af896afe530d75ed043b5060967bf62"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5af896afe530d75ed043b5060967bf62">ompl::geometric::eitstar::ReverseQueue::computeAdmissibleSolutionEffort</a></div><div class="ttdeci">unsigned int computeAdmissibleSolutionEffort(const Edge &amp;edge) const</div><div class="ttdoc">Returns the admissible total potential effort of an edge.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00277">ReverseQueue.cpp:277</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_adf4e42f5e3aa1d238ded78a652a42599"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#adf4e42f5e3aa1d238ded78a652a42599">ompl::geometric::eitstar::ReverseQueue::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdoc">Returns the number of elements in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00160">ReverseQueue.cpp:160</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_a8114dc53c4239fe0e199106386898ce3"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#a8114dc53c4239fe0e199106386898ce3">ompl::BinaryHeap::update</a></div><div class="ttdeci">void update(Element *element)</div><div class="ttdoc">Update an element in the heap.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00250">BinaryHeap.h:250</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a5b6ecd2b8974e5caecd42b3a0476833f"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5b6ecd2b8974e5caecd42b3a0476833f">ompl::geometric::eitstar::ReverseQueue::rebuild</a></div><div class="ttdeci">void rebuild()</div><div class="ttdoc">Rebuilds the queue.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00457">ReverseQueue.cpp:457</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a5ee057f0b9bb97ad55a9cfadd11ceee4"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a5ee057f0b9bb97ad55a9cfadd11ceee4">ompl::geometric::eitstar::ReverseQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Returns whether the queue is empty.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00155">ReverseQueue.cpp:155</a></div></div>
+<div class="ttc" id="aclassompl_1_1BinaryHeap_html_af624f87ff25d2e31f08afb6b4c1b4fc4"><div class="ttname"><a href="classompl_1_1BinaryHeap.html#af624f87ff25d2e31f08afb6b4c1b4fc4">ompl::BinaryHeap::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdoc">Get the number of elements in the heap.</div><div class="ttdef"><b>Definition:</b> <a href="BinaryHeap_8h_source.html#l00265">BinaryHeap.h:265</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:65</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1eitstar_1_1ReverseQueue_html_a039af72dab77d75524da367124a28ebe"><div class="ttname"><a href="classompl_1_1geometric_1_1eitstar_1_1ReverseQueue.html#a039af72dab77d75524da367124a28ebe">ompl::geometric::eitstar::ReverseQueue::ReverseQueue</a></div><div class="ttdeci">ReverseQueue(const std::shared_ptr&lt; const ompl::base::OptimizationObjective &gt; &amp;objective, const std::shared_ptr&lt; const ompl::base::StateSpace &gt; &amp;space, const bool isQueueCostOrdered)</div><div class="ttdoc">Constructs the queue with the given optimization objective and state space.</div><div class="ttdef"><b>Definition:</b> <a href="ReverseQueue_8cpp_source.html#l00145">ReverseQueue.cpp:145</a></div></div>
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.17
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
+  <meta name="generator" content="Doxygen 1.8.17"/>
+  <title>omplapp/apps/PlanePlanning.cpp Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery.js"></script>
+  <script src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="group__demos.html">Demos</a>
+              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
+              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Repositories</div>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
+              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">Continuous Integration</div>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+              <a class="dropdown-item" href="education.html">Education</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e2f3b614a327e4d13db899b0ebe1ed20.html">omplapp</a></li><li class="navelem"><a class="el" href="dir_a786739a157a6e0a83b86dac1f951081.html">apps</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PlanePlanning.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Copyright (c) 2023, Metron, Inc.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  are met:</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   * Neither the name of the Metron, Inc. nor the names of its</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Author: Mark Moll */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;omplapp/apps/PlanePlanning.h&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;Eigen/Geometry&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;ompl/base/spaces/SE3StateSpace.h&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">class </span>PlaneStateSampler;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">class </span>PlanePlanningStateSpace : <span class="keyword">public</span> <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html">ompl::base::CompoundStateSpace</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        PlanePlanningStateSpace(std::shared_ptr&lt;ompl::base::VanaStateSpace&gt; <span class="keyword">const</span>&amp; space)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a9c772d5b74271f79d95531d00ed36bf7">addSubspace</a>(std::make_shared&lt;ompl::base::SE3StateSpace&gt;(), 0.);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a9c772d5b74271f79d95531d00ed36bf7">addSubspace</a>(space, 1.);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#ab344f21f0aba84c14fda3ec87a0b21ab">lock</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a36dbd25ce75aaee3b053b176c1892e22">isMetricSpace</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#aa816af1b7db21c3863a4cf342da8e0d7">distance</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state1, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state2)<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a332b23e17e7145d92dce19c6f58a11f9">getSubspace</a>(1)-&gt;distance(</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                state1-&gt;<a class="code" href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">as</a>&lt;<a class="code" href="classompl_1_1base_1_1CompoundState.html">ompl::base::CompoundStateSpace::StateType</a>&gt;()-&gt;<a class="code" href="classompl_1_1base_1_1CompoundState.html#a3fed804c968d7482c6147a267878614b">as</a>&lt;<a class="code" href="classompl_1_1base_1_1VanaStateSpace_1_1StateType.html">ompl::base::VanaStateSpace::StateType</a>&gt;(1),</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                state2-&gt;<a class="code" href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">as</a>&lt;<a class="code" href="classompl_1_1base_1_1CompoundState.html">ompl::base::CompoundStateSpace::StateType</a>&gt;()-&gt;<a class="code" href="classompl_1_1base_1_1CompoundState.html#a3fed804c968d7482c6147a267878614b">as</a>&lt;<a class="code" href="classompl_1_1base_1_1VanaStateSpace_1_1StateType.html">ompl::base::VanaStateSpace::StateType</a>&gt;(1)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classompl_1_1base_1_1StateSamplerPtr.html">ompl::base::StateSamplerPtr</a> <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a0096d7a8bc3527c1697b98a6eb376dcf">allocDefaultStateSampler</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">class </span>PlaneStateSampler : <span class="keyword">public</span> <a class="code" href="classompl_1_1base_1_1SubspaceStateSampler.html">ompl::base::SubspaceStateSampler</a></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        PlaneStateSampler(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1StateSpace.html">ompl::base::StateSpace</a> *space)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;          : SubspaceStateSampler(space, space-&gt;as&lt;<a class="code" href="namespaceompl.html">ompl</a>::base::CompoundStateSpace&gt;()-&gt;getSubspace(1).get(), 1.)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1SubspaceStateSampler.html#adceaa282e8f7fe2ea144907b4cd646d5">sampleUniform</a>(<a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classompl_1_1base_1_1SubspaceStateSampler.html#adceaa282e8f7fe2ea144907b4cd646d5">SubspaceStateSampler::sampleUniform</a>(state);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            liftState(state);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1SubspaceStateSampler.html#a5b6905097c22e18079486012a0e59632">sampleUniformNear</a>(<a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *near, <span class="keywordtype">double</span> distance)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classompl_1_1base_1_1SubspaceStateSampler.html#a5b6905097c22e18079486012a0e59632">SubspaceStateSampler::sampleUniformNear</a>(state, near, distance);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            liftState(state);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1SubspaceStateSampler.html#a724b2abd599820adb7d69c013cd15a8c">sampleGaussian</a>(<a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *mean, <span class="keywordtype">double</span> stdDev)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="classompl_1_1base_1_1SubspaceStateSampler.html#a724b2abd599820adb7d69c013cd15a8c">SubspaceStateSampler::sampleGaussian</a>(state, mean, stdDev);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            liftState(state);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> liftState(<a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keyword">auto</span> s0 = state-&gt;<a class="code" href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">as</a>&lt;<a class="code" href="classompl_1_1base_1_1CompoundState.html">ompl::base::CompoundState</a>&gt;()-&gt;as&lt;ompl::base::SE3StateSpace::StateType&gt;(0);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> s1 = state-&gt;<a class="code" href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">as</a>&lt;<a class="code" href="classompl_1_1base_1_1CompoundState.html">ompl::base::CompoundState</a>&gt;()-&gt;as&lt;ompl::base::VanaStateSpace::StateType&gt;(1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            s0-&gt;setXYZ((*s1)[0], (*s1)[1], (*s1)[2]);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            Eigen::Quaterniond q = Eigen::AngleAxisd(s1-&gt;pitch(), Eigen::Vector3d::UnitY())</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                * Eigen::AngleAxisd(s1-&gt;yaw(), Eigen::Vector3d::UnitZ());</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keyword">auto</span>&amp; qs = s0-&gt;rotation();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            qs.w = q.w();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            qs.x = q.x();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            qs.y = q.y();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            qs.z = q.z();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    };</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classompl_1_1base_1_1StateSamplerPtr.html">ompl::base::StateSamplerPtr</a> PlanePlanningStateSpace::allocDefaultStateSampler()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> std::make_shared&lt;PlaneStateSampler&gt;(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}  <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<a class="code" href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState&lt;&gt;</a> ompl::app::PlanePlanning::getDefaultStartState()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    base::ScopedState&lt;base::SE3StateSpace&gt; st(getGeometricComponentStateSpace());</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    aiVector3D s = <a class="code" href="classompl_1_1app_1_1RigidBodyGeometry.html#a0bec00755a8340d1472286d0ceba72a9">getRobotCenter</a>(0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    st-&gt;setXYZ(s.x, s.y, s.z);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    st-&gt;rotation().setIdentity();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> getFullStateFromGeometricComponent(st);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<a class="code" href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState&lt;&gt;</a></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;ompl::app::PlanePlanning::getFullStateFromGeometricComponent(<span class="keyword">const</span> base::ScopedState&lt;&gt; &amp;state)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    base::ScopedState&lt;&gt; s(getStateSpace());</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// Eigen quaternion is ordered (w,x,y,z), while OMPL&#39;s quaternion is ordered</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// x,y,z,w</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">auto</span> euler = Eigen::Quaterniond(state[6], state[3], state[4], state[5]).toRotationMatrix().eulerAngles(0, 1, 2);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    s[0] = s[7] = state[0];</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    s[1] = s[8] = state[1];</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    s[2] = s[9] = state[2];</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    s[3] = state[3];</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    s[4] = state[4];</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    s[5] = state[5];</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    s[6] = state[6];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    s[10] = euler[1];  <span class="comment">// pitch</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    s[11] = euler[2];  <span class="comment">// yaw</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1StateSpacePtr.html">ompl::base::StateSpacePtr</a> &amp;ompl::app::PlanePlanning::getGeometricComponentStateSpace()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> getStateSpace()-&gt;as&lt;base::CompoundStateSpace&gt;()-&gt;getSubspace(0);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *ompl::app::PlanePlanning::getGeometricComponentStateInternal(<span class="keyword">const</span> base::State *state,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                                                      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*index*/</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> state-&gt;<a class="code" href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">as</a>&lt;base::CompoundState&gt;()-&gt;components[0];</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<a class="code" href="classompl_1_1base_1_1StateSpacePtr.html">ompl::base::StateSpacePtr</a> ompl::app::PlanePlanning::constructStateSpace(std::shared_ptr&lt;base::VanaStateSpace&gt; space)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> std::make_shared&lt;PlanePlanningStateSpace&gt;(space);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classompl_1_1app_1_1PlanePlanning.html#a7ef9192efb27256e58180edc8895c049">  162</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classompl_1_1app_1_1PlanePlanning.html#a7ef9192efb27256e58180edc8895c049">ompl::app::PlanePlanning::setup</a>()</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    inferEnvironmentBounds();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    getStateSpace()-&gt;as&lt;<a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html">base::CompoundStateSpace</a>&gt;()-&gt;getSubspace(1)-&gt;<a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#afec510def21209463e299ff5454306bd">as</a>&lt;<a class="code" href="classompl_1_1base_1_1VanaStateSpace.html">base::VanaStateSpace</a>&gt;()-&gt;setBounds(</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        getGeometricComponentStateSpace()-&gt;as&lt;<a class="code" href="classompl_1_1base_1_1SE3StateSpace.html">base::SE3StateSpace</a>&gt;()-&gt;getBounds());</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="classompl_1_1app_1_1AppBase.html#a8fb5fb05c9b2d0b6224888db32a1b6f6">AppBase&lt;AppType::GEOMETRIC&gt;::setup</a>();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundState_html"><div class="ttname"><a href="classompl_1_1base_1_1CompoundState.html">ompl::base::CompoundState</a></div><div class="ttdoc">Definition of a compound state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00150">State.h:150</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SubspaceStateSampler_html"><div class="ttname"><a href="classompl_1_1base_1_1SubspaceStateSampler.html">ompl::base::SubspaceStateSampler</a></div><div class="ttdoc">Construct a sampler that samples only within a subspace of the space.</div><div class="ttdef"><b>Definition:</b> <a href="StateSampler_8h_source.html#l00217">StateSampler.h:217</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html">ompl::base::CompoundStateSpace</a></div><div class="ttdoc">A space to allow the composition of state spaces.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00637">StateSpace.h:637</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html">ompl::base::StateSpace</a></div><div class="ttdoc">Representation of a space in which planning can be performed. Topology specific sampling,...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00134">StateSpace.h:134</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a36dbd25ce75aaee3b053b176c1892e22"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a36dbd25ce75aaee3b053b176c1892e22">ompl::base::CompoundStateSpace::isMetricSpace</a></div><div class="ttdeci">bool isMetricSpace() const override</div><div class="ttdoc">Return true if the distance function associated with the space is a metric.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l00904">StateSpace.cpp:904</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundState_html_a3fed804c968d7482c6147a267878614b"><div class="ttname"><a href="classompl_1_1base_1_1CompoundState.html#a3fed804c968d7482c6147a267878614b">ompl::base::CompoundState::as</a></div><div class="ttdeci">const T * as(unsigned int index) const</div><div class="ttdoc">Cast a component of this instance to a desired type.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00159">State.h:159</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a0096d7a8bc3527c1697b98a6eb376dcf"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a0096d7a8bc3527c1697b98a6eb376dcf">ompl::base::CompoundStateSpace::allocDefaultStateSampler</a></div><div class="ttdeci">StateSamplerPtr allocDefaultStateSampler() const override</div><div class="ttdoc">Allocate an instance of the default uniform state sampler for this space.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l01124">StateSpace.cpp:1124</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00113">State.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SubspaceStateSampler_html_adceaa282e8f7fe2ea144907b4cd646d5"><div class="ttname"><a href="classompl_1_1base_1_1SubspaceStateSampler.html#adceaa282e8f7fe2ea144907b4cd646d5">ompl::base::SubspaceStateSampler::sampleUniform</a></div><div class="ttdeci">void sampleUniform(State *state) override</div><div class="ttdoc">Sample a state.</div><div class="ttdef"><b>Definition:</b> <a href="StateSampler_8cpp_source.html#l00091">StateSampler.cpp:91</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a332b23e17e7145d92dce19c6f58a11f9"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a332b23e17e7145d92dce19c6f58a11f9">ompl::base::CompoundStateSpace::getSubspace</a></div><div class="ttdeci">const StateSpacePtr &amp; getSubspace(unsigned int index) const</div><div class="ttdoc">Get a specific subspace from the compound state space.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l00915">StateSpace.cpp:915</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_ab344f21f0aba84c14fda3ec87a0b21ab"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#ab344f21f0aba84c14fda3ec87a0b21ab">ompl::base::CompoundStateSpace::lock</a></div><div class="ttdeci">void lock()</div><div class="ttdoc">Lock this state space. This means no further spaces can be added as components. This function can be ...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l01169">StateSpace.cpp:1169</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_aa816af1b7db21c3863a4cf342da8e0d7"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#aa816af1b7db21c3863a4cf342da8e0d7">ompl::base::CompoundStateSpace::distance</a></div><div class="ttdeci">double distance(const State *state1, const State *state2) const override</div><div class="ttdoc">Computes distance between two states. This function satisfies the properties of a metric if isMetricS...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l01074">StateSpace.cpp:1074</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html_a6178474307b3f364184db9999a639af1"><div class="ttname"><a href="classompl_1_1base_1_1State.html#a6178474307b3f364184db9999a639af1">ompl::base::State::as</a></div><div class="ttdeci">const T * as() const</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00162">State.h:162</a></div></div>
+<div class="ttc" id="aclassompl_1_1app_1_1PlanePlanning_html_a7ef9192efb27256e58180edc8895c049"><div class="ttname"><a href="classompl_1_1app_1_1PlanePlanning.html#a7ef9192efb27256e58180edc8895c049">ompl::app::PlanePlanning::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">This method will create the necessary classes for planning. The solve() method will call this functio...</div><div class="ttdef"><b>Definition:</b> <a href="src_2omplapp_2apps_2PlanePlanning_8cpp_source.html#l00162">PlanePlanning.cpp:162</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1VanaStateSpace.html">ompl::base::VanaStateSpace</a></div><div class="ttdoc">An R^4 x SO(2) state space where distance is measured by the length of a type Dubins airplane curves.</div><div class="ttdef"><b>Definition:</b> <a href="VanaStateSpace_8h_source.html#l00092">VanaStateSpace.h:92</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SubspaceStateSampler_html_a5b6905097c22e18079486012a0e59632"><div class="ttname"><a href="classompl_1_1base_1_1SubspaceStateSampler.html#a5b6905097c22e18079486012a0e59632">ompl::base::SubspaceStateSampler::sampleUniformNear</a></div><div class="ttdeci">void sampleUniformNear(State *state, const State *near, double distance) override</div><div class="ttdoc">Sample a state near another, within a neighborhood controlled by a distance parameter.</div><div class="ttdef"><b>Definition:</b> <a href="StateSampler_8cpp_source.html#l00097">StateSampler.cpp:97</a></div></div>
+<div class="ttc" id="aclassompl_1_1app_1_1RigidBodyGeometry_html_a0bec00755a8340d1472286d0ceba72a9"><div class="ttname"><a href="classompl_1_1app_1_1RigidBodyGeometry.html#a0bec00755a8340d1472286d0ceba72a9">ompl::app::RigidBodyGeometry::getRobotCenter</a></div><div class="ttdeci">aiVector3D getRobotCenter(unsigned int robotIndex) const</div><div class="ttdoc">Get the robot's center (average of all the vertices of all its parts)</div><div class="ttdef"><b>Definition:</b> <a href="RigidBodyGeometry_8cpp_source.html#l00173">RigidBodyGeometry.cpp:173</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1VanaStateSpace_1_1StateType_html"><div class="ttname"><a href="classompl_1_1base_1_1VanaStateSpace_1_1StateType.html">ompl::base::VanaStateSpace::StateType</a></div><div class="ttdef"><b>Definition:</b> <a href="VanaStateSpace_8h_source.html#l00147">VanaStateSpace.h:147</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_afec510def21209463e299ff5454306bd"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#afec510def21209463e299ff5454306bd">ompl::base::CompoundStateSpace::as</a></div><div class="ttdeci">T * as(const unsigned int index) const</div><div class="ttdoc">Cast a component of this instance to a desired type.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00654">StateSpace.h:654</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SE3StateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1SE3StateSpace.html">ompl::base::SE3StateSpace</a></div><div class="ttdoc">A state space representing SE(3)</div><div class="ttdef"><b>Definition:</b> <a href="SE3StateSpace_8h_source.html#l00113">SE3StateSpace.h:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpacePtr_html"><div class="ttname"><a href="classompl_1_1base_1_1StateSpacePtr.html">StateSpacePtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::StateSpace.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSamplerPtr_html"><div class="ttname"><a href="classompl_1_1base_1_1StateSamplerPtr.html">StateSamplerPtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::StateSampler.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a9c772d5b74271f79d95531d00ed36bf7"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a9c772d5b74271f79d95531d00ed36bf7">ompl::base::CompoundStateSpace::addSubspace</a></div><div class="ttdeci">void addSubspace(const StateSpacePtr &amp;component, double weight)</div><div class="ttdoc">Adds a new state space as part of the compound state space. For computing distances within the compou...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l00871">StateSpace.cpp:871</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1ScopedState_html"><div class="ttname"><a href="classompl_1_1base_1_1ScopedState.html">ompl::base::ScopedState</a></div><div class="ttdoc">Definition of a scoped state.</div><div class="ttdef"><b>Definition:</b> <a href="ScopedState_8h_source.html#l00120">ScopedState.h:120</a></div></div>
+<div class="ttc" id="aclassompl_1_1app_1_1AppBase_html_a8fb5fb05c9b2d0b6224888db32a1b6f6"><div class="ttname"><a href="classompl_1_1app_1_1AppBase.html#a8fb5fb05c9b2d0b6224888db32a1b6f6">ompl::app::AppBase::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">This method will create the necessary classes for planning. The solve() method will call this functio...</div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00114">AppBase.h:114</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1SubspaceStateSampler_html_a724b2abd599820adb7d69c013cd15a8c"><div class="ttname"><a href="classompl_1_1base_1_1SubspaceStateSampler.html#a724b2abd599820adb7d69c013cd15a8c">ompl::base::SubspaceStateSampler::sampleGaussian</a></div><div class="ttdeci">void sampleGaussian(State *state, const State *mean, double stdDev) override</div><div class="ttdoc">Sample a state using a Gaussian distribution with given mean and standard deviation (stdDev).</div><div class="ttdef"><b>Definition:</b> <a href="StateSampler_8cpp_source.html#l00104">StateSampler.cpp:104</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition:</b> <a href="AppBase_8h_source.html#l00021">AppBase.h:21</a></div></div>
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.17
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

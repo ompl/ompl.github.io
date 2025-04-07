@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Available Spaces </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md118"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md119"></a>
 State Spaces</h1>
 <p>This set of state spaces is included in OMPL:</p>
 <ul>
@@ -161,8 +161,14 @@ State Spaces</h1>
 <li>Time (representation of time, <a class="el" href="classompl_1_1base_1_1TimeStateSpace.html" title="A state space representing time. The time can be unbounded, in which case enforceBounds() is a no-op,...">ompl::base::TimeStateSpace</a>),</li>
 <li>Discrete (representation of discrete states, <a class="el" href="classompl_1_1base_1_1DiscreteStateSpace.html" title="A space representing discrete states; i.e. there are a small number of discrete states the system can...">ompl::base::DiscreteStateSpace</a>),</li>
 <li>Dubins (representation of a Dubins car's state space, <a class="el" href="classompl_1_1base_1_1DubinsStateSpace.html" title="An SE(2) state space where distance is measured by the length of Dubins curves.">ompl::base::DubinsStateSpace</a>),</li>
-<li>ReedsShepp (representation of a Reeds-Shepp car's state space, <a class="el" href="classompl_1_1base_1_1ReedsSheppStateSpace.html" title="An SE(2) state space where distance is measured by the length of Reeds-Shepp curves.">ompl::base::ReedsSheppStateSpace</a>) and</li>
-<li>OpenDE (representation of OpenDE states, if the <a href="http://ode.org">Open Dynamics Engine</a> library is available, <a class="el" href="classompl_1_1control_1_1OpenDEStateSpace.html" title="State space representing OpenDE states.">ompl::control::OpenDEStateSpace</a>).</li>
+<li>ReedsShepp (representation of a Reeds-Shepp car's state space, <a class="el" href="classompl_1_1base_1_1ReedsSheppStateSpace.html" title="An SE(2) state space where distance is measured by the length of Reeds-Shepp curves.">ompl::base::ReedsSheppStateSpace</a>),</li>
+<li>Extensions of the Dubins model to 3D (useful for planning motions for UAVs and UUVs):<ul>
+<li>The model proposed by Owen et al., <a class="el" href="classompl_1_1base_1_1OwenStateSpace.html" title="An R^3 x SO(2) state space where distance is measured by the length of a type Dubins airplane curves.">ompl::base::OwenStateSpace</a>,</li>
+<li>The model proposed by Váňa et al., <a class="el" href="classompl_1_1base_1_1VanaStateSpace.html" title="An R^4 x SO(2) state space where distance is measured by the length of a type Dubins airplane curves.">ompl::base::VanaStateSpace</a>,</li>
+<li>A hybrid of these models proposed by Moll that combines the best elements of both, ompl::base::VanaOwenStatespace,</li>
+</ul>
+</li>
+<li>A couple of "special" topological spaces: <a class="el" href="classompl_1_1base_1_1KleinBottleStateSpace.html" title="The Klein bottle is a 2-dimensional non-orientable surface. In this class, we implement a 3-dimension...">ompl::base::KleinBottleStateSpace</a>, <a class="el" href="classompl_1_1base_1_1MobiusStateSpace.html" title="The Mobius strip is a 2-dimensional non-orientable surface.">ompl::base::MobiusStateSpace</a>, <a class="el" href="classompl_1_1base_1_1SphereStateSpace.html">ompl::base::SphereStateSpace</a>, and <a class="el" href="classompl_1_1base_1_1TorusStateSpace.html">ompl::base::TorusStateSpace</a>,</li>
 <li>Constrained state spaces (<a class="el" href="classompl_1_1base_1_1ConstrainedStateSpace.html" title="A StateSpace that has a Constraint imposed upon it. Underlying space functions are passed to the ambi...">ompl::base::ConstrainedStateSpace</a>) to represent implicitly defined spaces when <a href="constrainedPlanning.html">planning with constraints</a>. There are several derived classes corresponding to different methodologies for dealing with constraints:<ul>
 <li><a class="el" href="classompl_1_1base_1_1ProjectedStateSpace.html" title="ConstrainedStateSpace encapsulating a projection-based methodology for planning with constraints.">ompl::base::ProjectedStateSpace</a>: uses Newton's method to project states in the ambient configuration space onto the constraint manifold.</li>
 <li><a class="el" href="classompl_1_1base_1_1AtlasStateSpace.html" title="ConstrainedStateSpace encapsulating a planner-agnostic atlas algorithm for planning on a constraint m...">ompl::base::AtlasStateSpace</a>: a state space that incrementally builds up an atlas approximation of the constraint manifold.</li>
@@ -171,13 +177,12 @@ State Spaces</h1>
 </li>
 </ul>
 <p>In addition, the <a class="el" href="classompl_1_1base_1_1CompoundStateSpace.html" title="A space to allow the composition of state spaces.">ompl::base::CompoundStateSpace</a> allows users to create arbitrarily complex state spaces out of simpler state spaces.</p>
-<h1><a class="anchor" id="autotoc_md119"></a>
+<h1><a class="anchor" id="autotoc_md120"></a>
 Control Spaces</h1>
 <p>This set of control spaces is included in OMPL:</p>
 <ul>
 <li>R<sup>n</sup> (<a class="el" href="classompl_1_1control_1_1RealVectorControlSpace.html" title="A control space representing Rn.">ompl::control::RealVectorControlSpace</a>).</li>
-<li>Discrete (<a class="el" href="classompl_1_1control_1_1DiscreteControlSpace.html" title="A space representing discrete controls; i.e. there are a small number of discrete controls the system...">ompl::control::DiscreteControlSpace</a>).</li>
-<li>OpenDE (<a class="el" href="classompl_1_1control_1_1OpenDEControlSpace.html" title="Representation of controls applied in OpenDE environments. This is an array of double values.">ompl::control::OpenDEControlSpace</a>). This is an extension that is built only if the <a href="http://ode.org">Open Dynamics Engine</a> library is detected. </li>
+<li>Discrete (<a class="el" href="classompl_1_1control_1_1DiscreteControlSpace.html" title="A space representing discrete controls; i.e. there are a small number of discrete controls the system...">ompl::control::DiscreteControlSpace</a>). </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
