@@ -1,4 +1,12 @@
 var searchData=
 [
-  ['y_6322',['y',['../classompl_1_1base_1_1SO3StateSpace_1_1StateType.html#ae9e99008a6b4448e6a5e53ba42430bcd',1,'ompl::base::SO3StateSpace::StateType']]]
+  ['w_0',['w',['../classompl_1_1base_1_1SO3StateSpace_1_1StateType.html#a819bd3faba4f19b9f2f58c310c5d6e3c',1,'ompl::base::SO3StateSpace::StateType']]],
+  ['weight_1',['weight',['../classompl_1_1control_1_1Syclop_1_1Region.html#a986ac16be96359e2bae2f181eedc657f',1,'ompl::control::Syclop::Region']]],
+  ['weight_5f_2',['weight_',['../classompl_1_1base_1_1SubspaceStateSampler.html#adc627ced8c5dbb5b3053b14162d77981',1,'ompl::base::SubspaceStateSampler']]],
+  ['weightimportance_5f_3',['weightImportance_',['../classompl_1_1base_1_1CompoundStateSampler.html#a1548ec65daceafd54f928ca163a93780',1,'ompl::base::CompoundStateSampler']]],
+  ['weightproperty_5f_4',['weightProperty_',['../classompl_1_1geometric_1_1LazyPRM.html#a7f6925f1e967a370cd4533f7de2ce697',1,'ompl::geometric::LazyPRM::weightProperty_'],['../classompl_1_1geometric_1_1PRM.html#a92795ef34fabc03597fb6e6bf0912d4f',1,'ompl::geometric::PRM::weightProperty_'],['../classompl_1_1geometric_1_1SPARS.html#acf9feb8f66c58409cc96e249914253cd',1,'ompl::geometric::SPARS::weightProperty_'],['../classompl_1_1geometric_1_1SPARStwo.html#ad18292dc5d13a71a9bbf6183ecdb51a9',1,'ompl::geometric::SPARStwo::weightProperty_']]],
+  ['weights_5f_5',['weights_',['../classompl_1_1base_1_1CompoundStateSpace.html#adbbc7fd19539c47056f3395a39d2ef67',1,'ompl::base::CompoundStateSpace']]],
+  ['weightsum_5f_6',['weightSum_',['../classompl_1_1base_1_1CompoundStateSpace.html#a49177a2fbfdbd97e8cfd75743fc939dd',1,'ompl::base::CompoundStateSpace']]],
+  ['witnesses_5f_7',['witnesses_',['../classompl_1_1control_1_1HySST.html#a8a38ce9b93abff38ea8f69f59bc31c91',1,'ompl::control::HySST::witnesses_'],['../classompl_1_1control_1_1SST.html#abdd9186759a56d0a2bf285f18cb300b4',1,'ompl::control::SST::witnesses_'],['../classompl_1_1geometric_1_1SST.html#aa925d4436b7a4cb21d2b3355fdc9a937',1,'ompl::geometric::SST::witnesses_']]],
+  ['worstcost_5f_8',['worstCost_',['../classompl_1_1geometric_1_1ATRRT.html#a0794efa962d0bd2d6a649a540246ca45',1,'ompl::geometric::ATRRT::worstCost_'],['../classompl_1_1geometric_1_1BiTRRT.html#a3ab507005fa8061d36fdfd6a40c1bc26',1,'ompl::geometric::BiTRRT::worstCost_'],['../classompl_1_1geometric_1_1TRRT.html#a32d1ac247c068da9ffe66269c47dfa74',1,'ompl::geometric::TRRT::worstCost_'],['../classompl_1_1geometric_1_1TRRTstar.html#a042c22ccca212fdc345801e81c244f76',1,'ompl::geometric::TRRTstar::worstCost_']]]
 ];

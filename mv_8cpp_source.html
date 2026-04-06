@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.17"/>
-  <title>ompl/doc/markdown/code/mv.cpp Source File</title>
-  <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="jquery.js"></script>
-  <script src="dynsections.js"></script>
-  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: doc/markdown/code/mv.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+  $(function() { init_search(); });
 </script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script>
-<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
-  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
     <nav class="navbar navbar-expand-md fixed-top navbar-dark">
       <a class="navbar-brand" href="./index.html">OMPL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
@@ -44,9 +40,7 @@
               <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
               <a class="dropdown-item" href="installation.html">Installation</a>
               <a class="dropdown-item" href="tutorials.html">Tutorials</a>
-              <a class="dropdown-item" href="group__demos.html">Demos</a>
-              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
-              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
               <a class="dropdown-item" href="python.html">Python Bindings</a>
               <a class="dropdown-item" href="planners.html">Available Planners</a>
               <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
@@ -73,16 +67,7 @@
               <a class="dropdown-item" href="annotated.html">Classes</a>
               <a class="dropdown-item" href="files.html">Files</a>
               <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Repositories</div>
-              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
-              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Continuous Integration</div>
-              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
-              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
-              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
-              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
             </div>
           </li>
           <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
@@ -92,7 +77,6 @@
               <a class="dropdown-item" href="support.html">Get Support</a>
               <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
               <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
-              <a class="dropdown-item" href="education.html">Education</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -107,27 +91,25 @@
         </ul>
                 <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
                onfocus="searchBox.OnSearchFieldFocus(true)" 
                onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
         </div>
       </div>
     </nav>
   <div class="container" role="main">
     <div>
-<!-- Generated by Doxygen 1.8.17 -->
+<!-- Generated by Doxygen 1.16.1 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -138,31 +120,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_6e51f1d607d7ead17fc1cec00dd2f669.html">doc</a></li><li class="navelem"><a class="el" href="dir_fc9bd2012235a6450c7343d40122401f.html">markdown</a></li><li class="navelem"><a class="el" href="dir_bfa3df718013db1a985f31dd3b0c0af3.html">code</a></li>  </ul>
+<li class="navelem"><b>doc</b></li><li class="navelem"><b>markdown</b></li><li class="navelem"><b>code</b></li>  </ul>
 </div>
 </div><!-- top -->
+<div id="doc-content">
 <div class="header">
-  <div class="headertitle">
-<div class="title">mv.cpp</div>  </div>
+  <div class="headertitle"><div class="title">mv.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// define this class:</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">class </span>myMotionValidator : <span class="keyword">public</span> base::MotionValidator</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;{</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="comment">// implement checkMotion()</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;};</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;base::SpaceInformationPtr si(space);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;si-&gt;setMotionValidator(std::make_shared&lt;myMotionValidator&gt;(si));</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;si-&gt;setup();</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// define this class:</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">class </span>myMotionValidator : <span class="keyword">public</span> <a class="code hl_class" href="classompl_1_1base_1_1MotionValidator.html">base::MotionValidator</a></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>{</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="comment">// implement checkMotion()</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>base::SpaceInformationPtr si(space);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>si-&gt;setMotionValidator(std::make_shared&lt;myMotionValidator&gt;(si));</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>si-&gt;setup();</div>
+<div class="ttc" id="aclassompl_1_1base_1_1MotionValidator_html"><div class="ttname"><a href="classompl_1_1base_1_1MotionValidator.html">ompl::base::MotionValidator</a></div><div class="ttdoc">Abstract definition for a class checking the validity of motions – path segments between states....</div><div class="ttdef"><b>Definition</b> <a href="MotionValidator_8h_source.html#l00064">MotionValidator.h:65</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div>
 <footer class="footer">
@@ -171,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
   <a href="https://www.rice.edu">Rice University</a><br/>
   Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.17
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
   </div>
 </footer>
 <script>

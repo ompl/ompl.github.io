@@ -1,0 +1,330 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl/base/spaces/src/HybridStateSpace.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>ompl</b></li><li class="navelem"><b>base</b></li><li class="navelem"><b>spaces</b></li><li class="navelem"><b>src</b></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">HybridStateSpace.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Copyright (c) 2025, University of Santa Cruz Hybrid Systems Laboratory</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  are met:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *   * Neither the name of the University of Santa Cruz nor the names of</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *     its contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* Author: Beverly Xu */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;ompl/base/spaces/HybridStateSpace.h&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#ae8dee48432f1abb852731ffd6b6a7ec7">   39</a></span><a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#ae8dee48432f1abb852731ffd6b6a7ec7">ompl::base::HybridStateSpace::HybridStateSpace</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1StateSpacePtr.html">StateSpacePtr</a> &amp;spaceComponent)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classompl_1_1base_1_1StateSpace.html#ad12cc022ef531dcb563f6d3d13b847ad">setName</a>(<span class="stringliteral">&quot;HybridStateSpace&quot;</span> + <a class="code hl_function" href="classompl_1_1base_1_1StateSpace.html#aded3990bc51b8ee45f50c9d83bbbf853">getName</a>());</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#a9c772d5b74271f79d95531d00ed36bf7">addSubspace</a>(spaceComponent, 1);                            <span class="comment">// space component</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#a9c772d5b74271f79d95531d00ed36bf7">addSubspace</a>(std::make_shared&lt;HybridTimeStateSpace&gt;(), 1);  <span class="comment">// time component</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#ab344f21f0aba84c14fda3ec87a0b21ab">lock</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#ac0d5bb570743383af70bcabb4cd19caa">   47</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#ac0d5bb570743383af70bcabb4cd19caa">ompl::base::HybridStateSpace::distance</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state1, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state2)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">double</span> deltaSpace = <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a9e895afe9f71ece98ac60ba78dd20548">distanceSpace</a>(state1, state2);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> deltaSpace;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> * Direction-independent distance in space</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#a9e895afe9f71ece98ac60ba78dd20548">   57</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a9e895afe9f71ece98ac60ba78dd20548">ompl::base::HybridStateSpace::distanceSpace</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state1,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                                                   <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state2)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *cstate1 = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a> *<span class="keyword">&gt;</span>(state1);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *cstate2 = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a> *<span class="keyword">&gt;</span>(state2);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1CompoundStateSpace.html#ae5f43ed0a30998604b18f50b007455b4">components_</a>[0]-&gt;distance(cstate1-&gt;components[0], cstate2-&gt;components[0]);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"> * Direction-independent distance in time</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#ad210e966ec6c74bf76c524d01d014187">   69</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#ad210e966ec6c74bf76c524d01d014187">ompl::base::HybridStateSpace::distanceTime</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state1,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                                  <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state2)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *cstate1 = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a> *<span class="keyword">&gt;</span>(state1);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *cstate2 = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a> *<span class="keyword">&gt;</span>(state2);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1CompoundStateSpace.html#ae5f43ed0a30998604b18f50b007455b4">components_</a>[1]-&gt;distance(cstate1-&gt;components[1], cstate2-&gt;components[1]);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#aab73c94d768c9374e87032443a7615f2">   78</a></span>ompl::base::StateSpacePtr <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#aab73c94d768c9374e87032443a7615f2">ompl::base::HybridStateSpace::getSpaceComponent</a>()</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1CompoundStateSpace.html#ae5f43ed0a30998604b18f50b007455b4">components_</a>[0];</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#a8eed5298f9536814d949b8848f7eb524">   83</a></span><a class="code hl_class" href="classompl_1_1base_1_1HybridTimeStateSpace.html">ompl::base::HybridTimeStateSpace</a> *<a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a8eed5298f9536814d949b8848f7eb524">ompl::base::HybridStateSpace::getTimeComponent</a>()  <span class="comment">// change to hybrid time</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1CompoundStateSpace.html#ae5f43ed0a30998604b18f50b007455b4">components_</a>[1]-&gt;as&lt;<a class="code hl_class" href="classompl_1_1base_1_1HybridTimeStateSpace.html">HybridTimeStateSpace</a>&gt;();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#a04786a4ee725ca8f1e922a73eef89738">   88</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a04786a4ee725ca8f1e922a73eef89738">ompl::base::HybridStateSpace::isMetricSpace</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#a58d084eb00c59d115b467b1289479445">   93</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a58d084eb00c59d115b467b1289479445">ompl::base::HybridStateSpace::getMaximumExtent</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#a3b40f949e4b6996a08bca33f071df666">   98</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a3b40f949e4b6996a08bca33f071df666">ompl::base::HybridStateSpace::getStateTime</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> state-&gt;<a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as</a>&lt;<a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a>&gt;()-&gt;<a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#ae6605b518edeab0ac646d4d1dcada3e2">as&lt;HybridTimeStateSpace::StateType&gt;</a>(1)-&gt;position;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#aff371628e139d0a335cfb97011883e24">  103</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#aff371628e139d0a335cfb97011883e24">ompl::base::HybridStateSpace::getStateJumps</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> state-&gt;<a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as</a>&lt;<a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a>&gt;()-&gt;<a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#ae6605b518edeab0ac646d4d1dcada3e2">as&lt;HybridTimeStateSpace::StateType&gt;</a>(1)-&gt;jumps;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#a389efacf590872a5b386578a68572a8b">  108</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a389efacf590872a5b386578a68572a8b">ompl::base::HybridStateSpace::setStateTime</a>(<a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state, <span class="keywordtype">double</span> position)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    state-&gt;<a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as</a>&lt;<a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a>&gt;()-&gt;<a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#ae6605b518edeab0ac646d4d1dcada3e2">as&lt;HybridTimeStateSpace::StateType&gt;</a>(1)-&gt;position = position;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1HybridStateSpace.html#a4aba6c7b1855b52edcb3fd397be11b97">  113</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a4aba6c7b1855b52edcb3fd397be11b97">ompl::base::HybridStateSpace::setStateJumps</a>(<a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *state, <span class="keywordtype">int</span> jumps)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>{</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    state-&gt;<a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as</a>&lt;<a class="code hl_class" href="classompl_1_1base_1_1CompoundState.html">CompoundState</a>&gt;()-&gt;<a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#ae6605b518edeab0ac646d4d1dcada3e2">as&lt;HybridTimeStateSpace::StateType&gt;</a>(1)-&gt;jumps = jumps;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+</div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a9c772d5b74271f79d95531d00ed36bf7"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a9c772d5b74271f79d95531d00ed36bf7">ompl::base::CompoundStateSpace::addSubspace</a></div><div class="ttdeci">void addSubspace(const StateSpacePtr &amp;component, double weight)</div><div class="ttdoc">Adds a new state space as part of the compound state space. For computing distances within the compou...</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8cpp_source.html#l00871">StateSpace.cpp:871</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_ab344f21f0aba84c14fda3ec87a0b21ab"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#ab344f21f0aba84c14fda3ec87a0b21ab">ompl::base::CompoundStateSpace::lock</a></div><div class="ttdeci">void lock()</div><div class="ttdoc">Lock this state space. This means no further spaces can be added as components. This function can be ...</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8cpp_source.html#l01169">StateSpace.cpp:1169</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_ae5f43ed0a30998604b18f50b007455b4"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#ae5f43ed0a30998604b18f50b007455b4">ompl::base::CompoundStateSpace::components_</a></div><div class="ttdeci">std::vector&lt; StateSpacePtr &gt; components_</div><div class="ttdoc">The state spaces that make up the compound state space.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00737">StateSpace.h:737</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_ae6605b518edeab0ac646d4d1dcada3e2"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#ae6605b518edeab0ac646d4d1dcada3e2">ompl::base::CompoundStateSpace::as</a></div><div class="ttdeci">T * as(const unsigned int index) const</div><div class="ttdoc">Cast a component of this instance to a desired type.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00590">StateSpace.h:590</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundState_html"><div class="ttname"><a href="classompl_1_1base_1_1CompoundState.html">ompl::base::CompoundState</a></div><div class="ttdoc">Definition of a compound state.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00086">State.h:87</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a04786a4ee725ca8f1e922a73eef89738"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a04786a4ee725ca8f1e922a73eef89738">ompl::base::HybridStateSpace::isMetricSpace</a></div><div class="ttdeci">bool isMetricSpace() const override</div><div class="ttdoc">No metric state space, as the triangle inequality is not satisfied.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">HybridStateSpace.cpp:88</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a389efacf590872a5b386578a68572a8b"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a389efacf590872a5b386578a68572a8b">ompl::base::HybridStateSpace::setStateTime</a></div><div class="ttdeci">static void setStateTime(ompl::base::State *state, double position)</div><div class="ttdoc">Set the time position value of the given state.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">HybridStateSpace.cpp:108</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a3b40f949e4b6996a08bca33f071df666"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a3b40f949e4b6996a08bca33f071df666">ompl::base::HybridStateSpace::getStateTime</a></div><div class="ttdeci">static double getStateTime(const ompl::base::State *state)</div><div class="ttdoc">The time value of the given state.</div><div class="ttdef"><b>Definition</b> <a href="#l00098">HybridStateSpace.cpp:98</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a4aba6c7b1855b52edcb3fd397be11b97"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a4aba6c7b1855b52edcb3fd397be11b97">ompl::base::HybridStateSpace::setStateJumps</a></div><div class="ttdeci">static void setStateJumps(ompl::base::State *state, int jumps)</div><div class="ttdoc">Set the jumps value of the given state.</div><div class="ttdef"><b>Definition</b> <a href="#l00113">HybridStateSpace.cpp:113</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a58d084eb00c59d115b467b1289479445"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a58d084eb00c59d115b467b1289479445">ompl::base::HybridStateSpace::getMaximumExtent</a></div><div class="ttdeci">double getMaximumExtent() const override</div><div class="ttdoc">Maximum extent is infinite, as the distance can be infinite even with bounded time.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">HybridStateSpace.cpp:93</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a8eed5298f9536814d949b8848f7eb524"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a8eed5298f9536814d949b8848f7eb524">ompl::base::HybridStateSpace::getTimeComponent</a></div><div class="ttdeci">HybridTimeStateSpace * getTimeComponent()</div><div class="ttdoc">The time component as a TimeStateSpace pointer.</div><div class="ttdef"><b>Definition</b> <a href="#l00083">HybridStateSpace.cpp:83</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a9e895afe9f71ece98ac60ba78dd20548"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a9e895afe9f71ece98ac60ba78dd20548">ompl::base::HybridStateSpace::distanceSpace</a></div><div class="ttdeci">double distanceSpace(const ompl::base::State *state1, const ompl::base::State *state2) const</div><div class="ttdoc">The distance of just the space component.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">HybridStateSpace.cpp:57</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_aab73c94d768c9374e87032443a7615f2"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#aab73c94d768c9374e87032443a7615f2">ompl::base::HybridStateSpace::getSpaceComponent</a></div><div class="ttdeci">StateSpacePtr getSpaceComponent()</div><div class="ttdoc">The space component as a StateSpacePtr.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">HybridStateSpace.cpp:78</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_ac0d5bb570743383af70bcabb4cd19caa"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#ac0d5bb570743383af70bcabb4cd19caa">ompl::base::HybridStateSpace::distance</a></div><div class="ttdeci">double distance(const ompl::base::State *state1, const ompl::base::State *state2) const override</div><div class="ttdoc">The distance from state1 to state2. May be infinite.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">HybridStateSpace.cpp:47</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_ad210e966ec6c74bf76c524d01d014187"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#ad210e966ec6c74bf76c524d01d014187">ompl::base::HybridStateSpace::distanceTime</a></div><div class="ttdeci">double distanceTime(const ompl::base::State *state1, const ompl::base::State *state2) const</div><div class="ttdoc">The distance of just the time component.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">HybridStateSpace.cpp:69</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_ae8dee48432f1abb852731ffd6b6a7ec7"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#ae8dee48432f1abb852731ffd6b6a7ec7">ompl::base::HybridStateSpace::HybridStateSpace</a></div><div class="ttdeci">HybridStateSpace(const StateSpacePtr &amp;spaceComponent)</div><div class="ttdoc">Constructor. The maximum velocity and the weight of the time component for distance calculation need ...</div><div class="ttdef"><b>Definition</b> <a href="#l00039">HybridStateSpace.cpp:39</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_aff371628e139d0a335cfb97011883e24"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#aff371628e139d0a335cfb97011883e24">ompl::base::HybridStateSpace::getStateJumps</a></div><div class="ttdeci">static int getStateJumps(const ompl::base::State *state)</div><div class="ttdoc">The jumps value of the given state.</div><div class="ttdef"><b>Definition</b> <a href="#l00103">HybridStateSpace.cpp:103</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridTimeStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1HybridTimeStateSpace.html">ompl::base::HybridTimeStateSpace</a></div><div class="ttdoc">A state space representing time. The time can be unbounded, in which case enforceBounds() is a no-op,...</div><div class="ttdef"><b>Definition</b> <a href="HybridTimeStateSpace_8h_source.html#l00069">HybridTimeStateSpace.h:70</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpacePtr_html"><div class="ttname"><a href="classompl_1_1base_1_1StateSpacePtr.html">StateSpacePtr</a></div><div class="ttdoc">A shared pointer wrapper for ompl::base::StateSpace.</div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_ad12cc022ef531dcb563f6d3d13b847ad"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#ad12cc022ef531dcb563f6d3d13b847ad">ompl::base::StateSpace::setName</a></div><div class="ttdeci">void setName(const std::string &amp;name)</div><div class="ttdoc">Set the name of the state space.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8cpp_source.html#l00201">StateSpace.cpp:201</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_aded3990bc51b8ee45f50c9d83bbbf853"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#aded3990bc51b8ee45f50c9d83bbbf853">ompl::base::StateSpace::getName</a></div><div class="ttdeci">const std::string &amp; getName() const</div><div class="ttdoc">Get the name of the state space.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8cpp_source.html#l00196">StateSpace.cpp:196</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html_af1b51b919c418c1625ed42a3c36f2be2"><div class="ttname"><a href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">ompl::base::State::as</a></div><div class="ttdeci">const T * as() const</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00066">State.h:66</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,1628 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl::control::HyRRT Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespaceompl.html">ompl</a></li><li class="navelem"><a href="namespaceompl_1_1control.html">control</a></li><li class="navelem"><a href="classompl_1_1control_1_1HyRRT.html">HyRRT</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classompl_1_1control_1_1HyRRT-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::control::HyRRT Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Hybrid Rapidly-exploring Random Trees.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="HyRRT_8h_source.html">ompl/control/planners/rrt/HyRRT.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ompl::control::HyRRT:</div>
+<div class="dyncontent">
+<div class="center"><img src="classompl_1_1control_1_1HyRRT__inherit__graph.png" border="0" usemap="#aompl_1_1control_1_1HyRRT_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="aompl_1_1control_1_1HyRRT_inherit__map" id="aompl_1_1control_1_1HyRRT_inherit__map">
+<area shape="rect" title="Hybrid Rapidly&#45;exploring Random Trees." alt="" coords="5,81,164,109"/>
+<area shape="rect" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner." alt="" coords="9,5,160,33"/>
+<area shape="poly" title=" " alt="" coords="86,47,87,81,82,80,83,51"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Motion" id="r_Motion"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of a motion in the search tree.  <a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af72d99e65c0a419182f025e465fbebea" id="r_af72d99e65c0a419182f025e465fbebea"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af72d99e65c0a419182f025e465fbebea">HyRRT</a> (const control::SpaceInformationPtr &amp;si)</td></tr>
+<tr class="memdesc:af72d99e65c0a419182f025e465fbebea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memitem:a97b280426b2cd591599ebd211f118a06" id="r_a97b280426b2cd591599ebd211f118a06"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a97b280426b2cd591599ebd211f118a06">~HyRRT</a> () override</td></tr>
+<tr class="memdesc:a97b280426b2cd591599ebd211f118a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
+<tr class="memitem:a012164533c6a30d94a0939986632bae0" id="r_a012164533c6a30d94a0939986632bae0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a012164533c6a30d94a0939986632bae0">clear</a> () override</td></tr>
+<tr class="memdesc:a012164533c6a30d94a0939986632bae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all allocated memory.  <br /></td></tr>
+<tr class="memitem:a519180748444e52a24d22d8ee4f7c995" id="r_a519180748444e52a24d22d8ee4f7c995"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a519180748444e52a24d22d8ee4f7c995">setup</a> () override</td></tr>
+<tr class="memdesc:a519180748444e52a24d22d8ee4f7c995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem instance to solve.  <br /></td></tr>
+<tr class="memitem:a9958f8a558330806fac4ef21d5778564" id="r_a9958f8a558330806fac4ef21d5778564"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9958f8a558330806fac4ef21d5778564">getPlannerData</a> (<a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data) const override</td></tr>
+<tr class="memdesc:a9958f8a558330806fac4ef21d5778564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classompl_1_1control_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">PlannerData</a> object associated with this planner.  <br /></td></tr>
+<tr class="memitem:a51ca371b9f97208a1d88947ac1752e75" id="r_a51ca371b9f97208a1d88947ac1752e75"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a>&#160;</td><td class="memItemRight"><a class="el" href="#a51ca371b9f97208a1d88947ac1752e75">solve</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc) override</td></tr>
+<tr class="memdesc:a51ca371b9f97208a1d88947ac1752e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="#a012164533c6a30d94a0939986632bae0" title="Clear all allocated memory.">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. If this option is used, it is assumed the problem definition is not changed (unpredictable results otherwise). The only change in the problem definition that is accounted for is the addition of starting or goal states (but not changing previously added start/goal states). If <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a> is called, the planner may retain prior datastructures generated from a previous query on a new problem definition. The function terminates if the call to <em>ptc</em> returns true.  <br /></td></tr>
+<tr class="memitem:aee75dda8626d490fb577b4bf1fcd77dc" id="r_aee75dda8626d490fb577b4bf1fcd77dc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aee75dda8626d490fb577b4bf1fcd77dc">freeMemory</a> ()</td></tr>
+<tr class="memdesc:aee75dda8626d490fb577b4bf1fcd77dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by this planner.  <br /></td></tr>
+<tr class="memitem:a8653683ff6ee5386c74beb2fc3e8b874" id="r_a8653683ff6ee5386c74beb2fc3e8b874"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8653683ff6ee5386c74beb2fc3e8b874">setTm</a> (double tM)</td></tr>
+<tr class="memdesc:a8653683ff6ee5386c74beb2fc3e8b874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum time allocated to a full continuous simulator step.  <br /></td></tr>
+<tr class="memitem:aa40c99635b743b92730879d4dff92f3a" id="r_aa40c99635b743b92730879d4dff92f3a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa40c99635b743b92730879d4dff92f3a">setFlowStepDuration</a> (double duration)</td></tr>
+<tr class="memdesc:aa40c99635b743b92730879d4dff92f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time allocated to a single continuous simulator call, within the full period of a continuous simulator step.  <br /></td></tr>
+<tr class="memitem:a8cf7aad51a1ec311dc429731cc4eccaf" id="r_a8cf7aad51a1ec311dc429731cc4eccaf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8cf7aad51a1ec311dc429731cc4eccaf">setJumpSet</a> (std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; jumpSet)</td></tr>
+<tr class="memdesc:a8cf7aad51a1ec311dc429731cc4eccaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the jump set.  <br /></td></tr>
+<tr class="memitem:a4fa7796dea87a4da581dbf91dbffa498" id="r_a4fa7796dea87a4da581dbf91dbffa498"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4fa7796dea87a4da581dbf91dbffa498">setFlowSet</a> (std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; flowSet)</td></tr>
+<tr class="memdesc:a4fa7796dea87a4da581dbf91dbffa498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the flow set.  <br /></td></tr>
+<tr class="memitem:a12359823999ac64da9a586983e75f7eb" id="r_a12359823999ac64da9a586983e75f7eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a12359823999ac64da9a586983e75f7eb">setUnsafeSet</a> (std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; unsafeSet)</td></tr>
+<tr class="memdesc:a12359823999ac64da9a586983e75f7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the unsafe set.  <br /></td></tr>
+<tr class="memitem:a58461d5990c2e687cbc9950df5349a5a" id="r_a58461d5990c2e687cbc9950df5349a5a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a58461d5990c2e687cbc9950df5349a5a">setDistanceFunction</a> (std::function&lt; double(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *)&gt; function)</td></tr>
+<tr class="memdesc:a58461d5990c2e687cbc9950df5349a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the distance measurement function.  <br /></td></tr>
+<tr class="memitem:a43feed7f2a579c60c6956604cc63e631" id="r_a43feed7f2a579c60c6956604cc63e631"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a43feed7f2a579c60c6956604cc63e631">setDiscreteSimulator</a> (std::function&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt; function)</td></tr>
+<tr class="memdesc:a43feed7f2a579c60c6956604cc63e631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the discrete dynamics simulator.  <br /></td></tr>
+<tr class="memitem:a76a5c3fc216f41254d576f32e3d8dde2" id="r_a76a5c3fc216f41254d576f32e3d8dde2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a76a5c3fc216f41254d576f32e3d8dde2">setCollisionChecker</a> (std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState, double *collisionTime)&gt; function)</td></tr>
+<tr class="memdesc:a76a5c3fc216f41254d576f32e3d8dde2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the collision checker.  <br /></td></tr>
+<tr class="memitem:af357c11deb59655f22741228c7b677b1" id="r_af357c11deb59655f22741228c7b677b1"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
+<tr class="memitem:af357c11deb59655f22741228c7b677b1 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af357c11deb59655f22741228c7b677b1">setNearestNeighbors</a> (void)</td></tr>
+<tr class="memdesc:af357c11deb59655f22741228c7b677b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a different nearest neighbors datastructure.  <br /></td></tr>
+<tr class="memitem:a40de8ea9830e10a190629947dbe4aba4" id="r_a40de8ea9830e10a190629947dbe4aba4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a40de8ea9830e10a190629947dbe4aba4">checkMandatoryParametersSet</a> (void) const</td></tr>
+<tr class="memdesc:a40de8ea9830e10a190629947dbe4aba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if all required parameters have been set.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:ad0ca26742e6b70a57dc7c0e28f66857d inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ad0ca26742e6b70a57dc7c0e28f66857d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Planner</b> (const Planner &amp;)=delete</td></tr>
+<tr class="memitem:aae633979d1f80b10d6ad88200e1d622b inherit pub_methods_classompl_1_1base_1_1Planner" id="r_aae633979d1f80b10d6ad88200e1d622b"><td class="memItemLeft">
+Planner &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const Planner &amp;)=delete</td></tr>
+<tr class="memitem:aeb73b615f05ecc749204b3ef029a292a inherit pub_methods_classompl_1_1base_1_1Planner" id="r_aeb73b615f05ecc749204b3ef029a292a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#aeb73b615f05ecc749204b3ef029a292a">Planner</a> (<a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> si, std::string name)</td></tr>
+<tr class="memdesc:aeb73b615f05ecc749204b3ef029a292a inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memitem:ab452a5462004f3848b92b2669bc8cf89 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab452a5462004f3848b92b2669bc8cf89"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~Planner</b> ()=default</td></tr>
+<tr class="memdesc:ab452a5462004f3848b92b2669bc8cf89 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:a0b254b9541d76d3b12889a799a864fdf inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a0b254b9541d76d3b12889a799a864fdf"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a0b254b9541d76d3b12889a799a864fdf inherit pub_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">T *&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a0b254b9541d76d3b12889a799a864fdf">as</a> ()</td></tr>
+<tr class="memdesc:a0b254b9541d76d3b12889a799a864fdf inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast this instance to a desired type.  <br /></td></tr>
+<tr class="memitem:a890b3abfbd1c43fceb348c76bc2bb479 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a890b3abfbd1c43fceb348c76bc2bb479"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a890b3abfbd1c43fceb348c76bc2bb479 inherit pub_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">const T *&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a890b3abfbd1c43fceb348c76bc2bb479">as</a> () const</td></tr>
+<tr class="memdesc:a890b3abfbd1c43fceb348c76bc2bb479 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast this instance to a desired type.  <br /></td></tr>
+<tr class="memitem:a7ebc11cf89b36261c01dd0592a350b88 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a7ebc11cf89b36261c01dd0592a350b88"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a7ebc11cf89b36261c01dd0592a350b88">getSpaceInformation</a> () const</td></tr>
+<tr class="memdesc:a7ebc11cf89b36261c01dd0592a350b88 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the space information this planner is using.  <br /></td></tr>
+<tr class="memitem:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a342fc12280631fd4cc7be46c97827250"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a> () const</td></tr>
+<tr class="memdesc:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve.  <br /></td></tr>
+<tr class="memitem:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a5891ac7a3e5a39143f87745f25d74926"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a5891ac7a3e5a39143f87745f25d74926">getProblemDefinition</a> ()</td></tr>
+<tr class="memdesc:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve.  <br /></td></tr>
+<tr class="memitem:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a260b7d28d444b115f1356d3f96c37785"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a> () const</td></tr>
+<tr class="memdesc:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the planner input states.  <br /></td></tr>
+<tr class="memitem:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_add968ea14f1aa3d3bffc110da3e1d031"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#add968ea14f1aa3d3bffc110da3e1d031">setProblemDefinition</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;pdef)</td></tr>
+<tr class="memdesc:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem definition for the planner. The problem needs to be set before calling <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. Note: If this problem definition replaces a previous one, it may also be necessary to call <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> or <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a>.  <br /></td></tr>
+<tr class="memitem:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a46d2a6941a33dbac28e6736949375e2b"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a46d2a6941a33dbac28e6736949375e2b">solve</a> (const <a class="el" href="namespaceompl_1_1base.html#acc9ed849c703c408f640d996275c3079">PlannerTerminationConditionFn</a> &amp;ptc, double checkInterval)</td></tr>
+<tr class="memdesc:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is only evaluated at a specified interval.  <br /></td></tr>
+<tr class="memitem:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a5a61ca64b36881603af880677f6445a7"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a5a61ca64b36881603af880677f6445a7">solve</a> (double solveTime)</td></tr>
+<tr class="memdesc:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is solely a time limit: the number of seconds the algorithm is allowed to spend planning.  <br /></td></tr>
+<tr class="memitem:ab23058a178abf49da403826b56b72493 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab23058a178abf49da403826b56b72493"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493">clearQuery</a> ()</td></tr>
+<tr class="memdesc:ab23058a178abf49da403826b56b72493 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears internal datastructures of any query-specific information from the previous query. <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">Planner</a> settings are not affected. The planner, if able, should retain all datastructures generated from previous queries that can be used to help solve the next query. Note that <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> should also clear all query-specific information along with all other datastructures in the planner. By default <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a> calls <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a>.  <br /></td></tr>
+<tr class="memitem:a9bdea814a817637bd8e6f959c65ceaf9 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a9bdea814a817637bd8e6f959c65ceaf9"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a9bdea814a817637bd8e6f959c65ceaf9">getName</a> () const</td></tr>
+<tr class="memdesc:a9bdea814a817637bd8e6f959c65ceaf9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the planner.  <br /></td></tr>
+<tr class="memitem:a99bb12c016b06563aab6bba5cdbed01e inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a99bb12c016b06563aab6bba5cdbed01e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a99bb12c016b06563aab6bba5cdbed01e">setName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a99bb12c016b06563aab6bba5cdbed01e inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the planner.  <br /></td></tr>
+<tr class="memitem:a845e46cdde4baeda91a5f008ae15ce3a inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a845e46cdde4baeda91a5f008ae15ce3a"><td class="memItemLeft">const <a class="el" href="structompl_1_1base_1_1PlannerSpecs.html">PlannerSpecs</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a845e46cdde4baeda91a5f008ae15ce3a">getSpecs</a> () const</td></tr>
+<tr class="memdesc:a845e46cdde4baeda91a5f008ae15ce3a inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the specifications (capabilities of this planner).  <br /></td></tr>
+<tr class="memitem:ab416900477cf4499139c01f35663dffb inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab416900477cf4499139c01f35663dffb"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab416900477cf4499139c01f35663dffb">checkValidity</a> ()</td></tr>
+<tr class="memdesc:ab416900477cf4499139c01f35663dffb inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the planner is in a working state (setup has been called, a goal was set, the input states seem to be in order). In case of error, this function throws an exception.  <br /></td></tr>
+<tr class="memitem:a00d2469147e0a4f38cee18c97f19dbfc inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a00d2469147e0a4f38cee18c97f19dbfc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a00d2469147e0a4f38cee18c97f19dbfc">isSetup</a> () const</td></tr>
+<tr class="memdesc:a00d2469147e0a4f38cee18c97f19dbfc inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">setup()</a> was called for this planner.  <br /></td></tr>
+<tr class="memitem:a25006bc9e3c050eee4546e6b09d1e8f9 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a25006bc9e3c050eee4546e6b09d1e8f9"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a25006bc9e3c050eee4546e6b09d1e8f9">params</a> ()</td></tr>
+<tr class="memdesc:a25006bc9e3c050eee4546e6b09d1e8f9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner.  <br /></td></tr>
+<tr class="memitem:a085d1b772a21a1ce8320e481e8b98d5d inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a085d1b772a21a1ce8320e481e8b98d5d"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a085d1b772a21a1ce8320e481e8b98d5d">params</a> () const</td></tr>
+<tr class="memdesc:a085d1b772a21a1ce8320e481e8b98d5d inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner.  <br /></td></tr>
+<tr class="memitem:aee9dbf70684aad32fe74638995cae956 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_aee9dbf70684aad32fe74638995cae956"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#aee9dbf70684aad32fe74638995cae956">getPlannerProgressProperties</a> () const</td></tr>
+<tr class="memdesc:aee9dbf70684aad32fe74638995cae956 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a planner's planner progress property map.  <br /></td></tr>
+<tr class="memitem:ab41beafb015184c8e44a899debe9b5b7 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab41beafb015184c8e44a899debe9b5b7"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab41beafb015184c8e44a899debe9b5b7">printProperties</a> (std::ostream &amp;out) const</td></tr>
+<tr class="memdesc:ab41beafb015184c8e44a899debe9b5b7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print properties of the motion planner.  <br /></td></tr>
+<tr class="memitem:a325bbde59a8f7bab778c33d538cc4266 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a325bbde59a8f7bab778c33d538cc4266"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a325bbde59a8f7bab778c33d538cc4266">printSettings</a> (std::ostream &amp;out) const</td></tr>
+<tr class="memdesc:a325bbde59a8f7bab778c33d538cc4266 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print information about the motion planner's settings.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:abe3891b6fdee42fd37c15cf4ad13431b" id="r_abe3891b6fdee42fd37c15cf4ad13431b"><td class="memItemLeft">std::function&lt; <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *(const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *<a class="el" href="namespaceompl_1_1control.html">control</a>, <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *x_cur, double tFlow, <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *new_state)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#abe3891b6fdee42fd37c15cf4ad13431b">continuousSimulator</a></td></tr>
+<tr class="memdesc:abe3891b6fdee42fd37c15cf4ad13431b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates the dynamics of the multicopter when in flow regime, with no nonnegligble forces other than input acceleration.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a9fa95866a090b639b3ba05e0a242c7ec" id="r_a9fa95866a090b639b3ba05e0a242c7ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9fa95866a090b639b3ba05e0a242c7ec">setContinuousSimulator</a> (std::function&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, double tFlowMax, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt; function)</td></tr>
+<tr class="memdesc:a9fa95866a090b639b3ba05e0a242c7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the continuous dynamics simulator.  <br /></td></tr>
+<tr class="memitem:aedad9132b88301f3fbdb7dfb0d76fbeb" id="r_aedad9132b88301f3fbdb7dfb0d76fbeb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aedad9132b88301f3fbdb7dfb0d76fbeb">initTree</a> (void)</td></tr>
+<tr class="memdesc:aedad9132b88301f3fbdb7dfb0d76fbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the initial setup tasks for the tree.  <br /></td></tr>
+<tr class="memitem:a3a9279d246479a136267bf24183fb1aa" id="r_a3a9279d246479a136267bf24183fb1aa"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3a9279d246479a136267bf24183fb1aa">randomSample</a> (<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *randomMotion)</td></tr>
+<tr class="memdesc:a3a9279d246479a136267bf24183fb1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample the random motion.  <br /></td></tr>
+<tr class="memitem:a24999bdf4122358a877f4d291764e920" id="r_a24999bdf4122358a877f4d291764e920"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a>&#160;</td><td class="memItemRight"><a class="el" href="#a24999bdf4122358a877f4d291764e920">constructSolution</a> (<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *lastMotion)</td></tr>
+<tr class="memdesc:a24999bdf4122358a877f4d291764e920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the path, starting at the last edge.  <br /></td></tr>
+<tr class="inherit_header pro_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner" id="r_a6b4a1345376e3e977772c38d38d5c50c"><td class="memTemplParams" colspan="2">template&lt;typename T, typename PlannerType, typename SetterType, typename GetterType&gt; </td></tr>
+<tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c">declareParam</a> (const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const GetterType &amp;getter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td></tr>
+<tr class="memdesc:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter and getter functions.  <br /></td></tr>
+<tr class="memitem:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner" id="r_a3f9da0d41951502ea4df1184ef5a99a6"><td class="memTemplParams" colspan="2">template&lt;typename T, typename PlannerType, typename SetterType&gt; </td></tr>
+<tr class="memitem:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a3f9da0d41951502ea4df1184ef5a99a6">declareParam</a> (const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td></tr>
+<tr class="memdesc:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter function.  <br /></td></tr>
+<tr class="memitem:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner" id="r_a3dc481539fac465497ad158e1bdac91a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a> (const std::string &amp;progressPropertyName, const <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> &amp;prop)</td></tr>
+<tr class="memdesc:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner progress property called <em>progressPropertyName</em> with a property querying function <em>prop</em> to this planner's progress property map.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a04f6bcf21961bf6b34b45c4ed9e37f18" id="r_a04f6bcf21961bf6b34b45c4ed9e37f18"><td class="memItemLeft">static const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a04f6bcf21961bf6b34b45c4ed9e37f18">getFlowControl</a> (const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *<a class="el" href="namespaceompl_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:abf57a08b0577d8ed02a90a2fedcca5ad" id="r_abf57a08b0577d8ed02a90a2fedcca5ad"><td class="memItemLeft">static const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *&#160;</td><td class="memItemRight"><a class="el" href="#abf57a08b0577d8ed02a90a2fedcca5ad">getJumpControl</a> (const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *<a class="el" href="namespaceompl_1_1control.html">control</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a4a9f3d374b1dfd1c4adac35500f7e17f" id="r_a4a9f3d374b1dfd1c4adac35500f7e17f"><td class="memItemLeft"><a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a4a9f3d374b1dfd1c4adac35500f7e17f">lastGoalMotion_</a> {nullptr}</td></tr>
+<tr class="memdesc:a4a9f3d374b1dfd1c4adac35500f7e17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The most recent goal motion. Used for <a class="el" href="classompl_1_1control_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">PlannerData</a> computation.  <br /></td></tr>
+<tr class="memitem:a7fb0666966192eefa9ac72da1be830a3" id="r_a7fb0666966192eefa9ac72da1be830a3"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> * &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a7fb0666966192eefa9ac72da1be830a3">nn_</a></td></tr>
+<tr class="memdesc:a7fb0666966192eefa9ac72da1be830a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nearest-neighbors datastructure containing the tree of motions.  <br /></td></tr>
+<tr class="memitem:ac2ecffa4a311667ea7d4baab5d7d2ad2" id="r_ac2ecffa4a311667ea7d4baab5d7d2ad2"><td class="memItemLeft">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState, double *collisionTime)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac2ecffa4a311667ea7d4baab5d7d2ad2">collisionChecker_</a></td></tr>
+<tr class="memdesc:ac2ecffa4a311667ea7d4baab5d7d2ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collision checker. Default is point-by-point collision checking using the jump set.  <br /></td></tr>
+<tr class="memitem:ac1a5438c874f1ef22a3eaf1a6ec43ac0" id="r_ac1a5438c874f1ef22a3eaf1a6ec43ac0"><td class="memItemLeft">control::DirectedControlSamplerPtr&#160;</td><td class="memItemRight"><a class="el" href="#ac1a5438c874f1ef22a3eaf1a6ec43ac0">controlSampler_</a></td></tr>
+<tr class="memdesc:ac1a5438c874f1ef22a3eaf1a6ec43ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classompl_1_1control_1_1Control.html" title="Definition of an abstract control.">Control</a> Sampler.  <br /></td></tr>
+<tr class="memitem:a991ed7d92562a150ec1babb5dcf26b22" id="r_a991ed7d92562a150ec1babb5dcf26b22"><td class="memItemLeft"><a class="el" href="classompl_1_1control_1_1SpaceInformation.html">control::SpaceInformation</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a991ed7d92562a150ec1babb5dcf26b22">siC_</a></td></tr>
+<tr class="memdesc:a991ed7d92562a150ec1babb5dcf26b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d...">base::SpaceInformation</a> cast as <a class="el" href="classompl_1_1control_1_1SpaceInformation.html" title="Space information containing necessary information for planning with controls. setup() needs to be ca...">control::SpaceInformation</a>, for convenience.  <br /></td></tr>
+<tr class="memitem:a35b8bf72600b0ff3d93686e5af4da919" id="r_a35b8bf72600b0ff3d93686e5af4da919"><td class="memItemLeft">std::function&lt; double(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state1, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state2)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a35b8bf72600b0ff3d93686e5af4da919">distanceFunc_</a></td></tr>
+<tr class="memdesc:a35b8bf72600b0ff3d93686e5af4da919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distance between states, default is Euclidean distance.  <br /></td></tr>
+<tr class="memitem:af7162cc8d685d050f7afe4c9a9660996" id="r_af7162cc8d685d050f7afe4c9a9660996"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#af7162cc8d685d050f7afe4c9a9660996">tM_</a></td></tr>
+<tr class="memdesc:af7162cc8d685d050f7afe4c9a9660996"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum flow time for a given flow propagation step. Must be set by the user.  <br /></td></tr>
+<tr class="memitem:ac323d40b53956ae3a169f8a0d6cd7b34" id="r_ac323d40b53956ae3a169f8a0d6cd7b34"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ac323d40b53956ae3a169f8a0d6cd7b34">flowStepDuration_</a></td></tr>
+<tr class="memdesc:ac323d40b53956ae3a169f8a0d6cd7b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flow time for a given integration step, within a flow propagation step. Must be set by user.  <br /></td></tr>
+<tr class="memitem:a65318c36c5f296735eb9ec1ebc4f73d5" id="r_a65318c36c5f296735eb9ec1ebc4f73d5"><td class="memItemLeft">std::function&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a65318c36c5f296735eb9ec1ebc4f73d5">discreteSimulator_</a></td></tr>
+<tr class="memdesc:a65318c36c5f296735eb9ec1ebc4f73d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulator for propagation under jump regime.  <br /></td></tr>
+<tr class="memitem:a61c1997311375b322fd07612be010fbd" id="r_a61c1997311375b322fd07612be010fbd"><td class="memItemLeft">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a61c1997311375b322fd07612be010fbd">jumpSet_</a></td></tr>
+<tr class="memdesc:a61c1997311375b322fd07612be010fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns true if a motion intersects with the jump set, and false if not.  <br /></td></tr>
+<tr class="memitem:a791ed9d67304bd89b57685079dc923b1" id="r_a791ed9d67304bd89b57685079dc923b1"><td class="memItemLeft">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a791ed9d67304bd89b57685079dc923b1">flowSet_</a></td></tr>
+<tr class="memdesc:a791ed9d67304bd89b57685079dc923b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns true if a motion intersects with the flow set, and false if not.  <br /></td></tr>
+<tr class="memitem:ae4e86a7a9163f8674d8a380da5e0d123" id="r_ae4e86a7a9163f8674d8a380da5e0d123"><td class="memItemLeft">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae4e86a7a9163f8674d8a380da5e0d123">unsafeSet_</a></td></tr>
+<tr class="memdesc:ae4e86a7a9163f8674d8a380da5e0d123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns true if a motion intersects with the unsafe set, and false if not.  <br /></td></tr>
+<tr class="memitem:a1b53f08ad0e6bd127dbe7706d0ccff2a" id="r_a1b53f08ad0e6bd127dbe7706d0ccff2a"><td class="memItemLeft">std::function&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, double tFlowMax, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1b53f08ad0e6bd127dbe7706d0ccff2a">continuousSimulator_</a></td></tr>
+<tr class="memdesc:a1b53f08ad0e6bd127dbe7706d0ccff2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulator for propagation under flow regime.  <br /></td></tr>
+<tr class="memitem:a758ccd4513cfb002e0d5129f76c32521" id="r_a758ccd4513cfb002e0d5129f76c32521"><td class="memItemLeft">base::StateSamplerPtr&#160;</td><td class="memItemRight"><a class="el" href="#a758ccd4513cfb002e0d5129f76c32521">sampler_</a></td></tr>
+<tr class="memdesc:a758ccd4513cfb002e0d5129f76c32521"><td class="mdescLeft">&#160;</td><td class="mdescRight">State sampler.  <br /></td></tr>
+<tr class="memitem:afffb5c73696181585bd639ae0c83ed24" id="r_afffb5c73696181585bd639ae0c83ed24"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#afffb5c73696181585bd639ae0c83ed24">dist_</a></td></tr>
+<tr class="memdesc:afffb5c73696181585bd639ae0c83ed24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum distance from goal to final vertex of generated trajectories.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_aa3ceb9471163b6c96f6eeadbcfd3694e"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a></td></tr>
+<tr class="memdesc:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The space information for which planning is done.  <br /></td></tr>
+<tr class="memitem:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a6bbb3dcc3d1604977e319d52c16ef7e5"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a6bbb3dcc3d1604977e319d52c16ef7e5">pdef_</a></td></tr>
+<tr class="memdesc:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user set problem definition.  <br /></td></tr>
+<tr class="memitem:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a1c6ac45d44026aae6df87f3295d67436"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a1c6ac45d44026aae6df87f3295d67436">pis_</a></td></tr>
+<tr class="memdesc:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class to extract valid input states.  <br /></td></tr>
+<tr class="memitem:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a806de82eeff9ef9231963a9851524b97"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td></tr>
+<tr class="memdesc:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of this planner.  <br /></td></tr>
+<tr class="memitem:a4311ea7a0470f0e0f76cb1656d63e365 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a4311ea7a0470f0e0f76cb1656d63e365"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerSpecs.html">PlannerSpecs</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a4311ea7a0470f0e0f76cb1656d63e365">specs_</a></td></tr>
+<tr class="memdesc:a4311ea7a0470f0e0f76cb1656d63e365 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The specifications of the planner (its capabilities).  <br /></td></tr>
+<tr class="memitem:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a1cecf022e5ebac936c49b96079ba5359"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a1cecf022e5ebac936c49b96079ba5359">params_</a></td></tr>
+<tr class="memdesc:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map from parameter names to parameter instances for this planner. This field is populated by the <a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c" title="This function declares a parameter for this planner instance, and specifies the setter and getter fun...">declareParam()</a> function.  <br /></td></tr>
+<tr class="memitem:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_ab630ca0634156172daf1a2620a01caf4"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td></tr>
+<tr class="memdesc:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mapping between this planner's progress property names and the functions used for querying those progress properties.  <br /></td></tr>
+<tr class="memitem:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_adba44a4ee27079c5b258a2ebed719eed"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#adba44a4ee27079c5b258a2ebed719eed">setup_</a></td></tr>
+<tr class="memdesc:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">setup()</a> has been called.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner" id="r_a33c8326d45e5c1ec99edf5f964b34f61"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> = std::function&lt;std::string()&gt;</td></tr>
+<tr class="memdesc:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a function which returns a property about the planner's progress that can be queried by a benchmarking routine.  <br /></td></tr>
+<tr class="memitem:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner" id="r_adc4df80108aec5db29373302e4b8d723"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> = std::map&lt;std::string, <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a>&gt;</td></tr>
+<tr class="memdesc:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which maps the name of a progress property to the function to be used for querying that property.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Hybrid Rapidly-exploring Random Trees. </p>
+<p><a class="anchor" id="HyRRT"></a></p><dl class="section user"><dt>Hybrid RRT (HyRRT) is an RRT algorithm that solves separate optimization</dt><dd>problems associated with the flows and jumps of the systems, to solve a variety of robotic motion planning problems. As an <a class="el" href="classompl_1_1control_1_1RRT.html" title="Rapidly-exploring Random Tree.">RRT</a> algorithm, <a class="el" href="classompl_1_1control_1_1HyRRT.html" title="Hybrid Rapidly-exploring Random Trees.">HyRRT</a> is probabilistically-complete. The logical flow of the algorithm is as follows:<ol type="1">
+<li>Initialize the tree with a start state.</li>
+<li>While a solution has not been found: a. Sample a random state. b. Find the nearest state in the tree to the random state. c. Extend from that state under either the flow or jump regimes, using the continuous or discrete simulators, respectively. d. Continue until the state is in collision, or the maximum flow time has been exceeded. e. If the state is not within the unsafe set, add the state to the tree. If the state is in collision, proceed to jump.<ol type="a">
+<li>Return the solution.</li>
+</ol>
+</li>
+</ol>
+</dd></dl>
+<dl class="section user"><dt>External documentation: https://ieeexplore.ieee.org/document/9992444</dt><dd>DOI: [10.1109/CDC51059.2022.9992444] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00076">76</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af72d99e65c0a419182f025e465fbebea" name="af72d99e65c0a419182f025e465fbebea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72d99e65c0a419182f025e465fbebea">&#9670;&#160;</a></span>HyRRT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::control::HyRRT::HyRRT </td>
+          <td>(</td>
+          <td class="paramtype">const control::SpaceInformationPtr &amp;</td>          <td class="paramname"><span class="paramname"><em>si</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00050">50</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a97b280426b2cd591599ebd211f118a06" name="a97b280426b2cd591599ebd211f118a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b280426b2cd591599ebd211f118a06">&#9670;&#160;</a></span>~HyRRT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::control::HyRRT::~HyRRT </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00056">56</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a40de8ea9830e10a190629947dbe4aba4" name="a40de8ea9830e10a190629947dbe4aba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40de8ea9830e10a190629947dbe4aba4">&#9670;&#160;</a></span>checkMandatoryParametersSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::checkMandatoryParametersSet </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if all required parameters have been set. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00255">255</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a012164533c6a30d94a0939986632bae0" name="a012164533c6a30d94a0939986632bae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a012164533c6a30d94a0939986632bae0">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear all allocated memory. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00312">312</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a24999bdf4122358a877f4d291764e920" name="a24999bdf4122358a877f4d291764e920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24999bdf4122358a877f4d291764e920">&#9670;&#160;</a></span>constructSolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a> ompl::control::HyRRT::constructSolution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>lastMotion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct the path, starting at the last edge. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lastMotion</td><td>The last motion in the solution </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the planner status (APPROXIMATE, EXACT, or UNKNOWN) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00254">254</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aee75dda8626d490fb577b4bf1fcd77dc" name="aee75dda8626d490fb577b4bf1fcd77dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee75dda8626d490fb577b4bf1fcd77dc">&#9670;&#160;</a></span>freeMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::freeMemory </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free the memory allocated by this planner. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00332">332</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a04f6bcf21961bf6b34b45c4ed9e37f18" name="a04f6bcf21961bf6b34b45c4ed9e37f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f6bcf21961bf6b34b45c4ed9e37f18">&#9670;&#160;</a></span>getFlowControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> * ompl::control::HyRRT::getFlowControl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00283">283</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="abf57a08b0577d8ed02a90a2fedcca5ad" name="abf57a08b0577d8ed02a90a2fedcca5ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf57a08b0577d8ed02a90a2fedcca5ad">&#9670;&#160;</a></span>getJumpControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> * ompl::control::HyRRT::getJumpControl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *</td>          <td class="paramname"><span class="paramname"><em>control</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00288">288</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a9958f8a558330806fac4ef21d5778564" name="a9958f8a558330806fac4ef21d5778564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9958f8a558330806fac4ef21d5778564">&#9670;&#160;</a></span>getPlannerData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::getPlannerData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classompl_1_1control_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">PlannerData</a> object associated with this planner. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the <a class="el" href="classompl_1_1control_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">PlannerData</a> object storing the edges and vertices of the solution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1Planner.html#ae8af389dbcdf416e142dc2f1cf5a8829">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00354">354</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aedad9132b88301f3fbdb7dfb0d76fbeb" name="aedad9132b88301f3fbdb7dfb0d76fbeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedad9132b88301f3fbdb7dfb0d76fbeb">&#9670;&#160;</a></span>initTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::initTree </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs the initial setup tasks for the tree. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00061">61</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3a9279d246479a136267bf24183fb1aa" name="a3a9279d246479a136267bf24183fb1aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a9279d246479a136267bf24183fb1aa">&#9670;&#160;</a></span>randomSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::randomSample </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>randomMotion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sample the random motion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">randomMotion</td><td>The motion to be initialized </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00082">82</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a76a5c3fc216f41254d576f32e3d8dde2" name="a76a5c3fc216f41254d576f32e3d8dde2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a5c3fc216f41254d576f32e3d8dde2">&#9670;&#160;</a></span>setCollisionChecker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setCollisionChecker </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState, double *collisionTime)&gt;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define the collision checker. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>the collision checker associated with the state space. Default is a point-by-point collision checker. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00236">236</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a9fa95866a090b639b3ba05e0a242c7ec" name="a9fa95866a090b639b3ba05e0a242c7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fa95866a090b639b3ba05e0a242c7ec">&#9670;&#160;</a></span>setContinuousSimulator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setContinuousSimulator </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, double tFlowMax, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define the continuous dynamics simulator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>the continuous simulator associated with the hybrid system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00276">276</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a43feed7f2a579c60c6956604cc63e631" name="a43feed7f2a579c60c6956604cc63e631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43feed7f2a579c60c6956604cc63e631">&#9670;&#160;</a></span>setDiscreteSimulator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setDiscreteSimulator </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define the discrete dynamics simulator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>the discrete simulator associated with the hybrid system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00213">213</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a58461d5990c2e687cbc9950df5349a5a" name="a58461d5990c2e687cbc9950df5349a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58461d5990c2e687cbc9950df5349a5a">&#9670;&#160;</a></span>setDistanceFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setDistanceFunction </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; double(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *)&gt;</td>          <td class="paramname"><span class="paramname"><em>function</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define the distance measurement function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>the distance function associated with the motion planning problem. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00204">204</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a4fa7796dea87a4da581dbf91dbffa498" name="a4fa7796dea87a4da581dbf91dbffa498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa7796dea87a4da581dbf91dbffa498">&#9670;&#160;</a></span>setFlowSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setFlowSet </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt;</td>          <td class="paramname"><span class="paramname"><em>flowSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define the flow set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flowSet</td><td>the flow set associated with the hybrid system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00186">186</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="aa40c99635b743b92730879d4dff92f3a" name="aa40c99635b743b92730879d4dff92f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40c99635b743b92730879d4dff92f3a">&#9670;&#160;</a></span>setFlowStepDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setFlowStepDuration </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>duration</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the time allocated to a single continuous simulator call, within the full period of a continuous simulator step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duration</td><td>the time allocated per simulator step. Must be greater than 0 and less than the time allocated to a full continuous simulator step. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00160">160</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a8cf7aad51a1ec311dc429731cc4eccaf" name="a8cf7aad51a1ec311dc429731cc4eccaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf7aad51a1ec311dc429731cc4eccaf">&#9670;&#160;</a></span>setJumpSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setJumpSet </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt;</td>          <td class="paramname"><span class="paramname"><em>jumpSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define the jump set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jumpSet</td><td>the jump set associated with the hybrid system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00177">177</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="af357c11deb59655f22741228c7b677b1" name="af357c11deb59655f22741228c7b677b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af357c11deb59655f22741228c7b677b1">&#9670;&#160;</a></span>setNearestNeighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; typename T &gt; class NN&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setNearestNeighbors </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a different nearest neighbors datastructure. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00245">245</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a8653683ff6ee5386c74beb2fc3e8b874" name="a8653683ff6ee5386c74beb2fc3e8b874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8653683ff6ee5386c74beb2fc3e8b874">&#9670;&#160;</a></span>setTm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setTm </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tM</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the maximum time allocated to a full continuous simulator step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tM</td><td>the maximum time allocated. Must be greater than 0, and greater than than the time allocated to a single continuous simulator call. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00139">139</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a12359823999ac64da9a586983e75f7eb" name="a12359823999ac64da9a586983e75f7eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12359823999ac64da9a586983e75f7eb">&#9670;&#160;</a></span>setUnsafeSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setUnsafeSet </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt;</td>          <td class="paramname"><span class="paramname"><em>unsafeSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Define the unsafe set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">unsafeSet</td><td>the unsafe set associated with the hybrid system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00195">195</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a519180748444e52a24d22d8ee4f7c995" name="a519180748444e52a24d22d8ee4f7c995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519180748444e52a24d22d8ee4f7c995">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::control::HyRRT::setup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the problem instance to solve. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00322">322</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a51ca371b9f97208a1d88947ac1752e75" name="a51ca371b9f97208a1d88947ac1752e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ca371b9f97208a1d88947ac1752e75">&#9670;&#160;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a> ompl::control::HyRRT::solve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ptc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="#a012164533c6a30d94a0939986632bae0" title="Clear all allocated memory.">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. If this option is used, it is assumed the problem definition is not changed (unpredictable results otherwise). The only change in the problem definition that is accounted for is the addition of starting or goal states (but not changing previously added start/goal states). If <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a> is called, the planner may retain prior datastructures generated from a previous query on a new problem definition. The function terminates if the call to <em>ptc</em> returns true. </p>
+
+<p>Implements <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8cpp_source.html#l00087">87</a> of file <a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ac2ecffa4a311667ea7d4baab5d7d2ad2" name="ac2ecffa4a311667ea7d4baab5d7d2ad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ecffa4a311667ea7d4baab5d7d2ad2">&#9670;&#160;</a></span>collisionChecker_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt;bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState, double *collisionTime)&gt; ompl::control::HyRRT::collisionChecker_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                      = [<span class="keyword">this</span>](<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt;bool(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet,</div>
+<div class="line">                               <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState, <span class="keywordtype">double</span> *collisionTime) -&gt; <span class="keywordtype">bool</span></div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span> (obstacleSet(motion))</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_variable" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a>-&gt;copyState(newState, motion-&gt;solutionPair-&gt;back());</div>
+<div class="line">        *collisionTime =</div>
+<div class="line">            <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a3b40f949e4b6996a08bca33f071df666">ompl::base::HybridStateSpace::getStateTime</a>(motion-&gt;solutionPair-&gt;back()) - <a class="code hl_variable" href="#ac323d40b53956ae3a169f8a0d6cd7b34">flowStepDuration_</a>;</div>
+<div class="line">        motion-&gt;solutionPair-&gt;resize(motion-&gt;solutionPair-&gt;size() - 1);</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a3b40f949e4b6996a08bca33f071df666"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a3b40f949e4b6996a08bca33f071df666">ompl::base::HybridStateSpace::getStateTime</a></div><div class="ttdeci">static double getStateTime(const ompl::base::State *state)</div><div class="ttdoc">The time value of the given state.</div><div class="ttdef"><b>Definition</b> <a href="HybridStateSpace_8cpp_source.html#l00098">HybridStateSpace.cpp:98</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Planner_html_aa3ceb9471163b6c96f6eeadbcfd3694e"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">ompl::base::Planner::si_</a></div><div class="ttdeci">SpaceInformationPtr si_</div><div class="ttdoc">The space information for which planning is done.</div><div class="ttdef"><b>Definition</b> <a href="Planner_8h_source.html#l00401">Planner.h:401</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html">ompl::control::HyRRT::Motion</a></div><div class="ttdoc">Representation of a motion in the search tree.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8h_source.html#l00099">HyRRT.h:100</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_ac323d40b53956ae3a169f8a0d6cd7b34"><div class="ttname"><a href="#ac323d40b53956ae3a169f8a0d6cd7b34">ompl::control::HyRRT::flowStepDuration_</a></div><div class="ttdeci">double flowStepDuration_</div><div class="ttdoc">The flow time for a given integration step, within a flow propagation step. Must be set by user.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8h_source.html#l00360">HyRRT.h:360</a></div></div>
+</div><!-- fragment -->
+<p>Collision checker. Default is point-by-point collision checking using the jump set. </p>
+<p>The following are all customizeable parameters, and affect how <b>cHyRRT</b> generates trajectories. Customize using setter functions above. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motion</td><td>The motion to check for collision </td></tr>
+    <tr><td class="paramname">obstacleSet</td><td>A function that returns true if the motion's solution pair intersects with the obstacle set </td></tr>
+    <tr><td class="paramname">ts</td><td>The start time of the motion. Default is -1.0 </td></tr>
+    <tr><td class="paramname">tf</td><td>The end time of the motion. Default is -1.0 </td></tr>
+    <tr><td class="paramname">newState</td><td>The collision state (if a collision occurs) </td></tr>
+    <tr><td class="paramname">collisionTime</td><td>The time of collision (if a collision occurs). If no collision occurs, this value is -1.0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if a collision occurs, false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00327">327</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="abe3891b6fdee42fd37c15cf4ad13431b" name="abe3891b6fdee42fd37c15cf4ad13431b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3891b6fdee42fd37c15cf4ad13431b">&#9670;&#160;</a></span>continuousSimulator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;<a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *(const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *<a class="el" href="namespaceompl_1_1control.html">control</a>, <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *x_cur, double tFlow, <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *new_state)&gt; ompl::control::HyRRT::continuousSimulator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                        =</div>
+<div class="line">        [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *<a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *x_cur, <span class="keywordtype">double</span> tFlow, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *new_state)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_variable" href="#a991ed7d92562a150ec1babb5dcf26b22">siC_</a>-&gt;getStatePropagator()-&gt;propagate(x_cur, <a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>, tFlow, new_state);</div>
+<div class="line">    <span class="keywordflow">return</span> new_state;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassompl_1_1control_1_1Control_html"><div class="ttname"><a href="classompl_1_1control_1_1Control.html">ompl::control::Control</a></div><div class="ttdoc">Definition of an abstract control.</div><div class="ttdef"><b>Definition</b> <a href="Control_8h_source.html#l00047">Control.h:48</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a991ed7d92562a150ec1babb5dcf26b22"><div class="ttname"><a href="#a991ed7d92562a150ec1babb5dcf26b22">ompl::control::HyRRT::siC_</a></div><div class="ttdeci">control::SpaceInformation * siC_</div><div class="ttdoc">The base::SpaceInformation cast as control::SpaceInformation, for convenience.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8h_source.html#l00345">HyRRT.h:345</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1control_html"><div class="ttname"><a href="namespaceompl_1_1control.html">ompl::control</a></div><div class="ttdoc">This namespace contains sampling based planning routines used by planning under differential constrai...</div><div class="ttdef"><b>Definition</b> <a href="Control_8h_source.html#l00044">Control.h:45</a></div></div>
+</div><!-- fragment -->
+<p>Simulates the dynamics of the multicopter when in flow regime, with no nonnegligble forces other than input acceleration. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00224">224</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b53f08ad0e6bd127dbe7706d0ccff2a" name="a1b53f08ad0e6bd127dbe7706d0ccff2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b53f08ad0e6bd127dbe7706d0ccff2a">&#9670;&#160;</a></span>continuousSimulator_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, double tFlowMax, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt; ompl::control::HyRRT::continuousSimulator_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Simulator for propagation under flow regime. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input </td></tr>
+    <tr><td class="paramname">curState</td><td>The current state </td></tr>
+    <tr><td class="paramname">tFlowMax</td><td>The random maximum flow time </td></tr>
+    <tr><td class="paramname">newState</td><td>The newly propagated state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The newly propagated state </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00403">403</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1a5438c874f1ef22a3eaf1a6ec43ac0" name="ac1a5438c874f1ef22a3eaf1a6ec43ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1a5438c874f1ef22a3eaf1a6ec43ac0">&#9670;&#160;</a></span>controlSampler_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">control::DirectedControlSamplerPtr ompl::control::HyRRT::controlSampler_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classompl_1_1control_1_1Control.html" title="Definition of an abstract control.">Control</a> Sampler. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00342">342</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a65318c36c5f296735eb9ec1ebc4f73d5" name="a65318c36c5f296735eb9ec1ebc4f73d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65318c36c5f296735eb9ec1ebc4f73d5">&#9670;&#160;</a></span>discreteSimulator_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *curState, const <a class="el" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt; ompl::control::HyRRT::discreteSimulator_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Simulator for propagation under jump regime. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curState</td><td>The current state </td></tr>
+    <tr><td class="paramname">u</td><td>The input </td></tr>
+    <tr><td class="paramname">newState</td><td>The newly propagated state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The newly propagated state </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00370">370</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="afffb5c73696181585bd639ae0c83ed24" name="afffb5c73696181585bd639ae0c83ed24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afffb5c73696181585bd639ae0c83ed24">&#9670;&#160;</a></span>dist_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::control::HyRRT::dist_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Minimum distance from goal to final vertex of generated trajectories. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00416">416</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a35b8bf72600b0ff3d93686e5af4da919" name="a35b8bf72600b0ff3d93686e5af4da919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35b8bf72600b0ff3d93686e5af4da919">&#9670;&#160;</a></span>distanceFunc_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;double(<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state1, <a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *state2)&gt; ompl::control::HyRRT::distanceFunc_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                        =</div>
+<div class="line">[<span class="keyword">this</span>](<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *state1, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *state2) -&gt; <span class="keywordtype">double</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a>-&gt;distance(state1, state2); }</div>
+</div><!-- fragment -->
+<p>Compute distance between states, default is Euclidean distance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state1</td><td>The first state </td></tr>
+    <tr><td class="paramname">state2</td><td>The second state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance between the two states </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00353">353</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a791ed9d67304bd89b57685079dc923b1" name="a791ed9d67304bd89b57685079dc923b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791ed9d67304bd89b57685079dc923b1">&#9670;&#160;</a></span>flowSet_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; ompl::control::HyRRT::flowSet_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that returns true if a motion intersects with the flow set, and false if not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motion</td><td>The motion to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the state is in the flow set, false if not </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00384">384</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="ac323d40b53956ae3a169f8a0d6cd7b34" name="ac323d40b53956ae3a169f8a0d6cd7b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac323d40b53956ae3a169f8a0d6cd7b34">&#9670;&#160;</a></span>flowStepDuration_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::control::HyRRT::flowStepDuration_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The flow time for a given integration step, within a flow propagation step. Must be set by user. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00360">360</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a61c1997311375b322fd07612be010fbd" name="a61c1997311375b322fd07612be010fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c1997311375b322fd07612be010fbd">&#9670;&#160;</a></span>jumpSet_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; ompl::control::HyRRT::jumpSet_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that returns true if a motion intersects with the jump set, and false if not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motion</td><td>The motion to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the state is in the jump set, false if not </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00377">377</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a9f3d374b1dfd1c4adac35500f7e17f" name="a4a9f3d374b1dfd1c4adac35500f7e17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a9f3d374b1dfd1c4adac35500f7e17f">&#9670;&#160;</a></span>lastGoalMotion_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a>* ompl::control::HyRRT::lastGoalMotion_ {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The most recent goal motion. Used for <a class="el" href="classompl_1_1control_1_1PlannerData.html" title="Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...">PlannerData</a> computation. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00294">294</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a7fb0666966192eefa9ac72da1be830a3" name="a7fb0666966192eefa9ac72da1be830a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb0666966192eefa9ac72da1be830a3">&#9670;&#160;</a></span>nn_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt;<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *&gt; &gt; ompl::control::HyRRT::nn_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A nearest-neighbors datastructure containing the tree of motions. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00306">306</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a758ccd4513cfb002e0d5129f76c32521" name="a758ccd4513cfb002e0d5129f76c32521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a758ccd4513cfb002e0d5129f76c32521">&#9670;&#160;</a></span>sampler_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">base::StateSamplerPtr ompl::control::HyRRT::sampler_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>State sampler. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00413">413</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="a991ed7d92562a150ec1babb5dcf26b22" name="a991ed7d92562a150ec1babb5dcf26b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991ed7d92562a150ec1babb5dcf26b22">&#9670;&#160;</a></span>siC_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1control_1_1SpaceInformation.html">control::SpaceInformation</a>* ompl::control::HyRRT::siC_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d...">base::SpaceInformation</a> cast as <a class="el" href="classompl_1_1control_1_1SpaceInformation.html" title="Space information containing necessary information for planning with controls. setup() needs to be ca...">control::SpaceInformation</a>, for convenience. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00345">345</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="af7162cc8d685d050f7afe4c9a9660996" name="af7162cc8d685d050f7afe4c9a9660996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7162cc8d685d050f7afe4c9a9660996">&#9670;&#160;</a></span>tM_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::control::HyRRT::tM_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The maximum flow time for a given flow propagation step. Must be set by the user. </p>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00357">357</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4e86a7a9163f8674d8a380da5e0d123" name="ae4e86a7a9163f8674d8a380da5e0d123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e86a7a9163f8674d8a380da5e0d123">&#9670;&#160;</a></span>unsafeSet_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;bool(<a class="el" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; ompl::control::HyRRT::unsafeSet_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that returns true if a motion intersects with the unsafe set, and false if not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motion</td><td>The motion to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the state is in the unsafe set, false if not </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="HyRRT_8h_source.html#l00391">391</a> of file <a class="el" href="HyRRT_8h_source.html">HyRRT.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/control/planners/rrt/<a class="el" href="HyRRT_8h_source.html">HyRRT.h</a></li>
+<li>ompl/control/planners/rrt/src/<a class="el" href="HyRRT_8cpp_source.html">HyRRT.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

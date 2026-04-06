@@ -1,0 +1,449 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: demos/multicopter/CommonMath/Rotation.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>demos</b></li><li class="navelem"><b>multicopter</b></li><li class="navelem"><b>CommonMath</b></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">Rotation.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;Vec3.h&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceCommonMath.html">CommonMath</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html">   37</a></span>    <span class="keyword">class </span>Rotation</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">double</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> half = double(0.5);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">double</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> MIN_ANGLE = double(4.84813681e-6);  <span class="comment">// less than one arc second.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        Rotation(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a262bde6332a8dc39b70b82084c0b0075">   48</a></span>        <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a262bde6332a8dc39b70b82084c0b0075">Rotation</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> c, <span class="keywordtype">double</span> d)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            _v[0] = a;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            _v[1] = b;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            _v[2] = c;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            _v[3] = d;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a3825c4559bf6d85ff1a73cd544e3d840">   57</a></span>        <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a3825c4559bf6d85ff1a73cd544e3d840">Rotation</a>(Rotation <span class="keyword">const</span> &amp;in)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            _v[0] = double(in[0]);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            _v[1] = double(in[1]);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            _v[2] = double(in[2]);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            _v[3] = double(in[3]);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classCommonMath_1_1Rotation.html">Rotation</a> Identity(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classCommonMath_1_1Rotation.html">Rotation</a>(1, 0, 0, 0);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        Rotation Inverse(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">return</span> Rotation(_v[0], -_v[1], -_v[2], -_v[3]);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#aafcbd805ab51226b403ddd3baf7636b0">   76</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#aafcbd805ab51226b403ddd3baf7636b0">Normalise</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordtype">double</span> n = sqrt(_v[0] * _v[0] + _v[1] * _v[1] + _v[2] * _v[2] + _v[3] * _v[3]);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">if</span> (n &lt; 1.0e-6)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                (*this) = Identity();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    _v[i] /= n;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a2faceb6120f7511753dc0d003300dd44">   93</a></span>        <span class="keyword">static</span> Rotation <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a2faceb6120f7511753dc0d003300dd44">FromRotationVector</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> rotVec)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> theta = rotVec.<a class="code hl_function" href="classCommonMath_1_1Vec3.html#aa3c3f42de5d427d8d42628bf45222c5f">GetNorm2</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">if</span> (theta &lt; MIN_ANGLE)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keywordflow">return</span> Identity();  <span class="comment">// less than one arc second :)</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a861a189026f872f0dcc72845a317354d">FromAxisAngle</a>(rotVec / theta, theta);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a861a189026f872f0dcc72845a317354d">  104</a></span>        <span class="keyword">static</span> <span class="keyword">inline</span> Rotation <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a861a189026f872f0dcc72845a317354d">FromAxisAngle</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> &amp;unitVector, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;angle)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">return</span> Rotation(cos(angle * half), sin(angle * half) * unitVector.x, sin(angle * half) * unitVector.y,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                            sin(angle * half) * unitVector.<a class="code hl_variable" href="classCommonMath_1_1Vec3.html#adc405a85074a180ab62cbd359f4c7176">z</a>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a698fda38dace4192c21074df74615cc9">  111</a></span>        <span class="keyword">static</span> Rotation <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a698fda38dace4192c21074df74615cc9">FromEulerYPR</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;y, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;p, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;r)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        {  <span class="comment">// NB! rotation: 3-2-1 yaw,pitch,roll</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            Rotation rot;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            rot[0] = cos(half * y) * cos(half * p) * cos(half * r) + sin(half * y) * sin(half * p) * sin(half * r);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            rot[1] = cos(half * y) * cos(half * p) * sin(half * r) - sin(half * y) * sin(half * p) * cos(half * r);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            rot[2] = cos(half * y) * sin(half * p) * cos(half * r) + sin(half * y) * cos(half * p) * sin(half * r);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            rot[3] = sin(half * y) * cos(half * p) * cos(half * r) - cos(half * y) * sin(half * p) * sin(half * r);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">return</span> rot;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a793107796084c055917e7eb1460c899e">  122</a></span>        <span class="keyword">static</span> Rotation <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a793107796084c055917e7eb1460c899e">FromVectorPartOfQuaternion</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> in)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordtype">double</span> tmp = in.<a class="code hl_function" href="classCommonMath_1_1Vec3.html#a5fd650e0f3edd41db5e70488f00e9311">GetNorm2Squared</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">if</span> (tmp &gt; 1.0f)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <span class="keywordflow">return</span> Rotation::Identity();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordtype">double</span> a0 = sqrt(1 - tmp);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">return</span> Rotation(a0, in.x, in.y, in.<a class="code hl_variable" href="classCommonMath_1_1Vec3.html#adc405a85074a180ab62cbd359f4c7176">z</a>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keyword">inline</span> <a class="code hl_class" href="classCommonMath_1_1Rotation.html">Rotation</a> &amp;operator=(<span class="keyword">const</span> <a class="code hl_class" href="classCommonMath_1_1Rotation.html">Rotation</a> &amp;other)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                _v[0] = other[0];</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                _v[1] = other[1];</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                _v[2] = other[2];</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                _v[3] = other[3];</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a159be1d779ece2cc0f59cfd4ed601579">  144</a></span>        Rotation <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a159be1d779ece2cc0f59cfd4ed601579">operator*</a>(<span class="keyword">const</span> Rotation &amp;r1)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordtype">double</span> c0 = r1[0] * _v[0] - r1[1] * _v[1] - r1[2] * _v[2] - r1[3] * _v[3];</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keywordtype">double</span> c1 = r1[1] * _v[0] + r1[0] * _v[1] + r1[3] * _v[2] - r1[2] * _v[3];</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordtype">double</span> c2 = r1[2] * _v[0] - r1[3] * _v[1] + r1[0] * _v[2] + r1[1] * _v[3];</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordtype">double</span> c3 = r1[3] * _v[0] + r1[2] * _v[1] - r1[1] * _v[2] + r1[0] * _v[3];</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            <span class="keywordflow">return</span> Rotation(c0, c1, c2, c3);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a4b05d7ca60f819cef6cf6623527609c8">  155</a></span>        <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a4b05d7ca60f819cef6cf6623527609c8">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> &amp;vec)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <span class="keywordflow">return</span> Rotate(vec);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span></div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a5ea21f42c36eab43d4a0392e2e3d9ec8">  164</a></span>        <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a5ea21f42c36eab43d4a0392e2e3d9ec8">ToRotationVector</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keyword">const</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> n = <a class="code hl_function" href="classCommonMath_1_1Rotation.html#abdf34399993c2180448b3687ecb68871">ToVectorPartOfQuaternion</a>();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> norm = n.<a class="code hl_function" href="classCommonMath_1_1Vec3.html#aa3c3f42de5d427d8d42628bf45222c5f">GetNorm2</a>();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> angle = asin(norm) * 2;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">if</span> (angle &lt; MIN_ANGLE)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a>(0, 0, 0);  <span class="comment">// less than one arc second</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keywordflow">return</span> n * (angle / norm);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        }</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#abdf34399993c2180448b3687ecb68871">  178</a></span>        <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#abdf34399993c2180448b3687ecb68871">ToVectorPartOfQuaternion</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <span class="comment">// makes first component positive</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">if</span> (_v[0] &gt; 0)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a>(_v[1], _v[2], _v[3]);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a>(-_v[1], -_v[2], -_v[3]);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        }</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#ad31d663f561762fc5032dd7896f687f0">  188</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#ad31d663f561762fc5032dd7896f687f0">ToEulerYPR</a>(<span class="keywordtype">double</span> &amp;y, <span class="keywordtype">double</span> &amp;p, <span class="keywordtype">double</span> &amp;r)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            y = atan2(<span class="keywordtype">double</span>(2.0) * _v[1] * _v[2] + <span class="keywordtype">double</span>(2.0) * _v[0] * _v[3],</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                      _v[1] * _v[1] + _v[0] * _v[0] - _v[3] * _v[3] - _v[2] * _v[2]);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            p = -asin(<span class="keywordtype">double</span>(2.0) * _v[1] * _v[3] - <span class="keywordtype">double</span>(2.0) * _v[0] * _v[2]);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            r = atan2(<span class="keywordtype">double</span>(2.0) * _v[2] * _v[3] + <span class="keywordtype">double</span>(2.0) * _v[0] * _v[1],</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                      _v[3] * _v[3] - _v[2] * _v[2] - _v[1] * _v[1] + _v[0] * _v[0]);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        }</div>
+</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span></div>
+<div class="foldopen" id="foldopen00198" data-start="{" data-end="}">
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a0bd10a10e36c3fe65a2561aa3b61c72f">  198</a></span>        <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a0bd10a10e36c3fe65a2561aa3b61c72f">ToEulerYPR</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> out;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a0bd10a10e36c3fe65a2561aa3b61c72f">ToEulerYPR</a>(out.x, out.y, out.<a class="code hl_variable" href="classCommonMath_1_1Vec3.html#adc405a85074a180ab62cbd359f4c7176">z</a>);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        }</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#abb045dfd61930b2488e9103a86bb1016">  206</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#abb045dfd61930b2488e9103a86bb1016">PrintRotationMatrix</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keywordtype">double</span> R[9];</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a1fb9cc0d1904028d6de6beb1dabe716b">GetRotationMatrix</a>(R);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++)</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 3; j++)</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                    printf(<span class="stringliteral">&quot;%.3f\t&quot;</span>, (<span class="keywordtype">double</span>)R[i * 3 + j]);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        }</div>
+</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordtype">double</span> &amp;operator[](<span class="keywordtype">unsigned</span> <span class="keyword">const</span> i)</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <span class="keywordflow">return</span> _v[i];</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;operator[](<span class="keywordtype">unsigned</span> <span class="keyword">const</span> i)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">return</span> _v[i];</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span></div>
+<div class="foldopen" id="foldopen00235" data-start="{" data-end="}">
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="classCommonMath_1_1Rotation.html#a1fb9cc0d1904028d6de6beb1dabe716b">  235</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a1fb9cc0d1904028d6de6beb1dabe716b">GetRotationMatrix</a>(<span class="keywordtype">double</span> R[9])<span class="keyword"> const</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> r0 = _v[0] * _v[0];</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> r1 = _v[1] * _v[1];</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> r2 = _v[2] * _v[2];</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> r3 = _v[3] * _v[3];</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            R[0] = r0 + r1 - r2 - r3;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            R[1] = 2 * _v[1] * _v[2] - 2 * _v[0] * _v[3];</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            R[2] = 2 * _v[1] * _v[3] + 2 * _v[0] * _v[2];</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            R[3] = 2 * _v[1] * _v[2] + 2 * _v[0] * _v[3];</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            R[4] = r0 - r1 + r2 - r3;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            R[5] = 2 * _v[2] * _v[3] - 2 * _v[0] * _v[1];</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            R[6] = 2 * _v[1] * _v[3] - 2 * _v[0] * _v[2];</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            R[7] = 2 * _v[2] * _v[3] + 2 * _v[0] * _v[1];</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            R[8] = r0 - r1 - r2 + r3;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
+</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> Rotate(<span class="keyword">const</span> <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> &amp;in)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            <span class="keywordtype">double</span> R[9];</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <a class="code hl_function" href="classCommonMath_1_1Rotation.html#a1fb9cc0d1904028d6de6beb1dabe716b">GetRotationMatrix</a>(R);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <a class="code hl_class" href="classCommonMath_1_1Vec3.html">Vec3</a> ret(R[0] * in.x + R[1] * in.y + R[2] * in.<a class="code hl_variable" href="classCommonMath_1_1Vec3.html#adc405a85074a180ab62cbd359f4c7176">z</a>, R[3] * in.x + R[4] * in.y + R[5] * in.<a class="code hl_variable" href="classCommonMath_1_1Vec3.html#adc405a85074a180ab62cbd359f4c7176">z</a>,</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                     R[6] * in.x + R[7] * in.y + R[8] * in.<a class="code hl_variable" href="classCommonMath_1_1Vec3.html#adc405a85074a180ab62cbd359f4c7176">z</a>);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        }</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        Vec3 RotateBackwards(<span class="keyword">const</span> Vec3 &amp;in)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            <span class="keywordtype">double</span> R[9];</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            Inverse().<a class="code hl_function" href="classCommonMath_1_1Rotation.html#a1fb9cc0d1904028d6de6beb1dabe716b">GetRotationMatrix</a>(R);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            Vec3 ret(R[0] * in.x + R[1] * in.y + R[2] * in.z, R[3] * in.x + R[4] * in.y + R[5] * in.z,</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                     R[6] * in.x + R[7] * in.y + R[8] * in.z);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keywordtype">double</span> _v[4];</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    };</div>
+</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}  <span class="comment">// namespace CommonMath</span></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html"><div class="ttname"><a href="classCommonMath_1_1Rotation.html">CommonMath::Rotation</a></div><div class="ttdef"><b>Definition</b> <a href="#l00037">Rotation.h:38</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a0bd10a10e36c3fe65a2561aa3b61c72f"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a0bd10a10e36c3fe65a2561aa3b61c72f">CommonMath::Rotation::ToEulerYPR</a></div><div class="ttdeci">Vec3 ToEulerYPR(void) const</div><div class="ttdoc">Returns the Euler angles yaw, pitch, and roll representing this rotation.</div><div class="ttdef"><b>Definition</b> <a href="#l00198">Rotation.h:198</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a159be1d779ece2cc0f59cfd4ed601579"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a159be1d779ece2cc0f59cfd4ed601579">CommonMath::Rotation::operator*</a></div><div class="ttdeci">Rotation operator*(const Rotation &amp;r1) const</div><div class="ttdoc">Rotation multiplication: r2*r1, corresponds to a rotation r1 followed by rotation r2.</div><div class="ttdef"><b>Definition</b> <a href="#l00144">Rotation.h:144</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a1fb9cc0d1904028d6de6beb1dabe716b"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a1fb9cc0d1904028d6de6beb1dabe716b">CommonMath::Rotation::GetRotationMatrix</a></div><div class="ttdeci">void GetRotationMatrix(double R[9]) const</div><div class="ttdef"><b>Definition</b> <a href="#l00235">Rotation.h:235</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a262bde6332a8dc39b70b82084c0b0075"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a262bde6332a8dc39b70b82084c0b0075">CommonMath::Rotation::Rotation</a></div><div class="ttdeci">Rotation(double a, double b, double c, double d)</div><div class="ttdoc">Constructor given a unit quaternion.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">Rotation.h:48</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a2faceb6120f7511753dc0d003300dd44"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a2faceb6120f7511753dc0d003300dd44">CommonMath::Rotation::FromRotationVector</a></div><div class="ttdeci">static Rotation FromRotationVector(const Vec3 rotVec)</div><div class="ttdef"><b>Definition</b> <a href="#l00093">Rotation.h:93</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a3825c4559bf6d85ff1a73cd544e3d840"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a3825c4559bf6d85ff1a73cd544e3d840">CommonMath::Rotation::Rotation</a></div><div class="ttdeci">Rotation(Rotation const &amp;in)</div><div class="ttdoc">Copy constructor.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">Rotation.h:57</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a4b05d7ca60f819cef6cf6623527609c8"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a4b05d7ca60f819cef6cf6623527609c8">CommonMath::Rotation::operator*</a></div><div class="ttdeci">Vec3 operator*(const Vec3 &amp;vec) const</div><div class="ttdoc">Rotate a vector forward.</div><div class="ttdef"><b>Definition</b> <a href="#l00155">Rotation.h:155</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a5ea21f42c36eab43d4a0392e2e3d9ec8"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a5ea21f42c36eab43d4a0392e2e3d9ec8">CommonMath::Rotation::ToRotationVector</a></div><div class="ttdeci">Vec3 ToRotationVector(void) const</div><div class="ttdef"><b>Definition</b> <a href="#l00164">Rotation.h:164</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a698fda38dace4192c21074df74615cc9"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a698fda38dace4192c21074df74615cc9">CommonMath::Rotation::FromEulerYPR</a></div><div class="ttdeci">static Rotation FromEulerYPR(const double &amp;y, const double &amp;p, const double &amp;r)</div><div class="ttdoc">Returns a Rotation object given Euler angles yaw, pitch, and roll.</div><div class="ttdef"><b>Definition</b> <a href="#l00111">Rotation.h:111</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a793107796084c055917e7eb1460c899e"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a793107796084c055917e7eb1460c899e">CommonMath::Rotation::FromVectorPartOfQuaternion</a></div><div class="ttdeci">static Rotation FromVectorPartOfQuaternion(const Vec3 in)</div><div class="ttdoc">Returns a Rotation object given the three elements of the vector part of a unit quaternion.</div><div class="ttdef"><b>Definition</b> <a href="#l00122">Rotation.h:122</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_a861a189026f872f0dcc72845a317354d"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#a861a189026f872f0dcc72845a317354d">CommonMath::Rotation::FromAxisAngle</a></div><div class="ttdeci">static Rotation FromAxisAngle(const Vec3 &amp;unitVector, const double &amp;angle)</div><div class="ttdef"><b>Definition</b> <a href="#l00104">Rotation.h:104</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_aafcbd805ab51226b403ddd3baf7636b0"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#aafcbd805ab51226b403ddd3baf7636b0">CommonMath::Rotation::Normalise</a></div><div class="ttdeci">void Normalise(void)</div><div class="ttdoc">This makes sure the quaternion is a unit quaternion.</div><div class="ttdef"><b>Definition</b> <a href="#l00076">Rotation.h:76</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_abb045dfd61930b2488e9103a86bb1016"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#abb045dfd61930b2488e9103a86bb1016">CommonMath::Rotation::PrintRotationMatrix</a></div><div class="ttdeci">void PrintRotationMatrix(void)</div><div class="ttdoc">For debugging.</div><div class="ttdef"><b>Definition</b> <a href="#l00206">Rotation.h:206</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_abdf34399993c2180448b3687ecb68871"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#abdf34399993c2180448b3687ecb68871">CommonMath::Rotation::ToVectorPartOfQuaternion</a></div><div class="ttdeci">Vec3 ToVectorPartOfQuaternion(void) const</div><div class="ttdoc">Returns the vector part of the quaternion representing this rotation.</div><div class="ttdef"><b>Definition</b> <a href="#l00178">Rotation.h:178</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Rotation_html_ad31d663f561762fc5032dd7896f687f0"><div class="ttname"><a href="classCommonMath_1_1Rotation.html#ad31d663f561762fc5032dd7896f687f0">CommonMath::Rotation::ToEulerYPR</a></div><div class="ttdeci">void ToEulerYPR(double &amp;y, double &amp;p, double &amp;r) const</div><div class="ttdoc">Returns the Euler angles yaw, pitch, and roll representing this rotation.</div><div class="ttdef"><b>Definition</b> <a href="#l00188">Rotation.h:188</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Vec3_html"><div class="ttname"><a href="classCommonMath_1_1Vec3.html">CommonMath::Vec3</a></div><div class="ttdoc">3D vector class with common vector operations.</div><div class="ttdef"><b>Definition</b> <a href="Vec3_8h_source.html#l00035">Vec3.h:36</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Vec3_html_a5fd650e0f3edd41db5e70488f00e9311"><div class="ttname"><a href="classCommonMath_1_1Vec3.html#a5fd650e0f3edd41db5e70488f00e9311">CommonMath::Vec3::GetNorm2Squared</a></div><div class="ttdeci">double GetNorm2Squared(void) const</div><div class="ttdoc">Calculate the Euclidean norm of the vector, squared (= sum of squared elements).</div><div class="ttdef"><b>Definition</b> <a href="Vec3_8h_source.html#l00109">Vec3.h:109</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Vec3_html_aa3c3f42de5d427d8d42628bf45222c5f"><div class="ttname"><a href="classCommonMath_1_1Vec3.html#aa3c3f42de5d427d8d42628bf45222c5f">CommonMath::Vec3::GetNorm2</a></div><div class="ttdeci">double GetNorm2(void) const</div><div class="ttdoc">Calculate the Euclidean norm of the vector.</div><div class="ttdef"><b>Definition</b> <a href="Vec3_8h_source.html#l00115">Vec3.h:115</a></div></div>
+<div class="ttc" id="aclassCommonMath_1_1Vec3_html_adc405a85074a180ab62cbd359f4c7176"><div class="ttname"><a href="classCommonMath_1_1Vec3.html#adc405a85074a180ab62cbd359f4c7176">CommonMath::Vec3::z</a></div><div class="ttdeci">double z</div><div class="ttdoc">the three components of the vector</div><div class="ttdef"><b>Definition</b> <a href="Vec3_8h_source.html#l00038">Vec3.h:38</a></div></div>
+<div class="ttc" id="anamespaceCommonMath_html"><div class="ttname"><a href="namespaceCommonMath.html">CommonMath</a></div><div class="ttdef"><b>Definition</b> <a href="ConvexObj_8h_source.html#l00023">ConvexObj.h:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

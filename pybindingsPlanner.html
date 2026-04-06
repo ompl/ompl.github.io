@@ -1,35 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.17"/>
-  <title>Creating Python Bindings for a New Planner</title>
-  <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="jquery.js"></script>
-  <script src="dynsections.js"></script>
-  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: Creating Python Bindings for a New Planner</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+  $(function() { init_search(); });
 </script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
 });
 </script>
-<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
-  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
     <nav class="navbar navbar-expand-md fixed-top navbar-dark">
       <a class="navbar-brand" href="./index.html">OMPL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
@@ -44,9 +47,7 @@
               <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
               <a class="dropdown-item" href="installation.html">Installation</a>
               <a class="dropdown-item" href="tutorials.html">Tutorials</a>
-              <a class="dropdown-item" href="group__demos.html">Demos</a>
-              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
-              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
               <a class="dropdown-item" href="python.html">Python Bindings</a>
               <a class="dropdown-item" href="planners.html">Available Planners</a>
               <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
@@ -73,16 +74,7 @@
               <a class="dropdown-item" href="annotated.html">Classes</a>
               <a class="dropdown-item" href="files.html">Files</a>
               <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Repositories</div>
-              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
-              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Continuous Integration</div>
-              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
-              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
-              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
-              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
             </div>
           </li>
           <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
@@ -92,7 +84,6 @@
               <a class="dropdown-item" href="support.html">Get Support</a>
               <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
               <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
-              <a class="dropdown-item" href="education.html">Education</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -107,27 +98,25 @@
         </ul>
                 <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
                onfocus="searchBox.OnSearchFieldFocus(true)" 
                onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
         </div>
       </div>
     </nav>
   <div class="container" role="main">
     <div>
-<!-- Generated by Doxygen 1.8.17 -->
+<!-- Generated by Doxygen 1.16.1 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -138,33 +127,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 </div><!-- top -->
-<div class="PageDoc"><div class="header">
-  <div class="headertitle">
-<div class="title">Creating Python Bindings for a New Planner </div>  </div>
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">Creating Python Bindings for a New Planner </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>It is often convenient to test a planner through either the OMPL.app GUI or by using a minimal Python program that defines a simple motion planning problem of interest. In both cases you need to create Python bindings for your planner. At a high level, the steps are:</p>
+<div class="textblock"><p><a class="anchor" id="md_doc_2markdown_2pybindingsPlanner"></a></p>
+<p>It is often convenient to test a planner by using a minimal Python program that defines a simple motion planning problem of interest. Also, making your planner available in Python increases its reach among users. In both cases you need to create Python bindings for your planner. At a high level, the steps are:</p>
 <ul>
-<li><a href="#pybinding">Update the Python binding generation code</a></li>
-<li><a href="#params">Optionally, provide hints for planner parameter ranges that can then be used to create the appropriate controls in the OMPL.app GUI.</a></li>
+<li><a class="el" href="#pybinding" title="Add bindings for your planner">Add bindings for your planner</a></li>
+<li><a class="el" href="#params" title="Planner parameters">Optionally, provide hints for planner parameter ranges that can be used.</a></li>
 </ul>
-<dl class="section attention"><dt>Attention</dt><dd>Please note that it is difficult to create Python bindings for multi-threaded planners. The problem is that only one thread at a time can access the Python interpreter. If a user creates an instance of a Python class derived from, e.g., <a class="el" href="classompl_1_1base_1_1StateValidityChecker.html" title="Abstract definition for a class checking the validity of states. The implementation of this class mus...">ompl::base::StateValidityChecker</a> or <a class="el" href="classompl_1_1control_1_1StatePropagator.html" title="Model the effect of controls on system states.">ompl::control::StatePropagator</a>, the C++ code may call the Python interpreter simultaneously from multiple threads. In this case you need to modify you planner so that when called from Python it always runs in a single thread. In some cases, such as the <a class="el" href="classompl_1_1geometric_1_1PRM.html" title="Probabilistic RoadMap planner.">ompl::geometric::PRM</a> planner, this can be difficult. For PRM we wrote a special single-threaded version of the solve function (see <code>ompl/py-bindings/PRM.SingleThreadSolve.cpp</code>) that is used in the Python bindings instead of the default multi-threaded solve method.</dd></dl>
-<h1><a class="anchor" id="pybinding"></a>
-Updating the Python binding generation code</h1>
-<p>To create python bindings for your planner, it is easiest if you add the C++ implementation of your planner to <code>ompl/src/ompl/geometric/planners</code> (if your planner is a purely geometric planner) or to <code>ompl/src/ompl/control/planners</code> (if your planner is a control-based planner).</p>
-<p>The first step in generating bindings is to add the header file name(s) for your planner to the list of files that need to be processed by the python binding generation script. For geometric planning this list is stored in <code>ompl/py-bindings/headers_geometric.txt</code>, while for control-based planning this list is stored in <code>ompl/py-bindings/headers_control.txt</code>. The order of the file names in this list matters: if your header file includes other files in the list, it should be added below those files.</p>
-<p>The next step is to regenerate the python bindings. It safest to remove the old ones first. Go to your build directory and type the following commands: </p><pre class="fragment">make clean_bindings
-make -j 3 update_bindings
-</pre><p>If something went wrong, the errors will be listed in pyplusplus_geometric.log and pyplusplus_control.log. If Py++ produces errors for methods that are not really needed at the Python level, you can explicitly exclude them in <code>ompl/py-bindings/generate_bindings.py</code>.</p>
-<h1><a class="anchor" id="params"></a>
+<dl class="section attention"><dt>Attention</dt><dd>Pay extra care when binding multithreaded planners. See <a href="python.html#py_good_practices">Python bindings good practices</a> for details.</dd></dl>
+<h1 class="doxsection"><a class="anchor" id="pybinding"></a>
+Add bindings for your planner</h1>
+<p>The bindings folder follows a similar structure to the <span class="tt">src</span> folder. For a new planner binding, create a new file under the bindings folder hierarchy at the same location as your planner implementation would be. In that file, write the binding code for your planner. You can follow the existing planner bindings as an example, as well as refer to the <a href="https://nanobind.readthedocs.io">Nanobind documentation</a>. Finally, call your newly added function in <span class="tt">ompl/py-bindings/python.cpp</span> and rebuild the bindings.</p>
+<h1 class="doxsection"><a class="anchor" id="params"></a>
 Planner parameters</h1>
-<p>The OMPL Planner class has a method called <a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c" title="This function declares a parameter for this planner instance, and specifies the setter and getter fun...">ompl::base::Planner::declareParam</a> to define parameters that can be changed by the user. It is highly recommended that you use this method for all your planner parameters. It is possible to specify a suggested range of values as an optional argument to ompl::Planner::declareParam. This range will be used by the OMPL.app GUI to create the appropriate control widgets, so that users can change the parameter values through the GUI. See <a class="el" href="classompl_1_1base_1_1GenericParam.html#adfcb7422d41e2a863c604bc6b28e892e" title="Suggested range for the parameter.">ompl::base::GenericParam::rangeSuggestion_</a> for the syntax used to specify parameter ranges. </p>
+<p>The OMPL Planner class has a method called <a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c" title="This function declares a parameter for this planner instance, and specifies the setter and getter fun...">ompl::base::Planner::declareParam</a> to define parameters that can be changed by the user. It is highly recommended that you use this method for all your planner parameters. It is possible to specify a suggested range of values as an optional argument to ompl::Planner::declareParam. This range can be used by external tools for example to create the appropriate control widgets, so that users can change the parameter values. See <a class="el" href="classompl_1_1base_1_1GenericParam.html#adfcb7422d41e2a863c604bc6b28e892e" title="Suggested range for the parameter.">ompl::base::GenericParam::rangeSuggestion_</a> for the syntax used to specify parameter ranges. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div>
@@ -174,7 +167,7 @@ Planner parameters</h1>
   <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
   <a href="https://www.rice.edu">Rice University</a><br/>
   Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.17
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
   </div>
 </footer>
 <script>

@@ -1,0 +1,523 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl/geometric/planners/rrt/ATRRT.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>ompl</b></li><li class="navelem"><b>geometric</b></li><li class="navelem"><b>planners</b></li><li class="navelem"><b>rrt</b></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">ATRRT.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Copyright (c) 2025, Joris Chomarat</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  are met:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *   * Neither the name of the copyright holder nor the names of its</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* Author: Joris Chomarat */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#ifndef OMPL_GEOMETRIC_PLANNERS_RRT_ATRRT_</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define OMPL_GEOMETRIC_PLANNERS_RRT_ATRRT_</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;ompl/geometric/planners/PlannerIncludes.h&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighbors.h&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;ompl/base/OptimizationObjective.h&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">  NOTES:</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">  **Variable Names that have been converted to longer versions from standards:</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">  nearest_neighbors_ -&gt; nn_</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">  planner_termination_condition -&gt; ptc</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"></span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">  **Inherited Member Variables Key:</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">  si_ -&gt; SpaceInformation</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">  pdef_ -&gt; ProblemDefinition</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">  pis_ -&gt; PlannerInputStates - Utility class to extract valid input states</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl_1_1geometric.html">geometric</a></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="};">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html">   85</a></span>        <span class="keyword">class </span><a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a2c20fbc4a2f83292f2b3fc8f3e23b4c2">ATRRT</a> : <span class="keyword">public</span> <a class="code hl_class" href="classompl_1_1base_1_1Planner.html">base::Planner</a></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a2c20fbc4a2f83292f2b3fc8f3e23b4c2">ATRRT</a>(<span class="keyword">const</span> base::SpaceInformationPtr &amp;si);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a2c20fbc4a2f83292f2b3fc8f3e23b4c2">~ATRRT</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a79e6f480ac6c6a53b7c8ad05082bde53">getPlannerData</a>(<a class="code hl_class" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <a class="code hl_struct" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a924f31761622fe7aafc313546c9542ee">solve</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;plannerTerminationCondition) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a8358273025a7acd5eb3a6e888344ebba">clear</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a1089e25c891776765a85f2ecec27cd2f">  108</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a1089e25c891776765a85f2ecec27cd2f">setGoalBias</a>(<span class="keywordtype">double</span> goalBias)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a2653af9be56df732b1f025beee47186a">goalBias_</a> = goalBias;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a329c36cd4c51bb4af3da7387e214edca">  114</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a329c36cd4c51bb4af3da7387e214edca">getGoalBias</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a2653af9be56df732b1f025beee47186a">goalBias_</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a525f4129d7e241219900b2b170a9f262">  124</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a525f4129d7e241219900b2b170a9f262">setRange</a>(<span class="keywordtype">double</span> distance)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a7783b8ccce31900311db46b46267fa37">maxDistance_</a> = distance;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            }</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#aa9678bc4ff0b83291112cbd7a3d21f87">  130</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#aa9678bc4ff0b83291112cbd7a3d21f87">getRange</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a7783b8ccce31900311db46b46267fa37">maxDistance_</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            }</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
+<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#aedbccfd472c65277ddc769f030f22ede">  140</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#aedbccfd472c65277ddc769f030f22ede">setTempChangeFactor</a>(<span class="keywordtype">double</span> factor)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ac8b09796cfcfa8f78b2df724e55babe1">tempChangeFactor_</a> = exp(factor);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            }</div>
+</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#aaa7b4cc7106a62f9f0f3f2c66ceba621">  146</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#aaa7b4cc7106a62f9f0f3f2c66ceba621">getTempChangeFactor</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                <span class="keywordflow">return</span> log(<a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ac8b09796cfcfa8f78b2df724e55babe1">tempChangeFactor_</a>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            }</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#ad4987c7e6aa146b1f8f00e911efc9588">  154</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#ad4987c7e6aa146b1f8f00e911efc9588">setCostThreshold</a>(<span class="keywordtype">double</span> maxCost)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a838a67a4af1929606ff32221de7f9fe1">costThreshold_</a> = <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">base::Cost</a>(maxCost);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            }</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a001b5e82ceda23f33b1fe91806186c9c">  162</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a001b5e82ceda23f33b1fe91806186c9c">getCostThreshold</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a838a67a4af1929606ff32221de7f9fe1">costThreshold_</a>.value();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            }</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="foldopen" id="foldopen00169" data-start="{" data-end="}">
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a27d454a5a9dbd74dbddca2a278ddbf72">  169</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a27d454a5a9dbd74dbddca2a278ddbf72">setInitTemperature</a>(<span class="keywordtype">double</span> initTemperature)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ac190ee401a05c61192b5f7ca7b04b4d9">initTemperature_</a> = initTemperature;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a5910cd2a91e3887cbfea5f4419629aff">temp_</a> = <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ac190ee401a05c61192b5f7ca7b04b4d9">initTemperature_</a>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            }</div>
+</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a145ead99c3474e400883c62edea2ad96">  176</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a145ead99c3474e400883c62edea2ad96">getInitTemperature</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ac190ee401a05c61192b5f7ca7b04b4d9">initTemperature_</a>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            }</div>
+</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span></div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a7c5d3ef6b42f04b9055f00a6de3f47c5">  183</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a7c5d3ef6b42f04b9055f00a6de3f47c5">setFrontierThreshold</a>(<span class="keywordtype">double</span> frontier_threshold)</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a00002b925937b02bbab8b9381bdb9f4d">frontierThreshold_</a> = frontier_threshold;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            }</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span></div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a4052ff76eb08eaad5778c8068f1be913">  190</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a4052ff76eb08eaad5778c8068f1be913">getFrontierThreshold</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a00002b925937b02bbab8b9381bdb9f4d">frontierThreshold_</a>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            }</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span></div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#ac4176262e320e87b3d71789e28615b10">  197</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#ac4176262e320e87b3d71789e28615b10">setFrontierNodeRatio</a>(<span class="keywordtype">double</span> frontierNodeRatio)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ab7ea6b5269d2e02e06387b0fa4643b37">frontierNodeRatio_</a> = frontierNodeRatio;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            }</div>
+</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span></div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a0cf84d2efcb75476bf739a8313a69fd7">  204</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a0cf84d2efcb75476bf739a8313a69fd7">getFrontierNodeRatio</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ab7ea6b5269d2e02e06387b0fa4643b37">frontierNodeRatio_</a>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            }</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span>NN&gt;</div>
+<div class="foldopen" id="foldopen00211" data-start="{" data-end="}">
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a355f74d24c3ac14683070b76b0cff45e">  211</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a355f74d24c3ac14683070b76b0cff45e">setNearestNeighbors</a>()</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ad553266f7bda5baa21fd67a1d0f73e21">nearestNeighbors_</a>-&gt;size() == 0)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                    <a class="code hl_define" href="group__logging.html#gab76357dced39cb468d2061d3358f80a6">OMPL_WARN</a>(<span class="stringliteral">&quot;Calling setNearestNeighbors will clear all states.&quot;</span>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a8358273025a7acd5eb3a6e888344ebba">clear</a>();</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ad553266f7bda5baa21fd67a1d0f73e21">nearestNeighbors_</a> = std::make_shared&lt;NN&lt;Motion *&gt;&gt;();</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#acca1522f2f3369560ace3d6761fa9752">setup</a>();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            }</div>
+</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#acca1522f2f3369560ace3d6761fa9752">setup</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00227" data-start="{" data-end="};">
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html">  227</a></span>            <span class="keyword">class </span>Motion</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                Motion() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span></div>
+<div class="foldopen" id="foldopen00233" data-start="{" data-end="}">
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#af6efc6eecaccabfb313b5ca300ae36e6">  233</a></span>                <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#af6efc6eecaccabfb313b5ca300ae36e6">Motion</a>(<span class="keyword">const</span> base::SpaceInformationPtr &amp;si) : <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a7030ca01a8a2b6fb7393715f14f6a332">state</a>(si-&gt;allocState())</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                }</div>
+</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                <a class="code hl_class" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html">~Motion</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a7030ca01a8a2b6fb7393715f14f6a332">  240</a></span>                <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *<a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a7030ca01a8a2b6fb7393715f14f6a332">state</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a2f743350da9a76fc5cace7c41448c675">  243</a></span>                std::vector&lt;Motion *&gt; <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a2f743350da9a76fc5cace7c41448c675">neighbors</a>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a730ac8f86270af5f1a7ec62e0a825f9d">  246</a></span>                <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">base::Cost</a> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a730ac8f86270af5f1a7ec62e0a825f9d">cost</a>;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            };</div>
+</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a3be7868273f5d5854961da6b604a3dda">freeMemory</a>();</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span></div>
+<div class="foldopen" id="foldopen00253" data-start="{" data-end="}">
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a15f3084ba584ab73339055c692dd2a44">  253</a></span>            <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a15f3084ba584ab73339055c692dd2a44">distanceFunction</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html">Motion</a> *a, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html">Motion</a> *b)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a>-&gt;distance(a-&gt;state, b-&gt;state);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            }</div>
+</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a3736b8795b366bd8254bf25a26b879e5">transitionTest</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;motionCost);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a4052b590b03f222f9e9b71ef5a75cba9">minExpansionControl</a>(<span class="keywordtype">double</span> randMotionDistance);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#ae38e1715b076afe492b47615a9e05d5c">addUsefulCycles</a>(Motion *newMotion, Motion *nearMotion);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#ae8d7a530bfa540df794e6dbdffa9ab56">addEdge</a>(Motion *a, Motion *b);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            std::vector&lt;ompl::geometric::ATRRT::Motion *&gt; <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#ad0dd091ed089ab90023125579582bc72">computeDijkstraLowestCostPath</a>(Motion *a, Motion *b);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code hl_function" href="classompl_1_1geometric_1_1ATRRT.html#a2413695bae6c5069282069386be0a62a">computeCostLowestCostPath</a>(Motion *a, Motion *b);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a55908a440d150d8fcf80d807186312dd">  279</a></span>            base::StateSamplerPtr <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a55908a440d150d8fcf80d807186312dd">sampler_</a>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#ad553266f7bda5baa21fd67a1d0f73e21">  282</a></span>            std::shared_ptr&lt;NearestNeighbors&lt;Motion *&gt;&gt; <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ad553266f7bda5baa21fd67a1d0f73e21">nearestNeighbors_</a>;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a2653af9be56df732b1f025beee47186a">  286</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a2653af9be56df732b1f025beee47186a">goalBias_</a>{.05};</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a7783b8ccce31900311db46b46267fa37">  289</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a7783b8ccce31900311db46b46267fa37">maxDistance_</a>{0.};</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#ab648a6f0de2d4f8f2425f6ae4facff86">  292</a></span>            <a class="code hl_class" href="classompl_1_1RNG.html">RNG</a> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ab648a6f0de2d4f8f2425f6ae4facff86">rng_</a>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a1e6216de2a4230256b0396a30155b7d0">  295</a></span>            <a class="code hl_class" href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html">Motion</a> *<a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a1e6216de2a4230256b0396a30155b7d0">lastGoalMotion_</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span></div>
+<div class="foldopen" id="foldopen00298" data-start="{" data-end="};">
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="structompl_1_1geometric_1_1ATRRT_1_1MotionCostComparator.html">  298</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="structompl_1_1geometric_1_1ATRRT_1_1MotionCostComparator.html">MotionCostComparator</a></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> std::pair&lt;Motion *, base::Cost&gt; &amp;a,</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                                <span class="keyword">const</span> std::pair&lt;Motion *, base::Cost&gt; &amp;b)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="keyword">                </span>{</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                    <span class="keywordflow">return</span> a.second.value() &gt; b.second.value();</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                }</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            };</div>
+</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            <span class="comment">// *********************************************************************************************************</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            <span class="comment">// ATRRT-Specific Variables</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            <span class="comment">// *********************************************************************************************************</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            <span class="comment">// Transtion Test -----------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a5910cd2a91e3887cbfea5f4419629aff">  316</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a5910cd2a91e3887cbfea5f4419629aff">temp_</a>;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a7780cbf89c2a050a956d372eac756de4">  319</a></span>            <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">base::Cost</a> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a7780cbf89c2a050a956d372eac756de4">bestCost_</a>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a0794efa962d0bd2d6a649a540246ca45">  322</a></span>            <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">base::Cost</a> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a0794efa962d0bd2d6a649a540246ca45">worstCost_</a>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a838a67a4af1929606ff32221de7f9fe1">  325</a></span>            <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">base::Cost</a> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a838a67a4af1929606ff32221de7f9fe1">costThreshold_</a>;</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#ac8b09796cfcfa8f78b2df724e55babe1">  329</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ac8b09796cfcfa8f78b2df724e55babe1">tempChangeFactor_</a>;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#ac190ee401a05c61192b5f7ca7b04b4d9">  332</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ac190ee401a05c61192b5f7ca7b04b4d9">initTemperature_</a>;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a1a545759535dd51d4bd470d797583c4a">  335</a></span>            ompl::base::OptimizationObjectivePtr <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a1a545759535dd51d4bd470d797583c4a">opt_</a>;</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            <span class="comment">// Useful Cycles -----------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#af59e77284d1fa9c923ceaf29a6eb40b5">  340</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#af59e77284d1fa9c923ceaf29a6eb40b5">gamma_</a>{1.0};</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a66efb0d2f4e6f0ac5d99590c70073180">  344</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a66efb0d2f4e6f0ac5d99590c70073180">neighborhoodRadiusFactor_</a>{0.4};</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            <span class="comment">// Minimum Expansion Control ------------------------------------------------------------</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a2b641a42faab77cdf385ed1232fefa8e">  348</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a2b641a42faab77cdf385ed1232fefa8e">nonfrontierCount_</a>;</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a88b0c1c157f86da8abcf0893df538886">  350</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a88b0c1c157f86da8abcf0893df538886">frontierCount_</a>;</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#a00002b925937b02bbab8b9381bdb9f4d">  353</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#a00002b925937b02bbab8b9381bdb9f4d">frontierThreshold_</a>;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1ATRRT.html#ab7ea6b5269d2e02e06387b0fa4643b37">  355</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1geometric_1_1ATRRT.html#ab7ea6b5269d2e02e06387b0fa4643b37">frontierNodeRatio_</a>;</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        };</div>
+</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    }  <span class="comment">// namespace geometric</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>}  <span class="comment">// namespace ompl</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span><span class="preprocessor">#endif  </span><span class="comment">// OMPL_GEOMETRIC_PLANNERS_RRT_ATRRT_</span></div>
+<div class="ttc" id="aclassompl_1_1RNG_html"><div class="ttname"><a href="classompl_1_1RNG.html">ompl::RNG</a></div><div class="ttdoc">Random number generation. An instance of this class cannot be used by multiple threads at once (membe...</div><div class="ttdef"><b>Definition</b> <a href="RandomNumbers_8h_source.html#l00056">RandomNumbers.h:57</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Cost_html"><div class="ttname"><a href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a></div><div class="ttdoc">Definition of a cost value. Can represent the cost of a motion or the cost of a state.</div><div class="ttdef"><b>Definition</b> <a href="Cost_8h_source.html#l00047">Cost.h:48</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html">ompl::base::PlannerData</a></div><div class="ttdoc">Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...</div><div class="ttdef"><b>Definition</b> <a href="base_2PlannerData_8h_source.html#l00174">PlannerData.h:175</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition</b> <a href="PlannerTerminationCondition_8h_source.html#l00063">PlannerTerminationCondition.h:64</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Planner_html"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></div><div class="ttdoc">Base class for a planner.</div><div class="ttdef"><b>Definition</b> <a href="Planner_8h_source.html#l00215">Planner.h:216</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Planner_html_aa3ceb9471163b6c96f6eeadbcfd3694e"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">ompl::base::Planner::si_</a></div><div class="ttdeci">SpaceInformationPtr si_</div><div class="ttdoc">The space information for which planning is done.</div><div class="ttdef"><b>Definition</b> <a href="Planner_8h_source.html#l00401">Planner.h:401</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_1_1Motion_html"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html">ompl::geometric::ATRRT::Motion</a></div><div class="ttdoc">Representation of a motion.</div><div class="ttdef"><b>Definition</b> <a href="#l00227">ATRRT.h:228</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_1_1Motion_html_a2f743350da9a76fc5cace7c41448c675"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a2f743350da9a76fc5cace7c41448c675">ompl::geometric::ATRRT::Motion::neighbors</a></div><div class="ttdeci">std::vector&lt; Motion * &gt; neighbors</div><div class="ttdoc">The connected motions in the exploration graph.</div><div class="ttdef"><b>Definition</b> <a href="#l00243">ATRRT.h:243</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_1_1Motion_html_a7030ca01a8a2b6fb7393715f14f6a332"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a7030ca01a8a2b6fb7393715f14f6a332">ompl::geometric::ATRRT::Motion::state</a></div><div class="ttdeci">base::State * state</div><div class="ttdoc">The state contained by the motion.</div><div class="ttdef"><b>Definition</b> <a href="#l00240">ATRRT.h:240</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_1_1Motion_html_a730ac8f86270af5f1a7ec62e0a825f9d"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#a730ac8f86270af5f1a7ec62e0a825f9d">ompl::geometric::ATRRT::Motion::cost</a></div><div class="ttdeci">base::Cost cost</div><div class="ttdoc">Cost of the state.</div><div class="ttdef"><b>Definition</b> <a href="#l00246">ATRRT.h:246</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_1_1Motion_html_af6efc6eecaccabfb313b5ca300ae36e6"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT_1_1Motion.html#af6efc6eecaccabfb313b5ca300ae36e6">ompl::geometric::ATRRT::Motion::Motion</a></div><div class="ttdeci">Motion(const base::SpaceInformationPtr &amp;si)</div><div class="ttdoc">Constructor that allocates memory for the state.</div><div class="ttdef"><b>Definition</b> <a href="#l00233">ATRRT.h:233</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a00002b925937b02bbab8b9381bdb9f4d"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a00002b925937b02bbab8b9381bdb9f4d">ompl::geometric::ATRRT::frontierThreshold_</a></div><div class="ttdeci">double frontierThreshold_</div><div class="ttdoc">The distance between an old state and a new state that qualifies it as a frontier state.</div><div class="ttdef"><b>Definition</b> <a href="#l00353">ATRRT.h:353</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a001b5e82ceda23f33b1fe91806186c9c"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a001b5e82ceda23f33b1fe91806186c9c">ompl::geometric::ATRRT::getCostThreshold</a></div><div class="ttdeci">double getCostThreshold() const</div><div class="ttdoc">Get the cost threshold (default is infinity). Any motion cost that is not better than this cost (acco...</div><div class="ttdef"><b>Definition</b> <a href="#l00162">ATRRT.h:162</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a0794efa962d0bd2d6a649a540246ca45"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a0794efa962d0bd2d6a649a540246ca45">ompl::geometric::ATRRT::worstCost_</a></div><div class="ttdeci">base::Cost worstCost_</div><div class="ttdoc">The least desirable (e.g., maximum) cost value in the search tree.</div><div class="ttdef"><b>Definition</b> <a href="#l00322">ATRRT.h:322</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a0cf84d2efcb75476bf739a8313a69fd7"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a0cf84d2efcb75476bf739a8313a69fd7">ompl::geometric::ATRRT::getFrontierNodeRatio</a></div><div class="ttdeci">double getFrontierNodeRatio() const</div><div class="ttdoc">Get the ratio between adding nonfrontier nodes to frontier nodes, for example .1 is 1/10 or one nonfr...</div><div class="ttdef"><b>Definition</b> <a href="#l00204">ATRRT.h:204</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a1089e25c891776765a85f2ecec27cd2f"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a1089e25c891776765a85f2ecec27cd2f">ompl::geometric::ATRRT::setGoalBias</a></div><div class="ttdeci">void setGoalBias(double goalBias)</div><div class="ttdoc">Set the goal bias.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">ATRRT.h:108</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a145ead99c3474e400883c62edea2ad96"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a145ead99c3474e400883c62edea2ad96">ompl::geometric::ATRRT::getInitTemperature</a></div><div class="ttdeci">double getInitTemperature() const</div><div class="ttdoc">Get the temperature at the start of planning.</div><div class="ttdef"><b>Definition</b> <a href="#l00176">ATRRT.h:176</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a15f3084ba584ab73339055c692dd2a44"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a15f3084ba584ab73339055c692dd2a44">ompl::geometric::ATRRT::distanceFunction</a></div><div class="ttdeci">double distanceFunction(const Motion *a, const Motion *b) const</div><div class="ttdoc">Compute distance between motions (actually distance between contained states).</div><div class="ttdef"><b>Definition</b> <a href="#l00253">ATRRT.h:253</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a1a545759535dd51d4bd470d797583c4a"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a1a545759535dd51d4bd470d797583c4a">ompl::geometric::ATRRT::opt_</a></div><div class="ttdeci">ompl::base::OptimizationObjectivePtr opt_</div><div class="ttdoc">The optimization objective being optimized by ATRRT.</div><div class="ttdef"><b>Definition</b> <a href="#l00335">ATRRT.h:335</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a1e6216de2a4230256b0396a30155b7d0"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a1e6216de2a4230256b0396a30155b7d0">ompl::geometric::ATRRT::lastGoalMotion_</a></div><div class="ttdeci">Motion * lastGoalMotion_</div><div class="ttdoc">The most recent goal motion. Used for PlannerData computation.</div><div class="ttdef"><b>Definition</b> <a href="#l00295">ATRRT.h:295</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a2413695bae6c5069282069386be0a62a"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a2413695bae6c5069282069386be0a62a">ompl::geometric::ATRRT::computeCostLowestCostPath</a></div><div class="ttdeci">ompl::base::Cost computeCostLowestCostPath(Motion *a, Motion *b)</div><div class="ttdoc">Compute cost of lowest-cost path found by Dijkstra.</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00531">ATRRT.cpp:531</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a2653af9be56df732b1f025beee47186a"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a2653af9be56df732b1f025beee47186a">ompl::geometric::ATRRT::goalBias_</a></div><div class="ttdeci">double goalBias_</div><div class="ttdoc">The fraction of time the goal is picked as the state to expand towards (if such a state is available)...</div><div class="ttdef"><b>Definition</b> <a href="#l00286">ATRRT.h:286</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a27d454a5a9dbd74dbddca2a278ddbf72"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a27d454a5a9dbd74dbddca2a278ddbf72">ompl::geometric::ATRRT::setInitTemperature</a></div><div class="ttdeci">void setInitTemperature(double initTemperature)</div><div class="ttdoc">Set the initial temperature at the beginning of the algorithm. Should be high to allow for initial ex...</div><div class="ttdef"><b>Definition</b> <a href="#l00169">ATRRT.h:169</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a2b641a42faab77cdf385ed1232fefa8e"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a2b641a42faab77cdf385ed1232fefa8e">ompl::geometric::ATRRT::nonfrontierCount_</a></div><div class="ttdeci">double nonfrontierCount_</div><div class="ttdoc">The number of non-frontier nodes in the search tree.</div><div class="ttdef"><b>Definition</b> <a href="#l00348">ATRRT.h:348</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a2c20fbc4a2f83292f2b3fc8f3e23b4c2"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a2c20fbc4a2f83292f2b3fc8f3e23b4c2">ompl::geometric::ATRRT::ATRRT</a></div><div class="ttdeci">ATRRT(const base::SpaceInformationPtr &amp;si)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00044">ATRRT.cpp:44</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a329c36cd4c51bb4af3da7387e214edca"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a329c36cd4c51bb4af3da7387e214edca">ompl::geometric::ATRRT::getGoalBias</a></div><div class="ttdeci">double getGoalBias() const</div><div class="ttdoc">Get the goal bias the planner is using.</div><div class="ttdef"><b>Definition</b> <a href="#l00114">ATRRT.h:114</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a355f74d24c3ac14683070b76b0cff45e"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a355f74d24c3ac14683070b76b0cff45e">ompl::geometric::ATRRT::setNearestNeighbors</a></div><div class="ttdeci">void setNearestNeighbors()</div><div class="ttdoc">Set a different nearest neighbors datastructure.</div><div class="ttdef"><b>Definition</b> <a href="#l00211">ATRRT.h:211</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a3736b8795b366bd8254bf25a26b879e5"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a3736b8795b366bd8254bf25a26b879e5">ompl::geometric::ATRRT::transitionTest</a></div><div class="ttdeci">bool transitionTest(const base::Cost &amp;motionCost)</div><div class="ttdoc">Filter irrelevant configuration regarding the search of low-cost paths before inserting into tree.</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00401">ATRRT.cpp:401</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a3be7868273f5d5854961da6b604a3dda"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a3be7868273f5d5854961da6b604a3dda">ompl::geometric::ATRRT::freeMemory</a></div><div class="ttdeci">void freeMemory()</div><div class="ttdoc">Free the memory allocated by this planner.</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00132">ATRRT.cpp:132</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a4052b590b03f222f9e9b71ef5a75cba9"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a4052b590b03f222f9e9b71ef5a75cba9">ompl::geometric::ATRRT::minExpansionControl</a></div><div class="ttdeci">bool minExpansionControl(double randMotionDistance)</div><div class="ttdoc">Use ratio to prefer frontier nodes to nonfrontier ones.</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00428">ATRRT.cpp:428</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a4052ff76eb08eaad5778c8068f1be913"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a4052ff76eb08eaad5778c8068f1be913">ompl::geometric::ATRRT::getFrontierThreshold</a></div><div class="ttdeci">double getFrontierThreshold() const</div><div class="ttdoc">Get the distance between a new state and the nearest neighbor that qualifies that state as being a fr...</div><div class="ttdef"><b>Definition</b> <a href="#l00190">ATRRT.h:190</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a525f4129d7e241219900b2b170a9f262"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a525f4129d7e241219900b2b170a9f262">ompl::geometric::ATRRT::setRange</a></div><div class="ttdeci">void setRange(double distance)</div><div class="ttdoc">Set the range the planner is supposed to use.</div><div class="ttdef"><b>Definition</b> <a href="#l00124">ATRRT.h:124</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a55908a440d150d8fcf80d807186312dd"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a55908a440d150d8fcf80d807186312dd">ompl::geometric::ATRRT::sampler_</a></div><div class="ttdeci">base::StateSamplerPtr sampler_</div><div class="ttdoc">State sampler.</div><div class="ttdef"><b>Definition</b> <a href="#l00279">ATRRT.h:279</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a5910cd2a91e3887cbfea5f4419629aff"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a5910cd2a91e3887cbfea5f4419629aff">ompl::geometric::ATRRT::temp_</a></div><div class="ttdeci">double temp_</div><div class="ttdoc">Temperature parameter used to control the difficulty level of transition tests. Low temperatures limi...</div><div class="ttdef"><b>Definition</b> <a href="#l00316">ATRRT.h:316</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a66efb0d2f4e6f0ac5d99590c70073180"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a66efb0d2f4e6f0ac5d99590c70073180">ompl::geometric::ATRRT::neighborhoodRadiusFactor_</a></div><div class="ttdeci">double neighborhoodRadiusFactor_</div><div class="ttdoc">Factor of maxDistance_ used to calculate neighborhood radius TODO: temporary solution.</div><div class="ttdef"><b>Definition</b> <a href="#l00344">ATRRT.h:344</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a7780cbf89c2a050a956d372eac756de4"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a7780cbf89c2a050a956d372eac756de4">ompl::geometric::ATRRT::bestCost_</a></div><div class="ttdeci">base::Cost bestCost_</div><div class="ttdoc">The most desirable (e.g., minimum) cost value in the search tree.</div><div class="ttdef"><b>Definition</b> <a href="#l00319">ATRRT.h:319</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a7783b8ccce31900311db46b46267fa37"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a7783b8ccce31900311db46b46267fa37">ompl::geometric::ATRRT::maxDistance_</a></div><div class="ttdeci">double maxDistance_</div><div class="ttdoc">The maximum length of a motion to be added to a tree.</div><div class="ttdef"><b>Definition</b> <a href="#l00289">ATRRT.h:289</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a79e6f480ac6c6a53b7c8ad05082bde53"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a79e6f480ac6c6a53b7c8ad05082bde53">ompl::geometric::ATRRT::getPlannerData</a></div><div class="ttdeci">void getPlannerData(base::PlannerData &amp;data) const override</div><div class="ttdoc">Get information about the current run of the motion planner. Repeated calls to this function will upd...</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00380">ATRRT.cpp:380</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a7c5d3ef6b42f04b9055f00a6de3f47c5"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a7c5d3ef6b42f04b9055f00a6de3f47c5">ompl::geometric::ATRRT::setFrontierThreshold</a></div><div class="ttdeci">void setFrontierThreshold(double frontier_threshold)</div><div class="ttdoc">Set the distance between a new state and the nearest neighbor that qualifies that state as being a fr...</div><div class="ttdef"><b>Definition</b> <a href="#l00183">ATRRT.h:183</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a8358273025a7acd5eb3a6e888344ebba"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a8358273025a7acd5eb3a6e888344ebba">ompl::geometric::ATRRT::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00075">ATRRT.cpp:75</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a838a67a4af1929606ff32221de7f9fe1"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a838a67a4af1929606ff32221de7f9fe1">ompl::geometric::ATRRT::costThreshold_</a></div><div class="ttdeci">base::Cost costThreshold_</div><div class="ttdoc">All motion costs must be better than this cost (default is infinity).</div><div class="ttdef"><b>Definition</b> <a href="#l00325">ATRRT.h:325</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a88b0c1c157f86da8abcf0893df538886"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a88b0c1c157f86da8abcf0893df538886">ompl::geometric::ATRRT::frontierCount_</a></div><div class="ttdeci">double frontierCount_</div><div class="ttdoc">The number of frontier nodes in the search tree.</div><div class="ttdef"><b>Definition</b> <a href="#l00350">ATRRT.h:350</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_a924f31761622fe7aafc313546c9542ee"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#a924f31761622fe7aafc313546c9542ee">ompl::geometric::ATRRT::solve</a></div><div class="ttdeci">base::PlannerStatus solve(const base::PlannerTerminationCondition &amp;plannerTerminationCondition) override</div><div class="ttdoc">Function that can solve the motion planning problem. This function can be called multiple times on th...</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00148">ATRRT.cpp:148</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_aa9678bc4ff0b83291112cbd7a3d21f87"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#aa9678bc4ff0b83291112cbd7a3d21f87">ompl::geometric::ATRRT::getRange</a></div><div class="ttdeci">double getRange() const</div><div class="ttdoc">Get the range the planner is using.</div><div class="ttdef"><b>Definition</b> <a href="#l00130">ATRRT.h:130</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_aaa7b4cc7106a62f9f0f3f2c66ceba621"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#aaa7b4cc7106a62f9f0f3f2c66ceba621">ompl::geometric::ATRRT::getTempChangeFactor</a></div><div class="ttdeci">double getTempChangeFactor() const</div><div class="ttdoc">Get the factor by which the temperature rises based on current acceptance/rejection rate.</div><div class="ttdef"><b>Definition</b> <a href="#l00146">ATRRT.h:146</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ab648a6f0de2d4f8f2425f6ae4facff86"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ab648a6f0de2d4f8f2425f6ae4facff86">ompl::geometric::ATRRT::rng_</a></div><div class="ttdeci">RNG rng_</div><div class="ttdoc">The random number generator.</div><div class="ttdef"><b>Definition</b> <a href="#l00292">ATRRT.h:292</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ab7ea6b5269d2e02e06387b0fa4643b37"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ab7ea6b5269d2e02e06387b0fa4643b37">ompl::geometric::ATRRT::frontierNodeRatio_</a></div><div class="ttdeci">double frontierNodeRatio_</div><div class="ttdoc">Target ratio of non-frontier nodes to frontier nodes. rho.</div><div class="ttdef"><b>Definition</b> <a href="#l00355">ATRRT.h:355</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ac190ee401a05c61192b5f7ca7b04b4d9"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ac190ee401a05c61192b5f7ca7b04b4d9">ompl::geometric::ATRRT::initTemperature_</a></div><div class="ttdeci">double initTemperature_</div><div class="ttdoc">The initial value of temp_.</div><div class="ttdef"><b>Definition</b> <a href="#l00332">ATRRT.h:332</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ac4176262e320e87b3d71789e28615b10"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ac4176262e320e87b3d71789e28615b10">ompl::geometric::ATRRT::setFrontierNodeRatio</a></div><div class="ttdeci">void setFrontierNodeRatio(double frontierNodeRatio)</div><div class="ttdoc">Set the ratio between adding nonfrontier nodes to frontier nodes, for example .1 is 1/10 or one nonfr...</div><div class="ttdef"><b>Definition</b> <a href="#l00197">ATRRT.h:197</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ac8b09796cfcfa8f78b2df724e55babe1"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ac8b09796cfcfa8f78b2df724e55babe1">ompl::geometric::ATRRT::tempChangeFactor_</a></div><div class="ttdeci">double tempChangeFactor_</div><div class="ttdoc">The value of the expression exp^T_rate. The temperature is increased by this factor whenever the tran...</div><div class="ttdef"><b>Definition</b> <a href="#l00329">ATRRT.h:329</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_acca1522f2f3369560ace3d6761fa9752"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#acca1522f2f3369560ace3d6761fa9752">ompl::geometric::ATRRT::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00092">ATRRT.cpp:92</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ad0dd091ed089ab90023125579582bc72"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ad0dd091ed089ab90023125579582bc72">ompl::geometric::ATRRT::computeDijkstraLowestCostPath</a></div><div class="ttdeci">std::vector&lt; ompl::geometric::ATRRT::Motion * &gt; computeDijkstraLowestCostPath(Motion *a, Motion *b)</div><div class="ttdoc">Compute lowest-cost path in graph between two motions.</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00489">ATRRT.cpp:489</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ad4987c7e6aa146b1f8f00e911efc9588"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ad4987c7e6aa146b1f8f00e911efc9588">ompl::geometric::ATRRT::setCostThreshold</a></div><div class="ttdeci">void setCostThreshold(double maxCost)</div><div class="ttdoc">Set the cost threshold (default is infinity). Any motion cost that is not better than this cost (acco...</div><div class="ttdef"><b>Definition</b> <a href="#l00154">ATRRT.h:154</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ad553266f7bda5baa21fd67a1d0f73e21"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ad553266f7bda5baa21fd67a1d0f73e21">ompl::geometric::ATRRT::nearestNeighbors_</a></div><div class="ttdeci">std::shared_ptr&lt; NearestNeighbors&lt; Motion * &gt; &gt; nearestNeighbors_</div><div class="ttdoc">A nearest-neighbors datastructure containing the tree of motions.</div><div class="ttdef"><b>Definition</b> <a href="#l00282">ATRRT.h:282</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ae38e1715b076afe492b47615a9e05d5c"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ae38e1715b076afe492b47615a9e05d5c">ompl::geometric::ATRRT::addUsefulCycles</a></div><div class="ttdeci">void addUsefulCycles(Motion *newMotion, Motion *nearMotion)</div><div class="ttdoc">improve solution found by TRRT</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00451">ATRRT.cpp:451</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_ae8d7a530bfa540df794e6dbdffa9ab56"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#ae8d7a530bfa540df794e6dbdffa9ab56">ompl::geometric::ATRRT::addEdge</a></div><div class="ttdeci">void addEdge(Motion *a, Motion *b)</div><div class="ttdoc">Add bidirectional edge between two motions.</div><div class="ttdef"><b>Definition</b> <a href="ATRRT_8cpp_source.html#l00483">ATRRT.cpp:483</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_aedbccfd472c65277ddc769f030f22ede"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#aedbccfd472c65277ddc769f030f22ede">ompl::geometric::ATRRT::setTempChangeFactor</a></div><div class="ttdeci">void setTempChangeFactor(double factor)</div><div class="ttdoc">Set the factor by which the temperature is increased after a failed transition test....</div><div class="ttdef"><b>Definition</b> <a href="#l00140">ATRRT.h:140</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1ATRRT_html_af59e77284d1fa9c923ceaf29a6eb40b5"><div class="ttname"><a href="classompl_1_1geometric_1_1ATRRT.html#af59e77284d1fa9c923ceaf29a6eb40b5">ompl::geometric::ATRRT::gamma_</a></div><div class="ttdeci">double gamma_</div><div class="ttdoc">Constant derived from the free space volume.</div><div class="ttdef"><b>Definition</b> <a href="#l00340">ATRRT.h:340</a></div></div>
+<div class="ttc" id="agroup__logging_html_gab76357dced39cb468d2061d3358f80a6"><div class="ttname"><a href="group__logging.html#gab76357dced39cb468d2061d3358f80a6">OMPL_WARN</a></div><div class="ttdeci">#define OMPL_WARN(fmt,...)</div><div class="ttdoc">Log a formatted warning string.</div><div class="ttdef"><b>Definition</b> <a href="Console_8h_source.html#l00066">Console.h:66</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1geometric_html"><div class="ttname"><a href="namespaceompl_1_1geometric.html">ompl::geometric</a></div><div class="ttdoc">This namespace contains code that is specific to planning under geometric constraints.</div><div class="ttdef"><b>Definition</b> <a href="GeneticSearch_8h_source.html#l00047">GeneticSearch.h:48</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:66</a></div></div>
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a></div><div class="ttdoc">A class to store the exit status of Planner::solve().</div><div class="ttdef"><b>Definition</b> <a href="PlannerStatus_8h_source.html#l00048">PlannerStatus.h:49</a></div></div>
+<div class="ttc" id="astructompl_1_1geometric_1_1ATRRT_1_1MotionCostComparator_html"><div class="ttname"><a href="structompl_1_1geometric_1_1ATRRT_1_1MotionCostComparator.html">ompl::geometric::ATRRT::MotionCostComparator</a></div><div class="ttdoc">bool stating which motion cost is better</div><div class="ttdef"><b>Definition</b> <a href="#l00298">ATRRT.h:299</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

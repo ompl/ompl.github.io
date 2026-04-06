@@ -1,0 +1,586 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: CommonMath::Trajectory Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespaceCommonMath.html">CommonMath</a></li><li class="navelem"><a href="classCommonMath_1_1Trajectory.html">Trajectory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classCommonMath_1_1Trajectory-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">CommonMath::Trajectory Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Represents a qunitic polynomial in 3D.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Trajectory_8h_source.html">/home/thodoris/src/ompl/demos/multicopter/CommonMath/Trajectory.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a98ef84fef48bb8a9a5b903b481fad909" id="r_a98ef84fef48bb8a9a5b903b481fad909"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a98ef84fef48bb8a9a5b903b481fad909">Trajectory</a> (std::vector&lt; <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> &gt; coeffs, double startTime, double endTime)</td></tr>
+<tr class="memdesc:a98ef84fef48bb8a9a5b903b481fad909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memitem:a49c0075dd10a8424e768351de049e3b0" id="r_a49c0075dd10a8424e768351de049e3b0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a49c0075dd10a8424e768351de049e3b0">Trajectory</a> (<a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> c0, <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> c1, <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> c2, <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> c3, <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> c4, <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> c5, double startTime, double endTime)</td></tr>
+<tr class="memdesc:a49c0075dd10a8424e768351de049e3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memitem:ab35c111f6c5d7a901eb0abf4eefc5693" id="r_ab35c111f6c5d7a901eb0abf4eefc5693"><td class="memItemLeft"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab35c111f6c5d7a901eb0abf4eefc5693">GetVelocity</a> (double t) const</td></tr>
+<tr class="memdesc:ab35c111f6c5d7a901eb0abf4eefc5693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the 3D velocity of the polynomial at a given time.  <br /></td></tr>
+<tr class="memitem:a6b0d12ee8e051bace972686bfacb3651" id="r_a6b0d12ee8e051bace972686bfacb3651"><td class="memItemLeft"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6b0d12ee8e051bace972686bfacb3651">GetValue</a> (double t) const</td></tr>
+<tr class="memdesc:a6b0d12ee8e051bace972686bfacb3651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the 3D position of the polynomial at a given time.  <br /></td></tr>
+<tr class="memitem:ac857a805c58b0983d9dfad8b8e21fb65" id="r_ac857a805c58b0983d9dfad8b8e21fb65"><td class="memItemLeft">std::vector&lt; <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac857a805c58b0983d9dfad8b8e21fb65">GetCoeffs</a> ()</td></tr>
+<tr class="memdesc:ac857a805c58b0983d9dfad8b8e21fb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the 3D vector of coefficients.  <br /></td></tr>
+<tr class="memitem:ae47fdcf54b836cc5c37ce2b0a687ed4c" id="r_ae47fdcf54b836cc5c37ce2b0a687ed4c"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ae47fdcf54b836cc5c37ce2b0a687ed4c">GetStartTime</a> () const</td></tr>
+<tr class="memdesc:ae47fdcf54b836cc5c37ce2b0a687ed4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the start time of the trajectory.  <br /></td></tr>
+<tr class="memitem:a387d45990270676b40ddbd7184f54e0f" id="r_a387d45990270676b40ddbd7184f54e0f"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a387d45990270676b40ddbd7184f54e0f">GetEndTime</a> () const</td></tr>
+<tr class="memdesc:a387d45990270676b40ddbd7184f54e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the end time of the trajectory.  <br /></td></tr>
+<tr class="memitem:a6f022dc96afa8f0656e1d6f5c1eba718" id="r_a6f022dc96afa8f0656e1d6f5c1eba718"><td class="memItemLeft">std::vector&lt; <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6f022dc96afa8f0656e1d6f5c1eba718">GetDerivativeCoeffs</a> () const</td></tr>
+<tr class="memdesc:a6f022dc96afa8f0656e1d6f5c1eba718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the coefficient of the time derivative of the trajectory.  <br /></td></tr>
+<tr class="memitem:ab3df8636717c582f1fd649be51431803" id="r_ab3df8636717c582f1fd649be51431803"><td class="memItemLeft"><a class="el" href="#a98ef84fef48bb8a9a5b903b481fad909">Trajectory</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab3df8636717c582f1fd649be51431803">operator-</a> (const <a class="el" href="#a98ef84fef48bb8a9a5b903b481fad909">Trajectory</a> rhs)</td></tr>
+<tr class="memdesc:ab3df8636717c582f1fd649be51431803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the difference between this trajectory and a given trajectory.  <br /></td></tr>
+<tr class="memitem:aa33f47326b2cf5bf565b16d308dfd220" id="r_aa33f47326b2cf5bf565b16d308dfd220"><td class="memItemLeft"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa33f47326b2cf5bf565b16d308dfd220">operator[]</a> (int i) const</td></tr>
+<tr class="memdesc:aa33f47326b2cf5bf565b16d308dfd220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th 3D vector of coefficients.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a qunitic polynomial in 3D. </p>
+<p>The polynomial is a function of time and is of the form c[0]*t^5 + c[1]*t^4 + c[2]*t^3 + c[3]*t^2 + c[4]*t + c[5] where each coefficient is a vector with three dimensions. The polynomial is only defined between given start and end times. </p>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00034">34</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a98ef84fef48bb8a9a5b903b481fad909" name="a98ef84fef48bb8a9a5b903b481fad909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ef84fef48bb8a9a5b903b481fad909">&#9670;&#160;</a></span>Trajectory() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommonMath::Trajectory::Trajectory </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>coeffs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>startTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>endTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coeffs</td><td>The six 3D coefficients defining the polynomial. The coefficients are ordered such that coeffs[0] corresponds to t^5, coeffs[1] to t^4 and so forth. </td></tr>
+    <tr><td class="paramname">startTime</td><td>The earliest time at which the polynomial is defined </td></tr>
+    <tr><td class="paramname">endTime</td><td>The latest time at which the polynomial is defined </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00045">45</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="a49c0075dd10a8424e768351de049e3b0" name="a49c0075dd10a8424e768351de049e3b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c0075dd10a8424e768351de049e3b0">&#9670;&#160;</a></span>Trajectory() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommonMath::Trajectory::Trajectory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>c0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>c1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>c2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>c3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>c4</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a></td>          <td class="paramname"><span class="paramname"><em>c5</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>startTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>endTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c0</td><td>Coefficients for t^5 </td></tr>
+    <tr><td class="paramname">c1</td><td>Coefficients for t^4 </td></tr>
+    <tr><td class="paramname">c2</td><td>Coefficients for t^3 </td></tr>
+    <tr><td class="paramname">c3</td><td>Coefficients for t^2 </td></tr>
+    <tr><td class="paramname">c4</td><td>Coefficients for t </td></tr>
+    <tr><td class="paramname">c5</td><td>Constant terms </td></tr>
+    <tr><td class="paramname">startTime</td><td>The earliest time at which the polynomial is defined </td></tr>
+    <tr><td class="paramname">endTime</td><td>The latest time at which the polynomial is defined </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00063">63</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ac857a805c58b0983d9dfad8b8e21fb65" name="ac857a805c58b0983d9dfad8b8e21fb65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac857a805c58b0983d9dfad8b8e21fb65">&#9670;&#160;</a></span>GetCoeffs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> &gt; CommonMath::Trajectory::GetCoeffs </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the 3D vector of coefficients. </p>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00096">96</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="a6f022dc96afa8f0656e1d6f5c1eba718" name="a6f022dc96afa8f0656e1d6f5c1eba718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f022dc96afa8f0656e1d6f5c1eba718">&#9670;&#160;</a></span>GetDerivativeCoeffs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> &gt; CommonMath::Trajectory::GetDerivativeCoeffs </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the coefficient of the time derivative of the trajectory. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 5D vector of 3D coefficients representing the time derivative of the trajectory, where derivCoeffs[0] is a 3D vector of coefficients corresponding to t^4, derivCoeffs[1] corresponds to t^3, etc. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00119">119</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="a387d45990270676b40ddbd7184f54e0f" name="a387d45990270676b40ddbd7184f54e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387d45990270676b40ddbd7184f54e0f">&#9670;&#160;</a></span>GetEndTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CommonMath::Trajectory::GetEndTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the end time of the trajectory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00108">108</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="ae47fdcf54b836cc5c37ce2b0a687ed4c" name="ae47fdcf54b836cc5c37ce2b0a687ed4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47fdcf54b836cc5c37ce2b0a687ed4c">&#9670;&#160;</a></span>GetStartTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CommonMath::Trajectory::GetStartTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the start time of the trajectory. </p>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00102">102</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="a6b0d12ee8e051bace972686bfacb3651" name="a6b0d12ee8e051bace972686bfacb3651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0d12ee8e051bace972686bfacb3651">&#9670;&#160;</a></span>GetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> CommonMath::Trajectory::GetValue </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the 3D position of the polynomial at a given time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Time at which to evaluate the polynomial (must be between startTime and endTime) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Position of trajectory at time t </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00087">87</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="ab35c111f6c5d7a901eb0abf4eefc5693" name="ab35c111f6c5d7a901eb0abf4eefc5693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35c111f6c5d7a901eb0abf4eefc5693">&#9670;&#160;</a></span>GetVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> CommonMath::Trajectory::GetVelocity </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the 3D velocity of the polynomial at a given time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Time at which to evaluate the polynomial (must be between startTime and endTime) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Position of trajectory at time t </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00074">74</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3df8636717c582f1fd649be51431803" name="ab3df8636717c582f1fd649be51431803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3df8636717c582f1fd649be51431803">&#9670;&#160;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a98ef84fef48bb8a9a5b903b481fad909">Trajectory</a> CommonMath::Trajectory::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a98ef84fef48bb8a9a5b903b481fad909">Trajectory</a></td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the difference between this trajectory and a given trajectory. </p>
+<p>The trajectory that is returned is only defined at times where both trajectories are defined (both trajectories must overlap in time). The returned trajectory is the relative position of the two trajectories in time. </p>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00137">137</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<a id="aa33f47326b2cf5bf565b16d308dfd220" name="aa33f47326b2cf5bf565b16d308dfd220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa33f47326b2cf5bf565b16d308dfd220">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCommonMath_1_1Vec3.html">Vec3</a> CommonMath::Trajectory::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the i-th 3D vector of coefficients. </p>
+
+<p class="definition">Definition at line <a class="el" href="Trajectory_8h_source.html#l00146">146</a> of file <a class="el" href="Trajectory_8h_source.html">Trajectory.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>demos/multicopter/CommonMath/<a class="el" href="Trajectory_8h_source.html">Trajectory.h</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

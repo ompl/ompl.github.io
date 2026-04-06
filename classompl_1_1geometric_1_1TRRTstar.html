@@ -1,0 +1,2676 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl::geometric::TRRTstar Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespaceompl.html">ompl</a></li><li class="navelem"><a href="namespaceompl_1_1geometric.html">geometric</a></li><li class="navelem"><a href="classompl_1_1geometric_1_1TRRTstar.html">TRRTstar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classompl_1_1geometric_1_1TRRTstar-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::geometric::TRRTstar Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Optimal Transition-based Rapidly-exploring Random Trees.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="TRRTstar_8h_source.html">ompl/geometric/planners/rrt/TRRTstar.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ompl::geometric::TRRTstar:</div>
+<div class="dyncontent">
+<div class="center"><img src="classompl_1_1geometric_1_1TRRTstar__inherit__graph.png" border="0" usemap="#aompl_1_1geometric_1_1TRRTstar_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="aompl_1_1geometric_1_1TRRTstar_inherit__map" id="aompl_1_1geometric_1_1TRRTstar_inherit__map">
+<area shape="rect" title="Optimal Transition&#45;based Rapidly&#45;exploring Random Trees." alt="" coords="5,81,198,109"/>
+<area shape="rect" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner." alt="" coords="26,5,177,33"/>
+<area shape="poly" title=" " alt="" coords="103,47,104,82,99,80,100,51"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Motion" id="r_Motion"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representation of a motion.  <a href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html#details">More...</a><br /></td></tr>
+<tr class="memitem:CostIndexCompare" id="r_CostIndexCompare"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structompl_1_1geometric_1_1TRRTstar_1_1CostIndexCompare.html">CostIndexCompare</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a1f4db6fbc0ed094d0adf6c57ba80f95a" id="r_a1f4db6fbc0ed094d0adf6c57ba80f95a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1f4db6fbc0ed094d0adf6c57ba80f95a">TRRTstar</a> (const base::SpaceInformationPtr &amp;si)</td></tr>
+<tr class="memitem:a24dcce6660841b4c8f2cd71d00ce4361" id="r_a24dcce6660841b4c8f2cd71d00ce4361"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a24dcce6660841b4c8f2cd71d00ce4361">getPlannerData</a> (<a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data) const override</td></tr>
+<tr class="memdesc:a24dcce6660841b4c8f2cd71d00ce4361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the current run of the motion planner. Repeated calls to this function will update <em>data</em> (only additions are made). This is useful to see what changed in the exploration datastructure, between calls to <a class="el" href="#ae08376ec11f06c0d5871ff085572d1ed" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, for example (without calling <a class="el" href="#aa6f046f8e48f3ad35a4bff3f6c2591a5" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between).  <br /></td></tr>
+<tr class="memitem:ae08376ec11f06c0d5871ff085572d1ed" id="r_ae08376ec11f06c0d5871ff085572d1ed"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae08376ec11f06c0d5871ff085572d1ed">solve</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc) override</td></tr>
+<tr class="memdesc:ae08376ec11f06c0d5871ff085572d1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="#aa6f046f8e48f3ad35a4bff3f6c2591a5" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. If this option is used, it is assumed the problem definition is not changed (unpredictable results otherwise). The only change in the problem definition that is accounted for is the addition of starting or goal states (but not changing previously added start/goal states). If <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a> is called, the planner may retain prior datastructures generated from a previous query on a new problem definition. The function terminates if the call to <em>ptc</em> returns true.  <br /></td></tr>
+<tr class="memitem:aa6f046f8e48f3ad35a4bff3f6c2591a5" id="r_aa6f046f8e48f3ad35a4bff3f6c2591a5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa6f046f8e48f3ad35a4bff3f6c2591a5">clear</a> () override</td></tr>
+<tr class="memdesc:aa6f046f8e48f3ad35a4bff3f6c2591a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all internal datastructures. Planner settings are not affected. Subsequent calls to <a class="el" href="#ae08376ec11f06c0d5871ff085572d1ed" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will ignore all previous work.  <br /></td></tr>
+<tr class="memitem:a610d4a00c4ca488b0a69112580265b40" id="r_a610d4a00c4ca488b0a69112580265b40"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a610d4a00c4ca488b0a69112580265b40">setup</a> () override</td></tr>
+<tr class="memdesc:a610d4a00c4ca488b0a69112580265b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform extra configuration steps, if needed. This call will also issue a call to <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4" title="Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...">ompl::base::SpaceInformation::setup()</a> if needed. This must be called before solving.  <br /></td></tr>
+<tr class="memitem:ac55bf9a43f1d15354a49be892720b26d" id="r_ac55bf9a43f1d15354a49be892720b26d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac55bf9a43f1d15354a49be892720b26d">setGoalBias</a> (double goalBias)</td></tr>
+<tr class="memdesc:ac55bf9a43f1d15354a49be892720b26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the goal bias.  <br /></td></tr>
+<tr class="memitem:a07019da9ec5a85e2c7f3a822d3f730a7" id="r_a07019da9ec5a85e2c7f3a822d3f730a7"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a07019da9ec5a85e2c7f3a822d3f730a7">getGoalBias</a> () const</td></tr>
+<tr class="memdesc:a07019da9ec5a85e2c7f3a822d3f730a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the goal bias the planner is using.  <br /></td></tr>
+<tr class="memitem:ad53337acb166fef036eeb4baf6348ebc" id="r_ad53337acb166fef036eeb4baf6348ebc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad53337acb166fef036eeb4baf6348ebc">setRange</a> (double distance)</td></tr>
+<tr class="memdesc:ad53337acb166fef036eeb4baf6348ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the range the planner is supposed to use.  <br /></td></tr>
+<tr class="memitem:a2c98dd8c34af1ee670ba4d3057704cb3" id="r_a2c98dd8c34af1ee670ba4d3057704cb3"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a2c98dd8c34af1ee670ba4d3057704cb3">getRange</a> () const</td></tr>
+<tr class="memdesc:a2c98dd8c34af1ee670ba4d3057704cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the range the planner is using.  <br /></td></tr>
+<tr class="memitem:a72109984bf0b67c9915db49997c77bff" id="r_a72109984bf0b67c9915db49997c77bff"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a72109984bf0b67c9915db49997c77bff">setRewireFactor</a> (double rewireFactor)</td></tr>
+<tr class="memdesc:a72109984bf0b67c9915db49997c77bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rewiring scale factor, s, such that r_rrg = s \times r_rrg* (or k_rrg = s \times k_rrg*).  <br /></td></tr>
+<tr class="memitem:a683ade733e432087f5ac40a2b39b5e88" id="r_a683ade733e432087f5ac40a2b39b5e88"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a683ade733e432087f5ac40a2b39b5e88">getRewireFactor</a> () const</td></tr>
+<tr class="memdesc:a683ade733e432087f5ac40a2b39b5e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rewiring scale factor, s, such that r_rrg = s \times r_rrg* &gt; r_rrg* (or k_rrg = s \times k_rrg* &gt; k_rrg*).  <br /></td></tr>
+<tr class="memitem:a4823515b7b6c8b2e85d47197f4afa0eb" id="r_a4823515b7b6c8b2e85d47197f4afa0eb"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename T &gt; class NN&gt; </td></tr>
+<tr class="memitem:a4823515b7b6c8b2e85d47197f4afa0eb template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4823515b7b6c8b2e85d47197f4afa0eb">setNearestNeighbors</a> ()</td></tr>
+<tr class="memdesc:a4823515b7b6c8b2e85d47197f4afa0eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a different nearest neighbors datastructure.  <br /></td></tr>
+<tr class="memitem:ab9ad9d0e3ce8ee69d47748902b9b7e5f" id="r_ab9ad9d0e3ce8ee69d47748902b9b7e5f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab9ad9d0e3ce8ee69d47748902b9b7e5f">setDelayCC</a> (bool delayCC)</td></tr>
+<tr class="memdesc:ab9ad9d0e3ce8ee69d47748902b9b7e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option that delays collision checking procedures. When it is enabled, all neighbors are sorted by cost. The planner then goes through this list, starting with the lowest cost, checking for collisions in order to find a parent. The planner stops iterating through the list when a collision free parent is found. This prevents the planner from collision checking each neighbor, reducing computation time in scenarios where collision checking procedures are expensive.  <br /></td></tr>
+<tr class="memitem:a6c3a6e0c927ea3125cc12a5aecad1752" id="r_a6c3a6e0c927ea3125cc12a5aecad1752"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6c3a6e0c927ea3125cc12a5aecad1752">getDelayCC</a> () const</td></tr>
+<tr class="memdesc:a6c3a6e0c927ea3125cc12a5aecad1752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the delayed collision checking option.  <br /></td></tr>
+<tr class="memitem:ad834c8ab2a9db558a0d7469c46ac1277" id="r_ad834c8ab2a9db558a0d7469c46ac1277"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad834c8ab2a9db558a0d7469c46ac1277">setTreePruning</a> (bool prune)</td></tr>
+<tr class="memdesc:ad834c8ab2a9db558a0d7469c46ac1277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether the tree is pruned during the search. This pruning removes a vertex if and only if it <em>and</em> all its descendents passes the pruning condition. The pruning condition is whether the lower-bounding estimate of a solution constrained to pass the the <em>vertex</em> is greater than the current solution. Considering the descendents of a vertex prevents removing a descendent that may actually be capable of later providing a better solution once its incoming path passes through a different vertex (e.g., a change in homotopy class).  <br /></td></tr>
+<tr class="memitem:a1d699f67cbd8dbf2cce5223f942140b5" id="r_a1d699f67cbd8dbf2cce5223f942140b5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1d699f67cbd8dbf2cce5223f942140b5">getTreePruning</a> () const</td></tr>
+<tr class="memdesc:a1d699f67cbd8dbf2cce5223f942140b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the pruning option.  <br /></td></tr>
+<tr class="memitem:ac9c78c1e578c8fb31ea82ece217f445b" id="r_ac9c78c1e578c8fb31ea82ece217f445b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac9c78c1e578c8fb31ea82ece217f445b">setPruneThreshold</a> (const double pp)</td></tr>
+<tr class="memdesc:ac9c78c1e578c8fb31ea82ece217f445b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the fractional change in solution cost necessary for pruning to occur, i.e., prune if the new solution is at least X% better than the old solution. (e.g., 0.0 will prune after every new solution, while 1.0 will never prune.).  <br /></td></tr>
+<tr class="memitem:a639cb0f4abb09bd57671b60afb5c6f8f" id="r_a639cb0f4abb09bd57671b60afb5c6f8f"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a639cb0f4abb09bd57671b60afb5c6f8f">getPruneThreshold</a> () const</td></tr>
+<tr class="memdesc:a639cb0f4abb09bd57671b60afb5c6f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current prune states percentage threshold parameter.  <br /></td></tr>
+<tr class="memitem:a095ee76f14c3a43488a34f5224ffc488" id="r_a095ee76f14c3a43488a34f5224ffc488"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a095ee76f14c3a43488a34f5224ffc488">setAdmissibleCostToCome</a> (const bool admissible)</td></tr>
+<tr class="memdesc:a095ee76f14c3a43488a34f5224ffc488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls whether pruning and new-state rejection uses an admissible cost-to-come estimate or not.  <br /></td></tr>
+<tr class="memitem:a6f6bd9758122636da3f3cb9f620c410d" id="r_a6f6bd9758122636da3f3cb9f620c410d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6f6bd9758122636da3f3cb9f620c410d">getAdmissibleCostToCome</a> () const</td></tr>
+<tr class="memdesc:a6f6bd9758122636da3f3cb9f620c410d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the admissibility of the pruning and new-state rejection heuristic.  <br /></td></tr>
+<tr class="memitem:ae4ad3e89769803c6c4020651f29f575c" id="r_ae4ad3e89769803c6c4020651f29f575c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae4ad3e89769803c6c4020651f29f575c">setBatchSize</a> (unsigned int batchSize)</td></tr>
+<tr class="memdesc:ae4ad3e89769803c6c4020651f29f575c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the batch size used for sample ordering.  <br /></td></tr>
+<tr class="memitem:af4115834f92f8d421241ebbb3ad32531" id="r_af4115834f92f8d421241ebbb3ad32531"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#af4115834f92f8d421241ebbb3ad32531">getBatchSize</a> () const</td></tr>
+<tr class="memdesc:af4115834f92f8d421241ebbb3ad32531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the batch size used for sample ordering.  <br /></td></tr>
+<tr class="memitem:a82335c1bc0c99c28b754635ca7d0e8e4" id="r_a82335c1bc0c99c28b754635ca7d0e8e4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a82335c1bc0c99c28b754635ca7d0e8e4">setKNearest</a> (bool useKNearest)</td></tr>
+<tr class="memdesc:a82335c1bc0c99c28b754635ca7d0e8e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use a k-nearest search for rewiring instead of a r-disc search.  <br /></td></tr>
+<tr class="memitem:ab18e6e85b6c503d779cf128ef3e65770" id="r_ab18e6e85b6c503d779cf128ef3e65770"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ab18e6e85b6c503d779cf128ef3e65770">getKNearest</a> () const</td></tr>
+<tr class="memdesc:ab18e6e85b6c503d779cf128ef3e65770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of using a k-nearest search for rewiring.  <br /></td></tr>
+<tr class="memitem:a108462614757ae14a50da7c558755fbc" id="r_a108462614757ae14a50da7c558755fbc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a108462614757ae14a50da7c558755fbc">setNumSamplingAttempts</a> (unsigned int numAttempts)</td></tr>
+<tr class="memdesc:a108462614757ae14a50da7c558755fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of attempts to make while performing rejection or informed sampling.  <br /></td></tr>
+<tr class="memitem:ac462337dec767f0edd11da82c265a0e3" id="r_ac462337dec767f0edd11da82c265a0e3"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#ac462337dec767f0edd11da82c265a0e3">getNumSamplingAttempts</a> () const</td></tr>
+<tr class="memdesc:ac462337dec767f0edd11da82c265a0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of attempts to make while performing rejection or informed sampling.  <br /></td></tr>
+<tr class="memitem:adab93e4da37339eede007ab02b3d3e4a" id="r_adab93e4da37339eede007ab02b3d3e4a"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#adab93e4da37339eede007ab02b3d3e4a">numIterations</a> () const</td></tr>
+<tr class="memitem:a89ffd70310e9fcb1a86548a2250fbf61" id="r_a89ffd70310e9fcb1a86548a2250fbf61"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#a89ffd70310e9fcb1a86548a2250fbf61">bestCost</a> () const</td></tr>
+<tr class="memitem:a0d667d9a96757e56f3e9278c5a9617a5" id="r_a0d667d9a96757e56f3e9278c5a9617a5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0d667d9a96757e56f3e9278c5a9617a5">setTempChangeFactor</a> (double factor)</td></tr>
+<tr class="memdesc:a0d667d9a96757e56f3e9278c5a9617a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the factor by which the temperature is increased after a failed transition test. This value should be in the range (0, 1], typically close to zero (default is 0.1). This value is an exponential (e^factor) that is multiplied with the current temperature.  <br /></td></tr>
+<tr class="memitem:aab2fc1a8ff5d809f868272fe1ec4a137" id="r_aab2fc1a8ff5d809f868272fe1ec4a137"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aab2fc1a8ff5d809f868272fe1ec4a137">getTempChangeFactor</a> () const</td></tr>
+<tr class="memdesc:aab2fc1a8ff5d809f868272fe1ec4a137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the factor by which the temperature rises based on current acceptance/rejection rate.  <br /></td></tr>
+<tr class="memitem:ab2cbcf81eab7619252dedb5c8b7fea1c" id="r_ab2cbcf81eab7619252dedb5c8b7fea1c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab2cbcf81eab7619252dedb5c8b7fea1c">setCostThreshold</a> (double maxCost)</td></tr>
+<tr class="memdesc:ab2cbcf81eab7619252dedb5c8b7fea1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cost threshold (default is infinity). Any motion cost that is not better than this cost (according to the optimization objective) will not be expanded by the planner.  <br /></td></tr>
+<tr class="memitem:afbe34cc8d68c87d55fae9c55031fffc9" id="r_afbe34cc8d68c87d55fae9c55031fffc9"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#afbe34cc8d68c87d55fae9c55031fffc9">getCostThreshold</a> () const</td></tr>
+<tr class="memdesc:afbe34cc8d68c87d55fae9c55031fffc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cost threshold (default is infinity). Any motion cost that is not better than this cost (according to the optimization objective) will not be expanded by the planner.  <br /></td></tr>
+<tr class="memitem:ad0dc3d1cf63bf289e40367bae19d837d" id="r_ad0dc3d1cf63bf289e40367bae19d837d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad0dc3d1cf63bf289e40367bae19d837d">setInitTemperature</a> (double initTemperature)</td></tr>
+<tr class="memdesc:ad0dc3d1cf63bf289e40367bae19d837d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial temperature at the beginning of the algorithm. Should be high to allow for initial exploration.  <br /></td></tr>
+<tr class="memitem:a8aace7b50135959107fc9940be7a7aae" id="r_a8aace7b50135959107fc9940be7a7aae"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a8aace7b50135959107fc9940be7a7aae">getInitTemperature</a> () const</td></tr>
+<tr class="memdesc:a8aace7b50135959107fc9940be7a7aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the temperature at the start of planning.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:ad0ca26742e6b70a57dc7c0e28f66857d inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ad0ca26742e6b70a57dc7c0e28f66857d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Planner</b> (const Planner &amp;)=delete</td></tr>
+<tr class="memitem:aae633979d1f80b10d6ad88200e1d622b inherit pub_methods_classompl_1_1base_1_1Planner" id="r_aae633979d1f80b10d6ad88200e1d622b"><td class="memItemLeft">
+Planner &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const Planner &amp;)=delete</td></tr>
+<tr class="memitem:aeb73b615f05ecc749204b3ef029a292a inherit pub_methods_classompl_1_1base_1_1Planner" id="r_aeb73b615f05ecc749204b3ef029a292a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#aeb73b615f05ecc749204b3ef029a292a">Planner</a> (<a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> si, std::string name)</td></tr>
+<tr class="memdesc:aeb73b615f05ecc749204b3ef029a292a inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memitem:ab452a5462004f3848b92b2669bc8cf89 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab452a5462004f3848b92b2669bc8cf89"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~Planner</b> ()=default</td></tr>
+<tr class="memdesc:ab452a5462004f3848b92b2669bc8cf89 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:a0b254b9541d76d3b12889a799a864fdf inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a0b254b9541d76d3b12889a799a864fdf"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a0b254b9541d76d3b12889a799a864fdf inherit pub_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">T *&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a0b254b9541d76d3b12889a799a864fdf">as</a> ()</td></tr>
+<tr class="memdesc:a0b254b9541d76d3b12889a799a864fdf inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast this instance to a desired type.  <br /></td></tr>
+<tr class="memitem:a890b3abfbd1c43fceb348c76bc2bb479 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a890b3abfbd1c43fceb348c76bc2bb479"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a890b3abfbd1c43fceb348c76bc2bb479 inherit pub_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">const T *&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a890b3abfbd1c43fceb348c76bc2bb479">as</a> () const</td></tr>
+<tr class="memdesc:a890b3abfbd1c43fceb348c76bc2bb479 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast this instance to a desired type.  <br /></td></tr>
+<tr class="memitem:a7ebc11cf89b36261c01dd0592a350b88 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a7ebc11cf89b36261c01dd0592a350b88"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a7ebc11cf89b36261c01dd0592a350b88">getSpaceInformation</a> () const</td></tr>
+<tr class="memdesc:a7ebc11cf89b36261c01dd0592a350b88 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the space information this planner is using.  <br /></td></tr>
+<tr class="memitem:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a342fc12280631fd4cc7be46c97827250"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a342fc12280631fd4cc7be46c97827250">getProblemDefinition</a> () const</td></tr>
+<tr class="memdesc:a342fc12280631fd4cc7be46c97827250 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve.  <br /></td></tr>
+<tr class="memitem:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a5891ac7a3e5a39143f87745f25d74926"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a5891ac7a3e5a39143f87745f25d74926">getProblemDefinition</a> ()</td></tr>
+<tr class="memdesc:a5891ac7a3e5a39143f87745f25d74926 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the problem definition the planner is trying to solve.  <br /></td></tr>
+<tr class="memitem:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a260b7d28d444b115f1356d3f96c37785"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a260b7d28d444b115f1356d3f96c37785">getPlannerInputStates</a> () const</td></tr>
+<tr class="memdesc:a260b7d28d444b115f1356d3f96c37785 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the planner input states.  <br /></td></tr>
+<tr class="memitem:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_add968ea14f1aa3d3bffc110da3e1d031"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#add968ea14f1aa3d3bffc110da3e1d031">setProblemDefinition</a> (const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a> &amp;pdef)</td></tr>
+<tr class="memdesc:add968ea14f1aa3d3bffc110da3e1d031 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the problem definition for the planner. The problem needs to be set before calling <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>. Note: If this problem definition replaces a previous one, it may also be necessary to call <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> or <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a>.  <br /></td></tr>
+<tr class="memitem:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a46d2a6941a33dbac28e6736949375e2b"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a46d2a6941a33dbac28e6736949375e2b">solve</a> (const <a class="el" href="namespaceompl_1_1base.html#acc9ed849c703c408f640d996275c3079">PlannerTerminationConditionFn</a> &amp;ptc, double checkInterval)</td></tr>
+<tr class="memdesc:a46d2a6941a33dbac28e6736949375e2b inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is only evaluated at a specified interval.  <br /></td></tr>
+<tr class="memitem:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a5a61ca64b36881603af880677f6445a7"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">PlannerStatus</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a5a61ca64b36881603af880677f6445a7">solve</a> (double solveTime)</td></tr>
+<tr class="memdesc:a5a61ca64b36881603af880677f6445a7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as above except the termination condition is solely a time limit: the number of seconds the algorithm is allowed to spend planning.  <br /></td></tr>
+<tr class="memitem:ab23058a178abf49da403826b56b72493 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab23058a178abf49da403826b56b72493"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493">clearQuery</a> ()</td></tr>
+<tr class="memdesc:ab23058a178abf49da403826b56b72493 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears internal datastructures of any query-specific information from the previous query. <a class="el" href="classompl_1_1base_1_1Planner.html" title="Base class for a planner.">Planner</a> settings are not affected. The planner, if able, should retain all datastructures generated from previous queries that can be used to help solve the next query. Note that <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> should also clear all query-specific information along with all other datastructures in the planner. By default <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a> calls <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a>.  <br /></td></tr>
+<tr class="memitem:a9bdea814a817637bd8e6f959c65ceaf9 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a9bdea814a817637bd8e6f959c65ceaf9"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a9bdea814a817637bd8e6f959c65ceaf9">getName</a> () const</td></tr>
+<tr class="memdesc:a9bdea814a817637bd8e6f959c65ceaf9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the planner.  <br /></td></tr>
+<tr class="memitem:a99bb12c016b06563aab6bba5cdbed01e inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a99bb12c016b06563aab6bba5cdbed01e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a99bb12c016b06563aab6bba5cdbed01e">setName</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a99bb12c016b06563aab6bba5cdbed01e inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the planner.  <br /></td></tr>
+<tr class="memitem:a845e46cdde4baeda91a5f008ae15ce3a inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a845e46cdde4baeda91a5f008ae15ce3a"><td class="memItemLeft">const <a class="el" href="structompl_1_1base_1_1PlannerSpecs.html">PlannerSpecs</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a845e46cdde4baeda91a5f008ae15ce3a">getSpecs</a> () const</td></tr>
+<tr class="memdesc:a845e46cdde4baeda91a5f008ae15ce3a inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the specifications (capabilities of this planner).  <br /></td></tr>
+<tr class="memitem:ab416900477cf4499139c01f35663dffb inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab416900477cf4499139c01f35663dffb"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab416900477cf4499139c01f35663dffb">checkValidity</a> ()</td></tr>
+<tr class="memdesc:ab416900477cf4499139c01f35663dffb inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the planner is in a working state (setup has been called, a goal was set, the input states seem to be in order). In case of error, this function throws an exception.  <br /></td></tr>
+<tr class="memitem:a00d2469147e0a4f38cee18c97f19dbfc inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a00d2469147e0a4f38cee18c97f19dbfc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a00d2469147e0a4f38cee18c97f19dbfc">isSetup</a> () const</td></tr>
+<tr class="memdesc:a00d2469147e0a4f38cee18c97f19dbfc inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">setup()</a> was called for this planner.  <br /></td></tr>
+<tr class="memitem:a25006bc9e3c050eee4546e6b09d1e8f9 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a25006bc9e3c050eee4546e6b09d1e8f9"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a25006bc9e3c050eee4546e6b09d1e8f9">params</a> ()</td></tr>
+<tr class="memdesc:a25006bc9e3c050eee4546e6b09d1e8f9 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner.  <br /></td></tr>
+<tr class="memitem:a085d1b772a21a1ce8320e481e8b98d5d inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a085d1b772a21a1ce8320e481e8b98d5d"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a085d1b772a21a1ce8320e481e8b98d5d">params</a> () const</td></tr>
+<tr class="memdesc:a085d1b772a21a1ce8320e481e8b98d5d inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters for this planner.  <br /></td></tr>
+<tr class="memitem:aee9dbf70684aad32fe74638995cae956 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_aee9dbf70684aad32fe74638995cae956"><td class="memItemLeft">const <a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#aee9dbf70684aad32fe74638995cae956">getPlannerProgressProperties</a> () const</td></tr>
+<tr class="memdesc:aee9dbf70684aad32fe74638995cae956 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a planner's planner progress property map.  <br /></td></tr>
+<tr class="memitem:ab41beafb015184c8e44a899debe9b5b7 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_ab41beafb015184c8e44a899debe9b5b7"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab41beafb015184c8e44a899debe9b5b7">printProperties</a> (std::ostream &amp;out) const</td></tr>
+<tr class="memdesc:ab41beafb015184c8e44a899debe9b5b7 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print properties of the motion planner.  <br /></td></tr>
+<tr class="memitem:a325bbde59a8f7bab778c33d538cc4266 inherit pub_methods_classompl_1_1base_1_1Planner" id="r_a325bbde59a8f7bab778c33d538cc4266"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a325bbde59a8f7bab778c33d538cc4266">printSettings</a> (std::ostream &amp;out) const</td></tr>
+<tr class="memdesc:a325bbde59a8f7bab778c33d538cc4266 inherit pub_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print information about the motion planner's settings.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a475ebaa011dcc4e4a05aba3c6ff252ca" id="r_a475ebaa011dcc4e4a05aba3c6ff252ca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a475ebaa011dcc4e4a05aba3c6ff252ca">allocSampler</a> ()</td></tr>
+<tr class="memdesc:a475ebaa011dcc4e4a05aba3c6ff252ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the samplers.  <br /></td></tr>
+<tr class="memitem:a4333a68b089a7b144e9006b521283905" id="r_a4333a68b089a7b144e9006b521283905"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4333a68b089a7b144e9006b521283905">sampleUniform</a> (<a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *statePtr)</td></tr>
+<tr class="memdesc:a4333a68b089a7b144e9006b521283905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a sample.  <br /></td></tr>
+<tr class="memitem:a8a5b53a328a198f0838b2873aecccee9" id="r_a8a5b53a328a198f0838b2873aecccee9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8a5b53a328a198f0838b2873aecccee9">freeMemory</a> ()</td></tr>
+<tr class="memdesc:a8a5b53a328a198f0838b2873aecccee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the memory allocated by this planner.  <br /></td></tr>
+<tr class="memitem:acabc71994f1b006d409997e539264057" id="r_acabc71994f1b006d409997e539264057"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#acabc71994f1b006d409997e539264057">distanceFunction</a> (const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *a, const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *b) const</td></tr>
+<tr class="memdesc:acabc71994f1b006d409997e539264057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute distance between motions (actually distance between contained states).  <br /></td></tr>
+<tr class="memitem:af99ac504177ecc39392bceea91cc9232" id="r_af99ac504177ecc39392bceea91cc9232"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af99ac504177ecc39392bceea91cc9232">transitionTest</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;motionCost)</td></tr>
+<tr class="memdesc:af99ac504177ecc39392bceea91cc9232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter irrelevant configuration regarding the search of low-cost paths before inserting into tree.  <br /></td></tr>
+<tr class="memitem:aa0756501ee7238a3ea76b7abb23bc4ae" id="r_aa0756501ee7238a3ea76b7abb23bc4ae"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0756501ee7238a3ea76b7abb23bc4ae">getNeighbors</a> (<a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *motion, std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> * &gt; &amp;nbh) const</td></tr>
+<tr class="memdesc:aa0756501ee7238a3ea76b7abb23bc4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the neighbours of a given motion, using either k-nearest of radius as appropriate.  <br /></td></tr>
+<tr class="memitem:a6bf3bcf84ce46679214714435eedf0d8" id="r_a6bf3bcf84ce46679214714435eedf0d8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6bf3bcf84ce46679214714435eedf0d8">removeFromParent</a> (<a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *m)</td></tr>
+<tr class="memdesc:a6bf3bcf84ce46679214714435eedf0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given motion from the parent's child list.  <br /></td></tr>
+<tr class="memitem:ad74cfa88ccfe1f0df6b1ccc76bf12f56" id="r_ad74cfa88ccfe1f0df6b1ccc76bf12f56"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad74cfa88ccfe1f0df6b1ccc76bf12f56">updateChildCosts</a> (<a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *m)</td></tr>
+<tr class="memdesc:ad74cfa88ccfe1f0df6b1ccc76bf12f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the cost of the children of this node if the cost up to this node has changed.  <br /></td></tr>
+<tr class="memitem:aaa2831f95dcb772807b98e61afabbb3b" id="r_aaa2831f95dcb772807b98e61afabbb3b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aaa2831f95dcb772807b98e61afabbb3b">pruneTree</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;pruneTreeCost)</td></tr>
+<tr class="memdesc:aaa2831f95dcb772807b98e61afabbb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prunes all those states which estimated total cost is higher than pruneTreeCost. Returns the number of motions pruned. Depends on the parameter set by setPruneStatesImprovementThreshold().  <br /></td></tr>
+<tr class="memitem:a1bd26e1fab3c2a20fd333af1130dcce2" id="r_a1bd26e1fab3c2a20fd333af1130dcce2"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1bd26e1fab3c2a20fd333af1130dcce2">solutionHeuristic</a> (const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *motion) const</td></tr>
+<tr class="memdesc:a1bd26e1fab3c2a20fd333af1130dcce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the solution cost heuristically as the cost to come from start to the motion plus the cost to go from the motion to the goal. If the parameter <em>use_admissible_heuristic</em> (<em><a class="el" href="#a095ee76f14c3a43488a34f5224ffc488" title="Controls whether pruning and new-state rejection uses an admissible cost-to-come estimate or not.">setAdmissibleCostToCome()</a></em>) is true, a heuristic estimate of the cost to come is used; otherwise, the current cost to come to the motion is used (which may overestimate the cost through the motion).  <br /></td></tr>
+<tr class="memitem:aa7a99e3a4152de972f2063f39b24e071" id="r_aa7a99e3a4152de972f2063f39b24e071"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa7a99e3a4152de972f2063f39b24e071">addChildrenToList</a> (std::queue&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *, std::deque&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> * &gt; &gt; *motionList, <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *motion)</td></tr>
+<tr class="memdesc:aa7a99e3a4152de972f2063f39b24e071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the children of a vertex to the given list.  <br /></td></tr>
+<tr class="memitem:aa5b3f43227df785ea43f3fd945614805" id="r_aa5b3f43227df785ea43f3fd945614805"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa5b3f43227df785ea43f3fd945614805">keepCondition</a> (const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *motion, const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;threshold) const</td></tr>
+<tr class="memdesc:aa5b3f43227df785ea43f3fd945614805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the given motion passes the specified cost threshold, meaning it will be <em>kept</em> during pruning.  <br /></td></tr>
+<tr class="memitem:a2baac1c176858a99527460b9a0283ed3" id="r_a2baac1c176858a99527460b9a0283ed3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2baac1c176858a99527460b9a0283ed3">calculateRewiringLowerBounds</a> ()</td></tr>
+<tr class="memdesc:a2baac1c176858a99527460b9a0283ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the k_RRG* and r_RRG* terms.  <br /></td></tr>
+<tr class="memitem:af8ee4214288356f817b1504431984ea8" id="r_af8ee4214288356f817b1504431984ea8"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#af8ee4214288356f817b1504431984ea8">numIterationsProperty</a> () const</td></tr>
+<tr class="memitem:a400720606ed64a7466a41560a8efff42" id="r_a400720606ed64a7466a41560a8efff42"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a400720606ed64a7466a41560a8efff42">bestCostProperty</a> () const</td></tr>
+<tr class="inherit_header pro_methods_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner" id="r_a6b4a1345376e3e977772c38d38d5c50c"><td class="memTemplParams" colspan="2">template&lt;typename T, typename PlannerType, typename SetterType, typename GetterType&gt; </td></tr>
+<tr class="memitem:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c">declareParam</a> (const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const GetterType &amp;getter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td></tr>
+<tr class="memdesc:a6b4a1345376e3e977772c38d38d5c50c inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter and getter functions.  <br /></td></tr>
+<tr class="memitem:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner" id="r_a3f9da0d41951502ea4df1184ef5a99a6"><td class="memTemplParams" colspan="2">template&lt;typename T, typename PlannerType, typename SetterType&gt; </td></tr>
+<tr class="memitem:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a3f9da0d41951502ea4df1184ef5a99a6">declareParam</a> (const std::string &amp;name, const PlannerType &amp;planner, const SetterType &amp;setter, const std::string &amp;rangeSuggestion=&quot;&quot;)</td></tr>
+<tr class="memdesc:a3f9da0d41951502ea4df1184ef5a99a6 inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function declares a parameter for this planner instance, and specifies the setter function.  <br /></td></tr>
+<tr class="memitem:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner" id="r_a3dc481539fac465497ad158e1bdac91a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a3dc481539fac465497ad158e1bdac91a">addPlannerProgressProperty</a> (const std::string &amp;progressPropertyName, const <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> &amp;prop)</td></tr>
+<tr class="memdesc:a3dc481539fac465497ad158e1bdac91a inherit pro_methods_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a planner progress property called <em>progressPropertyName</em> with a property querying function <em>prop</em> to this planner's progress property map.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a7d6138aaabb6baedc628ba1598099b08" id="r_a7d6138aaabb6baedc628ba1598099b08"><td class="memItemLeft">base::StateSamplerPtr&#160;</td><td class="memItemRight"><a class="el" href="#a7d6138aaabb6baedc628ba1598099b08">sampler_</a></td></tr>
+<tr class="memdesc:a7d6138aaabb6baedc628ba1598099b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">State sampler.  <br /></td></tr>
+<tr class="memitem:af7396edb9b1923302aeea1a8a422a60b" id="r_af7396edb9b1923302aeea1a8a422a60b"><td class="memItemLeft">base::InformedSamplerPtr&#160;</td><td class="memItemRight"><a class="el" href="#af7396edb9b1923302aeea1a8a422a60b">infSampler_</a></td></tr>
+<tr class="memdesc:af7396edb9b1923302aeea1a8a422a60b"><td class="mdescLeft">&#160;</td><td class="mdescRight">An informed sampler.  <br /></td></tr>
+<tr class="memitem:a25a2b7f0fed66b443848c66b2cd1a75d" id="r_a25a2b7f0fed66b443848c66b2cd1a75d"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> * &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a25a2b7f0fed66b443848c66b2cd1a75d">nn_</a></td></tr>
+<tr class="memdesc:a25a2b7f0fed66b443848c66b2cd1a75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nearest-neighbors datastructure containing the tree of motions.  <br /></td></tr>
+<tr class="memitem:a5be71a414a85eb000e6b8b537e36feaf" id="r_a5be71a414a85eb000e6b8b537e36feaf"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a5be71a414a85eb000e6b8b537e36feaf">goalBias_</a> {.05}</td></tr>
+<tr class="memdesc:a5be71a414a85eb000e6b8b537e36feaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fraction of time the goal is picked as the state to expand towards (if such a state is available).  <br /></td></tr>
+<tr class="memitem:a773c310da5461b8f1f26ed61254ed087" id="r_a773c310da5461b8f1f26ed61254ed087"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a773c310da5461b8f1f26ed61254ed087">maxDistance_</a> {0.}</td></tr>
+<tr class="memdesc:a773c310da5461b8f1f26ed61254ed087"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum length of a motion to be added to a tree.  <br /></td></tr>
+<tr class="memitem:a5f67d3168688c149ba939ccbeaa6e004" id="r_a5f67d3168688c149ba939ccbeaa6e004"><td class="memItemLeft"><a class="el" href="classompl_1_1RNG.html">RNG</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5f67d3168688c149ba939ccbeaa6e004">rng_</a></td></tr>
+<tr class="memdesc:a5f67d3168688c149ba939ccbeaa6e004"><td class="mdescLeft">&#160;</td><td class="mdescRight">The random number generator.  <br /></td></tr>
+<tr class="memitem:a1a67d179daeab131cd5634b3d1816993" id="r_a1a67d179daeab131cd5634b3d1816993"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1a67d179daeab131cd5634b3d1816993">useKNearest_</a> {true}</td></tr>
+<tr class="memdesc:a1a67d179daeab131cd5634b3d1816993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option to use k-nearest search for rewiring.  <br /></td></tr>
+<tr class="memitem:a79182260a76bde69f6d3c060910480a4" id="r_a79182260a76bde69f6d3c060910480a4"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a79182260a76bde69f6d3c060910480a4">rewireFactor_</a> {1.1}</td></tr>
+<tr class="memdesc:a79182260a76bde69f6d3c060910480a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rewiring factor, s, so that r_rrt = s \times r_rrt* &gt; r_rrt* (or k_rrt = s \times k_rrt* &gt; k_rrt*).  <br /></td></tr>
+<tr class="memitem:aa62c0fe6dc75cab959b20a6bd8ce275f" id="r_aa62c0fe6dc75cab959b20a6bd8ce275f"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aa62c0fe6dc75cab959b20a6bd8ce275f">k_rrt_</a> {0u}</td></tr>
+<tr class="memdesc:aa62c0fe6dc75cab959b20a6bd8ce275f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant for k-nearest rewiring calculations.  <br /></td></tr>
+<tr class="memitem:a279c623fba2eb945547c3c5ad673165e" id="r_a279c623fba2eb945547c3c5ad673165e"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a279c623fba2eb945547c3c5ad673165e">r_rrt_</a> {0.}</td></tr>
+<tr class="memdesc:a279c623fba2eb945547c3c5ad673165e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant for r-disc rewiring calculations.  <br /></td></tr>
+<tr class="memitem:a2f1877ca1184027a9c1cf417ba72f45f" id="r_a2f1877ca1184027a9c1cf417ba72f45f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2f1877ca1184027a9c1cf417ba72f45f">delayCC_</a> {true}</td></tr>
+<tr class="memdesc:a2f1877ca1184027a9c1cf417ba72f45f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option to delay and reduce collision checking within iterations.  <br /></td></tr>
+<tr class="memitem:a2b54743b9a0867098bc23fc705825732" id="r_a2b54743b9a0867098bc23fc705825732"><td class="memItemLeft">base::OptimizationObjectivePtr&#160;</td><td class="memItemRight"><a class="el" href="#a2b54743b9a0867098bc23fc705825732">opt_</a></td></tr>
+<tr class="memdesc:a2b54743b9a0867098bc23fc705825732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objective we're optimizing.  <br /></td></tr>
+<tr class="memitem:aa26a0165d5d1755e79e46073afa5a391" id="r_aa26a0165d5d1755e79e46073afa5a391"><td class="memItemLeft"><a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aa26a0165d5d1755e79e46073afa5a391">bestGoalMotion_</a> {nullptr}</td></tr>
+<tr class="memdesc:aa26a0165d5d1755e79e46073afa5a391"><td class="mdescLeft">&#160;</td><td class="mdescRight">The best goal motion.  <br /></td></tr>
+<tr class="memitem:a5c89fb82a6e8ad5978c55171a2d59092" id="r_a5c89fb82a6e8ad5978c55171a2d59092"><td class="memItemLeft">std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5c89fb82a6e8ad5978c55171a2d59092">goalMotions_</a></td></tr>
+<tr class="memdesc:a5c89fb82a6e8ad5978c55171a2d59092"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of states in the tree that satisfy the goal condition.  <br /></td></tr>
+<tr class="memitem:a3e70a25fb5d036a2517fcf698abec3d8" id="r_a3e70a25fb5d036a2517fcf698abec3d8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3e70a25fb5d036a2517fcf698abec3d8">useTreePruning_</a> {false}</td></tr>
+<tr class="memdesc:a3e70a25fb5d036a2517fcf698abec3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status of the tree pruning option.  <br /></td></tr>
+<tr class="memitem:a3febf7d7f8c1fa02f9af9e6085d6e9ba" id="r_a3febf7d7f8c1fa02f9af9e6085d6e9ba"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a3febf7d7f8c1fa02f9af9e6085d6e9ba">pruneThreshold_</a> {.05}</td></tr>
+<tr class="memdesc:a3febf7d7f8c1fa02f9af9e6085d6e9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tree is pruned when the change in solution cost is greater than this fraction.  <br /></td></tr>
+<tr class="memitem:a5d36b3ae657ce911e7548e8407aac7bd" id="r_a5d36b3ae657ce911e7548e8407aac7bd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5d36b3ae657ce911e7548e8407aac7bd">useAdmissibleCostToCome_</a> {true}</td></tr>
+<tr class="memdesc:a5d36b3ae657ce911e7548e8407aac7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The admissibility of the new-state rejection heuristic.  <br /></td></tr>
+<tr class="memitem:ae9d494262f642f1d5939ff71e8562da0" id="r_ae9d494262f642f1d5939ff71e8562da0"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#ae9d494262f642f1d5939ff71e8562da0">numSampleAttempts_</a> {100u}</td></tr>
+<tr class="memdesc:ae9d494262f642f1d5939ff71e8562da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of attempts to make at informed sampling.  <br /></td></tr>
+<tr class="memitem:aeb3e3751d7dc07b87a8c13e798614bc2" id="r_aeb3e3751d7dc07b87a8c13e798614bc2"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#aeb3e3751d7dc07b87a8c13e798614bc2">batchSize_</a> {1u}</td></tr>
+<tr class="memdesc:aeb3e3751d7dc07b87a8c13e798614bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the batches.  <br /></td></tr>
+<tr class="memitem:a43b96f689956e76427b05c87d2a168b3" id="r_a43b96f689956e76427b05c87d2a168b3"><td class="memItemLeft">std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a43b96f689956e76427b05c87d2a168b3">startMotions_</a></td></tr>
+<tr class="memdesc:a43b96f689956e76427b05c87d2a168b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the start states as Motions.  <br /></td></tr>
+<tr class="memitem:a226132df7ae5f43fadc72e597d5b0bc6" id="r_a226132df7ae5f43fadc72e597d5b0bc6"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#a226132df7ae5f43fadc72e597d5b0bc6">bestCost_</a> {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td></tr>
+<tr class="memdesc:a226132df7ae5f43fadc72e597d5b0bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Best cost found so far by algorithm.  <br /></td></tr>
+<tr class="memitem:adb7855550d3e1aff322af262fb9a596c" id="r_adb7855550d3e1aff322af262fb9a596c"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#adb7855550d3e1aff322af262fb9a596c">prunedCost_</a> {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td></tr>
+<tr class="memdesc:adb7855550d3e1aff322af262fb9a596c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost at which the graph was last pruned.  <br /></td></tr>
+<tr class="memitem:a91c491eae5d0f11f72ef3785ee66c83b" id="r_a91c491eae5d0f11f72ef3785ee66c83b"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a91c491eae5d0f11f72ef3785ee66c83b">prunedMeasure_</a> {0.}</td></tr>
+<tr class="memdesc:a91c491eae5d0f11f72ef3785ee66c83b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The measure of the problem when we pruned it (if this isn't in use, it will be set to si_-&gt;getSpaceMeasure()).  <br /></td></tr>
+<tr class="memitem:a699b33a3d4b1a666a677230a47978091" id="r_a699b33a3d4b1a666a677230a47978091"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#a699b33a3d4b1a666a677230a47978091">iterations_</a> {0u}</td></tr>
+<tr class="memdesc:a699b33a3d4b1a666a677230a47978091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations the algorithm performed.  <br /></td></tr>
+<tr class="memitem:ab10a55baab47f02fac3ed2c1fc722d3d" id="r_ab10a55baab47f02fac3ed2c1fc722d3d"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ab10a55baab47f02fac3ed2c1fc722d3d">temp_</a></td></tr>
+<tr class="memdesc:ab10a55baab47f02fac3ed2c1fc722d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature parameter used to control the difficulty level of transition tests. Low temperatures limit the expansion to a slightly positive slopes, high temps enable to climb the steeper slopes. Dynamically tuned according to the information acquired during exploration.  <br /></td></tr>
+<tr class="memitem:a042c22ccca212fdc345801e81c244f76" id="r_a042c22ccca212fdc345801e81c244f76"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#a042c22ccca212fdc345801e81c244f76">worstCost_</a> {<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>(std::numeric_limits&lt;double&gt;::infinity())}</td></tr>
+<tr class="memdesc:a042c22ccca212fdc345801e81c244f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">The least desirable (e.g., maximum) cost value in the search tree.  <br /></td></tr>
+<tr class="memitem:ab41fab1f8a02d04504488d65eaaa0454" id="r_ab41fab1f8a02d04504488d65eaaa0454"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab41fab1f8a02d04504488d65eaaa0454">costThreshold_</a> {<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>(std::numeric_limits&lt;double&gt;::infinity())}</td></tr>
+<tr class="memdesc:ab41fab1f8a02d04504488d65eaaa0454"><td class="mdescLeft">&#160;</td><td class="mdescRight">All motion costs must be better than this cost (default is infinity).  <br /></td></tr>
+<tr class="memitem:af8723ba8dfcbd26027b6c290f814eb81" id="r_af8723ba8dfcbd26027b6c290f814eb81"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#af8723ba8dfcbd26027b6c290f814eb81">tempChangeFactor_</a> {.1}</td></tr>
+<tr class="memdesc:af8723ba8dfcbd26027b6c290f814eb81"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of the expression exp^T_rate. The temperature is increased by this factor whenever the transition test fails.  <br /></td></tr>
+<tr class="memitem:ae1e9e810b55241c2cda2eb4fd16a065e" id="r_ae1e9e810b55241c2cda2eb4fd16a065e"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ae1e9e810b55241c2cda2eb4fd16a065e">initTemperature_</a> {100.0}</td></tr>
+<tr class="memdesc:ae1e9e810b55241c2cda2eb4fd16a065e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The initial value of <em>temp_</em>.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_aa3ceb9471163b6c96f6eeadbcfd3694e"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">SpaceInformationPtr</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a></td></tr>
+<tr class="memdesc:aa3ceb9471163b6c96f6eeadbcfd3694e inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The space information for which planning is done.  <br /></td></tr>
+<tr class="memitem:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a6bbb3dcc3d1604977e319d52c16ef7e5"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ProblemDefinitionPtr</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a6bbb3dcc3d1604977e319d52c16ef7e5">pdef_</a></td></tr>
+<tr class="memdesc:a6bbb3dcc3d1604977e319d52c16ef7e5 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user set problem definition.  <br /></td></tr>
+<tr class="memitem:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a1c6ac45d44026aae6df87f3295d67436"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">PlannerInputStates</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a1c6ac45d44026aae6df87f3295d67436">pis_</a></td></tr>
+<tr class="memdesc:a1c6ac45d44026aae6df87f3295d67436 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility class to extract valid input states.  <br /></td></tr>
+<tr class="memitem:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a806de82eeff9ef9231963a9851524b97"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a806de82eeff9ef9231963a9851524b97">name_</a></td></tr>
+<tr class="memdesc:a806de82eeff9ef9231963a9851524b97 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of this planner.  <br /></td></tr>
+<tr class="memitem:a4311ea7a0470f0e0f76cb1656d63e365 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a4311ea7a0470f0e0f76cb1656d63e365"><td class="memItemLeft"><a class="el" href="structompl_1_1base_1_1PlannerSpecs.html">PlannerSpecs</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a4311ea7a0470f0e0f76cb1656d63e365">specs_</a></td></tr>
+<tr class="memdesc:a4311ea7a0470f0e0f76cb1656d63e365 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">The specifications of the planner (its capabilities).  <br /></td></tr>
+<tr class="memitem:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_a1cecf022e5ebac936c49b96079ba5359"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1ParamSet.html">ParamSet</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a1cecf022e5ebac936c49b96079ba5359">params_</a></td></tr>
+<tr class="memdesc:a1cecf022e5ebac936c49b96079ba5359 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A map from parameter names to parameter instances for this planner. This field is populated by the <a class="el" href="classompl_1_1base_1_1Planner.html#a6b4a1345376e3e977772c38d38d5c50c" title="This function declares a parameter for this planner instance, and specifies the setter and getter fun...">declareParam()</a> function.  <br /></td></tr>
+<tr class="memitem:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_ab630ca0634156172daf1a2620a01caf4"><td class="memItemLeft"><a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a>&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#ab630ca0634156172daf1a2620a01caf4">plannerProgressProperties_</a></td></tr>
+<tr class="memdesc:ab630ca0634156172daf1a2620a01caf4 inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mapping between this planner's progress property names and the functions used for querying those progress properties.  <br /></td></tr>
+<tr class="memitem:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner" id="r_adba44a4ee27079c5b258a2ebed719eed"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#adba44a4ee27079c5b258a2ebed719eed">setup_</a></td></tr>
+<tr class="memdesc:adba44a4ee27079c5b258a2ebed719eed inherit pro_attribs_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5" title="Perform extra configuration steps, if needed. This call will also issue a call to ompl::base::SpaceIn...">setup()</a> has been called.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classompl_1_1base_1_1Planner"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classompl_1_1base_1_1Planner')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></td></tr>
+<tr class="memitem:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner" id="r_a33c8326d45e5c1ec99edf5f964b34f61"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a> = std::function&lt;std::string()&gt;</td></tr>
+<tr class="memdesc:a33c8326d45e5c1ec99edf5f964b34f61 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of a function which returns a property about the planner's progress that can be queried by a benchmarking routine.  <br /></td></tr>
+<tr class="memitem:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner" id="r_adc4df80108aec5db29373302e4b8d723"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="classompl_1_1base_1_1Planner.html#adc4df80108aec5db29373302e4b8d723">PlannerProgressProperties</a> = std::map&lt;std::string, <a class="el" href="classompl_1_1base_1_1Planner.html#a33c8326d45e5c1ec99edf5f964b34f61">PlannerProgressProperty</a>&gt;</td></tr>
+<tr class="memdesc:adc4df80108aec5db29373302e4b8d723 inherit pub_types_classompl_1_1base_1_1Planner"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dictionary which maps the name of a progress property to the function to be used for querying that property.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Optimal Transition-based Rapidly-exploring Random Trees. </p>
+<p><a class="anchor" id="gTRRTstar"></a></p><dl class="section user"><dt>Short description</dt><dd>T-RRT* is an asymptotically optimal version of T-RRT. T-RRT is a <a class="el" href="classompl_1_1geometric_1_1RRT.html" title="Rapidly-exploring Random Trees.">RRT</a> variant and tree-based motion planner that takes into consideration state costs to compute low-cost paths that follow valleys and saddle points of the configuration-space costmap. It uses transition tests from stochastic optimization methods to accept or reject new potential states. The notion of optimality is with respect to a specified OptimizationObjective (set in the ProblemDefinition). If a solution path's cost is within a user-specified cost-threshold, the algorithm terminates before the elapsed time. </dd></dl>
+<dl class="section user"><dt>Example usage</dt><dd>Please see <a href="https://github.com/davetcoleman/ompl_rviz_viewer/">Dave Coleman's example</a>to see how <a class="el" href="classompl_1_1geometric_1_1TRRT.html" title="Transition-based Rapidly-exploring Random Trees.">TRRT</a> can be used. TRRT* and <a class="el" href="classompl_1_1geometric_1_1ATRRT.html" title="Transition-based Rapidly-exploring Random Trees.">ATRRT</a> are used in the same way. </dd></dl>
+<dl class="section user"><dt>External documentation</dt><dd>D. Devaurs, T. Siméon, J. Cortés, Efficient sampling-based approaches to optimal path planning in complex cost spaces, in <em>Algorithmic Foundations of Robotics XI. Springer Tracts in Advanced Robotics, VOL. 107, pp.143-159, 2015</em>. DOI: <a href="https://doi.org/10.1007/978-3-319-16595-0_9">10.1007/978-3-319-16595-0_9</a><br  />
+</dd></dl>
+<p>D. Devaurs, T. Siméon, J. Cortés, Optimal Path Planning in Complex Cost Spaces with Sampling-Based Algorithms, in <em>IEEE Transactions on Automation Science and Engineering, VOL. 13, NO. 2, APRIL 2016</em>. DOI: <a href="http://dx.doi.org/10.1109/TASE.2015.2487881">10.1109/TASE.2015.2487881</a><br  />
+ <a href="https://hal.science/hal-01231482/file/devaurs_tase_2015.pdf">[PDF]</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00081">81</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1f4db6fbc0ed094d0adf6c57ba80f95a" name="a1f4db6fbc0ed094d0adf6c57ba80f95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4db6fbc0ed094d0adf6c57ba80f95a">&#9670;&#160;</a></span>TRRTstar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::geometric::TRRTstar::TRRTstar </td>
+          <td>(</td>
+          <td class="paramtype">const base::SpaceInformationPtr &amp;</td>          <td class="paramname"><span class="paramname"><em>si</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00049">49</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab083ee693f2ed2eb767803d10da1cb23" name="ab083ee693f2ed2eb767803d10da1cb23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab083ee693f2ed2eb767803d10da1cb23">&#9670;&#160;</a></span>~TRRTstar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::geometric::TRRTstar::~TRRTstar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00080">80</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aa7a99e3a4152de972f2063f39b24e071" name="aa7a99e3a4152de972f2063f39b24e071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a99e3a4152de972f2063f39b24e071">&#9670;&#160;</a></span>addChildrenToList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::addChildrenToList </td>
+          <td>(</td>
+          <td class="paramtype">std::queue&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *, std::deque&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> * &gt; &gt; *</td>          <td class="paramname"><span class="paramname"><em>motionList</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>motion</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the children of a vertex to the given list. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00865">865</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a475ebaa011dcc4e4a05aba3c6ff252ca" name="a475ebaa011dcc4e4a05aba3c6ff252ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a475ebaa011dcc4e4a05aba3c6ff252ca">&#9670;&#160;</a></span>allocSampler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::allocSampler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create the samplers. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00928">928</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a89ffd70310e9fcb1a86548a2250fbf61" name="a89ffd70310e9fcb1a86548a2250fbf61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89ffd70310e9fcb1a86548a2250fbf61">&#9670;&#160;</a></span>bestCost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> ompl::geometric::TRRTstar::bestCost </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00259">259</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a400720606ed64a7466a41560a8efff42" name="a400720606ed64a7466a41560a8efff42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400720606ed64a7466a41560a8efff42">&#9670;&#160;</a></span>bestCostProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ompl::geometric::TRRTstar::bestCostProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00514">514</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a2baac1c176858a99527460b9a0283ed3" name="a2baac1c176858a99527460b9a0283ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2baac1c176858a99527460b9a0283ed3">&#9670;&#160;</a></span>calculateRewiringLowerBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::calculateRewiringLowerBounds </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the k_RRG* and r_RRG* terms. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00943">943</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa6f046f8e48f3ad35a4bff3f6c2591a5" name="aa6f046f8e48f3ad35a4bff3f6c2591a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f046f8e48f3ad35a4bff3f6c2591a5">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear all internal datastructures. Planner settings are not affected. Subsequent calls to <a class="el" href="#ae08376ec11f06c0d5871ff085572d1ed" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a> will ignore all previous work. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1Planner.html#a7929c12020a42b679601d22fb204919a">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00135">135</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acabc71994f1b006d409997e539264057" name="acabc71994f1b006d409997e539264057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabc71994f1b006d409997e539264057">&#9670;&#160;</a></span>distanceFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::distanceFunction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute distance between motions (actually distance between contained states). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00368">368</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a5b53a328a198f0838b2873aecccee9" name="a8a5b53a328a198f0838b2873aecccee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a5b53a328a198f0838b2873aecccee9">&#9670;&#160;</a></span>freeMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::freeMemory </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Free the memory allocated by this planner. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00644">644</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6f6bd9758122636da3f3cb9f620c410d" name="a6f6bd9758122636da3f3cb9f620c410d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6bd9758122636da3f3cb9f620c410d">&#9670;&#160;</a></span>getAdmissibleCostToCome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::getAdmissibleCostToCome </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the admissibility of the pruning and new-state rejection heuristic. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00213">213</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="af4115834f92f8d421241ebbb3ad32531" name="af4115834f92f8d421241ebbb3ad32531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4115834f92f8d421241ebbb3ad32531">&#9670;&#160;</a></span>getBatchSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::geometric::TRRTstar::getBatchSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the batch size used for sample ordering. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00225">225</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="afbe34cc8d68c87d55fae9c55031fffc9" name="afbe34cc8d68c87d55fae9c55031fffc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe34cc8d68c87d55fae9c55031fffc9">&#9670;&#160;</a></span>getCostThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::getCostThreshold </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the cost threshold (default is infinity). Any motion cost that is not better than this cost (according to the optimization objective) will not be expanded by the planner. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00291">291</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c3a6e0c927ea3125cc12a5aecad1752" name="a6c3a6e0c927ea3125cc12a5aecad1752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c3a6e0c927ea3125cc12a5aecad1752">&#9670;&#160;</a></span>getDelayCC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::getDelayCC </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the state of the delayed collision checking option. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00171">171</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a07019da9ec5a85e2c7f3a822d3f730a7" name="a07019da9ec5a85e2c7f3a822d3f730a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07019da9ec5a85e2c7f3a822d3f730a7">&#9670;&#160;</a></span>getGoalBias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::getGoalBias </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the goal bias the planner is using. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00111">111</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a8aace7b50135959107fc9940be7a7aae" name="a8aace7b50135959107fc9940be7a7aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aace7b50135959107fc9940be7a7aae">&#9670;&#160;</a></span>getInitTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::getInitTemperature </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the temperature at the start of planning. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00305">305</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ab18e6e85b6c503d779cf128ef3e65770" name="ab18e6e85b6c503d779cf128ef3e65770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18e6e85b6c503d779cf128ef3e65770">&#9670;&#160;</a></span>getKNearest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::getKNearest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the state of using a k-nearest search for rewiring. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00237">237</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0756501ee7238a3ea76b7abb23bc4ae" name="aa0756501ee7238a3ea76b7abb23bc4ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0756501ee7238a3ea76b7abb23bc4ae">&#9670;&#160;</a></span>getNeighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::getNeighbors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>motion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>nbh</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the neighbours of a given motion, using either k-nearest of radius as appropriate. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00606">606</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac462337dec767f0edd11da82c265a0e3" name="ac462337dec767f0edd11da82c265a0e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac462337dec767f0edd11da82c265a0e3">&#9670;&#160;</a></span>getNumSamplingAttempts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::geometric::TRRTstar::getNumSamplingAttempts </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of attempts to make while performing rejection or informed sampling. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00249">249</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a24dcce6660841b4c8f2cd71d00ce4361" name="a24dcce6660841b4c8f2cd71d00ce4361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24dcce6660841b4c8f2cd71d00ce4361">&#9670;&#160;</a></span>getPlannerData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::getPlannerData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get information about the current run of the motion planner. Repeated calls to this function will update <em>data</em> (only additions are made). This is useful to see what changed in the exploration datastructure, between calls to <a class="el" href="#ae08376ec11f06c0d5871ff085572d1ed" title="Function that can solve the motion planning problem. This function can be called multiple times on th...">solve()</a>, for example (without calling <a class="el" href="#aa6f046f8e48f3ad35a4bff3f6c2591a5" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between). </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1Planner.html#ae8af389dbcdf416e142dc2f1cf5a8829">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00659">659</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a639cb0f4abb09bd57671b60afb5c6f8f" name="a639cb0f4abb09bd57671b60afb5c6f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a639cb0f4abb09bd57671b60afb5c6f8f">&#9670;&#160;</a></span>getPruneThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::getPruneThreshold </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current prune states percentage threshold parameter. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00200">200</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c98dd8c34af1ee670ba4d3057704cb3" name="a2c98dd8c34af1ee670ba4d3057704cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c98dd8c34af1ee670ba4d3057704cb3">&#9670;&#160;</a></span>getRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::getRange </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the range the planner is using. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00127">127</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a683ade733e432087f5ac40a2b39b5e88" name="a683ade733e432087f5ac40a2b39b5e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683ade733e432087f5ac40a2b39b5e88">&#9670;&#160;</a></span>getRewireFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::getRewireFactor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the rewiring scale factor, s, such that r_rrg = s \times r_rrg* &gt; r_rrg* (or k_rrg = s \times k_rrg* &gt; k_rrg*). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00142">142</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="aab2fc1a8ff5d809f868272fe1ec4a137" name="aab2fc1a8ff5d809f868272fe1ec4a137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab2fc1a8ff5d809f868272fe1ec4a137">&#9670;&#160;</a></span>getTempChangeFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::getTempChangeFactor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the factor by which the temperature rises based on current acceptance/rejection rate. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00275">275</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d699f67cbd8dbf2cce5223f942140b5" name="a1d699f67cbd8dbf2cce5223f942140b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d699f67cbd8dbf2cce5223f942140b5">&#9670;&#160;</a></span>getTreePruning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::getTreePruning </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the state of the pruning option. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00186">186</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5b3f43227df785ea43f3fd945614805" name="aa5b3f43227df785ea43f3fd945614805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5b3f43227df785ea43f3fd945614805">&#9670;&#160;</a></span>keepCondition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::keepCondition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>motion</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>threshold</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether the given motion passes the specified cost threshold, meaning it will be <em>kept</em> during pruning. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00874">874</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adab93e4da37339eede007ab02b3d3e4a" name="adab93e4da37339eede007ab02b3d3e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab93e4da37339eede007ab02b3d3e4a">&#9670;&#160;</a></span>numIterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::geometric::TRRTstar::numIterations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00254">254</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="af8ee4214288356f817b1504431984ea8" name="af8ee4214288356f817b1504431984ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ee4214288356f817b1504431984ea8">&#9670;&#160;</a></span>numIterationsProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ompl::geometric::TRRTstar::numIterationsProperty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00510">510</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa2831f95dcb772807b98e61afabbb3b" name="aaa2831f95dcb772807b98e61afabbb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa2831f95dcb772807b98e61afabbb3b">&#9670;&#160;</a></span>pruneTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ompl::geometric::TRRTstar::pruneTree </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pruneTreeCost</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prunes all those states which estimated total cost is higher than pruneTreeCost. Returns the number of motions pruned. Depends on the parameter set by setPruneStatesImprovementThreshold(). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00679">679</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6bf3bcf84ce46679214714435eedf0d8" name="a6bf3bcf84ce46679214714435eedf0d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf3bcf84ce46679214714435eedf0d8">&#9670;&#160;</a></span>removeFromParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::removeFromParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the given motion from the parent's child list. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00623">623</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4333a68b089a7b144e9006b521283905" name="a4333a68b089a7b144e9006b521283905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4333a68b089a7b144e9006b521283905">&#9670;&#160;</a></span>sampleUniform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::sampleUniform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1State.html">base::State</a> *</td>          <td class="paramname"><span class="paramname"><em>statePtr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate a sample. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00934">934</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a095ee76f14c3a43488a34f5224ffc488" name="a095ee76f14c3a43488a34f5224ffc488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095ee76f14c3a43488a34f5224ffc488">&#9670;&#160;</a></span>setAdmissibleCostToCome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setAdmissibleCostToCome </td>
+          <td>(</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>admissible</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Controls whether pruning and new-state rejection uses an admissible cost-to-come estimate or not. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00207">207</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4ad3e89769803c6c4020651f29f575c" name="ae4ad3e89769803c6c4020651f29f575c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ad3e89769803c6c4020651f29f575c">&#9670;&#160;</a></span>setBatchSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setBatchSize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>batchSize</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the batch size used for sample ordering. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00219">219</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ab2cbcf81eab7619252dedb5c8b7fea1c" name="ab2cbcf81eab7619252dedb5c8b7fea1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cbcf81eab7619252dedb5c8b7fea1c">&#9670;&#160;</a></span>setCostThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setCostThreshold </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>maxCost</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the cost threshold (default is infinity). Any motion cost that is not better than this cost (according to the optimization objective) will not be expanded by the planner. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00283">283</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ab9ad9d0e3ce8ee69d47748902b9b7e5f" name="ab9ad9d0e3ce8ee69d47748902b9b7e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9ad9d0e3ce8ee69d47748902b9b7e5f">&#9670;&#160;</a></span>setDelayCC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setDelayCC </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>delayCC</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Option that delays collision checking procedures. When it is enabled, all neighbors are sorted by cost. The planner then goes through this list, starting with the lowest cost, checking for collisions in order to find a parent. The planner stops iterating through the list when a collision free parent is found. This prevents the planner from collision checking each neighbor, reducing computation time in scenarios where collision checking procedures are expensive. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00165">165</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ac55bf9a43f1d15354a49be892720b26d" name="ac55bf9a43f1d15354a49be892720b26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55bf9a43f1d15354a49be892720b26d">&#9670;&#160;</a></span>setGoalBias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setGoalBias </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>goalBias</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the goal bias. </p>
+<p>In the process of randomly selecting states in the state space to attempt to go towards, the algorithm may in fact choose the actual goal state, if it knows it, with some probability. This probability is a real number between 0.0 and 1.0; its value should usually be around 0.05 and should not be too large. It is probably a good idea to use the default value. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00105">105</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ad0dc3d1cf63bf289e40367bae19d837d" name="ad0dc3d1cf63bf289e40367bae19d837d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0dc3d1cf63bf289e40367bae19d837d">&#9670;&#160;</a></span>setInitTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setInitTemperature </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>initTemperature</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the initial temperature at the beginning of the algorithm. Should be high to allow for initial exploration. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00298">298</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a82335c1bc0c99c28b754635ca7d0e8e4" name="a82335c1bc0c99c28b754635ca7d0e8e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82335c1bc0c99c28b754635ca7d0e8e4">&#9670;&#160;</a></span>setKNearest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setKNearest </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>useKNearest</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Use a k-nearest search for rewiring instead of a r-disc search. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00231">231</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a4823515b7b6c8b2e85d47197f4afa0eb" name="a4823515b7b6c8b2e85d47197f4afa0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4823515b7b6c8b2e85d47197f4afa0eb">&#9670;&#160;</a></span>setNearestNeighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; typename T &gt; class NN&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setNearestNeighbors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a different nearest neighbors datastructure. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00149">149</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a108462614757ae14a50da7c558755fbc" name="a108462614757ae14a50da7c558755fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108462614757ae14a50da7c558755fbc">&#9670;&#160;</a></span>setNumSamplingAttempts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setNumSamplingAttempts </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>numAttempts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the number of attempts to make while performing rejection or informed sampling. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00243">243</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9c78c1e578c8fb31ea82ece217f445b" name="ac9c78c1e578c8fb31ea82ece217f445b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c78c1e578c8fb31ea82ece217f445b">&#9670;&#160;</a></span>setPruneThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setPruneThreshold </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>pp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the fractional change in solution cost necessary for pruning to occur, i.e., prune if the new solution is at least X% better than the old solution. (e.g., 0.0 will prune after every new solution, while 1.0 will never prune.). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00194">194</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ad53337acb166fef036eeb4baf6348ebc" name="ad53337acb166fef036eeb4baf6348ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53337acb166fef036eeb4baf6348ebc">&#9670;&#160;</a></span>setRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setRange </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>distance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the range the planner is supposed to use. </p>
+<p>This parameter greatly influences the runtime of the algorithm. It represents the maximum length of a motion to be added in the tree of motions. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00121">121</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a72109984bf0b67c9915db49997c77bff" name="a72109984bf0b67c9915db49997c77bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72109984bf0b67c9915db49997c77bff">&#9670;&#160;</a></span>setRewireFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setRewireFactor </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>rewireFactor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the rewiring scale factor, s, such that r_rrg = s \times r_rrg* (or k_rrg = s \times k_rrg*). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00134">134</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a0d667d9a96757e56f3e9278c5a9617a5" name="a0d667d9a96757e56f3e9278c5a9617a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d667d9a96757e56f3e9278c5a9617a5">&#9670;&#160;</a></span>setTempChangeFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setTempChangeFactor </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>factor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the factor by which the temperature is increased after a failed transition test. This value should be in the range (0, 1], typically close to zero (default is 0.1). This value is an exponential (e^factor) that is multiplied with the current temperature. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00269">269</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ad834c8ab2a9db558a0d7469c46ac1277" name="ad834c8ab2a9db558a0d7469c46ac1277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad834c8ab2a9db558a0d7469c46ac1277">&#9670;&#160;</a></span>setTreePruning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setTreePruning </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>prune</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Controls whether the tree is pruned during the search. This pruning removes a vertex if and only if it <em>and</em> all its descendents passes the pruning condition. The pruning condition is whether the lower-bounding estimate of a solution constrained to pass the the <em>vertex</em> is greater than the current solution. Considering the descendents of a vertex prevents removing a descendent that may actually be capable of later providing a better solution once its incoming path passes through a different vertex (e.g., a change in homotopy class). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00914">914</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a610d4a00c4ca488b0a69112580265b40" name="a610d4a00c4ca488b0a69112580265b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a610d4a00c4ca488b0a69112580265b40">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::setup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform extra configuration steps, if needed. This call will also issue a call to <a class="el" href="classompl_1_1base_1_1SpaceInformation.html#a6e8c41f946c3c04d126983e145404ad4" title="Perform additional setup tasks (run once, before use). If state validity checking resolution has not ...">ompl::base::SpaceInformation::setup()</a> if needed. This must be called before solving. </p>
+
+<p>Reimplemented from <a class="el" href="classompl_1_1base_1_1Planner.html#ab7e49fc3b3b7011d46d647d8f1603bd5">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00085">85</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1bd26e1fab3c2a20fd333af1130dcce2" name="a1bd26e1fab3c2a20fd333af1130dcce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd26e1fab3c2a20fd333af1130dcce2">&#9670;&#160;</a></span>solutionHeuristic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> ompl::geometric::TRRTstar::solutionHeuristic </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>motion</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the solution cost heuristically as the cost to come from start to the motion plus the cost to go from the motion to the goal. If the parameter <em>use_admissible_heuristic</em> (<em><a class="el" href="#a095ee76f14c3a43488a34f5224ffc488" title="Controls whether pruning and new-state rejection uses an admissible cost-to-come estimate or not.">setAdmissibleCostToCome()</a></em>) is true, a heuristic estimate of the cost to come is used; otherwise, the current cost to come to the motion is used (which may overestimate the cost through the motion). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00888">888</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae08376ec11f06c0d5871ff085572d1ed" name="ae08376ec11f06c0d5871ff085572d1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08376ec11f06c0d5871ff085572d1ed">&#9670;&#160;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a> ompl::geometric::TRRTstar::solve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ptc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function that can solve the motion planning problem. This function can be called multiple times on the same problem, without calling <a class="el" href="#aa6f046f8e48f3ad35a4bff3f6c2591a5" title="Clear all internal datastructures. Planner settings are not affected. Subsequent calls to solve() wil...">clear()</a> in between. This allows the planner to continue work for more time on an unsolved problem, for example. If this option is used, it is assumed the problem definition is not changed (unpredictable results otherwise). The only change in the problem definition that is accounted for is the addition of starting or goal states (but not changing previously added start/goal states). If <a class="el" href="classompl_1_1base_1_1Planner.html#ab23058a178abf49da403826b56b72493" title="Clears internal datastructures of any query-specific information from the previous query....">clearQuery()</a> is called, the planner may retain prior datastructures generated from a previous query on a new problem definition. The function terminates if the call to <em>ptc</em> returns true. </p>
+
+<p>Implements <a class="el" href="classompl_1_1base_1_1Planner.html#aea8c56d18a0326b10fd111872ebd674a">ompl::base::Planner</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00157">157</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af99ac504177ecc39392bceea91cc9232" name="af99ac504177ecc39392bceea91cc9232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af99ac504177ecc39392bceea91cc9232">&#9670;&#160;</a></span>transitionTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::transitionTest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>motionCost</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Filter irrelevant configuration regarding the search of low-cost paths before inserting into tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">motionCost</td><td>- cost of the motion to be evaluated </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00957">957</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad74cfa88ccfe1f0df6b1ccc76bf12f56" name="ad74cfa88ccfe1f0df6b1ccc76bf12f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad74cfa88ccfe1f0df6b1ccc76bf12f56">&#9670;&#160;</a></span>updateChildCosts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::TRRTstar::updateChildCosts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the cost of the children of this node if the cost up to this node has changed. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8cpp_source.html#l00635">635</a> of file <a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="aeb3e3751d7dc07b87a8c13e798614bc2" name="aeb3e3751d7dc07b87a8c13e798614bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3e3751d7dc07b87a8c13e798614bc2">&#9670;&#160;</a></span>batchSize_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::geometric::TRRTstar::batchSize_ {1u}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The size of the batches. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00466">466</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a226132df7ae5f43fadc72e597d5b0bc6" name="a226132df7ae5f43fadc72e597d5b0bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a226132df7ae5f43fadc72e597d5b0bc6">&#9670;&#160;</a></span>bestCost_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> ompl::geometric::TRRTstar::bestCost_ {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Best cost found so far by algorithm. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00472">472</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="aa26a0165d5d1755e79e46073afa5a391" name="aa26a0165d5d1755e79e46073afa5a391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa26a0165d5d1755e79e46073afa5a391">&#9670;&#160;</a></span>bestGoalMotion_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a>* ompl::geometric::TRRTstar::bestGoalMotion_ {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The best goal motion. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00448">448</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ab41fab1f8a02d04504488d65eaaa0454" name="ab41fab1f8a02d04504488d65eaaa0454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41fab1f8a02d04504488d65eaaa0454">&#9670;&#160;</a></span>costThreshold_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> ompl::geometric::TRRTstar::costThreshold_ {<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>(std::numeric_limits&lt;double&gt;::infinity())}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>All motion costs must be better than this cost (default is infinity). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00499">499</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a2f1877ca1184027a9c1cf417ba72f45f" name="a2f1877ca1184027a9c1cf417ba72f45f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f1877ca1184027a9c1cf417ba72f45f">&#9670;&#160;</a></span>delayCC_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::delayCC_ {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Option to delay and reduce collision checking within iterations. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00442">442</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a5be71a414a85eb000e6b8b537e36feaf" name="a5be71a414a85eb000e6b8b537e36feaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be71a414a85eb000e6b8b537e36feaf">&#9670;&#160;</a></span>goalBias_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::goalBias_ {.05}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The fraction of time the goal is picked as the state to expand towards (if such a state is available). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00420">420</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c89fb82a6e8ad5978c55171a2d59092" name="a5c89fb82a6e8ad5978c55171a2d59092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c89fb82a6e8ad5978c55171a2d59092">&#9670;&#160;</a></span>goalMotions_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *&gt; ompl::geometric::TRRTstar::goalMotions_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A list of states in the tree that satisfy the goal condition. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00451">451</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="af7396edb9b1923302aeea1a8a422a60b" name="af7396edb9b1923302aeea1a8a422a60b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7396edb9b1923302aeea1a8a422a60b">&#9670;&#160;</a></span>infSampler_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">base::InformedSamplerPtr ompl::geometric::TRRTstar::infSampler_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An informed sampler. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00413">413</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ae1e9e810b55241c2cda2eb4fd16a065e" name="ae1e9e810b55241c2cda2eb4fd16a065e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e9e810b55241c2cda2eb4fd16a065e">&#9670;&#160;</a></span>initTemperature_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::initTemperature_ {100.0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The initial value of <em>temp_</em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00506">506</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a699b33a3d4b1a666a677230a47978091" name="a699b33a3d4b1a666a677230a47978091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699b33a3d4b1a666a677230a47978091">&#9670;&#160;</a></span>iterations_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::geometric::TRRTstar::iterations_ {0u}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of iterations the algorithm performed. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00482">482</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="aa62c0fe6dc75cab959b20a6bd8ce275f" name="aa62c0fe6dc75cab959b20a6bd8ce275f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa62c0fe6dc75cab959b20a6bd8ce275f">&#9670;&#160;</a></span>k_rrt_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::k_rrt_ {0u}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A constant for k-nearest rewiring calculations. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00436">436</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a773c310da5461b8f1f26ed61254ed087" name="a773c310da5461b8f1f26ed61254ed087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773c310da5461b8f1f26ed61254ed087">&#9670;&#160;</a></span>maxDistance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::maxDistance_ {0.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The maximum length of a motion to be added to a tree. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00423">423</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a25a2b7f0fed66b443848c66b2cd1a75d" name="a25a2b7f0fed66b443848c66b2cd1a75d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25a2b7f0fed66b443848c66b2cd1a75d">&#9670;&#160;</a></span>nn_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classompl_1_1NearestNeighbors.html">NearestNeighbors</a>&lt;<a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *&gt; &gt; ompl::geometric::TRRTstar::nn_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A nearest-neighbors datastructure containing the tree of motions. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00416">416</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ae9d494262f642f1d5939ff71e8562da0" name="ae9d494262f642f1d5939ff71e8562da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d494262f642f1d5939ff71e8562da0">&#9670;&#160;</a></span>numSampleAttempts_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::geometric::TRRTstar::numSampleAttempts_ {100u}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number of attempts to make at informed sampling. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00463">463</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b54743b9a0867098bc23fc705825732" name="a2b54743b9a0867098bc23fc705825732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b54743b9a0867098bc23fc705825732">&#9670;&#160;</a></span>opt_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">base::OptimizationObjectivePtr ompl::geometric::TRRTstar::opt_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Objective we're optimizing. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00445">445</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="adb7855550d3e1aff322af262fb9a596c" name="adb7855550d3e1aff322af262fb9a596c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb7855550d3e1aff322af262fb9a596c">&#9670;&#160;</a></span>prunedCost_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> ompl::geometric::TRRTstar::prunedCost_ {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The cost at which the graph was last pruned. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00475">475</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a91c491eae5d0f11f72ef3785ee66c83b" name="a91c491eae5d0f11f72ef3785ee66c83b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c491eae5d0f11f72ef3785ee66c83b">&#9670;&#160;</a></span>prunedMeasure_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::prunedMeasure_ {0.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The measure of the problem when we pruned it (if this isn't in use, it will be set to si_-&gt;getSpaceMeasure()). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00479">479</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a3febf7d7f8c1fa02f9af9e6085d6e9ba" name="a3febf7d7f8c1fa02f9af9e6085d6e9ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3febf7d7f8c1fa02f9af9e6085d6e9ba">&#9670;&#160;</a></span>pruneThreshold_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::pruneThreshold_ {.05}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The tree is pruned when the change in solution cost is greater than this fraction. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00457">457</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a279c623fba2eb945547c3c5ad673165e" name="a279c623fba2eb945547c3c5ad673165e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279c623fba2eb945547c3c5ad673165e">&#9670;&#160;</a></span>r_rrt_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::r_rrt_ {0.}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A constant for r-disc rewiring calculations. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00439">439</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a79182260a76bde69f6d3c060910480a4" name="a79182260a76bde69f6d3c060910480a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79182260a76bde69f6d3c060910480a4">&#9670;&#160;</a></span>rewireFactor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::rewireFactor_ {1.1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The rewiring factor, s, so that r_rrt = s \times r_rrt* &gt; r_rrt* (or k_rrt = s \times k_rrt* &gt; k_rrt*). </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00433">433</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a5f67d3168688c149ba939ccbeaa6e004" name="a5f67d3168688c149ba939ccbeaa6e004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f67d3168688c149ba939ccbeaa6e004">&#9670;&#160;</a></span>rng_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1RNG.html">RNG</a> ompl::geometric::TRRTstar::rng_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The random number generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00426">426</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a7d6138aaabb6baedc628ba1598099b08" name="a7d6138aaabb6baedc628ba1598099b08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6138aaabb6baedc628ba1598099b08">&#9670;&#160;</a></span>sampler_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">base::StateSamplerPtr ompl::geometric::TRRTstar::sampler_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>State sampler. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00410">410</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a43b96f689956e76427b05c87d2a168b3" name="a43b96f689956e76427b05c87d2a168b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b96f689956e76427b05c87d2a168b3">&#9670;&#160;</a></span>startMotions_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classompl_1_1geometric_1_1TRRTstar_1_1Motion.html">Motion</a> *&gt; ompl::geometric::TRRTstar::startMotions_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores the start states as Motions. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00469">469</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="ab10a55baab47f02fac3ed2c1fc722d3d" name="ab10a55baab47f02fac3ed2c1fc722d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab10a55baab47f02fac3ed2c1fc722d3d">&#9670;&#160;</a></span>temp_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::temp_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Temperature parameter used to control the difficulty level of transition tests. Low temperatures limit the expansion to a slightly positive slopes, high temps enable to climb the steeper slopes. Dynamically tuned according to the information acquired during exploration. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00493">493</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="af8723ba8dfcbd26027b6c290f814eb81" name="af8723ba8dfcbd26027b6c290f814eb81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8723ba8dfcbd26027b6c290f814eb81">&#9670;&#160;</a></span>tempChangeFactor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::TRRTstar::tempChangeFactor_ {.1}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The value of the expression exp^T_rate. The temperature is increased by this factor whenever the transition test fails. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00503">503</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a5d36b3ae657ce911e7548e8407aac7bd" name="a5d36b3ae657ce911e7548e8407aac7bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d36b3ae657ce911e7548e8407aac7bd">&#9670;&#160;</a></span>useAdmissibleCostToCome_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::useAdmissibleCostToCome_ {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The admissibility of the new-state rejection heuristic. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00460">460</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a67d179daeab131cd5634b3d1816993" name="a1a67d179daeab131cd5634b3d1816993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a67d179daeab131cd5634b3d1816993">&#9670;&#160;</a></span>useKNearest_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::useKNearest_ {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Option to use k-nearest search for rewiring. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00429">429</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e70a25fb5d036a2517fcf698abec3d8" name="a3e70a25fb5d036a2517fcf698abec3d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e70a25fb5d036a2517fcf698abec3d8">&#9670;&#160;</a></span>useTreePruning_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::TRRTstar::useTreePruning_ {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The status of the tree pruning option. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00454">454</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<a id="a042c22ccca212fdc345801e81c244f76" name="a042c22ccca212fdc345801e81c244f76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042c22ccca212fdc345801e81c244f76">&#9670;&#160;</a></span>worstCost_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a> ompl::geometric::TRRTstar::worstCost_ {<a class="el" href="classompl_1_1base_1_1Cost.html">base::Cost</a>(std::numeric_limits&lt;double&gt;::infinity())}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The least desirable (e.g., maximum) cost value in the search tree. </p>
+
+<p class="definition">Definition at line <a class="el" href="TRRTstar_8h_source.html#l00496">496</a> of file <a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/geometric/planners/rrt/<a class="el" href="TRRTstar_8h_source.html">TRRTstar.h</a></li>
+<li>ompl/geometric/planners/rrt/src/<a class="el" href="TRRTstar_8cpp_source.html">TRRTstar.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

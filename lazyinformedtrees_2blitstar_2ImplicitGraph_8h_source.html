@@ -1,0 +1,404 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl/geometric/planners/lazyinformedtrees/blitstar/ImplicitGraph.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>ompl</b></li><li class="navelem"><b>geometric</b></li><li class="navelem"><b>planners</b></li><li class="navelem"><b>lazyinformedtrees</b></li><li class="navelem"><b>blitstar</b></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">ImplicitGraph.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Copyright (c) 2025, University of New Hampshire</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  are met:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *   * Neither the names of the copyright holders nor the names of its</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * Attribution Notice:</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * This file contains code largely derived from the AIT* or BIT* planner</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * in the Open Motion Planning Library (OMPL). Specific structural components,</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * including sampling mechanisms, nearest neighbor routines, and priority</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * queue management, are adapted from that planner.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * The `addSample()` function and the core efficiency logic of BLIT* were</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * independently developed and modified by Yi Wang.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// Authors: Yi Wang, Eyal Weiss, Bingxian Mu, Oren Salzman</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#ifndef OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_BLITSTAR_IMPLICITGRAPH_</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_BLITSTAR_IMPLICITGRAPH_</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &quot;ompl/base/samplers/InformedStateSampler.h&quot;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &quot;ompl/base/SpaceInformation.h&quot;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &quot;ompl/base/ProblemDefinition.h&quot;</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#include &quot;ompl/base/PlannerTerminationCondition.h&quot;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#include &quot;ompl/base/Planner.h&quot;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighborsGNATNoThreadSafety.h&quot;</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &quot;ompl/geometric/planners/lazyinformedtrees/blitstar/Vertex.h&quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl_1_1geometric.html">geometric</a></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">namespace </span>blitstar</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        {</div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html">   66</a></span>            <span class="keyword">class </span><a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a919f91286929fec7a88022468d6a1d35">ImplicitGraph</a></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a919f91286929fec7a88022468d6a1d35">ImplicitGraph</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;solutionCost);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a9613d9f4d473d6e4f9904dbcc19ed5cb">   73</a></span>                <span class="keyword">virtual</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a9613d9f4d473d6e4f9904dbcc19ed5cb">~ImplicitGraph</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a5dc8a9c64c22ba6ca8719a38ce449878">setup</a>(<span class="keyword">const</span> ompl::base::SpaceInformationPtr &amp;spaceInformation,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                           <span class="keyword">const</span> ompl::base::ProblemDefinitionPtr &amp;problemDefinition,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                           <a class="code hl_class" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> *inputStates);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aaf2e717036aedf1c5aa4d11d075a3854">clear</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a03181ee859b9e8c0bab18f4ebcd1b8d3">setRewireFactor</a>(<span class="keywordtype">double</span> rewireFactor);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a709a77b50ea1de8887f308cca21aeed2">getRewireFactor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a71df418b7e62b5507e7436ed15bf1915">setMaxNumberOfGoals</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxNumberOfGoals);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a1a9a5fd4bc06382117334ac33ef0658b">getMaxNumberOfGoals</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#acad2c69d13489a80ba2b007f7972e216">setUseKNearest</a>(<span class="keywordtype">bool</span> useKNearest);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#ac9bd19e578d6e2673a2af8790eb50f25">getUseKNearest</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a548c47e0a92afedc366aea176a441f18">  102</a></span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a548c47e0a92afedc366aea176a441f18">setTrackApproximateSolution</a>(<span class="keywordtype">bool</span> track);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#adbb37024e583bc3838a0240551b923ae">addSamples</a>(std::size_t numNewSamples,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a> &amp;terminationCondition, <span class="keywordtype">bool</span> need_prune);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                std::size_t <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a5758e40fb95940f302fa788b6b489453">getNumVertices</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                std::size_t getNumNeighbors() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a90dc6f326fe260bf3b60ca75b8d5ccc7">getConnectionRadius</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a3c1b131e8b18c61f1aa3ce46bfc2beee">  114</a></span>                <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a3c1b131e8b18c61f1aa3ce46bfc2beee">EculideanDistanceToStart</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aec1df1f09935686c6b3de2e717ffdc31">  116</a></span>                <a class="code hl_class" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aec1df1f09935686c6b3de2e717ffdc31">EculideanDistanceToGoal</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a72c7ce6acc691960f8b20191df1309a8">registerStartState</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *<span class="keyword">const</span> startState);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aa214c304de7c0aec8e5dbbbb778af511">registerGoalState</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *<span class="keyword">const</span> goalState);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a7804a60f5523b36d3cc3d6bdf997e82a">hasAStartState</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a9f18e1b0c2b98ec292128b9e185e9dc5">hasAGoalState</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a865126f1b715ece564daf1554ab0bc8e">updateStartAndGoalStates</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a> &amp;terminationCondition,</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                                              <a class="code hl_class" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> *inputStates);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aced95d2916a1d30b73b244d0b3bf6597">getNeighbors</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#afac3de26edca61a3c746d8f09cbeeb35">isStart</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a319360b0df3b2181ae8fa11cc48de570">isGoal</a>(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                <span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; &amp;<a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a727e34ed593fbbc950f93e6ea4cbb625">getStartVertices</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                <span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; &amp;<a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a98e0502fb9e948fc6c42780a65748385">getGoalVertices</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#af6e6f31201176c440c774c4062df4f8c">getVertices</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#acb471321c4a9cd0fd28462c5705663c0">prune</a>();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                std::size_t <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a859c3b5b0be678b44c92705dd282a7f9">getNumberOfSampledStates</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                std::size_t <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a42367b6c1c51fbd5594dbc45a472ba7d">getNumberOfValidSamples</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                std::size_t <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a464bacb389fcb3e3f2290ae2b7eff507">getNumberOfStateCollisionChecks</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                std::size_t <a class="code hl_function" href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a9287adb0da89a6d8e4e15c8303f77a2f">getNumberOfNearestNeighborCalls</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                std::size_t computeNumberOfSamplesInInformedSet() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <span class="keywordtype">double</span> computeConnectionRadius(std::size_t numSamples) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                std::size_t computeNumberOfNeighbors(std::size_t numSamples) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                <span class="keywordtype">bool</span> canPossiblyImproveSolution(<span class="keyword">const</span> std::shared_ptr&lt;Vertex&gt; &amp;vertex) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                ompl::base::SpaceInformationPtr spaceInformation_;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                ompl::base::ProblemDefinitionPtr problemDefinition_;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                ompl::base::OptimizationObjectivePtr objective_;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                std::size_t batchId_;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <span class="keywordtype">double</span> rewireFactor_{1.001};</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                <span class="keywordtype">bool</span> trackApproximateSolution_{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                std::shared_ptr&lt;Vertex&gt; bestApproximateGoal_;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                <span class="keywordtype">bool</span> useKNearest_{<span class="keyword">true</span>};</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxNumGoals_{10u};</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                <span class="keywordtype">double</span> radius_{std::numeric_limits&lt;double&gt;::infinity()};</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                std::size_t numNeighbors_{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                std::size_t k_rgg_{std::numeric_limits&lt;std::size_t&gt;::max()};</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <span class="keyword">const</span> ompl::base::Cost &amp;solutionCost_;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                ompl::base::InformedSamplerPtr sampler_;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                ompl::NearestNeighborsGNATNoThreadSafety&lt;std::shared_ptr&lt;Vertex&gt;&gt; vertices_;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; startVertices_;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; goalVertices_;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; prunedStartVertices_;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; prunedGoalVertices_;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                std::vector&lt;std::shared_ptr&lt;Vertex&gt;&gt; newSamples_;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                <span class="keyword">mutable</span> std::size_t numValidSamples_{0u};</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                <span class="keyword">mutable</span> std::size_t numSampledStates_{0u};</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                <span class="keyword">mutable</span> std::size_t numNearestNeighborsCalls_{0u};</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            };</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        }  <span class="comment">// namespace blitstar</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    }  <span class="comment">// namespace geometric</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}  <span class="comment">// namespace ompl</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="preprocessor">#endif  </span><span class="comment">// OMPL_GEOMETRIC_PLANNERS_INFORMEDTREES_BLITSTAR_IMPLICITGRAPH_</span></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Cost_html"><div class="ttname"><a href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a></div><div class="ttdoc">Definition of a cost value. Can represent the cost of a motion or the cost of a state.</div><div class="ttdef"><b>Definition</b> <a href="Cost_8h_source.html#l00047">Cost.h:48</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerInputStates_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a></div><div class="ttdoc">Helper class to extract valid start &amp; goal states. Usually used internally by planners.</div><div class="ttdef"><b>Definition</b> <a href="Planner_8h_source.html#l00077">Planner.h:78</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition</b> <a href="PlannerTerminationCondition_8h_source.html#l00063">PlannerTerminationCondition.h:64</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a03181ee859b9e8c0bab18f4ebcd1b8d3"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a03181ee859b9e8c0bab18f4ebcd1b8d3">ompl::geometric::blitstar::ImplicitGraph::setRewireFactor</a></div><div class="ttdeci">void setRewireFactor(double rewireFactor)</div><div class="ttdoc">Set the rewire factor of the RGG.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00089">ImplicitGraph.cpp:89</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a1a9a5fd4bc06382117334ac33ef0658b"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a1a9a5fd4bc06382117334ac33ef0658b">ompl::geometric::blitstar::ImplicitGraph::getMaxNumberOfGoals</a></div><div class="ttdeci">unsigned int getMaxNumberOfGoals() const</div><div class="ttdoc">Get the maximum number of goals BLIT* will sample from sampleable goal regions.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00104">ImplicitGraph.cpp:104</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a319360b0df3b2181ae8fa11cc48de570"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a319360b0df3b2181ae8fa11cc48de570">ompl::geometric::blitstar::ImplicitGraph::isGoal</a></div><div class="ttdeci">bool isGoal(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Checks whether the vertex is a goal vertex.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00435">ImplicitGraph.cpp:435</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a3c1b131e8b18c61f1aa3ce46bfc2beee"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a3c1b131e8b18c61f1aa3ce46bfc2beee">ompl::geometric::blitstar::ImplicitGraph::EculideanDistanceToStart</a></div><div class="ttdeci">ompl::base::Cost EculideanDistanceToStart(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Gets the Eculidean distance to Start.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a42367b6c1c51fbd5594dbc45a472ba7d"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a42367b6c1c51fbd5594dbc45a472ba7d">ompl::geometric::blitstar::ImplicitGraph::getNumberOfValidSamples</a></div><div class="ttdeci">std::size_t getNumberOfValidSamples() const</div><div class="ttdoc">Returns the total number of valid samples found.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00523">ImplicitGraph.cpp:523</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a464bacb389fcb3e3f2290ae2b7eff507"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a464bacb389fcb3e3f2290ae2b7eff507">ompl::geometric::blitstar::ImplicitGraph::getNumberOfStateCollisionChecks</a></div><div class="ttdeci">std::size_t getNumberOfStateCollisionChecks() const</div><div class="ttdoc">Get the number of state collision checks.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00528">ImplicitGraph.cpp:528</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a548c47e0a92afedc366aea176a441f18"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a548c47e0a92afedc366aea176a441f18">ompl::geometric::blitstar::ImplicitGraph::setTrackApproximateSolution</a></div><div class="ttdeci">void setTrackApproximateSolution(bool track)</div><div class="ttdoc">Sets whether to track approximate solutions or not.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a5758e40fb95940f302fa788b6b489453"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a5758e40fb95940f302fa788b6b489453">ompl::geometric::blitstar::ImplicitGraph::getNumVertices</a></div><div class="ttdeci">std::size_t getNumVertices() const</div><div class="ttdoc">Gets the number of samples in the graph.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00385">ImplicitGraph.cpp:385</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a5dc8a9c64c22ba6ca8719a38ce449878"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a5dc8a9c64c22ba6ca8719a38ce449878">ompl::geometric::blitstar::ImplicitGraph::setup</a></div><div class="ttdeci">void setup(const ompl::base::SpaceInformationPtr &amp;spaceInformation, const ompl::base::ProblemDefinitionPtr &amp;problemDefinition, ompl::base::PlannerInputStates *inputStates)</div><div class="ttdoc">The setup method for the graph. Needed to have it on the stack.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00061">ImplicitGraph.cpp:61</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a709a77b50ea1de8887f308cca21aeed2"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a709a77b50ea1de8887f308cca21aeed2">ompl::geometric::blitstar::ImplicitGraph::getRewireFactor</a></div><div class="ttdeci">double getRewireFactor() const</div><div class="ttdoc">Get the reqire factor of the RGG.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00094">ImplicitGraph.cpp:94</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a71df418b7e62b5507e7436ed15bf1915"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a71df418b7e62b5507e7436ed15bf1915">ompl::geometric::blitstar::ImplicitGraph::setMaxNumberOfGoals</a></div><div class="ttdeci">void setMaxNumberOfGoals(unsigned int maxNumberOfGoals)</div><div class="ttdoc">Set the maximum number of goals BLIT* will sample from sampleable goal regions.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00099">ImplicitGraph.cpp:99</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a727e34ed593fbbc950f93e6ea4cbb625"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a727e34ed593fbbc950f93e6ea4cbb625">ompl::geometric::blitstar::ImplicitGraph::getStartVertices</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; &amp; getStartVertices() const</div><div class="ttdoc">Get the start vertices.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00447">ImplicitGraph.cpp:447</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a72c7ce6acc691960f8b20191df1309a8"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a72c7ce6acc691960f8b20191df1309a8">ompl::geometric::blitstar::ImplicitGraph::registerStartState</a></div><div class="ttdeci">void registerStartState(const ompl::base::State *const startState)</div><div class="ttdoc">Registers a state as a start state.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00119">ImplicitGraph.cpp:119</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a7804a60f5523b36d3cc3d6bdf997e82a"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a7804a60f5523b36d3cc3d6bdf997e82a">ompl::geometric::blitstar::ImplicitGraph::hasAStartState</a></div><div class="ttdeci">bool hasAStartState() const</div><div class="ttdoc">Returns whether the graph has a goal state.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00152">ImplicitGraph.cpp:152</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a859c3b5b0be678b44c92705dd282a7f9"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a859c3b5b0be678b44c92705dd282a7f9">ompl::geometric::blitstar::ImplicitGraph::getNumberOfSampledStates</a></div><div class="ttdeci">std::size_t getNumberOfSampledStates() const</div><div class="ttdoc">Returns the total number of sampled states.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00518">ImplicitGraph.cpp:518</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a865126f1b715ece564daf1554ab0bc8e"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a865126f1b715ece564daf1554ab0bc8e">ompl::geometric::blitstar::ImplicitGraph::updateStartAndGoalStates</a></div><div class="ttdeci">void updateStartAndGoalStates(const ompl::base::PlannerTerminationCondition &amp;terminationCondition, ompl::base::PlannerInputStates *inputStates)</div><div class="ttdoc">Adds new start and goals to the graph if avavilable and creates a new informed sampler if necessary.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00163">ImplicitGraph.cpp:163</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a90dc6f326fe260bf3b60ca75b8d5ccc7"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a90dc6f326fe260bf3b60ca75b8d5ccc7">ompl::geometric::blitstar::ImplicitGraph::getConnectionRadius</a></div><div class="ttdeci">double getConnectionRadius() const</div><div class="ttdoc">Gets the RGG connection radius.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00393">ImplicitGraph.cpp:393</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a919f91286929fec7a88022468d6a1d35"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a919f91286929fec7a88022468d6a1d35">ompl::geometric::blitstar::ImplicitGraph::ImplicitGraph</a></div><div class="ttdeci">ImplicitGraph(const ompl::base::Cost &amp;solutionCost)</div><div class="ttdoc">Constructs an implicit graph.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00056">ImplicitGraph.cpp:56</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a9287adb0da89a6d8e4e15c8303f77a2f"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a9287adb0da89a6d8e4e15c8303f77a2f">ompl::geometric::blitstar::ImplicitGraph::getNumberOfNearestNeighborCalls</a></div><div class="ttdeci">std::size_t getNumberOfNearestNeighborCalls() const</div><div class="ttdoc">Get the number of nearest neighbor calls.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00535">ImplicitGraph.cpp:535</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a9613d9f4d473d6e4f9904dbcc19ed5cb"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a9613d9f4d473d6e4f9904dbcc19ed5cb">ompl::geometric::blitstar::ImplicitGraph::~ImplicitGraph</a></div><div class="ttdeci">virtual ~ImplicitGraph()=default</div><div class="ttdoc">Destructs an implicit graph.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a98e0502fb9e948fc6c42780a65748385"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a98e0502fb9e948fc6c42780a65748385">ompl::geometric::blitstar::ImplicitGraph::getGoalVertices</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; &amp; getGoalVertices() const</div><div class="ttdoc">Get the goal vertices.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00452">ImplicitGraph.cpp:452</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_a9f18e1b0c2b98ec292128b9e185e9dc5"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#a9f18e1b0c2b98ec292128b9e185e9dc5">ompl::geometric::blitstar::ImplicitGraph::hasAGoalState</a></div><div class="ttdeci">bool hasAGoalState() const</div><div class="ttdoc">Returns whether the graph has a goal state.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00157">ImplicitGraph.cpp:157</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_aa214c304de7c0aec8e5dbbbb778af511"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aa214c304de7c0aec8e5dbbbb778af511">ompl::geometric::blitstar::ImplicitGraph::registerGoalState</a></div><div class="ttdeci">void registerGoalState(const ompl::base::State *const goalState)</div><div class="ttdoc">Registers a state as a goal state.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00137">ImplicitGraph.cpp:137</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_aaf2e717036aedf1c5aa4d11d075a3854"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aaf2e717036aedf1c5aa4d11d075a3854">ompl::geometric::blitstar::ImplicitGraph::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Resets the graph to its construction state, without resetting options.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00075">ImplicitGraph.cpp:75</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_ac9bd19e578d6e2673a2af8790eb50f25"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#ac9bd19e578d6e2673a2af8790eb50f25">ompl::geometric::blitstar::ImplicitGraph::getUseKNearest</a></div><div class="ttdeci">bool getUseKNearest() const</div><div class="ttdoc">Whether the graph uses a k-nearest connection model. If false, it uses an r-disc model.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00114">ImplicitGraph.cpp:114</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_acad2c69d13489a80ba2b007f7972e216"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#acad2c69d13489a80ba2b007f7972e216">ompl::geometric::blitstar::ImplicitGraph::setUseKNearest</a></div><div class="ttdeci">void setUseKNearest(bool useKNearest)</div><div class="ttdoc">Whether to use a k-nearest connection model. If false, it uses an r-disc model.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00109">ImplicitGraph.cpp:109</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_acb471321c4a9cd0fd28462c5705663c0"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#acb471321c4a9cd0fd28462c5705663c0">ompl::geometric::blitstar::ImplicitGraph::prune</a></div><div class="ttdeci">void prune()</div><div class="ttdoc">Prune all samples that can not contribute to a solution better than the current one.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00464">ImplicitGraph.cpp:464</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_aced95d2916a1d30b73b244d0b3bf6597"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aced95d2916a1d30b73b244d0b3bf6597">ompl::geometric::blitstar::ImplicitGraph::getNeighbors</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; getNeighbors(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Get neighbors of a vertex.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00399">ImplicitGraph.cpp:399</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_adbb37024e583bc3838a0240551b923ae"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#adbb37024e583bc3838a0240551b923ae">ompl::geometric::blitstar::ImplicitGraph::addSamples</a></div><div class="ttdeci">bool addSamples(std::size_t numNewSamples, const ompl::base::PlannerTerminationCondition &amp;terminationCondition, bool need_prune)</div><div class="ttdoc">Adds a batch of samples and returns the samples it has added.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00318">ImplicitGraph.cpp:318</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_aec1df1f09935686c6b3de2e717ffdc31"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#aec1df1f09935686c6b3de2e717ffdc31">ompl::geometric::blitstar::ImplicitGraph::EculideanDistanceToGoal</a></div><div class="ttdeci">ompl::base::Cost EculideanDistanceToGoal(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Gets the Eculidean distance to Goal.</div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_af6e6f31201176c440c774c4062df4f8c"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#af6e6f31201176c440c774c4062df4f8c">ompl::geometric::blitstar::ImplicitGraph::getVertices</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Vertex &gt; &gt; getVertices() const</div><div class="ttdoc">Get all vertices.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00457">ImplicitGraph.cpp:457</a></div></div>
+<div class="ttc" id="aclassompl_1_1geometric_1_1blitstar_1_1ImplicitGraph_html_afac3de26edca61a3c746d8f09cbeeb35"><div class="ttname"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html#afac3de26edca61a3c746d8f09cbeeb35">ompl::geometric::blitstar::ImplicitGraph::isStart</a></div><div class="ttdeci">bool isStart(const std::shared_ptr&lt; Vertex &gt; &amp;vertex) const</div><div class="ttdoc">Checks whether the vertex is a start vertex.</div><div class="ttdef"><b>Definition</b> <a href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00423">ImplicitGraph.cpp:423</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1geometric_html"><div class="ttname"><a href="namespaceompl_1_1geometric.html">ompl::geometric</a></div><div class="ttdoc">This namespace contains code that is specific to planning under geometric constraints.</div><div class="ttdef"><b>Definition</b> <a href="GeneticSearch_8h_source.html#l00047">GeneticSearch.h:48</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:66</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

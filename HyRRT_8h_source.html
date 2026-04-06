@@ -1,0 +1,527 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl/control/planners/rrt/HyRRT.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>ompl</b></li><li class="navelem"><b>control</b></li><li class="navelem"><b>planners</b></li><li class="navelem"><b>rrt</b></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">HyRRT.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Copyright (c) 2025, University of Santa Cruz Hybrid Systems Laboratory</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  are met:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *   * Neither the name of the University of Santa Cruz nor the names of</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *     its contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* Author: Beverly Xu */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#ifndef OMPL_CONTROL_PLANNERS_RRT_HYRRT_</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define OMPL_CONTROL_PLANNERS_RRT_HYRRT_</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;ompl/base/spaces/RealVectorStateSpace.h&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;ompl/control/ControlSpace.h&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;ompl/control/spaces/RealVectorControlSpace.h&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;ompl/datastructures/NearestNeighbors.h&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;ompl/control/planners/PlannerIncludes.h&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;ompl/control/Control.h&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;ompl/base/spaces/HybridStateSpace.h&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl.html">ompl</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html">   76</a></span>        <span class="keyword">class </span><a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#af72d99e65c0a419182f025e465fbebea">HyRRT</a> : <span class="keyword">public</span> <a class="code hl_class" href="classompl_1_1base_1_1Planner.html">base::Planner</a></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#af72d99e65c0a419182f025e465fbebea">HyRRT</a>(<span class="keyword">const</span> control::SpaceInformationPtr &amp;si);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a97b280426b2cd591599ebd211f118a06">~HyRRT</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a012164533c6a30d94a0939986632bae0">clear</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a519180748444e52a24d22d8ee4f7c995">setup</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a9958f8a558330806fac4ef21d5778564">getPlannerData</a>(<a class="code hl_class" href="classompl_1_1base_1_1PlannerData.html">base::PlannerData</a> &amp;data) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <a class="code hl_struct" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a51ca371b9f97208a1d88947ac1752e75">solve</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1PlannerTerminationCondition.html">base::PlannerTerminationCondition</a> &amp;ptc) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="};">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">   99</a></span>            <span class="keyword">class </span><a class="code hl_function" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0b9216a8fe934a8d98ad0f0a810f6156">Motion</a></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0b9216a8fe934a8d98ad0f0a810f6156">  103</a></span>                <a class="code hl_function" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0b9216a8fe934a8d98ad0f0a810f6156">Motion</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0cb6776f64a9bb9e54cffeaef124af0b">  106</a></span>                <a class="code hl_function" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0cb6776f64a9bb9e54cffeaef124af0b">Motion</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1SpaceInformation.html">control::SpaceInformation</a> *si) : <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a88aff6247327669fd2472abaedbc33fd">state</a>(si-&gt;allocState()), <a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>(si-&gt;allocControl())</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a03010af61034200651e79d3b44e855ce">  111</a></span>                <a class="code hl_function" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a03010af61034200651e79d3b44e855ce">~Motion</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a88aff6247327669fd2472abaedbc33fd">  114</a></span>                <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a88aff6247327669fd2472abaedbc33fd">state</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac83d973a08a5e11086a0e1e9dbd26de4">  117</a></span>                <a class="code hl_function" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0b9216a8fe934a8d98ad0f0a810f6156">Motion</a> *<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac83d973a08a5e11086a0e1e9dbd26de4">parent</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a736f52144dfe8e6316978aefeea959ac">  121</a></span>                <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a736f52144dfe8e6316978aefeea959ac">root</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac1073e2906f871b185e9e0d910a013bd">  125</a></span>                std::vector&lt;base::State *&gt; *<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac1073e2906f871b185e9e0d910a013bd">solutionPair</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a3e63eb476fee580976f794ad66d30411">  128</a></span>                <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *<a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            };</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#aee75dda8626d490fb577b4bf1fcd77dc">freeMemory</a>();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a8653683ff6ee5386c74beb2fc3e8b874">  139</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a8653683ff6ee5386c74beb2fc3e8b874">setTm</a>(<span class="keywordtype">double</span> tM)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                <span class="keywordflow">if</span> (tM &lt;= 0)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Maximum flow time per propagation step must be greater than 0&quot;</span>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac323d40b53956ae3a169f8a0d6cd7b34">flowStepDuration_</a>)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                    <span class="keywordflow">if</span> (tM &lt; <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac323d40b53956ae3a169f8a0d6cd7b34">flowStepDuration_</a>)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                        <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                            <span class="stringliteral">&quot;Maximum flow time per propagation step must be greater than or equal to the length of time for each flow &quot;</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                            <span class="stringliteral">&quot;integration step (flowStepDuration_)&quot;</span>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#af7162cc8d685d050f7afe4c9a9660996">tM_</a> = tM;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#aa40c99635b743b92730879d4dff92f3a">  160</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#aa40c99635b743b92730879d4dff92f3a">setFlowStepDuration</a>(<span class="keywordtype">double</span> duration)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                <span class="keywordflow">if</span> (duration &lt;= 0)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Flow step length must be greater than 0&quot;</span>);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#af7162cc8d685d050f7afe4c9a9660996">tM_</a>)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#af7162cc8d685d050f7afe4c9a9660996">tM_</a> &lt; duration)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                        <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                            <span class="stringliteral">&quot;Flow step length must be less than or equal to the maximum flow time per propagation step (Tm)&quot;</span>);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac323d40b53956ae3a169f8a0d6cd7b34">flowStepDuration_</a> = duration;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            }</div>
+</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a8cf7aad51a1ec311dc429731cc4eccaf">  177</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a8cf7aad51a1ec311dc429731cc4eccaf">setJumpSet</a>(std::function&lt;<span class="keywordtype">bool</span>(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; jumpSet)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a61c1997311375b322fd07612be010fbd">jumpSet_</a> = jumpSet;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            }</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a4fa7796dea87a4da581dbf91dbffa498">  186</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a4fa7796dea87a4da581dbf91dbffa498">setFlowSet</a>(std::function&lt;<span class="keywordtype">bool</span>(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; flowSet)</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a791ed9d67304bd89b57685079dc923b1">flowSet_</a> = flowSet;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            }</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a12359823999ac64da9a586983e75f7eb">  195</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a12359823999ac64da9a586983e75f7eb">setUnsafeSet</a>(std::function&lt;<span class="keywordtype">bool</span>(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; unsafeSet)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ae4e86a7a9163f8674d8a380da5e0d123">unsafeSet_</a> = unsafeSet;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span></div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a58461d5990c2e687cbc9950df5349a5a">  204</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a58461d5990c2e687cbc9950df5349a5a">setDistanceFunction</a>(std::function&lt;<span class="keywordtype">double</span>(<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *)&gt; function)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a35b8bf72600b0ff3d93686e5af4da919">distanceFunc_</a> = function;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            }</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span></div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a43feed7f2a579c60c6956604cc63e631">  213</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a43feed7f2a579c60c6956604cc63e631">setDiscreteSimulator</a>(</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                std::function&lt;<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *(<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *curState, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                    function)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a65318c36c5f296735eb9ec1ebc4f73d5">discreteSimulator_</a> = function;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            }</div>
+</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            std::function&lt;<a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *<a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>, <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *x_cur, <span class="keywordtype">double</span> tFlow,</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                                              <a class="code hl_class" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *new_state)&gt;</div>
+<div class="foldopen" id="foldopen00224" data-start="{" data-end="};">
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#abe3891b6fdee42fd37c15cf4ad13431b">  224</a></span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#abe3891b6fdee42fd37c15cf4ad13431b">continuousSimulator</a> =</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                    [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *<a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *x_cur, <span class="keywordtype">double</span> tFlow, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *new_state)</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a991ed7d92562a150ec1babb5dcf26b22">siC_</a>-&gt;getStatePropagator()-&gt;propagate(x_cur, <a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>, tFlow, new_state);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                <span class="keywordflow">return</span> new_state;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            };</div>
+</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span></div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a76a5c3fc216f41254d576f32e3d8dde2">  236</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a76a5c3fc216f41254d576f32e3d8dde2">setCollisionChecker</a>(std::function&lt;<span class="keywordtype">bool</span>(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt;<span class="keywordtype">bool</span>(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet,</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                                                        <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState, <span class="keywordtype">double</span> *collisionTime)&gt;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                                         function)</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac2ecffa4a311667ea7d4baab5d7d2ad2">collisionChecker_</a> = function;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            }</div>
+</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span>NN&gt;</div>
+<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#af357c11deb59655f22741228c7b677b1">  245</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#af357c11deb59655f22741228c7b677b1">setNearestNeighbors</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a7fb0666966192eefa9ac72da1be830a3">nn_</a> &amp;&amp; <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a7fb0666966192eefa9ac72da1be830a3">nn_</a>-&gt;size() != 0)</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    <a class="code hl_define" href="group__logging.html#gab76357dced39cb468d2061d3358f80a6">OMPL_WARN</a>(<span class="stringliteral">&quot;Calling setNearestNeighbors will clear all states.&quot;</span>);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a012164533c6a30d94a0939986632bae0">clear</a>();</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a7fb0666966192eefa9ac72da1be830a3">nn_</a> = std::make_shared&lt;NN&lt;Motion *&gt;&gt;();</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a519180748444e52a24d22d8ee4f7c995">setup</a>();</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            }</div>
+</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span></div>
+<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a40de8ea9830e10a190629947dbe4aba4">  255</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a40de8ea9830e10a190629947dbe4aba4">checkMandatoryParametersSet</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a65318c36c5f296735eb9ec1ebc4f73d5">discreteSimulator_</a>)</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Jump map not set&quot;</span>);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a1b53f08ad0e6bd127dbe7706d0ccff2a">continuousSimulator_</a>)</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Flow map not set&quot;</span>);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a791ed9d67304bd89b57685079dc923b1">flowSet_</a>)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Flow set not set&quot;</span>);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a61c1997311375b322fd07612be010fbd">jumpSet_</a>)</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Jump set not set&quot;</span>);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ae4e86a7a9163f8674d8a380da5e0d123">unsafeSet_</a>)</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Unsafe set not set&quot;</span>);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#af7162cc8d685d050f7afe4c9a9660996">tM_</a>)</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classompl_1_1Exception.html">Exception</a>(<span class="stringliteral">&quot;Max flow propagation time (Tm) no set&quot;</span>);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            }</div>
+</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a9fa95866a090b639b3ba05e0a242c7ec">  276</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a9fa95866a090b639b3ba05e0a242c7ec">setContinuousSimulator</a>(std::function&lt;<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *curState,</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                                                                    <span class="keywordtype">double</span> tFlowMax, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                                            function)</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a1b53f08ad0e6bd127dbe7706d0ccff2a">continuousSimulator_</a> = function;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            }</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            <span class="keyword">const</span> <span class="keyword">static</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *getFlowControl(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *<a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>)</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>-&gt;as&lt;<a class="code hl_class" href="classompl_1_1control_1_1CompoundControl.html">CompoundControl</a>&gt;()-&gt;<a class="code hl_function" href="classompl_1_1base_1_1Planner.html#a0b254b9541d76d3b12889a799a864fdf">as&lt;ompl::control::Control&gt;</a>(0);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            }</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <span class="keyword">const</span> <span class="keyword">static</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *getJumpControl(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">ompl::control::Control</a> *<a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>)</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespaceompl_1_1control.html">control</a>-&gt;as&lt;CompoundControl&gt;()-&gt;<a class="code hl_function" href="classompl_1_1base_1_1Planner.html#a0b254b9541d76d3b12889a799a864fdf">as&lt;ompl::control::Control&gt;</a>(1);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>            }</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a4a9f3d374b1dfd1c4adac35500f7e17f">  294</a></span>            <a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a4a9f3d374b1dfd1c4adac35500f7e17f">lastGoalMotion_</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#aedad9132b88301f3fbdb7dfb0d76fbeb">initTree</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a3a9279d246479a136267bf24183fb1aa">randomSample</a>(Motion *randomMotion);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a7fb0666966192eefa9ac72da1be830a3">  306</a></span>            std::shared_ptr&lt;NearestNeighbors&lt;Motion *&gt;&gt; <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a7fb0666966192eefa9ac72da1be830a3">nn_</a>;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            std::function&lt;bool(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt;<span class="keywordtype">bool</span>(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState,</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                               <span class="keywordtype">double</span> *collisionTime)&gt;</div>
+<div class="foldopen" id="foldopen00327" data-start="{" data-end="};">
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#ac2ecffa4a311667ea7d4baab5d7d2ad2">  327</a></span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac2ecffa4a311667ea7d4baab5d7d2ad2">collisionChecker_</a> = [<span class="keyword">this</span>](<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion, std::function&lt;bool(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; obstacleSet,</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                                           <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState, <span class="keywordtype">double</span> *collisionTime) -&gt; <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>            {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                <span class="keywordflow">if</span> (obstacleSet(motion))</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                    <a class="code hl_variable" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a>-&gt;copyState(newState, motion-&gt;<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac1073e2906f871b185e9e0d910a013bd">solutionPair</a>-&gt;back());</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                    *collisionTime =</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                        <a class="code hl_function" href="classompl_1_1base_1_1HybridStateSpace.html#a3b40f949e4b6996a08bca33f071df666">ompl::base::HybridStateSpace::getStateTime</a>(motion-&gt;<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac1073e2906f871b185e9e0d910a013bd">solutionPair</a>-&gt;back()) - <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac323d40b53956ae3a169f8a0d6cd7b34">flowStepDuration_</a>;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                    motion-&gt;<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac1073e2906f871b185e9e0d910a013bd">solutionPair</a>-&gt;resize(motion-&gt;<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac1073e2906f871b185e9e0d910a013bd">solutionPair</a>-&gt;size() - 1);</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                }</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>            };</div>
+</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span></div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#ac1a5438c874f1ef22a3eaf1a6ec43ac0">  342</a></span>            control::DirectedControlSamplerPtr <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac1a5438c874f1ef22a3eaf1a6ec43ac0">controlSampler_</a>;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a991ed7d92562a150ec1babb5dcf26b22">  345</a></span>            <a class="code hl_class" href="classompl_1_1control_1_1SpaceInformation.html">control::SpaceInformation</a> *<a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a991ed7d92562a150ec1babb5dcf26b22">siC_</a>;</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span></div>
+<div class="foldopen" id="foldopen00353" data-start="{" data-end="};">
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a35b8bf72600b0ff3d93686e5af4da919">  353</a></span>            std::function&lt;double(<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *state1, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *state2)&gt; <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a35b8bf72600b0ff3d93686e5af4da919">distanceFunc_</a> =</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                [<span class="keyword">this</span>](<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *state1, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *state2) -&gt; <span class="keywordtype">double</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">si_</a>-&gt;distance(state1, state2); };</div>
+</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#af7162cc8d685d050f7afe4c9a9660996">  357</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#af7162cc8d685d050f7afe4c9a9660996">tM_</a>;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#ac323d40b53956ae3a169f8a0d6cd7b34">  360</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ac323d40b53956ae3a169f8a0d6cd7b34">flowStepDuration_</a>;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>            std::function&lt;<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *(<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *curState, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a65318c36c5f296735eb9ec1ebc4f73d5">  370</a></span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a65318c36c5f296735eb9ec1ebc4f73d5">discreteSimulator_</a>;</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span></div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a61c1997311375b322fd07612be010fbd">  377</a></span>            std::function&lt;bool(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a61c1997311375b322fd07612be010fbd">jumpSet_</a>;</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span></div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a791ed9d67304bd89b57685079dc923b1">  384</a></span>            std::function&lt;bool(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a791ed9d67304bd89b57685079dc923b1">flowSet_</a>;</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span></div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#ae4e86a7a9163f8674d8a380da5e0d123">  391</a></span>            std::function&lt;bool(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *motion)&gt; <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#ae4e86a7a9163f8674d8a380da5e0d123">unsafeSet_</a>;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span></div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            std::function&lt;<a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1control_1_1Control.html">control::Control</a> *u, <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *curState, <span class="keywordtype">double</span> tFlowMax,</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                                        <a class="code hl_class" href="classompl_1_1base_1_1State.html">base::State</a> *newState)&gt;</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a1b53f08ad0e6bd127dbe7706d0ccff2a">  403</a></span>                <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a1b53f08ad0e6bd127dbe7706d0ccff2a">continuousSimulator_</a>;</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span></div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>            <a class="code hl_struct" href="structompl_1_1base_1_1PlannerStatus.html">base::PlannerStatus</a> <a class="code hl_function" href="classompl_1_1control_1_1HyRRT.html#a24999bdf4122358a877f4d291764e920">constructSolution</a>(<a class="code hl_class" href="classompl_1_1control_1_1HyRRT_1_1Motion.html">Motion</a> *lastMotion);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span></div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#a758ccd4513cfb002e0d5129f76c32521">  413</a></span>            base::StateSamplerPtr <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#a758ccd4513cfb002e0d5129f76c32521">sampler_</a>;</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span></div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="classompl_1_1control_1_1HyRRT.html#afffb5c73696181585bd639ae0c83ed24">  416</a></span>            <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1control_1_1HyRRT.html#afffb5c73696181585bd639ae0c83ed24">dist_</a>;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        };</div>
+</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    }  <span class="comment">// namespace control</span></div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>}  <span class="comment">// namespace ompl</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassompl_1_1Exception_html"><div class="ttname"><a href="classompl_1_1Exception.html">ompl::Exception</a></div><div class="ttdoc">The exception type for ompl.</div><div class="ttdef"><b>Definition</b> <a href="Exception_8h_source.html#l00046">Exception.h:47</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1HybridStateSpace_html_a3b40f949e4b6996a08bca33f071df666"><div class="ttname"><a href="classompl_1_1base_1_1HybridStateSpace.html#a3b40f949e4b6996a08bca33f071df666">ompl::base::HybridStateSpace::getStateTime</a></div><div class="ttdeci">static double getStateTime(const ompl::base::State *state)</div><div class="ttdoc">The time value of the given state.</div><div class="ttdef"><b>Definition</b> <a href="HybridStateSpace_8cpp_source.html#l00098">HybridStateSpace.cpp:98</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerData_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerData.html">ompl::base::PlannerData</a></div><div class="ttdoc">Object containing planner generated vertex and edge data. It is assumed that all vertices are unique,...</div><div class="ttdef"><b>Definition</b> <a href="base_2PlannerData_8h_source.html#l00174">PlannerData.h:175</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1PlannerTerminationCondition_html"><div class="ttname"><a href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a></div><div class="ttdoc">Encapsulate a termination condition for a motion planner. Planners will call operator() to decide whe...</div><div class="ttdef"><b>Definition</b> <a href="PlannerTerminationCondition_8h_source.html#l00063">PlannerTerminationCondition.h:64</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Planner_html"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html">ompl::base::Planner</a></div><div class="ttdoc">Base class for a planner.</div><div class="ttdef"><b>Definition</b> <a href="Planner_8h_source.html#l00215">Planner.h:216</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Planner_html_a0b254b9541d76d3b12889a799a864fdf"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html#a0b254b9541d76d3b12889a799a864fdf">ompl::base::Planner::as</a></div><div class="ttdeci">T * as()</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition</b> <a href="Planner_8h_source.html#l00230">Planner.h:230</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1Planner_html_aa3ceb9471163b6c96f6eeadbcfd3694e"><div class="ttname"><a href="classompl_1_1base_1_1Planner.html#aa3ceb9471163b6c96f6eeadbcfd3694e">ompl::base::Planner::si_</a></div><div class="ttdeci">SpaceInformationPtr si_</div><div class="ttdoc">The space information for which planning is done.</div><div class="ttdef"><b>Definition</b> <a href="Planner_8h_source.html#l00401">Planner.h:401</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1CompoundControl_html"><div class="ttname"><a href="classompl_1_1control_1_1CompoundControl.html">ompl::control::CompoundControl</a></div><div class="ttdoc">Definition of a compound control.</div><div class="ttdef"><b>Definition</b> <a href="Control_8h_source.html#l00084">Control.h:85</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1Control_html"><div class="ttname"><a href="classompl_1_1control_1_1Control.html">ompl::control::Control</a></div><div class="ttdoc">Definition of an abstract control.</div><div class="ttdef"><b>Definition</b> <a href="Control_8h_source.html#l00047">Control.h:48</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html">ompl::control::HyRRT::Motion</a></div><div class="ttdoc">Representation of a motion in the search tree.</div><div class="ttdef"><b>Definition</b> <a href="#l00099">HyRRT.h:100</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html_a03010af61034200651e79d3b44e855ce"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a03010af61034200651e79d3b44e855ce">ompl::control::HyRRT::Motion::~Motion</a></div><div class="ttdeci">~Motion()=default</div><div class="ttdoc">Destructor.</div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html_a0b9216a8fe934a8d98ad0f0a810f6156"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0b9216a8fe934a8d98ad0f0a810f6156">ompl::control::HyRRT::Motion::Motion</a></div><div class="ttdeci">Motion()=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html_a0cb6776f64a9bb9e54cffeaef124af0b"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a0cb6776f64a9bb9e54cffeaef124af0b">ompl::control::HyRRT::Motion::Motion</a></div><div class="ttdeci">Motion(const control::SpaceInformation *si)</div><div class="ttdoc">Constructor that allocates memory for the state.</div><div class="ttdef"><b>Definition</b> <a href="#l00106">HyRRT.h:106</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html_a736f52144dfe8e6316978aefeea959ac"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a736f52144dfe8e6316978aefeea959ac">ompl::control::HyRRT::Motion::root</a></div><div class="ttdeci">const base::State * root</div><div class="ttdoc">Pointer to the root of the tree this motion is contained in.</div><div class="ttdef"><b>Definition</b> <a href="#l00121">HyRRT.h:121</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html_a88aff6247327669fd2472abaedbc33fd"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#a88aff6247327669fd2472abaedbc33fd">ompl::control::HyRRT::Motion::state</a></div><div class="ttdeci">base::State * state</div><div class="ttdoc">The state contained by the motion.</div><div class="ttdef"><b>Definition</b> <a href="#l00114">HyRRT.h:114</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html_ac1073e2906f871b185e9e0d910a013bd"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac1073e2906f871b185e9e0d910a013bd">ompl::control::HyRRT::Motion::solutionPair</a></div><div class="ttdeci">std::vector&lt; base::State * &gt; * solutionPair</div><div class="ttdoc">The integration steps defining the solution pair of the motion, between the parent and child vertices...</div><div class="ttdef"><b>Definition</b> <a href="#l00125">HyRRT.h:125</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_1_1Motion_html_ac83d973a08a5e11086a0e1e9dbd26de4"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT_1_1Motion.html#ac83d973a08a5e11086a0e1e9dbd26de4">ompl::control::HyRRT::Motion::parent</a></div><div class="ttdeci">Motion * parent</div><div class="ttdoc">The parent motion in the exploration tree.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">HyRRT.h:117</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a012164533c6a30d94a0939986632bae0"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a012164533c6a30d94a0939986632bae0">ompl::control::HyRRT::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdoc">Clear all allocated memory.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00312">HyRRT.cpp:312</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a12359823999ac64da9a586983e75f7eb"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a12359823999ac64da9a586983e75f7eb">ompl::control::HyRRT::setUnsafeSet</a></div><div class="ttdeci">void setUnsafeSet(std::function&lt; bool(Motion *motion)&gt; unsafeSet)</div><div class="ttdoc">Define the unsafe set.</div><div class="ttdef"><b>Definition</b> <a href="#l00195">HyRRT.h:195</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a1b53f08ad0e6bd127dbe7706d0ccff2a"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a1b53f08ad0e6bd127dbe7706d0ccff2a">ompl::control::HyRRT::continuousSimulator_</a></div><div class="ttdeci">std::function&lt; base::State *(const control::Control *u, base::State *curState, double tFlowMax, base::State *newState)&gt; continuousSimulator_</div><div class="ttdoc">Simulator for propagation under flow regime.</div><div class="ttdef"><b>Definition</b> <a href="#l00403">HyRRT.h:403</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a24999bdf4122358a877f4d291764e920"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a24999bdf4122358a877f4d291764e920">ompl::control::HyRRT::constructSolution</a></div><div class="ttdeci">base::PlannerStatus constructSolution(Motion *lastMotion)</div><div class="ttdoc">Construct the path, starting at the last edge.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00254">HyRRT.cpp:254</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a35b8bf72600b0ff3d93686e5af4da919"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a35b8bf72600b0ff3d93686e5af4da919">ompl::control::HyRRT::distanceFunc_</a></div><div class="ttdeci">std::function&lt; double(base::State *state1, base::State *state2)&gt; distanceFunc_</div><div class="ttdoc">Compute distance between states, default is Euclidean distance.</div><div class="ttdef"><b>Definition</b> <a href="#l00353">HyRRT.h:353</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a3a9279d246479a136267bf24183fb1aa"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a3a9279d246479a136267bf24183fb1aa">ompl::control::HyRRT::randomSample</a></div><div class="ttdeci">void randomSample(Motion *randomMotion)</div><div class="ttdoc">Sample the random motion.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00082">HyRRT.cpp:82</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a40de8ea9830e10a190629947dbe4aba4"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a40de8ea9830e10a190629947dbe4aba4">ompl::control::HyRRT::checkMandatoryParametersSet</a></div><div class="ttdeci">void checkMandatoryParametersSet(void) const</div><div class="ttdoc">Check if all required parameters have been set.</div><div class="ttdef"><b>Definition</b> <a href="#l00255">HyRRT.h:255</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a43feed7f2a579c60c6956604cc63e631"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a43feed7f2a579c60c6956604cc63e631">ompl::control::HyRRT::setDiscreteSimulator</a></div><div class="ttdeci">void setDiscreteSimulator(std::function&lt; base::State *(base::State *curState, const control::Control *u, base::State *newState)&gt; function)</div><div class="ttdoc">Define the discrete dynamics simulator.</div><div class="ttdef"><b>Definition</b> <a href="#l00213">HyRRT.h:213</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a4a9f3d374b1dfd1c4adac35500f7e17f"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a4a9f3d374b1dfd1c4adac35500f7e17f">ompl::control::HyRRT::lastGoalMotion_</a></div><div class="ttdeci">Motion * lastGoalMotion_</div><div class="ttdoc">The most recent goal motion. Used for PlannerData computation.</div><div class="ttdef"><b>Definition</b> <a href="#l00294">HyRRT.h:294</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a4fa7796dea87a4da581dbf91dbffa498"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a4fa7796dea87a4da581dbf91dbffa498">ompl::control::HyRRT::setFlowSet</a></div><div class="ttdeci">void setFlowSet(std::function&lt; bool(Motion *motion)&gt; flowSet)</div><div class="ttdoc">Define the flow set.</div><div class="ttdef"><b>Definition</b> <a href="#l00186">HyRRT.h:186</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a519180748444e52a24d22d8ee4f7c995"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a519180748444e52a24d22d8ee4f7c995">ompl::control::HyRRT::setup</a></div><div class="ttdeci">void setup() override</div><div class="ttdoc">Set the problem instance to solve.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00322">HyRRT.cpp:322</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a51ca371b9f97208a1d88947ac1752e75"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a51ca371b9f97208a1d88947ac1752e75">ompl::control::HyRRT::solve</a></div><div class="ttdeci">base::PlannerStatus solve(const base::PlannerTerminationCondition &amp;ptc) override</div><div class="ttdoc">Function that can solve the motion planning problem. This function can be called multiple times on th...</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00087">HyRRT.cpp:87</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a58461d5990c2e687cbc9950df5349a5a"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a58461d5990c2e687cbc9950df5349a5a">ompl::control::HyRRT::setDistanceFunction</a></div><div class="ttdeci">void setDistanceFunction(std::function&lt; double(base::State *, base::State *)&gt; function)</div><div class="ttdoc">Define the distance measurement function.</div><div class="ttdef"><b>Definition</b> <a href="#l00204">HyRRT.h:204</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a61c1997311375b322fd07612be010fbd"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a61c1997311375b322fd07612be010fbd">ompl::control::HyRRT::jumpSet_</a></div><div class="ttdeci">std::function&lt; bool(Motion *motion)&gt; jumpSet_</div><div class="ttdoc">Function that returns true if a motion intersects with the jump set, and false if not.</div><div class="ttdef"><b>Definition</b> <a href="#l00377">HyRRT.h:377</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a65318c36c5f296735eb9ec1ebc4f73d5"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a65318c36c5f296735eb9ec1ebc4f73d5">ompl::control::HyRRT::discreteSimulator_</a></div><div class="ttdeci">std::function&lt; base::State *(base::State *curState, const control::Control *u, base::State *newState)&gt; discreteSimulator_</div><div class="ttdoc">Simulator for propagation under jump regime.</div><div class="ttdef"><b>Definition</b> <a href="#l00370">HyRRT.h:370</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a758ccd4513cfb002e0d5129f76c32521"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a758ccd4513cfb002e0d5129f76c32521">ompl::control::HyRRT::sampler_</a></div><div class="ttdeci">base::StateSamplerPtr sampler_</div><div class="ttdoc">State sampler.</div><div class="ttdef"><b>Definition</b> <a href="#l00413">HyRRT.h:413</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a76a5c3fc216f41254d576f32e3d8dde2"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a76a5c3fc216f41254d576f32e3d8dde2">ompl::control::HyRRT::setCollisionChecker</a></div><div class="ttdeci">void setCollisionChecker(std::function&lt; bool(Motion *motion, std::function&lt; bool(Motion *motion)&gt; obstacleSet, base::State *newState, double *collisionTime)&gt; function)</div><div class="ttdoc">Define the collision checker.</div><div class="ttdef"><b>Definition</b> <a href="#l00236">HyRRT.h:236</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a791ed9d67304bd89b57685079dc923b1"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a791ed9d67304bd89b57685079dc923b1">ompl::control::HyRRT::flowSet_</a></div><div class="ttdeci">std::function&lt; bool(Motion *motion)&gt; flowSet_</div><div class="ttdoc">Function that returns true if a motion intersects with the flow set, and false if not.</div><div class="ttdef"><b>Definition</b> <a href="#l00384">HyRRT.h:384</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a7fb0666966192eefa9ac72da1be830a3"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a7fb0666966192eefa9ac72da1be830a3">ompl::control::HyRRT::nn_</a></div><div class="ttdeci">std::shared_ptr&lt; NearestNeighbors&lt; Motion * &gt; &gt; nn_</div><div class="ttdoc">A nearest-neighbors datastructure containing the tree of motions.</div><div class="ttdef"><b>Definition</b> <a href="#l00306">HyRRT.h:306</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a8653683ff6ee5386c74beb2fc3e8b874"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a8653683ff6ee5386c74beb2fc3e8b874">ompl::control::HyRRT::setTm</a></div><div class="ttdeci">void setTm(double tM)</div><div class="ttdoc">Set the maximum time allocated to a full continuous simulator step.</div><div class="ttdef"><b>Definition</b> <a href="#l00139">HyRRT.h:139</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a8cf7aad51a1ec311dc429731cc4eccaf"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a8cf7aad51a1ec311dc429731cc4eccaf">ompl::control::HyRRT::setJumpSet</a></div><div class="ttdeci">void setJumpSet(std::function&lt; bool(Motion *motion)&gt; jumpSet)</div><div class="ttdoc">Define the jump set.</div><div class="ttdef"><b>Definition</b> <a href="#l00177">HyRRT.h:177</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a97b280426b2cd591599ebd211f118a06"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a97b280426b2cd591599ebd211f118a06">ompl::control::HyRRT::~HyRRT</a></div><div class="ttdeci">~HyRRT() override</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00056">HyRRT.cpp:56</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a991ed7d92562a150ec1babb5dcf26b22"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a991ed7d92562a150ec1babb5dcf26b22">ompl::control::HyRRT::siC_</a></div><div class="ttdeci">control::SpaceInformation * siC_</div><div class="ttdoc">The base::SpaceInformation cast as control::SpaceInformation, for convenience.</div><div class="ttdef"><b>Definition</b> <a href="#l00345">HyRRT.h:345</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a9958f8a558330806fac4ef21d5778564"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a9958f8a558330806fac4ef21d5778564">ompl::control::HyRRT::getPlannerData</a></div><div class="ttdeci">void getPlannerData(base::PlannerData &amp;data) const override</div><div class="ttdoc">Get the PlannerData object associated with this planner.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00354">HyRRT.cpp:354</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_a9fa95866a090b639b3ba05e0a242c7ec"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#a9fa95866a090b639b3ba05e0a242c7ec">ompl::control::HyRRT::setContinuousSimulator</a></div><div class="ttdeci">void setContinuousSimulator(std::function&lt; base::State *(const control::Control *u, base::State *curState, double tFlowMax, base::State *newState)&gt; function)</div><div class="ttdoc">Define the continuous dynamics simulator.</div><div class="ttdef"><b>Definition</b> <a href="#l00276">HyRRT.h:276</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_aa40c99635b743b92730879d4dff92f3a"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#aa40c99635b743b92730879d4dff92f3a">ompl::control::HyRRT::setFlowStepDuration</a></div><div class="ttdeci">void setFlowStepDuration(double duration)</div><div class="ttdoc">Set the time allocated to a single continuous simulator call, within the full period of a continuous ...</div><div class="ttdef"><b>Definition</b> <a href="#l00160">HyRRT.h:160</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_abe3891b6fdee42fd37c15cf4ad13431b"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#abe3891b6fdee42fd37c15cf4ad13431b">ompl::control::HyRRT::continuousSimulator</a></div><div class="ttdeci">std::function&lt; ompl::base::State *(const control::Control *control, ompl::base::State *x_cur, double tFlow, ompl::base::State *new_state)&gt; continuousSimulator</div><div class="ttdoc">Simulates the dynamics of the multicopter when in flow regime, with no nonnegligble forces other than...</div><div class="ttdef"><b>Definition</b> <a href="#l00224">HyRRT.h:224</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_ac1a5438c874f1ef22a3eaf1a6ec43ac0"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#ac1a5438c874f1ef22a3eaf1a6ec43ac0">ompl::control::HyRRT::controlSampler_</a></div><div class="ttdeci">control::DirectedControlSamplerPtr controlSampler_</div><div class="ttdoc">Control Sampler.</div><div class="ttdef"><b>Definition</b> <a href="#l00342">HyRRT.h:342</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_ac2ecffa4a311667ea7d4baab5d7d2ad2"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#ac2ecffa4a311667ea7d4baab5d7d2ad2">ompl::control::HyRRT::collisionChecker_</a></div><div class="ttdeci">std::function&lt; bool(Motion *motion, std::function&lt; bool(Motion *motion)&gt; obstacleSet, base::State *newState, double *collisionTime)&gt; collisionChecker_</div><div class="ttdoc">Collision checker. Default is point-by-point collision checking using the jump set.</div><div class="ttdef"><b>Definition</b> <a href="#l00327">HyRRT.h:327</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_ac323d40b53956ae3a169f8a0d6cd7b34"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#ac323d40b53956ae3a169f8a0d6cd7b34">ompl::control::HyRRT::flowStepDuration_</a></div><div class="ttdeci">double flowStepDuration_</div><div class="ttdoc">The flow time for a given integration step, within a flow propagation step. Must be set by user.</div><div class="ttdef"><b>Definition</b> <a href="#l00360">HyRRT.h:360</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_ae4e86a7a9163f8674d8a380da5e0d123"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#ae4e86a7a9163f8674d8a380da5e0d123">ompl::control::HyRRT::unsafeSet_</a></div><div class="ttdeci">std::function&lt; bool(Motion *motion)&gt; unsafeSet_</div><div class="ttdoc">Function that returns true if a motion intersects with the unsafe set, and false if not.</div><div class="ttdef"><b>Definition</b> <a href="#l00391">HyRRT.h:391</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_aedad9132b88301f3fbdb7dfb0d76fbeb"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#aedad9132b88301f3fbdb7dfb0d76fbeb">ompl::control::HyRRT::initTree</a></div><div class="ttdeci">void initTree(void)</div><div class="ttdoc">Runs the initial setup tasks for the tree.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00061">HyRRT.cpp:61</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_aee75dda8626d490fb577b4bf1fcd77dc"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#aee75dda8626d490fb577b4bf1fcd77dc">ompl::control::HyRRT::freeMemory</a></div><div class="ttdeci">void freeMemory()</div><div class="ttdoc">Free the memory allocated by this planner.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00332">HyRRT.cpp:332</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_af357c11deb59655f22741228c7b677b1"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#af357c11deb59655f22741228c7b677b1">ompl::control::HyRRT::setNearestNeighbors</a></div><div class="ttdeci">void setNearestNeighbors(void)</div><div class="ttdoc">Set a different nearest neighbors datastructure.</div><div class="ttdef"><b>Definition</b> <a href="#l00245">HyRRT.h:245</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_af7162cc8d685d050f7afe4c9a9660996"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#af7162cc8d685d050f7afe4c9a9660996">ompl::control::HyRRT::tM_</a></div><div class="ttdeci">double tM_</div><div class="ttdoc">The maximum flow time for a given flow propagation step. Must be set by the user.</div><div class="ttdef"><b>Definition</b> <a href="#l00357">HyRRT.h:357</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_af72d99e65c0a419182f025e465fbebea"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#af72d99e65c0a419182f025e465fbebea">ompl::control::HyRRT::HyRRT</a></div><div class="ttdeci">HyRRT(const control::SpaceInformationPtr &amp;si)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> <a href="HyRRT_8cpp_source.html#l00050">HyRRT.cpp:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1HyRRT_html_afffb5c73696181585bd639ae0c83ed24"><div class="ttname"><a href="classompl_1_1control_1_1HyRRT.html#afffb5c73696181585bd639ae0c83ed24">ompl::control::HyRRT::dist_</a></div><div class="ttdeci">double dist_</div><div class="ttdoc">Minimum distance from goal to final vertex of generated trajectories.</div><div class="ttdef"><b>Definition</b> <a href="#l00416">HyRRT.h:416</a></div></div>
+<div class="ttc" id="aclassompl_1_1control_1_1SpaceInformation_html"><div class="ttname"><a href="classompl_1_1control_1_1SpaceInformation.html">ompl::control::SpaceInformation</a></div><div class="ttdoc">Space information containing necessary information for planning with controls. setup() needs to be ca...</div><div class="ttdef"><b>Definition</b> <a href="control_2SpaceInformation_8h_source.html#l00070">SpaceInformation.h:71</a></div></div>
+<div class="ttc" id="agroup__logging_html_gab76357dced39cb468d2061d3358f80a6"><div class="ttname"><a href="group__logging.html#gab76357dced39cb468d2061d3358f80a6">OMPL_WARN</a></div><div class="ttdeci">#define OMPL_WARN(fmt,...)</div><div class="ttdoc">Log a formatted warning string.</div><div class="ttdef"><b>Definition</b> <a href="Console_8h_source.html#l00066">Console.h:66</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1control_html"><div class="ttname"><a href="namespaceompl_1_1control.html">ompl::control</a></div><div class="ttdoc">This namespace contains sampling based planning routines used by planning under differential constrai...</div><div class="ttdef"><b>Definition</b> <a href="Control_8h_source.html#l00044">Control.h:45</a></div></div>
+<div class="ttc" id="anamespaceompl_html"><div class="ttname"><a href="namespaceompl.html">ompl</a></div><div class="ttdoc">Main namespace. Contains everything in this library.</div><div class="ttdef"><b>Definition</b> <a href="MultiLevelPlanarManipulatorDemo_8cpp_source.html#l00065">MultiLevelPlanarManipulatorDemo.cpp:66</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
+<div class="ttc" id="astructompl_1_1base_1_1PlannerStatus_html"><div class="ttname"><a href="structompl_1_1base_1_1PlannerStatus.html">ompl::base::PlannerStatus</a></div><div class="ttdoc">A class to store the exit status of Planner::solve().</div><div class="ttdef"><b>Definition</b> <a href="PlannerStatus_8h_source.html#l00048">PlannerStatus.h:49</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

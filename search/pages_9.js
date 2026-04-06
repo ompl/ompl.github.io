@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mailing_20lists_6583',['Mailing Lists',['../mailingLists.html',1,'']]],
-  ['multilevel_20planning_20framework_6584',['Multilevel Planning Framework',['../multiLevelPlanning.html',1,'']]],
-  ['multilevel_20planning_20tutorial_6585',['Multilevel Planning Tutorial',['../multiLevelPlanningTutorial.html',1,'']]]
+  ['_3a_20maximize_20minimum_20clearance_0',['Specifying a new objective (part 2): maximize minimum clearance',['../optimizationObjectivesTutorial.html#autotoc_md45',1,'']]],
+  ['_3a_20path_20clearance_1',['Specifying a new objective (part 1): path clearance',['../optimizationObjectivesTutorial.html#autotoc_md43',1,'']]]
 ];

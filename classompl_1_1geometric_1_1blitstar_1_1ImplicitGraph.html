@@ -1,0 +1,888 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
+<head>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl::geometric::blitstar::ImplicitGraph Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="ompl.css" rel="stylesheet">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand" href="./index.html">OMPL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="docDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="docDropdown">
+              <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
+              <a class="dropdown-item" href="installation.html">Installation</a>
+              <a class="dropdown-item" href="tutorials.html">Tutorials</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
+              <a class="dropdown-item" href="python.html">Python Bindings</a>
+              <a class="dropdown-item" href="planners.html">Available Planners</a>
+              <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
+              <a class="dropdown-item" href="benchmark.html">Benchmarking Planners</a>
+              <a class="dropdown-item" href="spaces.html">Available State Spaces</a>
+              <a class="dropdown-item" href="optimalPlanning.html">Optimal Planning</a>
+              <a class="dropdown-item" href="constrainedPlanning.html">Constrained Planning</a>
+              <a class="dropdown-item" href="multiLevelPlanning.html">Multilevel Planning</a>
+              <a class="dropdown-item" href="FAQ.html">FAQ</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-header">External links</div>
+              <a class="dropdown-item" href="http://moveit.ros.org">MoveIt</a>
+              <a class="dropdown-item" href="http://plannerarena.org">Planner Arena</a>
+              <a class="dropdown-item" href="https://moveit.ros.org//moveit!/ros/2013/05/07/icra-motion-planning-tutorial.html">ICRA 2013 Tutorial</a>
+              <a class="dropdown-item" href="http://kavrakilab.org/iros2011/">IROS 2011 Tutorial</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="integration.html">OMPL Integrations</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="codeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code</a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdown">
+              <a class="dropdown-item" href="api_overview.html">API Overview</a>
+              <a class="dropdown-item" href="annotated.html">Classes</a>
+              <a class="dropdown-item" href="files.html">Files</a>
+              <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+              <a class="dropdown-item" href="support.html">Get Support</a>
+              <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
+              <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <a class="dropdown-item" href="license.html">License</a>
+              <a class="dropdown-item" href="citations.html">Citations</a>
+              <a class="dropdown-item" href="acknowledgements.html">Acknowledgments</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://ompl.kavrakilab.org/blog.html">Blog</a></li>
+        </ul>
+                <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+      </div>
+    </nav>
+  <div class="container" role="main">
+    <div>
+<!-- Generated by Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="namespaceompl.html">ompl</a></li><li class="navelem"><a href="namespaceompl_1_1geometric.html">geometric</a></li><li class="navelem"><b>blitstar</b></li><li class="navelem"><a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph.html">ImplicitGraph</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classompl_1_1geometric_1_1blitstar_1_1ImplicitGraph-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ompl::geometric::blitstar::ImplicitGraph Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a919f91286929fec7a88022468d6a1d35" id="r_a919f91286929fec7a88022468d6a1d35"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a919f91286929fec7a88022468d6a1d35">ImplicitGraph</a> (const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;solutionCost)</td></tr>
+<tr class="memdesc:a919f91286929fec7a88022468d6a1d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an implicit graph.  <br /></td></tr>
+<tr class="memitem:a9613d9f4d473d6e4f9904dbcc19ed5cb" id="r_a9613d9f4d473d6e4f9904dbcc19ed5cb"><td class="memItemLeft"><a id="a9613d9f4d473d6e4f9904dbcc19ed5cb" name="a9613d9f4d473d6e4f9904dbcc19ed5cb"></a>
+virtual&#160;</td><td class="memItemRight"><b>~ImplicitGraph</b> ()=default</td></tr>
+<tr class="memdesc:a9613d9f4d473d6e4f9904dbcc19ed5cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs an implicit graph. <br /></td></tr>
+<tr class="memitem:a5dc8a9c64c22ba6ca8719a38ce449878" id="r_a5dc8a9c64c22ba6ca8719a38ce449878"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5dc8a9c64c22ba6ca8719a38ce449878">setup</a> (const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;spaceInformation, const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> &amp;problemDefinition, <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> *inputStates)</td></tr>
+<tr class="memdesc:a5dc8a9c64c22ba6ca8719a38ce449878"><td class="mdescLeft">&#160;</td><td class="mdescRight">The setup method for the graph. Needed to have it on the stack.  <br /></td></tr>
+<tr class="memitem:aaf2e717036aedf1c5aa4d11d075a3854" id="r_aaf2e717036aedf1c5aa4d11d075a3854"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaf2e717036aedf1c5aa4d11d075a3854">clear</a> ()</td></tr>
+<tr class="memdesc:aaf2e717036aedf1c5aa4d11d075a3854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the graph to its construction state, without resetting options.  <br /></td></tr>
+<tr class="memitem:a03181ee859b9e8c0bab18f4ebcd1b8d3" id="r_a03181ee859b9e8c0bab18f4ebcd1b8d3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a03181ee859b9e8c0bab18f4ebcd1b8d3">setRewireFactor</a> (double rewireFactor)</td></tr>
+<tr class="memdesc:a03181ee859b9e8c0bab18f4ebcd1b8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the rewire factor of the RGG.  <br /></td></tr>
+<tr class="memitem:a709a77b50ea1de8887f308cca21aeed2" id="r_a709a77b50ea1de8887f308cca21aeed2"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a709a77b50ea1de8887f308cca21aeed2">getRewireFactor</a> () const</td></tr>
+<tr class="memdesc:a709a77b50ea1de8887f308cca21aeed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reqire factor of the RGG.  <br /></td></tr>
+<tr class="memitem:a71df418b7e62b5507e7436ed15bf1915" id="r_a71df418b7e62b5507e7436ed15bf1915"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a71df418b7e62b5507e7436ed15bf1915">setMaxNumberOfGoals</a> (unsigned int maxNumberOfGoals)</td></tr>
+<tr class="memdesc:a71df418b7e62b5507e7436ed15bf1915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum number of goals BLIT* will sample from sampleable goal regions.  <br /></td></tr>
+<tr class="memitem:a1a9a5fd4bc06382117334ac33ef0658b" id="r_a1a9a5fd4bc06382117334ac33ef0658b"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#a1a9a5fd4bc06382117334ac33ef0658b">getMaxNumberOfGoals</a> () const</td></tr>
+<tr class="memdesc:a1a9a5fd4bc06382117334ac33ef0658b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of goals BLIT* will sample from sampleable goal regions.  <br /></td></tr>
+<tr class="memitem:acad2c69d13489a80ba2b007f7972e216" id="r_acad2c69d13489a80ba2b007f7972e216"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acad2c69d13489a80ba2b007f7972e216">setUseKNearest</a> (bool useKNearest)</td></tr>
+<tr class="memdesc:acad2c69d13489a80ba2b007f7972e216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to use a k-nearest connection model. If false, it uses an r-disc model.  <br /></td></tr>
+<tr class="memitem:ac9bd19e578d6e2673a2af8790eb50f25" id="r_ac9bd19e578d6e2673a2af8790eb50f25"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac9bd19e578d6e2673a2af8790eb50f25">getUseKNearest</a> () const</td></tr>
+<tr class="memdesc:ac9bd19e578d6e2673a2af8790eb50f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the graph uses a k-nearest connection model. If false, it uses an r-disc model.  <br /></td></tr>
+<tr class="memitem:a548c47e0a92afedc366aea176a441f18" id="r_a548c47e0a92afedc366aea176a441f18"><td class="memItemLeft"><a id="a548c47e0a92afedc366aea176a441f18" name="a548c47e0a92afedc366aea176a441f18"></a>
+void&#160;</td><td class="memItemRight"><b>setTrackApproximateSolution</b> (bool track)</td></tr>
+<tr class="memdesc:a548c47e0a92afedc366aea176a441f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether to track approximate solutions or not. <br /></td></tr>
+<tr class="memitem:adbb37024e583bc3838a0240551b923ae" id="r_adbb37024e583bc3838a0240551b923ae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#adbb37024e583bc3838a0240551b923ae">addSamples</a> (std::size_t numNewSamples, const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a> &amp;terminationCondition, bool need_prune)</td></tr>
+<tr class="memdesc:adbb37024e583bc3838a0240551b923ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a batch of samples and returns the samples it has added.  <br /></td></tr>
+<tr class="memitem:a5758e40fb95940f302fa788b6b489453" id="r_a5758e40fb95940f302fa788b6b489453"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a5758e40fb95940f302fa788b6b489453">getNumVertices</a> () const</td></tr>
+<tr class="memdesc:a5758e40fb95940f302fa788b6b489453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of samples in the graph.  <br /></td></tr>
+<tr class="memitem:a37871cb3bb6f51f96e15de9066666d7e" id="r_a37871cb3bb6f51f96e15de9066666d7e"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a37871cb3bb6f51f96e15de9066666d7e">getNumNeighbors</a> () const</td></tr>
+<tr class="memitem:a90dc6f326fe260bf3b60ca75b8d5ccc7" id="r_a90dc6f326fe260bf3b60ca75b8d5ccc7"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a90dc6f326fe260bf3b60ca75b8d5ccc7">getConnectionRadius</a> () const</td></tr>
+<tr class="memdesc:a90dc6f326fe260bf3b60ca75b8d5ccc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RGG connection radius.  <br /></td></tr>
+<tr class="memitem:a3c1b131e8b18c61f1aa3ce46bfc2beee" id="r_a3c1b131e8b18c61f1aa3ce46bfc2beee"><td class="memItemLeft"><a id="a3c1b131e8b18c61f1aa3ce46bfc2beee" name="a3c1b131e8b18c61f1aa3ce46bfc2beee"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight"><b>EculideanDistanceToStart</b> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:a3c1b131e8b18c61f1aa3ce46bfc2beee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Eculidean distance to Start. <br /></td></tr>
+<tr class="memitem:aec1df1f09935686c6b3de2e717ffdc31" id="r_aec1df1f09935686c6b3de2e717ffdc31"><td class="memItemLeft"><a id="aec1df1f09935686c6b3de2e717ffdc31" name="aec1df1f09935686c6b3de2e717ffdc31"></a>
+<a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a>&#160;</td><td class="memItemRight"><b>EculideanDistanceToGoal</b> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:aec1df1f09935686c6b3de2e717ffdc31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Eculidean distance to Goal. <br /></td></tr>
+<tr class="memitem:a72c7ce6acc691960f8b20191df1309a8" id="r_a72c7ce6acc691960f8b20191df1309a8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a72c7ce6acc691960f8b20191df1309a8">registerStartState</a> (const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *const startState)</td></tr>
+<tr class="memdesc:a72c7ce6acc691960f8b20191df1309a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a state as a start state.  <br /></td></tr>
+<tr class="memitem:aa214c304de7c0aec8e5dbbbb778af511" id="r_aa214c304de7c0aec8e5dbbbb778af511"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa214c304de7c0aec8e5dbbbb778af511">registerGoalState</a> (const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *const goalState)</td></tr>
+<tr class="memdesc:aa214c304de7c0aec8e5dbbbb778af511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a state as a goal state.  <br /></td></tr>
+<tr class="memitem:a7804a60f5523b36d3cc3d6bdf997e82a" id="r_a7804a60f5523b36d3cc3d6bdf997e82a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7804a60f5523b36d3cc3d6bdf997e82a">hasAStartState</a> () const</td></tr>
+<tr class="memdesc:a7804a60f5523b36d3cc3d6bdf997e82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the graph has a goal state.  <br /></td></tr>
+<tr class="memitem:a9f18e1b0c2b98ec292128b9e185e9dc5" id="r_a9f18e1b0c2b98ec292128b9e185e9dc5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9f18e1b0c2b98ec292128b9e185e9dc5">hasAGoalState</a> () const</td></tr>
+<tr class="memdesc:a9f18e1b0c2b98ec292128b9e185e9dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the graph has a goal state.  <br /></td></tr>
+<tr class="memitem:a865126f1b715ece564daf1554ab0bc8e" id="r_a865126f1b715ece564daf1554ab0bc8e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a865126f1b715ece564daf1554ab0bc8e">updateStartAndGoalStates</a> (const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a> &amp;terminationCondition, <a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> *inputStates)</td></tr>
+<tr class="memdesc:a865126f1b715ece564daf1554ab0bc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds new start and goals to the graph if avavilable and creates a new informed sampler if necessary.  <br /></td></tr>
+<tr class="memitem:aced95d2916a1d30b73b244d0b3bf6597" id="r_aced95d2916a1d30b73b244d0b3bf6597"><td class="memItemLeft">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aced95d2916a1d30b73b244d0b3bf6597">getNeighbors</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:aced95d2916a1d30b73b244d0b3bf6597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get neighbors of a vertex.  <br /></td></tr>
+<tr class="memitem:afac3de26edca61a3c746d8f09cbeeb35" id="r_afac3de26edca61a3c746d8f09cbeeb35"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afac3de26edca61a3c746d8f09cbeeb35">isStart</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:afac3de26edca61a3c746d8f09cbeeb35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the vertex is a start vertex.  <br /></td></tr>
+<tr class="memitem:a319360b0df3b2181ae8fa11cc48de570" id="r_a319360b0df3b2181ae8fa11cc48de570"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a319360b0df3b2181ae8fa11cc48de570">isGoal</a> (const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;vertex) const</td></tr>
+<tr class="memdesc:a319360b0df3b2181ae8fa11cc48de570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the vertex is a goal vertex.  <br /></td></tr>
+<tr class="memitem:a727e34ed593fbbc950f93e6ea4cbb625" id="r_a727e34ed593fbbc950f93e6ea4cbb625"><td class="memItemLeft">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a727e34ed593fbbc950f93e6ea4cbb625">getStartVertices</a> () const</td></tr>
+<tr class="memdesc:a727e34ed593fbbc950f93e6ea4cbb625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start vertices.  <br /></td></tr>
+<tr class="memitem:a98e0502fb9e948fc6c42780a65748385" id="r_a98e0502fb9e948fc6c42780a65748385"><td class="memItemLeft">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a98e0502fb9e948fc6c42780a65748385">getGoalVertices</a> () const</td></tr>
+<tr class="memdesc:a98e0502fb9e948fc6c42780a65748385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the goal vertices.  <br /></td></tr>
+<tr class="memitem:af6e6f31201176c440c774c4062df4f8c" id="r_af6e6f31201176c440c774c4062df4f8c"><td class="memItemLeft">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af6e6f31201176c440c774c4062df4f8c">getVertices</a> () const</td></tr>
+<tr class="memdesc:af6e6f31201176c440c774c4062df4f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all vertices.  <br /></td></tr>
+<tr class="memitem:acb471321c4a9cd0fd28462c5705663c0" id="r_acb471321c4a9cd0fd28462c5705663c0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acb471321c4a9cd0fd28462c5705663c0">prune</a> ()</td></tr>
+<tr class="memdesc:acb471321c4a9cd0fd28462c5705663c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune all samples that can not contribute to a solution better than the current one.  <br /></td></tr>
+<tr class="memitem:a859c3b5b0be678b44c92705dd282a7f9" id="r_a859c3b5b0be678b44c92705dd282a7f9"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a859c3b5b0be678b44c92705dd282a7f9">getNumberOfSampledStates</a> () const</td></tr>
+<tr class="memdesc:a859c3b5b0be678b44c92705dd282a7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of sampled states.  <br /></td></tr>
+<tr class="memitem:a42367b6c1c51fbd5594dbc45a472ba7d" id="r_a42367b6c1c51fbd5594dbc45a472ba7d"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a42367b6c1c51fbd5594dbc45a472ba7d">getNumberOfValidSamples</a> () const</td></tr>
+<tr class="memdesc:a42367b6c1c51fbd5594dbc45a472ba7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of valid samples found.  <br /></td></tr>
+<tr class="memitem:a464bacb389fcb3e3f2290ae2b7eff507" id="r_a464bacb389fcb3e3f2290ae2b7eff507"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a464bacb389fcb3e3f2290ae2b7eff507">getNumberOfStateCollisionChecks</a> () const</td></tr>
+<tr class="memdesc:a464bacb389fcb3e3f2290ae2b7eff507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of state collision checks.  <br /></td></tr>
+<tr class="memitem:a9287adb0da89a6d8e4e15c8303f77a2f" id="r_a9287adb0da89a6d8e4e15c8303f77a2f"><td class="memItemLeft">std::size_t&#160;</td><td class="memItemRight"><a class="el" href="#a9287adb0da89a6d8e4e15c8303f77a2f">getNumberOfNearestNeighborCalls</a> () const</td></tr>
+<tr class="memdesc:a9287adb0da89a6d8e4e15c8303f77a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of nearest neighbor calls.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2ImplicitGraph_8h_source.html#l00066">66</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2ImplicitGraph_8h_source.html">ImplicitGraph.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a919f91286929fec7a88022468d6a1d35" name="a919f91286929fec7a88022468d6a1d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919f91286929fec7a88022468d6a1d35">&#9670;&#160;</a></span>ImplicitGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ompl::geometric::blitstar::ImplicitGraph::ImplicitGraph </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1Cost.html">ompl::base::Cost</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>solutionCost</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an implicit graph. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00056">56</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="adbb37024e583bc3838a0240551b923ae" name="adbb37024e583bc3838a0240551b923ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb37024e583bc3838a0240551b923ae">&#9670;&#160;</a></span>addSamples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::blitstar::ImplicitGraph::addSamples </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>numNewSamples</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>terminationCondition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>need_prune</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a batch of samples and returns the samples it has added. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00318">318</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aaf2e717036aedf1c5aa4d11d075a3854" name="aaf2e717036aedf1c5aa4d11d075a3854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf2e717036aedf1c5aa4d11d075a3854">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the graph to its construction state, without resetting options. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00075">75</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a90dc6f326fe260bf3b60ca75b8d5ccc7" name="a90dc6f326fe260bf3b60ca75b8d5ccc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90dc6f326fe260bf3b60ca75b8d5ccc7">&#9670;&#160;</a></span>getConnectionRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::blitstar::ImplicitGraph::getConnectionRadius </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the RGG connection radius. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00393">393</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a98e0502fb9e948fc6c42780a65748385" name="a98e0502fb9e948fc6c42780a65748385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e0502fb9e948fc6c42780a65748385">&#9670;&#160;</a></span>getGoalVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt; &amp; ompl::geometric::blitstar::ImplicitGraph::getGoalVertices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the goal vertices. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00452">452</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1a9a5fd4bc06382117334ac33ef0658b" name="a1a9a5fd4bc06382117334ac33ef0658b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a9a5fd4bc06382117334ac33ef0658b">&#9670;&#160;</a></span>getMaxNumberOfGoals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int ompl::geometric::blitstar::ImplicitGraph::getMaxNumberOfGoals </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the maximum number of goals BLIT* will sample from sampleable goal regions. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00104">104</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aced95d2916a1d30b73b244d0b3bf6597" name="aced95d2916a1d30b73b244d0b3bf6597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced95d2916a1d30b73b244d0b3bf6597">&#9670;&#160;</a></span>getNeighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt; ompl::geometric::blitstar::ImplicitGraph::getNeighbors </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vertex</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get neighbors of a vertex. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00399">399</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9287adb0da89a6d8e4e15c8303f77a2f" name="a9287adb0da89a6d8e4e15c8303f77a2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9287adb0da89a6d8e4e15c8303f77a2f">&#9670;&#160;</a></span>getNumberOfNearestNeighborCalls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t ompl::geometric::blitstar::ImplicitGraph::getNumberOfNearestNeighborCalls </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of nearest neighbor calls. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00535">535</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a859c3b5b0be678b44c92705dd282a7f9" name="a859c3b5b0be678b44c92705dd282a7f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a859c3b5b0be678b44c92705dd282a7f9">&#9670;&#160;</a></span>getNumberOfSampledStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t ompl::geometric::blitstar::ImplicitGraph::getNumberOfSampledStates </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the total number of sampled states. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00518">518</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a464bacb389fcb3e3f2290ae2b7eff507" name="a464bacb389fcb3e3f2290ae2b7eff507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a464bacb389fcb3e3f2290ae2b7eff507">&#9670;&#160;</a></span>getNumberOfStateCollisionChecks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t ompl::geometric::blitstar::ImplicitGraph::getNumberOfStateCollisionChecks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of state collision checks. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00528">528</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a42367b6c1c51fbd5594dbc45a472ba7d" name="a42367b6c1c51fbd5594dbc45a472ba7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42367b6c1c51fbd5594dbc45a472ba7d">&#9670;&#160;</a></span>getNumberOfValidSamples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t ompl::geometric::blitstar::ImplicitGraph::getNumberOfValidSamples </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the total number of valid samples found. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00523">523</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a37871cb3bb6f51f96e15de9066666d7e" name="a37871cb3bb6f51f96e15de9066666d7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37871cb3bb6f51f96e15de9066666d7e">&#9670;&#160;</a></span>getNumNeighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t ompl::geometric::blitstar::ImplicitGraph::getNumNeighbors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00389">389</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5758e40fb95940f302fa788b6b489453" name="a5758e40fb95940f302fa788b6b489453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5758e40fb95940f302fa788b6b489453">&#9670;&#160;</a></span>getNumVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t ompl::geometric::blitstar::ImplicitGraph::getNumVertices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the number of samples in the graph. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00385">385</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a709a77b50ea1de8887f308cca21aeed2" name="a709a77b50ea1de8887f308cca21aeed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709a77b50ea1de8887f308cca21aeed2">&#9670;&#160;</a></span>getRewireFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ompl::geometric::blitstar::ImplicitGraph::getRewireFactor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the reqire factor of the RGG. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00094">94</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a727e34ed593fbbc950f93e6ea4cbb625" name="a727e34ed593fbbc950f93e6ea4cbb625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a727e34ed593fbbc950f93e6ea4cbb625">&#9670;&#160;</a></span>getStartVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt; &amp; ompl::geometric::blitstar::ImplicitGraph::getStartVertices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the start vertices. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00447">447</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac9bd19e578d6e2673a2af8790eb50f25" name="ac9bd19e578d6e2673a2af8790eb50f25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9bd19e578d6e2673a2af8790eb50f25">&#9670;&#160;</a></span>getUseKNearest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::blitstar::ImplicitGraph::getUseKNearest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the graph uses a k-nearest connection model. If false, it uses an r-disc model. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00114">114</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af6e6f31201176c440c774c4062df4f8c" name="af6e6f31201176c440c774c4062df4f8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e6f31201176c440c774c4062df4f8c">&#9670;&#160;</a></span>getVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &gt; ompl::geometric::blitstar::ImplicitGraph::getVertices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all vertices. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00457">457</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9f18e1b0c2b98ec292128b9e185e9dc5" name="a9f18e1b0c2b98ec292128b9e185e9dc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f18e1b0c2b98ec292128b9e185e9dc5">&#9670;&#160;</a></span>hasAGoalState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::blitstar::ImplicitGraph::hasAGoalState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether the graph has a goal state. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00157">157</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7804a60f5523b36d3cc3d6bdf997e82a" name="a7804a60f5523b36d3cc3d6bdf997e82a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7804a60f5523b36d3cc3d6bdf997e82a">&#9670;&#160;</a></span>hasAStartState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::blitstar::ImplicitGraph::hasAStartState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether the graph has a goal state. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00152">152</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a319360b0df3b2181ae8fa11cc48de570" name="a319360b0df3b2181ae8fa11cc48de570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319360b0df3b2181ae8fa11cc48de570">&#9670;&#160;</a></span>isGoal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::blitstar::ImplicitGraph::isGoal </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vertex</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the vertex is a goal vertex. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00435">435</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afac3de26edca61a3c746d8f09cbeeb35" name="afac3de26edca61a3c746d8f09cbeeb35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac3de26edca61a3c746d8f09cbeeb35">&#9670;&#160;</a></span>isStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ompl::geometric::blitstar::ImplicitGraph::isStart </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classompl_1_1geometric_1_1blitstar_1_1Vertex.html">Vertex</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vertex</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the vertex is a start vertex. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00423">423</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acb471321c4a9cd0fd28462c5705663c0" name="acb471321c4a9cd0fd28462c5705663c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb471321c4a9cd0fd28462c5705663c0">&#9670;&#160;</a></span>prune()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::prune </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prune all samples that can not contribute to a solution better than the current one. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00464">464</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa214c304de7c0aec8e5dbbbb778af511" name="aa214c304de7c0aec8e5dbbbb778af511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa214c304de7c0aec8e5dbbbb778af511">&#9670;&#160;</a></span>registerGoalState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::registerGoalState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *const</td>          <td class="paramname"><span class="paramname"><em>goalState</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers a state as a goal state. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00137">137</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a72c7ce6acc691960f8b20191df1309a8" name="a72c7ce6acc691960f8b20191df1309a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72c7ce6acc691960f8b20191df1309a8">&#9670;&#160;</a></span>registerStartState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::registerStartState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1State.html">ompl::base::State</a> *const</td>          <td class="paramname"><span class="paramname"><em>startState</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers a state as a start state. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00119">119</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a71df418b7e62b5507e7436ed15bf1915" name="a71df418b7e62b5507e7436ed15bf1915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71df418b7e62b5507e7436ed15bf1915">&#9670;&#160;</a></span>setMaxNumberOfGoals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::setMaxNumberOfGoals </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>maxNumberOfGoals</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the maximum number of goals BLIT* will sample from sampleable goal regions. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00099">99</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a03181ee859b9e8c0bab18f4ebcd1b8d3" name="a03181ee859b9e8c0bab18f4ebcd1b8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03181ee859b9e8c0bab18f4ebcd1b8d3">&#9670;&#160;</a></span>setRewireFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::setRewireFactor </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>rewireFactor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the rewire factor of the RGG. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00089">89</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5dc8a9c64c22ba6ca8719a38ce449878" name="a5dc8a9c64c22ba6ca8719a38ce449878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc8a9c64c22ba6ca8719a38ce449878">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::setup </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1SpaceInformationPtr.html">ompl::base::SpaceInformationPtr</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>spaceInformation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1ProblemDefinitionPtr.html">ompl::base::ProblemDefinitionPtr</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>problemDefinition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> *</td>          <td class="paramname"><span class="paramname"><em>inputStates</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The setup method for the graph. Needed to have it on the stack. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00061">61</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acad2c69d13489a80ba2b007f7972e216" name="acad2c69d13489a80ba2b007f7972e216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad2c69d13489a80ba2b007f7972e216">&#9670;&#160;</a></span>setUseKNearest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::setUseKNearest </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>useKNearest</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether to use a k-nearest connection model. If false, it uses an r-disc model. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00109">109</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a865126f1b715ece564daf1554ab0bc8e" name="a865126f1b715ece564daf1554ab0bc8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a865126f1b715ece564daf1554ab0bc8e">&#9670;&#160;</a></span>updateStartAndGoalStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ompl::geometric::blitstar::ImplicitGraph::updateStartAndGoalStates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classompl_1_1base_1_1PlannerTerminationCondition.html">ompl::base::PlannerTerminationCondition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>terminationCondition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classompl_1_1base_1_1PlannerInputStates.html">ompl::base::PlannerInputStates</a> *</td>          <td class="paramname"><span class="paramname"><em>inputStates</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds new start and goals to the graph if avavilable and creates a new informed sampler if necessary. </p>
+
+<p class="definition">Definition at line <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html#l00163">163</a> of file <a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ompl/geometric/planners/lazyinformedtrees/blitstar/<a class="el" href="lazyinformedtrees_2blitstar_2ImplicitGraph_8h_source.html">ImplicitGraph.h</a></li>
+<li>ompl/geometric/planners/lazyinformedtrees/blitstar/src/<a class="el" href="lazyinformedtrees_2blitstar_2src_2ImplicitGraph_8cpp_source.html">ImplicitGraph.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div>
+<footer class="footer">
+  <div class="container">
+  <a href="http://www.kavrakilab.org">Kavraki Lab</a>  &bull;
+  <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
+  <a href="https://www.rice.edu">Rice University</a><br/>
+  Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-9156598-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

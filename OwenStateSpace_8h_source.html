@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="light-mode">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Ioan A. Șucan, Mark Moll, Lydia E. Kavraki">
-  <meta name="generator" content="Doxygen 1.8.17"/>
-  <title>ompl/base/spaces/OwenStateSpace.h Source File</title>
-  <link href="tabs.css" rel="stylesheet" type="text/css"/>
-  <script src="jquery.js"></script>
-  <script src="dynsections.js"></script>
-  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ompl: ompl/base/spaces/OwenStateSpace.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
+  $(function() { init_search(); });
 </script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script>
-<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
-  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ompl.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="ompl.css" rel="stylesheet">
 </head>
 <body>
-  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
     <nav class="navbar navbar-expand-md fixed-top navbar-dark">
       <a class="navbar-brand" href="./index.html">OMPL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
@@ -44,9 +40,7 @@
               <a class="dropdown-item" href="https://ompl.kavrakilab.org/OMPL_Primer.pdf">Primer</a>
               <a class="dropdown-item" href="installation.html">Installation</a>
               <a class="dropdown-item" href="tutorials.html">Tutorials</a>
-              <a class="dropdown-item" href="group__demos.html">Demos</a>
-              <a class="dropdown-item omplapp" href="gui.html">OMPL.app GUI</a>
-              <a class="dropdown-item omplapp" href="webapp.html">OMPL web app</a>
+              <a class="dropdown-item" href="demos.html">Demos</a>
               <a class="dropdown-item" href="python.html">Python Bindings</a>
               <a class="dropdown-item" href="planners.html">Available Planners</a>
               <a class="dropdown-item" href="plannerTerminationConditions.html">Planner Termination Conditions</a>
@@ -73,16 +67,7 @@
               <a class="dropdown-item" href="annotated.html">Classes</a>
               <a class="dropdown-item" href="files.html">Files</a>
               <a class="dropdown-item" href="styleGuide.html">Style Guide</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Repositories</div>
-              <a class="dropdown-item" href="https://github.com/ompl/ompl">ompl on GitHub</a>
-              <a class="dropdown-item" href="https://github.com/ompl/omplapp">omplapp on GitHub</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-header">Continuous Integration</div>
-              <a class="dropdown-item" href="https://travis-ci.org/ompl/ompl">ompl on Travis CI (Linux/macOS)</a>
-              <a class="dropdown-item" href="https://travis-ci.org/ompl/omplapp">omplapp on Travis CI (Linux/macOS)</a>
-              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/ompl">ompl on AppVeyor CI (Windows)</a>
-              <a class="dropdown-item" href="https://ci.appveyor.com/project/mamoll/omplapp">omplapp on AppVeyor CI (Windows)</a>
+              <a class="dropdown-item" href="https://github.com/ompl/ompl">OMPL on GitHub</a>
             </div>
           </li>
           <li class="nav-item"><a class="nav-link" href="https://github.com/ompl/ompl/issues">Issues</a></li>
@@ -92,7 +77,6 @@
               <a class="dropdown-item" href="support.html">Get Support</a>
               <a class="dropdown-item" href="developers.html">Developers/Contributors</a>
               <a class="dropdown-item" href="contrib.html">Submit a Contribution</a>
-              <a class="dropdown-item" href="education.html">Education</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -107,27 +91,25 @@
         </ul>
                 <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
                onfocus="searchBox.OnSearchFieldFocus(true)" 
                onblur="searchBox.OnSearchFieldFocus(false)" 
                onkeyup="searchBox.OnSearchFieldChange(event)"/>
           </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
           </span>
         </div>
       </div>
     </nav>
   <div class="container" role="main">
     <div>
-<!-- Generated by Doxygen 1.8.17 -->
+<!-- Generated by Doxygen 1.16.1 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Search');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
 </script>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -138,221 +120,265 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameborder="0" 
-        name="MSearchResults" id="MSearchResults">
-</iframe>
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
 </div>
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_efdc19d105c21b1223d5f8dc524071be.html">ompl</a></li><li class="navelem"><a class="el" href="dir_06e181af1f5888faac16991b57afb430.html">base</a></li><li class="navelem"><a class="el" href="dir_657904b0a08228494dbd1c9b23b24ab9.html">spaces</a></li>  </ul>
+<li class="navelem"><b>ompl</b></li><li class="navelem"><b>base</b></li><li class="navelem"><b>spaces</b></li>  </ul>
 </div>
 </div><!-- top -->
+<div id="doc-content">
 <div class="header">
-  <div class="headertitle">
-<div class="title">OwenStateSpace.h</div>  </div>
+  <div class="headertitle"><div class="title">OwenStateSpace.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Software License Agreement (BSD License)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Copyright (c) 2024, Metron, Inc.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  are met:</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     with the distribution.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *   * Neither the name of the Metron, Inc. nor the names of its</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     from this software without specific prior written permission.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *********************************************************************/</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Author: Mark Moll */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef OMPL_BASE_SPACES_OWEN_STATE_SPACE_</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define OMPL_BASE_SPACES_OWEN_STATE_SPACE_</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;ompl/base/spaces/DubinsStateSpace.h&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceompl_1_1base.html">ompl::base</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">class </span>OwenStateSpace : <span class="keyword">public</span> CompoundStateSpace</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">enum</span> PathCategory : <span class="keywordtype">char</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            LOW_ALTITUDE = <span class="charliteral">&#39;L&#39;</span>,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            MEDIUM_ALTITUDE = <span class="charliteral">&#39;M&#39;</span>,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            HIGH_ALTITUDE = <span class="charliteral">&#39;H&#39;</span>,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            UNKNOWN = <span class="charliteral">&#39;?&#39;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">class </span>PathType</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            PathType(DubinsStateSpace::DubinsPath <span class="keyword">const</span> &amp;path, <span class="keywordtype">double</span> turnRadius, <span class="keywordtype">double</span> deltaZ,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numTurns = 0)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;              : path_(path), turnRadius_(turnRadius), deltaZ_(deltaZ), numTurns_(numTurns)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            PathType(DubinsStateSpace::DubinsPath <span class="keyword">const</span> &amp;path, <span class="keywordtype">double</span> turnRadius, <span class="keywordtype">double</span> deltaZ, <span class="keywordtype">double</span> phi)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              : path_(path), turnRadius_(turnRadius), deltaZ_(deltaZ), phi_(phi)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">double</span> length() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            PathCategory category() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">friend</span> std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> PathType &amp;path);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            DubinsStateSpace::DubinsPath path_;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">double</span> turnRadius_{1.};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">double</span> deltaZ_;</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html">   92</a></span>&#160;            <span class="keywordtype">double</span> phi_{0.};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numTurns_{0};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        };</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">class </span><a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">StateType</a> : <span class="keyword">public</span> <a class="code" href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">CompoundStateSpace::StateType</a></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            StateType() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">double</span> operator[](<span class="keywordtype">unsigned</span> index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">return</span> as&lt;RealVectorStateSpace::StateType&gt;(0)-&gt;values[index];</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordtype">double</span> &amp;operator[](<span class="keywordtype">unsigned</span> index)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">return</span> as&lt;RealVectorStateSpace::StateType&gt;(0)-&gt;values[index];</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">double</span> yaw()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">return</span> as&lt;SO2StateSpace::StateType&gt;(1)-&gt;value;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordtype">double</span> &amp;yaw()</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">return</span> as&lt;SO2StateSpace::StateType&gt;(1)-&gt;value;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        };</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        OwenStateSpace(<span class="keywordtype">double</span> turningRadius = 1.0, <span class="keywordtype">double</span> maxPitch = boost::math::double_constants::sixth_pi);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        ~OwenStateSpace() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#aec444d4108dc7bfe2db3e07fd4e1f1a8">isMetricSpace</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a8019b9f3aca6055fcb683f2c63b107b0">hasSymmetricDistance</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#acb9389e4dca7445b753111f4611a8b8e">hasSymmetricInterpolate</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace_1_1PathType.html">  135</a></span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#ad2b918d285a114ead257aedb8396eb1d">sanityChecks</a>()<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordtype">double</span> zero = std::numeric_limits&lt;double&gt;::epsilon();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordtype">double</span> eps = std::numeric_limits&lt;float&gt;::epsilon();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordtype">int</span> flags = ~(<a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">STATESPACE_INTERPOLATION</a> | <a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">STATESPACE_TRIANGLE_INEQUALITY</a> | <a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">STATESPACE_DISTANCE_BOUND</a> |</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                          <a class="code" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">STATESPACE_DISTANCE_SYMMETRIC</a>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <a class="code" href="classompl_1_1base_1_1StateSpace.html#a800eb71d641ffb4e5354a9f09a11f1dd">StateSpace::sanityChecks</a>(zero, eps, flags);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#ab5453570d21a947839bbc36ee7aa75e2">setBounds</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1RealVectorBounds.html">RealVectorBounds</a> &amp;bounds)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            as&lt;RealVectorStateSpace&gt;(0)-&gt;setBounds(bounds);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1RealVectorBounds.html">RealVectorBounds</a> &amp;<a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a9d69523ca7bd8fbffd34e2bf31edfd23">getBounds</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">return</span> as&lt;RealVectorStateSpace&gt;(0)-&gt;getBounds();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a56a85365939f8b970034cafda4555b1b">setTolerance</a>(<span class="keywordtype">double</span> tolerance)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">tolerance_</a> = tolerance;</div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace_1_1StateType.html">  161</a></span>&#160;        }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a90916c73256250ccae1dbfeb4596efe0">getTolerance</a>()</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">tolerance_</a>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="classompl_1_1base_1_1State.html">State</a> *<a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#abebc3420c3de608fdeee3f3764facc4c">allocState</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a417f2ab7acec6a9e76b83e64ae1e2b77">registerProjections</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a1c25494798fefabf94a5d54066eb363d">distance</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state1, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state2) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a03b4a9b84dd2ca1e56a736cff21cc0cd">validSegmentCount</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state1, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state2) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a259bd7c56a443ab8d1850f4099543843">interpolate</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *from, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *to, <span class="keywordtype">double</span> t, <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a259bd7c56a443ab8d1850f4099543843">interpolate</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *from, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *to, <span class="keywordtype">double</span> t, PathType &amp;path, <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        std::optional&lt;PathType&gt; <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a90bd0eac234d991ca11553dd9305e79c">getPath</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state1, <span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state2) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#ae442ac624e8192764b696f74371ea99b">turn</a>(<span class="keyword">const</span> <a class="code" href="classompl_1_1base_1_1State.html">State</a> *from, <span class="keywordtype">double</span> turnRadius, <span class="keywordtype">double</span> angle, <a class="code" href="classompl_1_1base_1_1State.html">State</a> *state) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a5daf7897ca0c8b02960ba9a852013ea3">rho_</a>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a4c7395bae93baa3f56a7fbf4f986e8cd">tanMaxPitch_</a>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#ab5453570d21a947839bbc36ee7aa75e2">  210</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">tolerance_</a>{1e-8};</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="classompl_1_1base_1_1DubinsStateSpace.html">DubinsStateSpace</a> <a class="code" href="classompl_1_1base_1_1OwenStateSpace.html#a4435f4eeed2f8cad971db376fbed6447">dubinsSpace_</a>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    };</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}  <span class="comment">// namespace ompl::base</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a9d69523ca7bd8fbffd34e2bf31edfd23">  216</a></span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*********************************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Software License Agreement (BSD License)</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Copyright (c) 2024, Metron, Inc.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  All rights reserved.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *  modification, are permitted provided that the following conditions</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  are met:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *   * Redistributions of source code must retain the above copyright</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *     notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *   * Redistributions in binary form must reproduce the above</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *     copyright notice, this list of conditions and the following</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *     disclaimer in the documentation and/or other materials provided</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *     with the distribution.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *   * Neither the name of the Metron, Inc. nor the names of its</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *     contributors may be used to endorse or promote products derived</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *     from this software without specific prior written permission.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> *********************************************************************/</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/* Author: Mark Moll */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#ifndef OMPL_BASE_SPACES_OWEN_STATE_SPACE_</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define OMPL_BASE_SPACES_OWEN_STATE_SPACE_</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;ompl/base/spaces/DubinsStateSpace.h&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl_1_1base.html">ompl::base</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html">   60</a></span>    <span class="keyword">class </span>OwenStateSpace : <span class="keyword">public</span> <a class="code hl_function" href="classompl_1_1base_1_1CompoundStateSpace.html#a2dcbcf1fac267248ea6ed756494414c8">CompoundStateSpace</a></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">enum</span> PathCategory : <span class="keywordtype">char</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            LOW_ALTITUDE = <span class="charliteral">&#39;L&#39;</span>,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            MEDIUM_ALTITUDE = <span class="charliteral">&#39;M&#39;</span>,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            HIGH_ALTITUDE = <span class="charliteral">&#39;H&#39;</span>,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            UNKNOWN = <span class="charliteral">&#39;?&#39;</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        };</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace_1_1PathType.html">   71</a></span>        <span class="keyword">class </span>PathType</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            PathType(<a class="code hl_class" href="classompl_1_1base_1_1DubinsStateSpace_1_1PathType.html">DubinsStateSpace::PathType</a> <span class="keyword">const</span> &amp;path, <span class="keywordtype">double</span> turnRadius, <span class="keywordtype">double</span> deltaZ,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numTurns = 0)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>              : path_(path), turnRadius_(turnRadius), deltaZ_(deltaZ), numTurns_(numTurns)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            PathType(<a class="code hl_class" href="classompl_1_1base_1_1DubinsStateSpace_1_1PathType.html">DubinsStateSpace::PathType</a> <span class="keyword">const</span> &amp;path, <span class="keywordtype">double</span> turnRadius, <span class="keywordtype">double</span> deltaZ, <span class="keywordtype">double</span> phi)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>              : path_(path), turnRadius_(turnRadius), deltaZ_(deltaZ), phi_(phi)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordtype">double</span> length() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            PathCategory category() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keyword">friend</span> std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> PathType &amp;path);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <a class="code hl_class" href="classompl_1_1base_1_1DubinsStateSpace_1_1PathType.html">DubinsStateSpace::PathType</a> path_;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordtype">double</span> turnRadius_{1.};</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordtype">double</span> deltaZ_;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordtype">double</span> phi_{0.};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numTurns_{0};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        };</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="};">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace_1_1StateType.html">   97</a></span>        <span class="keyword">class </span>StateType : <span class="keyword">public</span> <a class="code hl_typedef" href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">CompoundStateSpace::StateType</a></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <a class="code hl_typedef" href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">StateType</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordtype">double</span> operator[](<span class="keywordtype">unsigned</span> index)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as&lt;RealVectorStateSpace::StateType&gt;</a>(0)-&gt;values[index];</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordtype">double</span> &amp;operator[](<span class="keywordtype">unsigned</span> index)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as&lt;RealVectorStateSpace::StateType&gt;</a>(0)-&gt;values[index];</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordtype">double</span> yaw()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as&lt;SO2StateSpace::StateType&gt;</a>(1)-&gt;value;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordtype">double</span> &amp;yaw()</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">as&lt;SO2StateSpace::StateType&gt;</a>(1)-&gt;value;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        };</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        OwenStateSpace(<span class="keywordtype">double</span> turningRadius = 1.0, <span class="keywordtype">double</span> maxPitch = boost::math::double_constants::sixth_pi);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        ~OwenStateSpace() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#aec444d4108dc7bfe2db3e07fd4e1f1a8">  122</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#aec444d4108dc7bfe2db3e07fd4e1f1a8">isMetricSpace</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
+</div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a8019b9f3aca6055fcb683f2c63b107b0">  126</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a8019b9f3aca6055fcb683f2c63b107b0">hasSymmetricDistance</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#acb9389e4dca7445b753111f4611a8b8e">  131</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#acb9389e4dca7445b753111f4611a8b8e">hasSymmetricInterpolate</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#ad2b918d285a114ead257aedb8396eb1d">  136</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#ad2b918d285a114ead257aedb8396eb1d">sanityChecks</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordtype">double</span> zero = std::numeric_limits&lt;double&gt;::epsilon();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordtype">double</span> eps = std::numeric_limits&lt;float&gt;::epsilon();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <span class="keywordtype">int</span> flags = ~(<a class="code hl_enumvalue" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">STATESPACE_INTERPOLATION</a> | <a class="code hl_enumvalue" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">STATESPACE_TRIANGLE_INEQUALITY</a> | <a class="code hl_enumvalue" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">STATESPACE_DISTANCE_BOUND</a> |</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                          <a class="code hl_enumvalue" href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">STATESPACE_DISTANCE_SYMMETRIC</a>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <a class="code hl_function" href="classompl_1_1base_1_1StateSpace.html#a800eb71d641ffb4e5354a9f09a11f1dd">StateSpace::sanityChecks</a>(zero, eps, flags);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        }</div>
+</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#ab5453570d21a947839bbc36ee7aa75e2">  146</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#ab5453570d21a947839bbc36ee7aa75e2">setBounds</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1RealVectorBounds.html">RealVectorBounds</a> &amp;bounds)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <a class="code hl_function" href="classompl_1_1base_1_1StateSpace.html#a7236f03f05e54a740826187e4c0ffb19">as&lt;RealVectorStateSpace&gt;</a>(0)-&gt;setBounds(bounds);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        }</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a784dbb84f7f8112511245b50c3973e4b">  152</a></span>        <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1RealVectorBounds.html">RealVectorBounds</a> &amp;<a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a784dbb84f7f8112511245b50c3973e4b">getBounds</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classompl_1_1base_1_1StateSpace.html#a7236f03f05e54a740826187e4c0ffb19">as&lt;RealVectorStateSpace&gt;</a>(0)-&gt;getBounds();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a56a85365939f8b970034cafda4555b1b">  158</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a56a85365939f8b970034cafda4555b1b">setTolerance</a>(<span class="keywordtype">double</span> tolerance)</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">tolerance_</a> = tolerance;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a90916c73256250ccae1dbfeb4596efe0">  163</a></span>        <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a90916c73256250ccae1dbfeb4596efe0">getTolerance</a>()</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">tolerance_</a>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *<a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#abebc3420c3de608fdeee3f3764facc4c">allocState</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a417f2ab7acec6a9e76b83e64ae1e2b77">registerProjections</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordtype">double</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a1c25494798fefabf94a5d54066eb363d">distance</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state1, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state2) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a03b4a9b84dd2ca1e56a736cff21cc0cd">validSegmentCount</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state1, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state2) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a259bd7c56a443ab8d1850f4099543843">interpolate</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *from, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *to, <span class="keywordtype">double</span> t, <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a259bd7c56a443ab8d1850f4099543843">interpolate</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *from, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *to, <span class="keywordtype">double</span> t, PathType &amp;path, <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        std::optional&lt;PathType&gt; <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#a90bd0eac234d991ca11553dd9305e79c">getPath</a>(<span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state1, <span class="keyword">const</span> <a class="code hl_class" href="classompl_1_1base_1_1State.html">State</a> *state2) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordtype">double</span> getMinTurnRadius()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a5daf7897ca0c8b02960ba9a852013ea3">rho_</a>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        };</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordtype">double</span> getMaxPitch()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <span class="keywordflow">return</span> atan(<a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a4c7395bae93baa3f56a7fbf4f986e8cd">tanMaxPitch_</a>);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        };</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classompl_1_1base_1_1OwenStateSpace.html#ae442ac624e8192764b696f74371ea99b">turn</a>(<span class="keyword">const</span> State *from, <span class="keywordtype">double</span> turnRadius, <span class="keywordtype">double</span> angle, State *state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a5daf7897ca0c8b02960ba9a852013ea3">  216</a></span>        <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a5daf7897ca0c8b02960ba9a852013ea3">rho_</a>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a4c7395bae93baa3f56a7fbf4f986e8cd">  218</a></span>        <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a4c7395bae93baa3f56a7fbf4f986e8cd">tanMaxPitch_</a>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">  220</a></span>        <span class="keywordtype">double</span> <a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">tolerance_</a>{1e-8};</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="classompl_1_1base_1_1OwenStateSpace.html#a4435f4eeed2f8cad971db376fbed6447">  222</a></span>        <a class="code hl_class" href="classompl_1_1base_1_1DubinsStateSpace.html">DubinsStateSpace</a> <a class="code hl_variable" href="classompl_1_1base_1_1OwenStateSpace.html#a4435f4eeed2f8cad971db376fbed6447">dubinsSpace_</a>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    };</div>
+</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>}  <span class="comment">// namespace ompl::base</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a1edbb5159328ff529b9c4e1a2e569247"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">ompl::base::CompoundStateSpace::StateType</a></div><div class="ttdeci">ompl::base::CompoundState StateType</div><div class="ttdoc">Define the type of state allocated by this state space.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00577">StateSpace.h:577</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a2dcbcf1fac267248ea6ed756494414c8"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a2dcbcf1fac267248ea6ed756494414c8">ompl::base::CompoundStateSpace::CompoundStateSpace</a></div><div class="ttdeci">CompoundStateSpace()</div><div class="ttdoc">Construct an empty compound state space.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8cpp_source.html#l00856">StateSpace.cpp:856</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1DubinsStateSpace_1_1PathType_html"><div class="ttname"><a href="classompl_1_1base_1_1DubinsStateSpace_1_1PathType.html">ompl::base::DubinsStateSpace::PathType</a></div><div class="ttdoc">Complete description of a Dubins path.</div><div class="ttdef"><b>Definition</b> <a href="DubinsStateSpace_8h_source.html#l00077">DubinsStateSpace.h:78</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1DubinsStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1DubinsStateSpace.html">ompl::base::DubinsStateSpace</a></div><div class="ttdoc">An SE(2) state space where distance is measured by the length of Dubins curves.</div><div class="ttdef"><b>Definition</b> <a href="DubinsStateSpace_8h_source.html#l00062">DubinsStateSpace.h:63</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a03b4a9b84dd2ca1e56a736cff21cc0cd"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a03b4a9b84dd2ca1e56a736cff21cc0cd">ompl::base::OwenStateSpace::validSegmentCount</a></div><div class="ttdeci">unsigned int validSegmentCount(const State *state1, const State *state2) const override</div><div class="ttdoc">Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2....</div><div class="ttdef"><b>Definition</b> <a href="OwenStateSpace_8cpp_source.html#l00192">OwenStateSpace.cpp:192</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a1c25494798fefabf94a5d54066eb363d"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a1c25494798fefabf94a5d54066eb363d">ompl::base::OwenStateSpace::distance</a></div><div class="ttdeci">double distance(const State *state1, const State *state2) const override</div><div class="ttdoc">Computes distance between two states. This function satisfies the properties of a metric if isMetricS...</div><div class="ttdef"><b>Definition</b> <a href="OwenStateSpace_8cpp_source.html#l00185">OwenStateSpace.cpp:185</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a259bd7c56a443ab8d1850f4099543843"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a259bd7c56a443ab8d1850f4099543843">ompl::base::OwenStateSpace::interpolate</a></div><div class="ttdeci">void interpolate(const State *from, const State *to, double t, State *state) const override</div><div class="ttdoc">Computes the state that lies at time t in [0, 1] on the segment that connects from state to to state....</div><div class="ttdef"><b>Definition</b> <a href="OwenStateSpace_8cpp_source.html#l00197">OwenStateSpace.cpp:197</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a417f2ab7acec6a9e76b83e64ae1e2b77"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a417f2ab7acec6a9e76b83e64ae1e2b77">ompl::base::OwenStateSpace::registerProjections</a></div><div class="ttdeci">void registerProjections() override</div><div class="ttdoc">Register the projections for this state space. Usually, this is at least the default projection....</div><div class="ttdef"><b>Definition</b> <a href="OwenStateSpace_8cpp_source.html#l00074">OwenStateSpace.cpp:74</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a4435f4eeed2f8cad971db376fbed6447"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a4435f4eeed2f8cad971db376fbed6447">ompl::base::OwenStateSpace::dubinsSpace_</a></div><div class="ttdeci">DubinsStateSpace dubinsSpace_</div><div class="ttdef"><b>Definition</b> <a href="#l00222">OwenStateSpace.h:222</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a4c7395bae93baa3f56a7fbf4f986e8cd"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a4c7395bae93baa3f56a7fbf4f986e8cd">ompl::base::OwenStateSpace::tanMaxPitch_</a></div><div class="ttdeci">double tanMaxPitch_</div><div class="ttdef"><b>Definition</b> <a href="#l00218">OwenStateSpace.h:218</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a56a85365939f8b970034cafda4555b1b"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a56a85365939f8b970034cafda4555b1b">ompl::base::OwenStateSpace::setTolerance</a></div><div class="ttdeci">void setTolerance(double tolerance)</div><div class="ttdef"><b>Definition</b> <a href="#l00158">OwenStateSpace.h:158</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a5daf7897ca0c8b02960ba9a852013ea3"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a5daf7897ca0c8b02960ba9a852013ea3">ompl::base::OwenStateSpace::rho_</a></div><div class="ttdeci">double rho_</div><div class="ttdef"><b>Definition</b> <a href="#l00216">OwenStateSpace.h:216</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a784dbb84f7f8112511245b50c3973e4b"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a784dbb84f7f8112511245b50c3973e4b">ompl::base::OwenStateSpace::getBounds</a></div><div class="ttdeci">const RealVectorBounds &amp; getBounds() const</div><div class="ttdoc">Get the bounds for this state space.</div><div class="ttdef"><b>Definition</b> <a href="#l00152">OwenStateSpace.h:152</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a8019b9f3aca6055fcb683f2c63b107b0"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a8019b9f3aca6055fcb683f2c63b107b0">ompl::base::OwenStateSpace::hasSymmetricDistance</a></div><div class="ttdeci">bool hasSymmetricDistance() const override</div><div class="ttdoc">Check if the distance function on this state space is symmetric, i.e. distance(s1,...</div><div class="ttdef"><b>Definition</b> <a href="#l00126">OwenStateSpace.h:126</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a8b192915ba538c141aa9bca25019879e"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">ompl::base::OwenStateSpace::tolerance_</a></div><div class="ttdeci">double tolerance_</div><div class="ttdef"><b>Definition</b> <a href="#l00220">OwenStateSpace.h:220</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a90916c73256250ccae1dbfeb4596efe0"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a90916c73256250ccae1dbfeb4596efe0">ompl::base::OwenStateSpace::getTolerance</a></div><div class="ttdeci">double getTolerance()</div><div class="ttdef"><b>Definition</b> <a href="#l00163">OwenStateSpace.h:163</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a90bd0eac234d991ca11553dd9305e79c"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a90bd0eac234d991ca11553dd9305e79c">ompl::base::OwenStateSpace::getPath</a></div><div class="ttdeci">std::optional&lt; PathType &gt; getPath(const State *state1, const State *state2) const</div><div class="ttdoc">Compute a 3D Dubins path using the model and algorithm proposed by Owen et al.</div><div class="ttdef"><b>Definition</b> <a href="OwenStateSpace_8cpp_source.html#l00107">OwenStateSpace.cpp:107</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_ab5453570d21a947839bbc36ee7aa75e2"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#ab5453570d21a947839bbc36ee7aa75e2">ompl::base::OwenStateSpace::setBounds</a></div><div class="ttdeci">void setBounds(const RealVectorBounds &amp;bounds)</div><div class="ttdoc">Set the bounds of this state space. This defines the range of the space in which sampling is performe...</div><div class="ttdef"><b>Definition</b> <a href="#l00146">OwenStateSpace.h:146</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_abebc3420c3de608fdeee3f3764facc4c"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#abebc3420c3de608fdeee3f3764facc4c">ompl::base::OwenStateSpace::allocState</a></div><div class="ttdeci">State * allocState() const override</div><div class="ttdoc">Allocate a state that can store a point in the described space.</div><div class="ttdef"><b>Definition</b> <a href="OwenStateSpace_8cpp_source.html#l00067">OwenStateSpace.cpp:67</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_acb9389e4dca7445b753111f4611a8b8e"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#acb9389e4dca7445b753111f4611a8b8e">ompl::base::OwenStateSpace::hasSymmetricInterpolate</a></div><div class="ttdeci">bool hasSymmetricInterpolate() const override</div><div class="ttdoc">Check if the interpolation function on this state space is symmetric, i.e. interpolate(from,...</div><div class="ttdef"><b>Definition</b> <a href="#l00131">OwenStateSpace.h:131</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_ad2b918d285a114ead257aedb8396eb1d"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#ad2b918d285a114ead257aedb8396eb1d">ompl::base::OwenStateSpace::sanityChecks</a></div><div class="ttdeci">void sanityChecks() const override</div><div class="ttdoc">Convenience function that allows derived state spaces to choose which checks should pass (see SanityC...</div><div class="ttdef"><b>Definition</b> <a href="#l00136">OwenStateSpace.h:136</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_ae442ac624e8192764b696f74371ea99b"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#ae442ac624e8192764b696f74371ea99b">ompl::base::OwenStateSpace::turn</a></div><div class="ttdeci">void turn(const State *from, double turnRadius, double angle, State *state) const</div><div class="ttdoc">Compute the SE(2) state after making a turn.</div><div class="ttdef"><b>Definition</b> <a href="OwenStateSpace_8cpp_source.html#l00176">OwenStateSpace.cpp:176</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_aec444d4108dc7bfe2db3e07fd4e1f1a8"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#aec444d4108dc7bfe2db3e07fd4e1f1a8">ompl::base::OwenStateSpace::isMetricSpace</a></div><div class="ttdeci">bool isMetricSpace() const override</div><div class="ttdoc">Return true if the distance function associated with the space is a metric.</div><div class="ttdef"><b>Definition</b> <a href="#l00122">OwenStateSpace.h:122</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space.</div><div class="ttdef"><b>Definition</b> <a href="RealVectorBounds_8h_source.html#l00047">RealVectorBounds.h:48</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">ompl::base::StateSpace::STATESPACE_DISTANCE_BOUND</a></div><div class="ttdeci">@ STATESPACE_DISTANCE_BOUND</div><div class="ttdoc">Check whether the StateSpace::distance() is bounded by StateSpace::getExtent().</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00152">StateSpace.h:152</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">ompl::base::StateSpace::STATESPACE_INTERPOLATION</a></div><div class="ttdeci">@ STATESPACE_INTERPOLATION</div><div class="ttdoc">Check whether calling StateSpace::interpolate() works as expected.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00145">StateSpace.h:145</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">ompl::base::StateSpace::STATESPACE_TRIANGLE_INEQUALITY</a></div><div class="ttdeci">@ STATESPACE_TRIANGLE_INEQUALITY</div><div class="ttdoc">Check whether the triangle inequality holds when using StateSpace::interpolate() and StateSpace::dist...</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00149">StateSpace.h:149</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">ompl::base::StateSpace::STATESPACE_DISTANCE_SYMMETRIC</a></div><div class="ttdeci">@ STATESPACE_DISTANCE_SYMMETRIC</div><div class="ttdoc">Check whether the distance function is symmetric (StateSpace::distance()).</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00142">StateSpace.h:142</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a7236f03f05e54a740826187e4c0ffb19"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a7236f03f05e54a740826187e4c0ffb19">ompl::base::StateSpace::as</a></div><div class="ttdeci">T * as()</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8h_source.html#l00087">StateSpace.h:87</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a800eb71d641ffb4e5354a9f09a11f1dd"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a800eb71d641ffb4e5354a9f09a11f1dd">ompl::base::StateSpace::sanityChecks</a></div><div class="ttdeci">virtual void sanityChecks() const</div><div class="ttdoc">Convenience function that allows derived state spaces to choose which checks should pass (see SanityC...</div><div class="ttdef"><b>Definition</b> <a href="StateSpace_8cpp_source.html#l00603">StateSpace.cpp:603</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00049">State.h:50</a></div></div>
+<div class="ttc" id="aclassompl_1_1base_1_1State_html_af1b51b919c418c1625ed42a3c36f2be2"><div class="ttname"><a href="classompl_1_1base_1_1State.html#af1b51b919c418c1625ed42a3c36f2be2">ompl::base::State::as</a></div><div class="ttdeci">const T * as() const</div><div class="ttdoc">Cast this instance to a desired type.</div><div class="ttdef"><b>Definition</b> <a href="base_2State_8h_source.html#l00066">State.h:66</a></div></div>
+<div class="ttc" id="anamespaceompl_1_1base_html"><div class="ttname"><a href="namespaceompl_1_1base.html">ompl::base</a></div><div class="ttdoc">This namespace contains sampling based planning routines shared by both planning under geometric cons...</div><div class="ttdef"><b>Definition</b> <a href="ConstrainedSpaceInformation_8h_source.html#l00054">ConstrainedSpaceInformation.h:55</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea5acf49ce656838100e44ed7ee7321ab6">ompl::base::StateSpace::STATESPACE_DISTANCE_SYMMETRIC</a></div><div class="ttdeci">@ STATESPACE_DISTANCE_SYMMETRIC</div><div class="ttdoc">Check whether the distance function is symmetric (StateSpace::distance())</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00206">StateSpace.h:206</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a03b4a9b84dd2ca1e56a736cff21cc0cd"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a03b4a9b84dd2ca1e56a736cff21cc0cd">ompl::base::OwenStateSpace::validSegmentCount</a></div><div class="ttdeci">unsigned int validSegmentCount(const State *state1, const State *state2) const override</div><div class="ttdoc">Count how many segments of the &quot;longest valid length&quot; fit on the motion from state1 to state2.</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8cpp_source.html#l00192">OwenStateSpace.cpp:192</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_abebc3420c3de608fdeee3f3764facc4c"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#abebc3420c3de608fdeee3f3764facc4c">ompl::base::OwenStateSpace::allocState</a></div><div class="ttdeci">State * allocState() const override</div><div class="ttdoc">Allocate a state that can store a point in the described space.</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8cpp_source.html#l00067">OwenStateSpace.cpp:67</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_ab5453570d21a947839bbc36ee7aa75e2"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#ab5453570d21a947839bbc36ee7aa75e2">ompl::base::OwenStateSpace::setBounds</a></div><div class="ttdeci">void setBounds(const RealVectorBounds &amp;bounds)</div><div class="ttdoc">Set the bounds of this state space. This defines the range of the space in which sampling is performe...</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00210">OwenStateSpace.h:210</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a8019b9f3aca6055fcb683f2c63b107b0"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a8019b9f3aca6055fcb683f2c63b107b0">ompl::base::OwenStateSpace::hasSymmetricDistance</a></div><div class="ttdeci">bool hasSymmetricDistance() const override</div><div class="ttdoc">Check if the distance function on this state space is symmetric, i.e. distance(s1,...</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00190">OwenStateSpace.h:190</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1State_html"><div class="ttname"><a href="classompl_1_1base_1_1State.html">ompl::base::State</a></div><div class="ttdoc">Definition of an abstract state.</div><div class="ttdef"><b>Definition:</b> <a href="base_2State_8h_source.html#l00113">State.h:113</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a9d69523ca7bd8fbffd34e2bf31edfd23"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a9d69523ca7bd8fbffd34e2bf31edfd23">ompl::base::OwenStateSpace::getBounds</a></div><div class="ttdeci">const RealVectorBounds &amp; getBounds() const</div><div class="ttdoc">Get the bounds for this state space.</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00216">OwenStateSpace.h:216</a></div></div>
-<div class="ttc" id="anamespaceompl_1_1base_html"><div class="ttname"><a href="namespaceompl_1_1base.html">ompl::base</a></div><div class="ttdoc">This namespace contains sampling based planning routines shared by both planning under geometric cons...</div><div class="ttdef"><b>Definition:</b> <a href="ConstrainedSpaceInformation_8h_source.html#l00086">ConstrainedSpaceInformation.h:86</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a800eb71d641ffb4e5354a9f09a11f1dd"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a800eb71d641ffb4e5354a9f09a11f1dd">ompl::base::StateSpace::sanityChecks</a></div><div class="ttdeci">virtual void sanityChecks() const</div><div class="ttdoc">Convenience function that allows derived state spaces to choose which checks should pass (see SanityC...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8cpp_source.html#l00603">StateSpace.cpp:603</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a4c7395bae93baa3f56a7fbf4f986e8cd"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a4c7395bae93baa3f56a7fbf4f986e8cd">ompl::base::OwenStateSpace::tanMaxPitch_</a></div><div class="ttdeci">double tanMaxPitch_</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00272">OwenStateSpace.h:272</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea0134f2a38473e775c3037fde1c336d3f">ompl::base::StateSpace::STATESPACE_DISTANCE_BOUND</a></div><div class="ttdeci">@ STATESPACE_DISTANCE_BOUND</div><div class="ttdoc">Check whether the StateSpace::distance() is bounded by StateSpace::getExtent()</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00216">StateSpace.h:216</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a417f2ab7acec6a9e76b83e64ae1e2b77"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a417f2ab7acec6a9e76b83e64ae1e2b77">ompl::base::OwenStateSpace::registerProjections</a></div><div class="ttdeci">void registerProjections() override</div><div class="ttdoc">Register the projections for this state space. Usually, this is at least the default projection....</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8cpp_source.html#l00074">OwenStateSpace.cpp:74</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a8b192915ba538c141aa9bca25019879e"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a8b192915ba538c141aa9bca25019879e">ompl::base::OwenStateSpace::tolerance_</a></div><div class="ttdeci">double tolerance_</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00274">OwenStateSpace.h:274</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea54e30ec7ef77f42f255951ac6be08f97">ompl::base::StateSpace::STATESPACE_TRIANGLE_INEQUALITY</a></div><div class="ttdeci">@ STATESPACE_TRIANGLE_INEQUALITY</div><div class="ttdoc">Check whether the triangle inequality holds when using StateSpace::interpolate() and StateSpace::dist...</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00213">StateSpace.h:213</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a90916c73256250ccae1dbfeb4596efe0"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a90916c73256250ccae1dbfeb4596efe0">ompl::base::OwenStateSpace::getTolerance</a></div><div class="ttdeci">double getTolerance()</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00227">OwenStateSpace.h:227</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a259bd7c56a443ab8d1850f4099543843"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a259bd7c56a443ab8d1850f4099543843">ompl::base::OwenStateSpace::interpolate</a></div><div class="ttdeci">void interpolate(const State *from, const State *to, double t, State *state) const override</div><div class="ttdoc">Computes the state that lies at time t in [0, 1] on the segment that connects from state to to state....</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8cpp_source.html#l00197">OwenStateSpace.cpp:197</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a56a85365939f8b970034cafda4555b1b"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a56a85365939f8b970034cafda4555b1b">ompl::base::OwenStateSpace::setTolerance</a></div><div class="ttdeci">void setTolerance(double tolerance)</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00222">OwenStateSpace.h:222</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1DubinsStateSpace_html"><div class="ttname"><a href="classompl_1_1base_1_1DubinsStateSpace.html">ompl::base::DubinsStateSpace</a></div><div class="ttdoc">An SE(2) state space where distance is measured by the length of Dubins curves.</div><div class="ttdef"><b>Definition:</b> <a href="DubinsStateSpace_8h_source.html#l00126">DubinsStateSpace.h:126</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a4435f4eeed2f8cad971db376fbed6447"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a4435f4eeed2f8cad971db376fbed6447">ompl::base::OwenStateSpace::dubinsSpace_</a></div><div class="ttdeci">DubinsStateSpace dubinsSpace_</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00276">OwenStateSpace.h:276</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_aec444d4108dc7bfe2db3e07fd4e1f1a8"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#aec444d4108dc7bfe2db3e07fd4e1f1a8">ompl::base::OwenStateSpace::isMetricSpace</a></div><div class="ttdeci">bool isMetricSpace() const override</div><div class="ttdoc">Return true if the distance function associated with the space is a metric.</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00186">OwenStateSpace.h:186</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_ae442ac624e8192764b696f74371ea99b"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#ae442ac624e8192764b696f74371ea99b">ompl::base::OwenStateSpace::turn</a></div><div class="ttdeci">void turn(const State *from, double turnRadius, double angle, State *state) const</div><div class="ttdoc">Compute the SE(2) state after making a turn.</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8cpp_source.html#l00176">OwenStateSpace.cpp:176</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a1c25494798fefabf94a5d54066eb363d"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a1c25494798fefabf94a5d54066eb363d">ompl::base::OwenStateSpace::distance</a></div><div class="ttdeci">double distance(const State *state1, const State *state2) const override</div><div class="ttdoc">Computes distance between two states. This function satisfies the properties of a metric if isMetricS...</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8cpp_source.html#l00185">OwenStateSpace.cpp:185</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a90bd0eac234d991ca11553dd9305e79c"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a90bd0eac234d991ca11553dd9305e79c">ompl::base::OwenStateSpace::getPath</a></div><div class="ttdeci">std::optional&lt; PathType &gt; getPath(const State *state1, const State *state2) const</div><div class="ttdoc">Compute a 3D Dubins path using the model and algorithm proposed by Owen et al.</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8cpp_source.html#l00107">OwenStateSpace.cpp:107</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1CompoundStateSpace_html_a1edbb5159328ff529b9c4e1a2e569247"><div class="ttname"><a href="classompl_1_1base_1_1CompoundStateSpace.html#a1edbb5159328ff529b9c4e1a2e569247">ompl::base::CompoundStateSpace::StateType</a></div><div class="ttdeci">ompl::base::CompoundState StateType</div><div class="ttdoc">Define the type of state allocated by this state space.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00641">StateSpace.h:641</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_acb9389e4dca7445b753111f4611a8b8e"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#acb9389e4dca7445b753111f4611a8b8e">ompl::base::OwenStateSpace::hasSymmetricInterpolate</a></div><div class="ttdeci">bool hasSymmetricInterpolate() const override</div><div class="ttdoc">Check if the interpolation function on this state space is symmetric, i.e. interpolate(from,...</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00195">OwenStateSpace.h:195</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_a5daf7897ca0c8b02960ba9a852013ea3"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#a5daf7897ca0c8b02960ba9a852013ea3">ompl::base::OwenStateSpace::rho_</a></div><div class="ttdeci">double rho_</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00270">OwenStateSpace.h:270</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1StateSpace_html_a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf"><div class="ttname"><a href="classompl_1_1base_1_1StateSpace.html#a64feddc33bb3b7459c4f589e6cd9d17ea26a108232d6265a1cc8bcc642216a6cf">ompl::base::StateSpace::STATESPACE_INTERPOLATION</a></div><div class="ttdeci">@ STATESPACE_INTERPOLATION</div><div class="ttdoc">Check whether calling StateSpace::interpolate() works as expected.</div><div class="ttdef"><b>Definition:</b> <a href="StateSpace_8h_source.html#l00209">StateSpace.h:209</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1OwenStateSpace_html_ad2b918d285a114ead257aedb8396eb1d"><div class="ttname"><a href="classompl_1_1base_1_1OwenStateSpace.html#ad2b918d285a114ead257aedb8396eb1d">ompl::base::OwenStateSpace::sanityChecks</a></div><div class="ttdeci">void sanityChecks() const override</div><div class="ttdoc">Convenience function that allows derived state spaces to choose which checks should pass (see SanityC...</div><div class="ttdef"><b>Definition:</b> <a href="OwenStateSpace_8h_source.html#l00200">OwenStateSpace.h:200</a></div></div>
-<div class="ttc" id="aclassompl_1_1base_1_1RealVectorBounds_html"><div class="ttname"><a href="classompl_1_1base_1_1RealVectorBounds.html">ompl::base::RealVectorBounds</a></div><div class="ttdoc">The lower and upper bounds for an Rn space.</div><div class="ttdef"><b>Definition:</b> <a href="RealVectorBounds_8h_source.html#l00111">RealVectorBounds.h:111</a></div></div>
 </div>
 <footer class="footer">
   <div class="container">
@@ -360,7 +386,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <a href="https://www.cs.rice.edu">Department of Computer Science</a> &bull;
   <a href="https://www.rice.edu">Rice University</a><br/>
   Funded in part by the <a href="https://www.nsf.gov">National Science Foundation</a><br/>
-  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.8.17
+  Documentation generated by <a href="http://www.doxygen.org/index.html">doxygen</a> 1.16.1
   </div>
 </footer>
 <script>
