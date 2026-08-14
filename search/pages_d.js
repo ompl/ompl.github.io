@@ -1,16 +1,16 @@
 var searchData=
 [
   ['database_20schema_0',['The benchmark database schema',['../benchmark.html#benchmark_database',1,'']]],
-  ['december_2015_202010_20initial_20release_1',['OMPL 0.9.0 (December 15, 2010; initial release)',['../releaseNotes.html#autotoc_md84',1,'']]],
-  ['december_2017_202010_2',['OMPL 0.9.1 (December 17, 2010)',['../releaseNotes.html#autotoc_md83',1,'']]],
-  ['december_2020_202013_3',['OMPL 0.14.0 (December 20, 2013)',['../releaseNotes.html#autotoc_md69',1,'']]],
-  ['december_205_202018_4',['OMPL 1.4.1 (December 5, 2018)',['../releaseNotes.html#autotoc_md58',1,'']]],
+  ['december_2015_202010_20initial_20release_1',['OMPL 0.9.0 (December 15, 2010; initial release)',['../releaseNotes.html#autotoc_md85',1,'']]],
+  ['december_2017_202010_2',['OMPL 0.9.1 (December 17, 2010)',['../releaseNotes.html#autotoc_md84',1,'']]],
+  ['december_2020_202013_3',['OMPL 0.14.0 (December 20, 2013)',['../releaseNotes.html#autotoc_md70',1,'']]],
+  ['december_205_202018_4',['OMPL 1.4.1 (December 5, 2018)',['../releaseNotes.html#autotoc_md59',1,'']]],
   ['defining_20a_20problem_5',['Defining a Problem',['../constrainedPlanningTutorial.html#autotoc_md5',1,'']]],
   ['defining_20the_20constrained_20state_20space_6',['Defining the Constrained State Space',['../constrainedPlanningTutorial.html#autotoc_md4',1,'']]],
   ['defining_20the_20constraint_7',['Defining the Constraint',['../constrainedPlanningTutorial.html#autotoc_md3',1,'']]],
   ['definition_8',['Instantiating a problem definition',['../genericPlanning.html#autotoc_md21',1,'']]],
-  ['demo_9',['Running the Demo',['../vampPlanningTutorial.html#autotoc_md115',1,'']]],
-  ['demos_10',['Demos',['../demos.html',1,'Demos'],['../dir_4d81f29dbd22913f8da6e5cb4be28540.html#autotoc_md118',1,'VAMP-OMPL Demos']]],
+  ['demo_9',['Running the Demo',['../vampPlanningTutorial.html#autotoc_md116',1,'']]],
+  ['demos_10',['Demos',['../demos.html',1,'Demos'],['../dir_4d81f29dbd22913f8da6e5cb4be28540.html#autotoc_md119',1,'VAMP-OMPL Demos']]],
   ['deprecated_20list_11',['Deprecated List',['../deprecated.html',1,'']]],
   ['design_20and_20implementation_20details_12',['Design and implementation details',['../CForest.html#cf_implementation',1,'']]],
   ['details_13',['Design and implementation details',['../CForest.html#cf_implementation',1,'']]],
@@ -18,8 +18,8 @@ var searchData=
   ['differences_20between_20the_20c_20and_20python_20api_20s_15',['Differences between the C++ and Python API&apos;s',['../python.html#py_api_diffs',1,'']]],
   ['differences_20with_20the_20paper_20version_16',['Main differences with the paper version',['../CForest.html#cf_diff',1,'']]],
   ['dimensional_20hypercube_20benchmark_17',['100-dimensional Hypercube Benchmark',['../multiLevelPlanning.html#autotoc_md31',1,'']]],
-  ['documentation_18',['Doxygen-generated documentation',['../api_overview.html#autotoc_md127',1,'']]],
+  ['documentation_18',['Doxygen-generated documentation',['../api_overview.html#autotoc_md128',1,'']]],
   ['download_19',['Download',['../download.html',1,'']]],
-  ['doxygen_20generated_20documentation_20',['Doxygen-generated documentation',['../api_overview.html#autotoc_md127',1,'']]],
+  ['doxygen_20generated_20documentation_20',['Doxygen-generated documentation',['../api_overview.html#autotoc_md128',1,'']]],
   ['drift_21',['Planning for Underactuated Systems in the Presence of Drift',['../gallery.html#autotoc_md17',1,'']]]
 ];

@@ -147,22 +147,22 @@ $(function() { codefold.init(); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md111">Prerequisites </a>
+    <a href="#autotoc_md112">Prerequisites </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md112">Bridging VAMP and OMPL </a>
+    <a href="#autotoc_md113">Bridging VAMP and OMPL </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md113">Setting Up the Planning Problem </a>
+    <a href="#autotoc_md114">Setting Up the Planning Problem </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md114">Benchmarking Planners </a>
+    <a href="#autotoc_md115">Benchmarking Planners </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md115">Running the Demo </a>
+    <a href="#autotoc_md116">Running the Demo </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md116">Extending to Other Robots </a>
+    <a href="#autotoc_md117">Extending to Other Robots </a>
   </li>
 </ul>
 </div>
@@ -170,12 +170,12 @@ $(function() { codefold.init(); });
 <p>This tutorial shows how to use <a href="https://github.com/KavrakiLab/vamp">VAMP</a> (Vector-Accelerated Motion Planning) with OMPL for robot motion planning. VAMP provides SIMD-accelerated collision checking and forward kinematics, processing multiple robot configurations simultaneously using vectorized instructions. By plugging VAMP into OMPL's planning framework, you get the flexibility of OMPL's planner library with the speed of VAMP's collision checking.</p>
 <p>VAMP ships with built-in support for several robots including the Franka Panda, UR5, and Fetch. In this tutorial we will plan for a 7-DOF Panda arm navigating around sphere obstacles. In this tutorial we use the Python bindings for OMPL. There is also a pure C++ version of this demo; see <a href="VAMPPlanning_8cpp_source.html">VAMPPlanning.cpp</a>.</p>
 <div class="row justify-content-center"><div class="col-md-8 col-sm-8"><img src="images/vamp_sphere_cage.gif" alt="" class="img-fluid" class="inline"/><br  />
-<b>The Panda arm inside a cage of 14 sphere obstacles.</b></div></div><h1 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
+<b>The Panda arm inside a cage of 14 sphere obstacles.</b></div></div><h1 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
 Prerequisites</h1>
 <p>Install the required Python packages:</p>
 <div class="fragment"><div class="line">pip install -r demos/vamp/requirements.txt</div>
 </div><!-- fragment --><p>You will also need the OMPL Python bindings installed. See the <a href="installation.html">installation instructions</a> for details.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
 Bridging VAMP and OMPL</h1>
 <p>OMPL is designed to be agnostic to the robot and environment representation. To use VAMP's collision checking with OMPL, we need to implement three bridge classes that translate between OMPL's state representation and VAMP's configuration representation.</p>
 <h2>State Space</h2>
@@ -232,7 +232,7 @@ Bridging VAMP and OMPL</h1>
 <p><b>Note:</b> By providing a custom <a class="el" href="classompl_1_1base_1_1MotionValidator.html" title="Abstract definition for a class checking the validity of motions – path segments between states....">ompl::base::MotionValidator</a>, we bypass OMPL's default <a class="el" href="classompl_1_1base_1_1DiscreteMotionValidator.html" title="A motion validator that only uses the state validity checker. Motions are checked for validity at a s...">ompl::base::DiscreteMotionValidator</a>, which would otherwise call <span class="tt">isValid()</span> at discrete steps along the motion. VAMP's <span class="tt">validate_motion()</span> handles the entire edge check internally in a single call. </p>
 </blockquote>
 <p>These three classes are provided in the <span class="tt"><a class="el" href="vamp__state__space_8py_source.html">vamp_state_space.py</a></span> module included with the demo.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
 Setting Up the Planning Problem</h1>
 <p>With the bridge classes in place, we can set up a complete planning problem. We will plan for a Panda arm navigating through a cage of sphere obstacles.</p>
 <h2>Creating the Environment</h2>
@@ -316,7 +316,7 @@ Setting Up the Planning Problem</h1>
 <div class="line">    print(f<span class="stringliteral">&quot;Planning time: {time.time() - planning_start}&quot;</span>)</div>
 <div class="line">    print(f<span class="stringliteral">&quot;Generated path with {path.getStateCount()} states&quot;</span>)</div>
 </div><!-- fragment --><p>The planner will typically find a solution in milliseconds thanks to VAMP's fast collision checking.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
 Benchmarking Planners</h1>
 <p>OMPL's <a class="el" href="classompl_1_1tools_1_1Benchmark.html" title="Benchmark a set of planners on a problem instance.">ompl::tools::Benchmark</a> class makes it easy to compare multiple planners on the same problem. Here we benchmark RRTConnect, RRT, KPIECE1, and LBKPIECE1:</p>
 <div class="fragment"><div class="line"><span class="keyword">from</span> ompl <span class="keyword">import</span> tools <span class="keyword">as</span> ot</div>
@@ -358,7 +358,7 @@ Benchmarking Planners</h1>
 </div><!-- fragment --><p>The log file can be visualized with <a href="http://plannerarena.org">Planner Arena</a> (see the <a href="benchmark.html">benchmarking tutorial</a> for details). You can also convert it to a SQLite database for custom analysis:</p>
 <div class="fragment"><div class="line">db_path = <span class="stringliteral">&quot;benchmark.db&quot;</span></div>
 <div class="line">ot.readBenchmarkLog(db_path, [<span class="stringliteral">&quot;benchmark.log&quot;</span>], moveitformat=<span class="keyword">False</span>)</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
 Running the Demo</h1>
 <p>The complete demo script supports both single planning and benchmarking via command-line flags:</p>
 <div class="fragment"><div class="line"># Single planning run</div>
@@ -369,7 +369,7 @@ Running the Demo</h1>
 <div class="line"> </div>
 <div class="line"># Benchmark multiple planners</div>
 <div class="line">python3 vamp/vamp_planning.py --benchmark --n_trials 100</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
 Extending to Other Robots</h1>
 <p>VAMP supports several robots out of the box. To plan for a different robot, simply change the robot module:</p>
 <div class="fragment"><div class="line">robot = vamp.ur5      <span class="comment"># UR5 (6-DOF)</span></div>

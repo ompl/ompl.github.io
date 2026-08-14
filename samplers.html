@@ -153,7 +153,7 @@ $(function() { codefold.init(); });
 <li><a class="el" href="classompl_1_1base_1_1MaximizeClearanceValidStateSampler.html" title="Generate valid samples randomly, but with a bias towards higher clearance.">ompl::base::MaximizeClearanceValidStateSampler</a>: This sampler behaves a lot like <a class="el" href="classompl_1_1base_1_1UniformValidStateSampler.html" title="A state sampler that only samples valid states, uniformly.">ompl::base::UniformValidStateSampler</a> but once it finds a valid state, it attempts to find additional valid states with higher clearance. The reported sample is the one with highest clearance.</li>
 </ul>
 <p>Below we will describe how you can specify a planner to use one of these samplers and how to write your own valid state sampler. The code examples are taken from the <a href="StateSampling_8cpp_source.html">StateSampling.cpp</a> demo program (note that there is also a <a href="StateSampling_8py_source.html">Python version</a> of this demo).</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
 Using an Existing Sampler</h1>
 <p>We cannot set the type of sampler directly in the SimpleSetup or SpaceInformation classes, because each thread needs it own copy of a sampler. Instead, we need to define a <a class="el" href="namespaceompl_1_1base.html#a1db987bd5eb23d878f42e1f6d5df5b88" title="Definition of a function that can allocate a valid state sampler.">ompl::base::ValidStateSamplerAllocator</a>, a function that, given a pointer to an <a class="el" href="classompl_1_1base_1_1SpaceInformation.html" title="The base class for space information. This contains all the information about the space planning is d...">ompl::base::SpaceInformation</a>, returns <a class="el" href="classompl_1_1base_1_1ValidStateSamplerPtr.html" title="A shared pointer wrapper for ompl::base::ValidStateSampler.">ompl::base::ValidStateSamplerPtr</a>. This function can also configure the valid state sampler according to the specific space information before returning it. The following simple example shows how to use the ObstacleBasedValidStateSampler:</p>
  <div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceompl_1_1base.html">ob</a> = <a class="code hl_namespace" href="namespaceompl_1_1base.html">ompl::base</a>;</div>
@@ -168,7 +168,7 @@ Using an Existing Sampler</h1>
 <div class="line">}</div>
 <div class="ttc" id="aclassompl_1_1base_1_1SpaceInformation_html"><div class="ttname"><a href="classompl_1_1base_1_1SpaceInformation.html">ompl::base::SpaceInformation</a></div><div class="ttdoc">The base class for space information. This contains all the information about the space planning is d...</div><div class="ttdef"><b>Definition</b> <a href="base_2SpaceInformation_8h_source.html#l00081">SpaceInformation.h:82</a></div></div>
 </div><!-- fragment --><p>Other setup steps, such as specifying start and goal states, have been omitted for the sake of clarity.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
 Creating a New Valid State Sampler</h1>
 <p>A wide variety of heuristics have been proposed to improve the sampling of states. The quality of a sample can be characterized, e.g., by its distance to the nearest obstacle or by the “visibility” from a state. There are also two common cases where problem-specific information can be exploited:</p>
 <ul>

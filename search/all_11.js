@@ -7,8 +7,8 @@ var searchData=
   ['gaussian_4',['gaussian',['../classompl_1_1RNG.html#a13631925b09cc5bc7d977240bf67cfd3',1,'ompl::RNG']]],
   ['gaussian01_5',['gaussian01',['../classompl_1_1RNG.html#a75aacd082ebc60a2e63120d6a384f835',1,'ompl::RNG']]],
   ['gaussianvalidstatesampler_6',['GaussianValidStateSampler',['../classompl_1_1base_1_1GaussianValidStateSampler.html',1,'ompl::base::GaussianValidStateSampler'],['../classompl_1_1base_1_1GaussianValidStateSampler.html#ac1e86d2bbad84c0d6ef8f8ba1bd6e80f',1,'ompl::base::GaussianValidStateSampler::GaussianValidStateSampler()']]],
-  ['generalized_20optimal_20path_20planning_20framework_7',['Generalized Optimal Path Planning Framework',['../thirdparty.html#autotoc_md99',1,'']]],
-  ['generated_20documentation_8',['Doxygen-generated documentation',['../api_overview.html#autotoc_md127',1,'']]],
+  ['generalized_20optimal_20path_20planning_20framework_7',['Generalized Optimal Path Planning Framework',['../thirdparty.html#autotoc_md100',1,'']]],
+  ['generated_20documentation_8',['Doxygen-generated documentation',['../api_overview.html#autotoc_md128',1,'']]],
   ['generatehalfspace_9',['generateHalfspace',['../classompl_1_1base_1_1AtlasChart.html#ac7362faa11728b8b8777ec89bfea64a3',1,'ompl::base::AtlasChart']]],
   ['generatesamples_10',['generateSamples',['../classompl_1_1base_1_1StateStorage.html#a12921311a320c9e25648228ab334b12e',1,'ompl::base::StateStorage']]],
   ['generic_20instructions_20for_20setting_20up_20a_20planning_20context_11',['Generic Instructions for Setting Up a Planning Context',['../genericPlanning.html',1,'']]],
@@ -20,7 +20,7 @@ var searchData=
   ['geometric_20planning_20for_20a_20rigid_20body_20in_203d_17',['Geometric Planning for a Rigid Body in 3D',['../geometricPlanningSE3.html',1,'']]],
   ['geompath_5f_18',['geomPath_',['../classompl_1_1geometric_1_1SPARS.html#a62771ddf86a03d2a25bc4f47a8c83987',1,'ompl::geometric::SPARS']]],
   ['get_19',['get',['../classompl_1_1base_1_1ScopedState.html#aef84ea1a81eaa6a954967ae507fdeed1',1,'ompl::base::ScopedState::get()'],['../classompl_1_1base_1_1ScopedState.html#ad0df46445997f45dc63ee322c8e008e1',1,'ompl::base::ScopedState::get() const'],['../classompl_1_1geometric_1_1SPARSdb_1_1edgeWeightMap.html#a75434b473efadf9cfba1b1f5a73e3fa0',1,'ompl::geometric::SPARSdb::edgeWeightMap::get()']]],
-  ['get_20back_20to_20you_20soon_20',['Thanks for your message. We will get back to you soon!',['../thank-you.html#autotoc_md95',1,'']]],
+  ['get_20back_20to_20you_20soon_20',['Thanks for your message. We will get back to you soon!',['../thank-you.html#autotoc_md96',1,'']]],
   ['get_20support_21',['Get Support',['../support.html',1,'']]],
   ['get2dpose_22',['get2DPose',['../classompl_1_1base_1_1VanaOwenStateSpace.html#af53cd1d9f8e1b022e24d657ffc6374b6',1,'ompl::base::VanaOwenStateSpace::get2DPose()'],['../classompl_1_1base_1_1VanaStateSpace.html#a9fb1d3fbc4ba6c547dab4dd26728ec0f',1,'ompl::base::VanaStateSpace::get2DPose()']]],
   ['getadmissiblecosttocome_23',['getAdmissibleCostToCome',['../classompl_1_1geometric_1_1RRTstar.html#a0157358e54e9403bf94e71f437600ac8',1,'ompl::geometric::RRTstar::getAdmissibleCostToCome()'],['../classompl_1_1geometric_1_1TRRTstar.html#a6f6bd9758122636da3f3cb9f620c410d',1,'ompl::geometric::TRRTstar::getAdmissibleCostToCome()']]],
@@ -586,5 +586,5 @@ var searchData=
   ['guardcount_583',['guardCount',['../classompl_1_1geometric_1_1SPARS.html#a72344d7b0fa5c3685d45f83526703f6c',1,'ompl::geometric::SPARS']]],
   ['guardtype_584',['GuardType',['../classompl_1_1geometric_1_1SPARS.html#ab32058a4cdbd6e4ab645537cc7735cdd',1,'ompl::geometric::SPARS::GuardType'],['../classompl_1_1geometric_1_1SPARStwo.html#a6b3571a9600142a5e1b08f5b04413b81',1,'ompl::geometric::SPARStwo::GuardType'],['../classompl_1_1geometric_1_1SPARSdb.html#afaa43af9e99fd2e9d0d59cb94bb79be9',1,'ompl::geometric::SPARSdb::GuardType']]],
   ['guide_585',['OMPL Style Guide',['../styleGuide.html',1,'']]],
-  ['guidelines_586',['Other Coding Guidelines',['../styleGuide.html#autotoc_md92',1,'']]]
+  ['guidelines_586',['Other Coding Guidelines',['../styleGuide.html#autotoc_md93',1,'']]]
 ];
